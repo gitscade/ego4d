@@ -1,0 +1,2173 @@
+{
+    "videos": [
+        {
+            "level": 1,
+            "number": 20,
+            "video_uid": "321b5e21-2951-40c9-a2f9-6ce0c145cfb8",
+            "duration": 385.43,
+            "scenarios": [
+                "Baker"
+            ],
+            "split": "train",
+            "goal_category": "COOKING:MAKE_DONUT",
+            "goal_description": "Preparing the dough balls",
+            "spatial_context": {
+                "room1": [],
+                "room2": []
+            },
+            "segments": [
+                {
+                    "level": 2,
+                    "number": 0,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": []
+                },
+                {
+                    "level": 2,
+                    "number": 1,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 2,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": []
+                }
+            ]
+        },
+        {
+            "level": 1,
+            "number": 21,
+            "video_uid": "fe452f9c-d389-4f2a-82e8-ee87d6ee94a9",
+            "duration": 397.83,
+            "scenarios": [
+                "Baker"
+            ],
+            "split": "train",
+            "goal_category": "COOKING:MAKE_FLATBREAD",
+            "goal_description": "Making a dough",
+            "spatial_context": {
+                "room1": [],
+                "room2": []
+            },
+            "segments": [
+                {
+                    "level": 2,
+                    "number": 0,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 1,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": []
+                },
+                {
+                    "level": 2,
+                    "number": 2,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": []
+                },
+                {
+                    "level": 2,
+                    "number": 3,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": []
+                }
+            ]
+        },
+        {
+            "level": 1,
+            "number": 22,
+            "video_uid": "f938bcd9-bf30-4dfb-9a99-d6b9ee53c046",
+            "duration": 436.95,
+            "scenarios": [
+                "Baker"
+            ],
+            "split": "train",
+            "goal_category": "COOKING:MAKE_BREAD",
+            "goal_description": "preparing dough for the bread",
+            "spatial_context": {
+                "room1": [],
+                "room2": []
+            },
+            "segments": [
+                {
+                    "level": 2,
+                    "number": 0,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 6,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 7,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 8,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 9,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 10,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 11,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 12,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 13,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 14,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 15,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 16,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 17,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 18,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 19,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 20,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 21,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 22,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 23,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 24,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 1,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 6,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 7,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 8,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 9,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 10,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 11,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 12,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 13,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 2,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 6,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 3,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 6,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 7,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 8,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 9,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 10,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 11,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 12,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 13,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 14,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 15,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 16,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 17,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 18,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 19,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 20,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 21,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 22,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 23,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 24,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 25,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 26,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 27,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 28,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 29,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 30,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 31,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 32,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 33,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 34,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 35,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 4,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 6,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 7,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 8,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 9,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 10,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 1,
+            "number": 23,
+            "video_uid": "ec3f2fa8-babe-4407-97bc-8fe8f1ee27be",
+            "duration": 469.1,
+            "scenarios": [
+                "Baker"
+            ],
+            "split": "train",
+            "goal_category": "COOKING:MAKE_BREAD",
+            "goal_description": "Making bakery dish",
+            "spatial_context": {
+                "room1": [],
+                "room2": []
+            },
+            "segments": [
+                {
+                    "level": 2,
+                    "number": 0,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": []
+                },
+                {
+                    "level": 2,
+                    "number": 1,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 2,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": []
+                },
+                {
+                    "level": 2,
+                    "number": 3,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 4,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 5,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": []
+                },
+                {
+                    "level": 2,
+                    "number": 6,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 7,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": []
+                },
+                {
+                    "level": 2,
+                    "number": 8,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": []
+                },
+                {
+                    "level": 2,
+                    "number": 9,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": []
+                }
+            ]
+        },
+        {
+            "level": 1,
+            "number": 24,
+            "video_uid": "04041aaa-d309-42db-b65c-dcaf86b9f96c",
+            "duration": 470.77,
+            "scenarios": [
+                "Baker"
+            ],
+            "split": "train",
+            "goal_category": "COOKING:MAKE_FLATBREAD",
+            "goal_description": "Making a flat bread",
+            "spatial_context": {
+                "room1": [],
+                "room2": []
+            },
+            "segments": [
+                {
+                    "level": 2,
+                    "number": 0,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 1,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 6,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 2,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 3,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 6,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 4,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 6,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 5,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 6,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 7,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 8,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 6,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 6,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 7,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 7,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 8,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 6,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 9,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 6,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 7,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 10,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 11,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 6,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 7,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 12,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 6,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 7,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 8,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 9,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 10,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 13,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 6,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 14,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

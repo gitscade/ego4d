@@ -1,0 +1,551 @@
+{
+    "videos": [
+        {
+            "level": 1,
+            "number": 5,
+            "video_uid": "b493e8e3-4e18-4480-8e63-c21e25bf99f7",
+            "duration": 79.93,
+            "scenarios": [
+                "Baker"
+            ],
+            "split": "val",
+            "goal_category": "COOKING:MAKE_BREAD",
+            "goal_description": "kneading dough",
+            "spatial_context": {
+                "room1": [],
+                "room2": []
+            },
+            "segments": [
+                {
+                    "level": 2,
+                    "number": 0,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 6,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 7,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 8,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 9,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 10,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 11,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 1,
+            "number": 6,
+            "video_uid": "2bc7d6fa-a02e-4367-b316-d6b4e8a2ce3f",
+            "duration": 104.33,
+            "scenarios": [
+                "Baker"
+            ],
+            "split": "train",
+            "goal_category": "COOKING:MAKE_FLATBREAD",
+            "goal_description": "preparing roti",
+            "spatial_context": {
+                "room1": [],
+                "room2": []
+            },
+            "segments": [
+                {
+                    "level": 2,
+                    "number": 0,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 1,
+            "number": 7,
+            "video_uid": "35080724-6604-401c-8b06-19b7cece3d45",
+            "duration": 116.4,
+            "scenarios": [
+                "Baker"
+            ],
+            "split": "train",
+            "goal_category": "COOKING:MAKE_DONUT",
+            "goal_description": "make donut",
+            "spatial_context": {
+                "room1": [],
+                "room2": []
+            },
+            "segments": [
+                {
+                    "level": 2,
+                    "number": 0,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 1,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": []
+                },
+                {
+                    "level": 2,
+                    "number": 2,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": []
+                },
+                {
+                    "level": 2,
+                    "number": 3,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": []
+                },
+                {
+                    "level": 2,
+                    "number": 4,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": []
+                },
+                {
+                    "level": 2,
+                    "number": 5,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": []
+                }
+            ]
+        },
+        {
+            "level": 1,
+            "number": 8,
+            "video_uid": "72c1c79c-c222-49c3-a20d-cf76e865b9bd",
+            "duration": 121.77,
+            "scenarios": [
+                "Baker"
+            ],
+            "split": "train",
+            "goal_category": "COOKING:MAKE_FLATBREAD",
+            "goal_description": "Frying flatbread.",
+            "spatial_context": {
+                "room1": [],
+                "room2": []
+            },
+            "segments": [
+                {
+                    "level": 2,
+                    "number": 0,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 4,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 5,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 6,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 7,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 8,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 9,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 10,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 11,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 12,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 13,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 14,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 15,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 16,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 17,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 18,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 19,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 20,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 1,
+            "number": 9,
+            "video_uid": "e7341197-a3ee-4259-a392-32e766ef07c6",
+            "duration": 122.73,
+            "scenarios": [
+                "Baker"
+            ],
+            "split": "train",
+            "goal_category": "COOKING:MAKE_DONUT",
+            "goal_description": "Making doughnuts",
+            "spatial_context": {
+                "room1": [],
+                "room2": []
+            },
+            "segments": [
+                {
+                    "level": 2,
+                    "number": 0,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 1,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 2,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        },
+                        {
+                            "level": 3,
+                            "number": 3,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "number": 1,
+                    "context": {
+                        "player": [],
+                        "change": []
+                    },
+                    "segments": [
+                        {
+                            "level": 3,
+                            "number": 0,
+                            "context": {
+                                "player": [],
+                                "change": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
