@@ -4,5 +4,10 @@ ego4d_data/
 egogoal/
 egotrack/
 
+# isnore any aws related projects or download files
 aws/
-awscliv2.zip
+# deleted anyway
+awscliv2.zip 
+
+# ignore any .env variable api keys
+.env
