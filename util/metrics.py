@@ -19,3 +19,7 @@ def edit_distance(preds, labels):
         dist = min([editdistance.eval(preds[n, :, k], labels[n])/Z for k in range(K)])
         dists.append(dist)
     return np.mean(dists)
+
+
+def printtest():
+    print("metrics.pssSy")
