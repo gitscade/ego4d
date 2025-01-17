@@ -1,5 +1,4 @@
 import json
-
 # TODO: def function that reads one annotation file and selects level 2 actions in formatted forms. The function should return 
 """
 - read from "root/data/ego4d_annotation/demo/input"
@@ -9,9 +8,6 @@ import json
 - parse goalstep segments
 - parse spatial context segments
 """
-def read_data(path):
-    data = json.load(open(path))
-    return data
 
 
 def extract_goalstep_segments(data):
@@ -42,14 +38,30 @@ def extract_goalstep_segments(data):
 
 def extract_lev2_goalstep_segments(video):
     """
-    func: return lev2 segments for a single video
+    func: return lev2 & lev3 segments for a single video
     input: video: one video element of json loaded file
     output: lv2segments: [v1seg1lv2, v1seg2lv2,...]
     """
     lv2segments = []
+    lv3segments = []
+
+    for lv2segment in video:
+        lv2segments.extend(lv2segment["context"])
+        for lv3segment in lv2segment:
+            lv3segments.extend(lv3segment["context"])
+            
+    print(lv2segments)
+    print(lv3segments)
+    return lv2segments, lv3segments
+
+# def extract_lev2_goalstep_segments():
+#     """
+#     func: return lev2 & lev3 segments from demo inputs
+#     """
+#     lv2segments = []
 
 
-    return lv2segments
+#     return lv2segments
 
 
 def extract_spatial_context(video):
@@ -61,3 +73,31 @@ def extract_spatial_context(video):
     spatial_context = []
     
     return spatial_context
+
+
+if __name__=="__main__":
+
+    video = {"segments":[
+        {"level":2,
+        "context":{"content1":"xxx"},
+        "segments": 
+        [
+            {"level":3,
+            "context":{"content1-1":"xxx"},
+            },
+            {
+            "level":3,
+            "context":{"content1-2":"xxx"},
+            }
+        ]
+        },
+        {
+        "level":2,
+        "context":{"content2":"xxx"},
+        "segments": []
+        }
+    ]}
+
+    print(video["segments"][0])
+    extract_lev2_goalstep_segments(video)
+
