@@ -26,8 +26,11 @@ target_spatial_context = "target context"
 
 # define alternative template for langchain chain
 template_1 = """
-A source room with context of {source_spatial_context} is conducting {goalstep}. Your space has target context of {target_spatial_context}. You want to conduct the same goals as the source room with current spatial settings. what are the 20 actions to be taken 
+A source room with context of {source_spatial_context} is conducting {goalstep}. Your space has target context of {target_spatial_context}. You want to conduct the same goals as the source room with current spatial settings. what are the 20 actions that should be taken?
 """
+
+
+
 
 
 

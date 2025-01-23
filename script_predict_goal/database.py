@@ -16,7 +16,7 @@ from langchain_community.vectorstores import DocArrayInMemorySearch
 # TODO: implement functions to 
 
 
-
+#=======MERGE, GOALSTEP DOCUs, SPATIAL DOCUs==========
 def merge_json_video_list(path):
     """
     func: read all json files in directory & merge "videos" list of all files into one
@@ -109,7 +109,7 @@ def make_spatial_document_list(video_list):
     document_list = []
     # Traverse the JSON structure
     for video in video_list:
-        # Create a document for the video
+        # Create a document for the video(level1)
         video_doc = Document(
             page_content=f"Video UID: {video['video_uid']}\nGoal: {video['goal_description']}\nSpatial_context: {video['spatial_context']}",
             metadata={
@@ -121,7 +121,7 @@ def make_spatial_document_list(video_list):
         )
         document_list.append(video_doc)
         
-        # Traverse level 1 segments and CREATE DOCUMENT and APPEND
+        # Traverse level 2 segments and CREATE DOCUMENT and APPEND
         for i, level2_segment in enumerate(video.get("segments", [])):
             level2_doc = Document(
                 page_content=f"Level 2 Segment {i + 1} for level 1 {video['video_uid']}\nContext: {level2_segment['context']}",
@@ -134,7 +134,7 @@ def make_spatial_document_list(video_list):
             )
             document_list.append(level2_doc)
 
-            # Traverse level 2 segments and CREATE DOCUMENT and APPEND
+            # Traverse level 3 segments and CREATE DOCUMENT and APPEND
             for j, level3_segment in enumerate(level2_segment.get("segments", [])):
                 level3_doc = Document(
                     page_content=f"Level 3 Segment {j + 1} for Level 2 Segment {i + 1} in Video {video['video_uid']}\nContext: {level3_segment['context']}",
@@ -154,17 +154,32 @@ def make_spatial_document_list(video_list):
     #     print("-" * 50)
     return document_list
 
-
-def make_save_vectorstore(input_list, embeddings, isDocument):
+#=======LOAD & SAVE===========
+def save_vectorstore(vectorstore, path, name):
     """
-    func: make vectorstore with json files
-    input: a single list named videos = []
-    output: return and save vecstore
+    func: save input vectorstore to path as 
+    
     """
-    vectorstore = []
-    if isDocument:
-        vectorstore = DocArrayInMemorySearch.from_documents(input_list, embedding=embeddings)
-    else:
-        vectorstore = DocArrayInMemorySearch.from_texts(input_list, embedding=embeddings)
+    
+    return
 
-    return vectorstore
+def load_vectorstore(path):
+    
+    return None
+
+
+
+#====trash====
+# def make_save_vectorstore(input_list, embeddings, isDocument):
+#     """
+#     func: make vectorstore with json files
+#     input: a single list named videos = []
+#     output: return and save vecstore
+#     """
+#     vectorstore = []
+#     if isDocument:
+#         vectorstore = DocArrayInMemorySearch.from_documents(input_list, embedding=embeddings)
+#     else:
+#         vectorstore = DocArrayInMemorySearch.from_texts(input_list, embedding=embeddings)
+
+#     return vectorstore

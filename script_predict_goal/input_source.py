@@ -9,8 +9,7 @@ import json
 - parse spatial context segments
 """
 
-
-def extract_goalstep_segments(data):
+def extract_all_goalstep_segments(data):
     """
     func: 
     input: data: json loaded data
@@ -36,7 +35,8 @@ def extract_goalstep_segments(data):
         recurse_segments(video, parent_id=None, level=1)    
     return segments            
 
-def extract_lev2_goalstep_segments(video):
+
+def extract_lower_goalstep_segments(video):
     """
     func: return lev2 & lev3 segments for a single video
     input: video: one video element of json loaded file
@@ -54,15 +54,6 @@ def extract_lev2_goalstep_segments(video):
     print(lv3segments)
     return lv2segments, lv3segments
 
-# def extract_lev2_goalstep_segments():
-#     """
-#     func: return lev2 & lev3 segments from demo inputs
-#     """
-#     lv2segments = []
-
-
-#     return lv2segments
-
 
 def extract_spatial_context(video):
     """
@@ -73,6 +64,45 @@ def extract_spatial_context(video):
     spatial_context = []
     
     return spatial_context
+
+
+#TODO: Maybe this method is not needed at all?
+# def extract_parent_segments(input_segments, all_segments):
+#     """
+#     func: find unique parent segments(dict list) for all of the input segments
+#     input: list of input segments, all segment list
+#     output: list of parent segments
+#     """
+#     parent_segments = []
+#     def find_parent_segments(segment):
+#         # lookup metadata for parent level and id
+#         metadata = segment["metadata"]
+#         seach_parent_level = metadata["level"] - 1
+#         search_parent_id = metadata["parent_id"]
+ 
+#         # if parent, find and append
+#         parent_segments = [
+#         item for item in all_segments:
+#             if item["metadata"].get("level") == seach_parent_level and item["metadata"].get("parent_id") == search_parent_id
+#         ]
+
+#         parent_segments.append()
+
+#         # lookup metadata for any highest level segment
+#         parent_segments.append()
+
+#     for segment in input_segments:
+#         find_parent_segments(segment)
+    
+
+#     # make output list into hashable format and retrieve unique elements
+#     unique_parent_segments = list({frozenset(d.items()): d for d in parent_segments}.values())
+#     return unique_parent_segments
+
+
+
+
+
 
 
 if __name__=="__main__":
@@ -98,6 +128,5 @@ if __name__=="__main__":
         }
     ]}
 
-    print(video["segments"][0])
-    extract_lev2_goalstep_segments(video)
-
+    #print(video["segments"][0])
+    extract_lower_goalstep_segments(video)
