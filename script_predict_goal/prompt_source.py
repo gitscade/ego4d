@@ -1,4 +1,5 @@
 from langchain.prompts import ChatPromptTemplate
+from langchain.prompts import PromptTemplate
 """
 -define template with {context} {question} {rules}
 -define context
@@ -11,28 +12,33 @@ template_source = """
 Answer the question based on the context below. If you can't 
 answer the question, reply "I don't know".
 
+Role: {role}
 Context: {context}
 Question: {question}
-Rules: {rules}
-"""
-
-# define context, question, rules
-context = ""
-question = ""
-rules = ""
-
-source_spatial_context = "source context"
-target_spatial_context = "target context"
-
-# define alternative template for langchain chain
-template_1 = """
-A source room with context of {source_spatial_context} is conducting {goalstep}. Your space has target context of {target_spatial_context}. You want to conduct the same goals as the source room with current spatial settings. what are the 20 actions that should be taken?
 """
 
 
+role = [{'role':'system', 'content':'you are a helpful assisant that predicts the goal of the user inside a scene. You are given the actions of the user and the initial spatial layout of the scene'}]
+
+context = []
+
+# question = [{'role':'user', 'content':'A person has performed the given actions in the form of a sequence of actions. Each action can be defined by three forms. In form 1, an action is defined by a {verb} and a {noun}. In form 2, an action is defined by a {verb}, a {conjunction}, and a {noun}. In form 3, an action is defined by a {verb}, {noun}, and an {objective}. What is the goal of the current user? Provide the answer in form 1, in a {verb} and a {noun} pair'}]
+
+question = [{'role':'user', 'content':'A person has performed the given actions in the form of a sequence of actions.What is the goal of the current user? Provide the answer in  a verb and a noun pair'}]
 
 
-
+def make_context(input_action_sequence, input_spatial_layout, relevant_actions, relevant_spaces):
+    '''
+    func: fill out the context information for the source space
+    input: input action sequence of the source space 
+    input: initial spatial layout of the source space
+    input: relevant documents from database
+    input: relevant spatial layout from database
+    output: context
+    '''
+    input_action_sequence = input_action_sequence
+    context = f'User performs an action sequence as follows {{input_action_sequence}}. The scene the user is in had the initial spatial layout as follows {input_spatial_layout}. In database, other people performed similar actions as follows {relevant_actions}. In these similar cases, the spatial layout example is as follows {relevant_spaces}'
+    return context
 
 
 
