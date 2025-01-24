@@ -62,7 +62,7 @@ def make_goalstep_document_list(video_list):
         )
         document_list.append(video_doc)
 
-        # Traverse level 1 segments and CREATE DOCUMENT and APPEND
+        # Traverse level 2 segments and CREATE DOCUMENT and APPEND
         for i, level2_segment in enumerate(video.get("segments", [])):
             level2_doc = Document(
                 page_content=f"Level 2 Segment {i + 1} for Video {video['video_uid']}\nStep: {level2_segment['step_description']}",

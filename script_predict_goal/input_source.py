@@ -40,18 +40,21 @@ def extract_lower_goalstep_segments(video):
     """
     func: return lev2 & lev3 segments for a single video
     input: video: one video element of json loaded file
-    output: lv2segments: [v1seg1lv2, v1seg2lv2,...]
+    output: lv2segments: ['Kneads the dough with the mixer.', 'Pours the flour into the mixer', 'Organize the table', ...]
+    output: lv3segments: ['weigh the dough', 'weigh the dough', 'weigh the dough', 'move scale to tabletop', ...]
     """
     lv2segments = []
     lv3segments = []
 
-    for lv2segment in video:
-        lv2segments.extend(lv2segment["context"])
-        for lv3segment in lv2segment:
-            lv3segments.extend(lv3segment["context"])
-            
-    print(lv2segments)
-    print(lv3segments)
+    #print(video)
+    for i, level2_segment in enumerate(video.get("segments", [])):    
+        lv2segments.append(level2_segment["step_description"])
+
+        for j, level3_segment in enumerate(level2_segment.get("segments", [])):
+            lv3segments.append(level3_segment["step_description"])
+
+    #print(lv2segments)
+    #print(lv3segments)
     return lv2segments, lv3segments
 
 
@@ -59,11 +62,9 @@ def extract_spatial_context(video):
     """
     func: extract spatial_context section from the video dictionary
     input: video: video from which to extract spatial context
-    output: spatial_context = []
+    output: spatial_context = {'room1': [{'entity': {'type': 'avatar', 'name': 'player', 'status': 'sit'}, 'relation':...
     """
-    spatial_context = []
-    
-    return spatial_context
+    return video["spatial_context"]
 
 
 #TODO: Maybe this method is not needed at all?
