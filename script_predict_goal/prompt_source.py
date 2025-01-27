@@ -19,14 +19,11 @@ Question: {question}
 
 
 role = [{'role':'system', 'content':'you are a helpful assisant that predicts the goal of the user inside a scene. You are given the actions of the user and the initial spatial layout of the scene'}]
-
 context = []
-
-# question = [{'role':'user', 'content':'A person has performed the given actions in the form of a sequence of actions. Each action can be defined by three forms. In form 1, an action is defined by a {verb} and a {noun}. In form 2, an action is defined by a {verb}, a {conjunction}, and a {noun}. In form 3, an action is defined by a {verb}, {noun}, and an {objective}. What is the goal of the current user? Provide the answer in form 1, in a {verb} and a {noun} pair'}]
-
 question = [{'role':'user', 'content':'A person has performed the given actions in the form of a sequence of actions.What is the goal of the current user? Provide the answer in  a verb and a noun pair'}]
 
 
+# THIS IS NOT USED NOW (0127)
 def make_context(input_action_sequence, input_spatial_layout, relevant_actions, relevant_spaces):
     '''
     func: fill out the context information for the source space

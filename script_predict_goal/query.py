@@ -5,7 +5,7 @@ input_spatial_context = []
 input_query_template = f"{input_spatial_context} | {input_goalstep_segments}"
 
 
-def return_source_input_query(input_goalstep_segments, input_spatial_context):
+def return_source_database_query(input_goalstep_segments, input_spatial_context):
     '''
     func: return database query for source space
     input: input_goalstep_segments from source
