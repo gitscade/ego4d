@@ -8,19 +8,20 @@ from langchain.prompts import PromptTemplate
 """
 
 # define template
-template_source = """
-Answer the question based on the context below. If you can't 
-answer the question, reply "I don't know".
+template1 = """You are an assistant for question-answering tasks. 
+    Use the following pieces of retrieved context to answer the question. 
 
-Role: {role}
-Context: {context}
-Question: {question}
-"""
-
-
-role = [{'role':'system', 'content':'you are a helpful assisant that predicts the goal of the user inside a scene. You are given the actions of the user and the initial spatial layout of the scene'}]
-context = []
-question = [{'role':'user', 'content':'A person has performed the given actions in the form of a sequence of actions.What is the goal of the current user? Provide the answer in  a verb and a noun pair'}]
+    #Role:
+    {role}
+    #Question: 
+    {question} 
+    #Action_Sequence: 
+    {action_sequence} 
+    #Spatial_Layout
+    {spatial_layout}
+    #Similar_Space_Example
+    {relevant_space}
+    """
 
 
 # THIS IS NOT USED NOW (0127)
