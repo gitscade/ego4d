@@ -1,6 +1,9 @@
 import json
 import argparse
 
+"""
+used only for storing examples
+"""
 message = [
     {
         'role':'system',

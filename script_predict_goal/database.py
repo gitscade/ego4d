@@ -39,6 +39,35 @@ def merge_json_video_list(path):
                     print(f"Error reading {filename}: {e}")
     return merged_videos
 
+
+def exclude_test_video_list(video_list, exclude_uid_list):
+    """
+    func: exclude video element that contains uid element of the exclude_uid_list
+    func: reorder test_video_list, so that it is sorted like the exclude_uid_list
+    input: video_list, exclude_uid_list(uid_list)
+    output: new_video_list, test_video_list
+    """
+    new_video_list = []
+    test_video_list = []    
+    for video in video_list:
+        uid = video["video_uid"]
+        if uid in exclude_uid_list:
+            test_video_list.append(video)
+            # print(uid)
+        else:
+            new_video_list.append(video)
+
+    # sort test video list so that it follows sort order of uid_list
+    test_video_list = sorted(test_video_list, key=lambda d: exclude_uid_list.index(d["video_uid"]))
+    # for video in test_video_list:
+    #     print(video["video_uid"])
+    
+    return new_video_list, test_video_list
+
+
+    
+
+
 def make_goalstep_document_list(video_list):
     """
     func: return document list for making vectorstore

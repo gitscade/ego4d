@@ -8,6 +8,20 @@ from langchain.prompts import PromptTemplate
 """
 
 # define template
+template0 = """You are an assistant for question-answering tasks. 
+    Use the following pieces of retrieved context to answer the question. 
+
+    #Role:
+    {role}
+    #Question: 
+    {question} 
+    #Action_Sequence: 
+    {action_sequence} 
+    #Spatial_Layout
+    {spatial_layout}
+    """
+
+
 template1 = """You are an assistant for question-answering tasks. 
     Use the following pieces of retrieved context to answer the question. 
 
@@ -19,6 +33,8 @@ template1 = """You are an assistant for question-answering tasks.
     {action_sequence} 
     #Spatial_Layout
     {spatial_layout}
+    #Similar_Steps
+    {relevant_actions}
     #Similar_Space_Example
     {relevant_space}
     """
