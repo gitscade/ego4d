@@ -39,23 +39,12 @@ template1 = """You are an assistant for question-answering tasks.
     {relevant_space}
     """
 
-
-# THIS IS NOT USED NOW (0127)
-def make_context(input_action_sequence, input_spatial_layout, relevant_actions, relevant_spaces):
-    '''
-    func: fill out the context information for the source space
-    input: input action sequence of the source space 
-    input: initial spatial layout of the source space
-    input: relevant documents from database
-    input: relevant spatial layout from database
-    output: context
-    '''
-    input_action_sequence = input_action_sequence
-    context = f'User performs an action sequence as follows {{input_action_sequence}}. The scene the user is in had the initial spatial layout as follows {input_spatial_layout}. In database, other people performed similar actions as follows {relevant_actions}. In these similar cases, the spatial layout example is as follows {relevant_spaces}'
-    return context
+template_transfer = """
 
 
 
+
+"""
 
 
 
