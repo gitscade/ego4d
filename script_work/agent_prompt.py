@@ -39,14 +39,35 @@ template1 = """You are an assistant for question-answering tasks.
     {relevant_space}
     """
 
-template_transfer = """
+template_baseline0 = """You are an assitant for question-answering tasks. Use the following pieces of retrieved context to answer the question. You must follow the rules provided
 
-
-
-
+    #Role:
+    {role}
+    #Question:
+    {question}
+    #Goal:
+    {goal}
+    #Spatial_Layout:
+    {spatial_layout}
+    #Rules:
+    {rules}
 """
 
+template_baseline1 = """You are an assitant for question-answering tasks. Use the following pieces of retrieved context to answer the question. You must follow the rules provided. When answering questions, you can always look at the relevant_examples for valid question-answer pairs.
 
+    #Role:
+    {role}
+    #Question:
+    {question}
+    #Goal:
+    {goal}
+    #Spatial_Layout:
+    {spatial_layout}
+    #Rules:
+    {rules}
+    #Relevant_Examples:
+    {relevant_examples}
+    """
 
 
 

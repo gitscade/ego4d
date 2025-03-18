@@ -1,0 +1,12 @@
+index,ground_truth,prediction
+0,making potato soup, "Cook soup"
+1,Making tortilla soup, "Prepare tortilla soup"
+2,Prepare steak meat,"Prepare steak"
+3,preparing steak dish,"prepare meal"
+4,Prepare garlic,"Prepare garlic butter"
+5,peel garlic,"prepare dish"
+6,Making a bread sandwich,"Prepare sandwich"
+7,preparing sandwich bread,"make sandwich"
+8,preparing coffee,"organize groceries"
+9,cooking general,"prepare breakfast"
+10,cooking general,"serve pie"
