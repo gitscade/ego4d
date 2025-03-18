@@ -22,27 +22,19 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain.tools import tool
 from langchain.agents import AgentType, initialize_agent
 from langchain.memory import ConversationBufferMemory
-#from IPython.display import Image, display
-# from langchain.llms import Ollama
 
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))
-
-import database
-import input_source
-import query
-import script_work.prompt as prompt
+import script_work.agent_database as agent_database
+import script_work.agent_input as agent_input
+import script_work.agent_query as agent_query
+import script_work.agent_prompt as agent_prompt
 from util import util_constants
 
 
 # -----------------------
 # CONFIGURATION
 # -----------------------
-# OLLAMA_MODEL = "mistral"  # Change to "llama3", "gemma", etc.
-# EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
-# DOCUMENT_PATHS = ["docs/document1.pdf", "docs/document2.txt", "docs/data.csv"]
-# FAISS_INDEX_PATH = "faiss_index"
-
 LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini", temperature=1) #10x cheaper
 ALLOWED_WORDS = {
     "nouns": {"apple", "banana", "computer", "data", "research"},
@@ -70,8 +62,8 @@ parser_stroutput = StrOutputParser()
 # EXTRACT video list
 print(GOALSTEP_ANNOTATION_PATH)
 print(SPATIAL_ANNOTATION_PATH)
-goalstep_videos_list = database.merge_json_video_list(GOALSTEP_ANNOTATION_PATH)
-spatial_videos_list = database.merge_json_video_list(SPATIAL_ANNOTATION_PATH)
+goalstep_videos_list = agent_database.merge_json_video_list(GOALSTEP_ANNOTATION_PATH)
+spatial_videos_list = agent_database.merge_json_video_list(SPATIAL_ANNOTATION_PATH)
 print(f"goalstep vids: {len(goalstep_videos_list)} and spatial vids: {len(spatial_videos_list)}")
 
 # EXCLUDE test videos
@@ -88,16 +80,16 @@ test_uid = [
     "b17ff269-ec2d-4ad8-88aa-b00b75921427", #prepare coffee and bread
     "58b2a4a4-b721-4753-bfc3-478cdb5bd1a8" #prepare tea and pie
 ]
-goalstep_videos_list, goalstep_test_video_list = database.exclude_test_video_list(goalstep_videos_list, test_uid)
-spatial_videos_list, spatial_test_video_list = database.exclude_test_video_list(spatial_videos_list, test_uid)
+goalstep_videos_list, goalstep_test_video_list = agent_database.exclude_test_video_list(goalstep_videos_list, test_uid)
+spatial_videos_list, spatial_test_video_list = agent_database.exclude_test_video_list(spatial_videos_list, test_uid)
 print(f"testuid excluded: goalstep vids: {len(goalstep_videos_list)} and spatial vids: {len(spatial_videos_list)}")
 print(f"testuid list: goalstep vids: {len(goalstep_test_video_list)} and spatial vids: {len(spatial_test_video_list)}")
 
 # MAKE docu list
-goalstep_document_list = database.make_goalstep_document_list(goalstep_videos_list)
-spatial_document = database.make_spatial_document_list(spatial_videos_list)
-goalstep_test_document_list = database.make_goalstep_document_list(goalstep_test_video_list)
-spatial_test_document_list = database.make_spatial_document_list(spatial_test_video_list)
+goalstep_document_list = agent_database.make_goalstep_document_list(goalstep_videos_list)
+spatial_document = agent_database.make_spatial_document_list(spatial_videos_list)
+goalstep_test_document_list = agent_database.make_goalstep_document_list(goalstep_test_video_list)
+spatial_test_document_list = agent_database.make_spatial_document_list(spatial_test_video_list)
 
 print(f"MAKE_DOCU: goalstep_document_list: {len(goalstep_document_list)}")
 print(f"MAKE_DOCU: spatial_document_list: {len(spatial_document)}")
@@ -182,24 +174,36 @@ tools = [retrieve_relevant_docs_goalstep, retrieve_relevant_docs_spatial, check_
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
 
-# agent_prompt = ChatPromptTemplate.from_template(
-#     "You are an AI assistant that retrieves and validates answers from documents.\n"
-#     "Use the 'retrieve_relevant_docs' tool to fetch information before answering.\n"
-#     "Whenever you generate an answer, use the following tools to verify it:\n"
-#     "- 'check_answer_relevance' to ensure the answer actually answers the question.\n"
-#     "- 'enforce_lexical_constraints' to verify that the answer only contains allowed words.\n"
-#     "Only finalize an answer if it passes both checks.\n"
-#     "User Query: {query}"
-# )
+agent_prompt = ChatPromptTemplate.from_template(
+    "You are an AI assistant that retrieves and validates answers from documents.\n"
+    "Use the 'retrieve_relevant_docs' tool to fetch information before answering.\n"
+    "Whenever you generate an answer, use the following tools to verify it:\n"
+    "- 'check_answer_relevance' to ensure the answer actually answers the question.\n"
+    "- 'enforce_lexical_constraints' to verify that the answer only contains allowed words.\n"
+    "Only finalize an answer if it passes both checks.\n"
+    "User Query: {query}"
+)
 
-# agent = initialize_agent(
-#     agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
-#     tools=tools,
-#     llm=llm,
-#     verbose=True,
-#     memory=memory,
-#     handle_parsing_errors=True
-# )
+agent = initialize_agent(
+    agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+    tools=tools,
+    llm=LLM_MODEL,
+    verbose=True,
+    memory=memory,
+    handle_parsing_errors=True
+)
+
+
+
+
+agent3 = agent
+
+def run_agent3(input_text):
+    return agent3.run(input_text)
+
+if __name__ == "__main__":
+    print(run_agent3("Test from agent3"))
+
 
 # # -----------------------
 # # STREAMLIT UI
