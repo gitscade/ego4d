@@ -10,19 +10,23 @@ import openai
 import pandas as pd
 import logging
 from dotenv import load_dotenv
-
+#vectorstore
 from langchain_community.document_loaders import PyPDFLoader, TextLoader, CSVLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import FAISS
+#llm
 from langchain_ollama import OllamaLLM
-from langchain_openai.chat_models import ChatOpenAI
+from langchain.llms import OpenAI # good for single return task
+from langchain_openai.chat_models import ChatOpenAI # good for agents
 from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
+#agents
 from langchain.tools import tool
+from langchain.tools import Tool
 from langchain.agents import AgentType, initialize_agent
 from langchain.memory import ConversationBufferMemory
-
+#packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))
 import script_work.agent_database as agent_database
@@ -35,7 +39,7 @@ from util import util_constants
 # -----------------------
 # CONFIGURATION
 # -----------------------
-LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini", temperature=1) #10x cheaper
+
 ALLOWED_WORDS = {
     "nouns": {"apple", "banana", "computer", "data", "research"},
     "verbs": {"calculate", "analyze", "study", "process"}
@@ -166,15 +170,20 @@ def enforce_lexical_constraints(answer: str) -> str:
         return f"Invalid words found: {', '.join(invalid_words)}. Answer must use only allowed nouns and verbs."
     return "Answer follows lexical constraints."
 
+
+
+#check for right procedures
+#check for right state changes(=right action)
+
+
 # -----------------------
 # AGENT SETUP
 # -----------------------
-tools = [retrieve_relevant_docs_goalstep, retrieve_relevant_docs_spatial, check_answer_relevance, enforce_lexical_constraints]
-
-memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
-
-
-agent_prompt = ChatPromptTemplate.from_template(
+LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini", temperature=1)
+LLM_MODEL = OpenAI(model_name="gpt-4", temperature=0)
+TOOLS = [retrieve_relevant_docs_goalstep, retrieve_relevant_docs_spatial, check_answer_relevance, enforce_lexical_constraints]
+MEMORY = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+AGENT_PROMPT = ChatPromptTemplate.from_messages(
     "You are an AI assistant that retrieves and validates answers from documents.\n"
     "Use the 'retrieve_relevant_docs' tool to fetch information before answering.\n"
     "Whenever you generate an answer, use the following tools to verify it:\n"
@@ -184,25 +193,25 @@ agent_prompt = ChatPromptTemplate.from_template(
     "User Query: {query}"
 )
 
-agent = initialize_agent(
+# -----------------------
+# RUN AGENT IN MAIN
+# -----------------------
+AGENT = initialize_agent(
     agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
-    tools=tools,
+    tools= TOOLS,
     llm=LLM_MODEL,
     verbose=True,
-    memory=memory,
+    memory=MEMORY,
     handle_parsing_errors=True
 )
 
+def run_agent(input_text):
+    formatted_prompt = AGENT_PROMPT.format(query=input_text)
+    return AGENT.run(formatted_prompt)
 
-
-
-agent3 = agent
-
-def run_agent3(input_text):
-    return agent3.run(input_text)
 
 if __name__ == "__main__":
-    print(run_agent3("Test from agent3"))
+    print(run_agent("Start process"))
 
 
 # # -----------------------
