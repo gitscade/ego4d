@@ -13,10 +13,10 @@ from dotenv import load_dotenv
 #vectorstore
 from langchain_community.document_loaders import PyPDFLoader, TextLoader, CSVLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 #llm
 from langchain_ollama import OllamaLLM
-from langchain.llms import OpenAI # good for single return task
+from langchain_community.llms import OpenAI
 from langchain_openai.chat_models import ChatOpenAI # good for agents
 from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain_core.output_parsers import StrOutputParser
@@ -24,8 +24,10 @@ from langchain_core.prompts import ChatPromptTemplate
 #agents
 from langchain.tools import tool
 from langchain.tools import Tool
-from langchain.agents import AgentType, initialize_agent
-from langchain.memory import ConversationBufferMemory
+#from langchain.agents import AgentType, initialize_agent # deprecated
+from langchain.agents import AgentType, create_react_agent, AgentExecutor
+#from langchain.memory import ConversationBufferMemory # being phased out
+from langgraph.checkpoint.memory import MemorySaver
 #packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))
@@ -39,7 +41,6 @@ from util import util_constants
 # -----------------------
 # CONFIGURATION
 # -----------------------
-
 ALLOWED_WORDS = {
     "nouns": {"apple", "banana", "computer", "data", "research"},
     "verbs": {"calculate", "analyze", "study", "process"}
@@ -59,6 +60,7 @@ load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 model1 = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini") #10x cheaper
 parser_stroutput = StrOutputParser()
+
 
 # -----------------------
 # PREPROCESS DATA
@@ -130,109 +132,185 @@ spatial_retriever = spatial_vector_store.as_retriever(search_type="similarity", 
 
 
 # -----------------------
-# TOOLS
+# TOOL FUNCTION
 # -----------------------
-@tool
-def retrieve_relevant_docs_goalstep(query: str):
-    """Retrieve the most relevant documents based on a user's query."""
-    return goalstep_retriever.invoke(query)
-
-
-def retrieve_relevant_docs_spatial(query: str):
-    """Retrieve the most relevant documents based on a user's query."""
-    return spatial_retriever.invoke(query)
-
-@tool
-def retrieve_goalstep_docs(query:str):
+def goalstep_information_retriever(query:str):
     """Retrieve the most relevant goalstep dataset documents based on a user's query."""
     return goalstep_vector_store.invoke(query)
 
-@tool
-def retrieve_spatial_docs(query:str):
+def spatial_information_retriver(query:str):
     """Retrieve the most relevant spatial context documents based on a user's query"""
     return spatial_vector_store.invoke(query)
 
-@tool
-def check_answer_relevance(question: str, answer: str) -> str:
-    """Check if the provided answer correctly and fully addresses the given question."""
-    prompt = f"Does this answer correctly and fully respond to the question?\n\n"
-    prompt += f"Question: {question}\nAnswer: {answer}\n"
-    prompt += "Reply with 'Yes' or 'No' and explain why."
-    return LLM_MODEL.invoke(prompt)
+# TODO2:
+# fetching whole documents based on retrieval system.
+# 
 
-@tool
-def enforce_lexical_constraints(answer: str) -> str:
-    """Ensure the answer only contains approved nouns and verbs."""
-    words = set(re.findall(r'\b\w+\b', answer.lower()))
-    invalid_words = words - ALLOWED_WORDS["nouns"] - ALLOWED_WORDS["verbs"]
-
-    if invalid_words:
-        return f"Invalid words found: {', '.join(invalid_words)}. Answer must use only allowed nouns and verbs."
-    return "Answer follows lexical constraints."
+def action_sequence_generation(query: str, goalstep_info_example: str, spatial_info_example: str):
+    prompt = f"You are an action sequence generator that breaks down activity in the query into step by step action. The activity is performed only with the entities of various states given by the query's spatial_information.\n You can also retrieve goalstep information in other environments using goalstep_retriever to see which activity might lead to which specific actions.\n You can also retrieve spatial information for other environments to see how entities and their state changes in other environment takes place.\n"
+    
+    response = openai.ChatCompletion.create(
+        model="gpt-4o",
+        messages=[{"role": "system", "content": "You are an action sequence generator"},
+                  {"role": "user", "content": prompt}],
+        temperature=0.5
+    )
+    
+    return response["choices"][0]["message"]["content"]
 
 
+def action_sequence_validation(query: str, generated_action_sequence: str):
+    prompt = f"You are an action sequence validator. You have to check three things. First, you need to see whether the current action sequence fulfills the target activity given in the query. Second, you need to see whether the actions are performable with entities of various states given in the query as spatial_information. Third, you need to check if the sequence of actions are performed in logical step. When any of the three items in the checklist fails, you have to generate reasons why validation failed to the action_sequence_generation tool for regenerating answer.\n"
+    
+    response = openai.ChatCompletion.create(
+        model="gpt-4o",
+        messages=[{"role": "system", "content": "You are an action sequence validator"},
+                  {"role": "user", "content": prompt}],
+        temperature=0.5
+    )
+    
+    return response["choices"][0]["message"]["content"]
 
-#check for right procedures
-#check for right state changes(=right action)
 
+# -----------------------
+# DEFINE TOOLS with TOOLFUNC
+# -----------------------
+goalstep_tool_obj = Tool(
+    name = "goalstep_retriever_tool",
+    func = goalstep_information_retriever,
+    description = "Retrieves relevant goalstep information in other environments, where similar activities are performed in steps. "
+)
+
+spatial_tool_obj = Tool(
+    name = "spatial_retriever_tool",
+    func = spatial_information_retriver,
+    description = "Retrieves relevant spatial information for similar environments, where state changes of entities takes place in spatiotemporal fashion."
+)
+
+sequence_generation_tool_obj = Tool(
+    name = "action_sequence generation tool",
+    func = action_sequence_generation,
+    description = "Action sequence generation tool, which can break down the given activity into smaller actions. Additional information on the current target action, target environment is needed. Additional examples from other environments can also be used. Input: query(str). Output: action_sequence_steps(str)"
+)
+
+sequence_validation_tool_obj = Tool(
+    name = "action_sequence validation tool",
+    func = action_sequence_validation,
+    description = "Input: query(str), action_sequence(str). Output: command to call action_sequence_generation_tool_obj again if validation fails. If validation passes, print out the input action_sequence(str)."
+)
+
+# factorial_tool_obj = Tool(
+#     name="factorial_tool",
+#     func=factorial_tool,
+#     description="Calculates factorial. Input: number(int). Output: factorial(int)."
+# )
+# @tool
+# def check_answer_relevance(question: str, answer: str) -> str:
+#     """Check if the provided answer correctly and fully addresses the given question."""
+#     prompt = f"Does this answer correctly and fully respond to the question?\n\n"
+#     prompt += f"Question: {question}\nAnswer: {answer}\n"
+#     prompt += "Reply with 'Yes' or 'No' and explain why."
+#     return LLM_MODEL.invoke(prompt)
+
+# @tool
+# def enforce_lexical_constraints(answer: str) -> str:
+#     """Ensure the answer only contains approved nouns and verbs."""
+#     words = set(re.findall(r'\b\w+\b', answer.lower()))
+#     invalid_words = words - ALLOWED_WORDS["nouns"] - ALLOWED_WORDS["verbs"]
+#     if invalid_words:
+#         return f"Invalid words found: {', '.join(invalid_words)}. Answer must use only allowed nouns and verbs."
+#     return "Answer follows lexical constraints."
 
 # -----------------------
 # AGENT SETUP
 # -----------------------
-LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini", temperature=1)
-LLM_MODEL = OpenAI(model_name="gpt-4", temperature=0)
-TOOLS = [retrieve_relevant_docs_goalstep, retrieve_relevant_docs_spatial, check_answer_relevance, enforce_lexical_constraints]
-MEMORY = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
-AGENT_PROMPT = ChatPromptTemplate.from_messages(
-    "You are an AI assistant that retrieves and validates answers from documents.\n"
-    "Use the 'retrieve_relevant_docs' tool to fetch information before answering.\n"
-    "Whenever you generate an answer, use the following tools to verify it:\n"
-    "- 'check_answer_relevance' to ensure the answer actually answers the question.\n"
-    "- 'enforce_lexical_constraints' to verify that the answer only contains allowed words.\n"
-    "Only finalize an answer if it passes both checks.\n"
-    "User Query: {query}"
-)
+# LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini", temperature=1)
+LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4", temperature=1)
+TOOLS = [goalstep_tool_obj, spatial_tool_obj, sequence_generation_tool_obj, sequence_validation_tool_obj]
+
+# This is being deprecated. 
+#MEMORY = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+MEMORY = MemorySaver()
 
 # -----------------------
 # RUN AGENT IN MAIN
 # -----------------------
-AGENT = initialize_agent(
-    agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
-    tools= TOOLS,
-    llm=LLM_MODEL,
-    verbose=True,
-    memory=MEMORY,
-    handle_parsing_errors=True
-)
+#Deprecated: use create_react_agent or agent_executor
+# AGENT = initialize_agent(
+#     agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+#     tools= TOOLS,
+#     llm=LLM_MODEL,
+#     verbose=True,
+#     memory=MEMORY,
+#     handle_parsing_errors=True
+# )
+# Create the React agent with tools
 
-def run_agent(input_text):
-    formatted_prompt = AGENT_PROMPT.format(query=input_text)
+
+
+def run_agent(target_activity, target_scene_graph, AGENT, AGENT_PROMPT):
+    formatted_prompt = AGENT_PROMPT.format(target_activity=target_activity, target_scene_graph=target_scene_graph)
     return AGENT.run(formatted_prompt)
 
-
 if __name__ == "__main__":
-    print(run_agent("Start process"))
+    # Fetch target space index and target_scene_graph
+    target_video_idx = int(input("Input target index: "))
+    target_spatial_video = spatial_test_video_list[target_video_idx]
+    target_scene_graph = agent_input.extract_spatial_context(target_spatial_video)
+    print(target_spatial_video["video_uid"])
+
+    # Input target activity
+    target_activity = "Cook soup"
+    target_activity = input("Input target activity: ")
+
+    # AGENT_PROMPT = ChatPromptTemplate.from_messages(
+    #     "You are an action sequence planner agent that plans an action sequence comprising of multiple action steps for a user in his own environment. The user wants to perform a 'target_activity' as given below. The user is situated in a space where various entities are given by 'target_scene_graph' below.\n"
+    #     "target_activity: {target_activity}"
+    #     "target_scene_graph: {target_scene_graph}"
+    #     "For generating action sequence to answer use the 'sequence_generation_tool_obj', base on target_activity and target_scene_graph. When examples are needed for more reasonable answers, there are two tools to look for:'goalsetp_tool_obj' and 'spatial_tool_obj'. Use the 'goalstep_tool_obj' to see which action steps can be taken for similar activities. Use the 'spatial_tool_obj' to see how states of entities can change for similarly set environments. When action sequence is generated, this sequence must be checked with the 'sequence_validation_tool_obj'. Unless 'sequence_validation_tool_obj' returns true, re-generate the answer with the 'sequence_generation_tool_obj'. Only finalize an answer if it passes the 'sequence_validation_tool_obj'"
+    # )
+    AGENT_PROMPT = ChatPromptTemplate.from_template(
+        "You are an action sequence planner agent that plans an action sequence comprising of multiple action steps for a user in his own environment. The user wants to perform a 'target_activity' as given below. The user is situated in a space where various entities are given by 'target_scene_graph' below.\n"
+        "target_activity: {target_activity}"
+        "target_scene_graph: {target_scene_graph}"
+        "For generating action sequence to answer use the 'sequence_generation_tool_obj', base on target_activity and target_scene_graph. When examples are needed for more reasonable answers, there are two tools to look for:'goalsetp_tool_obj' and 'spatial_tool_obj'. Use the 'goalstep_tool_obj' to see which action steps can be taken for similar activities. Use the 'spatial_tool_obj' to see how states of entities can change for similarly set environments. When action sequence is generated, this sequence must be checked with the 'sequence_validation_tool_obj'. Unless 'sequence_validation_tool_obj' returns true, re-generate the answer with the 'sequence_generation_tool_obj'. Only finalize an answer if it passes the 'sequence_validation_tool_obj'"
+    )
 
 
-# # -----------------------
-# # STREAMLIT UI
-# # -----------------------
-# def run_streamlit_app():
-#     """Run the Streamlit UI in the same Python script."""
-#     st.title("Agentic RAG with Streamlit")
 
-#     # Input box for user query
-#     query = st.text_area("Enter your query:", "")
+    AGENT = create_react_agent(
+        tools=TOOLS,  # Register tools
+        llm=LLM_MODEL,
+        prompt=AGENT_PROMPT
+        #agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,  # Use react-based agent
+        #verbose=True,  # Enable verbose output for debugging
+        #checkpointer=MEMORY,
+        #handle parsing error not built in for this function.
+    )
 
-#     # Button to trigger the agent
-#     if st.button("Finalize Query"):
-#         if query:
-#             with st.spinner("Processing..."):
-#                 response = agent.run(query)
-#             st.subheader("Agent's Response:")
-#             st.write(response)
-#         else:
-#             st.error("Please enter a query to continue.")
+    # Run agent
+    AGENT_EXECUTOR = AgentExecutor(agent=agent, tools=tools, verbose=True)
+    print(run_agent(target_activity, target_scene_graph, AGENT, AGENT_PROMPT))
 
-# if __name__ == "__main__":
-    # run_streamlit_app()
+    # # -----------------------
+    # # STREAMLIT UI
+    # # -----------------------
+    # def run_streamlit_app():
+    #     """Run the Streamlit UI in the same Python script."""
+    #     st.title("Agentic RAG with Streamlit")
+
+    #     # Input box for user query
+    #     query = st.text_area("Enter your query:", "")
+
+    #     # Button to trigger the agent
+    #     if st.button("Finalize Query"):
+    #         if query:
+    #             with st.spinner("Processing..."):
+    #                 response = agent.run(query)
+    #             st.subheader("Agent's Response:")
+    #             st.write(response)
+    #         else:
+    #             st.error("Please enter a query to continue.")
+
+    # if __name__ == "__main__":
+        # run_streamlit_app()

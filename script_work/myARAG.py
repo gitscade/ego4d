@@ -89,6 +89,7 @@ def check_answer_relevance(question: str, answer: str) -> str:
     prompt += "Reply with 'Yes' or 'No' and explain why."
     return llm.invoke(prompt)
 
+
 @tool
 def enforce_lexical_constraints(answer: str) -> str:
     """Ensure the answer only contains approved nouns and verbs."""
@@ -98,6 +99,9 @@ def enforce_lexical_constraints(answer: str) -> str:
     if invalid_words:
         return f"Invalid words found: {', '.join(invalid_words)}. Answer must use only allowed nouns and verbs."
     return "Answer follows lexical constraints."
+
+
+
 
 # -----------------------
 # AGENT SETUP
