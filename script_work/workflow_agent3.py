@@ -275,8 +275,14 @@ if __name__ == "__main__":
         "target_scene_graph: {target_scene_graph}"
         "For generating action sequence to answer use the 'sequence_generation_tool_obj', base on target_activity and target_scene_graph. When examples are needed for more reasonable answers, there are two tools to look for:'goalsetp_tool_obj' and 'spatial_tool_obj'. Use the 'goalstep_tool_obj' to see which action steps can be taken for similar activities. Use the 'spatial_tool_obj' to see how states of entities can change for similarly set environments. When action sequence is generated, this sequence must be checked with the 'sequence_validation_tool_obj'. Unless 'sequence_validation_tool_obj' returns true, re-generate the answer with the 'sequence_generation_tool_obj'. Only finalize an answer if it passes the 'sequence_validation_tool_obj'"
     )
-
-
+    
+    AGENT_PROMPT = ChatPromptTemplate.from_messages([
+        ("system", "You are a helpful assistant that can use tools."),
+        ("user", "Query: {query}"),
+        ("system", "Available tools: {tools}. Use them wisely."),
+        ("system", "Tool names: {tool_names}"),
+        ("assistant", "{agent_scratchpad}")  # Required for React agents
+    ])
 
     AGENT = create_react_agent(
         tools=TOOLS,  # Register tools
@@ -289,7 +295,10 @@ if __name__ == "__main__":
     )
 
     # Run agent
-    AGENT_EXECUTOR = AgentExecutor(agent=agent, tools=tools, verbose=True)
+    AGENT_EXECUTOR = AgentExecutor(agent=AGENT, tools=TOOLS, verbose=True)
+    
+    QUERY = ""
+    response = AGENT_EXECUTOR.run(QUERY)
     print(run_agent(target_activity, target_scene_graph, AGENT, AGENT_PROMPT))
 
     # # -----------------------
