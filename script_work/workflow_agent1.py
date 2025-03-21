@@ -13,10 +13,10 @@ from dotenv import load_dotenv
 #vectorstore
 from langchain_community.document_loaders import PyPDFLoader, TextLoader, CSVLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 #llm
 from langchain_ollama import OllamaLLM
-from langchain.llms import OpenAI # good for single return task
+from langchain_community.llms import OpenAI
 from langchain_openai.chat_models import ChatOpenAI # good for agents
 from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain_core.output_parsers import StrOutputParser
@@ -24,8 +24,10 @@ from langchain_core.prompts import ChatPromptTemplate
 #agents
 from langchain.tools import tool
 from langchain.tools import Tool
-from langchain.agents import AgentType, initialize_agent
-from langchain.memory import ConversationBufferMemory
+#from langchain.agents import AgentType, initialize_agent # deprecated
+from langchain.agents import AgentType, create_react_agent, AgentExecutor
+#from langchain.memory import ConversationBufferMemory # being phased out
+from langgraph.checkpoint.memory import MemorySaver
 #packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))

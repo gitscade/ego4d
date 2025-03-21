@@ -14,10 +14,10 @@ from dotenv import load_dotenv
 #vectorstore
 from langchain_community.document_loaders import PyPDFLoader, TextLoader, CSVLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 #llm
 from langchain_ollama import OllamaLLM
-from langchain.llms import OpenAI # good for single return task
+from langchain_community.llms import OpenAI
 from langchain_openai.chat_models import ChatOpenAI # good for agents
 from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain_core.output_parsers import StrOutputParser
@@ -25,8 +25,10 @@ from langchain_core.prompts import ChatPromptTemplate
 #agents
 from langchain.tools import tool
 from langchain.tools import Tool
-from langchain.agents import AgentType, initialize_agent
-from langchain.memory import ConversationBufferMemory
+#from langchain.agents import AgentType, initialize_agent # deprecated
+from langchain.agents import AgentType, create_react_agent, AgentExecutor
+#from langchain.memory import ConversationBufferMemory # being phased out
+from langgraph.checkpoint.memory import MemorySaver
 #packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))
@@ -35,6 +37,7 @@ import script_work.agent_input as agent_input
 import script_work.agent_query as agent_query
 import script_work.agent_prompt as agent_prompt
 from util import util_constants
+
 
 
 # -----------------------
@@ -83,39 +86,70 @@ def retrieve_relevant_docs_spatial(query: str):
     """Retrieve the most relevant documents based on a user's query."""
     #return spatial_retriever.invoke(query)
 
-
 # -----------------------
 # AGENT SETUP
 # -----------------------
-# LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini", temperature=1) #10x cheaper
+# LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini", temperature=1)
 LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4", temperature=1)
-TOOLS = [check_goal_executability, find_common_activity, narrow_down_activity, retrieve_relevant_docs_goalstep, retrieve_relevant_docs_spatial]
-MEMORY = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
-AGENT_PROMPT = ChatPromptTemplate.from_messages(
-    "You are an AI assistant that retrieves and validates answers from documents.\n"
-    "Use the 'retrieve_relevant_docs' tool to fetch information before answering.\n"
-    "Whenever you generate an answer, use the following tools to verify it:\n"
-    "- 'check_answer_relevance' to ensure the answer actually answers the question.\n"
-    "- 'enforce_lexical_constraints' to verify that the answer only contains allowed words.\n"
-    "Only finalize an answer if it passes both checks.\n"
-    "User Query: {query}"
-)
+TOOLS = [
+    check_goal_executability,
+    find_common_activity,
+    narrow_down_activity,
+    retrieve_relevant_docs_goalstep
+    ]
+MEMORY = MemorySaver() #ConversationBufferMemory is deprecated
 
-# -----------------------
-# RUN AGENT IN MAIN
-# -----------------------
-AGENT = initialize_agent(
-    agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
-    tools= TOOLS,
-    llm=LLM_MODEL,
-    verbose=True,
-    memory=MEMORY,
-    handle_parsing_errors=True
-)
-
-def run_agent(input_text):
-    formatted_prompt = AGENT_PROMPT.format(query=input_text)
-    return AGENT.run(formatted_prompt)
 
 if __name__ == "__main__":
-    print(run_agent("Start process"))
+    # -----------------------
+    # AGENT INPUT ARGUMENTS
+    # -----------------------
+    source_activity = ""
+    target_scene_graph = ""
+    tool_names =", ".join([t.name for t in TOOLS])
+
+    # -----------------------
+    # AGENT PROMPT
+    # -----------------------
+    AGENT_PROMPT = ChatPromptTemplate.from_messages([
+        ("system", "You are an activity transfer agent. You are"),
+        ("system", "You are given a source activity. Source activity can be performed in source space without problem: {source_activity}."),
+        ("system", "This time, source_activity should be performed in new space called target space. Info about target space is given as target_scene_graph: {target_scene_graph}."),
+        ("system", "Available tools: {tools}. Use them wisely."),
+        ("system", "Tool names: {tool_names}"),  # Required for React agents
+        ("user", "{query}"),  # The user query should be directly included
+        ("assistant", "{agent_scratchpad}")  # Required for React agents
+    ])    
+
+
+    # -----------------------
+    # CREATE & RUN AGENT IN MAIN
+    # -----------------------
+    AGENT = create_react_agent(
+        tools=TOOLS,  # Register tools
+        llm=LLM_MODEL,
+        prompt=AGENT_PROMPT
+        #agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,  # Use react-based agent
+        #verbose=True,  # Enable verbose output for debugging
+        #checkpointer=MEMORY,
+        #handle parsing error not built in for this function.
+    )
+
+    AGENT_EXECUTOR = AgentExecutor(
+        agent=AGENT, 
+        tools=TOOLS, 
+        verbose=True, 
+        handle_parsing_errors=True
+    )    
+
+    QUERY = ""
+
+    response = AGENT_EXECUTOR.invoke({
+        "query": QUERY,
+        "target_activity": source_activity,
+        "target_scene_graph": target_scene_graph,
+        "tools": TOOLS,  # Pass tool objects
+        "tool_names": ", ".join(TOOL_NAMES),  # Convert list to comma-separated string
+        "agent_scratchpad": ""  # Let LangChain handle this dynamically
+    })
+    print(f"response {response}")

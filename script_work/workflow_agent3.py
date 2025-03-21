@@ -199,11 +199,6 @@ sequence_validation_tool_obj = Tool(
     description = "Input: query(str), action_sequence(str). Output: command to call action_sequence_generation_tool_obj again if validation fails. If validation passes, print out the input action_sequence(str)."
 )
 
-# factorial_tool_obj = Tool(
-#     name="factorial_tool",
-#     func=factorial_tool,
-#     description="Calculates factorial. Input: number(int). Output: factorial(int)."
-# )
 # @tool
 # def check_answer_relevance(question: str, answer: str) -> str:
 #     """Check if the provided answer correctly and fully addresses the given question."""
@@ -226,64 +221,43 @@ sequence_validation_tool_obj = Tool(
 # -----------------------
 # LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini", temperature=1)
 LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4", temperature=1)
-TOOLS = [goalstep_tool_obj, spatial_tool_obj, sequence_generation_tool_obj, sequence_validation_tool_obj]
+TOOLS = [
+    goalstep_tool_obj, 
+    spatial_tool_obj, 
+    sequence_generation_tool_obj, 
+    sequence_validation_tool_obj
+    ]
+MEMORY = MemorySaver() #ConversationBufferMemory is deprecated
 
-# This is being deprecated. 
-#MEMORY = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
-MEMORY = MemorySaver()
-
-# -----------------------
-# RUN AGENT IN MAIN
-# -----------------------
-#Deprecated: use create_react_agent or agent_executor
-# AGENT = initialize_agent(
-#     agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
-#     tools= TOOLS,
-#     llm=LLM_MODEL,
-#     verbose=True,
-#     memory=MEMORY,
-#     handle_parsing_errors=True
-# )
-# Create the React agent with tools
-
-
-
-def run_agent(target_activity, target_scene_graph, AGENT, AGENT_PROMPT):
-    formatted_prompt = AGENT_PROMPT.format(target_activity=target_activity, target_scene_graph=target_scene_graph)
-    return AGENT.run(formatted_prompt)
 
 if __name__ == "__main__":
-    # Fetch target space index and target_scene_graph
+    # -----------------------
+    # AGENT INPUT ARGUMENTS
+    # -----------------------
     target_video_idx = int(input("Input target index: "))
     target_spatial_video = spatial_test_video_list[target_video_idx]
     target_scene_graph = agent_input.extract_spatial_context(target_spatial_video)
-    print(target_spatial_video["video_uid"])
-
-    # Input target activity
-    target_activity = "Cook soup"
-    target_activity = input("Input target activity: ")
-
-    # AGENT_PROMPT = ChatPromptTemplate.from_messages(
-    #     "You are an action sequence planner agent that plans an action sequence comprising of multiple action steps for a user in his own environment. The user wants to perform a 'target_activity' as given below. The user is situated in a space where various entities are given by 'target_scene_graph' below.\n"
-    #     "target_activity: {target_activity}"
-    #     "target_scene_graph: {target_scene_graph}"
-    #     "For generating action sequence to answer use the 'sequence_generation_tool_obj', base on target_activity and target_scene_graph. When examples are needed for more reasonable answers, there are two tools to look for:'goalsetp_tool_obj' and 'spatial_tool_obj'. Use the 'goalstep_tool_obj' to see which action steps can be taken for similar activities. Use the 'spatial_tool_obj' to see how states of entities can change for similarly set environments. When action sequence is generated, this sequence must be checked with the 'sequence_validation_tool_obj'. Unless 'sequence_validation_tool_obj' returns true, re-generate the answer with the 'sequence_generation_tool_obj'. Only finalize an answer if it passes the 'sequence_validation_tool_obj'"
-    # )
-    AGENT_PROMPT = ChatPromptTemplate.from_template(
-        "You are an action sequence planner agent that plans an action sequence comprising of multiple action steps for a user in his own environment. The user wants to perform a 'target_activity' as given below. The user is situated in a space where various entities are given by 'target_scene_graph' below.\n"
-        "target_activity: {target_activity}"
-        "target_scene_graph: {target_scene_graph}"
-        "For generating action sequence to answer use the 'sequence_generation_tool_obj', base on target_activity and target_scene_graph. When examples are needed for more reasonable answers, there are two tools to look for:'goalsetp_tool_obj' and 'spatial_tool_obj'. Use the 'goalstep_tool_obj' to see which action steps can be taken for similar activities. Use the 'spatial_tool_obj' to see how states of entities can change for similarly set environments. When action sequence is generated, this sequence must be checked with the 'sequence_validation_tool_obj'. Unless 'sequence_validation_tool_obj' returns true, re-generate the answer with the 'sequence_generation_tool_obj'. Only finalize an answer if it passes the 'sequence_validation_tool_obj'"
-    )
     
+    target_activity = input("Input target activity: ")
+    
+    tool_names =", ".join([t.name for t in TOOLS])
+
+    # -----------------------
+    # AGENT PROMPT
+    # -----------------------
     AGENT_PROMPT = ChatPromptTemplate.from_messages([
-        ("system", "You are a helpful assistant that can use tools."),
-        ("user", "Query: {query}"),
+        ("system", "You are an action sequence planner agent that plans an action sequence comprising of multiple action steps for a user in their own environment."),
+        ("system", "The user wants to perform a target activity: {target_activity}."),
+        ("system", "The user is in a space described by this scene graph. Only use entities in this scene graph. Every state of each entity starts from here and can be changed during actions which effect the entity: {target_scene_graph}."),
         ("system", "Available tools: {tools}. Use them wisely."),
-        ("system", "Tool names: {tool_names}"),
+        ("system", "Tool names: {tool_names}"),  # Required for React agents
+        ("user", "{query}"),  # The user query should be directly included
         ("assistant", "{agent_scratchpad}")  # Required for React agents
     ])
 
+    # -----------------------
+    # CREATE & RUN AGENT IN MAIN
+    # -----------------------
     AGENT = create_react_agent(
         tools=TOOLS,  # Register tools
         llm=LLM_MODEL,
@@ -294,12 +268,32 @@ if __name__ == "__main__":
         #handle parsing error not built in for this function.
     )
 
-    # Run agent
-    AGENT_EXECUTOR = AgentExecutor(agent=AGENT, tools=TOOLS, verbose=True)
-    
-    QUERY = ""
-    response = AGENT_EXECUTOR.run(QUERY)
-    print(run_agent(target_activity, target_scene_graph, AGENT, AGENT_PROMPT))
+    AGENT_EXECUTOR = AgentExecutor(
+        agent=AGENT, 
+        tools=TOOLS, 
+        verbose=True, 
+        handle_parsing_errors=True
+    )
+
+    QUERY = "Give me a sequence of actions to fulfill the target_activity inside the environment of target_scene_graph"
+
+    response = AGENT_EXECUTOR.invoke({
+        "query": QUERY,
+        "target_activity": target_activity,
+        "target_scene_graph": target_scene_graph,
+        "tools": TOOLS,  # Pass tool objects
+        "tool_names": ", ".join(TOOL_NAMES),  # Convert list to comma-separated string
+        "agent_scratchpad": ""  # Let LangChain handle this dynamically
+    })
+
+    print(f"response {response}")
+
+
+    # def run_agent(target_activity, target_scene_graph, AGENT, AGENT_PROMPT):
+    #     formatted_prompt = AGENT_PROMPT.format(target_activity=target_activity, target_scene_graph=target_scene_graph)
+    #     return AGENT.run(formatted_prompt)
+
+    #print(run_agent(target_activity, target_scene_graph, AGENT, AGENT_PROMPT))
 
     # # -----------------------
     # # STREAMLIT UI
