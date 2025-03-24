@@ -7,6 +7,22 @@ from langchain.prompts import PromptTemplate
 -define rules
 """
 
+#-------------------------
+# AGENT 3
+#-------------------------
+# action_sequence_generation
+prompt = f"You are an action sequence generator that breaks down activity in the query into step by step action. Please ONLY use entities of various states given by the query's spatial_information.\n You can also retrieve goalstep information in other environments using goalstep_retriever to see which activity might lead to which specific actions.\n You can also retrieve spatial information for other environments to see how entities and their state changes in other environment takes place.\n"
+
+# action_sequence_validation
+prompt = f"You are an action sequence validator. You have to check three things. First, you need to see whether the current action sequence fulfills the target activity given in the query. Second, you need to see whether the actions are performable with entities of various states given in the query as spatial_information. Third, you need to check if the sequence of actions are performed in logical step. When any of the three items in the checklist fails, you have to generate reasons why validation failed to the action_sequence_generation tool for regenerating answer.\n"
+
+
+
+
+
+
+
+
 # define template
 template0 = """You are an assistant for question-answering tasks. 
     Use the following pieces of retrieved context to answer the question. 
@@ -70,23 +86,6 @@ template_baseline1 = """You are an assitant for question-answering tasks. Use th
     """
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #MESSAGES from other examples(AntGPT)====================
 message = [
     {
@@ -106,5 +105,8 @@ demos = [
     "put cement, wipe mold, arrange mold, turn mold, put mold, take soil, pour mold, remove mold ##Q1: What's the scene according to previous actions? Q2: What are the future 20 actions based on the scene from Q1 and previous actions? => The scene is making bricks. Future 20 actions are: put mold, wipe floor, cut cement, mix cement, arrange mold, put cement, remove cement, put cement, wipe cement, carry mold, put mold, turn mold, put mold, pour sand, put mold, cut clay, arrange mold, put clay, remove clay, carry mold ###\n",
 ]
 
-if __name__== "__main__":
-    print("trying to be better")
+
+
+
+
+

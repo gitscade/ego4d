@@ -86,6 +86,24 @@ def retrieve_relevant_docs_spatial(query: str):
     """Retrieve the most relevant documents based on a user's query."""
     #return spatial_retriever.invoke(query)
 
+
+# @tool
+# def check_answer_relevance(question: str, answer: str) -> str:
+#     """Check if the provided answer correctly and fully addresses the given question."""
+#     prompt = f"Does this answer correctly and fully respond to the question?\n\n"
+#     prompt += f"Question: {question}\nAnswer: {answer}\n"
+#     prompt += "Reply with 'Yes' or 'No' and explain why."
+#     return LLM_MODEL.invoke(prompt)
+
+# @tool
+# def enforce_lexical_constraints(answer: str) -> str:
+#     """Ensure the answer only contains approved nouns and verbs."""
+#     words = set(re.findall(r'\b\w+\b', answer.lower()))
+#     invalid_words = words - ALLOWED_WORDS["nouns"] - ALLOWED_WORDS["verbs"]
+#     if invalid_words:
+#         return f"Invalid words found: {', '.join(invalid_words)}. Answer must use only allowed nouns and verbs."
+#     return "Answer follows lexical constraints."
+
 # -----------------------
 # AGENT SETUP
 # -----------------------
