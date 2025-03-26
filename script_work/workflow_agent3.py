@@ -3,18 +3,19 @@ This is an Agentic RAG for prediction of action sequence, based on given activit
 '''
 import sys
 import os
-import re
-import pickle
-import streamlit as st
+# import re
+# import pickle
+# import streamlit as st
 import openai
-import pandas as pd
+# import pandas as pd
 import logging
 import json
+import ast
 from dotenv import load_dotenv
 #vectorstore
-from langchain_community.document_loaders import PyPDFLoader, TextLoader, CSVLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import FAISS
+# from langchain_community.document_loaders import PyPDFLoader, TextLoader, CSVLoader
+# from langchain.text_splitter import RecursiveCharacterTextSplitter
+# from langchain_community.vectorstores import FAISS
 #llm
 from langchain_ollama import OllamaLLM
 from langchain_community.llms import OpenAI
@@ -49,7 +50,7 @@ GOALSTEP_VECSTORE_PATH = GOALSTEP_ANNOTATION_PATH + 'goalstep_docarray_faiss'
 SPATIAL_VECSTORE_PATH = SPATIAL_ANNOTATION_PATH + 'spatial_docarray_faiss'
 
 logging.basicConfig(level=logging.ERROR)
-load_dotenv()
+load_dotenv() # load env variables
 openai.api_key = os.getenv("OPENAI_API_KEY")
 model1 = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini") #10x cheaper
 parser_stroutput = StrOutputParser()
@@ -90,12 +91,13 @@ def spatial_information_retriver(query:dict):
 # fetching whole documents based on retrieval system.
 
 def sequence_generation(input: str):
-    # all json file must use double quotes
-    input.replace("'", '"')
-    params = json.loads(input)
-    query = params.get("query")
-    target_activity = params.get("target_activity")
-    target_scene_graph = params.get("target_scene_graph")
+
+    input_dict = ast.literal_eval(input.strip())  # convert to python dict
+    valid_json = json.dumps(input_dict, indent=4)  # read as JSON(wth "")
+    input_json = json.loads(valid_json)
+    query = input_json.get("query")
+    target_activity = input_json.get("target_activity")
+    target_scene_graph = input_json.get("target_scene_graph")
 
     prompt = f"Here is the query: {query}. Here is the target_activity: {target_activity}. Here is the target_scene_graph: {target_scene_graph}"
 

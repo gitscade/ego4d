@@ -1,3 +1,6 @@
+"""
+common paths
+"""
 #root path
 PATH_ROOT = "/root/project/"
 PATH_ROOT = ""

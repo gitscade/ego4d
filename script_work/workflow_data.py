@@ -11,32 +11,34 @@ spatial_retriever
 """
 import sys
 import os
-import re
-import pickle
-import streamlit as st
+# import re
+# import pickle
+import langchain.retrievers
+# import streamlit as st
 import openai
-import pandas as pd
+# import pandas as pd
 import logging
-import json
+# import json
 from dotenv import load_dotenv
 #vectorstore
-from langchain_community.document_loaders import PyPDFLoader, TextLoader, CSVLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+import langchain
+# from langchain_community.document_loaders import PyPDFLoader, TextLoader, CSVLoader
+# from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 #llm
-from langchain_ollama import OllamaLLM
+# from langchain_ollama import OllamaLLM
 from langchain_community.llms import OpenAI
 from langchain_openai.chat_models import ChatOpenAI # good for agents
 from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain_core.output_parsers import StrOutputParser
-from langchain_core.prompts import ChatPromptTemplate
-#agents
-from langchain.tools import tool
-from langchain.tools import Tool
-#from langchain.agents import AgentType, initialize_agent # deprecated
-from langchain.agents import AgentType, create_react_agent, AgentExecutor
-#from langchain.memory import ConversationBufferMemory # being phased out
-from langgraph.checkpoint.memory import MemorySaver
+# from langchain_core.prompts import ChatPromptTemplate
+# #agents
+# from langchain.tools import tool
+# from langchain.tools import Tool
+# #from langchain.agents import AgentType, initialize_agent # deprecated
+# from langchain.agents import AgentType, create_react_agent, AgentExecutor
+# #from langchain.memory import ConversationBufferMemory # being phased out
+# from langgraph.checkpoint.memory import MemorySaver
 #packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))
@@ -102,12 +104,11 @@ print(f"MAKE_DOCU: spatial_document_list: {len(spatial_document)}")
 print(f"MAKE_DOCU: goalstep_document_list: {len(goalstep_test_document_list)}")
 print(f"MMAKE_DOCUAKE: spatial_document_list: {len(spatial_test_document_list)}")
 
-
 # -----------------------
 # MAKE/LOAD FAISS Vectorstore and retrievers
 # -----------------------
+# ONE document = one chunk for now
 embeddings = OpenAIEmbeddings()
-
 if not os.path.exists(GOALSTEP_VECSTORE_PATH + '/index.faiss'):
     print(f"MAKE FAISS GOALSTEP: {GOALSTEP_VECSTORE_PATH}")
     goalstep_vector_store =  FAISS.from_documents(goalstep_document_list, embeddings)
@@ -126,7 +127,10 @@ else:
 goalstep_vector_store = FAISS.load_local(GOALSTEP_VECSTORE_PATH, embeddings, allow_dangerous_deserialization=True)
 spatial_vector_store = FAISS.load_local(SPATIAL_VECSTORE_PATH, embeddings, allow_dangerous_deserialization=True)
 
-# MAKE RETRIEVER
+# MAKE RETRIEVER (Makes Vectorstore retriever)
 goalstep_retriever = goalstep_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
 spatial_retriever = spatial_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
 
+# # IF NEEDED
+# # Make Retriever (ParentDocumentRetriever)
+# from langchain.retrievers import ParentDocumentRetriever

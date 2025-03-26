@@ -6,6 +6,7 @@ This baseline is an Activity Matching System consisting of Three Agentic RAG com
 
 *agent may or may not use spatial context dataset for improved accuracy
 Agents are chained
+**when using OLLAMA, turn on ollama with code in workflow_ollama.ipynb
 '''
 import sys
 import os
