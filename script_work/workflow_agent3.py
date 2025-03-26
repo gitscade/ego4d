@@ -37,15 +37,7 @@ import script_work.agent_input as agent_input
 import script_work.agent_query as agent_query
 import script_work.agent_prompt as agent_prompt
 from util import util_constants
-
-
-# -----------------------
-# CONFIGURATION
-# -----------------------
-ALLOWED_WORDS = {
-    "nouns": {"apple", "banana", "computer", "data", "research"},
-    "verbs": {"calculate", "analyze", "study", "process"}
-}
+import workflow_data
 
 # -----------------------
 # Path & API & Model
@@ -62,88 +54,37 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 model1 = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini") #10x cheaper
 parser_stroutput = StrOutputParser()
 
-
 # -----------------------
-# PREPROCESS DATA
+# CONFIGURE DATA
 # -----------------------
-# EXTRACT video list
-print(GOALSTEP_ANNOTATION_PATH)
-print(SPATIAL_ANNOTATION_PATH)
-goalstep_videos_list = agent_database.merge_json_video_list(GOALSTEP_ANNOTATION_PATH)
-spatial_videos_list = agent_database.merge_json_video_list(SPATIAL_ANNOTATION_PATH)
-print(f"goalstep vids: {len(goalstep_videos_list)} and spatial vids: {len(spatial_videos_list)}")
+ALLOWED_WORDS = {
+    "nouns": {"apple", "banana", "computer", "data", "research"},
+    "verbs": {"calculate", "analyze", "study", "process"}
+}
 
-# EXCLUDE test videos
-test_uid = [
-    "dcd09fa4-afe2-4a0d-9703-83af2867ebd3", #make potato soap
-    "46e07357-6946-4ff0-ba36-ae11840bdc39", #make tortila soap
-    "026dac2d-2ab3-4f9c-9e1d-6198db4fb080", #prepare steak
-    "2f46d1e6-2a85-4d46-b955-10c2eded661c", #make steak
-    "14bcb17c-f70a-41d5-b10d-294388084dfc", #prepare garlic(peeling done)
-    "487d752c-6e22-43e3-9c08-627bc2a6c6d4", #peel garlic
-    "543e4c99-5d9f-407d-be75-c397d633fe56", #make sandwich
-    "24ba7993-7fc8-4447-afd5-7ff6d548b11a", #prepare sandwich bread
-    "e09a667f-04bc-49b5-8246-daf248a29174", #prepare coffee
-    "b17ff269-ec2d-4ad8-88aa-b00b75921427", #prepare coffee and bread
-    "58b2a4a4-b721-4753-bfc3-478cdb5bd1a8" #prepare tea and pie
-]
-goalstep_videos_list, goalstep_test_video_list = agent_database.exclude_test_video_list(goalstep_videos_list, test_uid)
-spatial_videos_list, spatial_test_video_list = agent_database.exclude_test_video_list(spatial_videos_list, test_uid)
-print(f"testuid excluded: goalstep vids: {len(goalstep_videos_list)} and spatial vids: {len(spatial_videos_list)}")
-print(f"testuid list: goalstep vids: {len(goalstep_test_video_list)} and spatial vids: {len(spatial_test_video_list)}")
-
-# MAKE docu list
-goalstep_document_list = agent_database.make_goalstep_document_list(goalstep_videos_list)
-spatial_document = agent_database.make_spatial_document_list(spatial_videos_list)
-goalstep_test_document_list = agent_database.make_goalstep_document_list(goalstep_test_video_list)
-spatial_test_document_list = agent_database.make_spatial_document_list(spatial_test_video_list)
-
-print(f"MAKE_DOCU: goalstep_document_list: {len(goalstep_document_list)}")
-print(f"MAKE_DOCU: spatial_document_list: {len(spatial_document)}")
-print(f"MAKE_DOCU: goalstep_document_list: {len(goalstep_test_document_list)}")
-print(f"MMAKE_DOCUAKE: spatial_document_list: {len(spatial_test_document_list)}")
-
-
-# -----------------------
-# MAKE/LOAD FAISS Vectorstore and retrievers
-# -----------------------
-embeddings = OpenAIEmbeddings()
-
-if not os.path.exists(GOALSTEP_VECSTORE_PATH + '/index.faiss'):
-    print(f"MAKE FAISS GOALSTEP: {GOALSTEP_VECSTORE_PATH}")
-    goalstep_vector_store =  FAISS.from_documents(goalstep_document_list, embeddings)
-    goalstep_vector_store.save_local(GOALSTEP_VECSTORE_PATH)
-else:
-    print(f"LOAD FAISS GOALSTEP: {GOALSTEP_VECSTORE_PATH}")
-
-if not os.path.exists(SPATIAL_VECSTORE_PATH + '/index.faiss'):
-    print(f"MAKE FAISS SPATIAL: {SPATIAL_VECSTORE_PATH}")
-    spatial_vector_store = FAISS.from_documents(spatial_document, embeddings)
-    spatial_vector_store.save_local(SPATIAL_VECSTORE_PATH)
-else:
-    print(f"LOAD FAISS SPATIAL: {SPATIAL_VECSTORE_PATH}")
+# Load VIDEO LIST
+spatial_test_video_list = workflow_data.spatial_test_video_list
 
 # LOAD FAISS VECSTORE
-goalstep_vector_store = FAISS.load_local(GOALSTEP_VECSTORE_PATH, embeddings, allow_dangerous_deserialization=True)
-spatial_vector_store = FAISS.load_local(SPATIAL_VECSTORE_PATH, embeddings, allow_dangerous_deserialization=True)
+goalstep_vector_store = workflow_data.goalstep_vector_store
+spatial_vector_store = workflow_data.spatial_vector_store
 
 # MAKE RETRIEVER
 goalstep_retriever = goalstep_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
 spatial_retriever = spatial_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
-
 
 # -----------------------
 # TOOL FUNCTION
 # -----------------------
 def goalstep_information_retriever(query:str):
     """Retrieve the most relevant goalstep dataset documents based on a user's query."""
-    context = goalstep_vector_store.invoke(query)
+    context = goalstep_retriever.invoke(query)
     return f"User Query: {query}. similar goalstep examples: {context}" 
 
 def spatial_information_retriver(query:dict):
     """Retrieve the most relevant spatial context documents based on a user's query"""
-    context = spatial_vector_store.invoke(query)
-    return f"Iser Query: {query}. similar spatial examples: {context}"
+    context = spatial_retriever.get_relevant_documents(query)
+    return f"User Query: {query}. similar spatial examples: {context}"
 
 # TODO2:
 # fetching whole documents based on retrieval system.
@@ -224,8 +165,8 @@ TOOLS = [
     goalstep_retriever_tool,
     spatial_retriever_tool,
     action_sequence_generation_tool,
-    action_sequence_validation_tool
     ]
+#    action_sequence_validation_tool
 MEMORY = MemorySaver()
 
 
@@ -245,23 +186,37 @@ if __name__ == "__main__":
     # AGENT PROMPT
     # -----------------------
     AGENT_PROMPT = ChatPromptTemplate.from_messages([
-        ("system", """You are a ReACt agent that answers queries using tools. Always respond using this format:
-         Thought: [Your reasoning]
-         Action: [Tool name]
-         Action Input: {{"query": "{{query}}", "target_activity": "{{target_activity}}", "target_scene_graph": "{{target_scene_graph}}" }}
+        ("system", """You are an agent that answers queries using tools. If you have gathered enough information, respond with:
+        
+        Thought: I now have enough information to answer.
+        Final Answer: [Your answer]
+        
+        Otherwise, use this format:
+        Thought: [Your reasoning]
+        Action: [Tool name]
+        Action Input: {{"query": {query}, "target_activity":{target_activity}, "target_scene_graph": {target_scene_graph} }}
+        """),        
 
-         Example:
-         Thought: I need to generate action sequence.
-         Action: action_sequence_generation_tool
-         Action Input: {{"query": "generate activity using target acitivity and target scene graph", "target_activity": "{{target_activity}}", "target_scene_graph": "{{target_scene_graph}}"}}
-         """),
-        ("system", "The user wants to perform a target activity: {target_activity}."),
-        ("system", "The user is in a space described by this scene graph. Only use entities in this scene graph. Every state of each entity starts from here and can be changed during actions which effect the entity: {target_scene_graph}."),
-        ("system", "Available tools: {tools}. Use them wisely."),
-        ("system", "Tool names: {tool_names}"),  # Required for React agents
-        ("user", "{query}"),  # The user query should be directly included
-        ("assistant", "{agent_scratchpad}")  # Required for React agents
+        ("system", "The user wants to perform a target activity. The user is in a space described by this scene graph. Both target activity and scene graph is given in user message. Only use entities in this scene graph."),
+        ("system", "Available tools: {tools}. Use them when necessary."),
+        ("system", "Tool names: {tool_names}"), 
+        ("system",  "user target activity: {target_activity}"),
+        ("system",  "user target scene graph: {target_scene_graph}"),
+        ("user", "user query: {query}"), 
+        ("assistant", "{agent_scratchpad}") 
     ])
+        # QUERY TO TEST
+        # ("system", """You are a ReAct agent that answers queries using tools. Always respond using this format. When finalizing answer, just output final text.:
+        #  Thought: [Your reasoning]
+        #  Action: [Tool name]
+        #  Action Input: {{"query": "{{query}}", "target_activity": "{{target_activity}}", "target_scene_graph": "{{target_scene_graph}}" }}
+
+        #  Example:
+        #  Thought: I need to generate action sequence.
+        #  Action: action_sequence_generation_tool
+        #  Action Input: {{"query": "generate activity using target acitivity and target scene graph", "target_activity": "{{target_activity}}", "target_scene_graph": "{{target_scene_graph}}"}}
+        #  """),
+
 
     # -----------------------
     # CREATE & RUN AGENT IN MAIN
@@ -270,11 +225,12 @@ if __name__ == "__main__":
         tools=TOOLS,  # Register tools
         llm=LLM_MODEL,
         prompt=AGENT_PROMPT
-        #agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,  # Use react-based agent
-        #verbose=True,  # Enable verbose output for debugging
-        #checkpointer=MEMORY,
-        #handle parsing error not built in for this function.
     )
+    #======DEPRECATED arguments===========
+    #agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,  # Use react-based agent
+    #verbose=True,  # Enable verbose output for debugging
+    #checkpointer=MEMORY,
+    #handle parsing error not built in for this function.
 
     AGENT_EXECUTOR = AgentExecutor(
         agent=AGENT, 
@@ -297,31 +253,3 @@ if __name__ == "__main__":
     print(f"response {response}")
 
 
-    # def run_agent(target_activity, target_scene_graph, AGENT, AGENT_PROMPT):
-    #     formatted_prompt = AGENT_PROMPT.format(target_activity=target_activity, target_scene_graph=target_scene_graph)
-    #     return AGENT.run(formatted_prompt)
-
-    #print(run_agent(target_activity, target_scene_graph, AGENT, AGENT_PROMPT))
-
-    # # -----------------------
-    # # STREAMLIT UI
-    # # -----------------------
-    # def run_streamlit_app():
-    #     """Run the Streamlit UI in the same Python script."""
-    #     st.title("Agentic RAG with Streamlit")
-
-    #     # Input box for user query
-    #     query = st.text_area("Enter your query:", "")
-
-    #     # Button to trigger the agent
-    #     if st.button("Finalize Query"):
-    #         if query:
-    #             with st.spinner("Processing..."):
-    #                 response = agent.run(query)
-    #             st.subheader("Agent's Response:")
-    #             st.write(response)
-    #         else:
-    #             st.error("Please enter a query to continue.")
-
-    # if __name__ == "__main__":
-        # run_streamlit_app()

@@ -1,6 +1,10 @@
 '''
-This is an Agentic RAG for activity transfer task, based on principle of vertical activity transform
+Agent for activity(source)->activity(target) matching
 activity (source) -> common activity -> activity (target)
+
+input: activity(source)
+context: 
+output: activity(source)
 '''
 import sys
 import os
@@ -43,11 +47,6 @@ from util import util_constants
 # -----------------------
 # TOOLS
 # -----------------------
-# @tool
-# def retrieve_relevant_docs_goalstep(query: str):
-#     """Retrieve the most relevant documents based on a user's query."""
-#     return goalstep_retriever.invoke(query)
-
 @tool
 def check_goal_executability(query: str):
     """Checks if goal in the query is executable in the target scene"""
@@ -87,87 +86,42 @@ def retrieve_relevant_docs_spatial(query: str):
     #return spatial_retriever.invoke(query)
 
 
-# @tool
-# def check_answer_relevance(question: str, answer: str) -> str:
-#     """Check if the provided answer correctly and fully addresses the given question."""
-#     prompt = f"Does this answer correctly and fully respond to the question?\n\n"
-#     prompt += f"Question: {question}\nAnswer: {answer}\n"
-#     prompt += "Reply with 'Yes' or 'No' and explain why."
-#     return LLM_MODEL.invoke(prompt)
-
-# @tool
-# def enforce_lexical_constraints(answer: str) -> str:
-#     """Ensure the answer only contains approved nouns and verbs."""
-#     words = set(re.findall(r'\b\w+\b', answer.lower()))
-#     invalid_words = words - ALLOWED_WORDS["nouns"] - ALLOWED_WORDS["verbs"]
-#     if invalid_words:
-#         return f"Invalid words found: {', '.join(invalid_words)}. Answer must use only allowed nouns and verbs."
-#     return "Answer follows lexical constraints."
-
-# -----------------------
-# AGENT SETUP
-# -----------------------
-# LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini", temperature=1)
-LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4", temperature=1)
-TOOLS = [
-    check_goal_executability,
-    find_common_activity,
-    narrow_down_activity,
-    retrieve_relevant_docs_goalstep
-    ]
-MEMORY = MemorySaver() #ConversationBufferMemory is deprecated
 
 
-if __name__ == "__main__":
-    # -----------------------
-    # AGENT INPUT ARGUMENTS
-    # -----------------------
-    source_activity = ""
-    target_scene_graph = ""
-    tool_names =", ".join([t.name for t in TOOLS])
-
-    # -----------------------
-    # AGENT PROMPT
-    # -----------------------
-    AGENT_PROMPT = ChatPromptTemplate.from_messages([
-        ("system", "You are an activity transfer agent. You are"),
-        ("system", "You are given a source activity. Source activity can be performed in source space without problem: {source_activity}."),
-        ("system", "This time, source_activity should be performed in new space called target space. Info about target space is given as target_scene_graph: {target_scene_graph}."),
-        ("system", "Available tools: {tools}. Use them wisely."),
-        ("system", "Tool names: {tool_names}"),  # Required for React agents
-        ("user", "{query}"),  # The user query should be directly included
-        ("assistant", "{agent_scratchpad}")  # Required for React agents
-    ])    
 
 
-    # -----------------------
-    # CREATE & RUN AGENT IN MAIN
-    # -----------------------
-    AGENT = create_react_agent(
-        tools=TOOLS,  # Register tools
-        llm=LLM_MODEL,
-        prompt=AGENT_PROMPT
-        #agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,  # Use react-based agent
-        #verbose=True,  # Enable verbose output for debugging
-        #checkpointer=MEMORY,
-        #handle parsing error not built in for this function.
-    )
 
-    AGENT_EXECUTOR = AgentExecutor(
-        agent=AGENT, 
-        tools=TOOLS, 
-        verbose=True, 
-        handle_parsing_errors=True
-    )    
 
-    QUERY = ""
 
-    response = AGENT_EXECUTOR.invoke({
-        "query": QUERY,
-        "target_activity": source_activity,
-        "target_scene_graph": target_scene_graph,
-        "tools": TOOLS,  # Pass tool objects
-        "tool_names": ", ".join(TOOL_NAMES),  # Convert list to comma-separated string
-        "agent_scratchpad": ""  # Let LangChain handle this dynamically
-    })
-    print(f"response {response}")
+
+
+
+
+    # def run_agent(target_activity, target_scene_graph, AGENT, AGENT_PROMPT):
+    #     formatted_prompt = AGENT_PROMPT.format(target_activity=target_activity, target_scene_graph=target_scene_graph)
+    #     return AGENT.run(formatted_prompt)
+
+    #print(run_agent(target_activity, target_scene_graph, AGENT, AGENT_PROMPT))
+
+    # # -----------------------
+    # # STREAMLIT UI
+    # # -----------------------
+    # def run_streamlit_app():
+    #     """Run the Streamlit UI in the same Python script."""
+    #     st.title("Agentic RAG with Streamlit")
+
+    #     # Input box for user query
+    #     query = st.text_area("Enter your query:", "")
+
+    #     # Button to trigger the agent
+    #     if st.button("Finalize Query"):
+    #         if query:
+    #             with st.spinner("Processing..."):
+    #                 response = agent.run(query)
+    #             st.subheader("Agent's Response:")
+    #             st.write(response)
+    #         else:
+    #             st.error("Please enter a query to continue.")
+
+    # if __name__ == "__main__":
+        # run_streamlit_app()
