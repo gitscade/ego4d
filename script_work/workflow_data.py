@@ -2,50 +2,27 @@
 This is folder for vector retrieval
 
 # LOAD FAISS VECSTORE
-goalstep_vector_store
-spatial_vector_store
+single document chunk vecstore: goalstep_vector_store, spatial_vector_store
 
 # MAKE RETRIEVER
-goalstep_retriever
-spatial_retriever
+VectorstoreRetriver: goalstep_retriever, spatial_retriever
+ParentDocumentRetriver: NOT YET
 """
 import sys
 import os
-# import re
-# import pickle
-import langchain.retrievers
-# import streamlit as st
 import openai
-# import pandas as pd
 import logging
-# import json
 from dotenv import load_dotenv
 #vectorstore
-import langchain
-# from langchain_community.document_loaders import PyPDFLoader, TextLoader, CSVLoader
-# from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 #llm
-# from langchain_ollama import OllamaLLM
-from langchain_community.llms import OpenAI
 from langchain_openai.chat_models import ChatOpenAI # good for agents
 from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain_core.output_parsers import StrOutputParser
-# from langchain_core.prompts import ChatPromptTemplate
-# #agents
-# from langchain.tools import tool
-# from langchain.tools import Tool
-# #from langchain.agents import AgentType, initialize_agent # deprecated
-# from langchain.agents import AgentType, create_react_agent, AgentExecutor
-# #from langchain.memory import ConversationBufferMemory # being phased out
-# from langgraph.checkpoint.memory import MemorySaver
 #packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))
 import script_work.agent_database as agent_database
-import script_work.agent_input as agent_input
-import script_work.agent_query as agent_query
-import script_work.agent_prompt as agent_prompt
 from util import util_constants
 
 # -----------------------
