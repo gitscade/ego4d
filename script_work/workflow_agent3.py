@@ -3,19 +3,11 @@ This is an Agentic RAG for prediction of action sequence, based on given activit
 '''
 import sys
 import os
-# import re
-# import pickle
-# import streamlit as st
 import openai
-# import pandas as pd
 import logging
 import json
 import ast
 from dotenv import load_dotenv
-#vectorstore
-# from langchain_community.document_loaders import PyPDFLoader, TextLoader, CSVLoader
-# from langchain.text_splitter import RecursiveCharacterTextSplitter
-# from langchain_community.vectorstores import FAISS
 #llm
 from langchain_ollama import OllamaLLM
 from langchain_community.llms import OpenAI
@@ -26,9 +18,7 @@ from langchain_core.prompts import ChatPromptTemplate
 #agents
 from langchain.tools import tool
 from langchain.tools import Tool
-#from langchain.agents import AgentType, initialize_agent # deprecated
 from langchain.agents import AgentType, create_react_agent, AgentExecutor
-#from langchain.memory import ConversationBufferMemory # being phased out
 from langgraph.checkpoint.memory import MemorySaver
 #packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
@@ -64,15 +54,17 @@ ALLOWED_WORDS = {
 }
 
 # Load VIDEO LIST
+goalstep_test_video_list = workflow_data.goalstep_test_video_list
 spatial_test_video_list = workflow_data.spatial_test_video_list
 
 # LOAD FAISS VECSTORE
 goalstep_vector_store = workflow_data.goalstep_vector_store
 spatial_vector_store = workflow_data.spatial_vector_store
 
-# MAKE RETRIEVER
+# MAKE base:VectorStoreRetriever
 goalstep_retriever = goalstep_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
 spatial_retriever = spatial_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
+
 
 # -----------------------
 # TOOL FUNCTION
@@ -84,7 +76,7 @@ def goalstep_information_retriever(query:str):
 
 def spatial_information_retriver(query:dict):
     """Retrieve the most relevant spatial context documents based on a user's query"""
-    context = spatial_retriever.get_relevant_documents(query)
+    context = spatial_retriever.invoke(query)
     return f"User Query: {query}. similar spatial examples: {context}"
 
 # TODO2:
@@ -168,7 +160,6 @@ TOOLS = [
     spatial_retriever_tool,
     action_sequence_generation_tool,
     ]
-#    action_sequence_validation_tool
 MEMORY = MemorySaver()
 
 

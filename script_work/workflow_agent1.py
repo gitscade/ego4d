@@ -6,19 +6,11 @@ output: source activity
 '''
 import sys
 import os
-# import re
-# import pickle
-# import streamlit as st
 import openai
-# import pandas as pd
 import logging
 import json
 import ast
 from dotenv import load_dotenv
-#vectorstore
-# from langchain_community.document_loaders import PyPDFLoader, TextLoader, CSVLoader
-# from langchain.text_splitter import RecursiveCharacterTextSplitter
-# from langchain_community.vectorstores import FAISS
 #llm
 from langchain_ollama import OllamaLLM
 from langchain_community.llms import OpenAI
@@ -29,9 +21,7 @@ from langchain_core.prompts import ChatPromptTemplate
 #agents
 from langchain.tools import tool
 from langchain.tools import Tool
-#from langchain.agents import AgentType, initialize_agent # deprecated
 from langchain.agents import AgentType, create_react_agent, AgentExecutor
-#from langchain.memory import ConversationBufferMemory # being phased out
 from langgraph.checkpoint.memory import MemorySaver
 #packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
@@ -67,14 +57,15 @@ ALLOWED_WORDS = {
     "verbs": {"calculate", "analyze", "study", "process"}
 }
 
-# Load VIDEO LIST
+# Load VIDEO LIST (use text video list for testing)
+goalstep_test_video_list = workflow_data.goalstep_test_video_list
 spatial_test_video_list = workflow_data.spatial_test_video_list
 
 # LOAD FAISS VECSTORE
 goalstep_vector_store = workflow_data.goalstep_vector_store
 spatial_vector_store = workflow_data.spatial_vector_store
 
-# MAKE RETRIEVER
+# MAKE base:VectorStoreRetriever
 goalstep_retriever = goalstep_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
 spatial_retriever = spatial_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
 
@@ -82,15 +73,65 @@ spatial_retriever = spatial_vector_store.as_retriever(search_type="similarity", 
 #------------------------
 #Tools
 #------------------------
-@tool
-def retrieve_relevant_docs_goalstep(query:str):
+def goalstep_information_retriever(query:str):
     """Retrieve the most relevant goalstep dataset documents based on a user's query."""
-    return goalstep_vector_store.invoke(query)
+    context = goalstep_retriever.invoke(query)
+    return f"User Query: {query}. similar goalstep examples: {context}" 
+
+def spatial_information_retriver(query:dict):
+    """Retrieve the most relevant spatial context documents based on a user's query"""
+    context = spatial_retriever.invoke(query)
+    return f"User Query: {query}. similar spatial examples: {context}"
+
+def activity_prediction(input: str):
+    """Predict an activity of the user based on the input"""
+    input_dict = ast.literal_eval(input.strip())  # convert to python dict
+    valid_json = json.dumps(input_dict, indent=4)  # read as JSON(wth "")
+    input_json = json.loads(valid_json)
+    query = input_json.get("query")
+    source_action_sequence = input_json.get("source_action_sequence")
+    source_scene_graph = input_json.get("source_scene_graph")
+
+    prompt = f"Here is the query: {query}. Here is the source_action_sequence: {source_action_sequence}. Here is the source_scene_graph: {source_scene_graph}"
+
+    client = openai.OpenAI()
+    response = client.chat.completions.create(
+        model="gpt-4o",
+        messages=[
+            {
+            "role": "system", 
+            "content": "You predict current user activity based on input with five items. The activity is a ONE PHRASE SUMMARY of the source_action_sequence in the input query. First input is query. Second input argument is source_action_sequence, given in the prompt. Third input argument is source_scene_graph, also given in system prompt. Fourth input argument is relevant_goalstep_information, sometimes given as None. Fifth input argument is relevant_scene_graph, sometimes given as None. Activity MUST be given in one phrase inside a double quote. Only one verb is allowed."
+            }, 
+            { "role": "user", "content": prompt}
+                ],
+        temperature=0.5
+    )
+
+    activity = response.choices[0].message.content.strip()
+
+    return f"Thought: The activity is predicted.\nAction: activity_prediction_tool\nAction Input: {json.dumps({'query': query, 'source_action_sequence': source_action_sequence, 'source_scene_graph': source_scene_graph})}\n{activity}"
 
 
-def retrieve_relevant_docs_spatial(query: str):
-    """Retrieve the most relevant documents based on a user's query."""
-    return spatial_retriever.invoke(query)
+# -----------------------
+# DEFINE TOOLS with TOOLFUNC
+# -----------------------
+goalstep_retriever_tool = Tool(
+    name = "goalstep_retriever_tool",
+    func = goalstep_information_retriever,
+    description = "Retrieves relevant goalstep information in other environments, where similar activities are performed in steps. "
+)
+
+spatial_retriever_tool = Tool(
+    name = "spatial_retriever_tool",
+    func = spatial_information_retriver,
+    description = "Retrieves relevant spatial information for similar environments, where state changes of entities takes place in spatiotemporal fashion."
+)
+
+activity_prediction_tool = Tool(
+    name = "activity_prediction_tool",
+    func = activity_prediction,
+    description = "Activity prediction tool, which can summarize the sequential multiple actions into a short single phrase of activity. . Additional examples from other environments can also be used. Input: query(str), target_activity(str), . Output: action_sequence_steps(str)"
+)
 
 
 # -----------------------
@@ -102,8 +143,7 @@ LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4", temperature
 TOOLS = [
     goalstep_retriever_tool,
     spatial_retriever_tool,
-    action_sequence_generation_tool,
-    action_sequence_validation_tool
+    activity_prediction_tool,
     ]
 MEMORY = MemorySaver()
 
@@ -112,33 +152,47 @@ if __name__ == "__main__":
     # -----------------------
     # AGENT INPUT ARGUMENTS
     # -----------------------
-    target_video_idx = int(input("Input target index: "))
-    target_spatial_video = spatial_test_video_list[target_video_idx]
-    target_scene_graph = agent_input.extract_spatial_context(target_spatial_video)
-    target_activity = input("Input target activity: ")
+    source_video_idx = int(input("Input source index:"))
+    source_goalstep_video = goalstep_test_video_list[source_video_idx]
+    source_spatial_video = spatial_test_video_list[source_video_idx]
+    source_action_sequence = agent_input.extract_lower_goalstep_segments(source_goalstep_video)
+    source_scene_graph = agent_input.extract_spatial_context(source_spatial_video)
+    
     tool_names =", ".join([t.name for t in TOOLS])
+
+
+
+
 
     # -----------------------
     # AGENT PROMPT
     # -----------------------
     AGENT_PROMPT = ChatPromptTemplate.from_messages([
-        ("system", """You are a ReACt agent that answers queries using tools. Always respond using this format:
+        ("system", """You are an agent that answers queries using tools. If you have gathered enough information, respond with:
+        
+        Thought: I now have enough information to answer.
+        Final Answer: [Your answer]
+         
+        Otherwise, use this format:
          Thought: [Your reasoning]
          Action: [Tool name]
-         Action Input: {{"query": "{{query}}", "target_activity": "{{target_activity}}", "target_scene_graph": "{{target_scene_graph}}" }}
-
-         Example:
-         Thought: I need to generate action sequence.
-         Action: action_sequence_generation_tool
-         Action Input: {{"query": "generate activity using target acitivity and target scene graph", "target_activity": "{{target_activity}}", "target_scene_graph": "{{target_scene_graph}}"}}
+         Action Input: {{"query": "{query}", "source_action_sequence": "{source_action_sequence}", "source_scene_graph": "{source_scene_graph}" }}
          """),
-        ("system", "The user wants to perform a target activity: {target_activity}."),
-        ("system", "The user is in a space described by this scene graph. Only use entities in this scene graph. Every state of each entity starts from here and can be changed during actions which effect the entity: {target_scene_graph}."),
-        ("system", "Available tools: {tools}. Use them wisely."),
+
+        ("system", "The user is performing a sequence of actions in this form: {source_action_sequence}."),
+        ("system", "The user is in a space described by this scene graph. Predicted activity must be able to be performed in this scene: {source_scene_graph}."),
+        ("system", "Available tools: {tools}. Use them wisely. Actively use retrieval tools to come up with plausible answer."),
         ("system", "Tool names: {tool_names}"),  # Required for React agents
         ("user", "{query}"),  # The user query should be directly included
         ("assistant", "{agent_scratchpad}")  # Required for React agents
     ])
+
+    #Example in Agent Prompt is to be deprecated
+        #      Example:
+        #  Thought: I need to predict activity from the input.
+        #  Action: activity_prediction_tool
+        #  Action Input: {{"query": "Predict activity from the action sequence and the scene graph", "source_action_sequence": "{{source_action_sequence}}", "source_scene_graph": "{{source_scene_graph}}"}}
+        #  """),
 
     # -----------------------
     # CREATE & RUN AGENT IN MAIN
@@ -164,8 +218,8 @@ if __name__ == "__main__":
 
     response = AGENT_EXECUTOR.invoke({
         "query": QUERY,
-        "target_activity": target_activity,
-        "target_scene_graph": target_scene_graph,
+        "source_action_sequence": source_action_sequence,
+        "source_scene_graph": source_scene_graph,
         "tools": TOOLS,  # Pass tool objects
         "tool_names": ", ".join(tool_names),  # Convert list to comma-separated string
         "agent_scratchpad": ""  # Let LangChain handle this dynamically
