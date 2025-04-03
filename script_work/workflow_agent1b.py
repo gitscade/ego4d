@@ -1,5 +1,7 @@
 '''
-This is an Agentic RAG for prediction of action sequence, based on given activity
+func: predict deep activity for source scene, using source action sequece/scene graph/RAG examples
+input: (source) action sequence, scene graph
+output: source deep activity
 '''
 import sys
 import os
@@ -21,7 +23,7 @@ from langchain.tools import tool
 from langchain.tools import Tool
 from langchain.agents import AgentType, create_react_agent, AgentExecutor
 from langchain.memory import ConversationBufferWindowMemory
-#from langgraph.checkpoint.memory import MemorySaver # Saves everyghing leading to overflow
+#from langgraph.checkpoint.memory import MemorySaver
 #packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))
@@ -31,6 +33,7 @@ import script_work.agent_query as agent_query
 import script_work.agent_prompt as agent_prompt
 from util import util_constants
 import workflow_data
+
 
 # -----------------------
 # Path & API & Model
@@ -42,20 +45,16 @@ GOALSTEP_VECSTORE_PATH = GOALSTEP_ANNOTATION_PATH + 'goalstep_docarray_faiss'
 SPATIAL_VECSTORE_PATH = SPATIAL_ANNOTATION_PATH + 'spatial_docarray_faiss'
 
 logging.basicConfig(level=logging.ERROR)
-load_dotenv() # load env variables
+load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 model1 = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini") #10x cheaper
 parser_stroutput = StrOutputParser()
 
+
 # -----------------------
 # VIDEO LIST, VECSTORE, RETRIEVER
 # -----------------------
-ALLOWED_WORDS = {
-    "nouns": {"apple", "banana", "computer", "data", "research"},
-    "verbs": {"calculate", "analyze", "study", "process"}
-}
-
-# Load VIDEO LIST
+# Load VIDEO LIST (use text video list for testing)
 goalstep_test_video_list = workflow_data.goalstep_test_video_list
 spatial_test_video_list = workflow_data.spatial_test_video_list
 
@@ -68,9 +67,9 @@ goalstep_retriever = goalstep_vector_store.as_retriever(search_type="similarity"
 spatial_retriever = spatial_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
 
 
-# -----------------------
-# TOOL FUNCTION
-# -----------------------
+#------------------------
+#Tools
+#------------------------
 def goalstep_information_retriever(query:str):
     """Retrieve the most relevant goalstep dataset documents based on a user's query."""
     context = goalstep_retriever.invoke(query)
@@ -81,42 +80,36 @@ def spatial_information_retriver(query:dict):
     context = spatial_retriever.invoke(query)
     return f"User Query: {query}. similar spatial examples: {context}"
 
-def sequence_generation(input: str):
-
+# TODO source activity must be given as input
+def move_down_activity(input: str):
+    """Make deep activity more specific and concrete by lowering one level down its hierarchy"""
     input_dict = ast.literal_eval(input.strip())  # convert to python dict
     valid_json = json.dumps(input_dict, indent=4)  # read as JSON(wth "")
     input_json = json.loads(valid_json)
     query = input_json.get("query")
-    target_activity = input_json.get("target_activity")
-    target_scene_graph = input_json.get("target_scene_graph")
+    source_action_sequence = input_json.get("source_action_sequence")
+    source_scene_graph = input_json.get("source_scene_graph")
+    source_activity = input_json.get("source_activity")
 
-    prompt = f"Here is the query: {query}. Here is the target_activity: {target_activity}. Here is the target_scene_graph: {target_scene_graph}"
+    prompt = f"Here is the query: {query}. Here is the source_action_sequence: {source_action_sequence}. Here is the source_scene_graph: {source_scene_graph}. Here is the source_activity: {source_activity}"
 
     client = openai.OpenAI()
     response = client.chat.completions.create(
         model="gpt-4o",
-        messages=[{"role": "system", "content": "You generate action sequence based on input with three items. First input is query. Second input argument is target_activity, given in the prompt. Third input argument is target_scene_graph, also given in system prompt. Third input argument is context. It can either be given or left in black.\n ONLY use entities given by the target_scene_graph argument."},
-                  {"role": "user", "content": prompt}],
+        messages=[
+            {
+            "role": "system", 
+            "content": "Return a serial of noun or words which is a specific and deep hierarchical description of source activity. For example, consider that ""cook steak"" is input activity, and sequence is about cooking steak. Ask yourself what steak? Going down with steak can give you more information on animal types. Then you can go deeper if there is information on areas or specific cut of meat(e.g. tomahawk, sirloin, etc). This can result in different types of cuisines finally. The final example can end like ""(cook)(steak)(pork)(loin)(cutlet)"". You cook steak which is pork, which is loin, which is cutlet. Final answer must be given as multiple small brackets enclosing a word. (verb)(noun) is a format used to describe input source activity. (verb)(noun)(noun)....(noun) format is used for final answer called categorized_activity. When you make your answer, start from (verb)(noun) for the input activity, and then order the remaining (noun) from the highest category to the narrowest one!. For our example just return ""(cook)(steak)(pork)(loin)(cutlet)"" and nothing else! Like this!  For this example 'output': ""(cook)(steak)(pork)(loin)(cutlet)"""
+            }, 
+            { "role": "user", "content": prompt}
+                ],
         temperature=0.5
     )
-    action_sequence = response.choices[0].message.content.strip()
 
-    return f"Thought: I need to generate the action sequence.\nAction: action_sequence_generation_tool\nAction Input: {json.dumps({'query': query, 'target_activity': target_activity, 'target_scene_graph': target_scene_graph})}\n{action_sequence}"
+    categorized_activity = response.choices[0].message.content.strip()
 
-
-# TODO NEED FORMAT VALIDATION
-def sequence_validation(query: dict):
-    prompt = f"You are an action sequence validator. You have to check three items. First, check that only entities from the target space is used for performing actions. Second, you need to see whether the actions are possible to be performed. Third, you need to check if the sequence of actions achieve the goal. When all three items pass, finalize the answer. Otherwise, re-try the action_sequence_generation tool for maximum of two times.\n"
-    
-    client = openai.OpenAI()
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[{"role": "system", "content": "You are an action sequence validator"},
-                  {"role": "user", "content": prompt}],
-        temperature=0.5
-    )
-    
-    return response.choices[0].message.content
+    # return f"Thought: Here is the categorized activity.\nAction: move_down_activity_tool\nAction Input: {json.dumps({'query': query, 'source_action_sequence': source_action_sequence, 'source_scene_graph': source_scene_graph})}\n{categorized_activity}"
+    return f"Thought: Here is the categorized activity.\n{categorized_activity}"
 
 
 # -----------------------
@@ -125,7 +118,6 @@ def sequence_validation(query: dict):
 # LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini", temperature=1)
 LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4", temperature=1)
 #LLM_MODEL_OLLAMA = OllamaLLM()
-MEMORY = ConversationBufferWindowMemory(k=3)
 TOOLS = [
     Tool(
         name = "goalstep_retriever_tool",
@@ -138,59 +130,62 @@ TOOLS = [
         description = "Retrieves relevant spatial information for similar environments, where state changes of entities takes place in spatiotemporal fashion."
     ),
     Tool(
-        name = "action_sequence_generation_tool",
-        func = sequence_generation,
-        description = "Action sequence generation tool, which can break down the given activity into smaller actions. Additional information on the current target action, target environment is needed. Additional examples from other environments can also be used. Input: query(str), target_activity(str), . Output: action_sequence_steps(str)"
-    ),        
-    # Tool(
-    #     name = "action_sequence_validation_tool",
-    #     func = sequence_validation,
-    #     description = "Input: query(str), action_sequence(str). Output: command to call action_sequence_generation_tool_obj again if validation fails. If validation passes, print out the input action_sequence(str)."
-    # ),
+        name = "move_down_activity_tool",
+        func = move_down_activity,
+        description = "This tool generates a spefic and deep hierarchical description of source activity"
+    ),
     ]
 
-def run_agent(target_video_idx=None, target_activity=""):
-    
-    if target_video_idx is None:
-        target_video_idx = int(input("Input target index: "))
-    if target_activity is "":
-        target_activity = input("Input target activity: ")
-    target_spatial_video = spatial_test_video_list[target_video_idx]
-    target_scene_graph = agent_input.extract_spatial_context(target_spatial_video)
-    tool_names =", ".join([t.name for t in TOOLS])
+
+def run_agent(source_video_idx=None, source_activity=""):
+
+    if source_video_idx is None:
+        source_video_idx = int(input("Input source index:"))
+    if source_activity is "":
+        source_activity = input("Input source activity")
+    source_goalstep_video = goalstep_test_video_list[source_video_idx]
+    source_spatial_video = spatial_test_video_list[source_video_idx]
+    source_action_sequence = agent_input.extract_lower_goalstep_segments(source_goalstep_video)
+    source_scene_graph = agent_input.extract_spatial_context(source_spatial_video)
+    tool_names =", ".join([t.name for t in TOOLS])    
 
     AGENT = create_react_agent(
         tools=TOOLS,
         llm=LLM_MODEL,
-        prompt=agent_prompt.AGENT3_PROMPT
-    )
+        prompt=agent_prompt.AGENT1b_PROMPT
+    )    
 
-    QUERY = "Give me a sequence of actions to fulfill the target_activity inside the environment of target_scene_graph"
+    QUERY = "Categorically describe source activity in a very specific way."    
     MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
     AGENT_EXECUTOR = AgentExecutor(
         agent=AGENT, 
         tools=TOOLS, 
         verbose=True, 
         handle_parsing_errors=True,
-        memory=MEMORY,
+        memory=MEMORY
     )
+
 
     response = AGENT_EXECUTOR.invoke(
         {
-            "query": QUERY,
-            "target_activity": target_activity,
-            "target_scene_graph": target_scene_graph,
+            "query": QUERY, 
+            "source_scene_graph": source_scene_graph,
+            "source_action_sequence": source_action_sequence,
             "tools": TOOLS,  # Pass tool objects
             "tool_names": tool_names,  # Convert list to comma-separated string
             "agent_scratchpad": ""  # Let LangChain handle this dynamically
-        },
-        config={"max_iterations": 3} 
-        )
+         },
+        config={"max_iterations": 5}
+    )
     return response
 
 
 if __name__ == "__main__":
 
-    target_video_idx = int(input("Input target index: "))
-    target_activity = input("Input target activity: ")
-    response = run_agent(target_video_idx, target_activity)
+    source_video_idx = int(input("Input source index:"))
+    response = run_agent(source_video_idx)
+
+    if "move_down_activity_tool" in response:
+        response =  response.split("Action Input:")[1].strip()
+
+    print(f"response {response}")

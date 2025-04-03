@@ -6,6 +6,144 @@ from langchain.prompts import PromptTemplate
 -define question
 -define rules
 """
+#-------------------------
+# AGENT 1
+"""
+
+"""
+#-------------------------
+AGENT1a_PROMPT = ChatPromptTemplate.from_messages([
+    ("system", """You are an agent that answers queries using tools. If you have gathered enough information, respond with:
+    
+    Thought: I now have enough information to answer.
+    Final Answer: [Your answer]
+        
+    Otherwise, use this format:
+        Thought: [Your reasoning]
+        Action: [Tool name]
+        Action Input: {{"query": "{query}", "source_action_sequence": "{source_action_sequence}", "source_scene_graph": "{source_scene_graph}" }}
+        """),
+
+    ("system", "The user is performing a sequence of actions in this form: {source_action_sequence}."),
+    ("system", "The user is in a space described by this scene graph. Predicted activity must be able to be performed in this scene: {source_scene_graph}."),
+    ("system", "Available tools: {tools}. Use them wisely. Actively use retrieval tools to come up with plausible answer."),
+    ("system", "Tool names: {tool_names}"),  # for React agents
+    ("user", "{query}"),
+    ("assistant", "{agent_scratchpad}")  # for React agents
+    ])
+
+
+AGENT1b_PROMPT = ChatPromptTemplate.from_messages([
+    ("system", """You are an agent that answers queries using tools. If you have gathered enough information, respond with. If last answer comed from move_down_activity_tool, simple copy its answer:
+    
+    Thought: Here is the answer from move_down_activity_tool.
+    Final Answer: [Your answer]
+        
+    Otherwise, use this format:
+        Thought: [Your reasoning]
+        Action: [Tool name]
+        Action Input: {{"query": "{query}", "source_action_sequence": "{source_action_sequence}", "source_scene_graph": "{source_scene_graph}" }}
+        """),
+
+    ("system", "The user is performing a sequence of actions in this form: {source_action_sequence}."),
+    ("system", "The user is in a space described by this scene graph. Predicted activity must be able to be performed in this scene: {source_scene_graph}."),
+    ("system", "Available tools: {tools}. Use them wisely. Actively use retrieval tools to come up with plausible answer."),
+    ("system", "Tool names: {tool_names}"),  # for React agents
+    ("user", "{query}"),
+    ("assistant", "{agent_scratchpad}")  # for React agents
+    ])
+
+
+
+
+#-------------------------
+# AGENT 2a, AGENT 2b,
+"""
+
+"""
+#-------------------------
+AGENT2a_PROMPT = ChatPromptTemplate.from_messages([
+    ("system", """You are an agent that answers queries using tools. If you have gathered enough information, respond with:
+    
+    Thought: I now have enough information to answer.
+    Final Answer: [Your answer]
+    
+    Otherwise, use this format:
+    Thought: [Your reasoning]
+    Action: [Tool name]
+    Action Input: {{"query": {query}, "target_activity":{target_activity}, "target_scene_graph": {target_scene_graph} }}
+    """),        
+
+    ("system", "The user wants to perform a target activity. The user is in a space described by this scene graph. Both target activity and scene graph is given in user message. Only use entities in this scene graph."),
+    ("system", "Available tools: {tools}. Use them when necessary."),
+    ("system", "Tool names: {tool_names}"), 
+    ("system",  "user target activity: {target_activity}"),
+    ("system",  "user target scene graph: {target_scene_graph}"),
+    ("user", "user query: {query}"), 
+    ("assistant", "{agent_scratchpad}") 
+])
+
+
+
+
+
+
+
+
+
+
+
+
+#-------------------------
+# AGENT 3
+"""
+
+"""
+#-------------------------
+AGENT3_PROMPT = ChatPromptTemplate.from_messages([
+    ("system", """You are an agent that answers queries using tools. If you have gathered enough information, respond with:
+    
+    Thought: I now have enough information to answer.
+    Final Answer: [Your answer]
+    
+    Otherwise, use this format:
+    Thought: [Your reasoning]
+    Action: [Tool name]
+    Action Input: {{"query": {query}, "target_activity":{target_activity}, "target_scene_graph": {target_scene_graph} }}
+    """),        
+
+    ("system", "The user wants to perform a target activity. The user is in a space described by this scene graph. Both target activity and scene graph is given in user message. Only use entities in this scene graph."),
+    ("system", "Available tools: {tools}. Use them when necessary."),
+    ("system", "Tool names: {tool_names}"), 
+    ("system",  "user target activity: {target_activity}"),
+    ("system",  "user target scene graph: {target_scene_graph}"),
+    ("user", "user query: {query}"), 
+    ("assistant", "{agent_scratchpad}") 
+]
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #-------------------------
 # AGENT 3

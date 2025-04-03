@@ -13,30 +13,39 @@ import os
 from langchain.schema.runnable import RunnableLambda
 # packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
+import script_work.agent_database as agent_database
+import script_work.agent_input as agent_input
+import script_work.agent_query as agent_query
+import script_work.agent_prompt as agent_prompt
+import script_work.workflow_data as workflow_data
 import workflow_agent1 as agent1
-import workflow_agent2 as agent2
+import script_work.workflow_agent2a as agent2a
+import script_work.workflow_agent2b as agent2b
 import workflow_agent3 as agent3
+
 
 def run_agents_serial(input_text):
     result1 = agent1.run_agent1(input_text)
-    result2 = agent2.run_agent2(result1)
-    result3 = agent3.run_agent3(result2)
+    result2a = agent2a.run_agent2(result1)
+    result2b = agent2b.run_agent2(result2a)
+    result3 = agent3.run_agent3(result2b)
     return result3
 
-if __name__ == "__main__":
-    # -----------------------
-    # METHOD 1: run agents in serial
-    # -----------------------
-    # final_output = run_agents_serial("Start process")
-    # print("Final Output:", final_output)
-
-    # -----------------------
-    # METHOD 2: chain and run
-    # -----------------------
+def run_agent_chain(input_text):
     runnable_agent1 = RunnableLambda(lambda x: agent1.run(x))
-    runnable_agent2 = RunnableLambda(lambda x: agent2.run(x))
+    runnable_agent2a = RunnableLambda(lambda x: agent2a.run(x))
+    runnable_agent2b = RunnableLambda(lambda x: agent2b.run(x))
     runnable_agent3 = RunnableLambda(lambda x: agent3.run(x))
-    agent_pipeline = runnable_agent1 | runnable_agent2 | runnable_agent3
+    agent_pipeline = runnable_agent1 | runnable_agent2a | runnable_agent2b | runnable_agent3    
+    return agent_pipeline.invoke(input_text)
 
-    output = agent_pipeline.invoke("Start process")
-    print(output)
+if __name__ == "__main__":
+
+    source_idx = int(input("source scene idx: "))
+    target_idx = int(input("target scene idx: "))
+    source_spatial_video = workflow_data.spatial_test_video_list[source_idx]
+    target_spatial_video = workflow_data.spatial_test_video_list[target_idx]
+    source_scene_graph = agent_input.extract_spatial_context(source_spatial_video)
+    target_scene_graph = agent_input.extract_spatial_context(target_spatial_video)
+
+    #TODO Define Agent and run?

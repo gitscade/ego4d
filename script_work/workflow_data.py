@@ -82,7 +82,7 @@ print(f"MAKE_DOCU: goalstep_document_list: {len(goalstep_test_document_list)}")
 print(f"MMAKE_DOCUAKE: spatial_document_list: {len(spatial_test_document_list)}")
 
 # -----------------------
-# MAKE/LOAD FAISS Vectorstore and retrievers
+# VIDEO LIST, VECSTORE, RETRIEVER
 # -----------------------
 # ONE document = one chunk for now
 embeddings = OpenAIEmbeddings()
