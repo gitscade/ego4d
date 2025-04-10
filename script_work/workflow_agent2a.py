@@ -31,7 +31,7 @@ import script_work.agent_database as agent_database
 import script_work.agent_input as agent_input
 import script_work.agent_query as agent_query
 import script_work.agent_prompt as agent_prompt
-from util import util_constants
+from Scripts.Utils.util import util_constants
 import workflow_data
 
 # -----------------------
@@ -132,6 +132,7 @@ if __name__ == "__main__":
             "query": QUERY,
             "source_action_sequence": source_action_sequence,
             "source_scene_graph": source_scene_graph,
+            "source_activity": source_activity,
             "target_scene_graph": target_scene_graph,
             "tools": TOOLS,  # Pass tool objects
             "tool_names": ", ".join(tool_names),  # Convert list to comma-separated string

@@ -39,6 +39,37 @@ def merge_json_video_list(path):
                     print(f"Error reading {filename}: {e}")
     return merged_videos
 
+def merge_json_video_list_exclude_files_in_path2(path, path2):
+    """
+    func: read all json files in directory & merge "videos" list of all files into one
+    func: exclude file with same names found in path2
+    input: path to the directory
+    output: merged_vides = []
+    """
+    merged_videos = []
+    filenames_path2 = [f for f in os.listdir(path2) if f.endswith(".json")]
+
+    for filename in os.listdir(path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(path, filename)
+
+            #check for same file and pass if there is one
+            if filename in filenames_path2:
+                print(f'passing duplicate file {filename}')
+                continue
+            else:
+                print(filename)
+
+            #open json and read
+            with open(file_path, 'r') as file:
+                try:
+                    data = json.load(file)
+                    if 'videos' in data:
+                        merged_videos.extend(data["videos"])
+                except json.JSONDecodeError as e:
+                    print(f"Error reading {filename}: {e}")
+    return merged_videos
+
 
 def exclude_test_video_list(video_list, exclude_uid_list):
     """

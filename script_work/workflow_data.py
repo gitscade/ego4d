@@ -31,6 +31,7 @@ from util import util_constants
 data_path = util_constants.PATH_DATA
 GOALSTEP_ANNOTATION_PATH = data_path + 'goalstep/'
 SPATIAL_ANNOTATION_PATH = data_path + 'spatial/'
+SPATIAL_ANNOTATION_V1_PATH = data_path + 'linked_result_v1'
 GOALSTEP_VECSTORE_PATH = GOALSTEP_ANNOTATION_PATH + 'goalstep_docarray_faiss'
 SPATIAL_VECSTORE_PATH = SPATIAL_ANNOTATION_PATH + 'spatial_docarray_faiss'
 
@@ -49,6 +50,9 @@ print(GOALSTEP_ANNOTATION_PATH)
 print(SPATIAL_ANNOTATION_PATH)
 goalstep_videos_list = agent_database.merge_json_video_list(GOALSTEP_ANNOTATION_PATH)
 spatial_videos_list = agent_database.merge_json_video_list(SPATIAL_ANNOTATION_PATH)
+spatial_videos_list2 = agent_database.merge_json_video_list_exclude_files_in_path2(SPATIAL_ANNOTATION_V1_PATH, SPATIAL_ANNOTATION_PATH)
+print(f"spatial vids1: {len(spatial_videos_list)}")
+print(f"spatial vids2: {len(spatial_videos_list2)}")
 print(f"goalstep vids: {len(goalstep_videos_list)} and spatial vids: {len(spatial_videos_list)}")
 
 # EXCLUDE test videos

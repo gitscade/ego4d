@@ -31,7 +31,7 @@ import script_work.agent_database as agent_database
 import script_work.agent_input as agent_input
 import script_work.agent_query as agent_query
 import script_work.agent_prompt as agent_prompt
-from util import util_constants
+from Scripts.Utils.util import util_constants
 import workflow_data
 
 
@@ -138,7 +138,13 @@ TOOLS = [
 
 
 def run_agent(source_video_idx=None, source_activity=""):
-
+    """
+    set input arguments
+    set agent arguments
+    create react agent
+    create agent executor
+    pass on responese
+    """
     if source_video_idx is None:
         source_video_idx = int(input("Input source index:"))
     if source_activity is "":
@@ -148,6 +154,9 @@ def run_agent(source_video_idx=None, source_activity=""):
     source_action_sequence = agent_input.extract_lower_goalstep_segments(source_goalstep_video)
     source_scene_graph = agent_input.extract_spatial_context(source_spatial_video)
     tool_names =", ".join([t.name for t in TOOLS])    
+    
+    QUERY = "Categorically describe source activity in a very specific way."    
+    MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
 
     AGENT = create_react_agent(
         tools=TOOLS,
@@ -155,8 +164,6 @@ def run_agent(source_video_idx=None, source_activity=""):
         prompt=agent_prompt.AGENT1b_PROMPT
     )    
 
-    QUERY = "Categorically describe source activity in a very specific way."    
-    MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
     AGENT_EXECUTOR = AgentExecutor(
         agent=AGENT, 
         tools=TOOLS, 
@@ -164,7 +171,6 @@ def run_agent(source_video_idx=None, source_activity=""):
         handle_parsing_errors=True,
         memory=MEMORY
     )
-
 
     response = AGENT_EXECUTOR.invoke(
         {

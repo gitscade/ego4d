@@ -18,7 +18,7 @@ import script_work.agent_input as agent_input
 import script_work.agent_query as agent_query
 import script_work.agent_prompt as agent_prompt
 import script_work.workflow_data as workflow_data
-import workflow_agent1 as agent1
+import script_work.workflow_agent1a as agent1
 import script_work.workflow_agent2a as agent2a
 import script_work.workflow_agent2b as agent2b
 import workflow_agent3 as agent3
