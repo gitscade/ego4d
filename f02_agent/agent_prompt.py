@@ -9,13 +9,17 @@ from langchain.prompts import PromptTemplate
 #-------------------------
 # AGENT 1
 """
+1a
+func: This agent predicts root activity with [verb][noun] form
 
+1b
+func: this agent enriches root activity to an deeper taxonomy
 """
 #-------------------------
 AGENT1a_PROMPT = ChatPromptTemplate.from_messages([
     ("system", """You are an agent that answers queries using tools. If you have gathered enough information, respond with:
     
-    Thought: I now have enough information to answer.
+    Thought: I am ready to give final answer.
     Final Answer: [Your answer]
         
     Otherwise, use this format:
@@ -24,8 +28,8 @@ AGENT1a_PROMPT = ChatPromptTemplate.from_messages([
         Action Input: {{"query": "{query}", "source_action_sequence": "{source_action_sequence}", "source_scene_graph": "{source_scene_graph}" }}
         """),
 
-    ("system", "The user is performing a sequence of actions in this form: {source_action_sequence}."),
-    ("system", "The user is in a space described by this scene graph. Predicted activity must be able to be performed in this scene: {source_scene_graph}."),
+    ("system", "This is the user action sequence: {source_action_sequence}."),
+    ("system", "The user space is described by this scene graph. User activity must be performed with entities in this scene: {source_scene_graph}."),
     ("system", "Available tools: {tools}. Use them wisely. Actively use retrieval tools to come up with plausible answer."),
     ("system", "Tool names: {tool_names}"),  # for React agents
     ("user", "{query}"),
@@ -59,9 +63,13 @@ AGENT1b_PROMPT = ChatPromptTemplate.from_messages([
 #-------------------------
 # AGENT 2a, AGENT 2b,
 """
-
+2a
+func: This agent tries to find possible common activity taxonomy, given source space activity taxonomy
+2b
+func: This agent tries to match the most similar taxonomy, given common and source space taxonomy
 """
 #-------------------------
+#TODO: Agent2a's task isn't very concrete? The procedure or algorithm has to be more specific!
 AGENT2a_PROMPT = ChatPromptTemplate.from_messages([
     ("system", """You are an agent that answers queries using tools. If you have gathered enough information, respond with:
     
@@ -85,7 +93,7 @@ AGENT2a_PROMPT = ChatPromptTemplate.from_messages([
 
 
 
-
+# TODO: agent2b's task is Not singular and many tools are needed to do this procedure. Need to provide algorithm.
 AGENT2b_PROMPT = ChatPromptTemplate.from_messages([
     ("system", """You are an agent that answers queries using tools. If you have gathered enough information, respond with:
     
@@ -116,7 +124,8 @@ AGENT2b_PROMPT = ChatPromptTemplate.from_messages([
 #-------------------------
 # AGENT 3
 """
-
+agent 3
+func: This agent 
 """
 #-------------------------
 AGENT3_PROMPT = ChatPromptTemplate.from_messages([

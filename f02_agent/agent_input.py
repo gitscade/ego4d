@@ -18,6 +18,8 @@ def extract_all_goalstep_segments(data):
     segments = []
     def recurse_segments(segment, parent_id=None, level=1):
         segment_id = segment.get("number")
+
+        
         text = json.dumps(segment.get("context"))
         metadata = {
             "level": level,
