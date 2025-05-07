@@ -1,3 +1,6 @@
+# Agent input is copied in f1_init.agent_init->delete when needed
+
+
 import json
 # TODO: def function that reads one annotation file and selects level 2 actions in formatted forms. The function should return 
 """
@@ -29,7 +32,7 @@ def extract_all_goalstep_segments(data):
         }
         segments.append({"text": text, "metadata": metadata})
 
-        # Process child segments recursively
+        # Process child segments recursively 
         for child_segment in segment.get("segments", []):
             recurse_segments(child_segment, parent_id=segment_id, level=level+1)
 

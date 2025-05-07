@@ -29,9 +29,8 @@ from langchain.memory import ConversationBufferWindowMemory
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))
 import f1_init.agent_init as agent_init
-import f1_init.agent_input as agent_input
+import f1_init.database_init as database_init
 import f2_agent.agent_prompt as agent_prompt
-import workflow_data
 from util import util_funcs
 
 
@@ -49,18 +48,13 @@ LLM_MODEL_AGENT = agent_init.LLM_MODEL_LLAMA370b
 # -----------------------
 # VIDEO LIST, VECSTORE, RETRIEVER
 # -----------------------
-ALLOWED_WORDS = {
-    "nouns": {"apple", "banana", "computer", "data", "research"},
-    "verbs": {"calculate", "analyze", "study", "process"}
-}
-
 # Load VIDEO LIST (use text video list for testing)
-goalstep_test_video_list = workflow_data.goalstep_test_video_list
-spatial_test_video_list = workflow_data.spatial_test_video_list
+goalstep_test_video_list = database_init.goalstep_test_video_list
+spatial_test_video_list = database_init.spatial_test_video_list
 
 # LOAD FAISS VECSTORE
-goalstep_vector_store = workflow_data.goalstep_vector_store
-spatial_vector_store = workflow_data.spatial_vector_store
+goalstep_vector_store = database_init.goalstep_vector_store
+spatial_vector_store = database_init.spatial_vector_store
 
 # MAKE base:VectorStoreRetriever
 goalstep_retriever = goalstep_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
@@ -206,8 +200,8 @@ def run_agent_1a(source_video_idx=None):
         source_video_idx = int(input("Input source index:"))
     source_goalstep_video = goalstep_test_video_list[source_video_idx]
     source_spatial_video = spatial_test_video_list[source_video_idx]
-    source_action_sequence = agent_input.extract_lower_goalstep_segments(source_goalstep_video)
-    source_scene_graph = agent_input.extract_spatial_context(source_spatial_video)
+    source_action_sequence = agent_init.extract_lower_goalstep_segments(source_goalstep_video)
+    source_scene_graph = agent_init.extract_spatial_context(source_spatial_video)
     tool_names =", ".join([t.name for t in TOOLS_1a])    
 
     AGENT = create_react_agent(
@@ -253,9 +247,9 @@ def run_agent_1b(source_video_idx=None, source_activity=""):
         source_activity = input("Input source activity")
     source_goalstep_video = goalstep_test_video_list[source_video_idx]
     source_spatial_video = spatial_test_video_list[source_video_idx]
-    source_action_sequence = agent_input.extract_lower_goalstep_segments(source_goalstep_video)
+    source_action_sequence = agent_init.extract_lower_goalstep_segments(source_goalstep_video)
     source_action_sequence = util_funcs.convert_single_to_double_quotes_in_tuple(source_action_sequence)
-    source_scene_graph = agent_input.extract_spatial_context(source_spatial_video)
+    source_scene_graph = agent_init.extract_spatial_context(source_spatial_video)
     source_scene_graph = json.dumps(source_scene_graph)
 
     tool_names =", ".join([t.name for t in TOOLS_1b])    

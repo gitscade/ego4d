@@ -26,9 +26,9 @@ from langchain.memory import ConversationBufferWindowMemory
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))
 import f1_init.agent_init as agent_init
-import f1_init.agent_input as agent_input
+import f1_init.database_init as database_init
+import f1_init.deprecated.agent_input as agent_input
 import f2_agent.agent_prompt as agent_prompt
-import workflow_data
 
 
 # -----------------------
@@ -53,12 +53,12 @@ ALLOWED_WORDS = {
 }
 
 # Load VIDEO LIST
-goalstep_test_video_list = workflow_data.goalstep_test_video_list
-spatial_test_video_list = workflow_data.spatial_test_video_list
+goalstep_test_video_list = database_init.goalstep_test_video_list
+spatial_test_video_list = database_init.spatial_test_video_list
 
 # LOAD FAISS VECSTORE
-goalstep_vector_store = workflow_data.goalstep_vector_store
-spatial_vector_store = workflow_data.spatial_vector_store
+goalstep_vector_store = database_init.goalstep_vector_store
+spatial_vector_store = database_init.spatial_vector_store
 
 # MAKE base:VectorStoreRetriever
 goalstep_retriever = goalstep_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})

@@ -1,5 +1,4 @@
-# THIS SCRIPT MAKES VECTORSTORE.
-# SAME SCRIPT IS TO BE MADE IN f01_inti folder, so if substitute script is ready, delete this script
+# SAME SCRIPT IS TO BE MADE IN f01_inti folder databse_init, so if substitute script is ready, delete this script
 
 
 
@@ -27,7 +26,7 @@ from langchain_core.output_parsers import StrOutputParser
 #packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))
-import f2_agent.agent_database as agent_database
+import f0_workflow_example.agent_database as agent_database
 from util import util_constants
 
 # -----------------------

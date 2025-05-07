@@ -13,11 +13,11 @@ import os
 from langchain.schema.runnable import RunnableLambda
 # packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
-import f2_agent.agent_database as agent_database
-import f1_init.agent_input as agent_input
-import f2_agent.agent_query as agent_query
+import f0_workflow_example.agent_database as agent_database
+import f1_init.deprecated.agent_input as agent_input
+import f0_workflow_example.agent_query as agent_query
 import f2_agent.agent_prompt as agent_prompt
-import f2_agent.workflow_data as workflow_data
+import f1_init.database_init as database_init
 import f2_agent.agent1a as agent1
 import f2_agent.agent1b as agent1b
 import f2_agent.agent2a as agent2a
@@ -44,8 +44,8 @@ if __name__ == "__main__":
 
     source_idx = int(input("source scene idx: "))
     target_idx = int(input("target scene idx: "))
-    source_spatial_video = workflow_data.spatial_test_video_list[source_idx]
-    target_spatial_video = workflow_data.spatial_test_video_list[target_idx]
+    source_spatial_video = database_init.spatial_test_video_list[source_idx]
+    target_spatial_video = database_init.spatial_test_video_list[target_idx]
     source_scene_graph = agent_input.extract_spatial_context(source_spatial_video)
     target_scene_graph = agent_input.extract_spatial_context(target_spatial_video)
 

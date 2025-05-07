@@ -1,6 +1,5 @@
 # =============================================
-# Databse
-# make vectorstore based on 
+# Databse=> duplicated in databse_init => going to be deprecated
 # =============================================
 import os
 import json
