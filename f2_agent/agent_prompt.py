@@ -17,12 +17,13 @@ func: this agent enriches root activity to an deeper taxonomy
 """
 #-------------------------
 AGENT1a_PROMPT = ChatPromptTemplate.from_messages([
-    ("system", """You are an agent that answers queries using tools. If you have gathered enough information, respond with:
+    ("system", """You are an agent that answers queries using available tools. If you have gathered enough information, perform a step-by-step answering. First, explain your reasoning in a section labeled `Thought:`.Finally, give your answer in a section labeled `Final Answer:`.:
     
-    Thought: I am ready to give final answer.
-    Final Answer: [Your answer]
+        Thought: Here is the final answer.
+        Final Answer: [Your answer]
         
-    Otherwise, use this format:
+    Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain what tool invoke in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below.:
+     
         Thought: [Your reasoning]
         Action: [Tool name]
         Action Input: {{"query": "{query}", "source_action_sequence": "{source_action_sequence}", "source_scene_graph": "{source_scene_graph}" }}
@@ -30,7 +31,7 @@ AGENT1a_PROMPT = ChatPromptTemplate.from_messages([
 
     ("system", "This is the user action sequence: {source_action_sequence}."),
     ("system", "The user space is described by this scene graph. User activity must be performed with entities in this scene: {source_scene_graph}."),
-    ("system", "Available tools: {tools}. Use them wisely. Actively use retrieval tools to come up with plausible answer."),
+    ("system", "Available tools: {tools}. Here are the tools available for answering your question. Actively use retrieval tools to come up with plausible answer."),
     ("system", "Tool names: {tool_names}"),  # for React agents
     ("user", "{query}"),
     ("assistant", "{agent_scratchpad}")  # for React agents
@@ -125,7 +126,7 @@ AGENT2b_PROMPT = ChatPromptTemplate.from_messages([
 # AGENT 3
 """
 agent 3
-func: This agent 
+func: This agent tries to provide 
 """
 #-------------------------
 AGENT3_PROMPT = ChatPromptTemplate.from_messages([

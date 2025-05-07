@@ -25,27 +25,24 @@ from langchain.memory import ConversationBufferWindowMemory
 #packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))
-import script_work.agent_database as agent_database
-import script_work.agent_input as agent_input
-import script_work.agent_query as agent_query
-import script_work.agent_prompt as agent_prompt
-from Scripts.Utils.util import util_constants
+import f1_init.agent_init as agent_init
+import f1_init.agent_input as agent_input
+import f2_agent.agent_prompt as agent_prompt
 import workflow_data
+
 
 # -----------------------
 # Path & API & Model
 # -----------------------
-data_path = util_constants.PATH_DATA
-GOALSTEP_ANNOTATION_PATH = data_path + 'goalstep/'
-SPATIAL_ANNOTATION_PATH = data_path + 'spatial/'
-GOALSTEP_VECSTORE_PATH = GOALSTEP_ANNOTATION_PATH + 'goalstep_docarray_faiss'
-SPATIAL_VECSTORE_PATH = SPATIAL_ANNOTATION_PATH + 'spatial_docarray_faiss'
-
 logging.basicConfig(level=logging.ERROR)
-load_dotenv() # load env variables
-openai.api_key = os.getenv("OPENAI_API_KEY")
-model1 = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini") #10x cheaper
+load_dotenv()
 parser_stroutput = StrOutputParser()
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
+LLM_MODEL = agent_init.LLM_MODEL_4MINI
+LLM_MODEL_AGENT = agent_init.LLM_MODEL_4MINI
+
+
 
 # -----------------------
 # VIDEO LIST, VECSTORE, RETRIEVER
@@ -104,7 +101,7 @@ def sequence_generation(input: str):
     return f"Thought: I need to generate the action sequence.\nAction: action_sequence_generation_tool\nAction Input: {json.dumps({'query': query, 'target_activity': target_activity, 'target_scene_graph': target_scene_graph})}\n{action_sequence}"
 
 
-# TODO NEED FORMAT VALIDATION
+# TODO 
 def sequence_validation(query: dict):
     prompt = f"You are an action sequence validator. You have to check three items. First, check that only entities from the target space is used for performing actions. Second, you need to see whether the actions are possible to be performed. Third, you need to check if the sequence of actions achieve the goal. When all three items pass, finalize the answer. Otherwise, re-try the action_sequence_generation tool for maximum of two times.\n"
     
@@ -122,11 +119,8 @@ def sequence_validation(query: dict):
 # -----------------------
 # AGENT SETUP
 # -----------------------
-# LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini", temperature=1)
-LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4", temperature=1)
-#LLM_MODEL_OLLAMA = OllamaLLM()
 MEMORY = ConversationBufferWindowMemory(k=3)
-TOOLS = [
+TOOLS_3 = [
     Tool(
         name = "goalstep_retriever_tool",
         func = goalstep_information_retriever,
@@ -157,11 +151,11 @@ def run_agent(target_video_idx=None, target_activity=""):
         target_activity = input("Input target activity: ")
     target_spatial_video = spatial_test_video_list[target_video_idx]
     target_scene_graph = agent_input.extract_spatial_context(target_spatial_video)
-    tool_names =", ".join([t.name for t in TOOLS])
+    tool_names =", ".join([t.name for t in TOOLS_3])
 
     AGENT = create_react_agent(
-        tools=TOOLS,
-        llm=LLM_MODEL,
+        tools=TOOLS_3,
+        llm=LLM_MODEL_AGENT,
         prompt=agent_prompt.AGENT3_PROMPT
     )
 
@@ -169,7 +163,7 @@ def run_agent(target_video_idx=None, target_activity=""):
     MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
     AGENT_EXECUTOR = AgentExecutor(
         agent=AGENT, 
-        tools=TOOLS, 
+        tools=TOOLS_3, 
         verbose=True, 
         handle_parsing_errors=True,
         memory=MEMORY,
@@ -180,7 +174,7 @@ def run_agent(target_video_idx=None, target_activity=""):
             "query": QUERY,
             "target_activity": target_activity,
             "target_scene_graph": target_scene_graph,
-            "tools": TOOLS,  # Pass tool objects
+            "tools": TOOLS_3,  # Pass tool objects
             "tool_names": tool_names,  # Convert list to comma-separated string
             "agent_scratchpad": ""  # Let LangChain handle this dynamically
         },

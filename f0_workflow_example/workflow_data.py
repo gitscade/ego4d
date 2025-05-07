@@ -1,3 +1,8 @@
+# THIS SCRIPT MAKES VECTORSTORE.
+# SAME SCRIPT IS TO BE MADE IN f01_inti folder, so if substitute script is ready, delete this script
+
+
+
 """
 This is folder for vector retrieval
 
@@ -22,7 +27,7 @@ from langchain_core.output_parsers import StrOutputParser
 #packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))
-import script_work.agent_database as agent_database
+import f2_agent.agent_database as agent_database
 from util import util_constants
 
 # -----------------------
@@ -50,9 +55,9 @@ print(GOALSTEP_ANNOTATION_PATH)
 print(SPATIAL_ANNOTATION_PATH)
 goalstep_videos_list = agent_database.merge_json_video_list(GOALSTEP_ANNOTATION_PATH)
 spatial_videos_list = agent_database.merge_json_video_list(SPATIAL_ANNOTATION_PATH)
-spatial_videos_list2 = agent_database.merge_json_video_list_exclude_files_in_path2(SPATIAL_ANNOTATION_V1_PATH, SPATIAL_ANNOTATION_PATH)
+#spatial_videos_list2 = agent_database.merge_json_video_list_exclude_files_in_path2(SPATIAL_ANNOTATION_V1_PATH, SPATIAL_ANNOTATION_PATH)
 print(f"spatial vids1: {len(spatial_videos_list)}")
-print(f"spatial vids2: {len(spatial_videos_list2)}")
+#print(f"spatial vids2: {len(spatial_videos_list2)}")
 print(f"goalstep vids: {len(goalstep_videos_list)} and spatial vids: {len(spatial_videos_list)}")
 
 # EXCLUDE test videos

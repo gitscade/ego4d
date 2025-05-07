@@ -27,12 +27,24 @@ from langchain.memory import ConversationBufferWindowMemory
 #packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))
-import script_work.agent_database as agent_database
-import script_work.agent_input as agent_input
-import script_work.agent_query as agent_query
-import script_work.agent_prompt as agent_prompt
-from Scripts.Utils.util import util_constants
+import f1_init.agent_init as agent_init
+import f1_init.agent_input as agent_input
+import f2_agent.agent_prompt as agent_prompt
 import workflow_data
+
+
+
+# -----------------------
+# Path & API & Model
+# -----------------------
+logging.basicConfig(level=logging.ERROR)
+load_dotenv()
+parser_stroutput = StrOutputParser()
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
+LLM_MODEL = agent_init.LLM_MODEL_4MINI
+LLM_MODEL_AGENT = agent_init.LLM_MODEL_4MINI
+
 
 # -----------------------
 # VIDEO LIST, VECSTORE, RETRIEVER
@@ -74,11 +86,9 @@ def move_down_activity(query:str):
 # -----------------------
 # AGENT SETUP
 # -----------------------
-LLM_MODEL = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini", temperature=1)
-#LLM_MODEL_OLLAMA = OllamaLLM()
 MEMORY = ConversationBufferWindowMemory(k=3)
 #MEMORY = MemorySaver() # Saves everyghing leading to overflow
-TOOLS = [
+TOOLS_2b = [
     Tool(
         name = "goalstep_retriever_tool",
         func = goalstep_information_retriever,
@@ -113,17 +123,17 @@ if __name__ == "__main__":
     source_spatial_video = spatial_test_video_list[source_video_idx]
     source_action_sequence = agent_input.extract_lower_goalstep_segments(source_goalstep_video)
     source_scene_graph = agent_input.extract_spatial_context(source_spatial_video)
-    tool_names =", ".join([t.name for t in TOOLS])
+    tool_names =", ".join([t.name for t in TOOLS_2b])
 
     AGENT = create_react_agent(
-        tools=TOOLS,
+        tools=TOOLS_2b,
         llm=LLM_MODEL,
         prompt=agent_prompt.AGENT1_PROMPT
     )
 
     AGENT_EXECUTOR = AgentExecutor(
-        agent=AGENT, 
-        tools=TOOLS, 
+        agent=LLM_MODEL_AGENT, 
+        tools=TOOLS_2b, 
         verbose=True, 
         handle_parsing_errors=True,
         memory=MEMORY
@@ -135,7 +145,7 @@ if __name__ == "__main__":
             "query": QUERY,
             "source_action_sequence": source_action_sequence,
             "source_scene_graph": source_scene_graph,
-            "tools": TOOLS,  # Pass tool objects
+            "tools": TOOLS_2b,  # Pass tool objects
             "tool_names": ", ".join(tool_names),  # Convert list to comma-separated string
             "agent_scratchpad": ""  # Let LangChain handle this dynamically
         },
@@ -143,3 +153,38 @@ if __name__ == "__main__":
     )
 
     print(f"response {response}")
+
+
+
+
+#openai client
+    # client = openai.OpenAI()
+    # response = client.chat.completions.create(
+    #     model=LLM_MODEL_AGENT
+    #     messages=[
+    #         {
+    #         "role": "system", 
+    #         "content": "Return a serial of noun or words which is a specific and deep hierarchical description of source activity. For example, consider that ""cook steak"" is input activity, and sequence is about cooking steak. Ask yourself what steak? Going down with steak can give you more information on animal types. Then you can go deeper if there is information on areas or specific cut of meat(e.g. tomahawk, sirloin, etc). This can result in different types of cuisines finally. The final example can end like ""(cook)(steak)(pork)(loin)(cutlet)"". You cook steak which is pork, which is loin, which is cutlet. Final answer must be given as multiple small brackets enclosing a word. (verb)(noun) is a format used to describe input source activity. (verb)(noun)(noun)....(noun) format is used for final answer called categorized_activity. When you make your answer, start from (verb)(noun) for the input activity, and then order the remaining (noun) from the highest category to the narrowest one!. For our example just return ""(cook)(steak)(pork)(loin)(cutlet)"" and nothing else! Like this!  For this example 'output': ""(cook)(steak)(pork)(loin)(cutlet)"""
+    #         }, 
+    #         { "role": "user", "content": prompt}
+    #             ],
+    #     temperature=0.5
+    # )
+    # categorized_activity = response.choices[0].message.content.strip()
+    # return f"Thought: Here is the categorized activity.\n{categorized_activity}"    
+
+
+    #Ollama Response 
+    #     response = ollama.chat(
+    #     model = LLM_MODEL_AGENT,
+    #     messages=[
+    #         {
+    #         "role": "system", 
+    #         "content": "You predict current user activity based on five input items. Activity MUST be given in one phrase inside a double quote. Answer format is as follows {{action in form of verb}} {{target in form of noun}}"
+    #         }
+    #     ],
+    #     options={
+    #         'temperature':0.5
+    #     }
+    # )
+    # activity = response['message']['content']

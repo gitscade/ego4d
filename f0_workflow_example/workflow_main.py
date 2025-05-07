@@ -13,15 +13,16 @@ import os
 from langchain.schema.runnable import RunnableLambda
 # packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
-import 02_agent.agent_database as agent_database
-import 02_agent.agent_input as agent_input
-import 02_agent.agent_query as agent_query
-import 02_agent.agent_prompt as agent_prompt
-import 02_agent.workflow_data as workflow_data
-import 02_agent.workflow_agent1a as agent1
-import 02_agent.workflow_agent2a as agent2a
-import 02_agent.workflow_agent2b as agent2b
-import workflow_agent3 as agent3
+import f2_agent.agent_database as agent_database
+import f1_init.agent_input as agent_input
+import f2_agent.agent_query as agent_query
+import f2_agent.agent_prompt as agent_prompt
+import f2_agent.workflow_data as workflow_data
+import f2_agent.agent1a as agent1
+import f2_agent.agent1b as agent1b
+import f2_agent.agent2a as agent2a
+import f2_agent.agent2b as agent2b
+import f2_agent.agent3 as agent3
 
 
 def run_agents_serial(input_text):

@@ -69,67 +69,30 @@ def extract_spatial_context(video):
     return video["spatial_context"]
 
 
-#TODO: Maybe this method is not needed at all?
-# def extract_parent_segments(input_segments, all_segments):
-#     """
-#     func: find unique parent segments(dict list) for all of the input segments
-#     input: list of input segments, all segment list
-#     output: list of parent segments
-#     """
-#     parent_segments = []
-#     def find_parent_segments(segment):
-#         # lookup metadata for parent level and id
-#         metadata = segment["metadata"]
-#         seach_parent_level = metadata["level"] - 1
-#         search_parent_id = metadata["parent_id"]
- 
-#         # if parent, find and append
-#         parent_segments = [
-#         item for item in all_segments:
-#             if item["metadata"].get("level") == seach_parent_level and item["metadata"].get("parent_id") == search_parent_id
+
+
+# if __name__=="__main__":
+
+#     video = {"segments":[
+#         {"level":2,
+#         "context":{"content1":"xxx"},
+#         "segments": 
+#         [
+#             {"level":3,
+#             "context":{"content1-1":"xxx"},
+#             },
+#             {
+#             "level":3,
+#             "context":{"content1-2":"xxx"},
+#             }
 #         ]
+#         },
+#         {
+#         "level":2,
+#         "context":{"content2":"xxx"},
+#         "segments": []
+#         }
+#     ]}
 
-#         parent_segments.append()
-
-#         # lookup metadata for any highest level segment
-#         parent_segments.append()
-
-#     for segment in input_segments:
-#         find_parent_segments(segment)
-    
-
-#     # make output list into hashable format and retrieve unique elements
-#     unique_parent_segments = list({frozenset(d.items()): d for d in parent_segments}.values())
-#     return unique_parent_segments
-
-
-
-
-
-
-
-if __name__=="__main__":
-
-    video = {"segments":[
-        {"level":2,
-        "context":{"content1":"xxx"},
-        "segments": 
-        [
-            {"level":3,
-            "context":{"content1-1":"xxx"},
-            },
-            {
-            "level":3,
-            "context":{"content1-2":"xxx"},
-            }
-        ]
-        },
-        {
-        "level":2,
-        "context":{"content2":"xxx"},
-        "segments": []
-        }
-    ]}
-
-    #print(video["segments"][0])
-    extract_lower_goalstep_segments(video)
+#     #print(video["segments"][0])
+#     extract_lower_goalstep_segments(video)
