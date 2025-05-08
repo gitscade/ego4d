@@ -37,11 +37,67 @@ from util import util_funcs
 #------------------------
 #prompt messages
 #------------------------
+"""
+1a
+func: This agent predicts root activity with [verb][noun] form
 
+1b
+func: this agent enriches root activity to an deeper taxonomy
+"""
+#-------------------------
+AGENT1a_PROMPT = ChatPromptTemplate.from_messages([
+    ("system", """You are a helpful summarizer that summarizes an action_sequence in input scene_graph, using tools. State your though process and final answer following the format below:
+    
+        Thought: Here is the final answer.
+        Final Answer: [Your answer]
+        
+    Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain used tool in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below.
+     
+        Thought: [Your reasoning]
+        Action: [Tool name]
+        Action Input: 
+            {{
+            "query": "{query}", 
+            "source_action_sequence": "{source_action_sequence}", 
+            "source_scene_graph": "{source_scene_graph}" 
+            }}
+    """),
+    ("system", "Available tools: {tools}. Actively use retrieval tools to come up with plausible answer."),
+    ("system", "Tool names: {tool_names}"),  # for React agents
+    ("user", "{query}"),
+    ("assistant", "{agent_scratchpad}")  # for React agents
+    ])
 
+MESSAGE_ACTIVITY_PREDICTION = [
+        {"role": "system", 
+        "content": "You are a linguist that summarizes current user activity to a single verb and a single noun with a detailed thought process for the summary." }, 
+        { "role": "user", "source_action_sequence": "{source_action_sequence}" },
+        { "role": "user", "source_scene_graph": "{source_scene_graph}" },
+    ]
 
+AGENT1b_PROMPT = ChatPromptTemplate.from_messages([
+    ("system", """You are a helpful classifier that constructs a taxonomy of an activity in a scene. State your though process and final answer following the format below:
+    
+    Thought: Here is the answer from move_down_activity_tool.
+    Final Answer: [Your answer]
+        
+    Otherwise, use this format:
+        Thought: [Your reasoning]
+        Action: [Tool name]
+        Action Input: {{"query": "{query}", "source_action_sequence": "{source_action_sequence}", "source_scene_graph": "{source_scene_graph}" }}
+        """),
 
+    ("system", "This is the user action sequence: {source_action_sequence}."),
+    ("system", "Predicted activity must be able to be performed in this scene: {source_scene_graph}."),
+    ("system", "Available tools: {tools}. Actively use retrieval tools to come up with plausible answer."),
+    ("system", "Tool names: {tool_names}"),  # for React agents
+    ("user", "{query}"),
+    ("assistant", "{agent_scratchpad}")  # for React agents
+    ])
 
+MESSAGE_TAXONOMY_CREATION = [
+
+]
 
 
 #------------------------
@@ -58,7 +114,17 @@ def spatial_information_retriver(query:dict):
     return f"User Query: {query}. similar spatial examples: {context}"
 
 def activity_prediction(input):
-    """Predict an activity of the user based on the input"""
+    """Predict an activity summary of the user based on input"""
+    try:
+        input_dict = json.loads(input)
+
+        query = input_dict.get("query")
+        source_action_sequence = input_dict.get("source_action_sequence")
+        source_scene_graph = input_dict.get("source_scene_graph")
+        
+
+    except Exception as e:
+        return f"Error: activity_prediction: {str(e)}"
 
     # Made into good python dictionary
     input_dict = ast.literal_eval(input.strip())  # convert to python dict
@@ -79,18 +145,8 @@ def activity_prediction(input):
     # dump prompt because "content" in openAi should be string!
     client = openai.OpenAI()
     response = client.chat.completions.create(
-        model=agent_init.LLM_MODEL_AGENT,
-        messages=[
-            {
-            "role": "system", 
-            "content": "You predict current user activity based on five input items. Activity MUST be given in one phrase inside a double quote. Answer format is as follows {{action in form of verb}} {{target in form of noun}}"
-            }, 
-            { "role": "user", "query": QUERY },
-            { "role": "user", "source_action_sequence": "{source_action_sequence_str2}"
-             },
-            { "role": "user", "source_scene_graph": "{source_scene_graph_str2}"
-             },
-                ],
+        model = agent_init.LLM_MODEL_AGENT,
+        messages = MESSAGE_ACTIVITY_PREDICTION,
         temperature=0.5
     )
     activity = response.choices[0].message.content.strip()
@@ -113,38 +169,38 @@ def activity_prediction(input):
 
     return f"Thought: The activity is predicted.\nAction: activity_prediction_tool\nAction Input: {json.dumps({'query': query, 'source_action_sequence': source_action_sequence, 'source_scene_graph': source_scene_graph})}\n{activity}"
 
-# TODO source activity must be given as input
-def move_down_activity(input: str, source_action_sequence, source_scene_graph):
-    """Make deep activity more specific and concrete by lowering one level down its hierarchy"""
-    input_dict = ast.literal_eval(input.strip())  # convert to python dict
-    valid_json = json.dumps(input_dict, indent=4)  # read as JSON(wth "")
-    input_json = json.loads(valid_json)
-    query = input_json.get("query")
-    # source_action_sequence = input_json.get("source_action_sequence")
-    # source_scene_graph = input_json.get("source_scene_graph")
-    source_activity = input_json.get("source_activity")
+# # TODO source activity must be given as input
+# def move_down_activity(input: str, source_action_sequence, source_scene_graph):
+#     """Make deep activity more specific and concrete by lowering one level down its hierarchy"""
+#     input_dict = ast.literal_eval(input.strip())  # convert to python dict
+#     valid_json = json.dumps(input_dict, indent=4)  # read as JSON(wth "")
+#     input_json = json.loads(valid_json)
+#     query = input_json.get("query")
+#     # source_action_sequence = input_json.get("source_action_sequence")
+#     # source_scene_graph = input_json.get("source_scene_graph")
+#     source_activity = input_json.get("source_activity")
 
-    prompt = f"Here is the query: {query}. Here is the source_action_sequence: {source_action_sequence}. Here is the source_scene_graph: {source_scene_graph}. Here is the source_activity: {source_activity}"
+#     prompt = f"Here is the query: {query}. Here is the source_action_sequence: {source_action_sequence}. Here is the source_scene_graph: {source_scene_graph}. Here is the source_activity: {source_activity}"
 
-    messages=[
-        {
-        "role": "system", 
-        "content": "Return a serial of noun or words which is a specific and deep taxonomical description of source activity. For example, consider that ""cook steak"" is input activity, and sequence is about cooking steak. Construct a taxonomy of steak, that reflects the given action sequence. The taxonomy should take a form of: (cook)(steak)(meat)(salted)() and so on, with bracket enclosing noun description. The level of taxonomy should be at maxinum 5 levels deep."
-        }, 
-        { "role": "user", "content": prompt}
-            ]
+#     messages=[
+#         {
+#         "role": "system", 
+#         "content": "Return a serial of noun or words which is a specific and deep taxonomical description of source activity. For example, consider that ""cook steak"" is input activity, and sequence is about cooking steak. Construct a taxonomy of steak, that reflects the given action sequence. The taxonomy should take a form of: (cook)(steak)(meat)(salted)() and so on, with bracket enclosing noun description. The level of taxonomy should be at maxinum 5 levels deep."
+#         }, 
+#         { "role": "user", "content": prompt}
+#             ]
     
-    json_messages = util_funcs.convert_single_to_double_quotes(messages)
-    client = openai.OpenAI()
-    response = client.chat.completions.create(
-        model=LLM_MODEL_AGENT,
-        messages = json_messages,
-        temperature=0.5
-    )
-    categorized_activity = response.choices[0].message.content.strip()
+#     json_messages = util_funcs.convert_single_to_double_quotes(messages)
+#     client = openai.OpenAI()
+#     response = client.chat.completions.create(
+#         model=LLM_MODEL_AGENT,
+#         messages = json_messages,
+#         temperature=0.5
+#     )
+#     categorized_activity = response.choices[0].message.content.strip()
 
-    return f"Thought: Here is the categorized activity.\nAction: move_down_activity_tool\nAction Input: {json.dumps({'query': query, 'source_action_sequence': source_action_sequence, 'source_scene_graph': source_scene_graph})}\n{categorized_activity}"
-    # return f"Thought: Here is the categorized activity.\n{categorized_activity}"
+#     return f"Thought: Here is the categorized activity.\nAction: move_down_activity_tool\nAction Input: {json.dumps({'query': query, 'source_action_sequence': source_action_sequence, 'source_scene_graph': source_scene_graph})}\n{categorized_activity}"
+#     # return f"Thought: Here is the categorized activity.\n{categorized_activity}"
 
 
 
@@ -194,14 +250,15 @@ TOOLS_1b = [
 # -----------------------
 def run_agent_1a(source_video_idx=None):
 
+    # Load Document
     if source_video_idx is None:
         source_video_idx = int(input("Input source index:"))
-
-    source_goalstep_video = goalstep_test_video_list[source_video_idx]
-    source_spatial_video = spatial_test_video_list[source_video_idx]
-    
+    source_goalstep_video = database_init.goalstep_test_video_list[source_video_idx]
+    source_spatial_video = database_init.spatial_test_video_list[source_video_idx]
     source_action_sequence = agent_init.extract_lower_goalstep_segments(source_goalstep_video)
     source_scene_graph = agent_init.extract_spatial_context(source_spatial_video)
+    
+    # Format Document as Json
 
 
     tool_names =", ".join([t.name for t in TOOLS_1a])    

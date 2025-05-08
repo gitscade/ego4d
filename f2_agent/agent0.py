@@ -28,11 +28,25 @@ import f1_init.agent_init as agent_init
 import f1_init.database_init as database_init
 import f2_agent.agent_prompt as agent_prompt
 from util import util_funcs
+"""
+Follow this flow to prevent formatting error.
+NOT defining files used in queries or messages will require agent to pass on inputs using strict formatting.
+PASSING input variables through agent will result in internal formatting by AGENT API.
+INTERNAL FORMATTINGs by AGENT API can lead to incompatible variable format for the LLM API.
 
+To prevent unforseen problems caused by inherent formatting, pre-format files first, then define queries & messages. 
+
+1. API / LLM
+2. FILES / FORMATTING
+3. PROMPTS / MESSAGES
+4. TOOL FUNCS
+5. AGENT FUNCS
+6. MAIN
+"""
 
 
 # -----------------------
-# API & LLM
+# 1. API / LLM
 # -----------------------
 logging.basicConfig(level=logging.ERROR)
 load_dotenv()
@@ -40,44 +54,58 @@ parser_stroutput = StrOutputParser()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 LLM_MODEL = agent_init.LLM_MODEL_4MINI
 LLM_MODEL_AGENT = agent_init.LLM_MODEL_4MINI
+
 # -----------------------
-# VIDEO LIST, VECSTORE, RETRIEVER
+# 2. FILES / FORMATTING
 # -----------------------
-# Load VIDEO LIST (use text video list for testing)
-goalstep_test_video_list = database_init.goalstep_test_video_list
-spatial_test_video_list = database_init.spatial_test_video_list
-
-# LOAD FAISS VECSTORE
-goalstep_vector_store = database_init.goalstep_vector_store
-spatial_vector_store = database_init.spatial_vector_store
-
-# MAKE base:VectorStoreRetriever
-goalstep_retriever = goalstep_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
-spatial_retriever = spatial_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
-#------------------------
-
-
-# Load JSON file
 source_video_idx = 1
-source_spatial_video = spatial_test_video_list[source_video_idx]
+source_spatial_video = database_init.spatial_test_video_list[source_video_idx]
 source_scene_graph = agent_init.extract_spatial_context(source_spatial_video)
-
-# Format the JSON for injection into prompt
 scene_graph_str = json.dumps(source_scene_graph, indent=2)
 
-# Create the messages list
+# -----------------------
+# PROMPTS / MESSAGES
+# -----------------------
+AGENT0_PROMPT = ChatPromptTemplate.from_messages(
+    [
+    ("system", 
+     """You are an agent that answers queries using available tools. If you have gathered enough information, perform a step-by-step answering. First, explain your reasoning in a section labeled `Thought:`.Finally, give your answer in a section labeled `Final Answer:`.:
+    
+        Thought: Here is the final answer.
+        Final Answer: [Your answer]
+        
+    Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain what tool invoke in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below. source_scene_graph should be in JSON format for openAI:
+     
+        Thought: [Your reasoning]
+        Action: [Tool name]
+        Action Input: 
+            {{
+            "query": "{query}", 
+            "source_scene_graph": {source_scene_graph} 
+            }}
+    """),
+
+    ("system", "Available tools: {tools}. Here are the tools available for answering your question. Actively use retrieval tools to come up with plausible answer."),
+    ("system", "Tool names: {tool_names}"),  # for React agents
+    ("user", "{query}"),
+    ("assistant", "{agent_scratchpad}")  # for React agents
+    ]
+    )
+
+
 activity_prediction_message = [
     {"role": "system", "content": "You are a helpful assistant that uses scene graphs to gather information"},
     {"role": "user", "content": f"Here is the scene graph:\n{scene_graph_str}\n\nDescribe the structure of this scene?"}
 ]
 
-def activity_prediction(input: str):
-    """Predict an activity of the user based on the input"""
+# -----------------------
+# 4. TOOL FUNCS
+# -----------------------
+def scene_explainer(input: str):
+    """Explain the layout of the scene"""
     try:
         # Parse string to dict — input is a string when used with LangChain agents
         input_dict = json.loads(input)
-
-        # Extract inputs
         query = input_dict.get("query")
         source_scene_graph = input_dict.get("source_scene_graph")
 
@@ -88,23 +116,22 @@ def activity_prediction(input: str):
             messages=activity_prediction_message,
             temperature=0.5
         )
-
         activity = response.choices[0].message.content.strip()
-
         return activity
-
     except Exception as e:
         return f"Tool Error: {str(e)}"
 
-
 tool0 = [
 Tool(
-    name = "activity_prediction_tool",
-    func = activity_prediction,
+    name = "scene_explanation_tool",
+    func = scene_explainer,
     description = "Activity prediction tool, which can summarize the sequential multiple actions into a short single phrase of activity."
 ),
 ]
 
+# -----------------------
+# 5. AGENT FUNCS
+# -----------------------
 QUERY = "What type of room it this?."    
 MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
 
@@ -121,7 +148,6 @@ AGENT_EXECUTOR = AgentExecutor(
     handle_parsingmory=MEMORY
 )
 
-
 source_scene_graph = json.dumps(source_scene_graph)
 tool_names =", ".join([t.name for t in tool0])   
 response = AGENT_EXECUTOR.invoke(
@@ -134,3 +160,9 @@ response = AGENT_EXECUTOR.invoke(
         },
     config={"max_iterations": 5}
 )
+
+# -----------------------
+# 6. MAIN
+# -----------------------
+if __name__ == "__main__":
+    print("none")
