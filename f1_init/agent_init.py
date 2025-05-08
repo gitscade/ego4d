@@ -11,6 +11,8 @@ import sys
 import os
 import logging
 from dotenv import load_dotenv
+import ast
+import json
 #llm
 from langchain_ollama import OllamaLLM
 import openai
@@ -82,7 +84,7 @@ def extract_lower_goalstep_segments(video: dict):
     """
     func: return lev2 & lev3 segments for a single video
     input: video: one video element of json loaded file
-    output: lv2segments: ['Kneads the dough with the mixer.', 'Pours the flour into the mixer', 'Organize the table', ...]
+    output: lv2segments: ['Kneads the dough with the mixer.', 'Pours the flour into the mixer', 'Organize the table', ...] -> STR: Kneads the... , Pours the flour, ...
     output: lv3segments: ['weigh the dough', 'weigh the dough', 'weigh the dough', 'move scale to tabletop', ...]
     """
     lv2segments = []
@@ -95,41 +97,73 @@ def extract_lower_goalstep_segments(video: dict):
         for j, level3_segment in enumerate(level2_segment.get("segments", [])):
             lv3segments.append(level3_segment["step_description"])
 
-    #print(lv2segments)
-    #print(lv3segments)
-    return lv2segments, lv3segments
+    # return lv2segments, lv3segments
+
+    lv3segments = ", ".join(lv3segments)
+    return lv3segments
 
 def extract_spatial_context(video: dict):
     """
     func: extract spatial_context section from the video dictionary
     input: video: video from which to extract spatial context
-    output: spatial_context = {'room1': [{'entity': {'type': 'avatar', 'name': 'player', 'status': 'sit'}, 'relation':...
+    output: json_string: [{"object_id": 1, "object_name": "oil", "init_status": {"status": "default", "container": null}}, {"object_id": 3, "object_name": "steak", "init_status": {"status": "d...
     """
-    return video["spatial_context"]
 
 
-# if __name__=="__main__":
+    # dump =>json format (double quotes, null)
+    # load =>json to python format(single quotes, None)
+    scenegraph = video["spatial_data"]
+    scenegraph = scenegraph = json.dumps(scenegraph)
+    #print(scenegraph)
+    scenegraph = json.loads(scenegraph)
+    #print(scenegraph)
+    return scenegraph
 
-#     video = {"segments":[
-#         {"level":2,
-#         "context":{"content1":"xxx"},
-#         "segments": 
-#         [
-#             {"level":3,
-#             "context":{"content1-1":"xxx"},
-#             },
-#             {
-#             "level":3,
-#             "context":{"content1-2":"xxx"},
-#             }
-#         ]
-#         },
-#         {
-#         "level":2,
-#         "context":{"content2":"xxx"},
-#         "segments": []
-#         }
-#     ]}
+# -----------------------
+# Agent Init API, LLM
+# -----------------------
+logging.basicConfig(level=logging.ERROR)
+load_dotenv()
+parser_stroutput = StrOutputParser()
+openai.api_key = os.getenv("OPENAI_API_KEY")
+LLM_MODEL = LLM_MODEL_4MINI
+LLM_MODEL_AGENT = LLM_MODEL_4MINI
 
-#     #print(video["segments"][0])
-#     extract_lower_goalstep_segments(video)
+# -----------------------
+# VIDEO LIST, VECSTORE, RETRIEVER
+# -----------------------
+# Load VIDEO LIST (use text video list for testing)
+goalstep_test_video_list = database_init.goalstep_test_video_list
+spatial_test_video_list = database_init.spatial_test_video_list
+
+# LOAD FAISS VECSTORE
+goalstep_vector_store = database_init.goalstep_vector_store
+spatial_vector_store = database_init.spatial_vector_store
+
+# MAKE base:VectorStoreRetriever
+goalstep_retriever = goalstep_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
+spatial_retriever = spatial_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
+
+
+
+
+if __name__=="__main__":
+    #print(video["segments"][0])
+
+    import f1_init.database_init as database_init
+    source_video_idx =2
+    goalstep_test_video_list = database_init.goalstep_test_video_list
+    source_goalstep_video = goalstep_test_video_list[source_video_idx]
+    source_sequence = extract_lower_goalstep_segments(source_goalstep_video)
+    
+    # print("how do you do")
+    # print(source_sequence)
+
+    # input_str = source_sequence.replace("'", '"')
+    # # Now parse as JSON
+    # input_json = json.loads(source_sequence)    
+    #print(source_sequence)
+
+    spatial_test_video = database_init.spatial_test_video_list[source_video_idx]
+    scenegraph = extract_spatial_context(spatial_test_video)
+    # print(scenegraph)

@@ -1,11 +1,85 @@
 from langchain.prompts import ChatPromptTemplate
 from langchain.prompts import PromptTemplate
+import json
 """
 -define template with {context} {question} {rules}
 -define context
 -define question
 -define rules
 """
+
+
+
+AGENT0_PROMPT = ChatPromptTemplate.from_messages(
+    [
+    ("system", 
+     """You are an agent that answers queries using available tools. If you have gathered enough information, perform a step-by-step answering. First, explain your reasoning in a section labeled `Thought:`.Finally, give your answer in a section labeled `Final Answer:`.:
+    
+        Thought: Here is the final answer.
+        Final Answer: [Your answer]
+        
+    Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain what tool invoke in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below. source_scene_graph should be in JSON format for openAI:
+     
+        Thought: [Your reasoning]
+        Action: [Tool name]
+        Action Input: 
+            {{
+            "query": "{query}", 
+            "source_scene_graph": {source_scene_graph} 
+            }}
+    """),
+
+    ("system", "Available tools: {tools}. Here are the tools available for answering your question. Actively use retrieval tools to come up with plausible answer."),
+    ("system", "Tool names: {tool_names}"),  # for React agents
+    ("user", "{query}"),
+    ("assistant", "{agent_scratchpad}")  # for React agents
+    ]
+    )
+
+agent0_activity_prediction_message = [
+    {"role": "system", "content": "You are an expert activity recognizer."},
+    {
+        "role": "user",
+        "content": f"Given this scene graph:\n{json.dumps(source_scene_graph, indent=2)}\n\nAnd this query:\n{query}\n\nWhat activity is being performed?"
+    }
+]
+
+
+# # Load a JSON file (e.g., scene_graph.json)
+# with open("scene_graph.json", "r") as f:
+#     scene_graph_data = json.load(f)  # Python object, not a string
+
+# # Convert JSON to a nicely formatted string for embedding in message content
+# scene_graph_str = json.dumps(scene_graph_data, indent=2)
+
+# # Build the messages for the Chat API
+# messages = [
+#     {"role": "system", 
+#      "content": "You are a helpful assistant that uses scene graphs."},
+#     {"role": "user", 
+#      "content": f"Here is the scene graph:\n{scene_graph_str}\n\nWhat is happening in the scene?"}
+# ]
+
+# # Send the request to the OpenAI API
+# response = openai.chat.completions.create(
+#     model="gpt-4",
+#     messages=messages,
+#     temperature=0.3
+# )
+
+# # Output the assistant's reply
+# print(response.choices[0].message.content)
+
+
+
+
+
+
+
+
+
+
+
 #-------------------------
 # AGENT 1
 """
@@ -22,12 +96,16 @@ AGENT1a_PROMPT = ChatPromptTemplate.from_messages([
         Thought: Here is the final answer.
         Final Answer: [Your answer]
         
-    Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain what tool invoke in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below.:
+    Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain what tool invoke in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below. source_action_sequence and source_scene_graph should be in JSON format for openAI:
      
         Thought: [Your reasoning]
         Action: [Tool name]
-        Action Input: {{"query": "{query}", "source_action_sequence": "{source_action_sequence}", "source_scene_graph": "{source_scene_graph}" }}
-        """),
+        Action Input: 
+            {{
+            "query": "{query}", 
+            "source_action_sequence": "{source_action_sequence}", "source_scene_graph": "{source_scene_graph}" 
+            }}
+    """),
 
     ("system", "This is the user action sequence: {source_action_sequence}."),
     ("system", "The user space is described by this scene graph. User activity must be performed with entities in this scene: {source_scene_graph}."),

@@ -34,98 +34,84 @@ import f2_agent.agent_prompt as agent_prompt
 from util import util_funcs
 
 
-# -----------------------
-# API & LLM
-# -----------------------
-logging.basicConfig(level=logging.ERROR)
-load_dotenv()
-parser_stroutput = StrOutputParser()
-openai.api_key = os.getenv("OPENAI_API_KEY")
-LLM_MODEL = agent_init.LLM_MODEL_LLAMA370b
-LLM_MODEL_AGENT = agent_init.LLM_MODEL_LLAMA370b
-
-
-# -----------------------
-# VIDEO LIST, VECSTORE, RETRIEVER
-# -----------------------
-# Load VIDEO LIST (use text video list for testing)
-goalstep_test_video_list = database_init.goalstep_test_video_list
-spatial_test_video_list = database_init.spatial_test_video_list
-
-# LOAD FAISS VECSTORE
-goalstep_vector_store = database_init.goalstep_vector_store
-spatial_vector_store = database_init.spatial_vector_store
-
-# MAKE base:VectorStoreRetriever
-goalstep_retriever = goalstep_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
-spatial_retriever = spatial_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
-
-
 #------------------------
 #Tools
 #------------------------
 def goalstep_information_retriever(query:str):
     """Retrieve the most relevant goalstep dataset documents based on a user's query."""
-    context = goalstep_retriever.invoke(query)
+    context = agent_init.goalstep_retriever.invoke(query)
     return f"User Query: {query}. similar goalstep examples: {context}" 
 
 def spatial_information_retriver(query:dict):
     """Retrieve the most relevant spatial context documents based on a user's query"""
-    context = spatial_retriever.invoke(query)
+    context = agent_init.spatial_retriever.invoke(query)
     return f"User Query: {query}. similar spatial examples: {context}"
 
-def activity_prediction(input: str):
+def activity_prediction(input):
     """Predict an activity of the user based on the input"""
+
+    # Made into good python dictionary
     input_dict = ast.literal_eval(input.strip())  # convert to python dict
     valid_json = json.dumps(input_dict, indent=4)  # read as JSON(wth "")
     input_json = json.loads(valid_json)
-    query = input_json.get("query")
-    source_action_sequence = input_json.get("source_action_sequence")
-    source_scene_graph = input_json.get("source_scene_graph")
+    print(input_json)
+    QUERY = input_json.get("query")
+    source_action_sequence_str = input_json.get("source_action_sequence")
+    source_scene_graph_str = input_json.get("source_scene_graph")
 
-    prompt = f"Here is the query: {query}. Here is the source_action_sequence: {source_action_sequence}. Here is the source_scene_graph: {source_scene_graph}"
+    source_action_sequence_str2 = json.dumps(source_action_sequence_str)
+    source_scene_graph_str2 = json.dumps(source_scene_graph_str)
+    print(f"str: {source_scene_graph_str2}")
 
+    QUERY="hihihi"
+    source_action_sequence_str2="seq"
+    source_scene_graph_str2 ="graph"
+    # dump prompt because "content" in openAi should be string!
     client = openai.OpenAI()
     response = client.chat.completions.create(
-        model=LLM_MODEL_AGENT,
+        model=agent_init.LLM_MODEL_AGENT,
         messages=[
             {
             "role": "system", 
             "content": "You predict current user activity based on five input items. Activity MUST be given in one phrase inside a double quote. Answer format is as follows {{action in form of verb}} {{target in form of noun}}"
             }, 
-            { "role": "user", "content": prompt}
+            { "role": "user", "query": QUERY },
+            { "role": "user", "source_action_sequence": "{source_action_sequence_str2}"
+             },
+            { "role": "user", "source_scene_graph": "{source_scene_graph_str2}"
+             },
                 ],
         temperature=0.5
     )
     activity = response.choices[0].message.content.strip()
-
-    response = ollama.chat(
-        model = LLM_MODEL_AGENT,
-        messages=[
-            {
-            "role": "system", 
-            "content": "You predict current user activity based on five input items. Activity MUST be given in one phrase inside a double quote. Answer format is as follows {{action in form of verb}} {{target in form of noun}}"
-            },
-            { "role": "user", "content": prompt}
-        ],
-        options={
-            'temperature':0.5
-        }
-    )
-    activity = response['message']['content']
+            # { "role": "user", "source_scene_graph": source_scene_graph},
+    # response = ollama.chat(
+    #     model = LLM_MODEL_AGENT,
+    #     messages=[
+    #         {
+    #         "role": "system", 
+    #         "content": "You predict current user activity based on five input items. Activity MUST be given in one phrase inside a double quote. Answer format is as follows {{action in form of verb}} {{target in form of noun}}"
+    #         },
+    #         { "role": "user", "content": prompt}
+    #     ],
+    #     options={
+    #         'temperature':0.5
+    #     }
+    # )
+    # activity = response['message']['content']
 
 
     return f"Thought: The activity is predicted.\nAction: activity_prediction_tool\nAction Input: {json.dumps({'query': query, 'source_action_sequence': source_action_sequence, 'source_scene_graph': source_scene_graph})}\n{activity}"
 
 # TODO source activity must be given as input
-def move_down_activity(input: str):
+def move_down_activity(input: str, source_action_sequence, source_scene_graph):
     """Make deep activity more specific and concrete by lowering one level down its hierarchy"""
     input_dict = ast.literal_eval(input.strip())  # convert to python dict
     valid_json = json.dumps(input_dict, indent=4)  # read as JSON(wth "")
     input_json = json.loads(valid_json)
     query = input_json.get("query")
-    source_action_sequence = input_json.get("source_action_sequence")
-    source_scene_graph = input_json.get("source_scene_graph")
+    # source_action_sequence = input_json.get("source_action_sequence")
+    # source_scene_graph = input_json.get("source_scene_graph")
     source_activity = input_json.get("source_activity")
 
     prompt = f"Here is the query: {query}. Here is the source_action_sequence: {source_action_sequence}. Here is the source_scene_graph: {source_scene_graph}. Here is the source_activity: {source_activity}"
@@ -198,10 +184,14 @@ def run_agent_1a(source_video_idx=None):
 
     if source_video_idx is None:
         source_video_idx = int(input("Input source index:"))
+
     source_goalstep_video = goalstep_test_video_list[source_video_idx]
     source_spatial_video = spatial_test_video_list[source_video_idx]
+    
     source_action_sequence = agent_init.extract_lower_goalstep_segments(source_goalstep_video)
     source_scene_graph = agent_init.extract_spatial_context(source_spatial_video)
+
+
     tool_names =", ".join([t.name for t in TOOLS_1a])    
 
     AGENT = create_react_agent(
@@ -219,6 +209,8 @@ def run_agent_1a(source_video_idx=None):
         handle_parsing_errors=True,
         memory=MEMORY
     )
+
+
     response = AGENT_EXECUTOR.invoke(
         {
             "query": QUERY, 
@@ -287,9 +279,11 @@ def run_agent_1b(source_video_idx=None, source_activity=""):
 
 if __name__ == "__main__":
 
-    source_video_idx = int(input("Input source index:"))
+    # source_video_idx = int(input("Input source index:"))
+    source_video_idx = 1
     response_1a = run_agent_1a(source_video_idx)
     print(response_1a)
+
     source_activity = int(input("Input activity:"))
     response_1b = run_agent_1b(source_activity)
     print(response_1b)

@@ -248,89 +248,89 @@ def make_spatial_document_list(video_list):
     return document_list
 
 
-if __name__ == "__main__":
-
-    # -----------------------
-    # Path & API & Model
-    # -----------------------
-    data_path = util_constants.PATH_DATA
-    GOALSTEP_ANNOTATION_PATH = data_path + 'goalstep/'
-    SPATIAL_ANNOTATION_PATH1 = data_path + 'spatial/manual'
-    SPATIAL_ANNOTATION_PATH2 = data_path + 'spatial/semiauto'
-
-    GOALSTEP_VECSTORE_PATH = GOALSTEP_ANNOTATION_PATH + 'goalstep_docarray_faiss'
-    SPATIAL_VECSTORE_PATH = data_path + 'spatial/spatial_docarray_faiss'
-
-    logging.basicConfig(level=logging.ERROR)
-    load_dotenv()
-    openai.api_key = os.getenv("OPENAI_API_KEY")
-
-    # -----------------------
-    # PREPROCESS DATA
-    # -----------------------
-    # merge individual json data into a list
-    goalstep_videos_list = make_goalstep_json_video_list(GOALSTEP_ANNOTATION_PATH)
-    spatial_videos_list = make_spatial_json_video_list(SPATIAL_ANNOTATION_PATH1, SPATIAL_ANNOTATION_PATH2)
-
-    # Divide list to test list and vectorstore list
-    test_uid = [
-        "dcd09fa4-afe2-4a0d-9703-83af2867ebd3", #make potato soap
-        "46e07357-6946-4ff0-ba36-ae11840bdc39", #make tortila soap
-        "026dac2d-2ab3-4f9c-9e1d-6198db4fb080", #prepare steak
-        "2f46d1e6-2a85-4d46-b955-10c2eded661c", #make steak
-        "14bcb17c-f70a-41d5-b10d-294388084dfc", #prepare garlic(peeling done)
-        "487d752c-6e22-43e3-9c08-627bc2a6c6d4", #peel garlic
-        "543e4c99-5d9f-407d-be75-c397d633fe56", #make sandwich
-        "24ba7993-7fc8-4447-afd5-7ff6d548b11a", #prepare sandwich bread
-        "e09a667f-04bc-49b5-8246-daf248a29174", #prepare coffee
-        "b17ff269-ec2d-4ad8-88aa-b00b75921427", #prepare coffee and bread
-        "58b2a4a4-b721-4753-bfc3-478cdb5bd1a8" #prepare tea and pie
-    ]
-    goalstep_videos_list, goalstep_test_video_list = exclude_test_video_list(goalstep_videos_list, test_uid, 'video_uid')
-    spatial_videos_list, spatial_test_video_list = exclude_test_video_list(spatial_videos_list, test_uid, 'video_id')
-    print(f"testuid excluded: goalstep vids: {len(goalstep_videos_list)}")
-    print(f"testuid excluded: spatial vids: {len(spatial_videos_list)}")
-    print(f"testuid list: test goalstep vids: {len(goalstep_test_video_list)}")
-    print(f"testuid list: test spatial vids: {len(spatial_test_video_list)}")
-
-    # MAKE docu list
-    goalstep_document_list = make_goalstep_document_list(goalstep_videos_list)
-    goalstep_test_document_list = make_goalstep_document_list(goalstep_test_video_list)
-    spatial_document = make_spatial_document_list(spatial_videos_list)
-    spatial_test_document_list = make_spatial_document_list(spatial_test_video_list)
-    print(f"MAKE_DOCU: goalstep_document_list: {len(goalstep_document_list)}")
-    print(f"MAKE_DOCU: goalstep_document_list: {len(goalstep_test_document_list)}")
-    print(f"MAKE_DOCU: spatial_document_list: {len(spatial_document)}")
-    print(f"MAKE_DOCUAKE: spatial_document_list: {len(spatial_test_document_list)}")
 
 
-    # -----------------------
-    # VIDEO LIST, VECSTORE, RETRIEVER
-    # -----------------------
-    # ONE document = one chunk for now
-    embeddings = OpenAIEmbeddings()
-    if not os.path.exists(GOALSTEP_VECSTORE_PATH + '/index.faiss'):
-        print(f"MAKE FAISS GOALSTEP: {GOALSTEP_VECSTORE_PATH}")
-        goalstep_vector_store =  FAISS.from_documents(goalstep_document_list, embeddings)
-        goalstep_vector_store.save_local(GOALSTEP_VECSTORE_PATH)
-    else:
-        print(f"LOAD FAISS GOALSTEP: {GOALSTEP_VECSTORE_PATH}")
+# -----------------------
+# Path & API & Model
+# -----------------------
+data_path = util_constants.PATH_DATA
+GOALSTEP_ANNOTATION_PATH = data_path + 'goalstep/'
+SPATIAL_ANNOTATION_PATH1 = data_path + 'spatial/manual'
+SPATIAL_ANNOTATION_PATH2 = data_path + 'spatial/semiauto'
 
-    if not os.path.exists(SPATIAL_VECSTORE_PATH + '/index.faiss'):
-        print(f"MAKE FAISS SPATIAL: {SPATIAL_VECSTORE_PATH}")
-        spatial_vector_store = FAISS.from_documents(spatial_document, embeddings)
-        spatial_vector_store.save_local(SPATIAL_VECSTORE_PATH)
-    else:
-        print(f"LOAD FAISS SPATIAL: {SPATIAL_VECSTORE_PATH}")
+GOALSTEP_VECSTORE_PATH = GOALSTEP_ANNOTATION_PATH + 'goalstep_docarray_faiss'
+SPATIAL_VECSTORE_PATH = data_path + 'spatial/spatial_docarray_faiss'
 
-    # LOAD FAISS VECSTORE
-    goalstep_vector_store = FAISS.load_local(GOALSTEP_VECSTORE_PATH, embeddings, allow_dangerous_deserialization=True)
-    spatial_vector_store = FAISS.load_local(SPATIAL_VECSTORE_PATH, embeddings, allow_dangerous_deserialization=True)
+logging.basicConfig(level=logging.ERROR)
+load_dotenv()
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
-    # MAKE Vectorstore RETRIEVER (retriever looks at page_content of documents. metadata is used for manual filtering.)
-    goalstep_retriever = goalstep_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
-    spatial_retriever = spatial_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
+# -----------------------
+# PREPROCESS DATA
+# -----------------------
+# merge individual json data into a list
+goalstep_videos_list = make_goalstep_json_video_list(GOALSTEP_ANNOTATION_PATH)
+spatial_videos_list = make_spatial_json_video_list(SPATIAL_ANNOTATION_PATH1, SPATIAL_ANNOTATION_PATH2)
 
-    # # IF NEEDED
-    # # Make Retriever (ParentDocumentRetriever)
-    # from langchain.retrievers import ParentDocumentRetriever
+# Divide list to test list and vectorstore list
+test_uid = [
+    "dcd09fa4-afe2-4a0d-9703-83af2867ebd3", #make potato soap
+    "46e07357-6946-4ff0-ba36-ae11840bdc39", #make tortila soap
+    "026dac2d-2ab3-4f9c-9e1d-6198db4fb080", #prepare steak
+    "2f46d1e6-2a85-4d46-b955-10c2eded661c", #make steak
+    "14bcb17c-f70a-41d5-b10d-294388084dfc", #prepare garlic(peeling done)
+    "487d752c-6e22-43e3-9c08-627bc2a6c6d4", #peel garlic
+    "543e4c99-5d9f-407d-be75-c397d633fe56", #make sandwich
+    "24ba7993-7fc8-4447-afd5-7ff6d548b11a", #prepare sandwich bread
+    "e09a667f-04bc-49b5-8246-daf248a29174", #prepare coffee
+    "b17ff269-ec2d-4ad8-88aa-b00b75921427", #prepare coffee and bread
+    "58b2a4a4-b721-4753-bfc3-478cdb5bd1a8" #prepare tea and pie
+]
+goalstep_videos_list, goalstep_test_video_list = exclude_test_video_list(goalstep_videos_list, test_uid, 'video_uid')
+spatial_videos_list, spatial_test_video_list = exclude_test_video_list(spatial_videos_list, test_uid, 'video_id')
+print(f"testuid excluded: goalstep vids: {len(goalstep_videos_list)}")
+print(f"testuid excluded: spatial vids: {len(spatial_videos_list)}")
+print(f"testuid list: test goalstep vids: {len(goalstep_test_video_list)}")
+print(f"testuid list: test spatial vids: {len(spatial_test_video_list)}")
+
+# MAKE docu list
+goalstep_document_list = make_goalstep_document_list(goalstep_videos_list)
+goalstep_test_document_list = make_goalstep_document_list(goalstep_test_video_list)
+spatial_document = make_spatial_document_list(spatial_videos_list)
+spatial_test_document_list = make_spatial_document_list(spatial_test_video_list)
+print(f"MAKE_DOCU: goalstep_document_list: {len(goalstep_document_list)}")
+print(f"MAKE_DOCU: goalstep_document_list: {len(goalstep_test_document_list)}")
+print(f"MAKE_DOCU: spatial_document_list: {len(spatial_document)}")
+print(f"MAKE_DOCUAKE: spatial_document_list: {len(spatial_test_document_list)}")
+
+
+# -----------------------
+# VIDEO LIST, VECSTORE, RETRIEVER
+# -----------------------
+# ONE document = one chunk for now
+embeddings = OpenAIEmbeddings()
+if not os.path.exists(GOALSTEP_VECSTORE_PATH + '/index.faiss'):
+    print(f"MAKE FAISS GOALSTEP: {GOALSTEP_VECSTORE_PATH}")
+    goalstep_vector_store =  FAISS.from_documents(goalstep_document_list, embeddings)
+    goalstep_vector_store.save_local(GOALSTEP_VECSTORE_PATH)
+else:
+    print(f"LOAD FAISS GOALSTEP: {GOALSTEP_VECSTORE_PATH}")
+
+if not os.path.exists(SPATIAL_VECSTORE_PATH + '/index.faiss'):
+    print(f"MAKE FAISS SPATIAL: {SPATIAL_VECSTORE_PATH}")
+    spatial_vector_store = FAISS.from_documents(spatial_document, embeddings)
+    spatial_vector_store.save_local(SPATIAL_VECSTORE_PATH)
+else:
+    print(f"LOAD FAISS SPATIAL: {SPATIAL_VECSTORE_PATH}")
+
+# LOAD FAISS VECSTORE
+goalstep_vector_store = FAISS.load_local(GOALSTEP_VECSTORE_PATH, embeddings, allow_dangerous_deserialization=True)
+spatial_vector_store = FAISS.load_local(SPATIAL_VECSTORE_PATH, embeddings, allow_dangerous_deserialization=True)
+
+# MAKE Vectorstore RETRIEVER (retriever looks at page_content of documents. metadata is used for manual filtering.)
+# goalstep_retriever = goalstep_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
+# spatial_retriever = spatial_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
+
+# # IF NEEDED
+# # Make Retriever (ParentDocumentRetriever)
+# from langchain.retrievers import ParentDocumentRetriever
