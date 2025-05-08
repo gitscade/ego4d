@@ -35,7 +35,17 @@ from util import util_funcs
 
 
 #------------------------
-#Tools
+#prompt messages
+#------------------------
+
+
+
+
+
+
+
+#------------------------
+#Tool Funcs
 #------------------------
 def goalstep_information_retriever(query:str):
     """Retrieve the most relevant goalstep dataset documents based on a user's query."""
@@ -139,7 +149,7 @@ def move_down_activity(input: str, source_action_sequence, source_scene_graph):
 
 
 # -----------------------
-# AGENT SETUP
+# Tool list
 # -----------------------
 
 TOOLS_1a = [
@@ -179,7 +189,9 @@ TOOLS_1b = [
     ]
 
 
-
+# -----------------------
+# Agent Function
+# -----------------------
 def run_agent_1a(source_video_idx=None):
 
     if source_video_idx is None:

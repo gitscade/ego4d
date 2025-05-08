@@ -21,10 +21,10 @@ from langchain_community.llms import OpenAI
 from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-
 #packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))
+import f1_init.database_init as database_init
 
 logging.basicConfig(level=logging.ERROR)
 load_dotenv()

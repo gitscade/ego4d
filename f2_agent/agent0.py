@@ -1,3 +1,4 @@
+#last check 250508
 import sys
 import os
 import openai
@@ -80,20 +81,11 @@ def activity_prediction(input: str):
         query = input_dict.get("query")
         source_scene_graph = input_dict.get("source_scene_graph")
 
-        # # Format prompt for OpenAI
-        # activity_prediction_message = [
-        #     {"role": "system", "content": "You are an expert activity recognizer."},
-        #     {
-        #         "role": "user",
-        #         "content": f"Given this scene graph:\n{json.dumps(source_scene_graph, indent=2)}\n\nAnd this query:\n{query}\n\nWhat activity is being performed?"
-        #     }
-        # ]
-
         # Call OpenAI
         client = openai.OpenAI()
         response = client.chat.completions.create(
             model="gpt-4",
-            messages=agent_prompt.agent0_activity_prediction_message,
+            messages=activity_prediction_message,
             temperature=0.5
         )
 
@@ -103,21 +95,6 @@ def activity_prediction(input: str):
 
     except Exception as e:
         return f"Tool Error: {str(e)}"
-
-# def activity_prediction(input):
-#         """Predict an activity of the user based on the input"""
-#         QUERY = input.get("query")
-#         source_scene_graph =input.get("scene_graph")
-#         # dump prompt because "content" in openAi should be string!
-#         client = openai.OpenAI()
-#         response = client.chat.completions.create(
-#             model=LLM_MODEL_AGENT,
-#             messages=activity_prediction_message,
-#             temperature=0.5
-#         )
-#         activity = response.choices[0].message.content.strip()
-
-#         return f"Thought: The activity is predicted.\nAction: activity_prediction_tool\nAction Input: {json.dumps({'query': QUERY, 'source_scene_graph': source_scene_graph})}\n{activity}"
 
 
 tool0 = [

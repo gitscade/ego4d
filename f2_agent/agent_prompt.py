@@ -36,14 +36,13 @@ AGENT0_PROMPT = ChatPromptTemplate.from_messages(
     ]
     )
 
-agent0_activity_prediction_message = [
-    {"role": "system", "content": "You are an expert activity recognizer."},
-    {
-        "role": "user",
-        "content": f"Given this scene graph:\n{json.dumps(source_scene_graph, indent=2)}\n\nAnd this query:\n{query}\n\nWhat activity is being performed?"
-    }
-]
-
+# agent0_activity_prediction_message = [
+#     {"role": "system", "content": "You are an expert activity recognizer."},
+#     {
+#         "role": "user",
+#         "content": f"Given this scene graph:\n{json.dumps(source_scene_graph, indent=2)}\n\nAnd this query:\n{query}\n\nWhat activity is being performed?"
+#     }
+# ]
 
 # # Load a JSON file (e.g., scene_graph.json)
 # with open("scene_graph.json", "r") as f:
