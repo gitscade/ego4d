@@ -43,71 +43,62 @@ To prevent unforseen problems caused by inherent formatting, pre-format files fi
 5. AGENT FUNCS
 6. MAIN
 """
+# -----------------------
+# MESSAGES / QUERIES FUNCS = from packages
+# -----------------------
+def get_agent0_message(inputs: list):
+    query = inputs[0]
+    source_scene_graph = inputs[1]
+    tools = inputs[2]
+    tool_names = inputs[3]
 
-
-# -----------------------
-# 1. API / LLM
-# -----------------------
-logging.basicConfig(level=logging.ERROR)
-load_dotenv()
-parser_stroutput = StrOutputParser()
-openai.api_key = os.getenv("OPENAI_API_KEY")
-LLM_MODEL = agent_init.LLM_MODEL_4MINI
-LLM_MODEL_AGENT = agent_init.LLM_MODEL_4MINI
-
-# -----------------------
-# 2. FILES / FORMATTING
-# -----------------------
-source_video_idx = 1
-source_spatial_video = database_init.spatial_test_video_list[source_video_idx]
-source_scene_graph = agent_init.extract_spatial_context(source_spatial_video)
-scene_graph_str = json.dumps(source_scene_graph, indent=2)
-
-# -----------------------
-# PROMPTS / MESSAGES
-# -----------------------
-AGENT0_PROMPT = ChatPromptTemplate.from_messages(
-    [
-    ("system", 
-     """You are an agent that answers queries using available tools. If you have gathered enough information, perform a step-by-step answering. First, explain your reasoning in a section labeled `Thought:`.Finally, give your answer in a section labeled `Final Answer:`.:
-    
-        Thought: Here is the final answer.
-        Final Answer: [Your answer]
+    AGENT0_PROMPT = ChatPromptTemplate.from_messages(
+        [
+        ("system", 
+        """You are an agent that answers queries using available tools. If you have gathered enough information, perform a step-by-step answering. First, explain your reasoning in a section labeled `Thought:`.Finally, give your answer in a section labeled `Final Answer:`.:
         
-    Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain what tool invoke in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below. source_scene_graph should be in JSON format for openAI:
-     
-        Thought: [Your reasoning]
-        Action: [Tool name]
-        Action Input: 
-            {{
-            "query": "{query}", 
-            "source_scene_graph": {source_scene_graph} 
-            }}
-    """),
+            Thought: Here is the final answer.
+            Final Answer: [Your answer]
+            
+        Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain what tool invoke in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below. source_scene_graph should be in JSON format for openAI:
+        
+            Thought: [Your reasoning]
+            Action: [Tool name]
+            Action Input: 
+                {{
+                "query": "{query}", 
+                "source_scene_graph": {source_scene_graph} 
+                }}
+        """),
 
-    ("system", "Available tools: {tools}. Here are the tools available for answering your question. Actively use retrieval tools to come up with plausible answer."),
-    ("system", "Tool names: {tool_names}"),  # for React agents
-    ("user", "{query}"),
-    ("assistant", "{agent_scratchpad}")  # for React agents
+        ("system", "Available tools: {tools}. Here are the tools available for answering your question. Actively use retrieval tools to come up with plausible answer."),
+        ("system", "Tool names: {tool_names}"),  # for React agents
+        ("user", "{query}"),
+        ("assistant", "{agent_scratchpad}")  # for React agents
+        ]
+        )
+
+    # activity_prediction_message = [
+    #     {"role": "system", "content": "You are a helpful assistant that uses scene graphs to gather information"},
+    #     {"role": "user", "content": f"Here is the scene graph:\n{scene_graph_str}\n\nDescribe the structure of this scene?"}
+    # ]
+    activity_prediction_message = [
+        {"role": "system", "content": "You are a helpful assistant that uses scene graphs to gather information"},
+        {"role": "user", "content": f"Here is the scene graph:\n{source_scene_graph}\n\nDescribe the structure of this scene?"}
     ]
-    )
-
-
-activity_prediction_message = [
-    {"role": "system", "content": "You are a helpful assistant that uses scene graphs to gather information"},
-    {"role": "user", "content": f"Here is the scene graph:\n{scene_graph_str}\n\nDescribe the structure of this scene?"}
-]
+    return AGENT0_PROMPT, activity_prediction_message
 
 # -----------------------
-# 4. TOOL FUNCS
+# TOOL FUNCS = from packages
 # -----------------------
-def scene_explainer(input: str):
+# LLM TOOl ONLY FFEDS IN INPUT EXTERNALLY, NOT FROM AGENT to prevent formatting errors
+def scene_explainer(activity_prediction_message):
     """Explain the layout of the scene"""
     try:
         # Parse string to dict — input is a string when used with LangChain agents
-        input_dict = json.loads(input)
-        query = input_dict.get("query")
-        source_scene_graph = input_dict.get("source_scene_graph")
+        # input_dict = json.loads(input)
+        # query = input_dict.get("query")
+        # source_scene_graph = input_dict.get("source_scene_graph")
 
         # Call OpenAI
         client = openai.OpenAI()
@@ -121,48 +112,89 @@ def scene_explainer(input: str):
     except Exception as e:
         return f"Tool Error: {str(e)}"
 
-tool0 = [
-Tool(
-    name = "scene_explanation_tool",
-    func = scene_explainer,
-    description = "Activity prediction tool, which can summarize the sequential multiple actions into a short single phrase of activity."
-),
-]
+def get_agent0_tools():
+    """
+    return tools, tool_names
+    """
+    tools = [
+    Tool(
+        name = "scene_explanation_tool",
+        func = lambda _: scene_explainer(activity_prediction_message),
+        description = "Activity prediction tool, which can summarize the sequential multiple actions into a short single phrase of activity."
+    ),
+    ]
+
+    tool_names =", ".join([t.name for t in tools])   
+    return tools, tool_names 
 
 # -----------------------
-# 5. AGENT FUNCS
+# AGENT FUNCS = from packages
 # -----------------------
-QUERY = "What type of room it this?."    
-MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
+def run_agent0(tool0, tool_names, source_scene_graph):
 
-AGENT = create_react_agent(
-    tools=tool0,
-    llm=LLM_MODEL_AGENT,
-    prompt=agent_prompt.AGENT0_PROMPT
-)    
+    QUERY = "What type of room it this?."    
+    MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
+    AGENT = create_react_agent(
+        tools=tool0,
+        llm=LLM_MODEL_AGENT,
+        prompt=agent_prompt.AGENT0_PROMPT
+    )    
+    AGENT_EXECUTOR = AgentExecutor(
+        agent=AGENT, 
+        tools=tool0, 
+        verbose=True, 
+        handle_parsingmory=MEMORY
+    )
 
-AGENT_EXECUTOR = AgentExecutor(
-    agent=AGENT, 
-    tools=tool0, 
-    verbose=True, 
-    handle_parsingmory=MEMORY
-)
-
-source_scene_graph = json.dumps(source_scene_graph)
-tool_names =", ".join([t.name for t in tool0])   
-response = AGENT_EXECUTOR.invoke(
-    {
-        "query": QUERY, 
-        "source_scene_graph": source_scene_graph,
-        "tools": tool0,  # Pass tool objects
-        "tool_names": tool_names,  # Convert list to comma-separated string
-        "agent_scratchpad": ""  # Let LangChain handle this dynamically
-        },
-    config={"max_iterations": 5}
-)
+    response = AGENT_EXECUTOR.invoke(
+        {
+            "query": QUERY, 
+            "source_scene_graph": source_scene_graph,
+            "tools": tool0,  # Pass tool objects
+            "tool_names": tool_names,  # Convert list to comma-separated string
+            "agent_scratchpad": ""  # Let LangChain handle this dynamically
+            },
+        config={"max_iterations": 5}
+    )
+    return response
 
 # -----------------------
 # 6. MAIN
 # -----------------------
 if __name__ == "__main__":
-    print("none")
+    # -----------------------
+    # API / LLM
+    # -----------------------
+    logging.basicConfig(level=logging.ERROR)
+    load_dotenv()
+    parser_stroutput = StrOutputParser()
+
+    openai.api_key = os.getenv("OPENAI_API_KEY")
+    LLM_MODEL = agent_init.LLM_MODEL_4MINI
+    LLM_MODEL_AGENT = agent_init.LLM_MODEL_4MINI
+
+    # -----------------------
+    # FILES / FORMATTING
+    # -----------------------
+    source_video_idx = 1
+    source_spatial_video = database_init.spatial_test_video_list[source_video_idx]
+    source_scene_graph = agent_init.extract_spatial_context(source_spatial_video)
+    source_scene_graph_str = json.dumps(source_scene_graph, indent=2)
+
+    target_video_idx = 1
+    target_spatial_video = database_init.spatial_test_video_list[target_video_idx]
+    target_scene_graph = agent_init.extract_spatial_context(target_spatial_video)
+    target_scene_graph_str = json.dumps(target_scene_graph, indent=2)
+
+    # -----------------------
+    # MESSAGES / QUERIES
+    # -----------------------
+    query = "What type of room it this?."    
+    tools, tool_names = get_agent0_tools()
+    inputs = [query, source_scene_graph_str, tools, tool_names]
+    prompt, activity_prediction_message= get_agent0_message(inputs)
+    # -----------------------
+    # RUN AGENT
+    # -----------------------
+    response = run_agent0(tools, tool_names, source_scene_graph_str)
+    print(response)
