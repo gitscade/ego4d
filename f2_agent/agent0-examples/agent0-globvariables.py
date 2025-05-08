@@ -97,22 +97,13 @@ AGENT0_PROMPT = ChatPromptTemplate.from_messages(
 def activity_prediction(activity_prediction_message):
     """Predict an activity of the user based on the input"""
     try:
-        # Parse string to dict — input is a string when used with LangChain agents
-        # input_dict = json.loads(input)
-        # Extract inputs
-        # query = input_dict.get("query")
-        # source_scene_graph = input_dict.get("source_scene_graph")
-
-        # Call OpenAI
         client = openai.OpenAI()
         response = client.chat.completions.create(
             model="gpt-4",
             messages=activity_prediction_message,
             temperature=0.5
         )
-
         activity = response.choices[0].message.content.strip()
-
         return activity
 
     except Exception as e:

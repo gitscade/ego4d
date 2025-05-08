@@ -35,13 +35,6 @@ PASSING input variables through agent will result in internal formatting by AGEN
 INTERNAL FORMATTINGs by AGENT API can lead to incompatible variable format for the LLM API.
 
 To prevent unforseen problems caused by inherent formatting, pre-format files first, then define queries & messages. 
-
-1. API / LLM
-2. FILES / FORMATTING
-3. PROMPTS / MESSAGES
-4. TOOL FUNCS
-5. AGENT FUNCS
-6. MAIN
 """
 # -----------------------
 # MESSAGES / QUERIES FUNCS = from packages
@@ -198,3 +191,204 @@ if __name__ == "__main__":
     # -----------------------
     response = run_agent0(tools, tool_names, source_scene_graph_str)
     print(response)
+
+
+
+
+
+
+#  QUERY / SOURCE_SCENE_GRAPH / SOURCE_SCENE_GRAPH_STR
+
+#   query =  "What type of room it this?.", 
+#   source_scene_graph = [
+#     {"object_id": 3, "object_name": "soup", "init_status": {"status": "uncooked", "container": null}}, 
+#     {"object_id": 14, "object_name": "counter top", "init_status": {"status": "default", "container": null}}, 
+#     {"object_id": 4, "object_name": "oil", "init_status": {"status": "default", "container": 14}}, 
+#     {"object_id": 5, "object_name": "stirrer", "init_status": {"status": "default", "container": 14}}, 
+#     {"object_id": 6, "object_name": "fridge", "init_status": {"status": "default", "container": null}}, 
+#     {"object_id": 7, "object_name": "tortilla", "init_status": {"status": "wrapped", "container": 6}}, 
+#     {"object_id": 8, "object_name": "table", "init_status": {"status": "default", "container": null}}, 
+#     {"object_id": 9, "object_name": "a bottle of water", "init_status": {"status": "contain water", "container": null}}, 
+#     {"object_id": 19, "object_name": "stovetop", "init_status": {"status": "default", "container": null}}, 
+#     {"object_id": 10, "object_name": "pepper spice", "init_status": {"status": "default", "container": 19}}, 
+#     {"object_id": 11, "object_name": "herbs", "init_status": {"status": "default", "container": 19}}, 
+#     {"object_id": 12, "object_name": "chilli flakes", "init_status": {"status": "default", "container": 19}}, 
+#     {"object_id": 13, "object_name": "spice", "init_status": {"status": "default", "container": 19}}, 
+#     {"object_id": 15, "object_name": "sweet corn", "init_status": {"status": "default", "container": 19}}, 
+#     {"object_id": 16, "object_name": "sieve", "init_status": {"status": "default", "container": null}}, 
+#     {"object_id": 17, "object_name": "sink", "init_status": {"status": "default", "container": null}}, 
+#     {"object_id": 18, "object_name": "peeler", "init_status": {"status": "unwashed", "container": 17}}, 
+#     {"object_id": 20, "object_name": "skillet", "init_status": {"status": "default", "container": 19}}, 
+#     {"object_id": 21, "object_name": "player", "init_status": {"status": null}}, 
+#     {"object_id": 22, "object_name": "minced meat", "init_status": {"status": "unpacked", "container": null}}, 
+#     {"object_id": 23, "object_name": "knife", "init_status": {"status": "default", "container": null}}
+#   ] 
+#   source_scene_graph_str ="source_scene_graph": [
+#     {
+#       "object_id": 3,
+#       "object_name": "soup",
+#       "init_status": {
+#         "status": "uncooked",
+#         "container": null
+#       }
+#     },
+#     {
+#       "object_id": 14,
+#       "object_name": "counter top",
+#       "init_status": {
+#         "status": "default",
+#         "container": null
+#       }
+#     },
+#     {
+#       "object_id": 4,
+#       "object_name": "oil",
+#       "init_status": {
+#         "status": "default",
+#         "container": 14
+#       }
+#     },
+#     {
+#       "object_id": 5,
+#       "object_name": "stirrer",
+#       "init_status": {
+#         "status": "default",
+#         "container": 14
+#       }
+#     },
+#     {
+#       "object_id": 6,
+#       "object_name": "fridge",
+#       "init_status": {
+#         "status": "default",
+#         "container": null
+#       }
+#     },
+#     {
+#       "object_id": 7,
+#       "object_name": "tortilla",
+#       "init_status": {
+#         "status": "wrapped",
+#         "container": 6
+#       }
+#     },
+#     {
+#       "object_id": 8,
+#       "object_name": "table",
+#       "init_status": {
+#         "status": "default",
+#         "container": null
+#       }
+#     },
+#     {
+#       "object_id": 9,
+#       "object_name": "a bottle of water",
+#       "init_status": {
+#         "status": "contain water",
+#         "container": null
+#       }
+#     },
+#     {
+#       "object_id": 19,
+#       "object_name": "stovetop",
+#       "init_status": {
+#         "status": "default",
+#         "container": null
+#       }
+#     },
+#     {
+#       "object_id": 10,
+#       "object_name": "pepper spice",
+#       "init_status": {
+#         "status": "default",
+#         "container": 19
+#       }
+#     },
+#     {
+#       "object_id": 11,
+#       "object_name": "herbs",
+#       "init_status": {
+#         "status": "default",
+#         "container": 19
+#       }
+#     },
+#     {
+#       "object_id": 12,
+#       "object_name": "chilli flakes",
+#       "init_status": {
+#         "status": "default",
+#         "container": 19
+#       }
+#     },
+#     {
+#       "object_id": 13,
+#       "object_name": "spice",
+#       "init_status": {
+#         "status": "default",
+#         "container": 19
+#       }
+#     },
+#     {
+#       "object_id": 15,
+#       "object_name": "sweet corn",
+#       "init_status": {
+#         "status": "default",
+#         "container": 19
+#       }
+#     },
+#     {
+#       "object_id": 16,
+#       "object_name": "sieve",
+#       "init_status": {
+#         "status": "default",
+#         "container": null
+#       }
+#     },
+#     {
+#       "object_id": 17,
+#       "object_name": "sink",
+#       "init_status": {
+#         "status": "default",
+#         "container": null
+#       }
+#     },
+#     {
+#       "object_id": 18,
+#       "object_name": "peeler",
+#       "init_status": {
+#         "status": "unwashed",
+#         "container": 17
+#       }
+#     },
+#     {
+#       "object_id": 20,
+#       "object_name": "skillet",
+#       "init_status": {
+#         "status": "default",
+#         "container": 19
+#       }
+#     },
+#     {
+#       "object_id": 21,
+#       "object_name": "player",
+#       "init_status": {
+#         "status": null
+#       }
+#     },
+#     {
+#       "object_id": 22,
+#       "object_name": "minced meat",
+#       "init_status": {
+#         "status": "unpacked",
+#         "container": null
+#       }
+#     },
+#     {
+#       "object_id": 23,
+#       "object_name": "knife",
+#       "init_status": {
+#         "status": "default",
+#         "container": null
+#       }
+#     }
+#   ]
