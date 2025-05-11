@@ -43,6 +43,7 @@ def get_agent0_message(inputs: list):
     """
     func: return PROMPT / MESSAGES for agent1a
     input: [video_idx, tool, tool_names]
+    return : AGENT0_PROMPT, SCENE_EXPLAINER_MESSAGE
     """
     video_idx = inputs[0]
     tools = inputs[1]
@@ -51,6 +52,11 @@ def get_agent0_message(inputs: list):
     # FILES
     query = "what type of room is this?"
     source_video_idx = video_idx
+
+    source_goalstep_video = database_init.goalstep_test_video_list[source_video_idx]
+    source_action_sequence = agent_init.extract_lower_goalstep_segments(source_goalstep_video)
+    source_action_sequence = json.dumps(source_action_sequence)
+
     source_spatial_video = database_init.spatial_test_video_list[source_video_idx]
     source_scene_graph = agent_init.extract_spatial_context(source_spatial_video)
     source_scene_graph = json.dumps(source_scene_graph, indent=2)
@@ -67,11 +73,7 @@ def get_agent0_message(inputs: list):
         
             Thought: [Your reasoning]
             Action: [Tool name]
-            Action Input: 
-                {{
-                "query": "{query}", 
-                "source_scene_graph": {source_scene_graph} 
-                }}
+            Action Input: ["query": "{query}", "source_scene_graph": {source_scene_graph}]
         """),
 
         ("system", "Available tools: {tools}. Here are the tools available for answering your question. Actively use retrieval tools to come up with plausible answer."),
@@ -84,6 +86,7 @@ def get_agent0_message(inputs: list):
 
     SCENE_EXPLAINER_MESSAGE = [
         {"role": "system", "content": "You are a helpful assistant that uses scene graphs to gather information"},
+        {"role": "user", "content": f"Here is the action sequence:\n{source_action_sequence}\n\nDescribe the action sequence?"},
         {"role": "user", "content": f"Here is the scene graph:\n{source_scene_graph}\n\nDescribe the structure of this scene?"}
     ]
     return AGENT0_PROMPT, SCENE_EXPLAINER_MESSAGE
@@ -95,11 +98,6 @@ def get_agent0_message(inputs: list):
 def scene_explainer(SCENE_EXPLAINER_MESSAGE):
     """Explain the layout of the scene"""
     try:
-        # Parse string to dict — input is a string when used with LangChain agents
-        # input_dict = json.loads(input)
-        # query = input_dict.get("query")
-        # source_scene_graph = input_dict.get("source_scene_graph")
-
         # Call OpenAI
         client = openai.OpenAI()
         response = client.chat.completions.create(
@@ -157,7 +155,8 @@ def run_agent0(input):
         agent=AGENT, 
         tools=TOOLS, 
         verbose=True, 
-        handle_parsingmory=MEMORY
+        handle_parsing_errors=True,
+        memory=MEMORY
     )
 
     response = AGENT_EXECUTOR.invoke(
@@ -186,19 +185,6 @@ if __name__ == "__main__":
     # openai.api_key = os.getenv("OPENAI_API_KEY")
     # LLM_MODEL = agent_init.LLM_MODEL_4MINI
     # LLM_MODEL_AGENT = agent_init.LLM_MODEL_4MINI
-
-    # # -----------------------
-    # # FILES / FORMATTING
-    # # -----------------------
-    # source_video_idx = 1
-    # source_spatial_video = database_init.spatial_test_video_list[source_video_idx]
-    # source_scene_graph = agent_init.extract_spatial_context(source_spatial_video)
-    # source_scene_graph_str = json.dumps(source_scene_graph, indent=2)
-
-    # target_video_idx = 1
-    # target_spatial_video = database_init.spatial_test_video_list[target_video_idx]
-    # target_scene_graph = agent_init.extract_spatial_context(target_spatial_video)
-    # target_scene_graph_str = json.dumps(target_scene_graph, indent=2)
 
     # -----------------------
     # MESSAGES / QUERIES

@@ -26,10 +26,13 @@ sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))
 import f1_init.database_init as database_init
 
+
+# -----------------------
+# Agent Init API, LLM
+# -----------------------
 logging.basicConfig(level=logging.ERROR)
 load_dotenv()
 parser_stroutput = StrOutputParser()
-
 openai.api_key = os.getenv("OPENAI_API_KEY")
 LLM_MODEL_4 = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4", temperature=1)
 LLM_MODEL_4MINI = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini", temperature=1)
@@ -119,15 +122,7 @@ def extract_spatial_context(video: dict):
     #print(scenegraph)
     return scenegraph
 
-# -----------------------
-# Agent Init API, LLM
-# -----------------------
-logging.basicConfig(level=logging.ERROR)
-load_dotenv()
-parser_stroutput = StrOutputParser()
-openai.api_key = os.getenv("OPENAI_API_KEY")
-LLM_MODEL = LLM_MODEL_4MINI
-LLM_MODEL_AGENT = LLM_MODEL_4MINI
+
 
 # -----------------------
 # VIDEO LIST, VECSTORE, RETRIEVER

@@ -32,71 +32,119 @@ import f1_init.database_init as database_init
 import f2_agent.agent_prompt as agent_prompt
 
 
-# -----------------------
-# Path & API & Model
-# -----------------------
-logging.basicConfig(level=logging.ERROR)
-load_dotenv()
-parser_stroutput = StrOutputParser()
+#------------------------
+#prompt messages
+#------------------------
+def get_agent2a_message(inputlist:list):
+    """
+    func: returns prompt and messages used for agent2a\n
+    input: single list: [tools, sequence, scenegraph, target_scenegraph, source_activity_taxonomy, target_scene_graph]\n
+    return: AGENT2a_PROMPT, MESSAGE_ACTIVITY_PREDICTION
+    """
+    tools = inputlist[0]
+    source_action_sequence = inputlist[1]
+    source_scene_graph = inputlist[2]
+    source_activity_taxonomy = inputlist[3]
+    target_scene_graph = inputlist[4]
+    query = "Construct a common taxonomy that is applicable for both source and target scene graph"
+    tool_names =", ".join([t.name for t in tools])    
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
-LLM_MODEL = agent_init.LLM_MODEL_4MINI
-LLM_MODEL_AGENT = agent_init.LLM_MODEL_4MINI
+    AGENT2a_PROMPT = ChatPromptTemplate.from_messages([
+        ("system", 
+         """You are a helpful taxonomy tester that examines if each leval of the taxonomy is executable in target scene, using tools. State your final taxonomy in a section labeled 'Final Answer:'.:
+        
+            Final Answer: [Your answer]
+            
+        Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain used tool in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below. Retrieve relevant information with retriever tools first to gather similar examples.
+        
+            Thought: [Your reasoning]
+            Action: [Tool name]
+            Action Input: ["query": {query}, "source_action_sequence": {source_action_sequence}, "source_scene_graph": {source_scene_graph}, "source_activity_taxonomy": {source_activity_taxonomy}, "target_scene_graph": {target_scene_graph}]
+        """),
+
+        ("system", "Available tools: {tools}. Actively use retrieval tools to get a plausible answer."),
+        ("system", "Tool names: {tool_names}"),
+        ("user", "This is the user query: {query}"),
+        ("assistant", "{agent_scratchpad}")
+        ]
+        )
+
+    MESSAGE_COMMON_TAXONOMY_PREDICTION = [
+            {"role": "system", "content": "You are a linguist that checks if each level in taxonomy can be achieved in the target scene. For each level in taxonomy, check if noun property can be achieved in the target scene. If this is possible, just leave the value for the noun. If noun property is not achievable, replace the original noun with word 'impossible'. Print out the final taxonomy as output."}, 
+            {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
+            {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},
+            {"role": "user", "content": f"Here is the source activity taxonomy:\n{source_activity_taxonomy}\n"},
+            {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"}
+        ]
+    return AGENT2a_PROMPT, MESSAGE_COMMON_TAXONOMY_PREDICTION
+
+def get_agent2b_message(inputs:list):
+    """
+    func: returns prompt and messages used for agent2b\n
+    input: single list: [tools, sequence, scenegraph, target_scenegraph, source_taxonomy, common_taxonomy]\n
+    return: AGENT2b_PROMPT, MESSAGE_ACTIVITY_PREDICTION
+    """
+    tools = inputs[0]
+    source_action_sequence = inputs[1]
+    source_scene_graph = inputs[2]
+    target_scene_graph = inputs[3]
+    source_activity_taxonomy = inputs[4]
+    common_activity_taxonomy = inputs[5]
+
+    query = "summarize the input action sequence with a single verb and a single noun"
+    tool_names =", ".join([t.name for t in tools])    
 
 
-# -----------------------
-# VIDEO LIST, VECSTORE, RETRIEVER
-# -----------------------
-# Load VIDEO LIST
-goalstep_test_video_list = database_init.goalstep_test_video_list
-spatial_test_video_list = database_init.spatial_test_video_list
+    AGENT2b_PROMPT = ChatPromptTemplate.from_messages([
+        ("system", 
+         """You are a helpful taxonomy summarizer that summarizes an action_sequence in input scene_graph, using tools. State your final answer in a section labeled 'Final Answer:'.:
+        
+            Final Answer: [Your answer]
+            
+        Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain used tool in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below. Retrieve relevant information with retriever tools first to gather similar examples.
+        
+            Thought: [Your reasoning]
+            Action: [Tool name]
+            Action Input: ["query": {query}, "source_action_sequence": {source_action_sequence}, "source_scene_graph": {source_scene_graph}, "source_activity_taxonomy": {source_activity_taxonomy}, "target_scene_graph": {target_scene_graph}, "common_activity_taxonomy": {common_activity_taxonomy}]
+        """),
 
-# LOAD FAISS VECSTORE
-goalstep_vector_store = database_init.goalstep_vector_store
-spatial_vector_store = database_init.spatial_vector_store
+        ("system", "Available tools: {tools}. Actively use retrieval tools to get a plausible answer."),
+        ("system", "Tool names: {tool_names}"),
+        ("user", "{query}"),
+        ("assistant", "{agent_scratchpad}")
+        ]
+        )
 
-# MAKE base:VectorStoreRetriever
-goalstep_retriever = goalstep_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
-spatial_retriever = spatial_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
-
+    MESSAGE_TARGET_TAXONOMY_PREDICTION = [
+            {"role": "system", "content": "You are a linguist that summarizes current user activity to a single verb and a single noun"}, 
+            {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
+            {"role": "user", "content": f"Here is the scene graph:\n{source_scene_graph}\n"},
+            {"role": "user", "content": f"Here is the source activity taxonomy:\n{source_activity_taxonomy}\n"},
+            {"role": "user", "content": f"Here is the common activity taxonomy:\n{common_activity_taxonomy}\n"},            
+            {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"}            
+        ]
+    return AGENT2b_PROMPT, MESSAGE_TARGET_TAXONOMY_PREDICTION
 
 # -----------------------
 # TOOL FUNCTION
 # -----------------------
 def goalstep_information_retriever(query:str):
     """Retrieve the most relevant goalstep dataset documents based on a user's query."""
-    context = goalstep_retriever.invoke(query)
+    context = agent_init.goalstep_retriever.invoke(query)
     return f"User Query: {query}. similar goalstep examples: {context}" 
 
 def spatial_information_retriver(query:dict):
     """Retrieve the most relevant spatial context documents based on a user's query"""
-    context = spatial_retriever.invoke(query)
+    context = agent_init.spatial_retriever.invoke(query)
     return f"User Query: {query}. similar spatial examples: {context}"
 
-def check_executability(query:str):
+def check_taxonomy(MESSAGE_COMMON_TAXONOMY_PREDICTION):
     """Test if goal of deep activity can be met in current target_scene."""
-    input_dict = ast.literal_eval(input.strip())  # convert to python dict
-    valid_json = json.dumps(input_dict, indent=4)  # read as JSON(wth "")
-    input_json = json.loads(valid_json)
-    query = input_json.get("query")
-    source_action_sequence = input_json.get("source_action_sequence")
-    target_scene_graph = input_json.get("target_scene_graph")
-    source_activity = input_json.get("source_activity")
-
-    prompt = f"Here is the query: {query}. Here is the source_action_sequence: {source_action_sequence}. Here is the source_scene_graph: {source_scene_graph}. Here is the source_activity: {source_activity}"
-    prompt = f"Here is the query: {query}. Here is the source_action_sequence: {source_action_sequence}. Here is the target_scene_graph: {target_scene_graph}."
-
 
     client = openai.OpenAI()
     response = client.chat.completions.create(
-        model=LLM_MODEL_AGENT,
-        messages=[
-            {
-            "role": "system", 
-            "content": "You are a planner that checks if input activity is possible to be performed in the given space. The input activity is given in the prompt as ""source_activity"". The given space is also given in the prompt as ""target_scene_graph"". When it is possible to execute the source_activity in the target_scene_graph, return the following response.\n True.\n If it is impossible to execute the source_activity in the target_scene_graph, return the following response.\n False"
-            }, 
-            { "role": "user", "content": prompt}
-                ],
+        model=agent_init.LLM_MODEL_4MINI,
+        messages= MESSAGE_COMMON_TAXONOMY_PREDICTION,
         temperature=0.5
     )
     executability = response.choices[0].message.content.strip()
@@ -116,52 +164,63 @@ def move_down_activity(query:str):
 # -----------------------
 MEMORY = ConversationBufferWindowMemory(k=3)
 #MEMORY = MemorySaver() # Saves everyghing leading to overflow
-TOOLS_2a = [
-    Tool(
-        name = "goalstep_retriever_tool",
-        func = goalstep_information_retriever,
-        description = "Retrieves relevant goalstep information in other environments, where similar activities are performed in steps. "
-    ),
-    Tool(
-        name = "spatial_retriever_tool",
-        func = spatial_information_retriver,
-        description = "Retrieves relevant spatial information for similar environments, where state changes of entities takes place in spatiotemporal fashion."
-    ),
-    Tool(
-        name = "executability_check_tool",
-        func = check_executability,
-        description = "Test if goal of deep activity can be met in current target_scene."
-    ),
-    Tool(
-        name = "move_up_activity_tool",
-        func = move_up_activity,
-        description = "Make deep activity more abstract by moving one level up its hierarchy"
-    ),    
-]
 
-TOOLS_2b = [
-    Tool(
-        name = "goalstep_retriever_tool",
-        func = goalstep_information_retriever,
-        description = "Retrieves relevant goalstep information in other environments, where similar activities are performed in steps. "
-    ),
-    Tool(
-        name = "spatial_retriever_tool",
-        func = spatial_information_retriver,
-        description = "Retrieves relevant spatial information for similar environments, where state changes of entities takes place in spatiotemporal fashion."
-    ),
-    Tool(
-        name = "executability_check_tool",
-        func = check_executability,
-        description = "Test if goal of deep activity can be met in current target_scene."
-    ),
-    Tool(
-        name = "move_down_activity_tool",
-        func = move_down_activity,
-        description = "Make deep activity more specific and concrete by lowering one level down its hierarchy"
-    )
+
+def get_agent2a_tools():
+    """
+    return tools
+    """
+    tools = [
+        Tool(
+            name = "goalstep_retriever_tool",
+            func = goalstep_information_retriever,
+            description = "Retrieves relevant goalstep information in other environments, where similar activities are performed in steps. "
+        ),
+        Tool(
+            name = "spatial_retriever_tool",
+            func = spatial_information_retriver,
+            description = "Retrieves relevant spatial information for similar environments, where state changes of entities takes place in spatiotemporal fashion."
+        ),
+        Tool(
+            name = "executability_check_tool",
+            func = lambda _: check_taxonomy(MESSAGE_COMMON_TAXONOMY_PREDICTION),
+            description = "Test if goal of deep activity can be met in current target_scene."
+        ),
+        Tool(
+            name = "move_up_activity_tool",
+            func = move_up_activity,
+            description = "Make deep activity more abstract by moving one level up its hierarchy"
+        ),    
     ]
+    return tools
 
+def get_agent2b_tools():
+    """
+    return tools
+    """
+    tools = [
+        Tool(
+            name = "goalstep_retriever_tool",
+            func = goalstep_information_retriever,
+            description = "Retrieves relevant goalstep information in other environments, where similar activities are performed in steps. "
+        ),
+        Tool(
+            name = "spatial_retriever_tool",
+            func = spatial_information_retriver,
+            description = "Retrieves relevant spatial information for similar environments, where state changes of entities takes place in spatiotemporal fashion."
+        ),
+        Tool(
+            name = "executability_check_tool",
+            func = check_executability,
+            description = "Test if goal of deep activity can be met in current target_scene."
+        ),
+        Tool(
+            name = "move_down_activity_tool",
+            func = move_down_activity,
+            description = "Make deep activity more specific and concrete by lowering one level down its hierarchy"
+        )
+        ]
+    return tools
 
 
 
@@ -197,55 +256,43 @@ def run_agent_2b(source_video_idx=None, target_video_idx=None, common_activity="
     return target_taxonomy
 
 if __name__ == "__main__":
+
     # -----------------------
-    # ARGS / CREATE / EXECUTE / RES
+    # FILES / FORMATTING
     # -----------------------
-    source_video_idx = int(input("Input source index:"))
-    source_goalstep_video = goalstep_test_video_list[source_video_idx]
-    source_spatial_video = spatial_test_video_list[source_video_idx]
+    source_video_idx = 1
+    target_video_idx = 2
+    
+    source_goalstep_video = database_init.goalstep_test_video_list[source_video_idx]
     source_action_sequence = agent_init.extract_lower_goalstep_segments(source_goalstep_video)
+    source_action_sequence = json.dumps(source_action_sequence)
+    source_spatial_video = database_init.spatial_test_video_list[source_video_idx]
     source_scene_graph = agent_init.extract_spatial_context(source_spatial_video)
-    tool_names =", ".join([t.name for t in TOOLS_2a])
+    source_scene_graph = json.dumps(source_scene_graph, indent=2)
 
-    AGENT = create_react_agent(
-        tools=TOOLS_2a,
-        llm=LLM_MODEL_AGENT,
-        prompt=agent_prompt.AGENT1_PROMPT
-    )
-
-    AGENT_EXECUTOR = AgentExecutor(
-        agent=AGENT, 
-        tools=TOOLS_2a, 
-        verbose=True, 
-        handle_parsing_errors=True,
-        memory=MEMORY
-    )
-
-    QUERY = ""
-    response = AGENT_EXECUTOR.invoke(        
-        {
-            "query": QUERY,
-            "source_action_sequence": source_action_sequence,
-            "source_scene_graph": source_scene_graph,
-            "source_activity": source_activity,
-            "target_scene_graph": target_scene_graph,
-            "tools": TOOLS_2a,  # Pass tool objects
-            "tool_names": ", ".join(tool_names),  # Convert list to comma-separated string
-            "agent_scratchpad": ""  # Let LangChain handle this dynamically
-        },
-            max_iterations = 3
-    )
-
-    print(f"response {response}")
+    target_spatial_video = database_init.spatial_test_video_list[target_video_idx]
+    target_scene_graph = agent_init.extract_spatial_context(target_spatial_video)
+    target_scene_graph = json.dumps(target_scene_graph, indent=2)
+    
+    # -----------------------
+    # PREDICT COMMON ACTIVITY
+    # -----------------------
+    """
+    func: returns prompt and messages used for agent2a\n
+    input: single list: [tools, sequence, scenegraph, target_scenegraph, source_activity_taxonomy, target_scene_graph]\n
+    return: AGENT2a_PROMPT, MESSAGE_ACTIVITY_PREDICTION
+    """
+    tools_2a = get_agent2a_tools()
 
 
-if __name__ == "__main__":
 
-    source_video_idx = int(input("Input source index: "))
-    source_activity = input("Input source activity")
-    target_video_idx = int(input("Input target index: "))
-    response = run_agent(source_video_idx)
-    print(f"response {response}")
+    # -----------------------
+    # PREDICT FULL ACTIVITY TAXONOMY
+    # -----------------------
+    tools_2b = get_agent2b_tools()
+
+
+
 
 
 

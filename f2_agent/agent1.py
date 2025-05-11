@@ -42,41 +42,36 @@ def get_agent1a_message(inputs:list):
     input: single list: [tools, sequence, scenegraph]\n
     return: AGENT1a_PROMPT, MESSAGE_ACTIVITY_PREDICTION
     """
-
     tools = inputs[0]
     source_action_sequence = inputs[1]
     source_scene_graph = inputs[2]
-
     query = "summarize the input action sequence with a single verb and a single noun"
     tool_names =", ".join([t.name for t in tools])    
 
     AGENT1a_PROMPT = ChatPromptTemplate.from_messages([
-        ("system", """You are a helpful taxonomy summarizer that summarizes an action_sequence in input scene_graph, using tools. State your final answer following the format below:
+        ("system", 
+         """You are a helpful taxonomy summarizer that summarizes an action_sequence in input scene_graph, using tools. State your final answer in a section labeled 'Final Answer:'.:
         
             Final Answer: [Your answer]
             
-        Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain used tool in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below.
+        Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain used tool in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below. Retrieve relevant information with retriever tools first to gather similar examples.
         
             Thought: [Your reasoning]
             Action: [Tool name]
-            Action Input: 
-                {{
-                "query": "{query}", 
-                "source_action_sequence": "{source_action_sequence}", 
-                "source_scene_graph": "{source_scene_graph}" 
-                }}
+            Action Input: ["query": {query}, "source_action_sequence": {source_action_sequence}, "source_scene_graph": {source_scene_graph}]
         """),
+
         ("system", "Available tools: {tools}. Actively use retrieval tools to get a plausible answer."),
-        ("system", "Tool names: {tool_names}"),  # for React agents
+        ("system", "Tool names: {tool_names}"),
         ("user", "{query}"),
-        ("assistant", "{agent_scratchpad}")  # for React agents
-        ])
+        ("assistant", "{agent_scratchpad}")
+        ]
+        )
 
     MESSAGE_ACTIVITY_PREDICTION = [
-            {"role": "system", 
-            "content": "You are a linguist that summarizes current user activity to a single verb and a single noun with a detailed thought process for the summary." }, 
-            { "role": "user", "source_action_sequence": "{source_action_sequence}" },
-            { "role": "user", "source_scene_graph": "{source_scene_graph}" },
+            {"role": "system", "content": "You are a linguist that summarizes current user activity to a single verb and a single noun"}, 
+            {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
+            {"role": "user", "content": f"Here is the scene graph:\n{source_scene_graph}\n"}
         ]
     return AGENT1a_PROMPT, MESSAGE_ACTIVITY_PREDICTION
 
@@ -89,34 +84,39 @@ def get_agent1b_message(inputs:list):
     tools = inputs[0]
     source_action_sequence = inputs[1]
     source_scene_graph = inputs[2]
-    source_core_activity = input[3]
+    source_core_activity = inputs[3]
 
-    query = "make a 7-level taxonomy for the given core activity"
+    query = "make a N=7 level taxonomy for the given core activity"
     tool_names =", ".join([t.name for t in tools])    
 
     AGENT1b_PROMPT = ChatPromptTemplate.from_messages([
-        ("system", """You are a helpful classifier that constructs a taxonomy of an activity in a scene. State your though process and final answer following the format below:
+        ("system", """You are a helpful classifier that constructs a taxonomy of an activity in a scene. If you have enough information, state your final answer following the format below:
         
-        Thought: Here is the answer from move_down_activity_tool.
         Final Answer: [Your answer]
             
-        Otherwise, use this format:
+        Otherwise, use this format to call tools to gather more information:
             Thought: [Your reasoning]
             Action: [Tool name]
-            Action Input: {{"query": "{query}", "source_action_sequence": "{source_action_sequence}", "source_scene_graph": "{source_scene_graph}" }}
+            Action Input: ["query": {query}, "source_action_sequence": {source_action_sequence}, "source_scene_graph": {source_scene_graph}, "source_core_activity": {source_core_activity}]            
             """),
 
         ("system", "This is the user action sequence: {source_action_sequence}."),
         ("system", "Predicted activity must be able to be performed in this scene: {source_scene_graph}."),
+        ("system", "Core activity of the current scene: {source_core_activity}"),
         ("system", "Available tools: {tools}. Actively use retrieval tools to come up with plausible answer."),
         ("system", "Tool names: {tool_names}"),  # for React agents
-        ("user", "{query}"),
+        ("user", "This is the query for the agent: {query}"),
         ("assistant", "{agent_scratchpad}")  # for React agents
         ])
 
     MESSAGE_TAXONOMY_CREATION = [
-
+            {"role": "system", "content": "You are a taxonomy constructer, that receives input_verb-input_noun form as an input. This is called core activity. From information from source_action_sequence, source_scene_graph, and retrieved relevant information, you will construct a more detailed taxonomy of the input_noun when perform input_verb in the source_scene_graph. In this taxonomy, there are N levels where each level is comprised of a class and a noun. You are to fill each class and noun with appropriate name that best describes the sequence of activity possible in the source scene. Follow the format below. \n class1:input_noun\n class2:noun2\n class3:noun2\n class4:noun4\n ... classN:nounN"},
+            {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
+            {"role": "user", "content": f"Here is the scene graph:\n{source_scene_graph}\n"},
+            {"role": "user", "content": f"Here is the core activity:\n{source_core_activity}\n"}
     ]
+
+    return AGENT1b_PROMPT, MESSAGE_TAXONOMY_CREATION
 
 #------------------------
 #Tool Funcs
@@ -137,14 +137,37 @@ def activity_prediction(MESSAGE_ACTIVITY_PREDICTION):
         #OPENAI
         client = openai.OpenAI()
         response = client.chat.completions.create(
-            model = agent_init.LLM_MODEL_AGENT,
+            model = "gpt-4o-mini",
             messages = MESSAGE_ACTIVITY_PREDICTION,
             temperature=0.5
         )      
         response = response.choices[0].message.content.strip()
         #OLLAMA
         # response = ollama.chat(
-        #     model = LLM_MODEL_AGENT,
+        #     model = agent_init.LLM_MODEL_4MINI,
+        #     messages= MESSAGE_ACTIVITY_PREDICTION,
+        #     options={ 'temperature':0.5 }
+        # )
+        # response = response['message']['content']
+        return response   
+
+    except Exception as e:
+        return f"Error: activity_prediction: {str(e)}"
+
+def taxonomy_prediction(MESSAGE_TAXONOMY_CREATION):
+    """Predict an core summary of the user activity based on input"""
+    try:
+        #OPENAI
+        client = openai.OpenAI()
+        response = client.chat.completions.create(
+            model = "gpt-4",
+            messages = MESSAGE_TAXONOMY_CREATION,
+            temperature=0.5
+        )      
+        response = response.choices[0].message.content.strip()
+        #OLLAMA
+        # response = ollama.chat(
+        #     model = agent_init.LLM_MODEL_4MINI,
         #     messages= MESSAGE_ACTIVITY_PREDICTION,
         #     options={ 'temperature':0.5 }
         # )
@@ -165,17 +188,17 @@ def get_agent1a_tools():
     Tool(
         name = "goalstep_retriever_tool",
         func = goalstep_information_retriever,
-        description = "Retrieves relevant goalstep information in other environments, where similar activities are performed in steps. "
+        description = "Retrieves relevant activity step information in other scenes."
     ),
     Tool(
         name = "spatial_retriever_tool",
         func = spatial_information_retriver,
-        description = "Retrieves relevant spatial information for similar environments, where state changes of entities takes place in spatiotemporal fashion."
+        description = "Retrieves relevant scene and entity information for similar environments, where state changes of entities takes place in spatiotemporal fashion."
     ),
     Tool(
         name = "activity_prediction_tool",
-        func = lambda _:activity_prediction(MESSAGE_ACTIVITY_PREDICTION),
-        description = "Activity prediction tool, which can summarize the sequential multiple actions into a short single phrase of activity. Additional examples from other environments can also be used. Input: query(str), target_activity(str), . Output: action_sequence_steps(str)"
+        func = lambda _: activity_prediction(MESSAGE_ACTIVITY_PREDICTION),
+        description = "Activity prediction tool, which can summarize the sequential multiple actions into a single verb and a single noun."
     ),
     ]
     return tools
@@ -196,8 +219,8 @@ def get_agent1b_tools():
         description = "Retrieves relevant spatial information for similar environments, where state changes of entities takes place in spatiotemporal fashion."
     ),
     Tool(
-        name = "move_down_activity_tool",
-        func = move_down_activity,
+        name = "taxonomy_prediction_tool",
+        func = lambda _: taxonomy_prediction(MESSAGE_TAXONOMY_CREATION),
         description = "This tool generates a spefic and deep hierarchical description of source activity"
     ),
     ]
@@ -208,31 +231,24 @@ def get_agent1b_tools():
 # -----------------------
 def run_agent_1a(input):
     """"
-    func: run agent 1a with source video idx info
-    input: [source_video_idx, tools]
+    func: run agent 1a with source video idx info\n
+    input: [tools_1a, AGENT1a_PROMPT, source_action_sequence, source_scene_graph]\n
     output: response
     """
     # Load input
-    source_video_idx = input[0]
-    TOOLS = input[1]
+    TOOLS = input[0]
+    AGENT1a_PROMPT = input[1]
+    source_action_sequence = input[2]
+    source_scene_graph = input[3]
     TOOLNAMES =", ".join([t.name for t in TOOLS])    
-
-    # Load & format documents
-    if source_video_idx is None:
-        source_video_idx = int(input("Input source index:"))
-    source_goalstep_video = database_init.goalstep_test_video_list[source_video_idx]
-    source_spatial_video = database_init.spatial_test_video_list[source_video_idx]
-    source_action_sequence = agent_init.extract_lower_goalstep_segments(source_goalstep_video)
-    source_scene_graph = agent_init.extract_spatial_context(source_spatial_video)
-    source_scene_graph = json.dumps(source_scene_graph)
 
     # AGENT
     QUERY = "Give me an phrase describing the activity of source_action_sequence."    
     MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
     AGENT = create_react_agent(
         tools=TOOLS,
-        llm=agent_init.LLM_MODEL,
-        prompt=agent_prompt.AGENT1a_PROMPT
+        llm=agent_init.LLM_MODEL_4MINI,
+        prompt=AGENT1a_PROMPT
     )    
     AGENT_EXECUTOR = AgentExecutor(
         agent=AGENT, 
@@ -242,7 +258,6 @@ def run_agent_1a(input):
         memory=MEMORY
     )
 
-    # RESPONSE
     response = AGENT_EXECUTOR.invoke(
         {
             "query": QUERY, 
@@ -257,32 +272,26 @@ def run_agent_1a(input):
     return response
 
 def run_agent_1b(input):
-    """
-    func: run agent 1a with source video idx info
-    input: [source_video_idx, tools, source_activity]
+    """"
+    func: run agent 1a with source video idx info\n
+    input: [tools_1b, AGENT1b_PROMPT, source_action_sequence, source_scene_graph, source_core_activity]\n
     output: response
     """
     # Load input
-    source_video_idx = input[0]
-    TOOLS = input[1]
+    TOOLS = input[0]
+    AGENT1b_PROMPT = input[1]
+    source_action_sequence = input[2]
+    source_scene_graph = input[3]
+    source_core_activity= input[4]
     TOOLNAMES =", ".join([t.name for t in TOOLS])
-    source_activity= input[2]
 
-    source_goalstep_video = database_init.goalstep_test_video_list[source_video_idx]
-    source_spatial_video = database_init.spatial_test_video_list[source_video_idx]
-    source_action_sequence = agent_init.extract_lower_goalstep_segments(source_goalstep_video)
-    source_action_sequence = util_funcs.convert_single_to_double_quotes_in_tuple(source_action_sequence)
-    source_scene_graph = agent_init.extract_spatial_context(source_spatial_video)
-    source_scene_graph = json.dumps(source_scene_graph)
-
-    
     QUERY = "Categorically describe source activity in a very specific way."    
     MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
 
     AGENT = create_react_agent(
         tools=TOOLS,
-        llm=agent_init.LLM_MODEL_AGENT,
-        prompt=agent_prompt.AGENT1b_PROMPT
+        llm=agent_init.LLM_MODEL_4MINI,
+        prompt=AGENT1b_PROMPT
     )    
 
     AGENT_EXECUTOR = AgentExecutor(
@@ -298,6 +307,7 @@ def run_agent_1b(input):
             "query": QUERY, 
             "source_scene_graph": source_scene_graph,
             "source_action_sequence": source_action_sequence,
+            "source_core_activity": source_core_activity,
             "tools": TOOLS,
             "tool_names": TOOLNAMES,
             "agent_scratchpad": "" 
@@ -313,89 +323,38 @@ if __name__ == "__main__":
     # FILES / FORMATTING
     # -----------------------
     source_video_idx = 1
+    source_goalstep_video = database_init.goalstep_test_video_list[source_video_idx]
+    source_action_sequence = agent_init.extract_lower_goalstep_segments(source_goalstep_video)
+    source_action_sequence = json.dumps(source_action_sequence)
+    
     source_spatial_video = database_init.spatial_test_video_list[source_video_idx]
     source_scene_graph = agent_init.extract_spatial_context(source_spatial_video)
-    source_scene_graph_str = json.dumps(source_scene_graph, indent=2)
+    source_scene_graph = json.dumps(source_scene_graph, indent=2)
 
-    target_video_idx = 1
-    target_spatial_video = database_init.spatial_test_video_list[target_video_idx]
-    target_scene_graph = agent_init.extract_spatial_context(target_spatial_video)
-    target_scene_graph_str = json.dumps(target_scene_graph, indent=2)
+    # target_video_idx = 1
+    # target_spatial_video = database_init.spatial_test_video_list[target_video_idx]
+    # target_scene_graph = agent_init.extract_spatial_context(target_spatial_video)
+    # target_scene_graph = json.dumps(target_scene_graph, indent=2)
     
     # -----------------------
     # PREDICT CORE ACTIVITY
     # -----------------------
     tools_1a = get_agent1a_tools()
-    input_1a_message = [source_video_idx, tools_1a]
-    input_1a_agent = [source_video_idx, tools_1a]
-    prompt, MESSAGE_ACTIVITY_PREDICTION= get_agent1a_message(input_1a_message)
-    response_1a = run_agent_1a(input_1a)
-    print(response_1a)
+    input_1a_message = [tools_1a, source_action_sequence, source_scene_graph]
+    AGENT1a_PROMPT, MESSAGE_ACTIVITY_PREDICTION = get_agent1a_message(input_1a_message)
+
+    input_1a_agent = [tools_1a, AGENT1a_PROMPT, source_action_sequence, source_scene_graph]
+    response_1a = run_agent_1a(input_1a_agent)
+    print(f"this is the response {response_1a['output']}")                                                              
 
     # -----------------------
     # PREDICT FULL ACTIVITY TAXONOMY
     # -----------------------
     tools_1b = get_agent1b_tools()
+    source_core_activity = response_1a['output']
+    input1b_message = [tools_1b, source_action_sequence, source_scene_graph, source_core_activity]
+    AGENT1b_PROMPT, MESSAGE_TAXONOMY_CREATION = get_agent1b_message(input1b_message)
 
-    input1b_message = [tools_1b, sequence, scenegraph, coreactivity]
-    input_1b_agent = [source_video_idx, tools_1b, source_activity]
-
-
-    input_1b = [source_video_idx, tools_1b, response_1a]
-    response_1b = run_agent_1b(input_1b)
+    input_1b_agent = [tools_1b, AGENT1b_PROMPT, source_action_sequence, source_scene_graph, source_core_activity]
+    response_1b = run_agent_1b(input_1b_agent)
     print(response_1b)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#     TOOLS_1a = [
-#     Tool(
-#         name = "goalstep_retriever_tool",
-#         func = goalstep_information_retriever,
-#         description = "Retrieves relevant goalstep information in other environments, where similar activities are performed in steps. "
-#     ),
-#     Tool(
-#         name = "spatial_retriever_tool",
-#         func = spatial_information_retriver,
-#         description = "Retrieves relevant spatial information for similar environments, where state changes of entities takes place in spatiotemporal fashion."
-#     ),
-#     Tool(
-#         name = "activity_prediction_tool",
-#         func = activity_prediction,
-#         description = "Activity prediction tool, which can summarize the sequential multiple actions into a short single phrase of activity. Additional examples from other environments can also be used. Input: query(str), target_activity(str), . Output: action_sequence_steps(str)"
-#     ),
-#     ]
-
-# TOOLS_1b = [
-#     Tool(
-#         name = "goalstep_retriever_tool",
-#         func = goalstep_information_retriever,
-#         description = "Retrieves relevant goalstep information in other environments, where similar activities are performed in steps. "
-#     ),
-#     Tool(
-#         name = "spatial_retriever_tool",
-#         func = spatial_information_retriver,
-#         description = "Retrieves relevant spatial information for similar environments, where state changes of entities takes place in spatiotemporal fashion."
-#     ),
-#     Tool(
-#         name = "move_down_activity_tool",
-#         func = move_down_activity,
-#         description = "This tool generates a spefic and deep hierarchical description of source activity"
-#     ),
-#     ]

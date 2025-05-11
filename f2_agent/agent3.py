@@ -31,22 +31,59 @@ import f1_init.deprecated.agent_input as agent_input
 import f2_agent.agent_prompt as agent_prompt
 
 
-# -----------------------
-# Path & API & Model
-# -----------------------
-logging.basicConfig(level=logging.ERROR)
-load_dotenv()
-parser_stroutput = StrOutputParser()
+#------------------------
+#prompt messages
+#------------------------
+def get_agent3_message(inputlist):
+    """
+    func: returns prompt and messages used for agent3\n
+    input: single list: [tools, sequence, scenegraph, activity_taxonomy, target_scenegraph, target_taxonomy]\n
+    return: AGENT1a_PROMPT, MESSAGE_ACTIVITY_PREDICTION
+    """
+    tools = inputlist[0]
+    source_action_sequence = inputlist[1]
+    source_scene_graph = inputlist[2]
+    source_activity_taxonomy = inputlist[3]
+    target_scene_graph = inputlist[4]
+    target_activity_taxonomy = inputlist[5]
+    query = "Construct a sequence of actions to perform target activity taxonomy in target_scene_graph"
+    tool_names =", ".join([t.name for t in tools])    
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
-LLM_MODEL = agent_init.LLM_MODEL_4MINI
-LLM_MODEL_AGENT = agent_init.LLM_MODEL_4MINI
+
+    AGENT3_PROMPT = ChatPromptTemplate.from_messages([
+        ("system", 
+         """You are a helpful action planner that predicts action sequence executable in target_scene, using tools. State your final answer in a section labeled 'Final Answer:'.:
+        
+            Final Answer: [Your answer]
+            
+        Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain used tool in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below. Retrieve relevant information with retriever tools first to gather similar examples.
+        
+            Thought: [Your reasoning]
+            Action: [Tool name]
+            Action Input: ["query": {query}, "source_action_sequence": {source_action_sequence}, "source_scene_graph": {source_scene_graph}, "source_activity_taxonomy": {source_activity_taxonomy}, "target_scene_graph": {target_scene_graph}, "target_activity_taxonomy": {target_activity_taxonomy}]
+        """),
+
+        ("system", "Available tools: {tools}. Actively use retrieval tools to get a plausible answer."),
+        ("system", "Tool names: {tool_names}"),
+        ("user", "{query}"),
+        ("assistant", "{agent_scratchpad}")
+        ]
+        )
+
+    MESSAGE_SEQUENCE_GENERATION = [
+            {"role": "system", "content": "You are a linguist that summarizes current user activity to a single verb and a single noun"}, 
+            {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
+            {"role": "user", "content": f"Here is the scene graph:\n{source_scene_graph}\n"},
+            {"role": "user", "content": f"Here is the source activity taxonomy:\n{source_activity_taxonomy}\n"},      
+            {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},
+            {"role": "user", "content": f"Here is the target_activity_taxonomy:\n{target_activity_taxonomy}\n"}
+        ]
+    return AGENT3_PROMPT, MESSAGE_SEQUENCE_GENERATION
 
 
-
-# -----------------------
-# VIDEO LIST, VECSTORE, RETRIEVER
-# -----------------------
+#------------------------
+#Tool Funcs
+#------------------------
 ALLOWED_WORDS = {
     "nouns": {"apple", "banana", "computer", "data", "research"},
     "verbs": {"calculate", "analyze", "study", "process"}
@@ -78,7 +115,7 @@ def spatial_information_retriver(query:dict):
     context = spatial_retriever.invoke(query)
     return f"User Query: {query}. similar spatial examples: {context}"
 
-def sequence_generation(input: str):
+def sequence_generation(MESSAGE_SEQUENCE_GENERATION):
 
     input_dict = ast.literal_eval(input.strip())  # convert to python dict
     valid_json = json.dumps(input_dict, indent=4)  # read as JSON(wth "")
@@ -120,28 +157,31 @@ def sequence_validation(query: dict):
 # AGENT SETUP
 # -----------------------
 MEMORY = ConversationBufferWindowMemory(k=3)
-TOOLS_3 = [
-    Tool(
-        name = "goalstep_retriever_tool",
-        func = goalstep_information_retriever,
-        description = "Retrieves relevant goalstep information in other environments, where similar activities are performed in steps. "
-    ),
-    Tool(
-        name = "spatial_retriever_tool",
-        func = spatial_information_retriver,
-        description = "Retrieves relevant spatial information for similar environments, where state changes of entities takes place in spatiotemporal fashion."
-    ),
-    Tool(
-        name = "action_sequence_generation_tool",
-        func = sequence_generation,
-        description = "Action sequence generation tool, which can break down the given activity into smaller actions. Additional information on the current target action, target environment is needed. Additional examples from other environments can also be used. Input: query(str), target_activity(str), . Output: action_sequence_steps(str)"
-    ),        
-    # Tool(
-    #     name = "action_sequence_validation_tool",
-    #     func = sequence_validation,
-    #     description = "Input: query(str), action_sequence(str). Output: command to call action_sequence_generation_tool_obj again if validation fails. If validation passes, print out the input action_sequence(str)."
-    # ),
-    ]
+
+def get_agent3_tools():
+    TOOLS_3 = [
+        Tool(
+            name = "goalstep_retriever_tool",
+            func = goalstep_information_retriever,
+            description = "Retrieves relevant goalstep information in other environments, where similar activities are performed in steps. "
+        ),
+        Tool(
+            name = "spatial_retriever_tool",
+            func = spatial_information_retriver,
+            description = "Retrieves relevant spatial information for similar environments, where state changes of entities takes place in spatiotemporal fashion."
+        ),
+        Tool(
+            name = "action_sequence_generation_tool",
+            func = lambda _: sequence_generation(MESSAGE_SEQUENCE_GENERATION),
+            description = "Action sequence generation tool, which can break down the given activity into smaller actions. Additional information on the current target action, target environment is needed. Additional examples from other environments can also be used. Input: query(str), target_activity(str), . Output: action_sequence_steps(str)"
+        ),        
+        # Tool(
+        #     name = "action_sequence_validation_tool",
+        #     func = sequence_validation,
+        #     description = "Input: query(str), action_sequence(str). Output: command to call action_sequence_generation_tool_obj again if validation fails. If validation passes, print out the input action_sequence(str)."
+        # ),
+        ]
+    return TOOLS_3
 
 def run_agent(target_video_idx=None, target_activity=""):
     
@@ -187,4 +227,9 @@ if __name__ == "__main__":
 
     target_video_idx = int(input("Input target index: "))
     target_activity = input("Input target activity: ")
+
+    tools_3 = get_agent3_tools()
+    # [tools, sequence, scenegraph, activity_taxonomy, target_scenegraph, target_taxonomy]
+    input_agent3_message =[tools_3, source_sequence, source_scene_graph, source_activity_taxonomy, target_scene_graph, target_activity_taxonomy]
+    AGENT3_PROMPT, MESSAGE_SEQUENCE_GENERATION = get_agent3_message(input_agent3_message)
     response = run_agent(target_video_idx, target_activity)
