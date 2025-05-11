@@ -40,10 +40,20 @@ To prevent unforseen problems caused by inherent formatting, pre-format files fi
 # MESSAGES / QUERIES FUNCS = from packages
 # -----------------------
 def get_agent0_message(inputs: list):
-    query = inputs[0]
-    source_scene_graph = inputs[1]
-    tools = inputs[2]
-    tool_names = inputs[3]
+    """
+    func: return PROMPT / MESSAGES for agent1a
+    input: [video_idx, tool, tool_names]
+    """
+    video_idx = inputs[0]
+    tools = inputs[1]
+    tool_names = inputs[2]
+
+    # FILES
+    query = "what type of room is this?"
+    source_video_idx = video_idx
+    source_spatial_video = database_init.spatial_test_video_list[source_video_idx]
+    source_scene_graph = agent_init.extract_spatial_context(source_spatial_video)
+    source_scene_graph = json.dumps(source_scene_graph, indent=2)
 
     AGENT0_PROMPT = ChatPromptTemplate.from_messages(
         [
@@ -71,21 +81,18 @@ def get_agent0_message(inputs: list):
         ]
         )
 
-    # activity_prediction_message = [
-    #     {"role": "system", "content": "You are a helpful assistant that uses scene graphs to gather information"},
-    #     {"role": "user", "content": f"Here is the scene graph:\n{scene_graph_str}\n\nDescribe the structure of this scene?"}
-    # ]
-    activity_prediction_message = [
+
+    SCENE_EXPLAINER_MESSAGE = [
         {"role": "system", "content": "You are a helpful assistant that uses scene graphs to gather information"},
         {"role": "user", "content": f"Here is the scene graph:\n{source_scene_graph}\n\nDescribe the structure of this scene?"}
     ]
-    return AGENT0_PROMPT, activity_prediction_message
+    return AGENT0_PROMPT, SCENE_EXPLAINER_MESSAGE
 
 # -----------------------
 # TOOL FUNCS = from packages
 # -----------------------
 # LLM TOOl ONLY FFEDS IN INPUT EXTERNALLY, NOT FROM AGENT to prevent formatting errors
-def scene_explainer(activity_prediction_message):
+def scene_explainer(SCENE_EXPLAINER_MESSAGE):
     """Explain the layout of the scene"""
     try:
         # Parse string to dict — input is a string when used with LangChain agents
@@ -96,8 +103,8 @@ def scene_explainer(activity_prediction_message):
         # Call OpenAI
         client = openai.OpenAI()
         response = client.chat.completions.create(
-            model="gpt-4",
-            messages=activity_prediction_message,
+            model="gpt-4o-mini",
+            messages=SCENE_EXPLAINER_MESSAGE,
             temperature=0.5
         )
         activity = response.choices[0].message.content.strip()
@@ -112,8 +119,8 @@ def get_agent0_tools():
     tools = [
     Tool(
         name = "scene_explanation_tool",
-        func = lambda _: scene_explainer(activity_prediction_message),
-        description = "Activity prediction tool, which can summarize the sequential multiple actions into a short single phrase of activity."
+        func = lambda _: scene_explainer(SCENE_EXPLAINER_MESSAGE),
+        description = "describe activity of the scene using the entities in the scene graph."
     ),
     ]
 
@@ -123,18 +130,32 @@ def get_agent0_tools():
 # -----------------------
 # AGENT FUNCS = from packages
 # -----------------------
-def run_agent0(tool0, tool_names, source_scene_graph):
+def run_agent0(input):
+    """
+    func: run agent0
+    input: [video_idx, tool, AGENT0_PROMPT]
+    """
+    video_idx = input[0]
+    TOOLS = input[1]
+    AGENT0_PROMPT = input[2]
+    TOOLNAMES = ", ".join([t.name for t in TOOLS])    
+    # FILES
+    source_video_idx = video_idx
+    source_spatial_video = database_init.spatial_test_video_list[source_video_idx]
+    source_scene_graph = agent_init.extract_spatial_context(source_spatial_video)
+    source_scene_graph = json.dumps(source_scene_graph, indent=2)
 
+    # AGENT
     QUERY = "What type of room it this?."    
     MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
     AGENT = create_react_agent(
-        tools=tool0,
-        llm=LLM_MODEL_AGENT,
-        prompt=agent_prompt.AGENT0_PROMPT
+        tools=TOOLS,
+        llm=agent_init.LLM_MODEL_4MINI,
+        prompt= AGENT0_PROMPT
     )    
     AGENT_EXECUTOR = AgentExecutor(
         agent=AGENT, 
-        tools=tool0, 
+        tools=TOOLS, 
         verbose=True, 
         handle_parsingmory=MEMORY
     )
@@ -143,8 +164,8 @@ def run_agent0(tool0, tool_names, source_scene_graph):
         {
             "query": QUERY, 
             "source_scene_graph": source_scene_graph,
-            "tools": tool0,  # Pass tool objects
-            "tool_names": tool_names,  # Convert list to comma-separated string
+            "tools": TOOLS,
+            "tool_names": TOOLNAMES,
             "agent_scratchpad": ""  # Let LangChain handle this dynamically
             },
         config={"max_iterations": 5}
@@ -160,36 +181,37 @@ if __name__ == "__main__":
     # -----------------------
     logging.basicConfig(level=logging.ERROR)
     load_dotenv()
-    parser_stroutput = StrOutputParser()
+    # parser_stroutput = StrOutputParser()
 
-    openai.api_key = os.getenv("OPENAI_API_KEY")
-    LLM_MODEL = agent_init.LLM_MODEL_4MINI
-    LLM_MODEL_AGENT = agent_init.LLM_MODEL_4MINI
+    # openai.api_key = os.getenv("OPENAI_API_KEY")
+    # LLM_MODEL = agent_init.LLM_MODEL_4MINI
+    # LLM_MODEL_AGENT = agent_init.LLM_MODEL_4MINI
 
-    # -----------------------
-    # FILES / FORMATTING
-    # -----------------------
-    source_video_idx = 1
-    source_spatial_video = database_init.spatial_test_video_list[source_video_idx]
-    source_scene_graph = agent_init.extract_spatial_context(source_spatial_video)
-    source_scene_graph_str = json.dumps(source_scene_graph, indent=2)
+    # # -----------------------
+    # # FILES / FORMATTING
+    # # -----------------------
+    # source_video_idx = 1
+    # source_spatial_video = database_init.spatial_test_video_list[source_video_idx]
+    # source_scene_graph = agent_init.extract_spatial_context(source_spatial_video)
+    # source_scene_graph_str = json.dumps(source_scene_graph, indent=2)
 
-    target_video_idx = 1
-    target_spatial_video = database_init.spatial_test_video_list[target_video_idx]
-    target_scene_graph = agent_init.extract_spatial_context(target_spatial_video)
-    target_scene_graph_str = json.dumps(target_scene_graph, indent=2)
+    # target_video_idx = 1
+    # target_spatial_video = database_init.spatial_test_video_list[target_video_idx]
+    # target_scene_graph = agent_init.extract_spatial_context(target_spatial_video)
+    # target_scene_graph_str = json.dumps(target_scene_graph, indent=2)
 
     # -----------------------
     # MESSAGES / QUERIES
     # -----------------------
-    query = "What type of room it this?."    
     tools, tool_names = get_agent0_tools()
-    inputs = [query, source_scene_graph_str, tools, tool_names]
-    prompt, activity_prediction_message= get_agent0_message(inputs)
+    video_idx = 1
+    inputs = [video_idx, tools, tool_names]
+    AGENT0_PROMPT, SCENE_EXPLAINER_MESSAGE= get_agent0_message(inputs)
     # -----------------------
     # RUN AGENT
     # -----------------------
-    response = run_agent0(tools, tool_names, source_scene_graph_str)
+    input_agent0 = [video_idx, tools, AGENT0_PROMPT]
+    response = run_agent0(input_agent0)
     print(response)
 
 
