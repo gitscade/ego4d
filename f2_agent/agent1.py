@@ -154,7 +154,7 @@ def activity_prediction(MESSAGE_ACTIVITY_PREDICTION):
     except Exception as e:
         return f"Error: activity_prediction: {str(e)}"
 
-def taxonomy_prediction(MESSAGE_TAXONOMY_CREATION):
+def predict_activity_taxonomy(MESSAGE_TAXONOMY_CREATION):
     """Predict an core summary of the user activity based on input"""
     try:
         #OPENAI
@@ -219,8 +219,8 @@ def get_agent1b_tools():
         description = "Retrieves relevant spatial information for similar environments, where state changes of entities takes place in spatiotemporal fashion."
     ),
     Tool(
-        name = "taxonomy_prediction_tool",
-        func = lambda _: taxonomy_prediction(MESSAGE_TAXONOMY_CREATION),
+        name = "predict_activity_taxonomy_tool",
+        func = lambda _: predict_activity_taxonomy(MESSAGE_TAXONOMY_CREATION),
         description = "This tool generates a spefic and deep hierarchical description of source activity"
     ),
     ]
@@ -247,7 +247,7 @@ def run_agent_1a(input):
     MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
     AGENT = create_react_agent(
         tools=TOOLS,
-        llm=agent_init.LLM_MODEL_4MINI,
+        llm=agent_init.LLM_MODEL_GPT4MINI,
         prompt=AGENT1a_PROMPT
     )    
     AGENT_EXECUTOR = AgentExecutor(
@@ -290,7 +290,7 @@ def run_agent_1b(input):
 
     AGENT = create_react_agent(
         tools=TOOLS,
-        llm=agent_init.LLM_MODEL_4MINI,
+        llm=agent_init.LLM_MODEL_GPT4MINI,
         prompt=AGENT1b_PROMPT
     )    
 

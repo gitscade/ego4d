@@ -38,20 +38,21 @@ import f2_agent.agent_prompt as agent_prompt
 def get_agent2a_message(inputlist:list):
     """
     func: returns prompt and messages used for agent2a\n
-    input: single list: [tools, sequence, scenegraph, target_scenegraph, source_activity_taxonomy, target_scene_graph]\n
+    input: single list: [tools, sequence, scenegraph, target_scene_graph, source_activity_taxonomy]\n
     return: AGENT2a_PROMPT, MESSAGE_ACTIVITY_PREDICTION
     """
     tools = inputlist[0]
     source_action_sequence = inputlist[1]
     source_scene_graph = inputlist[2]
-    source_activity_taxonomy = inputlist[3]
-    target_scene_graph = inputlist[4]
+    target_scene_graph = inputlist[3]    
+    source_activity_taxonomy = inputlist[4]
+
     query = "Construct a common taxonomy that is applicable for both source and target scene graph"
     tool_names =", ".join([t.name for t in tools])    
 
     AGENT2a_PROMPT = ChatPromptTemplate.from_messages([
         ("system", 
-         """You are a helpful taxonomy tester that examines if each leval of the taxonomy is executable in target scene, using tools. State your final taxonomy in a section labeled 'Final Answer:'.:
+         """You are a helpful taxonomy tester that examines if each leval of the taxonomy is executable in target scene, using tools. State your final taxonomy from the in a section labeled 'Final Answer:'.:
         
             Final Answer: [Your answer]
             
@@ -59,7 +60,7 @@ def get_agent2a_message(inputlist:list):
         
             Thought: [Your reasoning]
             Action: [Tool name]
-            Action Input: ["query": {query}, "source_action_sequence": {source_action_sequence}, "source_scene_graph": {source_scene_graph}, "source_activity_taxonomy": {source_activity_taxonomy}, "target_scene_graph": {target_scene_graph}]
+            Action Input: [Appropriate Input for Tool]
         """),
 
         ("system", "Available tools: {tools}. Actively use retrieval tools to get a plausible answer."),
@@ -68,6 +69,8 @@ def get_agent2a_message(inputlist:list):
         ("assistant", "{agent_scratchpad}")
         ]
         )
+
+            # Action Input: ["query": {query}, "source_action_sequence": {source_action_sequence}, "source_scene_graph": {source_scene_graph}, "source_activity_taxonomy": {source_activity_taxonomy}, "target_scene_graph": {target_scene_graph}]
 
     MESSAGE_COMMON_TAXONOMY_PREDICTION = [
             {"role": "system", "content": "You are a linguist that checks if each level in taxonomy can be achieved in the target scene. For each level in taxonomy, check if noun property can be achieved in the target scene. If this is possible, just leave the value for the noun. If noun property is not achievable, replace the original noun with word 'impossible'. Print out the final taxonomy as output."}, 
@@ -138,17 +141,19 @@ def spatial_information_retriver(query:dict):
     context = agent_init.spatial_retriever.invoke(query)
     return f"User Query: {query}. similar spatial examples: {context}"
 
-def check_taxonomy(MESSAGE_COMMON_TAXONOMY_PREDICTION):
+def make_common_taxonomy(MESSAGE_COMMON_TAXONOMY_PREDICTION):
     """Test if goal of deep activity can be met in current target_scene."""
 
     client = openai.OpenAI()
     response = client.chat.completions.create(
-        model=agent_init.LLM_MODEL_4MINI,
+        model=agent_init.LLM_MODEL_GPT4MINI,
         messages= MESSAGE_COMMON_TAXONOMY_PREDICTION,
         temperature=0.5
     )
     executability = response.choices[0].message.content.strip()
     return f"Thought: Executability.\n{executability}"
+
+
 
 def move_up_activity(query:str):
     """Make deep activity more abstract by moving one level up its hierarchy"""
@@ -162,10 +167,6 @@ def move_down_activity(query:str):
 # -----------------------
 # AGENT SETUP
 # -----------------------
-MEMORY = ConversationBufferWindowMemory(k=3)
-#MEMORY = MemorySaver() # Saves everyghing leading to overflow
-
-
 def get_agent2a_tools():
     """
     return tools
@@ -183,14 +184,9 @@ def get_agent2a_tools():
         ),
         Tool(
             name = "executability_check_tool",
-            func = lambda _: check_taxonomy(MESSAGE_COMMON_TAXONOMY_PREDICTION),
+            func = lambda _: make_common_taxonomy(MESSAGE_COMMON_TAXONOMY_PREDICTION),
             description = "Test if goal of deep activity can be met in current target_scene."
-        ),
-        Tool(
-            name = "move_up_activity_tool",
-            func = move_up_activity,
-            description = "Make deep activity more abstract by moving one level up its hierarchy"
-        ),    
+        )
     ]
     return tools
 
@@ -208,23 +204,13 @@ def get_agent2b_tools():
             name = "spatial_retriever_tool",
             func = spatial_information_retriver,
             description = "Retrieves relevant spatial information for similar environments, where state changes of entities takes place in spatiotemporal fashion."
-        ),
-        Tool(
-            name = "executability_check_tool",
-            func = check_executability,
-            description = "Test if goal of deep activity can be met in current target_scene."
-        ),
-        Tool(
-            name = "move_down_activity_tool",
-            func = move_down_activity,
-            description = "Make deep activity more specific and concrete by lowering one level down its hierarchy"
         )
         ]
     return tools
 
-
-
-
+# -----------------------
+# Agent Function
+# -----------------------
 def run_agent_2a(source_video_idx=None, target_video_idx=None, source_activity=""):
     """
     func: source_taxonomy -> common_taxonomy
@@ -239,7 +225,6 @@ def run_agent_2a(source_video_idx=None, target_video_idx=None, source_activity="
 
 
     return common_taxonomy
-
 
 def run_agent_2b(source_video_idx=None, target_video_idx=None, common_activity=""):
     """
@@ -283,16 +268,19 @@ if __name__ == "__main__":
     return: AGENT2a_PROMPT, MESSAGE_ACTIVITY_PREDICTION
     """
     tools_2a = get_agent2a_tools()
-
-
+    # tools, sequence, scenegraph, target_scenegraph, source_activity_taxonomy, target_scene_graph]
+    PROMPT2a, MESSAGE_COMMON_TAXONOMY_PREDICTION=get_agent2a_message(tools_2a, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy)
+    
+    response_2a = run_agent_2a()
+    common_activity_taxonomy = response_2a['output']
 
     # -----------------------
     # PREDICT FULL ACTIVITY TAXONOMY
     # -----------------------
     tools_2b = get_agent2b_tools()
-
-
-
+    PROMPT2b, MESSAGE_TARGET_TAXONOMY_PREDICTION=get_agent2b_message(tools_2a, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy)
+    response_2b = run_agent_2b()
+    target_activity_taxonomy = response_2b['output']
 
 
 

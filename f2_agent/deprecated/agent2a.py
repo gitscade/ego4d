@@ -40,8 +40,8 @@ load_dotenv()
 parser_stroutput = StrOutputParser()
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
-LLM_MODEL = agent_init.LLM_MODEL_4MINI
-LLM_MODEL_AGENT = agent_init.LLM_MODEL_4MINI
+LLM_MODEL = agent_init.LLM_MODEL_GPT4MINI
+LLM_MODEL_AGENT = agent_init.LLM_MODEL_GPT4MINI
 
 
 # -----------------------

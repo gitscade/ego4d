@@ -34,11 +34,14 @@ logging.basicConfig(level=logging.ERROR)
 load_dotenv()
 parser_stroutput = StrOutputParser()
 openai.api_key = os.getenv("OPENAI_API_KEY")
-LLM_MODEL_4 = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4", temperature=1)
-LLM_MODEL_4MINI = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini", temperature=1)
-# LLM_MODEL_LLAMA38b = OllamaLLM(model="llama3:8b", temperature=1)
-LLM_MODEL_LLAMA370b = OllamaLLM(model="llama3:70b-instruct", temperature=1)
-LLM_MODEL_GEMMA327b = OllamaLLM(model="gemma3:27b", temperature=1)
+LLM_MODEL_GPT4 = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4")
+LLM_MODEL_GPT4MINI = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini")
+# # LLM_MODEL_LLAMA38b = OllamaLLM(model="llama3:8b", temperature=1)
+# LLM_MODEL_LLAMA370b_instruct = OllamaLLM(model="llama3:70b-instruct", temperature=1)
+# LLM_MODEL_GEMMA327b = OllamaLLM(model="gemma3:27b", temperature=1)
+
+LLM_AGENT_GPT4 = "gpt-4"
+LLM_AGENT_GPT4M = "gpt-4o-mini"
 
 
 # -----------------------

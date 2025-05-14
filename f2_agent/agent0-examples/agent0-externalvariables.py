@@ -101,7 +101,7 @@ def scene_explainer(SCENE_EXPLAINER_MESSAGE):
         # Call OpenAI
         client = openai.OpenAI()
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model=agent_init.LLM_AGENT_GPT4M,
             messages=SCENE_EXPLAINER_MESSAGE,
             temperature=0.5
         )
@@ -148,7 +148,7 @@ def run_agent0(input):
     MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
     AGENT = create_react_agent(
         tools=TOOLS,
-        llm=agent_init.LLM_MODEL_4MINI,
+        llm=agent_init.LLM_MODEL_GPT4MINI,
         prompt= AGENT0_PROMPT
     )    
     AGENT_EXECUTOR = AgentExecutor(
