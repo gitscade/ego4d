@@ -175,7 +175,6 @@ def get_agent2a_message(inputlist:list):
     source_scene_graph = inputlist[2]
     target_scene_graph = inputlist[3]    
     source_activity_taxonomy = inputlist[4]
-
     query = "Construct a common taxonomy that is applicable for both source and target scene graph"
     tool_names =", ".join([t.name for t in tools])    
 
@@ -205,7 +204,7 @@ def get_agent2a_message(inputlist:list):
 
 
     MESSAGE_COMMON_TAXONOMY_PREDICTION = [
-            {"role": "system", "content": """You are a taxonomy examiner that checks if each level in taxonomy can be achieved in the target scene, and returns a common taxonomy. 
+            {"role": "system", "content": """You are a taxonomy examiner that checks if each level in taxonomy can be achieved in the target scene, and returns a common taxonomy.
              
              First, you receive a source_activity_taxonomy in dictionary form:
 
@@ -224,10 +223,10 @@ def get_agent2a_message(inputlist:list):
              "preparation method": "roasted" 
              "garnish": "empty"
              "sauce": "empty"
-             "spice":"salted"
+             "spice":["salted","empty"]
              }
 
-             In this case, this means there is no entity of "salary" for garnish and "mustard" for sauce in the target_scene_graph, or that no activity in the target_scene_graph can generate entity of "salary" or "garnish", respectively, for garnish or sauce key. Hence, the values for these keys are changed to "empty".
+             In this case, this means there is no entity of "salary" for garnish and "mustard" for sauce in the target_scene_graph, or that no activity in the target_scene_graph can generate entity of "salary" or "garnish", respectively, for garnish or sauce key. Hence, the values for these keys are changed to "empty". For spice, pepper was not available so, only "pepper" becomes "empty".
 
              Return the final dictionary of key-values as output. This dictionary, following the above logic, and have changed values or retain the same information as the input. You must use the same format as the example to represent the output dictionary."""}, 
             {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
@@ -249,43 +248,145 @@ def get_agent2b_message(inputs:list):
     target_scene_graph = inputs[3]
     source_activity_taxonomy = inputs[4]
     common_activity_taxonomy = inputs[5]
-
-    query = "summarize the input action sequence with a single verb and a single noun"
+    query = "construct a target_acvity_taxonomy that is applicable to target_scene_graph"
     tool_names =", ".join([t.name for t in tools])    
-
 
     AGENT2b_PROMPT = ChatPromptTemplate.from_messages([
         ("system", 
-         """You are a helpful taxonomy summarizer that summarizes an action_sequence in input scene_graph, using tools. If you have enough information, state your final answer following the format below:
+         """You are a helpful taxonomy enricher that fills in a missing class of an input taxonomy with appropriate values based on target_scene_graph, using tools. Return the final re-filled taxonomy as a target_activity_taxonomy, following the format below. USE SAME TAXONOMY FORMAT WITHOUT ADDING ANYTHING MORE:    
         
             Final Answer: [Your answer]
             
-        Otherwise, use this format to call tools to gather more information:
+        Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain used tool in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below. Retrieve relevant information with retriever tools first to gather similar examples.:
         
             Thought: [Your reasoning]
             Action: [Tool name]
-            Action Input: ["query": {query}, "source_action_sequence": {source_action_sequence}, "source_scene_graph": {source_scene_graph}, "source_activity_taxonomy": {source_activity_taxonomy}, "target_scene_graph": {target_scene_graph}, "common_activity_taxonomy": {common_activity_taxonomy}]
+            Action Input: [Appropriate Input for Tool]
         """),
 
+        ("system", "This is the user action sequence in source scene: {source_action_sequence}."),
+        ("system", "This is the source scene graph: {source_scene_graph}."),
+        ("system", "This is the target scene graph: {target_scene_graph}."),
+        ("system", "This is the source activity taxonomy: {source_activity_taxonomy}"),
+        ("system", "This is the source activity taxonomy: {common_activity_taxonomy}"),        
         ("system", "Available tools: {tools}. Actively use retrieval tools to get a plausible answer."),
         ("system", "Tool names: {tool_names}"),
-        ("user", "{query}"),
+        ("user", "This is the user query: {query}"),
         ("assistant", "{agent_scratchpad}")
         ]
         )
 
     MESSAGE_TARGET_TAXONOMY_PREDICTION = [
-            {"role": "system", "content": "You are a linguist that summarizes current user activity to a single verb and a single noun"}, 
+            {"role": "system", "content": """You are a taxonomy generator for target_scene_graph that checks common_activity_taxonomy and converts it to target_activity_taxonomy. Let me give you a step-by-step example of how you function.
+             
+             First, you receive a source_activity_taxonomy in dictionary form:
+
+             {
+             "main ingredient": "pork"   
+             "preparation method": "roasted" 
+             "garnish": "empty"
+             "sauce": "empty"
+             "spice":["salted","empty"]
+             }
+
+             For each key-value pair that holds value "empty" (in this case, values for "garnish" and "sauce"), you must find suitable alternative entity in the target_scene that can fill these values. 
+
+             Let's say source_activity_taxonomy values for "garnish", "sauce", "spaice" are "salary", "mustard", and ["salted", "peppered"], respectively. You are to find the most similar substitute for these in the target_scene_graph.
+
+             If target_scene_graph has "chill bottle" as entity, this can act as similar substitute to add "chilli" to the spice. Therefore, "empty" for spice becomes "chillied". In the same manner, if substitute vegetables for "garnish" is found in target_scene as "potato" "onion", you can pick the most vegetable that performs similar function as salary. Since salarly has crunchy texture, "onion" can be a substitue for "salary" in the source_acitivty_taxonomy's "garnish". When no sauce whatsoever is found in the scene, the "sauce" value should remain "empty". Overall, this will result in a new taxonomy below:
+
+            {
+             "main ingredient": "pork"   
+             "preparation method": "roasted" 
+             "garnish": "onion"
+             "sauce": "empty"
+             "spice":["salted","chillied"]
+             }
+
+             Following the logic above, you will come up with a new taxonomy for the target_scene_graph. Return this final dictionary of key-values as output. You must use the same format as the example to represent the output dictionary."""}, 
             {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
-            {"role": "user", "content": f"Here is the scene graph:\n{source_scene_graph}\n"},
+            {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},
+            {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},
             {"role": "user", "content": f"Here is the source activity taxonomy:\n{source_activity_taxonomy}\n"},
-            {"role": "user", "content": f"Here is the common activity taxonomy:\n{common_activity_taxonomy}\n"},            
-            {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"}            
-        ]
+            {"role": "user", "content": f"Here is the source activity taxonomy:\n{common_activity_taxonomy}\n"},            
+        ]    
     
     
     return AGENT2b_PROMPT, MESSAGE_TARGET_TAXONOMY_PREDICTION
 
+def get_agent3_message(inputs:list):
+    tools = inputs[0]
+    source_action_sequence = inputs[1]
+    source_scene_graph = inputs[2]
+    target_scene_graph = inputs[3]
+    source_activity_taxonomy = inputs[4]
+    target_activity_taxonomy = inputs[5]
+    query = "predict target_action_sequence that can realize the target_activity_taxonomy in the target_scene_graph"
+    tool_names =", ".join([t.name for t in tools])    
+
+    AGENT3_PROMPT = ChatPromptTemplate.from_messages([
+        ("system", 
+         """You are a helpful action planner that constructs an action sequence for the target_scene_graph to achieve the target_activity_taxonomy, using tools. Return the final action_sequence as a target_action_sequence, following the format below. USE SAME FORMAT AS THE source_action_sequence WITHOUT ADDING ANYTHING MORE:
+        
+            Final Answer: [Your answer]
+            
+        Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain used tool in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below. Retrieve relevant information with retriever tools first to gather similar examples.:
+        
+            Thought: [Your reasoning]
+            Action: [Tool name]
+            Action Input: [appropriate input for the tool]
+        """),
+
+        ("system", "This is the user action sequence in source scene: {source_action_sequence}."),
+        ("system", "This is the source scene graph: {source_scene_graph}."),
+        ("system", "This is the target scene graph: {target_scene_graph}."),
+        ("system", "This is the source activity taxonomy: {source_activity_taxonomy}"),
+        ("system", "This is the source activity taxonomy: {target_activity_taxonomy}"),        
+        ("system", "Available tools: {tools}. Actively use retrieval tools to get a plausible answer."),
+        ("system", "Tool names: {tool_names}"),
+        ("user", "This is the user query: {query}"),
+        ("assistant", "{agent_scratchpad}")
+        ]
+        )
+
+    MESSAGE_TARGET_SEQUENCE_PREDICTION = [
+            {"role": "system", "content": """You are a action planner expert that makes action sequence in a target_scene_graph to achieve the taxonomy values of the target_activity_taxonomy. Let me give you a step-by-step example of how you function.
+             
+             First, you receive a target_activity_taxonomy in dictionary form:
+
+            {
+             "main ingredient": "pork"   
+             "preparation method": "roasted" 
+             "garnish": "onion"
+             "sauce": "empty"
+             "spice":["salted","chillied"]
+             }
+
+             
+
+             Let's say source_activity_taxonomy values for "garnish", "sauce", "spaice" are "salary", "mustard", and ["salted", "peppered"], respectively. You are to find the most similar substitute for these in the target_scene_graph.
+
+             If target_scene_graph has "chill bottle" as entity, this can act as similar substitute to add "chilli" to the spice. Therefore, "empty" for spice becomes "chillied". In the same manner, if substitute vegetables for "garnish" is found in target_scene as "potato" "onion", you can pick the most vegetable that performs similar function as salary. Since salarly has crunchy texture, "onion" can be a substitue for "salary" in the source_acitivty_taxonomy's "garnish". When no sauce whatsoever is found in the scene, the "sauce" value should remain "empty". Overall, this will result in a new taxonomy below:
+
+            {
+             "main ingredient": "pork"   
+             "preparation method": "roasted" 
+             "garnish": "onion"
+             "sauce": "empty"
+             "spice":["salted","chillied"]
+             }
+
+             Following the logic above, you will come up with a new taxonomy for the target_scene_graph. Return this final dictionary of key-values as output. You must use the same format as the example to represent the output dictionary."""}, 
+            {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
+            {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},
+            {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},
+            {"role": "user", "content": f"Here is the source activity taxonomy:\n{source_activity_taxonomy}\n"},
+            {"role": "user", "content": f"Here is the source activity taxonomy:\n{target_activity_taxonomy}\n"},            
+        ]   
+
+    AGENT3_PROMPT = ChatPromptTemplate.from_messages([])
+    MESSAGE_TARGET_SEQUENCE_PREDICTION = []
+    return AGENT3_PROMPT, MESSAGE_TARGET_SEQUENCE_PREDICTION
 #------------------------
 #Tool Funcs
 #------------------------
@@ -360,7 +461,6 @@ def reorder_activity_taxonomy(unordered_taxonomy):
 
     except Exception as e:
         return f"Error: activity_prediction: {str(e)}"
-
 
 def make_common_taxonomy(MESSAGE_COMMON_TAXONOMY_PREDICTION):
     """Test if goal of deep activity can be met in current target_scene."""
@@ -507,7 +607,7 @@ def run_agent_1a(input):
     """
     # Load input
     TOOLS = input[0]
-    AGENT1a_PROMPT = input[1]
+    AGENT_PROMPT = input[1]
     source_action_sequence = input[2]
     source_scene_graph = input[3]
     TOOLNAMES =", ".join([t.name for t in TOOLS])    
@@ -518,7 +618,7 @@ def run_agent_1a(input):
     AGENT = create_react_agent(
         tools=TOOLS,
         llm=agent_init.LLM_MODEL_GPT4MINI,
-        prompt=AGENT1a_PROMPT
+        prompt=AGENT_PROMPT
     )    
     AGENT_EXECUTOR = AgentExecutor(
         agent=AGENT, 
@@ -549,7 +649,7 @@ def run_agent_1b(input):
     """
     # Load input
     TOOLS = input[0]
-    AGENT1b_PROMPT = input[1]
+    AGENT_PROMPT = input[1]
     source_action_sequence = input[2]
     source_scene_graph = input[3]
     source_core_activity= input[4]
@@ -561,7 +661,7 @@ def run_agent_1b(input):
     AGENT = create_react_agent(
         tools=TOOLS,
         llm=agent_init.LLM_MODEL_GPT4MINI,
-        prompt=AGENT1b_PROMPT
+        prompt=AGENT_PROMPT
     )    
 
     AGENT_EXECUTOR = AgentExecutor(
@@ -586,37 +686,144 @@ def run_agent_1b(input):
     )
     return response
 
-def run_agent_2a(source_video_idx=None, target_video_idx=None, source_activity=""):
+def run_agent_2a(input):
+    """"
+    func: run agent 2a\n
+    input: [tools_2a, AGENT2a_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy]\n
+    output: common_activity_taxonomy
+    """    
+    # Load input
+    TOOLS = input[0]
+    AGENT_PROMPT = input[1]
+    source_action_sequence = input[2]
+    source_scene_graph = input[3]
+    target_scene_graph = input[4]
+    source_activity_taxonomy= input[5]
+
+    TOOLNAMES =", ".join([t.name for t in TOOLS])
+    QUERY = "Find Common Activity Taxonomy."    
+    MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
+
+    AGENT = create_react_agent(
+        tools=TOOLS,
+        llm=agent_init.LLM_MODEL_GPT4MINI,
+        prompt=AGENT_PROMPT
+    )    
+    AGENT_EXECUTOR = AgentExecutor(
+        agent=AGENT, 
+        tools=TOOLS, 
+        verbose=True, 
+        handle_parsing_errors=True,
+        memory=MEMORY
+    )
+    response = AGENT_EXECUTOR.invoke(
+        {
+            "query": QUERY, 
+            "source_action_sequence": source_action_sequence,
+            "source_scene_graph": source_scene_graph,   
+            "target_scene_graph": target_scene_graph,            
+            "source_activity_taxonomy": source_activity_taxonomy,
+            "tools": TOOLS,
+            "tool_names": TOOLNAMES,
+            "agent_scratchpad": "" 
+         },
+        config={"max_iterations": 5}
+    )
+    return response
+
+def run_agent_2b(input):
+    """"
+    func: run agent 2b\n
+    input: [tools_2b, AGENT2b_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxnomy]\n
+    output: target_activity_taxonomy
+    """    
+    # Load input
+    TOOLS = input[0]
+    AGENT_PROMPT = input[1]
+    source_action_sequence = input[2]
+    source_scene_graph = input[3]
+    target_scene_graph = input[4]
+    source_activity_taxonomy= input[5]
+    common_activity_taxonomy= input[6]
+
+    TOOLNAMES =", ".join([t.name for t in TOOLS])
+    QUERY = "Find Target Activity Taxonomy."    
+    MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
+
+    AGENT = create_react_agent(
+        tools=TOOLS,
+        llm=agent_init.LLM_MODEL_GPT4MINI,
+        prompt=AGENT_PROMPT
+    )    
+    AGENT_EXECUTOR = AgentExecutor(
+        agent=AGENT, 
+        tools=TOOLS, 
+        verbose=True, 
+        handle_parsing_errors=True,
+        memory=MEMORY
+    )
+    response = AGENT_EXECUTOR.invoke(
+        {
+            "query": QUERY, 
+            "source_action_sequence": source_action_sequence,
+            "source_scene_graph": source_scene_graph,   
+            "target_scene_graph": target_scene_graph,            
+            "source_activity_taxonomy": source_activity_taxonomy,
+            "common_activity_taxonomy": common_activity_taxonomy,            
+            "tools": TOOLS,
+            "tool_names": TOOLNAMES,
+            "agent_scratchpad": "" 
+         },
+        config={"max_iterations": 5}
+    )
+    return response
+
+def run_agent3():
+    """"
+    func: run agent 3\n
+    input: [tools_3, AGENT3_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, target_activity_taxonomy]\n
+    output: target_action_sequence
     """
-    func: source_taxonomy -> common_taxonomy
-    input: 
-    (source_taxonomy)
-    (source_sequence, source_scenegraph)
-    (target_scenegraph)
-    output: 
-    (common_taxonomy)
-    """
-    common_taxonomy = []
+    # Load input
+    TOOLS = input[0]
+    AGENT_PROMPT = input[1]
+    source_action_sequence = input[2]
+    source_scene_graph = input[3]
+    target_scene_graph = input[4]
+    source_activity_taxonomy= input[5]
+    target_activity_taxonomy= input[6]  
 
+    TOOLNAMES =", ".join([t.name for t in TOOLS])
+    QUERY = "Predict Action Sequence for the target scene grph"    
+    MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
 
-    return common_taxonomy
-
-def run_agent_2b(source_video_idx=None, target_video_idx=None, common_activity=""):
-    """
-    func: common_taxonomy -> target_taxonomy
-    input: 
-    (common_taxonomy)
-    (source_sequence, source_scenegraph)
-    (target_scenegraph)
-    output: 
-    (target_taxonomy)
-    """
-    target_taxonomy = []
-
-    return target_taxonomy
-
-def wip_run_agent_3():
-    return []
+    AGENT = create_react_agent(
+        tools=TOOLS,
+        llm=agent_init.LLM_MODEL_GPT4MINI,
+        prompt=AGENT_PROMPT
+    )    
+    AGENT_EXECUTOR = AgentExecutor(
+        agent=AGENT, 
+        tools=TOOLS, 
+        verbose=True, 
+        handle_parsing_errors=True,
+        memory=MEMORY
+    )
+    response = AGENT_EXECUTOR.invoke(
+        {
+            "query": QUERY, 
+            "source_action_sequence": source_action_sequence,
+            "source_scene_graph": source_scene_graph,   
+            "target_scene_graph": target_scene_graph,            
+            "source_activity_taxonomy": source_activity_taxonomy,
+            "target_activity_taxonomy": target_activity_taxonomy,            
+            "tools": TOOLS,
+            "tool_names": TOOLNAMES,
+            "agent_scratchpad": "" 
+         },
+        config={"max_iterations": 5}
+    )
+    return response
 
 if __name__ == "__main__":
 
@@ -663,11 +870,13 @@ if __name__ == "__main__":
     # # -----------------------
     # # PREDICT COMMON ACTIVITY TAXONOMY
     # # -----------------------    
-    # source_activity_taxonomy = response_1b['output']
-    # tools_2a = get_agent2a_tools()
-    # # tools, sequence, scenegraph, target_scenegraph, source_activity_taxonomy, target_scene_graph]
-    # PROMPT2a, MESSAGE_COMMON_TAXONOMY_PREDICTION=get_agent2a_message(tools_2a, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy)
-    # response_2a = run_agent_2a()
+    source_activity_taxonomy = response_1b['output']
+    tools_2a = get_agent2a_tools()
+    # # tools, sequence, scenegraph, target_scenegraph, source_activity_taxonomy]
+    input2a_message = [tools_2a, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy]
+    AGENT2a_PROMPT, MESSAGE_COMMON_TAXONOMY_PREDICTION=get_agent2a_message(input2a_message)
+    input2a_agent = [tools_1b, AGENT2a_PROMPT, source_action_sequence, source_scene_graph, source_core_activity]
+    response_2a = run_agent_2a()
 
     # # -----------------------
     # # PREDICT TARGET ACTIVITY TAXONOMY
