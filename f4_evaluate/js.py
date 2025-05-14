@@ -105,25 +105,3 @@ graph = json.dumps(graph)
 # print(json.load(QUERY))
 print({QUERY})
 print(graph)
-
-
-# #json dump to make this into json format
-# print(json.dumps(sequence))
-
-# # This only five double quote with NONE
-# print(graph)
-
-# # when dumped, escape character appears
-# print(json.dumps(graph))
-
-
-
-
-
-
-#"We could not parse the JSON body of your request. 
-
-# q = json.loads(query.strip())
-# # q = ast.literal_eval(query.strip())  # convert to python dict
-# valid_json = json.dumps(1, indent=4)  # read as JSON(wth "")
-# input_json = json.loads(valid_json)

@@ -2,6 +2,7 @@
 common utility functions
 """
 import argparse
+import json
 # Argparse
 def GetArgParser():
     return argparse.ArgumentParser(description="Argument or Popup")
@@ -22,6 +23,16 @@ def convert_single_to_double_quotes_in_tuple(data):
     """
     # Convert the entire tuple to a string with double quotes
     return str(data).replace("'", '"')
+
+def jsondump_agent_response(input):
+    parsed_output = json.loads(input)
+
+    # # Step 2: Dump it to a file
+    # with open("output.json", "w") as f:
+    #     json.dump(parsed_output, f, indent=2)
+
+    parsed_output = json.dumps(parsed_output)
+    return parsed_output
 
 
 
