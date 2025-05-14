@@ -582,14 +582,9 @@ def get_agent2b_tools():
         ),
         Tool(
             name = "executability_check_tool",
-            func = check_executability,
+            func = lambda _: make_target_activity_taxonomy(),
             description = "Test if goal of deep activity can be met in current target_scene."
         ),
-        Tool(
-            name = "move_down_activity_tool",
-            func = move_down_activity,
-            description = "Make deep activity more specific and concrete by lowering one level down its hierarchy"
-        )
         ]
     return tools
 
@@ -862,8 +857,8 @@ if __name__ == "__main__":
     tools_1b = get_agent1b_tools()
     input1b_message = [tools_1b, source_action_sequence, source_scene_graph, source_core_activity]
     AGENT1b_PROMPT, MESSAGE_TAXONOMY_CREATION, MESSAGE_REORDER_TAXONOMY = get_agent1b_message(input1b_message)
-
     input_1b_agent = [tools_1b, AGENT1b_PROMPT, source_action_sequence, source_scene_graph, source_core_activity]
+
     response_1b = run_agent_1b(input_1b_agent)
     print(response_1b)
 
@@ -875,19 +870,21 @@ if __name__ == "__main__":
     # # tools, sequence, scenegraph, target_scenegraph, source_activity_taxonomy]
     input2a_message = [tools_2a, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy]
     AGENT2a_PROMPT, MESSAGE_COMMON_TAXONOMY_PREDICTION=get_agent2a_message(input2a_message)
-    input2a_agent = [tools_1b, AGENT2a_PROMPT, source_action_sequence, source_scene_graph, source_core_activity]
-    response_2a = run_agent_2a()
+    input2a_agent = [tools_2a, AGENT2a_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy]
+    response_2a = run_agent_2a(input2a_agent)
 
-    # # -----------------------
-    # # PREDICT TARGET ACTIVITY TAXONOMY
-    # # -----------------------    
+    # -----------------------
+    # PREDICT TARGET ACTIVITY TAXONOMY
+    # -----------------------    
 
-    # # MOVE UP ACTIVITY IS NOT FOUND
-    # common_activity_taxonomy = response_2a['output']
-    # tools_2b = get_agent2b_tools()
-    # # tools, sequence, scenegraph, target_scenegraph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy]
-    # PROMPT2b, MESSAGE_TARGET_TAXONOMY_PREDICTION=get_agent2b_message(tools_2a, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy)
-    # response_2b = run_agent_2b()
+    # MOVE UP ACTIVITY IS NOT FOUND
+    common_activity_taxonomy = response_2a['output']
+    tools_2b = get_agent2b_tools()
+    # tools, sequence, scenegraph, target_scenegraph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy]
+    input2a_message = [tools_2b, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy]    
+    AGENT2b_PROMPT, MESSAGE_TARGET_TAXONOMY_PREDICTION=get_agent2b_message(input2a_message)
+    input2b_agent = [tools_2b, AGENT2b_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy]    
+    response_2b = run_agent_2b(input2b_agent)
 
     # # # -----------------------
     # # # PREDICT TARGET ACTION SEQUENCE
