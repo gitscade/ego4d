@@ -114,25 +114,23 @@ def scene_explainer(agent_input):
     query = agent_input[0]["query"]
     query = [{"role": "user", "content": query}]
     message = query + TOOL_MESSAGE_SCENE_EXPLAINER
+    my_temperature = 0.5
     try:
-        # # OpenAI
-        # client = openai.OpenAI()
-        # response = client.chat.completions.create(
-        #     model=agent_init.LLM_AGENT_GPT4M,
-        #     messages=message,        
-        #     temperature=0.5
-        # )
-        # activity = response.choices[0].message.content.strip()
-        # return activity
-    
-        # Ollama
-        response = ollama.chat(
-            model = "gemma3:27b",
-            messages=message,
-            options={'temperature':0.5}
-        )
-        activity = response['message']['content']        
-        return activity
+        if TOOL_LLM_API == "openai":
+            client = openai.OpenAI()
+            response = client.chat.completions.create(
+                model = TOOL_LLM_STR,
+                messages = message,
+                temperature=my_temperature
+            )      
+            return response.choices[0].message.content.strip()
+        elif TOOL_LLM_API == "ollama":
+            response = ollama.chat(
+                model = TOOL_LLM_STR,
+                messages= message,
+                options={ 'temperature':my_temperature }
+            )
+            return response['message']['content']    
 
     except Exception as e:
         return f"Tool Error: {str(e)}"
@@ -155,7 +153,7 @@ def get_agent0_tools():
 # -----------------------
 # AGENT FUNCS = from packages
 # -----------------------
-def run_agent0(input):
+def run_agent0(input, agent_llm_chat):
     """
     func: run agent0
     input: [video_idx, tool, AGENT0_PROMPT]
@@ -175,7 +173,7 @@ def run_agent0(input):
     MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
     AGENT = create_react_agent(
         tools=TOOLS,
-        llm=agent_init.LLM_MODEL_GPT4MINI,
+        llm=agent_llm_chat,
         prompt= AGENT0_PROMPT
     )    
     AGENT_EXECUTOR = AgentExecutor(
@@ -207,11 +205,8 @@ if __name__ == "__main__":
     # -----------------------
     logging.basicConfig(level=logging.ERROR)
     load_dotenv()
-    # parser_stroutput = StrOutputParser()
-
-    # openai.api_key = os.getenv("OPENAI_API_KEY")
-    # LLM_MODEL = agent_init.LLM_MODEL_4MINI
-    # LLM_MODEL_AGENT = agent_init.LLM_MODEL_4MINI
+    AGENT_LLM_API, AGENT_LLM_STR, AGENT_LLM_CHAT = agent_init.SET_LLMS("ollama", "gemma3:27b")
+    TOOL_LLM_API, TOOL_LLM_STR, TOOL_LLM_CHAT = agent_init.SET_LLMS("ollama", "gemma3:27b")    
 
     # -----------------------
     # MESSAGES / QUERIES
@@ -224,7 +219,7 @@ if __name__ == "__main__":
     # RUN AGENT
     # -----------------------
     input_agent0 = [video_idx, tools, AGENT0_PROMPT]
-    response = run_agent0(input_agent0)
+    response = run_agent0(input_agent0, AGENT_LLM_CHAT)
     print(response)
 
 

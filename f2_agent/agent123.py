@@ -7,6 +7,7 @@ import ast
 import argparse
 from dotenv import load_dotenv
 #llm
+import ollama
 from langchain_ollama import OllamaLLM
 from langchain_community.llms import OpenAI
 from langchain_openai.chat_models import ChatOpenAI # good for agents
@@ -112,7 +113,7 @@ def get_agent1b_message(inputs:list):
              
              From information from source_action_sequence, source_scene_graph, and retrieved relevant information, you will construct a more detailed taxonomy of the input noun in the core activity.
 
-             For example, if input is called "cook steak", you are to create a taxonomy for the classification of the steak. If steak involves cooking with salary and mustard sauce, in the source_action sequence, you can create taxonomy in a dictionary form like:
+             For example, if input is called "cook steak", you are to create a taxonomy for the classification of the steak. Taxonomy should answer question of "What is the cooked steak?" I can give you an example of taxonomy for steak below. The keys-values here are just example, and you will choose yours so that your taxonomy best represent activity in source_action_sequence and source_scene_graph:
 
              {
              "sauce": "mustard",
@@ -176,8 +177,6 @@ def get_agent1b_message(inputs:list):
     #         {"role": "user", "content": f"Here is the scene graph:\n{source_scene_graph}\n"},
     #         {"role": "user", "content": f"Here is the core activity:\n{source_core_activity}\n"},
     # ]
-
-
     return AGENT1b_PROMPT, MESSAGE_TAXONOMY_CREATION #, MESSAGE_REORDER_TAXONOMY
 
 def get_agent2a_message(inputs:list):
@@ -195,7 +194,7 @@ def get_agent2a_message(inputs:list):
     tool_names =", ".join([t.name for t in tools])    
 
     AGENT2a_PROMPT = ChatPromptTemplate.from_messages([
-        ("system", """You are a helpful taxonomy examiner. Your task is to examine whether the input taxonomy for the source_scene_graph is applicable target_scene_graph with common_taxonomy_prediction_tool and return the output taxonomy tool as the common taxonomy. Return the final re-ordered taxonomy following the format below. AGENT MUST NOT MODIFY TAXONOMY FROM THE TOOLS IN ANY WAY. JUST PASS THE TAXONOMY FROM THE TOOL WITHOUT OMITTING OR CHANGING ANYTHING.   
+        ("system", """You are a helpful taxonomy examiner. Your task is to examine whether the input taxonomy for the source_scene_graph is applicable target_scene_graph with common_taxonomy_prediction_tool and return the output taxonomy tool as the common taxonomy. Return the final taxonomy following the format below. AGENT MUST NOT MODIFY TAXONOMY FROM THE TOOLS IN ANY WAY. JUST PASS THE TAXONOMY FROM THE TOOL WITHOUT OMITTING OR CHANGING ANYTHING.   
         
             Final Answer: [Your answer]
             
@@ -203,11 +202,10 @@ def get_agent2a_message(inputs:list):
         
             Thought: [Your reasoning]
             Action: [Tool name]
-            Action Input: [Appropriate Input for Tool]
+            Action Input: ["query": {query}]
         """),
 
         ("system", "This is the user action sequence in source scene: {source_action_sequence}."),
-        ("system", "This is the source scene graph: {source_scene_graph}."),
         ("system", "This is the target scene graph: {target_scene_graph}."),
         ("system", "This is the source activity taxonomy: {source_activity_taxonomy}"),
         ("system", "Available tools: {tools}. Actively use retrieval tools to get a plausible answer."),
@@ -216,12 +214,12 @@ def get_agent2a_message(inputs:list):
         ("assistant", "{agent_scratchpad}")
         ]
         )
-
+        # ("system", "This is the source scene graph: {source_scene_graph}."),
 
     MESSAGE_COMMON_TAXONOMY_PREDICTION = [
-            {"role": "system", "content": """You are a taxonomy examiner that checks if each level in taxonomy can be achieved in the target scene, and returns a common taxonomy.
+            {"role": "system", "content": """You are a taxonomy examiner that checks if each key value in taxonomy can be acquired in the target_scene_graph, and returns a common taxonomy.
              
-             First, you receive a source_activity_taxonomy in dictionary form:
+             First, you receive a source_activity_taxonomy in dictionary form. Here's an example:
 
              {
              "main ingredient": "pork",
@@ -231,30 +229,35 @@ def get_agent2a_message(inputs:list):
              "spice":["salted","peppered"]
              }
 
-             For each key-value pair, starting from-"main ingredient":"pork"-for this example, you check whether each value can be acquired from target_scene_graph or any possible actions in target_scene_graph. If value is possible, the key-value pair is unchanged. If no, replace the value in the key-value pair to "empty". Doing this for all key-value pairs will result in example similar to the dictionary below:
+             For each key-value pair, starting from "main ingredient":"pork", you check the target_scene_graph or any possible actions in target_scene_graph. If value for the key exists in the target_scene_graph, the key-value pair is unchanged. If no, replace the value in the key-value pair to "empty". Do not retain value not inside or acquireable in scene graph! Doing this for all key-value pairs will result in example similar to the dictionary below:
 
              {
-             "main ingredient": "pork",   
+             "main ingredient": "empty",   
              "preparation method": "roasted", 
              "garnish": "empty",
              "sauce": "empty",
              "spice":["salted","empty"],
              }
 
-             In this example, this means there is no entity of "salary" for garnish and "mustard" for sauce in the target_scene_graph, or that no activity in the target_scene_graph can generate entity of "salary" or "garnish", respectively, for garnish or sauce key. Hence, the values for these keys are changed to "empty". For spice, pepper was not available so, only "pepper" becomes "empty".
+             In this example, there is no entity of "pork", "salary", and "mustard" inside the target_scene_graph, or that no activity in the target_scene_graph can generate entity of "pork", "salary" or "garnish". Hence, the values for these keys are changed to "empty". For spice, only salt was available, so "pepper" becomes "empty". 
 
-             ONLY RETURN FINAL COMMON TAXONOMY. This dictionary, following the above logic, and have changed values or retain the same information as the input. You must use the same format as the example to represent the output dictionary. DO NOT DELETE  OR REFORMAT ANY KEY in the source_activity_taxnomy in the common_activity_taxonomy"""}, 
+             This changed dictionary is called common_activity_taxonomy. In constructing this taxonomy, use the same format as the example. DO NOT DELETE  OR REFORMAT ANY KEY while returning common_activity_taxonomy. Follow this format to return output:
+             
+            Thought: Your reasoning for each of the five key
+            Action: common_activity_taxonomy                  
+             """}, 
             {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
-            {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},
             {"role": "user", "content": f"Here is the source activity taxonomy:\n{source_activity_taxonomy}\n"},
             {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"}
         ]
+    
+            # {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},    
     return AGENT2a_PROMPT, MESSAGE_COMMON_TAXONOMY_PREDICTION
 
 def get_agent2b_message(inputs:list):
     """
     func: returns prompt and messages used for agent2b\n
-    input: single list: [tools, sequence, scenegraph, target_scenegraph, source_taxonomy, common_taxonomy]\n
+    input: single list: [tools, sequence, scenegraph, target_scenegraph, source_taxonomy, common_taxonomy, core_activity]\n
     return: AGENT2b_PROMPT, MESSAGE_ACTIVITY_PREDICTION
     """
     tools = inputs[0]
@@ -263,6 +266,7 @@ def get_agent2b_message(inputs:list):
     target_scene_graph = inputs[3]
     source_activity_taxonomy = inputs[4]
     common_activity_taxonomy = inputs[5]
+    source_core_activity = inputs[6]
     query = "construct a target_acvity_taxonomy that is applicable to target_scene_graph"
     tool_names =", ".join([t.name for t in tools])    
 
@@ -276,7 +280,7 @@ def get_agent2b_message(inputs:list):
         
             Thought: [Your reasoning]
             Action: [Tool name]
-            Action Input: [Appropriate Input for Tool]
+            Action Input: ["query": {query}, "target_scene_graph": {target_scene_graph}]
         """),
 
         ("system", "This is the user action sequence in source scene: {source_action_sequence}."),
@@ -297,18 +301,38 @@ def get_agent2b_message(inputs:list):
              First, you receive a source_activity_taxonomy in dictionary form:
 
              {
-             "main ingredient": "pork",   
+             "main ingredient": "empty",   
              "preparation method": "roasted", 
              "garnish": "empty",
              "sauce": "empty",
              "spice":["salted","empty"],
              }
 
-             For each key-value pair that holds value "empty" (in this case, values for "garnish" and "sauce"), you must find suitable alternative entity in the target_scene that can fill these values. 
+             You also receice source_core_activity and source_activity_taxonomy. For this example suppose you have:
+
+             "cook steak"
+
+             {
+             "main ingredient": "pork",
+             "preparation method": "roasted", 
+             "garnish": "salary",
+             "sauce": "mustard",
+             "spice":["salted","peppered"]
+             }
+
+             For each key-value pair that holds value "empty" (in this case, values for "garnish" and "sauce"), you must find suitable alternative entity in the target_scene that can fill these values.
+
+             First print out the entities in the target_scene_graph. ONLY USE THESE entities in filling out the "empty" values in common_activity_taxonomy:
+
+             target_scene_graph_entities: [items in target_scene_graph]
+
+             Let's say for the main ingredient, there is "chicken" in the target_scene. "chicken" is not the same "main ingredient" as "pork". But under the context of "cook steak" "chicken" can be a main ingredient. Therefore "chicken" in the target_scene_graph can fill in as the "main ingredient". If "tofu" is there instead of "chicken", if tofu steak is a possible dish, you can put in "tofu" as main ingredient. If there is only "lettunce", maybe making a steak is just impossible and "main ingredient" has to remain "empty".
 
              Let's say source_activity_taxonomy values for "garnish", "sauce", "spaice" are "salary", "mustard", and ["salted", "peppered"], respectively. You are to find the most similar substitute for these in the target_scene_graph.
 
-             If target_scene_graph has "chill bottle" as entity, this can act as similar substitute to add "chilli" to the spice. Therefore, "empty" for spice becomes "chillied". In the same manner, if substitute vegetables for "garnish" is found in target_scene as "potato" "onion", you can pick the most vegetable that performs similar function as salary. Since salarly has crunchy texture, "onion" can be a substitue for "salary" in the source_acitivty_taxonomy's "garnish". When no sauce whatsoever is found in the scene, the "sauce" value should remain "empty". Overall, this will result in a new taxonomy below:
+             If target_scene_graph has "chill bottle" as entity, this can act as similar substitute to add "chilli" to the spice. Therefore, "empty" for spice becomes "chillied". 
+             
+             In the same manner, if substitute vegetables for "garnish" is found in target_scene as "potato" "onion", you can pick the most vegetable that performs similar function as salary. Since salarly is there as garnish for steak, this is mostly for its texture. In this reagard, "onion" can be a substitue for "salary" in the source_acitivty_taxonomy's "garnish". If there is no onion in target, then, anything that serves as garnish like potato can be used to replace the "empty" value. When no sauce whatsoever is found in the scene, the "sauce" value should remain "empty". Overall, this will result in a new taxonomy below:
 
             {
              "main ingredient": "pork",   
@@ -318,18 +342,29 @@ def get_agent2b_message(inputs:list):
              "spice":["salted","chillied"]
              }
 
+
              Following the logic above, you will come up with a new taxonomy for the target_scene_graph. Return this final dictionary of key-values as output. You must use the same format as the example to represent the output dictionary. DO NOT DELETE OR REFORMAT ANY KEY in the common_activity_taxnomy dictionary in the target_activity_taxonomy"""}, 
+   
             {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
-            {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},
+            {"role": "user", "content": f"Here is the source_core_activity:\n{source_core_activity}\n" },            
+            {"role": "user", "content": f"Here is the common activity taxonomy:\n{common_activity_taxonomy}\n"},     
             {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},
-            {"role": "user", "content": f"Here is the source activity taxonomy:\n{source_activity_taxonomy}\n"},
-            {"role": "user", "content": f"Here is the source activity taxonomy:\n{common_activity_taxonomy}\n"},            
         ]    
     
-    
+            # {"role": "user", "content": f"Here is the source activity taxonomy:\n{source_activity_taxonomy}\n"},            
+
+            # {"role": "user", "content": f"Here is the source scene graph. This is NOT target scene graph:\n{source_scene_graph}\n"},
+
+    MESSAGE_TARGET_SIMILAR_TAXONOMY_PREDICTION = []
+
+
+
     return AGENT2b_PROMPT, MESSAGE_TARGET_TAXONOMY_PREDICTION
 
 def get_agent3_message(inputs:list):
+    """
+    get agent3 inputs
+    """
     tools = inputs[0]
     source_action_sequence = inputs[1]
     source_scene_graph = inputs[2]
@@ -350,7 +385,7 @@ def get_agent3_message(inputs:list):
         
             Thought: [Your reasoning]
             Action: [Tool name]
-            Action Input: [appropriate input for the tool]
+            Action Input: ["query": {query}]
         """),
         ("system", "This is the user action sequence in source scene: {source_action_sequence}."),
         ("system", "This is the source scene graph: {source_scene_graph}."),
@@ -395,11 +430,16 @@ def get_agent3_message(inputs:list):
              }
 
 
-             Following the logic above, you can make action sequence for the target_scene and target_activity_taxonomy. First, you should make a logical action_sequence so that each value for the key in the target_activity_taxonomy is achieved, and the core_activity is realized with the resources and entities available in the target_scene_graph. 
+             Following the logic above, you can make action sequence for the target_scene and target_activity_taxonomy. First, you should make a logical action_sequence so that each value for the key in the target_activity_taxonomy is achieved, and the core_activity is realized with the resources and entities available in the target_scene_graph. Print your logic in format below:
+
+             unordered target taxonomy: your action sequence for target taxonomy
+             Logic: your logic for each key in the target taxonomy
              
              Then, a re-ordering tool should be called, so that each value for the key is started and completed at similar absolute step, or relative step with respect to steps for the corresponding keys in the source_action_sequence. This will return the final re-ordered target_action_sequence.
              
-             Finally, you will return the target_action_sequence as output. The format of the target_scene_graph should follow the format of the source_scene_graph."""}, 
+             Finally, you will return the target_action_sequence as output. The format of the target_scene_graph should follow the format of the source_scene_graph. Follow the format below to print the output:
+             
+             Final Answer: target_action_sequence"""}, 
             {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
             {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},
             {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},
@@ -421,41 +461,48 @@ def spatial_information_retriver(query:dict):
     context = agent_init.spatial_retriever.invoke(query)
     return f"User Query: {query}. similar spatial examples: {context}"
 
-def activity_prediction(MESSAGE_ACTIVITY_PREDICTION):
+def activity_prediction(MESSAGE_ACTIVITY_PREDICTION, TOOL_LLM_API, TOOL_LLM_STR):
     """Predict an core summary of the user activity based on input"""
+    my_temperature = 0.5
     try:
-        #OPENAI
-        client = openai.OpenAI()
-        response = client.chat.completions.create(
-            model = "gpt-4o-mini",
-            messages = MESSAGE_ACTIVITY_PREDICTION,
-            temperature=0.5
-        )      
-        response = response.choices[0].message.content.strip()
-        #OLLAMA
-        # response = ollama.chat(
-        #     model = agent_init.LLM_MODEL_4MINI,
-        #     messages= MESSAGE_ACTIVITY_PREDICTION,
-        #     options={ 'temperature':0.5 }
-        # )
-        # response = response['message']['content']
-        return response   
+        if TOOL_LLM_API == "openai":
+            client = openai.OpenAI()
+            response = client.chat.completions.create(
+                model = TOOL_LLM_STR,
+                messages = MESSAGE_ACTIVITY_PREDICTION,
+                temperature=my_temperature
+            )      
+            return response.choices[0].message.content.strip()
+        elif TOOL_LLM_API == "ollama":
+            response = ollama.chat(
+                model = TOOL_LLM_STR,
+                messages= MESSAGE_ACTIVITY_PREDICTION,
+                options={ 'temperature':my_temperature }
+            )
+            return response['message']['content']        
 
     except Exception as e:
         return f"Error: activity_prediction: {str(e)}"
 
-def predict_activity_taxonomy(MESSAGE_TAXONOMY_CREATION):
+def predict_activity_taxonomy(MESSAGE_TAXONOMY_CREATION, TOOL_LLM_API, TOOL_LLM_STR):
     """Predict an core summary of the user activity based on input"""
+    my_temperature = 0.5
     try:
-        #OPENAI
-        client = openai.OpenAI()
-        response = client.chat.completions.create(
-            model = "gpt-4o-mini",
-            messages = MESSAGE_TAXONOMY_CREATION,
-            temperature=0.5
-        )      
-        response = response.choices[0].message.content.strip()     
-        return response   
+        if TOOL_LLM_API == "openai":
+            client = openai.OpenAI()
+            response = client.chat.completions.create(
+                model = TOOL_LLM_STR,
+                messages = MESSAGE_TAXONOMY_CREATION,
+                temperature=my_temperature
+            )      
+            return response.choices[0].message.content.strip()
+        elif TOOL_LLM_API == "ollama":
+            response = ollama.chat(
+                model = TOOL_LLM_STR,
+                messages= MESSAGE_TAXONOMY_CREATION,
+                options={ 'temperature':my_temperature }
+            )
+            return response['message']['content']    
 
     except Exception as e:
         return f"Error: activity_prediction: {str(e)}"
@@ -484,67 +531,67 @@ def predict_activity_taxonomy(MESSAGE_TAXONOMY_CREATION):
     except Exception as e:
         return f"Error: ordered_activity_taxnomy: {str(e)}"
 
-def make_common_taxonomy(MESSAGE_COMMON_TAXONOMY_PREDICTION):
+def make_common_taxonomy(MESSAGE_COMMON_TAXONOMY_PREDICTION, TOOL_LLM_API, TOOL_LLM_STR):
     """Test if goal of deep activity can be met in current target_scene."""
-    message = MESSAGE_COMMON_TAXONOMY_PREDICTION
-    try:
-        client = openai.OpenAI()
-        response = client.chat.completions.create(
-            model= "gpt-4o-mini",
-            messages= message,
-            temperature=0.5
-        )
-        response = response.choices[0].message.content.strip()
-        #OLLAMA
-        # response = ollama.chat(
-        #     model = agent_init.LLM_MODEL_4MINI,
-        #     messages= message,
-        #     options={ 'temperature':0.5 }
-        # )
-        # response = response['message']['content']         
-        return response   
+    my_temperature = 0.5
+    try:        
+        if TOOL_LLM_API == "openai":
+            client = openai.OpenAI()
+            response = client.chat.completions.create(
+                model = TOOL_LLM_STR,
+                messages = MESSAGE_COMMON_TAXONOMY_PREDICTION,
+                temperature=my_temperature
+            )      
+            return response.choices[0].message.content.strip()
+        elif TOOL_LLM_API == "ollama":
+            response = ollama.chat(
+                model = TOOL_LLM_STR,
+                messages= MESSAGE_COMMON_TAXONOMY_PREDICTION,
+                options={ 'temperature':my_temperature }
+            )
+            return response['message']['content']    
     except Exception as e:
         return f"Error: common_taxonomy_prediction: {str(e)}"
 
-def make_target_activity_taxonomy(MESSAGE_TARGET_TAXONOMY_PREDICTION):
-    message = MESSAGE_TARGET_TAXONOMY_PREDICTION
-    try:
-        client = openai.OpenAI()
-        response = client.chat.completions.create(
-            model= "gpt-4o-mini",
-            messages= message,
-            temperature=0.5
-        )
-        response = response.choices[0].message.content.strip()
-        #OLLAMA
-        # response = ollama.chat(
-        #     model = agent_init.LLM_MODEL_4MINI,
-        #     messages= message,
-        #     options={ 'temperature':0.5 }
-        # )
-        # response = response['message']['content']         
-        return response   
+def make_target_activity_taxonomy(MESSAGE_TARGET_TAXONOMY_PREDICTION, TOOL_LLM_API, TOOL_LLM_STR):
+    my_temperature = 0.5
+    try:        
+        if TOOL_LLM_API == "openai":
+            client = openai.OpenAI()
+            response = client.chat.completions.create(
+                model = TOOL_LLM_STR,
+                messages = MESSAGE_TARGET_TAXONOMY_PREDICTION,
+                temperature=my_temperature
+            )      
+            return response.choices[0].message.content.strip()
+        elif TOOL_LLM_API == "ollama":
+            response = ollama.chat(
+                model = TOOL_LLM_STR,
+                messages= MESSAGE_TARGET_TAXONOMY_PREDICTION,
+                options={ 'temperature':my_temperature }
+            )
+            return response['message']['content']    
     except Exception as e:
         return f"Error: target_taxonomy_prediction: {str(e)}"
 
-def predict_target_action_sequence(MESSAGE_TARGET_SEQUENCE_PREDICTION):
-    mesage = MESSAGE_TARGET_SEQUENCE_PREDICTION
-    try:
-        client = openai.OpenAI()
-        response = client.chat.completions.create(
-            model= "gpt-4o-mini",
-            messages= mesage,
-            temperature=0.5
-        )
-        response = response.choices[0].message.content.strip()
-        #OLLAMA
-        # response = ollama.chat(
-        #     model = agent_init.LLM_MODEL_4MINI,
-        #     messages= mesage,
-        #     options={ 'temperature':0.5 }
-        # )
-        # response = response['message']['content']         
-        return response   
+def predict_target_action_sequence(MESSAGE_TARGET_SEQUENCE_PREDICTION, TOOL_LLM_API, TOOL_LLM_STR):
+    my_temperature = 0.5
+    try:        
+        if TOOL_LLM_API == "openai":
+            client = openai.OpenAI()
+            response = client.chat.completions.create(
+                model = TOOL_LLM_STR,
+                messages = MESSAGE_TARGET_SEQUENCE_PREDICTION,
+                temperature=my_temperature
+            )      
+            return response.choices[0].message.content.strip()
+        elif TOOL_LLM_API == "ollama":
+            response = ollama.chat(
+                model = TOOL_LLM_STR,
+                messages= MESSAGE_TARGET_SEQUENCE_PREDICTION,
+                options={ 'temperature':my_temperature }
+            )
+            return response['message']['content']    
     except Exception as e:
         return f"Error: action_sequence_prediction: {str(e)}"
 
@@ -569,14 +616,14 @@ def get_agent1a_tools():
     ),
     Tool(
         name = "activity_prediction_tool",
-        func = lambda _: activity_prediction(MESSAGE_ACTIVITY_PREDICTION),
+        func = lambda _: activity_prediction(MESSAGE_ACTIVITY_PREDICTION, TOOL_LLM_API, TOOL_LLM_STR),
         description = "Activity prediction tool, which can summarize the sequential multiple actions into a single verb and a single noun."
     ),
-    Tool(
-        name = "reorder_activity_taxonomy_tool",
-        func = lambda _: reorder_activity_taxonomy(MESSAGE_REORDER_TAXONOMY),
-        description = "reorder_activity_taxonomy, which can reorder the input taxonomy."
-    ),    
+    # Tool(
+    #     name = "reorder_activity_taxonomy_tool",
+    #     func = lambda _: reorder_activity_taxonomy(MESSAGE_REORDER_TAXONOMY),
+    #     description = "reorder_activity_taxonomy, which can reorder the input taxonomy."
+    # ),    
     ]
     return tools
 
@@ -597,7 +644,7 @@ def get_agent1b_tools():
     ),
     Tool(
         name = "predict_activity_taxonomy_tool",
-        func = lambda _: predict_activity_taxonomy(MESSAGE_TAXONOMY_CREATION),
+        func = lambda _: predict_activity_taxonomy(MESSAGE_TAXONOMY_CREATION, TOOL_LLM_API, TOOL_LLM_STR),
         description = "This tool generates a taxonomical description of source action sequence"
     ),
     # Tool(
@@ -625,7 +672,7 @@ def get_agent2a_tools():
         ),
         Tool(
             name = "make_common_taxonomy_tool",
-            func = lambda _: make_common_taxonomy(MESSAGE_COMMON_TAXONOMY_PREDICTION),
+            func = lambda _: make_common_taxonomy(MESSAGE_COMMON_TAXONOMY_PREDICTION, TOOL_LLM_API, TOOL_LLM_STR),
             description = "Test if goal of deep activity can be met in current target_scene."
         )
     ]
@@ -648,8 +695,8 @@ def get_agent2b_tools():
         ),
         Tool(
             name = "make_target_activity_taxonomy_tool",
-            func = lambda _: make_target_activity_taxonomy(MESSAGE_TARGET_TAXONOMY_PREDICTION),
-            description = "Test if goal of deep activity can be met in current target_scene."
+            func = lambda _: make_target_activity_taxonomy(MESSAGE_TARGET_TAXONOMY_PREDICTION, TOOL_LLM_API, TOOL_LLM_STR),
+            description = "make target activty taxonomy that achieves core activity in the target scene."
         ),
         ]
     return tools
@@ -671,7 +718,7 @@ def get_agent3_tools():
         ),
         Tool(
             name = "predict target action sequence",
-            func = lambda _: predict_target_action_sequence(MESSAGE_TARGET_SEQUENCE_PREDICTION),
+            func = lambda _: predict_target_action_sequence(MESSAGE_TARGET_SEQUENCE_PREDICTION, TOOL_LLM_API, TOOL_LLM_STR),
             description = "make target action sequence that performs the core activity and target_activity_taxonomy in target_scene."
         ),
         ]    
@@ -680,7 +727,7 @@ def get_agent3_tools():
 # -----------------------
 # Agent Function
 # -----------------------
-def run_agent_1a(input):
+def run_agent_1a(input, agent_llm_chat):
     """"
     func: run agent 1a with source video idx info\n
     input: [tools_1a, AGENT1a_PROMPT, source_action_sequence, source_scene_graph]\n
@@ -698,7 +745,7 @@ def run_agent_1a(input):
     MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
     AGENT = create_react_agent(
         tools=TOOLS,
-        llm=agent_init.LLM_MODEL_GPT4MINI,
+        llm=agent_llm_chat,
         prompt=AGENT_PROMPT
     )    
     AGENT_EXECUTOR = AgentExecutor(
@@ -722,7 +769,7 @@ def run_agent_1a(input):
     )
     return response
 
-def run_agent_1b(input):
+def run_agent_1b(input, agent_llm_chat):
     """"
     func: run agent 1a with source video idx info\n
     input: [tools_1b, AGENT1b_PROMPT, source_action_sequence, source_scene_graph, source_core_activity]\n
@@ -741,7 +788,7 @@ def run_agent_1b(input):
 
     AGENT = create_react_agent(
         tools=TOOLS,
-        llm=agent_init.LLM_MODEL_GPT4MINI,
+        llm=agent_llm_chat,
         prompt=AGENT_PROMPT
     )    
 
@@ -767,7 +814,7 @@ def run_agent_1b(input):
     )
     return response
 
-def run_agent_2a(input):
+def run_agent_2a(input, agent_llm_chat):
     """"
     func: run agent 2a\n
     input: [tools_2a, AGENT2a_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy]\n
@@ -787,7 +834,7 @@ def run_agent_2a(input):
 
     AGENT = create_react_agent(
         tools=TOOLS,
-        llm=agent_init.LLM_MODEL_GPT4MINI,
+        llm=agent_llm_chat,
         prompt=AGENT_PROMPT
     )    
     AGENT_EXECUTOR = AgentExecutor(
@@ -812,7 +859,7 @@ def run_agent_2a(input):
     )
     return response
 
-def run_agent_2b(input):
+def run_agent_2b(input, agent_llm_chat):
     """"
     func: run agent 2b\n
     input: [tools_2b, AGENT2b_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxnomy]\n
@@ -833,7 +880,7 @@ def run_agent_2b(input):
 
     AGENT = create_react_agent(
         tools=TOOLS,
-        llm=agent_init.LLM_MODEL_GPT4MINI,
+        llm=agent_llm_chat,
         prompt=AGENT_PROMPT
     )    
     AGENT_EXECUTOR = AgentExecutor(
@@ -859,7 +906,7 @@ def run_agent_2b(input):
     )
     return response
 
-def run_agent3(input):
+def run_agent3(input, agent_llm_chat):
     """"
     func: run agent 3\n
     input: [tools_3, AGENT3_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, target_activity_taxonomy, source_core_taxonomy]\n
@@ -881,7 +928,7 @@ def run_agent3(input):
 
     AGENT = create_react_agent(
         tools=TOOLS,
-        llm=agent_init.LLM_MODEL_GPT4MINI,
+        llm=agent_llm_chat,
         prompt=AGENT_PROMPT
     )    
     AGENT_EXECUTOR = AgentExecutor(
@@ -909,24 +956,27 @@ def run_agent3(input):
     return response
 
 if __name__ == "__main__":
-
     # -----------------------
-    # FILES / FORMATTING
+    # TEST SETTINGS
     # -----------------------
-    source_video_idx = 1
-    target_video_idx = 2
 
-    source_goalstep_video = database_init.goalstep_test_video_list[source_video_idx]
-    source_action_sequence = agent_init.extract_lower_goalstep_segments(source_goalstep_video)
-    source_action_sequence = json.dumps(source_action_sequence)
-    
-    source_spatial_video = database_init.spatial_test_video_list[source_video_idx]
-    source_scene_graph = agent_init.extract_spatial_context(source_spatial_video)
-    source_scene_graph = json.dumps(source_scene_graph, indent=2)
+    # 1. STRUCTURE ABLATION
+    #NEED TO DO THIS OTHER TIME
 
-    target_spatial_video = database_init.spatial_test_video_list[target_video_idx]
-    target_scene_graph = agent_init.extract_spatial_context(target_spatial_video)
-    target_scene_graph = json.dumps(target_scene_graph, indent=2)
+    # 2. RAG ABLATION
+    #TODO 1: put it in agent_prompt
+    #TODO 2: put it in message_tool
+
+    # 3. LLM MODEL BASELINE
+    AGENT_LLM_API, AGENT_LLM_STR, AGENT_LLM_CHAT = agent_init.SET_LLMS("ollama", "llama3:70b-instruct")
+    TOOL_LLM_API, TOOL_LLM_STR, TOOL_LLM_CHAT = agent_init.SET_LLMS("ollama", "llama3:70b-instruct")
+
+    # 4. SCENE BASELINES FOR SIMILARITY
+    source_video_idx = 0
+    target_video_idx = 1
+    source_action_sequence, source_scene_graph = agent_init.get_video_info(source_video_idx)
+    target_action_sequence, target_scene_graph = agent_init.get_video_info(target_video_idx)
+
     
     # -----------------------
     # AGENT1a: PREDICT CORE ACTIVITY
@@ -935,7 +985,7 @@ if __name__ == "__main__":
     input_1a_message = [tools_1a, source_action_sequence, source_scene_graph]
     AGENT1a_PROMPT, MESSAGE_ACTIVITY_PREDICTION = get_agent1a_message(input_1a_message)
     input_1a_agent = [tools_1a, AGENT1a_PROMPT, source_action_sequence, source_scene_graph]
-    response_1a = run_agent_1a(input_1a_agent)
+    response_1a = run_agent_1a(input_1a_agent, AGENT_LLM_CHAT)
 
     # -----------------------
     # AGENT1b: PREDICT FULL ACTIVITY TAXONOMY
@@ -946,49 +996,40 @@ if __name__ == "__main__":
     # AGENT1b_PROMPT, MESSAGE_TAXONOMY_CREATION, MESSAGE_REORDER_TAXONOMY = get_agent1b_message(input1b_message)
     AGENT1b_PROMPT, MESSAGE_TAXONOMY_CREATION = get_agent1b_message(input1b_message)
     input_1b_agent = [tools_1b, AGENT1b_PROMPT, source_action_sequence, source_scene_graph, source_core_activity]
-    response_1b = run_agent_1b(input_1b_agent)
+    response_1b = run_agent_1b(input_1b_agent, AGENT_LLM_CHAT)
 
     # -----------------------
     # AGENT2a: PREDICT COMMON ACTIVITY TAXONOMY
     # -----------------------    
     source_activity_taxonomy = response_1b['output']
-    # print(f"source_activity_taxonomy1: {source_activity_taxonomy}\n")
     source_activity_taxonomy = util_funcs.jsondump_agent_response(source_activity_taxonomy)
-    # print(f"source_activity_taxonomy2: {source_activity_taxonomy}\n")
     tools_2a = get_agent2a_tools()
     input2a_message = [tools_2a, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy]
     AGENT2a_PROMPT, MESSAGE_COMMON_TAXONOMY_PREDICTION=get_agent2a_message(input2a_message)
-
-    # print(MESSAGE_COMMON_TAXONOMY_PREDICTION)
-
     input2a_agent = [tools_2a, AGENT2a_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy]
-    response_2a = run_agent_2a(input2a_agent)
+    response_2a = run_agent_2a(input2a_agent, AGENT_LLM_CHAT)
 
     # -----------------------
     # AGENT2b: PREDICT TARGET ACTIVITY TAXONOMY
     # -----------------------    
     common_activity_taxonomy = response_2a['output']
-    print(f"common_activity_taxonomy1: {common_activity_taxonomy}")    
     common_activity_taxonomy = util_funcs.jsondump_agent_response(common_activity_taxonomy)
-    print(f"common_activity_taxonomy2: {common_activity_taxonomy}")     
     tools_2b = get_agent2b_tools()
-    input2a_message = [tools_2b, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy]    
+    input2a_message = [tools_2b, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy, source_core_activity]    
     AGENT2b_PROMPT, MESSAGE_TARGET_TAXONOMY_PREDICTION=get_agent2b_message(input2a_message)
     input2b_agent = [tools_2b, AGENT2b_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy]    
-    response_2b = run_agent_2b(input2b_agent)
+    response_2b = run_agent_2b(input2b_agent, AGENT_LLM_CHAT)
 
     # -----------------------
     # PREDICT TARGET ACTION SEQUENCE
     # -----------------------
     target_activity_taxonomy = response_2b['output']
-    print(f"target_activity_taxonomy1: {target_activity_taxonomy}")     
     target_activity_taxonomy = util_funcs.jsondump_agent_response(target_activity_taxonomy)
-    print(f"target_activity_taxonomy2: {target_activity_taxonomy}")     
     tools_3 = get_agent3_tools()
     input3_message = [tools_3, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, target_activity_taxonomy, source_core_activity]
     AGENT3_PROMPT, MESSAGE_TARGET_SEQUENCE_PREDICTION=get_agent3_message(input3_message)       
     input3_agent = [tools_3, AGENT3_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, target_activity_taxonomy, source_core_activity]   
-    response_3 = run_agent3(input3_agent)
+    response_3 = run_agent3(input3_agent, AGENT_LLM_CHAT)
 
     # -----------------------
     # FINAL ANSWER

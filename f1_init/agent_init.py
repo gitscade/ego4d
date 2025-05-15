@@ -9,6 +9,8 @@ output: source deep activity
 '''
 import sys
 import os
+import subprocess
+import time
 import logging
 from dotenv import load_dotenv
 import ast
@@ -30,33 +32,50 @@ import f1_init.database_init as database_init
 # -----------------------
 # Agent Init API, LLM
 # -----------------------
-logging.basicConfig(level=logging.ERROR)
-load_dotenv()
-parser_stroutput = StrOutputParser()
-openai.api_key = os.getenv("OPENAI_API_KEY")
-LLM_MODEL_GPT4 = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4")
-LLM_MODEL_GPT4MINI = ChatOpenAI(openai_api_key=openai.api_key, model="gpt-4o-mini")
-# # LLM_MODEL_LLAMA38b = OllamaLLM(model="llama3:8b", temperature=1)
-# LLM_MODEL_LLAMA370b_instruct = OllamaLLM(model="llama3:70b-instruct", temperature=1)
-# LLM_MODEL_GEMMA327b = OllamaLLM(model="gemma3:27b", temperature=1)
+def SET_LLMS(api_name:str, llm_str:str):
+    """
+    input: api_name: "openai / ollama"\n
+    input: llm_str: "gpt-4"\n
+    output: llm_api, llm_str, llm_instance
+    """
+    logging.basicConfig(level=logging.ERROR)
+    load_dotenv()
+    parser_stroutput = StrOutputParser()
 
-LLM_AGENT_GPT4 = "gpt-4"
-LLM_AGENT_GPT4M = "gpt-4o-mini"
+    if api_name is "openai":
+        # connect to openai api key        
+        openai.api_key = os.getenv("OPENAI_API_KEY")
 
+        # "gpt-4.1" "gpt-4.1-mini", "gpt-4o", "gpt-4o-mini"
+        return api_name, llm_str, ChatOpenAI(openai_api_key=openai.api_key, model=llm_str)
+    
+    elif api_name is "ollama":
+        # kill all existing ollama pid
+        os.system("pkill -f 'ollama serve'")
+        print("[INFO] Ollama 서버가 중지되었습니다.")
+        try:
+            output = subprocess.check_output(["pgrep", "-f", "ollama"], stderr=subprocess.DEVNULL).decode().strip()
+            if output:
+                print(f"[INFO] Ollama is running with PID: {output}")
+            else:
+                print("[WARNING] Ollama is NOT running.")
+        except subprocess.CalledProcessError:
+            print("[WARNING] Ollama is NOT running.")        
 
-# -----------------------
-# Agent Input Functions
-# -----------------------
-import json
-# TODO: def function that reads one annotation file and selects level 2 actions in formatted forms. The function should return 
-"""
-- read from "root/data/ego4d_annotation/demo/input"
-- choose video index to use as input data
-- extract goalstep lv2 segments from video
-- extract spatial context from video
-- parse goalstep segments
-- parse spatial context segments
-"""
+        # turn on new ollama server
+        try:
+            # Ollama 서버를 백그라운드에서 실행
+            subprocess.Popen(["ollama", "serve"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            time.sleep(2)  # 서버가 시작될 시간을 확보
+            print("[INFO] Ollama server background running")
+        except Exception as e:
+            print(f"[ERROR] Ollama server FAIL TO RUN: {e}")       
+
+        # "llama3.3:70b" "deepseek-r1:70b" "gemma3:27b"  "deepseek-r1:32b" 
+        return api_name, llm_str, OllamaLLM(model=llm_str)
+    
+    return "none", "none", "none" 
+
 
 def extract_all_goalstep_segments(data):
     """
@@ -114,8 +133,6 @@ def extract_spatial_context(video: dict):
     input: video: video from which to extract spatial context
     output: json_string: [{"object_id": 1, "object_name": "oil", "init_status": {"status": "default", "container": null}}, {"object_id": 3, "object_name": "steak", "init_status": {"status": "d...
     """
-
-
     # dump =>json format (double quotes, null)
     # load =>json to python format(single quotes, None)
     scenegraph = video["spatial_data"]
@@ -124,8 +141,6 @@ def extract_spatial_context(video: dict):
     scenegraph = json.loads(scenegraph)
     #print(scenegraph)
     return scenegraph
-
-
 
 # -----------------------
 # VIDEO LIST, VECSTORE, RETRIEVER
@@ -143,6 +158,35 @@ goalstep_retriever = goalstep_vector_store.as_retriever(search_type="similarity"
 spatial_retriever = spatial_vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
 
 
+def get_video_info(source_video_idx:int):
+    """
+    func: return source_action_sequence, source_scene_graph
+    input: source_video_idx: find in test_video_lists for goal&spatial
+    ourput: source_action_sequence, source_scene_graph
+    """
+    source_goalstep_video = goalstep_test_video_list[source_video_idx]
+    source_action_sequence = extract_lower_goalstep_segments(source_goalstep_video)
+    source_action_sequence = json.dumps(source_action_sequence)
+    
+    source_spatial_video = database_init.spatial_test_video_list[source_video_idx]
+    source_scene_graph = extract_spatial_context(source_spatial_video)
+    source_scene_graph = json.dumps(source_scene_graph, indent=2)
+    return source_action_sequence, source_scene_graph
+
+# def get_target_video_info(target_video_idx:int):
+#     """
+#     func: return target_action_sequence, target_scene_graph
+#     input: target_video_idx: find in test_video_lists for goal&spatial
+#     ourput: target_action_sequence, target_scene_graph
+#     """
+#     target_goalstep_video = goalstep_test_video_list[target_video_idx]
+#     target_action_sequence = extract_spatial_context(target_goalstep_video)
+#     target_action_sequence = json.dumps(target_action_sequence)
+
+#     target_spatial_video = database_init.spatial_test_video_list[target_video_idx]
+#     target_scene_graph = extract_spatial_context(target_spatial_video)
+#     target_scene_graph = json.dumps(target_scene_graph, indent=2)
+#     return target_action_sequence, target_scene_graph
 
 
 if __name__=="__main__":

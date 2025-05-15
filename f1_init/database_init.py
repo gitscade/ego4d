@@ -32,6 +32,49 @@ sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))
 from util import util_constants
 
+# -----------------------
+# Pick out annotation
+# -----------------------
+def make_spatial_json_video_uid_list(video_list):
+    """
+    func: read all json files and return its video_uid as a list
+    input: video_list
+    output: goalstep_video_uid_list
+    """
+    goalstep_video_uid_list = []
+    for video in video_list:
+        uid = video["video_id"]
+        goalstep_video_uid_list.append(uid)
+    
+    return goalstep_video_uid_list
+
+
+def exclude_test_video_list(video_list, exclude_uid_list, key_name: str):
+    """
+    func: exclude video element that contains uid element of the exclude_uid_list
+    func: reorder test_video_list, so that it is sorted like the exclude_uid_list
+    input: video_list, exclude_uid_list(uid_list)
+    output: new_video_list, test_video_list
+    """
+    new_video_list = []
+    test_video_list = []    
+    for video in video_list:
+        uid = video[key_name]
+        if uid in exclude_uid_list:
+            test_video_list.append(video)
+            # print(uid)
+        else:
+            new_video_list.append(video)
+
+    # sort test video list so that it follows sort order of uid_list
+    test_video_list = sorted(test_video_list, key=lambda d: exclude_uid_list.index(d[key_name]))
+    # for video in test_video_list:
+    #     print(video["video_uid"])
+    
+    return new_video_list, test_video_list
+
+
+
 
 # -----------------------
 # DATABASE FUNCS
@@ -88,6 +131,28 @@ def make_spatial_json_video_list(path1, path2):
                     spatial_video_list.append(data)
                 except json.JSONDecodeError as e:
                     print(f"Error reading spatial {filename}: {e}")      
+
+    return spatial_video_list
+
+def make_spatial_json_video_list_singlepath(path1):
+    """
+    *spatial videos are all individual dict and there is no "videos" key.
+    func: read all json in dir recursively & merge all individual dicts to one list
+    input: path to manual annotation, path to semiauto annotation
+    output: merged_videos = []
+    """
+    spatial_video_list = []
+
+    # manual annotation merge
+    for filename in os.listdir(path1):
+        if filename.endswith('.json'):
+            file_path = os.path.join(path1, filename)
+            with open(file_path, 'r') as file:
+                try:
+                    data = json.load(file)
+                    spatial_video_list.append(data)
+                except json.JSONDecodeError as e:
+                    print(f"Error reading spatial {filename}: {e}")
 
     return spatial_video_list
 
@@ -246,9 +311,6 @@ def make_spatial_document_list(video_list):
             )
             document_list.append(step)
     return document_list
-
-
-
 
 # -----------------------
 # Path & API & Model
