@@ -1,8 +1,8 @@
 # ignore data
 data/
-ego4d_data/
-egogoal/
-egotrack/
+data/ego4d_data/
+data/egogoal/
+data/egotrack/
 
 # isnore any aws related projects or download files
 aws/

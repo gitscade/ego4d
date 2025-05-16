@@ -205,8 +205,9 @@ if __name__ == "__main__":
     # -----------------------
     logging.basicConfig(level=logging.ERROR)
     load_dotenv()
-    AGENT_LLM_API, AGENT_LLM_STR, AGENT_LLM_CHAT = agent_init.SET_LLMS("ollama", "gemma3:27b")
-    TOOL_LLM_API, TOOL_LLM_STR, TOOL_LLM_CHAT = agent_init.SET_LLMS("ollama", "gemma3:27b")    
+    M
+    AGENT_LLM_API, AGENT_LLM_STR, AGENT_LLM_CHAT = agent_init.SET_LLMS("ollama","eramax/tesslate_tessa-t1-32b:q4_K_M", temperature=0.2)
+    TOOL_LLM_API, TOOL_LLM_STR, TOOL_LLM_CHAT = agent_init.SET_LLMS("ollama","eramax/tesslate_tessa-t1-32b:q4_K_M", temperature=0.2)
 
     # -----------------------
     # MESSAGES / QUERIES

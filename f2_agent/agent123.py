@@ -85,17 +85,18 @@ def get_agent1b_message(inputs:list):
     tool_names =", ".join([t.name for t in tools])    
 
     AGENT1b_PROMPT = ChatPromptTemplate.from_messages([
-        ("system", """You are a helpful classifier that constructs a taxonomy of an activity in a scene. Return the final taxonomy following the format below. AGENT MUST NOT MODIFY TAXONOMY IN ANY WAY:
+        ("system", """You are a helpful classifier that constructs a taxonomy of an activity in a scene. 
             
-            Final Answer: [Your answer]
-            
-        Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain used tool in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below. Retrieve relevant information with retriever tools first to gather similar examples.:
+         Use the following format for each step:
          
             Thought: [Your reasoning]
             Action: [Tool name]
-            Action Input: ["query": {query}, "source_action_sequence": {source_action_sequence}, "source_scene_graph": {source_scene_graph}, "source_core_activity": {source_core_activity}]            
-            """),
+            Action Input: [The input to the action]
 
+         When you have enough information, conclude with: Final Answer. AGENT MUST NOT MODIFY TAXONOMY IN ANY WAY. Just Print out the final answer in this format without adding anything:
+            
+            Final Answer: [Your answer]
+        """),
         ("system", "This is the user action sequence: {source_action_sequence}."),
         ("system", "Predicted activity must be able to be performed in this scene: {source_scene_graph}."),
         ("system", "Core activity of the current scene: {source_core_activity}"),
@@ -104,7 +105,27 @@ def get_agent1b_message(inputs:list):
         ("user", "This is the query for the agent: {query}"),
         ("assistant", "{agent_scratchpad}")  # for React agents
         ])
+    # AGENT1b_PROMPT = ChatPromptTemplate.from_messages([
+    #     ("system", """You are a helpful classifier that constructs a taxonomy of an activity in a scene. Return the final taxonomy following the format below. State your final answer in a section labeled 'Final Answer:'. AGENT MUST NOT MODIFY TAXONOMY IN ANY WAY:
+            
+    #         Final Answer: [Your answer]
+            
+    #     Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain used tool in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below. Retrieve relevant information with retriever tools first to gather similar examples.:
+         
+    #         Thought: [Your reasoning]
+    #         Action: [Tool name]
+    #         Action Input: ["query": {query}, "source_action_sequence": {source_action_sequence}, "source_scene_graph": {source_scene_graph}, "source_core_activity": {source_core_activity}]
+               
+    #     """),
 
+    #     ("system", "This is the user action sequence: {source_action_sequence}."),
+    #     ("system", "Predicted activity must be able to be performed in this scene: {source_scene_graph}."),
+    #     ("system", "Core activity of the current scene: {source_core_activity}"),
+    #     ("system", "Available tools: {tools}. Actively use retrieval tools to come up with plausible answer."),
+    #     ("system", "Tool names: {tool_names}"),  # for React agents
+    #     ("user", "This is the query for the agent: {query}"),
+    #     ("assistant", "{agent_scratchpad}")  # for React agents
+    #     ])
 
     MESSAGE_TAXONOMY_CREATION = [
             {"role": "system", "content": """You are a taxonomy constructer, that makes 5-Leval classification taxonomy for a given noun in the input.
@@ -968,16 +989,20 @@ if __name__ == "__main__":
     #TODO 2: put it in message_tool
 
     # 3. LLM MODEL BASELINE
-    AGENT_LLM_API, AGENT_LLM_STR, AGENT_LLM_CHAT = agent_init.SET_LLMS("ollama", "llama3:70b-instruct")
-    TOOL_LLM_API, TOOL_LLM_STR, TOOL_LLM_CHAT = agent_init.SET_LLMS("ollama", "llama3:70b-instruct")
+    agent_api_name = "ollama"
+    agent_model_name = "eramax/tesslate_tessa-t1-32b:q4_K_M"
+    tool_api_name = "ollama"
+    tool_model_name = "eramax/tesslate_tessa-t1-32b:q4_K_M"    
+    AGENT_LLM_API, AGENT_LLM_STR, AGENT_LLM_CHAT = agent_init.SET_LLMS(agent_api_name, agent_model_name, temperature=0.2)
+    TOOL_LLM_API, TOOL_LLM_STR, TOOL_LLM_CHAT = agent_init.SET_LLMS(tool_api_name, tool_model_name, temperature=0.2)
 
-    # 4. SCENE BASELINES FOR SIMILARITY
+    # 4. Select Test Pairs
     source_video_idx = 0
     target_video_idx = 1
     source_action_sequence, source_scene_graph = agent_init.get_video_info(source_video_idx)
     target_action_sequence, target_scene_graph = agent_init.get_video_info(target_video_idx)
 
-    
+    # 5. Iterate for Test Pairs
     # -----------------------
     # AGENT1a: PREDICT CORE ACTIVITY
     # -----------------------
@@ -1002,6 +1027,7 @@ if __name__ == "__main__":
     # AGENT2a: PREDICT COMMON ACTIVITY TAXONOMY
     # -----------------------    
     source_activity_taxonomy = response_1b['output']
+    print(source_activity_taxonomy)
     source_activity_taxonomy = util_funcs.jsondump_agent_response(source_activity_taxonomy)
     tools_2a = get_agent2a_tools()
     input2a_message = [tools_2a, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy]
@@ -1032,16 +1058,11 @@ if __name__ == "__main__":
     response_3 = run_agent3(input3_agent, AGENT_LLM_CHAT)
 
     # -----------------------
-    # FINAL ANSWER
-    # -----------------------
-    target_action_sequence = response_3['output']
-    print(target_action_sequence)
-
-    # # -----------------------
-    # # Save stuff for evaluation
+    # # FINAL ANSWER
     # # -----------------------
     # target_action_sequence = response_3['output']
-    # input_outputs = [source_action_sequence, source_core_activity, source_activity_taxonomy, common_activity_taxonomy, target_activity_taxonomy, target_action_sequence]
+    # print(target_action_sequence)
+
 
 
 

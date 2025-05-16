@@ -32,7 +32,7 @@ import f1_init.database_init as database_init
 # -----------------------
 # Agent Init API, LLM
 # -----------------------
-def SET_LLMS(api_name:str, llm_str:str):
+def SET_LLMS(api_name:str, llm_str:str, temperature:int):
     """
     input: api_name: "openai / ollama"\n
     input: llm_str: "gpt-4"\n
@@ -47,7 +47,7 @@ def SET_LLMS(api_name:str, llm_str:str):
         openai.api_key = os.getenv("OPENAI_API_KEY")
 
         # "gpt-4.1" "gpt-4.1-mini", "gpt-4o", "gpt-4o-mini"
-        return api_name, llm_str, ChatOpenAI(openai_api_key=openai.api_key, model=llm_str)
+        return api_name, llm_str, ChatOpenAI(openai_api_key=openai.api_key, model=llm_str, temperature=temperature)
     
     elif api_name is "ollama":
         # kill all existing ollama pid
@@ -72,7 +72,7 @@ def SET_LLMS(api_name:str, llm_str:str):
             print(f"[ERROR] Ollama server FAIL TO RUN: {e}")       
 
         # "llama3.3:70b" "deepseek-r1:70b" "gemma3:27b"  "deepseek-r1:32b" 
-        return api_name, llm_str, OllamaLLM(model=llm_str)
+        return api_name, llm_str, OllamaLLM(model=llm_str, temperature=temperature)
     
     return "none", "none", "none" 
 
