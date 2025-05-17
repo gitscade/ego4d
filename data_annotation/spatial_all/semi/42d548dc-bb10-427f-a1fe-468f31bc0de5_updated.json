@@ -1,0 +1,221 @@
+{
+  "video_id": "42d548dc-bb10-427f-a1fe-468f31bc0de5",
+  "goal_category": "COOKING:PREPARE_MANGO",
+  "goal_description": "Chopping mangoes.",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "mango",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "mango stalk",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "player",
+      "init_status": {
+        "status": "nonexistent",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "knife",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "mangoes",
+      "init_status": {
+        "status": "diced",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_1_substep_0",
+      "description": "cut out stalk of mango",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "mango stalk",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "inactive",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_1",
+      "description": "cut out damaged part of mango",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "mango",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "without damaged part",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_2",
+      "description": "cut the mango into small pieces",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "mango",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "knife",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_3",
+      "description": "add diced mangoes in bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "mango",
+            "init_status": {
+              "status": "cut",
+              "container": null
+            },
+            "final_status": {
+              "status": "on bowl",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with mango",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+    "video_id": "573fc64b-6613-449a-aa28-69810a346e14",
+    "goal_category": "COOKING:MAKE_PASTRY",
+    "goal_description": "Making murukku",
+    "spatial_data": [
+        {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        },
+        {
+            "object_id": 1,
+            "object_name": "wooden dish",
+            "init_status": {
+                "status": "half-filled",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "murukku",
+            "init_status": {
+                "status": "default",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "source",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Shape the murukku mold on a mat",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "container"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "source",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 2,
+                        "object_name": "murukku",
+                        "init_status": {
+                            "status": "default",
+                            "container": 1
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": 1
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

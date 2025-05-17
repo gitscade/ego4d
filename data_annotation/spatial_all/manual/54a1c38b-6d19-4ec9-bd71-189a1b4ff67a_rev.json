@@ -1,0 +1,148 @@
+{
+    "video_id": "54a1c38b-6d19-4ec9-bd71-189a1b4ff67a",
+    "goal_category": "COOKING:MAKE_PASTRY",
+    "goal_description": "Making ornamented Bori",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "mat",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "batter",
+            "init_status": {
+                "status": "default",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "piping bag",
+            "init_status": {
+                "status": "default",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "plastic wrap",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "batter2",
+            "init_status": {
+                "status": "default",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+                "status": null,
+                "container": 1
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Checks the local mat",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "mat"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_1_substep_0",
+            "description": "Fill piping bag with bori",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "batter"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_1_substep_1",
+            "description": "Squeezes Bori on mat into a ring like shape",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "piping bag"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_2_substep_0",
+            "description": "Fill piping bag with bori",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "batter2"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_2_substep_1",
+            "description": "Squeezes Bori on mat into a ring like shape",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "piping bag"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_3_substep_0",
+            "description": "Fill piping bag with bori",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "batter3"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_3_substep_1",
+            "description": "Squeezes Bori on mat into a ring like shape",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "piping bag"
+                },
+                "change": []
+            }
+        }
+    ]
+}

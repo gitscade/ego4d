@@ -1,0 +1,289 @@
+{
+  "video_id": "a06ac945-e65f-4259-9563-00bbcf62436f",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "washing the utensils\ntakes out the ingredients from the refrigerator\ntakes out the utensils\ncutting the ingredients\nputting the bread in the toaster\nputting the ingredients in the pan",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "ketchup bottle",
+      "init_status": {
+        "status": "on table",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "french beans",
+      "init_status": {
+        "status": "unpicked",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "basket",
+      "init_status": {
+        "status": "empty",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "canned blueberry",
+      "init_status": {
+        "status": "on shelf",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "door",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "shelf",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "jar",
+      "init_status": {
+        "status": "closed",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "fridge",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "table",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Get ketchup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grabbing",
+          "final_hand": "ketchup bottle"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ketchup bottle",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "on table",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "table",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "Get french beans",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "french beans",
+            "init_status": {
+              "status": "picked",
+              "container": null
+            },
+            "final_status": {
+              "status": "on table",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "table",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "ketchup bottle",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "on table",
+              "container": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "Get canned blue berry",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "table",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "ketchup bottle",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "on table",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "french beans",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "on table",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "canned blueberry",
+            "init_status": {
+              "status": "on shelf",
+              "container": null
+            },
+            "final_status": {
+              "status": "on table",
+              "container": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_3",
+      "description": "Gather ingredients from the fridge",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "walking",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "fridge",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": null
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "jar",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

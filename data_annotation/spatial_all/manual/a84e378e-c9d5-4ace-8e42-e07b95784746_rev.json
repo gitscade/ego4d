@@ -1,0 +1,51 @@
+{
+    "video_id": "a84e378e-c9d5-4ace-8e42-e07b95784746",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "cooking general",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "basket",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "player",
+            "init_status": {
+                "status": null,
+                "container": 1
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "removes flowers stalk",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "flower"
+                },
+                "change": [
+                    {
+                        "object_id": 2,
+                        "object_name": "flower",
+                        "init_status": {
+                            "status": "unprepared",
+                            "container": 1
+                        },
+                        "final_status": {
+                            "status": "prepared",
+                            "container": 1
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

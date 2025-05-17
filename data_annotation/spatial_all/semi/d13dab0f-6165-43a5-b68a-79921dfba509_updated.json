@@ -1,0 +1,217 @@
+{
+  "video_id": "d13dab0f-6165-43a5-b68a-79921dfba509",
+  "goal_category": "COOKING:PREPARE_INGREDIENTS_GENERAL",
+  "goal_description": "Cutting fish with scissors",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "fish",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "scissors",
+      "init_status": {
+        "status": "ready",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "sieve",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Cut fish with scissors",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "fish",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "scissors",
+            "init_status": {
+              "status": "ready",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Cut fish with scissors",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "fish",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "scissors",
+            "init_status": {
+              "status": "ready",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Clean the scissors",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "scissors",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Clean the fish in the sieve with water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cleaning fish",
+          "final_hand": "sieve"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "fish",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "sieve",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with water",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

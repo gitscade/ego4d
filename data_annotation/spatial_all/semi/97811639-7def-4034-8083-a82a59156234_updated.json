@@ -1,0 +1,317 @@
+{
+  "video_id": "97811639-7def-4034-8083-a82a59156234",
+  "goal_category": "COOKING:MAKE_STEAK_DISH",
+  "goal_description": "make steak dish",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "mixture",
+      "init_status": {
+        "status": "still",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "oven",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "celery",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "chicken",
+      "init_status": {
+        "status": "cooking",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "lime",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "tissue",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "bottle",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "ice",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "tofu",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "plate",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Stir the mixture",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "mixture",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_0",
+      "description": "Take out baked celery from oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "empty",
+          "final_status": "idle",
+          "final_hand": "empty"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "oven",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "celery",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "baked",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_1",
+      "description": "Take out chicken from the oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "cooking",
+              "container": 3
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "oven",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "off",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_2",
+      "description": "Turn chicken over in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "cooking",
+              "container": null
+            },
+            "final_status": {
+              "status": "flipped",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_0",
+      "description": "Slice lime into two halves",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "lime",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "halved",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_2",
+      "description": "Compress lime to get out juice",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "squeezing",
+          "final_hand": "lime"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "lime",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "squeezed",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

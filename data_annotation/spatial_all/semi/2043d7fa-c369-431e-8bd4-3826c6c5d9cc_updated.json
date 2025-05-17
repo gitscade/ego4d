@@ -1,0 +1,199 @@
+{
+  "video_id": "2043d7fa-c369-431e-8bd4-3826c6c5d9cc",
+  "goal_category": "COOKING:MAKE_FLATBREAD",
+  "goal_description": "Make dough",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "dough",
+      "init_status": {
+        "status": "flat",
+        "container": 2
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "dough",
+      "init_status": {
+        "status": "cut",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "New Object",
+      "init_status": {
+        "status": "ball",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Roll dough into a ball",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "flat",
+              "container": null
+            },
+            "final_status": {
+              "status": "ball",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_0",
+      "description": "Cut out a chunk of the dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "ball",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "dough",
+            "init_status": {
+              "status": "ball",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_1",
+      "description": "form the dough into a ball",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "dough",
+            "init_status": {
+              "status": "cut",
+              "container": null
+            },
+            "final_status": {
+              "status": "ball",
+              "container": 3
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

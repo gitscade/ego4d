@@ -1,0 +1,769 @@
+{
+    "video_id": "20ef0632-9c41-43d0-aea4-60307be7431a",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "Cutting the frozen dough",
+    "spatial_data": [
+        {
+            "object_id": 2,
+            "object_name": "foil paper",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "gas stove",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 1,
+            "object_name": "gas cooker",
+            "init_status": {
+                "status": "default",
+                "container": 3
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "knife",
+            "init_status": {
+                "status": "default",
+                "container": 4
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "dough",
+            "init_status": {
+                "status": "default",
+                "container": 4
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "ice",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "nylon",
+            "init_status": {
+                "status": "default",
+                "container": 4
+            }
+        },
+        {
+            "object_id": 10,
+            "object_name": "bottle",
+            "init_status": {
+                "status": "default",
+                "container": 4
+            }
+        },
+        {
+            "object_id": 12,
+            "object_name": "sink",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 14,
+            "object_name": "dish",
+            "init_status": {
+                "status": "unwashed",
+                "container": 12
+            }
+        },
+        {
+            "object_id": 15,
+            "object_name": "kitchen cupboard",
+            "init_status": {
+                "status": "opened",
+                "container": null
+            }
+        },
+        {
+            "object_id": 16,
+            "object_name": "sink cabinet",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 17,
+            "object_name": "pot",
+            "init_status": {
+                "status": "default",
+                "container": 16
+            }
+        },
+        {
+            "object_id": 18,
+            "object_name": "plate",
+            "init_status": {
+                "status": "default",
+                "container": 4
+            }
+        },
+        {
+            "object_id": 19,
+            "object_name": "bowl",
+            "init_status": {
+                "status": "default",
+                "container": 4
+            }
+        },
+        {
+            "object_id": 20,
+            "object_name": "knives",
+            "init_status": {
+                "status": "default",
+                "container": 4
+            }
+        },
+        {
+            "object_id": 21,
+            "object_name": "filter",
+            "init_status": {
+                "status": "default",
+                "container": 4
+            }
+        },
+        {
+            "object_id": 22,
+            "object_name": "knife holder",
+            "init_status": {
+                "status": "default",
+                "container": 4
+            }
+        },
+        {
+            "object_id": 23,
+            "object_name": "plate2",
+            "init_status": {
+                "status": "unwashed",
+                "container": 16
+            }
+        },
+        {
+            "object_id": 24,
+            "object_name": "oven",
+            "init_status": {
+                "status": "closed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 25,
+            "object_name": "kitchen utensil",
+            "init_status": {
+                "status": "unwashed",
+                "container": 12
+            }
+        },
+        {
+            "object_id": 26,
+            "object_name": "spoon",
+            "init_status": {
+                "status": "unwashed",
+                "container": 12
+            }
+        },
+        {
+            "object_id": 27,
+            "object_name": "bowl2",
+            "init_status": {
+                "status": "unwashed",
+                "container": 12
+            }
+        },
+        {
+            "object_id": 28,
+            "object_name": "pan",
+            "init_status": {
+                "status": "unwashed",
+                "container": 12
+            }
+        },
+        {
+            "object_id": 32,
+            "object_name": "kitchen rack",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 29,
+            "object_name": "fork",
+            "init_status": {
+                "status": "unwashed",
+                "container": 32
+            }
+        },
+        {
+            "object_id": 30,
+            "object_name": "player",
+            "init_status": {
+                "status": null,
+                "container": 12
+            }
+        },
+        {
+            "object_id": 31,
+            "object_name": "plate rack",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 13,
+            "object_name": "nightstand",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0_substep_0",
+            "description": "Place  foil paper on gas cooker",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "foil paper"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_1",
+            "description": "Slice dough with knife",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "knife"
+                },
+                "change": [
+                    {
+                        "object_id": 6,
+                        "object_name": "dough",
+                        "init_status": {
+                            "status": "default",
+                            "container": 4
+                        },
+                        "final_status": {
+                            "status": "sliced",
+                            "container": 4
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_2",
+            "description": "Place sliced dough on foil paper",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "dough"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "Put he nylon in the fridge",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "nylon"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_2",
+            "description": "Put the Ice cubes into the bottle",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "ice"
+                },
+                "change": [
+                    {
+                        "object_id": 10,
+                        "object_name": "bottle",
+                        "init_status": {
+                            "status": "default",
+                            "container": 4
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": 4
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_3_substep_0",
+            "description": "Fill ice cube tray with water",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "ice cube tray"
+                },
+                "change": [
+                    {
+                        "object_id": 12,
+                        "object_name": "sink",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "supply water",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_3_substep_1",
+            "description": "Put the ice cube tray in fridge",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "water"
+                },
+                "change": [
+                    {
+                        "object_id": 11,
+                        "object_name": "ice cube tray",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_4_substep_0",
+            "description": "Fill water bottle with water",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "bottle"
+                },
+                "change": [
+                    {
+                        "object_id": 9,
+                        "object_name": "ice",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": 10
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_4_substep_1",
+            "description": "Cover the water bottle with the lid",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "bottle"
+                },
+                "change": [
+                    {
+                        "object_id": 10,
+                        "object_name": "bottle",
+                        "init_status": {
+                            "status": "default",
+                            "container": 4
+                        },
+                        "final_status": {
+                            "status": "closed",
+                            "container": 4
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_4_substep_2",
+            "description": "Place water bottle on a  nightstand",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "bottle"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_5_substep_0",
+            "description": "Put plate in the kitchen sink",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "plate2"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_5_substep_1",
+            "description": "Put pot inside the kitchen cupboard",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pot"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_5_substep_2",
+            "description": "Put plate inside the kitchen cupboard",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "plate"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_5_substep_3",
+            "description": "Put bowl inside the kitchen cupboard",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "bowl"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_5_substep_4",
+            "description": "Place knives in knife holder",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "knives"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_5_substep_5",
+            "description": "Put filter in the cupboard",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "filter"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_6_substep_0",
+            "description": "Wash kitchen utensil the kitchen sink",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "kitchen utensil"
+                },
+                "change": [
+                    {
+                        "object_id": 25,
+                        "object_name": "kitchen utensil",
+                        "init_status": {
+                            "status": "unwashed",
+                            "container": 12
+                        },
+                        "final_status": {
+                            "status": "washed",
+                            "container": 12
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_6_substep_1",
+            "description": "Wash spoons in the kitchen sink",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "spoon"
+                },
+                "change": [
+                    {
+                        "object_id": 26,
+                        "object_name": "spoon",
+                        "init_status": {
+                            "status": "unwashed",
+                            "container": 12
+                        },
+                        "final_status": {
+                            "status": "washed",
+                            "container": 12
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_6_substep_2",
+            "description": "Wash bowl in the kitchen sink",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "bowl2"
+                },
+                "change": [
+                    {
+                        "object_id": 27,
+                        "object_name": "bowl2",
+                        "init_status": {
+                            "status": "unwashed",
+                            "container": 12
+                        },
+                        "final_status": {
+                            "status": "washed",
+                            "container": 12
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_6_substep_3",
+            "description": "Wash plate in the kitchen sink",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "plate2"
+                },
+                "change": [
+                    {
+                        "object_id": 23,
+                        "object_name": "plate2",
+                        "init_status": {
+                            "status": "unwashed",
+                            "container": 16
+                        },
+                        "final_status": {
+                            "status": "washed",
+                            "container": 16
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_6_substep_4",
+            "description": "Wash pan in kitchen sink",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pan"
+                },
+                "change": [
+                    {
+                        "object_id": 28,
+                        "object_name": "pan",
+                        "init_status": {
+                            "status": "unwashed",
+                            "container": 12
+                        },
+                        "final_status": {
+                            "status": "washed",
+                            "container": 12
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_6_substep_5",
+            "description": "Add dish wash to pan",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "dish wash"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_6_substep_6",
+            "description": "Rinse pan in the kitchen sink",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pan"
+                },
+                "change": [
+                    {
+                        "object_id": 28,
+                        "object_name": "pan",
+                        "init_status": {
+                            "status": "dish wash spread",
+                            "container": 12
+                        },
+                        "final_status": {
+                            "status": "washed",
+                            "container": 12
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_6_substep_7",
+            "description": "Place pan in the plate rack",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pan"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_6_substep_8",
+            "description": "Wash fork in the kitchen rack",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "fork"
+                },
+                "change": [
+                    {
+                        "object_id": 29,
+                        "object_name": "fork",
+                        "init_status": {
+                            "status": "unwashed",
+                            "container": 32
+                        },
+                        "final_status": {
+                            "status": "washed",
+                            "container": 32
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_7",
+            "description": "Place the dough in the oven",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "dough"
+                },
+                "change": [
+                    {
+                        "object_id": 2,
+                        "object_name": "foil paper",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

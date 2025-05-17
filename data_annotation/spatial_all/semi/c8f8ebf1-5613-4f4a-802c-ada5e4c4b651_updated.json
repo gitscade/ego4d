@@ -1,0 +1,155 @@
+{
+  "video_id": "c8f8ebf1-5613-4f4a-802c-ada5e4c4b651",
+  "goal_category": "COOKING:MAKE_BAKED_DISH",
+  "goal_description": "Using the phone",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "nose",
+      "init_status": {
+        "status": "dirty",
+        "container": 4
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "battery",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "phone",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Cleans nose.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "nose",
+          "final_status": "cleaning nose",
+          "final_hand": "nose"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "nose",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Charges the battery.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "battery",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Operates a mobile phone",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "holding phone",
+          "final_hand": "phone"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "phone",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "held by player",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "video_id": "0a09f8fc-ff87-4210-b682-d2ae38af33eb",
+  "goal_category": "HARVESTING:HARVEST_FRUITS",
+  "goal_description": "Harvest grapes",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "grapes",
+      "init_status": {
+        "status": "on branch",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "player",
+      "init_status": {
+        "status": "attached",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "bunch of grapes",
+      "init_status": {
+        "status": "attached",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Cut the grapes from the branches",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grabbing grapes",
+          "final_hand": "grapes"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "grapes",
+            "init_status": {
+              "status": "on branch",
+              "container": null
+            },
+            "final_status": {
+              "status": "player",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "with grapes",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "bunch of grapes",
+            "init_status": {
+              "status": "attached",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

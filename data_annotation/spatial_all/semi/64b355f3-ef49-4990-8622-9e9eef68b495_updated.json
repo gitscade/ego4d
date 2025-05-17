@@ -1,0 +1,417 @@
+{
+  "video_id": "64b355f3-ef49-4990-8622-9e9eef68b495",
+  "goal_category": "COOKING:MAKE_PASTA",
+  "goal_description": "Preparing a vegetable recipe",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "carrot",
+      "init_status": {
+        "status": "stemmed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "knife",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "pot",
+      "init_status": {
+        "status": "water boiling",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "eggs",
+      "init_status": {
+        "status": "uncooked",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "salt bottle",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "onion",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "kitchen sink",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "stove",
+      "init_status": {
+        "status": "on",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Remove the stem end of the carrots",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "carrot",
+            "init_status": {
+              "status": "stemmed",
+              "container": null
+            },
+            "final_status": {
+              "status": "stemmed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "Peel the carrots",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "carrot",
+            "init_status": {
+              "status": "stemmed",
+              "container": null
+            },
+            "final_status": {
+              "status": "stemmed, peeled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "Rinse the carrots",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "carrot",
+            "init_status": {
+              "status": "stemmed, peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "stemmed, peeled, rinsed",
+              "container": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Dice carrots into small uniform cubes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "carrot",
+          "final_status": "idle",
+          "final_hand": "carrot"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "carrot",
+            "init_status": {
+              "status": "stemmed, peeled, rinsed",
+              "container": null
+            },
+            "final_status": {
+              "status": "cubed",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "ready",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Place eggs into the water in the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "egg",
+            "init_status": {
+              "status": "off-screen",
+              "container": null
+            },
+            "final_status": {
+              "status": "in water",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "pot",
+            "init_status": {
+              "status": "water boiling",
+              "container": null
+            },
+            "final_status": {
+              "status": "water boiling",
+              "container": 15
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Add a spoon of salt to the eggs in the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "eggs",
+            "init_status": {
+              "status": "uncooked",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooking, salted",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "salt bottle",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_0",
+      "description": "Peel the onion",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "onion"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "onion",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_1",
+      "description": "Slice the onion",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "onion",
+            "init_status": {
+              "status": "peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "on cutting board",
+              "container": 11
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

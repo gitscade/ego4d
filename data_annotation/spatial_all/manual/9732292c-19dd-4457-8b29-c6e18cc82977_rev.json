@@ -1,0 +1,58 @@
+{
+    "video_id": "9732292c-19dd-4457-8b29-c6e18cc82977",
+    "goal_category": "COOKING:MAKE_PASTRY",
+    "goal_description": "making cookie",
+    "spatial_data": [
+        {
+            "object_id": 2,
+            "object_name": "chair",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        },
+        {
+            "object_id": 1,
+            "object_name": "dish",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "patterns cookies with piping bag",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "batter"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "batter",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

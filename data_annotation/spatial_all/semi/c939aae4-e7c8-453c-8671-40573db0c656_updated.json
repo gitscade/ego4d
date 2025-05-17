@@ -1,0 +1,345 @@
+{
+  "video_id": "c939aae4-e7c8-453c-8671-40573db0c656",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Cutting fruits",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "cucumber",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "knife",
+      "init_status": {
+        "status": "in hand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "cloth",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "ground",
+      "init_status": {
+        "status": "dry",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "diced cucumber tray",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "player",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "stone",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "plate",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "coconut",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "dice",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Dices cucumbers with a knife",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "knife",
+          "final_status": "idle",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "cucumber",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7_substep_0",
+      "description": "Cut cucumber",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "cucumber",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8",
+      "description": "Moves diced cucumber tray",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "diced cucumber tray",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "moved",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_0",
+      "description": "Get stone",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "walking",
+          "final_hand": "stone"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "grab",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "stone",
+            "init_status": {
+              "status": "on ground",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_2",
+      "description": "Get coconut",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "walking",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "coconut",
+            "init_status": {
+              "status": "on ground",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_3",
+      "description": "Break coconut with a stone",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "success",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "coconut",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "broken",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "stone",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "intact",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_4",
+      "description": "Cut coconut",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "coconut"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "coconut",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13",
+      "description": "Dices coconuts",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dice"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "coconut",
+            "init_status": {
+              "status": "normal",
+              "container": null
+            },
+            "final_status": {
+              "status": "broken",
+              "container": 10
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

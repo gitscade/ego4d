@@ -1,0 +1,319 @@
+{
+  "video_id": "c546c508-8352-4c5c-8770-e8f30fb4562a",
+  "goal_category": "COOKING:MAKE_PASTA",
+  "goal_description": "Making noodles",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "sauce",
+      "init_status": {
+        "status": "still",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "in hand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "pasta",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "gas stove",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "plate",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "water pot",
+      "init_status": {
+        "status": "filled with water",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "stirs sauce with spoon",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "sauce",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "Turn pasta on the gas",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "pasta",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 19
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "gas stove",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "Check the doneness of the pasta",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "pasta",
+            "init_status": {
+              "status": "cooked",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 18
+            }
+          },
+          {
+            "object_id": 18,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "pasta checking",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_2",
+      "description": "Regulate the heat temperature of the gas",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knob"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "gas stove",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "off",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_0",
+      "description": "Add boiled pasta to sauce",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "sauce"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "pasta",
+            "init_status": {
+              "status": "cooked",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to sauce",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "sauce",
+            "init_status": {
+              "status": "stirred",
+              "container": null
+            },
+            "final_status": {
+              "status": "pasta added",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": "Stir pasta with sauce\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "pasta",
+            "init_status": {
+              "status": "added to sauce",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "sauce",
+            "init_status": {
+              "status": "pasta added",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_0",
+      "description": "Dish pasta in a plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "pasta",
+            "init_status": {
+              "status": "mixed",
+              "container": null
+            },
+            "final_status": {
+              "status": "on plate",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "plate",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "with pasta",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

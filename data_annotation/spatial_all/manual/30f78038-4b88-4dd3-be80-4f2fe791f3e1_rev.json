@@ -1,0 +1,88 @@
+{
+    "video_id": "30f78038-4b88-4dd3-be80-4f2fe791f3e1",
+    "goal_category": "COOKING:MAKE_DONUT",
+    "goal_description": "Making donut",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "oil",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+                "status": "default",
+                "container": 3
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "stove top",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "player",
+            "init_status": {
+                "status": null,
+                "container": 4
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Puts oil in pan",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "oil"
+                },
+                "change": [
+                    {
+                        "object_id": 2,
+                        "object_name": "pan",
+                        "init_status": {
+                            "status": "default",
+                            "container": 3
+                        },
+                        "final_status": {
+                            "status": "oiled",
+                            "container": 3
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "Removes pan from cooker",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pan2"
+                },
+                "change": []
+            }
+        }
+    ]
+}

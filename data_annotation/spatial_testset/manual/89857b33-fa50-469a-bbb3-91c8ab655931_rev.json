@@ -1,0 +1,363 @@
+{
+    "video_id": "89857b33-fa50-469a-bbb3-91c8ab655931",
+    "goal_category": "COOKING:MAKE_BREAD",
+    "goal_description": "Kneading dough",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+                "status": "default",
+                "container": 2
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "cutting board",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "flour",
+            "init_status": {
+                "status": "default",
+                "container": 2
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "kitchen cabinet",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "knife",
+            "init_status": {
+                "status": "default",
+                "container": 4
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "dough4",
+            "init_status": {
+                "status": "default",
+                "container": 2
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "flour",
+            "init_status": {
+                "status": "default",
+                "container": 7
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+                "status": null,
+                "container": 4
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0_substep_0",
+            "description": "smoothens dough with hand",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "idle",
+                    "final_hand": "none"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "dough",
+                        "init_status": {
+                            "status": "default",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "smoothened",
+                            "container": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_1",
+            "description": "spreads flour around table ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "flour"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "dough",
+                        "init_status": {
+                            "status": "smoothened",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "seasoning 1",
+                            "container": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_2",
+            "description": "smoothens dough with hands",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "dough"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "dough",
+                        "init_status": {
+                            "status": "seasoning 1",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "smoothened",
+                            "container": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_3",
+            "description": "slices dough to pieces",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "knife"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "dough",
+                        "init_status": {
+                            "status": "smoothened",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "sliced",
+                            "container": 2
+                        }
+                    },
+                    {
+                        "object_id": 1,
+                        "object_name": "dough",
+                        "init_status": {
+                            "status": "smoothened",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "sliced",
+                            "container": 2
+                        }
+                    },
+                    {
+                        "object_id": 1,
+                        "object_name": "dough",
+                        "init_status": {
+                            "status": "smoothened",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "sliced",
+                            "container": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_4",
+            "description": "smoothen dough with hands",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "dough1"
+                },
+                "change": [
+                    {
+                        "object_id": 99,
+                        "object_name": "dough1",
+                        "init_status": {
+                            "status": "sliced",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "smoothened",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_5",
+            "description": "sprinkle flour on the table surface",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "flour"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_6",
+            "description": "smoothens dough with hand",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "dough2"
+                },
+                "change": [
+                    {
+                        "object_id": 98,
+                        "object_name": "dough2",
+                        "init_status": {
+                            "status": "sliced",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "smoothened",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_7",
+            "description": "cuts dough into smaller sizes",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "knife"
+                },
+                "change": [
+                    {
+                        "object_id": 98,
+                        "object_name": "dough2",
+                        "init_status": {
+                            "status": "smoothened",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "sliced",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 98,
+                        "object_name": "dough2",
+                        "init_status": {
+                            "status": "smoothened",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "sliced",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 98,
+                        "object_name": "dough2",
+                        "init_status": {
+                            "status": "smoothened",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "sliced",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_8",
+            "description": "smoothens dough with hand",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "dough6"
+                },
+                "change": [
+                    {
+                        "object_id": 94,
+                        "object_name": "dough6",
+                        "init_status": {
+                            "status": "sliced",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "smoothened",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "fetch for kraft paper",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "kraft paper"
+                },
+                "change": []
+            }
+        }
+    ]
+}

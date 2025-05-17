@@ -1,0 +1,234 @@
+{
+    "video_id": "f0204f83-ea03-4c33-b7e7-13d2188ab3e5",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "Cutting chicken",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "bottle",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "refrigerator",
+            "init_status": {
+                "status": "opened",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "turkey",
+            "init_status": {
+                "status": "packed",
+                "container": 2
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "knife",
+            "init_status": {
+                "status": "default",
+                "container": 4
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "bowl",
+            "init_status": {
+                "status": "default",
+                "container": 4
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "sink",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "oven",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+                "status": null,
+                "container": 8
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Return bottle to refrigerator.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "turkey"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_1_substep_0",
+            "description": "slice turkey",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "knife"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "turkey",
+                        "init_status": {
+                            "status": "packed",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "unpacked",
+                            "container": 2
+                        }
+                    },
+                    {
+                        "object_id": 3,
+                        "object_name": "turkey",
+                        "init_status": {
+                            "status": "packed",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "unpacked",
+                            "container": 2
+                        }
+                    },
+                    {
+                        "object_id": 3,
+                        "object_name": "turkey",
+                        "init_status": {
+                            "status": "packed",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "sliced",
+                            "container": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1_substep_1",
+            "description": "serve turkey in a bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "turkey"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_2",
+            "description": "clean hands",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "towel"
+                },
+                "change": [
+                    {
+                        "object_id": 7,
+                        "object_name": "sink",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "supply water",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 7,
+                        "object_name": "sink",
+                        "init_status": {
+                            "status": "supply water",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_3",
+            "description": "Return bowl to the refrigerator.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "turkey"
+                },
+                "change": [
+                    {
+                        "object_id": 6,
+                        "object_name": "bowl",
+                        "init_status": {
+                            "status": "default",
+                            "container": 4
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": 4
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_4",
+            "description": "use tap.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "sink"
+                },
+                "change": []
+            }
+        }
+    ]
+}

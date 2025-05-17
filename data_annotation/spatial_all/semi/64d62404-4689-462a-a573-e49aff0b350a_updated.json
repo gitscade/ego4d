@@ -1,0 +1,529 @@
+{
+  "video_id": "64d62404-4689-462a-a573-e49aff0b350a",
+  "goal_category": "COOKING:MAKE_BAKED_DISH",
+  "goal_description": "make baked dish",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "potato",
+      "init_status": {
+        "status": "sliced",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "salt shaker",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "potato",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "chilli spice bottle",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "mayonnaise batter",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "oven",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "tray",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "knife",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Pour salt on the sliced potato\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "potato",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "salted",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "salt shaker",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "tray",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "Pour chilli on the sliced potato",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "potato",
+            "init_status": {
+              "status": "salted",
+              "container": null
+            },
+            "final_status": {
+              "status": "salted, spiced",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "chilli spice bottle",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Dice potato into smaller sizes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "dice",
+          "final_status": "idle",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "potato",
+            "init_status": {
+              "status": "salted, spiced",
+              "container": null
+            },
+            "final_status": {
+              "status": "salted, spiced, diced",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "knife",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "Clean potatoes and peel potatoes",
+      "context": {
+        "player": {
+          "init_status": "cleaning potatoes",
+          "init_hand": "potato peeler",
+          "final_status": "peeling potatoes",
+          "final_hand": "potato peeler"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "knife",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "potato",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean, peeled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "Slice potatoes ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "potato",
+            "init_status": {
+              "status": "clean, peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": null
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "knife",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_2",
+      "description": "Pour spice on the sliced potatoes ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spice bottle"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "spice bottle",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "potato",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced, spiced",
+              "container": null
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_0",
+      "description": "Spread mayonnaise batter on the sliced potato\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spread mayonnaise batter on the sliced potato"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "mayonnaise batter",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "potato",
+            "init_status": {
+              "status": "salted, spiced, diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "salted, spiced, diced",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "potato",
+            "init_status": {
+              "status": "sliced, spiced",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced, spiced",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "tray",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": "Put the sliced potatoes into the oven\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "oven"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "oven",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "tray",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "potato",
+            "init_status": {
+              "status": "salted, spiced, diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "salted, spiced, diced",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "potato",
+            "init_status": {
+              "status": "sliced, spiced",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced, spiced",
+              "container": 12
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

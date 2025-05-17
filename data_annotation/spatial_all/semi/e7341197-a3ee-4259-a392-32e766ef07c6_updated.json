@@ -1,0 +1,407 @@
+{
+  "video_id": "e7341197-a3ee-4259-a392-32e766ef07c6",
+  "goal_category": "COOKING:MAKE_DONUT",
+  "goal_description": "Making doughnuts",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "dough",
+      "init_status": {
+        "status": "on table",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "dough slice",
+      "init_status": {
+        "status": "none",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "dough slice",
+      "init_status": {
+        "status": "unused",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "dough slice",
+      "init_status": {
+        "status": "unused",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "table",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "stove",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Mold dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "molding dough",
+          "final_hand": "dough"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "on table",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "dough slice",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "molded",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "dough slice",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "molded",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "dough slice",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "molded",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "Arrange mold doughs on the table",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "mold dough",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "arranged",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "mold dough",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "unused",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "mold dough",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "unused",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "table",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "Arrange mold doughs on the table",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "mold dough",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "arranged",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "table",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "mold dough",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "arranged",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "on table",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "mold dough",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "unused",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_3",
+      "description": "Arrange mold doughs on the table",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "mold dough",
+            "init_status": {
+              "status": "arranged",
+              "container": null
+            },
+            "final_status": {
+              "status": "arranged",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "mold dough",
+            "init_status": {
+              "status": "arranged",
+              "container": null
+            },
+            "final_status": {
+              "status": "arranged",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "mold dough",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "arranged",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "table",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_0",
+      "description": "Fry molded dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "stove",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "mold dough",
+            "init_status": {
+              "status": "arranged",
+              "container": null
+            },
+            "final_status": {
+              "status": "fried",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "mold dough",
+            "init_status": {
+              "status": "arranged",
+              "container": null
+            },
+            "final_status": {
+              "status": "fried",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "mold dough",
+            "init_status": {
+              "status": "arranged",
+              "container": null
+            },
+            "final_status": {
+              "status": "fried",
+              "container": 7
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

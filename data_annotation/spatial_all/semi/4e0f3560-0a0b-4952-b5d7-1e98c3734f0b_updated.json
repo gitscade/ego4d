@@ -1,0 +1,425 @@
+{
+  "video_id": "4e0f3560-0a0b-4952-b5d7-1e98c3734f0b",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Make tea",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "milk",
+      "init_status": "none"
+    },
+    {
+      "object_id": 2,
+      "object_name": "cup",
+      "init_status": "empty"
+    },
+    {
+      "object_id": 3,
+      "object_name": "microwave",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "apple",
+      "init_status": {
+        "status": "on counter",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "banana",
+      "init_status": {
+        "status": "on counter",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "orange",
+      "init_status": {
+        "status": "on counter",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "pear",
+      "init_status": {
+        "status": "on counter",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "utensil",
+      "init_status": {
+        "status": "in cabinet",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "milk powder",
+      "init_status": {
+        "status": "in cabinet",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "food item",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "microwave lid",
+      "init_status": {
+        "status": "in hand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "milo",
+      "init_status": {
+        "status": "solid",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "cabinet door",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "cabinet shelf",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Add milk to cup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cup"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "milk",
+            "init_status": {
+              "status": "none",
+              "container": 2
+            },
+            "final_status": {
+              "status": "added",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "cup",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "heat the milk in the microwave",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "microwave",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "milk",
+            "init_status": {
+              "status": "cool",
+              "container": 3
+            },
+            "final_status": {
+              "status": "hot",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "remove the milk from the microwave",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "milk",
+            "init_status": {
+              "status": "in microwave",
+              "container": null
+            },
+            "final_status": {
+              "status": "out of microwave",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "microwave",
+            "init_status": {
+              "status": "occupied by milk",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "Add milk powder in a cup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cup"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "milk powder",
+            "init_status": {
+              "status": "none",
+              "container": 2
+            },
+            "final_status": {
+              "status": "added",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "cup",
+            "init_status": {
+              "status": "filled with milk",
+              "container": null
+            },
+            "final_status": {
+              "status": "added milk powder",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Mix the milk powder with the milk in the cup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "mixing",
+          "final_hand": "cup"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "milk powder",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "liquid",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "cup",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "milk",
+            "init_status": {
+              "status": "unmixed",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10",
+      "description": "Add milo to the milk in a cup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "holding cup",
+          "final_hand": "cup"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "milk",
+            "init_status": {
+              "status": "no milo",
+              "container": null
+            },
+            "final_status": {
+              "status": "add milo",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "cup",
+            "init_status": {
+              "status": "filled with milk",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with milk and milo",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "milo",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "solid",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13",
+      "description": "Mix the milo with the milk in the cup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "milk"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "cup",
+            "init_status": {
+              "status": "unmixed milk",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed milk",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "milk",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "milo",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "dissolved",
+              "container": 1
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

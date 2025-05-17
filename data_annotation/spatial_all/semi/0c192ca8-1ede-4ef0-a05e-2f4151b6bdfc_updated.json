@@ -1,0 +1,1067 @@
+{
+  "video_id": "0c192ca8-1ede-4ef0-a05e-2f4151b6bdfc",
+  "goal_category": "COOKING:MAKE_BREAD",
+  "goal_description": "making bread",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "baking pan cover",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "player",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "jug",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "oven",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "water",
+      "init_status": {
+        "status": "still",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "dough",
+      "init_status": {
+        "status": "on table",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "baking tray",
+      "init_status": {
+        "status": "in place",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "baking pan",
+      "init_status": {
+        "status": "in oven",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "table",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "dough cover",
+      "init_status": {
+        "status": "present",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "dough mixer",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "flour bag",
+      "init_status": {
+        "status": "contained",
+        "container": 11
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "cloth",
+      "init_status": {
+        "status": "not in use",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "dough cutter",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "rod",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": " knife",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "container",
+      "init_status": {
+        "status": "in place",
+        "container": 6
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "gather baking pan covers",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "baking pan cover",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "baking pan cover",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_0",
+      "description": "Fetch water in a jug",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "holding jug",
+          "final_hand": "jug"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "holding jug",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "jug",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "water",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "still",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_1",
+      "description": "Cool oven heat with water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "oven"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "oven",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "water",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "boiling",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "put doughs in oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "dough",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "in oven",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "oven",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "adjusts baking tray",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "adjusting baking tray",
+          "final_hand": "baking tray"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "baking tray",
+            "init_status": {
+              "status": "in place",
+              "container": null
+            },
+            "final_status": {
+              "status": "adjusted",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_0",
+      "description": "Fetch water in a jug",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "jug"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "jug",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "water",
+            "init_status": {
+              "status": "boiling",
+              "container": null
+            },
+            "final_status": {
+              "status": "boiling",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_1",
+      "description": "Cool oven heat with water",
+      "context": {
+        "player": {
+          "init_status": "active",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "oven",
+            "init_status": {
+              "status": "hot",
+              "container": null
+            },
+            "final_status": {
+              "status": "cool",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "water",
+            "init_status": {
+              "status": "cool",
+              "container": null
+            },
+            "final_status": {
+              "status": "hot",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "put doughs in oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "dough",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "in oven",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "oven",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "adjusts baking pan in oven with rod",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "adjusting baking pan in oven with rod",
+          "final_hand": "oven"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "baking pan",
+            "init_status": {
+              "status": "in oven",
+              "container": null
+            },
+            "final_status": {
+              "status": "adjusted in oven with rod",
+              "container": 15
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "oven",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "off",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "rod",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7",
+      "description": "put doughs on table",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "dough",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "on table",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "table",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "with dough",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8",
+      "description": "removes dough cover",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "dough cover",
+            "init_status": {
+              "status": "present",
+              "container": null
+            },
+            "final_status": {
+              "status": "removed",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "dough",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "on table",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9",
+      "description": "put doughs in oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "dough",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "oven",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10",
+      "description": "adjusts baking pan in oven with rod",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "baking pan"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "baking pan",
+            "init_status": {
+              "status": "in oven",
+              "container": null
+            },
+            "final_status": {
+              "status": "adjusted in oven with rod",
+              "container": 15
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "rod",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "oven",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_0",
+      "description": "Open dough mixer\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough mixer"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "dough mixer",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "dough",
+            "init_status": {
+              "status": "contained",
+              "container": 11
+            },
+            "final_status": {
+              "status": "contained",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_1",
+      "description": "Add flour\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "flour bag",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": null
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "dough mixer",
+            "init_status": {
+              "status": "open",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_2",
+      "description": "Cut dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "dough",
+            "init_status": {
+              "status": "uncut",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": " knife",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12_substep_0",
+      "description": "Add flour\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "flour bag",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "dough",
+            "init_status": {
+              "status": "cut",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12_substep_1",
+      "description": "Add water\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "water"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "water",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "dough",
+            "init_status": {
+              "status": "cut",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12_substep_2",
+      "description": "Turn on dough mixer",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough mixer"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "dough mixer",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "player",
+            "init_status": {
+              "status": "stay",
+              "container": null
+            },
+            "final_status": {
+              "status": "turn on dough mixer",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13_substep_0",
+      "description": "Wrap dough with cloth",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "wrapping dough with cloth",
+          "final_hand": "cloth"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "dough",
+            "init_status": {
+              "status": "unwrapped",
+              "container": null
+            },
+            "final_status": {
+              "status": "wrapped",
+              "container": 13
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "cloth",
+            "init_status": {
+              "status": "not in use",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13_substep_1",
+      "description": "Transfer wrapped dough to container",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "dough",
+            "init_status": {
+              "status": "wrapped",
+              "container": null
+            },
+            "final_status": {
+              "status": "transferred",
+              "container": null
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "container",
+            "init_status": {
+              "status": "in place",
+              "container": null
+            },
+            "final_status": {
+              "status": "in place",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_14_substep_0",
+      "description": "Sprinkle flour on dough cutter",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "flour bag"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "dough cutter",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "covered in flour",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "flour bag",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 14
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_14_substep_1",
+      "description": "Transfer dough to dough cutter",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough cutter"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "dough",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "on counter",
+              "container": null
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "dough cutter",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "contains dough",
+              "container": 6
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+{
+  "video_id": "6aa40272-f90f-4f51-839a-2d2769dd4885",
+  "goal_category": "COOKING:MAKE_GRILLED_DISH",
+  "goal_description": "Preparing the griller",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "grilling net",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "charcoal",
+      "init_status": {
+        "status": "inside griller",
+        "container": 5
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "food",
+      "init_status": {
+        "status": "off grill",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "griller",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "charcoal bag",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "charcoal",
+      "init_status": {
+        "status": "none",
+        "container": 6
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Clean the grilling net",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cleaning",
+          "final_hand": "grilling net"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "grilling net",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_0",
+      "description": "Set charcoal inside the griller",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grilling",
+          "final_hand": "charcoal"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "charcoal",
+            "init_status": {
+              "status": "inside griller",
+              "container": null
+            },
+            "final_status": {
+              "status": "inside griller",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "griller",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "closed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_1",
+      "description": "Place the grilling net on the griller",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grilling",
+          "final_hand": "grill net"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "charcoal",
+            "init_status": {
+              "status": "inside griller",
+              "container": null
+            },
+            "final_status": {
+              "status": "inside griller",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "griller",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "closed",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "grilling net",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_2",
+      "description": "Set charcoal inside the griller",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "empty",
+          "final_status": "active",
+          "final_hand": "charcoal"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "griller",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "charcoal",
+            "init_status": {
+              "status": "inside griller",
+              "container": null
+            },
+            "final_status": {
+              "status": "inside griller",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "grilling net",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "on griller",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "removes grilling net",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "grilling net",
+            "init_status": {
+              "status": "on griller",
+              "container": null
+            },
+            "final_status": {
+              "status": "removed",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "griller",
+            "init_status": {
+              "status": "open",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "charcoal",
+            "init_status": {
+              "status": "inside griller",
+              "container": null
+            },
+            "final_status": {
+              "status": "inside griller",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "Pour the charcoal into the grill ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "empty",
+          "final_status": "active",
+          "final_hand": "charcoal bag"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "charcoal bag",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "charcoal",
+            "init_status": {
+              "status": "inside griller",
+              "container": null
+            },
+            "final_status": {
+              "status": "inside griller",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "charcoal",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "inside griller",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_2",
+      "description": "place grilling net on the griller",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grilling",
+          "final_hand": "grill net"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "charcoal",
+            "init_status": {
+              "status": "inside griller",
+              "container": null
+            },
+            "final_status": {
+              "status": "inside griller",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "grilling net",
+            "init_status": {
+              "status": "removed",
+              "container": null
+            },
+            "final_status": {
+              "status": "on griller",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "charcoal",
+            "init_status": {
+              "status": "inside griller",
+              "container": null
+            },
+            "final_status": {
+              "status": "inside griller",
+              "container": 5
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

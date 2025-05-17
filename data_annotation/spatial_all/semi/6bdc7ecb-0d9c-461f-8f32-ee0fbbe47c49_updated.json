@@ -1,0 +1,425 @@
+{
+  "video_id": "6bdc7ecb-0d9c-461f-8f32-ee0fbbe47c49",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "prepare lemon juice",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "door",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "light switch",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "fan",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "balloon",
+      "init_status": {
+        "status": "inflated",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "kite",
+      "init_status": {
+        "status": "flying",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "lemon",
+      "init_status": {
+        "status": "squeezed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "trash bin",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "cup",
+      "init_status": {
+        "status": "off table",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "player",
+      "init_status": {
+        "status": "off table",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "lemons",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "knife",
+      "init_status": {
+        "status": "in hand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "juice extractor",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "sugar",
+      "init_status": "none"
+    },
+    {
+      "object_id": 14,
+      "object_name": "lemon juice",
+      "init_status": "in cup"
+    },
+    {
+      "object_id": 15,
+      "object_name": "cup of lemon juice",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "syrup bottle",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "Table",
+      "init_status": {
+        "status": "unoccupied",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "have lemons",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_2_substep_1",
+      "description": "Place cups on a table.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "cup",
+            "init_status": {
+              "status": "off table",
+              "container": null
+            },
+            "final_status": {
+              "status": " on table",
+              "container": null
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "Table",
+            "init_status": {
+              "status": "unoccupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_2",
+      "description": "Get lemons from the refrigerator.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grabbing",
+          "final_hand": "lemons"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "grabbing",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "lemons",
+            "init_status": {
+              "status": "in refrigerator",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 18,
+            "object_name": "refrigerator",
+            "init_status": {
+              "status": "have lemons",
+              "container": null
+            },
+            "final_status": {
+              "status": "no lemons",
+              "container": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_3",
+      "description": "Cut lemons into halves.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "lemon",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut in half",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "knife",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "on cutting board",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_4",
+      "description": "Squeeze juice from lemon with a juice extractor.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "squeezing",
+          "final_hand": "juice extractor"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "lemon",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "squeezed",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "juice extractor",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with juice",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_5",
+      "description": "Dispose squeezed lemon in the trash bin.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "lemon",
+            "init_status": {
+              "status": "squeezed",
+              "container": null
+            },
+            "final_status": {
+              "status": "disposed",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "trash bin",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_9",
+      "description": "Add sugar to the cups of lemon juice.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "sugar",
+            "init_status": {
+              "status": "none",
+              "container": 0
+            },
+            "final_status": {
+              "status": "added to lemon juice",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "lemon juice",
+            "init_status": {
+              "status": "in cup",
+              "container": 0
+            },
+            "final_status": {
+              "status": "with sugar added",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_10",
+      "description": "Add syrup to the cup of lemon juice.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "syrup bottle"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "cup of lemon juice",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "syrup bottle",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": 15
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

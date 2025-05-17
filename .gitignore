@@ -4,6 +4,10 @@ data/ego4d_data/
 data/egogoal/
 data/egotrack/
 
+#ignore vectorstore in data_annotation
+data_annotation/goalstep_docarray_faiss
+data_annotation/spatial_docarray_faiss
+
 # isnore any aws related projects or download files
 aws/
 # deleted anyway

@@ -1,0 +1,142 @@
+{
+    "video_id": "793a9c9d-327e-4457-9c40-e626b2208aae",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "Cooking mustard spinach",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "mustard spinach",
+            "init_status": {
+                "status": "unwashed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "pot",
+            "init_status": {
+                "status": "heating",
+                "container": null
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "water",
+            "init_status": {
+                "status": "boiling",
+                "container": 4
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Wash the mustard spinach in water",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "sieve"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "mustard spinach",
+                        "init_status": {
+                            "status": "unwashed",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "unwashed",
+                            "container": 3
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "Place the sieve in the bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "mustard spinach"
+                },
+                "change": [
+                    {
+                        "object_id": 2,
+                        "object_name": "bowl",
+                        "init_status": {
+                            "status": "tilted",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 3,
+                        "object_name": "sieve",
+                        "init_status": {
+                            "status": "out water",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "out water",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2",
+            "description": "Add the mustard spinach to hot water",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "bowl"
+                },
+                "change": [
+                    {
+                        "object_id": 5,
+                        "object_name": "water",
+                        "init_status": {
+                            "status": "boiling",
+                            "container": 4
+                        },
+                        "final_status": {
+                            "status": "boiling",
+                            "container": 4
+                        }
+                    },
+                    {
+                        "object_id": 1,
+                        "object_name": "mustard spinach",
+                        "init_status": {
+                            "status": "washed",
+                            "container": 3
+                        },
+                        "final_status": {
+                            "status": "heating",
+                            "container": 3
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

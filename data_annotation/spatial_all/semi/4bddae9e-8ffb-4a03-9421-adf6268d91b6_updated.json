@@ -1,0 +1,326 @@
+{
+  "video_id": "4bddae9e-8ffb-4a03-9421-adf6268d91b6",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Shred chicken",
+  "spatial_data": [
+    {
+      "object_id": 2,
+      "object_name": "food in pressure cooker",
+      "init_status": {
+        "status": "still",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "pressure cooker",
+      "init_status": {
+        "status": "still",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "chicken",
+      "init_status": "none"
+    },
+    {
+      "object_id": 6,
+      "object_name": "pot",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "stick",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "food",
+      "init_status": {
+        "status": "on plate",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "plate",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "tray",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "knife",
+      "init_status": {
+        "status": "sharp",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_1",
+      "description": "Stir the food in the pressure cooker",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pressure cooker handle"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "food in pressure cooker",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "pressure cooker",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "still",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_0",
+      "description": "Add chicken to tray ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to tray",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "tray",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "chicken arranged",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_2",
+      "description": "Shred chicken ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "shredded",
+              "container": null
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "knife",
+            "init_status": {
+              "status": "sharp",
+              "container": null
+            },
+            "final_status": {
+              "status": "sharp",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_7",
+      "description": "Add shredded chicken to pot ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "shredded",
+              "container": null
+            },
+            "final_status": {
+              "status": "shredded",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "pot",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_9",
+      "description": "Stir ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "moving",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "pot",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "shredded",
+              "container": null
+            },
+            "final_status": {
+              "status": "shredded",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "stick",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "none",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_3",
+      "description": "Serve food ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "serving food",
+          "final_hand": "plate"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "food",
+            "init_status": {
+              "status": "on pot",
+              "container": null
+            },
+            "final_status": {
+              "status": "on plate",
+              "container": 13
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "plate",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+    "video_id": "3feecf60-787b-4472-ab8d-a5b49c51d1f4",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "Preparing a lentils recipe",
+    "spatial_data": [
+        {
+            "object_id": 2,
+            "object_name": "lentil",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "gas stove",
+            "init_status": {
+                "status": "heating",
+                "container": null
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "pot",
+            "init_status": {
+                "status": "contain water",
+                "container": 4
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "utensils",
+            "init_status": {
+                "status": "disarranged",
+                "container": null
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "chair",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "potato",
+            "init_status": {
+                "status": "unpeeled",
+                "container": 7
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "basket",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 10,
+            "object_name": "player",
+            "init_status": {
+                "status": null,
+                "container": 9
+            }
+        },
+        {
+            "object_id": 11,
+            "object_name": "cutting board",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "water pump",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "wash lentils",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "lentil"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "water pump",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "supply water",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 2,
+                        "object_name": "lentil",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "washed",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "boil lentils in water",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "lentil"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_2",
+            "description": "put water in bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "bowl"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "water pump",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "supply water",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_3",
+            "description": "arrange kitchen area",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "utensils"
+                },
+                "change": [
+                    {
+                        "object_id": 6,
+                        "object_name": "utensils",
+                        "init_status": {
+                            "status": "disarranged",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "arranged",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_4",
+            "description": "peel potato",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "knife"
+                },
+                "change": [
+                    {
+                        "object_id": 8,
+                        "object_name": "potato",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": 7
+                        },
+                        "final_status": {
+                            "status": "peeled",
+                            "container": 7
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

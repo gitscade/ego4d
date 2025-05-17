@@ -1,0 +1,291 @@
+{
+  "video_id": "55510a84-858b-4857-bb9f-6a923b5f7882",
+  "goal_category": "COOKING:MAKE_NOODLE_DISH_GENERAL",
+  "goal_description": "make pasta.",
+  "spatial_data": [
+    {
+      "object_id": 3,
+      "object_name": "countertop",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "dough",
+      "init_status": {
+        "status": "none",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "dough sheeter",
+      "init_status": {
+        "status": "off",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "pasta maker machine",
+      "init_status": {
+        "status": "off",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_1",
+      "description": "clean countertop.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "countertop",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "add dough in dough sheeter ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough sheeter"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "dough",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to dough sheeter",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "dough sheeter",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "turn on dough sheeter",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough sheeter"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "dough sheeter",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "dough",
+            "init_status": {
+              "status": "added to dough sheeter",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to dough sheeter",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_2",
+      "description": "make dough sheet with dough sheeter",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough sheeter"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "dough sheeter",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "dough sheet",
+            "init_status": {
+              "status": "added to dough sheeter",
+              "container": null
+            },
+            "final_status": {
+              "status": "dough sheet",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_3",
+      "description": "turn off dough sheeter",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "dough sheeter",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "off",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "dough sheet",
+            "init_status": {
+              "status": "dough sheet",
+              "container": null
+            },
+            "final_status": {
+              "status": "dough sheet",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_1",
+      "description": "turn on pasta maker machine",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pasta maker machine"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "pasta maker machine",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_2",
+      "description": "shred flattened dough into pasta strands with pasta maker machine",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pasta maker machine"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "pasta maker machine",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "pasta strand",
+            "init_status": {
+              "status": "dough sheet",
+              "container": null
+            },
+            "final_status": {
+              "status": "pasta strand",
+              "container": 10
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

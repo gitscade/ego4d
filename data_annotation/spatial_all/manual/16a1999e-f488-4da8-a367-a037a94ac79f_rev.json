@@ -1,0 +1,273 @@
+{
+    "video_id": "16a1999e-f488-4da8-a367-a037a94ac79f",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "Dicing onion",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "onion",
+            "init_status": {
+                "status": "unpeeled",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "cutting board",
+            "init_status": {
+                "status": "default",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "cabinet",
+            "init_status": {
+                "status": "opened",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "bowl",
+            "init_status": {
+                "status": "default",
+                "container": 3
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "refrigerator",
+            "init_status": {
+                "status": "closed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "bread",
+            "init_status": {
+                "status": "packed",
+                "container": 5
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "knife",
+            "init_status": {
+                "status": "default",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Organizing ingredients",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "bread"
+                },
+                "change": [
+                    {
+                        "object_id": 6,
+                        "object_name": "bread",
+                        "init_status": {
+                            "status": "packed",
+                            "container": 5
+                        },
+                        "final_status": {
+                            "status": "unpacked",
+                            "container": 5
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "Slicing the onions into half",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "knife"
+                },
+                "change": [
+                    {
+                        "object_id": 8,
+                        "object_name": "onion",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": 1
+                        },
+                        "final_status": {
+                            "status": "unpeeled",
+                            "container": 2
+                        }
+                    },
+                    {
+                        "object_id": 8,
+                        "object_name": "onion",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": 1
+                        },
+                        "final_status": {
+                            "status": "unpeeled",
+                            "container": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2_substep_0",
+            "description": "Clear dirt from the chopping board",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "onion peel"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_2_substep_1",
+            "description": "Clear the counter top",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "onion peel"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_2_substep_2",
+            "description": "remove dirt from the floor",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "onion peel2"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_3_substep_0",
+            "description": "peel onion shell",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "onion peel3"
+                },
+                "change": [
+                    {
+                        "object_id": 8,
+                        "object_name": "onion",
+                        "init_status": {
+                            "status": "sliced",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "unpeeled",
+                            "container": 2
+                        }
+                    },
+                    {
+                        "object_id": 8,
+                        "object_name": "onion",
+                        "init_status": {
+                            "status": "sliced",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "sliced",
+                            "container": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_3_substep_1",
+            "description": "Dice onions",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "knife"
+                },
+                "change": [
+                    {
+                        "object_id": 8,
+                        "object_name": "onion",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "diced",
+                            "container": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_3_substep_2",
+            "description": " Pour  onion into a bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "onion"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_4",
+            "description": "Disposing the outer skin of the onion",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "onion peel3"
+                },
+                "change": []
+            }
+        }
+    ]
+}

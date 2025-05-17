@@ -1,0 +1,223 @@
+{
+    "video_id": "88b48d98-361c-4663-a406-3c21aeab6972",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "Heating macaroni",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "cupboard",
+            "init_status": {
+                "status": "closed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "bowl",
+            "init_status": {
+                "status": "default",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "macaroni noodles",
+            "init_status": {
+                "status": "cooked",
+                "container": null
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "kitchen drawer",
+            "init_status": {
+                "status": "closed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "spoon",
+            "init_status": {
+                "status": "default",
+                "container": 6
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "microwave",
+            "init_status": {
+                "status": "closed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "sink",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 10,
+            "object_name": "counter top",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+                "status": null,
+                "container": 10
+            }
+        },
+        {
+            "object_id": 12,
+            "object_name": "trash",
+            "init_status": {
+                "status": "drit",
+                "container": 10
+            }
+        },
+        {
+            "object_id": 13,
+            "object_name": "trash can",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Put the macaroni in the bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "spoon"
+                },
+                "change": [
+                    {
+                        "object_id": 6,
+                        "object_name": "kitchen drawer",
+                        "init_status": {
+                            "status": "opened",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "closed",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 2,
+                        "object_name": "bowl",
+                        "init_status": {
+                            "status": "half-filled",
+                            "container": 1
+                        },
+                        "final_status": {
+                            "status": "half-filled",
+                            "container": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "Heat the macaroni",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "macaroni noodles"
+                },
+                "change": [
+                    {
+                        "object_id": 8,
+                        "object_name": "microwave",
+                        "init_status": {
+                            "status": "closed",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "opened",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 2,
+                        "object_name": "bowl",
+                        "init_status": {
+                            "status": "half-filled",
+                            "container": 1
+                        },
+                        "final_status": {
+                            "status": "half-filled",
+                            "container": 1
+                        }
+                    },
+                    {
+                        "object_id": 8,
+                        "object_name": "microwave",
+                        "init_status": {
+                            "status": "opened",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "closed",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 2,
+                        "object_name": "bowl",
+                        "init_status": {
+                            "status": "half-filled",
+                            "container": 1
+                        },
+                        "final_status": {
+                            "status": "half-filled",
+                            "container": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2",
+            "description": "Arrange the kitchen area",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "trash"
+                },
+                "change": [
+                    {
+                        "object_id": 11,
+                        "object_name": "container",
+                        "init_status": {
+                            "status": "unsorted",
+                            "container": 10
+                        },
+                        "final_status": {
+                            "status": "unsorted",
+                            "container": 10
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

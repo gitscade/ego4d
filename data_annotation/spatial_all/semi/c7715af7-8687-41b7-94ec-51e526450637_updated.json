@@ -1,0 +1,469 @@
+{
+  "video_id": "c7715af7-8687-41b7-94ec-51e526450637",
+  "goal_category": "COOKING:MAKE_BREAD",
+  "goal_description": "preparing spinach puff pastry",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "dough",
+      "init_status": {
+        "status": "untouched",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "player's hand",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "rolling pin",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "flour",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "cheese",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "knife",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "trash can",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "spinach",
+      "init_status": {
+        "status": "unsliced",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "jar",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "sink",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "butter",
+      "init_status": {
+        "status": "solid",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "trash bin",
+      "init_status": {
+        "status": "solid",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "check dough texture with hands",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "untouched",
+              "container": null
+            },
+            "final_status": {
+              "status": "touched",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "player's hand",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "on dough",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "roll dough into sheets with rolling pin",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "rolling pin"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "rolled out",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "rolling pin",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "place rolled dough on board",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "flat",
+              "container": null
+            },
+            "final_status": {
+              "status": "rolled",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "board",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_0",
+      "description": "cut cheese into slices",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "cheese",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_1",
+      "description": "spread sliced cheese on dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "spread with cheese",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "cheese",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "spread on dough",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_2",
+      "description": "remove spoiled part of cheese",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "cheese",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "removed spoiled part",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_7",
+      "description": "sprinkle salt on dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "salt shaker"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "untouched",
+              "container": null
+            },
+            "final_status": {
+              "status": "sprinkled with salt",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_8",
+      "description": "slice spinach",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "spinach",
+            "init_status": {
+              "status": "unsliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "knife",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "on cutting board",
+              "container": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_9",
+      "description": "spread sliced spinach on dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "spinach",
+            "init_status": {
+              "status": "none",
+              "container": 1
+            },
+            "final_status": {
+              "status": "spread on dough",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "flat",
+              "container": null
+            },
+            "final_status": {
+              "status": "with spinach spread on it",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "scrape off the edge of the butter",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "butter",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "scraped edge",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "knife",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "scraped",
+              "container": 11
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

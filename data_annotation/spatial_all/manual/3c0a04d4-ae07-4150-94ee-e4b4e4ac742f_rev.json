@@ -1,0 +1,297 @@
+{
+    "video_id": "3c0a04d4-ae07-4150-94ee-e4b4e4ac742f",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "Prepare pasta.",
+    "spatial_data": [
+        {
+            "object_id": 3,
+            "object_name": "pasta",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "pot",
+            "init_status": {
+                "status": "contain water",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "stirrer",
+            "init_status": {
+                "status": "default",
+                "container": 2
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "table2",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 10,
+            "object_name": "plate",
+            "init_status": {
+                "status": "default",
+                "container": 9
+            }
+        },
+        {
+            "object_id": 11,
+            "object_name": "sauce",
+            "init_status": {
+                "status": "default",
+                "container": 9
+            }
+        },
+        {
+            "object_id": 12,
+            "object_name": "cabinet",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 13,
+            "object_name": "cheese",
+            "init_status": {
+                "status": "default",
+                "container": 12
+            }
+        },
+        {
+            "object_id": 14,
+            "object_name": "refrigerator",
+            "init_status": {
+                "status": "closed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 15,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        },
+        {
+            "object_id": 16,
+            "object_name": "bottle",
+            "init_status": {
+                "status": "default",
+                "container": 9
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "tissue",
+            "init_status": {
+                "status": "dirty",
+                "container": 5
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "foil",
+            "init_status": {
+                "status": "dirty",
+                "container": 5
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "trash can",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Stir pasta.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "cheese"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "pasta",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "stir up",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "Dispose dirt.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "foil"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_2_substep_0",
+            "description": "Drain water from pasta",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pot"
+                },
+                "change": [
+                    {
+                        "object_id": 2,
+                        "object_name": "pot",
+                        "init_status": {
+                            "status": "contain water",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "tilt",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2_substep_1",
+            "description": "Add pasta to plate",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pasta"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_2_substep_2",
+            "description": "Add sauce to pasta",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "sauce"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "pasta",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "seasoning 1",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2_substep_3",
+            "description": "Add cheese to pasta",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "cheese"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "pasta",
+                        "init_status": {
+                            "status": "seasoning 1",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "seasoning 2",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_3",
+            "description": "return bowl to refrigerator.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pasta"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_4",
+            "description": "Operate heat expeller.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "heat expeller"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_5",
+            "description": "Place bottle on table.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "bottle"
+                },
+                "change": []
+            }
+        }
+    ]
+}

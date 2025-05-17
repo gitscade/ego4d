@@ -1,0 +1,167 @@
+{
+    "video_id": "c2aecde5-ea0c-4343-83c1-355b050e6ffe",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "Cutting bell pepper",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "red bell pepper",
+            "init_status": {
+                "status": "scraps",
+                "container": 3
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "cutting board",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Dispose remnants",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "knife"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "Dice the bell peppers",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "knife"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "red bell pepper",
+                        "init_status": {
+                            "status": "default",
+                            "container": 3
+                        },
+                        "final_status": {
+                            "status": "cut",
+                            "container": 3
+                        }
+                    },
+                    {
+                        "object_id": 1,
+                        "object_name": "red bell pepper",
+                        "init_status": {
+                            "status": "default",
+                            "container": 3
+                        },
+                        "final_status": {
+                            "status": "scraps",
+                            "container": 3
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2",
+            "description": "Dispose remnant",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "knife"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "red bell pepper",
+                        "init_status": {
+                            "status": "scraps",
+                            "container": 3
+                        },
+                        "final_status": {
+                            "status": "scraps",
+                            "container": 4
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_3",
+            "description": "Dice the bell peppers",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "knife"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "red bell pepper",
+                        "init_status": {
+                            "status": "default",
+                            "container": 4
+                        },
+                        "final_status": {
+                            "status": "cut",
+                            "container": 4
+                        }
+                    },
+                    {
+                        "object_id": 1,
+                        "object_name": "red bell pepper",
+                        "init_status": {
+                            "status": "default",
+                            "container": 4
+                        },
+                        "final_status": {
+                            "status": "scraps",
+                            "container": 4
+                        }
+                    },
+                    {
+                        "object_id": 1,
+                        "object_name": "red bell pepper",
+                        "init_status": {
+                            "status": "cut",
+                            "container": 4
+                        },
+                        "final_status": {
+                            "status": "cut",
+                            "container": 3
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,733 @@
+{
+  "video_id": "a8425172-35e9-4b94-9360-91328e84ea47",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Making flour paste",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "ginger paste",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "flour mixture",
+      "init_status": {
+        "status": "none",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "chia seed",
+      "init_status": {
+        "status": "in container",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "pepper flakes",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "salt shaker",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "chia bag",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "chia seed",
+      "init_status": {
+        "status": "in container",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "New Object",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Add ginger paste to the mixture",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "ginger paste"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ginger paste",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "mixture",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "ginger paste added",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "Mix the mixture in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "mixing",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "flour mixture",
+            "init_status": {
+              "status": "unmixed",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "ginger paste",
+            "init_status": {
+              "status": "added to mixture",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_0",
+      "description": "pour chia seed into the mixture",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "chia seed",
+            "init_status": {
+              "status": "in container",
+              "container": null
+            },
+            "final_status": {
+              "status": "in mixture",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "flour mixture",
+            "init_status": {
+              "status": "mixed",
+              "container": null
+            },
+            "final_status": {
+              "status": "unmixed",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "ginger paste",
+            "init_status": {
+              "status": "added to mixture",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_1",
+      "description": "Mix the mixture in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "flour mixture",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "pan",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "ginger paste",
+            "init_status": {
+              "status": "added to mixture",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "chia seed",
+            "init_status": {
+              "status": "in mixture",
+              "container": null
+            },
+            "final_status": {
+              "status": "in mixture",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_2",
+      "description": "pour chia seed into the mixture",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "chia seed"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "chia seed",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "chia seed",
+            "init_status": {
+              "status": "in container",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "ginger paste",
+            "init_status": {
+              "status": "added to mixture",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_3",
+      "description": "Mix the mixture in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "mixing",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "flour mixture",
+            "init_status": {
+              "status": "unmixed",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "ginger paste",
+            "init_status": {
+              "status": "added to mixture",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "chia seed",
+            "init_status": {
+              "status": "added to mixture",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "chia seed",
+            "init_status": {
+              "status": "added to mixture",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "Adds pepper flakes to the mixture",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pepper flakes"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "flour mixture",
+            "init_status": {
+              "status": "mixed",
+              "container": null
+            },
+            "final_status": {
+              "status": "unmixed",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "pepper flakes",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "chia seed",
+            "init_status": {
+              "status": "added to mixture",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "chia seed",
+            "init_status": {
+              "status": "added to mixture",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "Mix the mixture in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "mixture",
+            "init_status": {
+              "status": "unmixed",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "chia seed",
+            "init_status": {
+              "status": "added to mixture",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "chia seed",
+            "init_status": {
+              "status": "added to mixture",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "pepper flakes",
+            "init_status": {
+              "status": "added",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_0",
+      "description": "pours salt in the mixture",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "salt shaker"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "salt shaker",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "mixture",
+            "init_status": {
+              "status": "mixed",
+              "container": null
+            },
+            "final_status": {
+              "status": "salted",
+              "container": null
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "ginger paste",
+            "init_status": {
+              "status": "added to mixture",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "chia seed",
+            "init_status": {
+              "status": "added to mixture",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "chia seed",
+            "init_status": {
+              "status": "added to mixture",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "pepper flakes",
+            "init_status": {
+              "status": "added",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": "Mix the mixture in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "mixing",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "flour mixture",
+            "init_status": {
+              "status": "salted",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed, salted",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "pan",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "chia seed",
+            "init_status": {
+              "status": "added to mixture",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "chia seed",
+            "init_status": {
+              "status": "added to mixture",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mixture",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "pepper flakes",
+            "init_status": {
+              "status": "added",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 2
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

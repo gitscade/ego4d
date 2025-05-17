@@ -1,0 +1,527 @@
+{
+  "video_id": "4d19cd93-f45a-4b94-aecd-6a4be2e524ec",
+  "goal_category": "COOKING:MAKE_STEAK_DISH",
+  "goal_description": "Arranging store stuffs",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "clothes",
+      "init_status": {
+        "status": "unorganized",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "gallon",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "shelf",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "item",
+      "init_status": {
+        "status": "on shelf",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "phone",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "gallon container",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "gallon storage",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "item to be organized",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "bag",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "keyboard",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "monitor",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "mouse",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "computer mouse",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "label board",
+      "init_status": {
+        "status": "on ground",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "wipe",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "paper label",
+      "init_status": {
+        "status": "present",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "book",
+      "init_status": {
+        "status": "unplaced",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "box",
+      "init_status": {
+        "status": "unplaced",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "tray",
+      "init_status": {
+        "status": "unplaced",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_1",
+      "description": "Arranges items in the gallon storage",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": null,
+          "final_status": "idle",
+          "final_hand": null
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "gallon",
+            "init_status": {
+              "status": "on shelf",
+              "container": null
+            },
+            "final_status": {
+              "status": "in player's hand",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "item",
+            "init_status": {
+              "status": "on shelf",
+              "container": null
+            },
+            "final_status": {
+              "status": "on shelf",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Pack items on the shelf in the store",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "item",
+            "init_status": {
+              "status": "unpack",
+              "container": null
+            },
+            "final_status": {
+              "status": "pack",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Organize items in the gallon storage on the shelf in the store",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "gallon storage",
+            "init_status": {
+              "status": "unorganized items",
+              "container": null
+            },
+            "final_status": {
+              "status": "Organized items",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7_substep_0",
+      "description": "Organise the bags",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "bag",
+            "init_status": {
+              "status": "unorganized",
+              "container": null
+            },
+            "final_status": {
+              "status": "organized",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_1",
+      "description": " Wipes the label boards with a wipe",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "label board",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "wiped",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "wipe",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 15
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_2",
+      "description": " hangs the label board on the shelf",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "label board",
+            "init_status": {
+              "status": "unhanged",
+              "container": null
+            },
+            "final_status": {
+              "status": "hung",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "shelf",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "hanged label board",
+              "container": 15
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12",
+      "description": "Wipe the paper labels",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 17,
+            "object_name": "paper label",
+            "init_status": {
+              "status": "present",
+              "container": null
+            },
+            "final_status": {
+              "status": "wiped",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13",
+      "description": "Clean a paper label",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cleaning",
+          "final_hand": "paper label"
+        },
+        "change": [
+          {
+            "object_id": 17,
+            "object_name": "paper label",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_14",
+      "description": "Organize items on the shelf",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "shelf",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "organized",
+              "container": null
+            }
+          },
+          {
+            "object_id": 18,
+            "object_name": "book",
+            "init_status": {
+              "status": "unplaced",
+              "container": null
+            },
+            "final_status": {
+              "status": "placed",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 19,
+            "object_name": "box",
+            "init_status": {
+              "status": "unplaced",
+              "container": null
+            },
+            "final_status": {
+              "status": "placed",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 20,
+            "object_name": "tray",
+            "init_status": {
+              "status": "unplaced",
+              "container": null
+            },
+            "final_status": {
+              "status": "placed",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_15",
+      "description": "Clean a paper label",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cleaning",
+          "final_hand": "paper label"
+        },
+        "change": [
+          {
+            "object_id": 17,
+            "object_name": "paper label",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_17",
+      "description": "Arrange item in the gallon storage",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "gallon storage",
+            "init_status": {
+              "status": "mass",
+              "container": null
+            },
+            "final_status": {
+              "status": "Arranged",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

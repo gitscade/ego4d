@@ -1,0 +1,235 @@
+{
+  "video_id": "65a76574-ef3e-4aa0-b1b0-7df9e5f34296",
+  "goal_category": "COOKING:PREPARE_POTATO",
+  "goal_description": "Cutting potatoes",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "plastic bag",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "meat cleaver",
+      "init_status": {
+        "status": "unplaced",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "potato",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "knife",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Arrange plastic bag",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "plastic bag",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "meat cleaver",
+            "init_status": {
+              "status": "unplaced",
+              "container": null
+            },
+            "final_status": {
+              "status": "unplaced",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_0",
+      "description": "Unbox meat cleaver",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "meat cleaver",
+            "init_status": {
+              "status": "unboxed",
+              "container": null
+            },
+            "final_status": {
+              "status": "unboxed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_1",
+      "description": "Cut potatoes into bits",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "potato"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "potato",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Chop potatoes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "chopping",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "potato",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "chopped",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Move Chopped potatoes into bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "potato",
+            "init_status": {
+              "status": "chopped",
+              "container": null
+            },
+            "final_status": {
+              "status": "in bowl",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with potatoes",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "video_id": "ce90119f-0fb4-486b-b785-588e8f2bcb2d",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "preparing the vegetable",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "vegetablestem",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "leaf",
+      "init_status": {
+        "status": "attached",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "knife",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "pluck the vegetable leaves from the stem",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "vegetable"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "stem",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "damaged",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "leaf",
+            "init_status": {
+              "status": "attached",
+              "container": null
+            },
+            "final_status": {
+              "status": "detached",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "cut the vegetable leaves",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "vegetable leaves",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": null
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "knife",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 7
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

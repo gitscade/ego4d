@@ -1,0 +1,171 @@
+{
+  "video_id": "db8e8171-882a-4359-ae23-89de26c98e84",
+  "goal_category": "COOKING:MAKE_DUMPLINGS",
+  "goal_description": "Making dumplings",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "dumpling",
+      "init_status": {
+        "status": "unsealed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "ingredients",
+      "init_status": {
+        "status": "cooked",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_1_substep_0",
+      "description": "Shape dumpling skin with hands.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dumpling",
+            "init_status": {
+              "status": "unsealed",
+              "container": null
+            },
+            "final_status": {
+              "status": "unsealed",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "open hand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_1",
+      "description": "Add filling in the dumpling.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dumpling"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dumpling",
+            "init_status": {
+              "status": "unsealed",
+              "container": null
+            },
+            "final_status": {
+              "status": "unsealed",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "player",
+            "init_status": {
+              "status": "open hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "open hand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "ingredients",
+            "init_status": {
+              "status": "cooked",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_2",
+      "description": "Seal the dumplings.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dumpling",
+            "init_status": {
+              "status": "unsealed",
+              "container": null
+            },
+            "final_status": {
+              "status": "sealed",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "player",
+            "init_status": {
+              "status": "open hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "open hand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "ingredients",
+            "init_status": {
+              "status": "cooked",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 1
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

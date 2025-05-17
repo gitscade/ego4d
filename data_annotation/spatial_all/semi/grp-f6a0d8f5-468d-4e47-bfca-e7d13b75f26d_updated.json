@@ -1,0 +1,1001 @@
+{
+  "video_id": "grp-f6a0d8f5-468d-4e47-bfca-e7d13b75f26d",
+  "goal_category": "COOKING:MAKE_CAKE",
+  "goal_description": "making banana cake",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "banana peel",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "clean hands",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "dirty hands",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "banana",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "carrot",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "grater",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "tap",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "tissue",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "sugar",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "scale",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "vinegar",
+      "init_status": {
+        "status": "inactive",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "wine",
+      "init_status": {
+        "status": "liquid",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "weighing scale",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "ingredient container",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "carrot mixture",
+      "init_status": {
+        "status": "mixed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "flour bag",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "flour",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "eggs",
+      "init_status": {
+        "status": "off countertop",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "fridge",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "egg",
+      "init_status": "none"
+    },
+    {
+      "object_id": 22,
+      "object_name": "mixture",
+      "init_status": "none"
+    },
+    {
+      "object_id": 23,
+      "object_name": "batter",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "phone",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "baking pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "mixing bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "oven",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "countertop",
+      "init_status": {
+        "status": "clean",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "baking paper",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "peel banana skin",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "banana peel",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "crush banana in a bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "banana",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "crushed",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "grate carrot into mashed banana",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grating carrot",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "carrot",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "grated",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "banana",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "mashed",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "mix carrot and mashed banana",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "carrot",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "mix with banana",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "banana",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "mix with carrot",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7_substep_0",
+      "description": "measure brown sugar in a bowl on weighing scale",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "sugar",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "in bowl",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "scale",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7_substep_1",
+      "description": "activate the digital weighing scale",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "scale"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "scale",
+            "init_status": {
+              "status": "inactive",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7_substep_2",
+      "description": "add vinegar wine to the sugar to weigh",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "sugar",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "liquid",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "vinegar",
+            "init_status": {
+              "status": "liquid",
+              "container": null
+            },
+            "final_status": {
+              "status": "liquid",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "scale",
+            "init_status": {
+              "status": "active",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_0",
+      "description": "mix weighed carrot mixture ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "carrot mixture",
+            "init_status": {
+              "status": "mixed",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 16
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_1",
+      "description": "add flour to the carrot mixture to weigh ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "flour bag"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "carrot mixture",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "weighed",
+              "container": 17
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "flour bag",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 16
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_2",
+      "description": "mix the  flour with carrot mixture ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "flour mixture"
+        },
+        "change": [
+          {
+            "object_id": 18,
+            "object_name": "flour",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "carrot mixture",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 18
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 16
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10",
+      "description": "put eggs on countertop",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 19,
+            "object_name": "eggs",
+            "init_status": {
+              "status": "off countertop",
+              "container": null
+            },
+            "final_status": {
+              "status": "on countertop",
+              "container": null
+            }
+          },
+          {
+            "object_id": 29,
+            "object_name": "countertop",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "have an egg",
+              "container": 19
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12",
+      "description": "whisk eggs in bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "whisking",
+          "final_hand": "bowl"
+        },
+        "change": [
+          {
+            "object_id": 19,
+            "object_name": "eggs",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "whisked",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with whisked eggs",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13_substep_0",
+      "description": "add egg ,mixture to the flour mixture ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "mixing",
+          "final_hand": "flour mixture"
+        },
+        "change": [
+          {
+            "object_id": 21,
+            "object_name": "egg",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed eggs",
+              "container": null
+            }
+          },
+          {
+            "object_id": 22,
+            "object_name": "mixture",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to flour mixture, carrot",
+              "container": 21
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13_substep_1",
+      "description": "mix batter in the bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "mixing",
+          "final_hand": "bowl"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": 22
+            }
+          },
+          {
+            "object_id": 22,
+            "object_name": "mixture",
+            "init_status": {
+              "status": "added to flour mixture, carrot",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_15_substep_0",
+      "description": "dress baking pan with baking paper",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 26,
+            "object_name": "baking pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with baking paper",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 30,
+            "object_name": "baking paper",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "dress baking pan",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_15_substep_1",
+      "description": "pour batter in baking pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "batter"
+        },
+        "change": [
+          {
+            "object_id": 26,
+            "object_name": "baking pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with batter",
+              "container": null
+            }
+          },
+          {
+            "object_id": 23,
+            "object_name": "batter",
+            "init_status": {
+              "status": "in container",
+              "container": null
+            },
+            "final_status": {
+              "status": "in baking pan",
+              "container": 26
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_15_substep_2",
+      "description": "mix batter ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "mixing batter",
+          "final_hand": "batter"
+        },
+        "change": [
+          {
+            "object_id": 23,
+            "object_name": "batter",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 27
+            }
+          },
+          {
+            "object_id": 27,
+            "object_name": "mixing bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with batter",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_15_substep_3",
+      "description": "oven bake the batter",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "baking",
+          "final_hand": "oven"
+        },
+        "change": [
+          {
+            "object_id": 23,
+            "object_name": "batter",
+            "init_status": {
+              "status": "liquid",
+              "container": null
+            },
+            "final_status": {
+              "status": "solid",
+              "container": 28
+            }
+          },
+          {
+            "object_id": 28,
+            "object_name": "oven",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_15_substep_4",
+      "description": "activate heat temperature of the oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "oven"
+        },
+        "change": [
+          {
+            "object_id": 28,
+            "object_name": "oven",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

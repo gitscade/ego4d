@@ -1,0 +1,110 @@
+{
+    "video_id": "f2f94646-069f-4a5e-8db0-5d3b779790af",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "Molding dough",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "pan",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "dough",
+            "init_status": {
+                "status": "default",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Knead dough in a pan with hand",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "dough"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "Add water to the dough in the pan",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pan 2"
+                },
+                "change": [
+                    {
+                        "object_id": 2,
+                        "object_name": "dough",
+                        "init_status": {
+                            "status": "default",
+                            "container": 1
+                        },
+                        "final_status": {
+                            "status": "wet",
+                            "container": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2",
+            "description": "Knead dough in the bowl with hand",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "dough"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_3",
+            "description": "Roll the dough into dough balls",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "dough"
+                },
+                "change": [
+                    {
+                        "object_id": 2,
+                        "object_name": "dough",
+                        "init_status": {
+                            "status": "wet",
+                            "container": 1
+                        },
+                        "final_status": {
+                            "status": "rolled out",
+                            "container": 1
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

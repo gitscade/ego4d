@@ -1,0 +1,51 @@
+{
+  "video_id": "95b0ae61-6063-4b35-a406-edfefeffe43d",
+  "goal_category": "COOKING:MAKE_BURRITO",
+  "goal_description": "Playing with dog",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "cabbage",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_4",
+      "description": "Preparing cabbage",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "preparing cabbage",
+          "final_hand": "cabbage"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "cabbage",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "prepared",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

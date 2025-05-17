@@ -1,0 +1,1051 @@
+{
+  "video_id": "grp-292b2447-407d-45b5-8663-8d92a3f03064",
+  "goal_category": "COOKING:MAKE_STEW_OR_SOUP",
+  "goal_description": "Preparing avocado soup",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "soap dispenser",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "sink faucet",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "hand towel",
+      "init_status": {
+        "status": "dry",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "ingredient",
+      "init_status": {
+        "status": "available",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "food item",
+      "init_status": {
+        "status": "on shelf",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "shelf",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "sieve",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "dirt",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "pepper",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "pepper seed",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "container",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "dice",
+      "init_status": {
+        "status": "normal",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "avocado",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "yellow pepper",
+      "init_status": "present"
+    },
+    {
+      "object_id": 16,
+      "object_name": "soap",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "water",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "onion",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "lettuce",
+      "init_status": "none"
+    },
+    {
+      "object_id": 20,
+      "object_name": "skillet",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "food",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "onions",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "cooker",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "soy meat",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "soup",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "in hand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "seasoning",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "heat source",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "temperature gauge",
+      "init_status": {
+        "status": "normal",
+        "container": null
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "spice",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "plate",
+      "init_status": {
+        "status": "off counter",
+        "container": null
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_4_substep_1",
+      "description": "Clean Pepper",
+      "context": {
+        "player": {
+          "init_status": "clean",
+          "init_hand": "none",
+          "final_status": "dirty",
+          "final_hand": "pepper"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "pepper",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_2",
+      "description": "Empty the pepper seed",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "success",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "pepper",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "removed seed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_3",
+      "description": "Dice the pepper",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "pepper",
+            "init_status": {
+              "status": "normal",
+              "container": null
+            },
+            "final_status": {
+              "status": "Diced",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_0",
+      "description": "Extract seed from the avocado",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "success",
+          "final_hand": "avocado seed"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "avocado",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "remove seed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_1",
+      "description": "Pare the avocado",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "holding avocado",
+          "final_hand": "avocado"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "avocado",
+            "init_status": {
+              "status": "unpeeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_2",
+      "description": "Piece the avocado",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "avocado",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Add avocado to yellow pepper",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "avocado",
+            "init_status": {
+              "status": "none",
+              "container": 0
+            },
+            "final_status": {
+              "status": "added to yellow pepper",
+              "container": 15
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "yellow pepper",
+            "init_status": {
+              "status": "present",
+              "container": 0
+            },
+            "final_status": {
+              "status": "with avocado added",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8",
+      "description": "Add onion to pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "holding onion",
+          "final_hand": "onion"
+        },
+        "change": [
+          {
+            "object_id": 18,
+            "object_name": "onion",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "in pan",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10",
+      "description": "Add lettuce to pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "holding lettuce",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 19,
+            "object_name": "lettuce",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "in pan",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "holding lettuce",
+              "container": 19
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11",
+      "description": "Heat the skillet",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "skillet"
+        },
+        "change": [
+          {
+            "object_id": 20,
+            "object_name": "skillet",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 21
+            }
+          },
+          {
+            "object_id": 21,
+            "object_name": "food",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 20
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12_substep_0",
+      "description": "Mix the lettuce with the onions in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 19,
+            "object_name": "lettuce",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 22
+            }
+          },
+          {
+            "object_id": 22,
+            "object_name": "onions",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 19
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "pan",
+            "init_status": {
+              "status": "holding lettuce",
+              "container": null
+            },
+            "final_status": {
+              "status": "holding lettuce, onions",
+              "container": 22
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12_substep_1",
+      "description": "Adjust the cooker heat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "cooker"
+        },
+        "change": [
+          {
+            "object_id": 23,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "Adjust heat",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13",
+      "description": "Add soy meat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "soy meat"
+        },
+        "change": [
+          {
+            "object_id": 24,
+            "object_name": "soy meat",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": null
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "pan",
+            "init_status": {
+              "status": "holding lettuce, onions",
+              "container": null
+            },
+            "final_status": {
+              "status": "holding lettuce, onions, soy meat",
+              "container": 24
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_14",
+      "description": "Stir in soy meat with lettuce",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 24,
+            "object_name": "soy meat",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 19
+            }
+          },
+          {
+            "object_id": 19,
+            "object_name": "lettuce",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 24
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_15_substep_1",
+      "description": "Adjust the cooker heat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cooker"
+        },
+        "change": [
+          {
+            "object_id": 23,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "on ",
+              "container": null
+            },
+            "final_status": {
+              "status": "Adjust heat",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_16",
+      "description": "Stir soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 25,
+            "object_name": "soup",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 26
+            }
+          },
+          {
+            "object_id": 26,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in soup",
+              "container": 25
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_18_substep_0",
+      "description": "Season the soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 25,
+            "object_name": "soup",
+            "init_status": {
+              "status": "cooked",
+              "container": null
+            },
+            "final_status": {
+              "status": "added seasoning",
+              "container": 27
+            }
+          },
+          {
+            "object_id": 27,
+            "object_name": "seasoning",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "in the soup",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_18_substep_1",
+      "description": "Mix the seasoning with the soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 25,
+            "object_name": "soup",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 27
+            }
+          },
+          {
+            "object_id": 27,
+            "object_name": "seasoning",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 25
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_19",
+      "description": "Regulate heat temperature",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 28,
+            "object_name": "heat source",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "Regulate heat ",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_20_substep_0",
+      "description": "Mix Avocado and yellow pepper with the soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "avocado",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 15
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "yellow pepper",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 14
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_20_substep_1",
+      "description": "Stir the soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 25,
+            "object_name": "soup",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 26
+            }
+          },
+          {
+            "object_id": 26,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in soup",
+              "container": 25
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_20_substep_2",
+      "description": "Adjust the cooker temperature",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knob"
+        },
+        "change": [
+          {
+            "object_id": 23,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "Adjust heat",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_21",
+      "description": "Add spice to soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "spice"
+        },
+        "change": [
+          {
+            "object_id": 25,
+            "object_name": "soup",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added spice",
+              "container": null
+            }
+          },
+          {
+            "object_id": 30,
+            "object_name": "spice",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 25
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_22",
+      "description": "Stir soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 25,
+            "object_name": "soup",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 26
+            }
+          },
+          {
+            "object_id": 26,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in soup",
+              "container": 25
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

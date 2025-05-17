@@ -1,0 +1,379 @@
+{
+    "video_id": "0ae6293e-eda5-44f7-b56e-e8f27fcde953",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "cooking general",
+    "spatial_data": [
+        {
+            "object_id": 2,
+            "object_name": "spice",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 1,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "oven tray",
+            "init_status": {
+                "status": "default",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "Fish Fillet",
+            "init_status": {
+                "status": "default",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "trash can",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "Guacamole",
+            "init_status": {
+                "status": "default",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "Spoon",
+            "init_status": {
+                "status": "default",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "Spicy",
+            "init_status": {
+                "status": "default",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "oven",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 10,
+            "object_name": "lemon",
+            "init_status": {
+                "status": "sliced",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 11,
+            "object_name": "broccoli",
+            "init_status": {
+                "status": "sliced",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 14,
+            "object_name": "potato",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 15,
+            "object_name": "phone",
+            "init_status": {
+                "status": "on",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 13,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0_substep_0",
+            "description": "Adds spice in oven tray",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "spice"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_1",
+            "description": "Adds Fish Fillet to the Spice in the oven tray",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "Fish Fillet"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "Fish Fillet",
+                        "init_status": {
+                            "status": "default",
+                            "container": 1
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": 1
+                        }
+                    },
+                    {
+                        "object_id": 2,
+                        "object_name": "spice",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": 4
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_2",
+            "description": "Disposes Fish fillet package",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "Fish Fillet Package"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_3",
+            "description": "Adds Guacamole to Fish fillet",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "Guacamole"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "Fish Fillet",
+                        "init_status": {
+                            "status": "seasoning 1",
+                            "container": 1
+                        },
+                        "final_status": {
+                            "status": "seasoning 2",
+                            "container": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_4",
+            "description": "Spreads Guacamole on the Fish fillet with a spoon",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "Spoon"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "Fish Fillet",
+                        "init_status": {
+                            "status": "seasoning 2",
+                            "container": 1
+                        },
+                        "final_status": {
+                            "status": "mixed",
+                            "container": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_5",
+            "description": "Adds Spice to Fish Fillet",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "Spicy"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_6",
+            "description": "Puts recipe inside Oven",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "Fish Fillet"
+                },
+                "change": [
+                    {
+                        "object_id": 4,
+                        "object_name": "oven tray",
+                        "init_status": {
+                            "status": "default",
+                            "container": 1
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_7",
+            "description": "Adds lemon slices to the recipe in the oven tray",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "lemon"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "Fish Fillet",
+                        "init_status": {
+                            "status": "mixed",
+                            "container": 1
+                        },
+                        "final_status": {
+                            "status": "seasoning 3",
+                            "container": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "Add broccoli to the boiling potato.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "broccoli"
+                },
+                "change": [
+                    {
+                        "object_id": 13,
+                        "object_name": "pot",
+                        "init_status": {
+                            "status": "contain water",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "contain water",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2",
+            "description": "Regulate the stove heat.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "gas stove"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_3",
+            "description": "Check the potato's softness.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "potato"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_4",
+            "description": "Regulate the stove heat.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "gas stove"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_5",
+            "description": "Use phone.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "phone"
+                },
+                "change": []
+            }
+        }
+    ]
+}

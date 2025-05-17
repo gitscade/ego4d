@@ -1,0 +1,869 @@
+{
+  "video_id": "e8a47631-b7e6-4c7d-bf0f-a37bf1ec913a",
+  "goal_category": "COOKING:MAKE_STIR_FRIED_DISH_GENERAL",
+  "goal_description": "Making multiple stir fried dish",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "cooker",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "meat",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "pot",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "chopstick",
+      "init_status": {
+        "status": "in hand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "egg",
+      "init_status": {
+        "status": "off-countertop",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "pack of sauce",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "knife",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "cabinet",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "water",
+      "init_status": "none"
+    },
+    {
+      "object_id": 15,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "plate",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "rice",
+      "init_status": "none"
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Turns on the cooker",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "cooker"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "Adds meat to the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "pot"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "meat",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to pot",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "pot",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with meat",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "Stirs the meat in the pot with a chopstick",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "chopstick"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "meat",
+            "init_status": {
+              "status": "added to pot",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "chopstick",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "pot",
+            "init_status": {
+              "status": "filled with meat",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_3",
+      "description": "Adjust the heat of the cooker",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knob"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "adjusted",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Set the egg on a countertop",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "egg",
+            "init_status": {
+              "status": "off-countertop",
+              "container": null
+            },
+            "final_status": {
+              "status": "on-countertop",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_0",
+      "description": "Cuts the pack of sauce",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "pack of sauce",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": "pours sauce into the meat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "sauce bottle"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "meat",
+            "init_status": {
+              "status": "stirred",
+              "container": null
+            },
+            "final_status": {
+              "status": "sauce added",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "pack of sauce",
+            "init_status": {
+              "status": "cut",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to meat",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_2",
+      "description": "Stirs the meat in the pot with a chopstick",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "chopstick"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "meat",
+            "init_status": {
+              "status": "sauce added",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "pot",
+            "init_status": {
+              "status": "stirred",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "chopstick",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_0",
+      "description": "picks a pan from the kitchen cabinet",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grabbing",
+          "final_hand": "pot"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "cabinet",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "opened",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_1",
+      "description": "Turns on the cooker",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cooker"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_2",
+      "description": "Adds egg to the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "egg"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "egg added",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "egg",
+            "init_status": {
+              "status": "on-countertop",
+              "container": null
+            },
+            "final_status": {
+              "status": "on pan",
+              "container": 15
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Add water to the egg in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "egg",
+            "init_status": {
+              "status": "on pan",
+              "container": null
+            },
+            "final_status": {
+              "status": "on pan",
+              "container": 15
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "water",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to pan",
+              "container": 15
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "pan",
+            "init_status": {
+              "status": "egg added",
+              "container": null
+            },
+            "final_status": {
+              "status": "water added",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8",
+      "description": "Regulate the heat on the cooker",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "regulated",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9",
+      "description": "Check the egg in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "egg",
+            "init_status": {
+              "status": "on pan",
+              "container": null
+            },
+            "final_status": {
+              "status": "on pan",
+              "container": 15
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "pan",
+            "init_status": {
+              "status": "water added",
+              "container": null
+            },
+            "final_status": {
+              "status": "water added",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12",
+      "description": "Regulate the heat on the cooker",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "regulated",
+              "container": null
+            },
+            "final_status": {
+              "status": "regulated",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13",
+      "description": "Stir fry the meat in the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "chopstick",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "pot",
+            "init_status": {
+              "status": "stirred",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "meat",
+            "init_status": {
+              "status": "stirred",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_14",
+      "description": "Check the egg in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "egg",
+            "init_status": {
+              "status": "on pan",
+              "container": null
+            },
+            "final_status": {
+              "status": "on pan",
+              "container": 15
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "pan",
+            "init_status": {
+              "status": "water added",
+              "container": null
+            },
+            "final_status": {
+              "status": "water added",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_15",
+      "description": "Regulate the heat on the cooker",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "regulated",
+              "container": null
+            },
+            "final_status": {
+              "status": "regulated",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_16",
+      "description": "Serve rice in a plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 20,
+            "object_name": "rice",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "on plate",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "plate",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with rice",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_18_substep_0",
+      "description": "pours the meat on a plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "plate",
+            "init_status": {
+              "status": "filled with rice",
+              "container": null
+            },
+            "final_status": {
+              "status": "meat added",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "meat",
+            "init_status": {
+              "status": "stirred",
+              "container": null
+            },
+            "final_status": {
+              "status": "poured on plate",
+              "container": 16
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_18_substep_1",
+      "description": "Pours the egg on the plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "egg",
+            "init_status": {
+              "status": "on pan",
+              "container": null
+            },
+            "final_status": {
+              "status": "poured on plate",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "plate",
+            "init_status": {
+              "status": "meat added",
+              "container": null
+            },
+            "final_status": {
+              "status": "egg added",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

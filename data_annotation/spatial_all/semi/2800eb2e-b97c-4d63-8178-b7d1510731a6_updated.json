@@ -1,0 +1,179 @@
+{
+  "video_id": "2800eb2e-b97c-4d63-8178-b7d1510731a6",
+  "goal_category": "COOKING:MAKE_FLATBREAD",
+  "goal_description": "Making the tortillas",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "dough",
+      "init_status": {
+        "status": "flat",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "salt shaker",
+      "init_status": {
+        "status": "ready",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "rolling pin",
+      "init_status": {
+        "status": "ready to use",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "roll dough with rolling pin",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "rolling pin"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "flat",
+              "container": null
+            },
+            "final_status": {
+              "status": "rolled out",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "add salt to dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "salt shaker"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "ready",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "salt shaker",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "roll dough with rolling pin",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "rolling pin"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "flat",
+              "container": null
+            },
+            "final_status": {
+              "status": "rolled out",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "rolling pin",
+            "init_status": {
+              "status": "ready to use",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

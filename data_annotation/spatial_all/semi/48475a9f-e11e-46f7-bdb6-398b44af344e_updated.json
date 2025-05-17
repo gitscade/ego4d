@@ -1,0 +1,369 @@
+{
+  "video_id": "48475a9f-e11e-46f7-bdb6-398b44af344e",
+  "goal_category": "COOKING:PREPARE_NUT",
+  "goal_description": "Making grains",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "dried leaves",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "firewood",
+      "init_status": {
+        "status": "active",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "grains",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "pot",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "wooden stick",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "fire",
+      "init_status": {
+        "status": "active",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "nylon",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "basket",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "grains on the floor",
+      "init_status": {
+        "status": "present",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Add dried leaves into the fire",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dried leaves"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dried leaves",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to fire",
+              "container": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "Adjust firewood in the fire",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "firewood",
+            "init_status": {
+              "status": "unlit",
+              "container": null
+            },
+            "final_status": {
+              "status": "lit",
+              "container": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Adding grains on the floor into the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pot"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "grains",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to pot",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "pot",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Stirring the grains in the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "grains",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "pot",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "wooden stick",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 16
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11",
+      "description": "Pouring heated grains in the pot on the nylon",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pot"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "grains",
+            "init_status": {
+              "status": "in pot",
+              "container": null
+            },
+            "final_status": {
+              "status": "in nylon",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "pot",
+            "init_status": {
+              "status": "filled with grains",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": null
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "nylon",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with grains",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13",
+      "description": "Packing dried grains into the basket",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "basket"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "grains",
+            "init_status": {
+              "status": "unpacked",
+              "container": null
+            },
+            "final_status": {
+              "status": "packed",
+              "container": 13
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "basket",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_14",
+      "description": "Cleaning the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cleaning",
+          "final_hand": "pot"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "pot",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_15",
+      "description": "Removing the grains on the floor to the nylon",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "walking",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "grains on the floor",
+            "init_status": {
+              "status": "present",
+              "container": null
+            },
+            "final_status": {
+              "status": "removed",
+              "container": 11
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,489 @@
+{
+  "video_id": "f43bb351-fb98-4a74-bd50-f57e91d3863f",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Making oven fries",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "fries",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "paste",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "oven",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "pot",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "water",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "kettle",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "cooker",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "plate",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "napkin",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "tray of baked dough",
+      "init_status": {
+        "status": "off cooker top",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "dough",
+      "init_status": {
+        "status": "untouched",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "temperature gauge",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "ingredient",
+      "init_status": {
+        "status": "in oven",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "chair",
+      "init_status": {
+        "status": "unattached",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "tablet arm",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "spatula",
+      "init_status": {
+        "status": "default",
+        "container": 11
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Mix the fries with the paste",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "fries",
+          "final_status": "mixing",
+          "final_hand": "paste"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "fries",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "paste",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Place the fries in the oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "fries",
+          "final_status": "idle",
+          "final_hand": "oven"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "fries",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "in oven",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "oven",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": "heat water on cooker",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "kettle"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "water",
+            "init_status": {
+              "status": "cold",
+              "container": null
+            },
+            "final_status": {
+              "status": "hot",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "Add some salt to both pots on the cooker",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "pot",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "salted",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "pot",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "salted",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Stir the water in the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "moving",
+          "final_hand": "pot"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "water",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "moving",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "pot",
+            "init_status": {
+              "status": "salted",
+              "container": null
+            },
+            "final_status": {
+              "status": "salted",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_0",
+      "description": "set tray of baked dough on cooker top",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "tray of baked dough",
+            "init_status": {
+              "status": "off cooker top",
+              "container": null
+            },
+            "final_status": {
+              "status": "on cooker top",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_1",
+      "description": "stir dough with spatula",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spatula"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "dough",
+            "init_status": {
+              "status": "untouched",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": null
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "spatula",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "move",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_0",
+      "description": "regulate oven heat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "oven"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "oven",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "regulate heat",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_1",
+      "description": "reposition ingredients in oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "oven",
+            "init_status": {
+              "status": "full with ingredients ",
+              "container": null
+            },
+            "final_status": {
+              "status": "reposition ingredients ",
+              "container": null
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "ingredient",
+            "init_status": {
+              "status": "in oven",
+              "container": null
+            },
+            "final_status": {
+              "status": "reposition",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_2",
+      "description": "regulate oven heat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "oven",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

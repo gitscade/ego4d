@@ -1,0 +1,110 @@
+{
+    "video_id": "06bb2e99-5112-4987-ac5b-9fd52bb144d0",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "Chop Spinach.",
+    "spatial_data": [
+        {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        },
+        {
+            "object_id": 1,
+            "object_name": "spinach",
+            "init_status": {
+                "status": "packed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "spinach2",
+            "init_status": {
+                "status": "packed",
+                "container": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0_substep_0",
+            "description": "untie spinach",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "spinach"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "spinach",
+                        "init_status": {
+                            "status": "packed",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "unpacked",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_1",
+            "description": "cut spinach.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "spinach"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "spinach",
+                        "init_status": {
+                            "status": "unpacked",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "cut",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_2",
+            "description": "untie spinach",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "spinach2"
+                },
+                "change": [
+                    {
+                        "object_id": 2,
+                        "object_name": "spinach2",
+                        "init_status": {
+                            "status": "packed",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "unpacked",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

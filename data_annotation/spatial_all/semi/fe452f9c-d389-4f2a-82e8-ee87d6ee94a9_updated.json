@@ -1,0 +1,731 @@
+{
+  "video_id": "fe452f9c-d389-4f2a-82e8-ee87d6ee94a9",
+  "goal_category": "COOKING:MAKE_FLATBREAD",
+  "goal_description": "Making a dough",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "flour bag",
+      "init_status": {
+        "status": "full",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "salt shaker",
+      "init_status": {
+        "status": "empty",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "baking powder",
+      "init_status": {
+        "status": "default",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "oil bottle",
+      "init_status": {
+        "status": "full",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "table",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "water bottle",
+      "init_status": {
+        "status": "default",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "flour",
+      "init_status": {
+        "status": "default",
+        "container": 2
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "vegetables",
+      "init_status": {
+        "status": "diced",
+        "container": 7
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Add flour into the bowl\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "flour",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "Add diced vegetables into the bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "flour",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "vegetables",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "Add salt into the bowl \n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "flour",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "salted",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "vegetables",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "salt shaker",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_3",
+      "description": "Add Baking Powder into the bowl\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "flour",
+            "init_status": {
+              "status": "salted",
+              "container": null
+            },
+            "final_status": {
+              "status": "salted",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "vegetables",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "baking powder",
+            "init_status": {
+              "status": "in bowl",
+              "container": null
+            },
+            "final_status": {
+              "status": "in bowl",
+              "container": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_4",
+      "description": "Add oil into the bowl\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "flour",
+            "init_status": {
+              "status": "salted",
+              "container": null
+            },
+            "final_status": {
+              "status": "salted, oiled",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "baking powder",
+            "init_status": {
+              "status": "in bowl",
+              "container": null
+            },
+            "final_status": {
+              "status": "in bowl",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "vegetables",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "oil bottle",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 9
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_5",
+      "description": "Add water into the bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "water bottle",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "dough",
+            "init_status": {
+              "status": "salted, oiled",
+              "container": null
+            },
+            "final_status": {
+              "status": "made to dough",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "vegetables",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "baking powder",
+            "init_status": {
+              "status": "in bowl",
+              "container": null
+            },
+            "final_status": {
+              "status": "in bowl",
+              "container": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Kneads the dough.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "dough",
+            "init_status": {
+              "status": "made to dough",
+              "container": null
+            },
+            "final_status": {
+              "status": "kneaded",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "vegetables",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "baking powder",
+            "init_status": {
+              "status": "in bowl",
+              "container": null
+            },
+            "final_status": {
+              "status": "in bowl",
+              "container": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "cleans the table.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cleaning",
+          "final_hand": "dishcloth"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "table",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "oil bottle",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "flour bag",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "salt shaker",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "dough",
+            "init_status": {
+              "status": "kneaded",
+              "container": null
+            },
+            "final_status": {
+              "status": "kneaded",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "water bottle",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "vegetables",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "baking powder",
+            "init_status": {
+              "status": "in bowl",
+              "container": null
+            },
+            "final_status": {
+              "status": "in bowl",
+              "container": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "kneads the dough.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "dough",
+            "init_status": {
+              "status": "kneaded",
+              "container": null
+            },
+            "final_status": {
+              "status": "kneaded",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "vegetables",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "baking powder",
+            "init_status": {
+              "status": "in bowl",
+              "container": null
+            },
+            "final_status": {
+              "status": "in bowl",
+              "container": 12
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

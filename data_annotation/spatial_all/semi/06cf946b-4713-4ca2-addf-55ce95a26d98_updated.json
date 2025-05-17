@@ -1,0 +1,283 @@
+{
+  "video_id": "06cf946b-4713-4ca2-addf-55ce95a26d98",
+  "goal_category": "COOKING:PREPARE_INGREDIENTS_GENERAL",
+  "goal_description": "Plucking pomegranate seeds",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "pomegranate",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "knife",
+      "init_status": {
+        "status": "in hand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "phone",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "tray",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "seasoning",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "player's hand",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "seeds",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "salt shaker",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "pomegranate seeds",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "pomegranate fruit seeds",
+      "init_status": {
+        "status": "unmixed",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_2_substep_0",
+      "description": "peel the pomegranate skin",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "peeling pomegranate skin",
+          "final_hand": "pomegranate"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "pomegranate",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "knife",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Slice pomegranate fruit into the bowl with the knife",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "pomegranate",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "Plucks pomegranate fruit seeds",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "pomegranate",
+            "init_status": {
+              "status": "dafult",
+              "container": null
+            },
+            "final_status": {
+              "status": "no seeds",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10",
+      "description": "Plucks pomegranate fruit seeds",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pomegranate"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "pomegranate",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "no seeds",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "player's hand",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "Plucked pomegranate fruit seeds",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_0",
+      "description": "add seasoning to the pomegranate fruit seeds",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pomegranate seeds"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "pomegranate seeds",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added seasoning",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "seasoning",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "none",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

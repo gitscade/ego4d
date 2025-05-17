@@ -1,0 +1,83 @@
+{
+  "video_id": "b69e598c-a6e5-4830-bb8d-15b77e0a6154",
+  "goal_category": "COOKING:MAKE_GRILLED_DISH",
+  "goal_description": "Grill dish",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "beef",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "grill",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Grill Beef",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grilling",
+          "final_hand": "beef"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "beef",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "grilled",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "grill",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

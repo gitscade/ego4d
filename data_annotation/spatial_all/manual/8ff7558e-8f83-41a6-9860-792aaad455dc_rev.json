@@ -1,0 +1,172 @@
+{
+    "video_id": "8ff7558e-8f83-41a6-9860-792aaad455dc",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "Heating corndogs",
+    "spatial_data": [
+        {
+            "object_id": 2,
+            "object_name": "cola",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "sink",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "corn dogs",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "refrigerator",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "kiwi",
+            "init_status": {
+                "status": "default",
+                "container": 7
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Dispose cans",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "can"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_1_substep_0",
+            "description": "Check the corndogs in the microwave",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "corn dogs"
+                },
+                "change": [
+                    {
+                        "object_id": 5,
+                        "object_name": "micro oven",
+                        "init_status": {
+                            "status": "closed",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "opened",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1_substep_1",
+            "description": "Adjust the heating time of the microwave",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "micro oven"
+                },
+                "change": [
+                    {
+                        "object_id": 5,
+                        "object_name": "micro oven",
+                        "init_status": {
+                            "status": "opened",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "closed",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 5,
+                        "object_name": "micro oven",
+                        "init_status": {
+                            "status": "closed",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "heating",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2",
+            "description": "Eat a kiwi",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "kiwi"
+                },
+                "change": [
+                    {
+                        "object_id": 8,
+                        "object_name": "kiwi",
+                        "init_status": {
+                            "status": "default",
+                            "container": 7
+                        },
+                        "final_status": {
+                            "status": "half",
+                            "container": 7
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_3",
+            "description": "Refrigerate the kiwi",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "kiwi"
+                },
+                "change": []
+            }
+        }
+    ]
+}

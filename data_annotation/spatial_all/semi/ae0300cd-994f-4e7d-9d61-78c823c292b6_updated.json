@@ -1,0 +1,688 @@
+{
+  "video_id": "ae0300cd-994f-4e7d-9d61-78c823c292b6",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Cooking pasta",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "beef",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "macaroni",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "liver",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "cooking gas stove",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "oven",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "egg",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "tap",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "hand",
+      "init_status": {
+        "status": "dry",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "milk",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "soap",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "macaroni pot",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "stirring spoon",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "pepper shaker",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "cheese grater",
+      "init_status": "none"
+    },
+    {
+      "object_id": 16,
+      "object_name": "pot",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "seasoning powder",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "lid",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "knob",
+      "init_status": {
+        "status": "neutral",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "knife",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "egg shell",
+      "init_status": {
+        "status": "on table",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "cheese",
+      "init_status": {
+        "status": "on counter",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "add sliced beef in macaroni",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "macaroni"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "beef",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "macaroni",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "add beef",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "add sliced liver to macaroni",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "liver"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "macaroni",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "add sliced liver",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "liver",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "regulate cooking gas heat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knob"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "oven",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_3",
+      "description": "break raw egg in macaroni\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "egg",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "broken",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "macaroni",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "add raw egg ",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_5",
+      "description": "add milk in macaroni",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "milk"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "macaroni",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added milk",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "milk",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "stirs macaroni in pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "macaroni pot"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "macaroni",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": null
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "stirring spoon",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "pot",
+            "init_status": {
+              "status": "stable",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed macaroni",
+              "container": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_2",
+      "description": "add pepper in macaroni",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pepper shaker"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "macaroni",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "add pepper ",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "pepper shaker",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_3",
+      "description": "grates cheese into macaroni",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grating cheese into macaroni",
+          "final_hand": "cheese grater"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "macaroni",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added grated cheese",
+              "container": 15
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "cheese grater",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "used for grating cheese",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_4",
+      "description": "stir macaroni in pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "stirring spoon"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "macaroni",
+            "init_status": {
+              "status": "in pot",
+              "container": 16
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "pot",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with macaroni",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_7",
+      "description": "add  seasoning powder in macaroni",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "seasoning powder"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "macaroni",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added seasoning powder",
+              "container": 17
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "seasoning powder",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_8",
+      "description": "stir macaroni in pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pot"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "macaroni",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "moving",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "pot",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "moving",
+              "container": null
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "stirring spoon",
+            "init_status": {
+              "status": "in use",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_9",
+      "description": "cover macaroni pot with lid",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "macaroni pot",
+            "init_status": {
+              "status": "open",
+              "container": null
+            },
+            "final_status": {
+              "status": "closed",
+              "container": 18
+            }
+          },
+          {
+            "object_id": 18,
+            "object_name": "lid",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_10",
+      "description": "regulate cooking gas heat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knob"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "cooking gas stove",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 19
+            }
+          },
+          {
+            "object_id": 19,
+            "object_name": "knob",
+            "init_status": {
+              "status": "neutral",
+              "container": null
+            },
+            "final_status": {
+              "status": "turned",
+              "container": 4
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,707 @@
+{
+  "video_id": "4474c9c2-9d20-46fd-8fec-7d64942738e7",
+  "goal_category": "COOKING:MAKE_STEW_OR_SOUP",
+  "goal_description": "preparing a fish recipe",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "phone",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "player's hand",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "beet",
+      "init_status": {
+        "status": "dry",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "water",
+      "init_status": {
+        "status": "still",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "countertop",
+      "init_status": {
+        "status": "tidy",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "hand",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "potato",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "sponge",
+      "init_status": {
+        "status": "dry",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "towel",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "pot",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "chopping board",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "knife",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "celery in wrapper",
+      "init_status": {
+        "status": "present",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "celery",
+      "init_status": {
+        "status": "out of fridge",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "fridge door",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "tap",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "celery part",
+      "init_status": {
+        "status": "unwanted",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "container",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "fish wrapper",
+      "init_status": {
+        "status": "wrapped",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "fish",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "fork",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "diced potato",
+      "init_status": {
+        "status": "on cooking gas",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "fridge",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_1",
+      "description": "soak beets in water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "beet",
+            "init_status": {
+              "status": "dry",
+              "container": null
+            },
+            "final_status": {
+              "status": "wet",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "water",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "moving",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_0",
+      "description": "rinse potato under tap  with sponge",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "potato",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "sponge",
+            "init_status": {
+              "status": "dry",
+              "container": null
+            },
+            "final_status": {
+              "status": "wet",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_2",
+      "description": "fetch water in pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "pot",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "water",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "contained",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_3",
+      "description": "cut potato on chopping board",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "potato",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_4",
+      "description": "put diced potato in pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "potato",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "in pot",
+              "container": null
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "pot",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7_substep_0",
+      "description": "remove celery in wrapper",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": null,
+          "final_status": "idle",
+          "final_hand": null
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "celery ",
+            "init_status": {
+              "status": "with wrapper",
+              "container": null
+            },
+            "final_status": {
+              "status": "removed wrapper",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7_substep_2",
+      "description": "rinse celery under tap",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "celery",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "wet",
+              "container": 17
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "tap",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7_substep_3",
+      "description": "cut celery end",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "celery",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut end",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7_substep_4",
+      "description": "dispose unwanted celery part in container",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "disposed",
+          "final_hand": "container"
+        },
+        "change": [
+          {
+            "object_id": 18,
+            "object_name": "celery",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "dispose unwanted part",
+              "container": 19
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7_substep_5",
+      "description": "slice celery into thin even pieces",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "slicing celery",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "celery",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_0",
+      "description": "unwrap fish wrapper",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 20,
+            "object_name": "fish wrapper",
+            "init_status": {
+              "status": "wrapped",
+              "container": null
+            },
+            "final_status": {
+              "status": "unwrapped",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_1",
+      "description": "peel fish skin",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": null,
+          "final_status": "active",
+          "final_hand": "peeler"
+        },
+        "change": [
+          {
+            "object_id": 21,
+            "object_name": "fish",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "skinned",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10_substep_0",
+      "description": "mash fish in bowl with fork",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "fork"
+        },
+        "change": [
+          {
+            "object_id": 22,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": 21
+            }
+          },
+          {
+            "object_id": 21,
+            "object_name": "fish",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "mashed",
+              "container": 22
+            }
+          },
+          {
+            "object_id": 23,
+            "object_name": "fork",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 21
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10_substep_1",
+      "description": "check diced potato on cooking gas",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 24,
+            "object_name": "diced potato",
+            "init_status": {
+              "status": "on cooking gas",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 25
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "check diced potato",
+              "container": 24
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10_substep_3",
+      "description": "store mashed fish in fridge",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 25,
+            "object_name": "fridge",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": 21
+            }
+          },
+          {
+            "object_id": 21,
+            "object_name": "fish",
+            "init_status": {
+              "status": "on counter",
+              "container": null
+            },
+            "final_status": {
+              "status": "in fridge",
+              "container": 25
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

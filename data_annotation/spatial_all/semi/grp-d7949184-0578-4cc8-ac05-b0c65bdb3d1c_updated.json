@@ -1,0 +1,707 @@
+{
+  "video_id": "grp-d7949184-0578-4cc8-ac05-b0c65bdb3d1c",
+  "goal_category": "COOKING:MAKE_SANDWICH",
+  "goal_description": "Making sandwich",
+  "spatial_data": [
+    {
+      "object_id": 6,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "bread",
+      "init_status": {
+        "status": "sliced",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "turkey",
+      "init_status": {
+        "status": "untoasted",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "stove",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 34,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 35,
+      "object_name": "spatula",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 36,
+      "object_name": "water",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 37,
+      "object_name": "sink",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "plate",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "oil",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 40,
+      "object_name": "spice",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_1",
+      "description": "Heat a pan on a cooker",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "stove",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 16
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Toast slices of bread in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "bread",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "stove",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8",
+      "description": "Flip the slices of bread to toast the other side",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 35,
+            "object_name": "spatula",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 34
+            }
+          },
+          {
+            "object_id": 34,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "flip",
+              "container": null
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "stove",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "bread",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "toasted",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 16
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9",
+      "description": "Rinse turkey with water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "turkey",
+            "init_status": {
+              "status": "untoasted",
+              "container": null
+            },
+            "final_status": {
+              "status": "untoasted",
+              "container": 37
+            }
+          },
+          {
+            "object_id": 36,
+            "object_name": "water",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 15
+            }
+          },
+          {
+            "object_id": 37,
+            "object_name": "sink",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12_substep_1",
+      "description": "regulate the heat ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "stove",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "regulate",
+              "container": null
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "bread",
+            "init_status": {
+              "status": "toasted",
+              "container": null
+            },
+            "final_status": {
+              "status": "toasted",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 16
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_14",
+      "description": "Serve the bread toast in the plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "serving toast",
+          "final_hand": "plate"
+        },
+        "change": [
+          {
+            "object_id": 38,
+            "object_name": "plate",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "bread",
+            "init_status": {
+              "status": "toasted",
+              "container": null
+            },
+            "final_status": {
+              "status": "toasted",
+              "container": 38
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_15_substep_0",
+      "description": "add oil to the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "empty",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 39,
+            "object_name": "oil",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "stove",
+            "init_status": {
+              "status": "regulate",
+              "container": null
+            },
+            "final_status": {
+              "status": "regulate",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_15_substep_1",
+      "description": "add meat to the pan ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "turkey",
+            "init_status": {
+              "status": "untoasted",
+              "container": null
+            },
+            "final_status": {
+              "status": "untoasted",
+              "container": 39
+            }
+          },
+          {
+            "object_id": 39,
+            "object_name": "oil",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "stove",
+            "init_status": {
+              "status": "regulate",
+              "container": null
+            },
+            "final_status": {
+              "status": "regulate",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_17",
+      "description": "Stir fry the turkey in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 35,
+            "object_name": "spatula",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 34
+            }
+          },
+          {
+            "object_id": 34,
+            "object_name": "player",
+            "init_status": {
+              "status": "flip",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir",
+              "container": null
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "turkey",
+            "init_status": {
+              "status": "untoasted",
+              "container": null
+            },
+            "final_status": {
+              "status": "fried",
+              "container": 39
+            }
+          },
+          {
+            "object_id": 39,
+            "object_name": "oil",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "stove",
+            "init_status": {
+              "status": "regulate",
+              "container": null
+            },
+            "final_status": {
+              "status": "regulate",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_18",
+      "description": "Serve the stir fried turkey in the plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "serving",
+          "final_hand": "plate"
+        },
+        "change": [
+          {
+            "object_id": 38,
+            "object_name": "plate",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "turkey",
+            "init_status": {
+              "status": "fried",
+              "container": null
+            },
+            "final_status": {
+              "status": "fried",
+              "container": 38
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "bread",
+            "init_status": {
+              "status": "toasted",
+              "container": null
+            },
+            "final_status": {
+              "status": "toasted",
+              "container": 38
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_19_substep_0",
+      "description": "add spice to the stir fried meat ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "spice bottle"
+        },
+        "change": [
+          {
+            "object_id": 40,
+            "object_name": "spice",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 15
+            }
+          },
+          {
+            "object_id": 38,
+            "object_name": "plate",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "turkey",
+            "init_status": {
+              "status": "fried",
+              "container": null
+            },
+            "final_status": {
+              "status": "fried",
+              "container": 38
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "bread",
+            "init_status": {
+              "status": "toasted",
+              "container": null
+            },
+            "final_status": {
+              "status": "toasted",
+              "container": 38
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

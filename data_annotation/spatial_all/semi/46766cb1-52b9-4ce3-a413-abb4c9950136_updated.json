@@ -1,0 +1,299 @@
+{
+  "video_id": "46766cb1-52b9-4ce3-a413-abb4c9950136",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Cutting raw mangoes",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "mango",
+      "init_status": {
+        "status": "unpeeled",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "knife",
+      "init_status": {
+        "status": "in hand",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "cup",
+      "init_status": {
+        "status": "on table",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "ingredient",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Prepares mangoes.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "preparing mangoes",
+          "final_hand": "mango"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "mango",
+            "init_status": {
+              "status": "unpeeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "using knife",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Drinks water.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "drinking",
+          "final_hand": "cup"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "drinking",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "cup",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "on table",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Prepares mangoes.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "preparing mangoes",
+          "final_hand": "mango"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "mango",
+            "init_status": {
+              "status": "peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "drinking",
+              "container": null
+            },
+            "final_status": {
+              "status": "using knife",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Eats mango.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "eating mango",
+          "final_hand": "mango"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "eating mango",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "mango",
+            "init_status": {
+              "status": "peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "being eaten",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "unused",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Slice ingredients into thin even pieces",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "ingredient",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "eating mango",
+              "container": null
+            },
+            "final_status": {
+              "status": "using knife",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

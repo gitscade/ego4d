@@ -1,0 +1,129 @@
+{
+  "video_id": "20474be2-080f-48bd-a30c-871b9664e806",
+  "goal_category": "HOUSEKEEPING:WASH_DISHES",
+  "goal_description": "clean kitchen utensils",
+  "spatial_data": [
+    {
+      "object_id": 4,
+      "object_name": "kitchen utensil",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "basket",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "sink",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_17",
+      "description": "clean kitchen utensils and sink",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "kitchen utensil",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "cleaned",
+              "container": 13
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "sink",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "cleaned",
+              "container": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_18",
+      "description": "drain clean kitchen utensils in basket",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "kitchen utensil",
+            "init_status": {
+              "status": "cleaned",
+              "container": null
+            },
+            "final_status": {
+              "status": "drained",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "basket",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

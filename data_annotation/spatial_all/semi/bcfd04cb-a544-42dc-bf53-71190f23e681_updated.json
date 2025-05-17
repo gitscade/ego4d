@@ -1,0 +1,241 @@
+{
+  "video_id": "bcfd04cb-a544-42dc-bf53-71190f23e681",
+  "goal_category": "COOKING:PREPARE_INGREDIENTS_GENERAL",
+  "goal_description": "Peeling and sorting the Indian jujubes",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "jujubes",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "cloth",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "knife",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "indian jujubes",
+      "init_status": {
+        "status": "unripe",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "basket",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "cutting board",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "indian jujube stalk",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "indian jujube",
+      "init_status": {
+        "status": "unripe",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "jujube",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Prepare the Indian jujubes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "preparing jujubes",
+          "final_hand": "jujubes"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "jujubes",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "preparing",
+              "container": null
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Rub the cloth on the Indian jujubes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "rubbing cloth on jujubes",
+          "final_hand": "cloth"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "jujubes",
+            "init_status": {
+              "status": "unrubbed",
+              "container": null
+            },
+            "final_status": {
+              "status": "rubbed",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "cloth",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Put some unripe Indian jujubes in the basket",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "indian jujubes",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "unripe Indian jujubes in the basket",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "basket",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with Indian jujubes",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "Throw the Indian jujube stalk on the cloth",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "indian jujube stalk",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "thrown",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "cloth",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "with the Indian jujube stalk ",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

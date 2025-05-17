@@ -1,0 +1,155 @@
+{
+    "video_id": "c13c8d8c-917c-4071-9fe4-f7f166f3e6b2",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "Prepare puffed rice",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "chair",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "bowl",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "scoop",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "syrup",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "bowl2",
+            "init_status": {
+                "status": "full-filled",
+                "container": null
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "puffed rice",
+            "init_status": {
+                "status": "default",
+                "container": 7
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "check syrup.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "syrup"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "Rinse hands.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "wash hand",
+                    "final_hand": "none"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_2_substep_0",
+            "description": "removes cooking pan from stovetop",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "syrup"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_2_substep_1",
+            "description": "stirs oil in pot",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "scoop"
+                },
+                "change": [
+                    {
+                        "object_id": 5,
+                        "object_name": "syrup",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": 4
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2_substep_2",
+            "description": "adds puffed rice into oil in pot",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "bowl2"
+                },
+                "change": [
+                    {
+                        "object_id": 5,
+                        "object_name": "syrup",
+                        "init_status": {
+                            "status": "default",
+                            "container": 4
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": 4
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

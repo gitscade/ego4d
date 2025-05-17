@@ -1,0 +1,157 @@
+{
+  "video_id": "f2ee7e0b-c4f3-4f8b-af9e-8d1cea686be5",
+  "goal_category": "MISC:MISC_GENERAL",
+  "goal_description": "Miscellaneous activities",
+  "spatial_data": [
+    {
+      "object_id": 2,
+      "object_name": "kitchen towel",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "rice",
+      "init_status": {
+        "status": "in refrigerator",
+        "container": 0
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "water",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "sink",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_1",
+      "description": "Rinse kitchen towel",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "kitchen towel",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "rinsed",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "water",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "sink",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "rinse",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_15",
+      "description": "Remove rice from the refrigerator",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "rice",
+            "init_status": {
+              "status": "in refrigerator",
+              "container": null
+            },
+            "final_status": {
+              "status": "out refrigerator",
+              "container": 17
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "refrigerator",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

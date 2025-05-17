@@ -1,0 +1,67 @@
+{
+    "video_id": "6f19928b-79d6-43ef-9567-b34b70de4042",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "Make cupcakes.",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "mixer",
+            "init_status": {
+                "status": "default",
+                "container": 3
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "batter",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+                "status": null,
+                "container": 3
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Mix the cake batter.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "mixer"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "Use phone.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "phone"
+                },
+                "change": []
+            }
+        }
+    ]
+}

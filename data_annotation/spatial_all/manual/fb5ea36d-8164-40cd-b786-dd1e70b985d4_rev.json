@@ -1,0 +1,45 @@
+{
+    "video_id": "fb5ea36d-8164-40cd-b786-dd1e70b985d4",
+    "goal_category": "COOKING:MAKE_PASTRY",
+    "goal_description": "Make goyna bori",
+    "spatial_data": [
+        {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        },
+        {
+            "object_id": 1,
+            "object_name": "batter",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "mat",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Piping the batter on the mat",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "batter"
+                },
+                "change": []
+            }
+        }
+    ]
+}

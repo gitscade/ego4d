@@ -1,0 +1,519 @@
+{
+    "video_id": "603a427f-9191-4ca4-a1b0-dd3c5e7fda70",
+    "goal_category": "COOKING:MAKE_PASTRY",
+    "goal_description": "Making pastries",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "phone",
+            "init_status": {
+                "status": "off",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "liquid hand wash",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "sink",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "towel",
+            "init_status": {
+                "status": "hanging",
+                "container": null
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "apron",
+            "init_status": {
+                "status": "hanging",
+                "container": null
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "shelf",
+            "init_status": {
+                "status": "opened",
+                "container": null
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "flour",
+            "init_status": {
+                "status": "packed",
+                "container": 9
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "weight scale",
+            "init_status": {
+                "status": "off",
+                "container": null
+            }
+        },
+        {
+            "object_id": 10,
+            "object_name": "bowl",
+            "init_status": {
+                "status": "unwashed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 11,
+            "object_name": "kitchen drawer",
+            "init_status": {
+                "status": "closed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 12,
+            "object_name": "sieve",
+            "init_status": {
+                "status": "default",
+                "container": 11
+            }
+        },
+        {
+            "object_id": 14,
+            "object_name": "pantry",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 13,
+            "object_name": "sour cream container",
+            "init_status": {
+                "status": "default",
+                "container": 14
+            }
+        },
+        {
+            "object_id": 15,
+            "object_name": "baking soda",
+            "init_status": {
+                "status": "default",
+                "container": 14
+            }
+        },
+        {
+            "object_id": 17,
+            "object_name": "player",
+            "init_status": {
+                "status": null,
+                "container": 14
+            }
+        },
+        {
+            "object_id": 16,
+            "object_name": "spoon",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Operate the phone",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "default",
+                    "final_hand": "none"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "Clean both hands",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "towel"
+                },
+                "change": [
+                    {
+                        "object_id": 4,
+                        "object_name": "sink",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "supply water",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 5,
+                        "object_name": "towel",
+                        "init_status": {
+                            "status": "hanging",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "wet",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2",
+            "description": "Wear the apron",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "apron"
+                },
+                "change": [
+                    {
+                        "object_id": 6,
+                        "object_name": "apron",
+                        "init_status": {
+                            "status": "hanging",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "equipped",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_3",
+            "description": "Operate the phone",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "phone"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "phone",
+                        "init_status": {
+                            "status": "off",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "off",
+                            "container": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_4_substep_0",
+            "description": "Gathers Flour and Scale",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "flour"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_4_substep_1",
+            "description": "Cleans Bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "bowl"
+                },
+                "change": [
+                    {
+                        "object_id": 10,
+                        "object_name": "bowl",
+                        "init_status": {
+                            "status": "unwashed",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "washed",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_4_substep_2",
+            "description": "Weighs Flour",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "flour"
+                },
+                "change": [
+                    {
+                        "object_id": 10,
+                        "object_name": "bowl",
+                        "init_status": {
+                            "status": "half_filled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "half_filled",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_5",
+            "description": "Sift the flour in the bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "flour"
+                },
+                "change": [
+                    {
+                        "object_id": 7,
+                        "object_name": "flour",
+                        "init_status": {
+                            "status": "default",
+                            "container": 9
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": 12
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_6",
+            "description": "Operate the phone",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "phone"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "phone",
+                        "init_status": {
+                            "status": "off",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "on",
+                            "container": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_7_substep_0",
+            "description": "Gets Baking Soda",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "baking soda"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_7_substep_1",
+            "description": "Watches recipe on phone",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "phone"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "phone",
+                        "init_status": {
+                            "status": "off",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "on",
+                            "container": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_7_substep_2",
+            "description": "Adds Baking Powder to Flour",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "spoon"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_7_substep_3",
+            "description": "Adds Sugar to Flour",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "sugar"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_7_substep_4",
+            "description": "Watches recipe on phone",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "phone"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "phone",
+                        "init_status": {
+                            "status": "off",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "on",
+                            "container": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_7_substep_5",
+            "description": "mix the Flour",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "spoon"
+                },
+                "change": [
+                    {
+                        "object_id": 7,
+                        "object_name": "flour",
+                        "init_status": {
+                            "status": "default",
+                            "container": 12
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": 10
+                        }
+                    },
+                    {
+                        "object_id": 15,
+                        "object_name": "baking soda",
+                        "init_status": {
+                            "status": "default",
+                            "container": 14
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": 10
+                        }
+                    },
+                    {
+                        "object_id": 17,
+                        "object_name": "sugar",
+                        "init_status": {
+                            "status": "default",
+                            "container": 14
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": 10
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_8",
+            "description": "Get the sour cream container",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "sour cream container"
+                },
+                "change": []
+            }
+        }
+    ]
+}

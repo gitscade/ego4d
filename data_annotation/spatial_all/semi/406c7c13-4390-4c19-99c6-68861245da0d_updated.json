@@ -1,0 +1,297 @@
+{
+  "video_id": "406c7c13-4390-4c19-99c6-68861245da0d",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Cooking sauce",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "cooker",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "sauce",
+      "init_status": {
+        "status": "off",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "pot",
+      "init_status": {
+        "status": "default",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Adjust the heat of a cooker",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "oven"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "pot",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "sauce",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "off",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Stir the sauce in the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pot"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "sauce",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "pot",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": "Adjust heat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "adjusting heat",
+          "final_hand": "oven knob"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "adjusted",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "pot",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "sauce",
+            "init_status": {
+              "status": "stirred",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_2",
+      "description": "Stir fry sauce",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "stir fry sauce"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "adjusted",
+              "container": null
+            },
+            "final_status": {
+              "status": "adjusted",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "sauce",
+            "init_status": {
+              "status": "stirred",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "pot",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 8
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

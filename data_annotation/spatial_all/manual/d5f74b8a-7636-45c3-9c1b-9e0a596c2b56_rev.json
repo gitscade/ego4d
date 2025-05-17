@@ -1,0 +1,134 @@
+{
+    "video_id": "d5f74b8a-7636-45c3-9c1b-9e0a596c2b56",
+    "goal_category": "COOKING:PREPARE_INGREDIENTS_GENERAL",
+    "goal_description": "cooking general",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "bowl",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "vegetable",
+            "init_status": {
+                "status": "unprepared",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0_substep_0",
+            "description": "pluck the vegetable from stem",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "vegetable"
+                },
+                "change": [
+                    {
+                        "object_id": 2,
+                        "object_name": "vegetable",
+                        "init_status": {
+                            "status": "unprepared",
+                            "container": 1
+                        },
+                        "final_status": {
+                            "status": "prepared",
+                            "container": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_1",
+            "description": "cut vegetable ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "vegetable2"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "vegetable2",
+                        "init_status": {
+                            "status": "unprepared",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "sliced",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 3,
+                        "object_name": "vegetable2",
+                        "init_status": {
+                            "status": "unprepared",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "sliced",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 3,
+                        "object_name": "vegetable2",
+                        "init_status": {
+                            "status": "unprepared",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "unaranged",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "Clear the floor",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "trash"
+                },
+                "change": [
+                    {
+                        "object_id": 97,
+                        "object_name": "trash",
+                        "init_status": {
+                            "status": "unarranged",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "arranged",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,807 @@
+{
+  "video_id": "d0cd84b0-afb3-4dde-9263-baaa4f40463a",
+  "goal_category": "COOKING:MAKE_STIR_FRIED_DISH_GENERAL",
+  "goal_description": "make stir fried dish general",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "pot",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "water",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "cooking gas stove",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "oven",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "chicken",
+      "init_status": {
+        "status": "in fridge",
+        "container": 0
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "lid",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "container",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "soap",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "cooker",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "broccoli",
+      "init_status": {
+        "status": "in fridge",
+        "container": 0
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "microwave oven",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "oil",
+      "init_status": "none"
+    },
+    {
+      "object_id": 15,
+      "object_name": "pan",
+      "init_status": "empty"
+    },
+    {
+      "object_id": 16,
+      "object_name": "chocolate bar",
+      "init_status": {
+        "status": "on table",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "garlic powder",
+      "init_status": {
+        "status": "in drawer",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "frying pan",
+      "init_status": {
+        "status": "open",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "rice ",
+      "init_status": {
+        "status": "default",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": " fridge ",
+      "init_status": {
+        "status": "default",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "seasoning ",
+      "init_status": {
+        "status": "default",
+        "container": 7
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "add water in pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "pot",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "water",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "in pot",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "add rice in pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "holding spoon",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "pot",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with rice",
+              "container": null
+            }
+          },
+          {
+            "object_id": 19,
+            "object_name": "rice ",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "in the pot",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "put pot on cooking gas",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pot"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "pot",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "cooking gas stove",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_3",
+      "description": "regulate cooking gas heat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knob"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "cooking gas stove",
+            "init_status": {
+              "status": "on ",
+              "container": null
+            },
+            "final_status": {
+              "status": "regulate heat",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_0",
+      "description": "remove chicken from fridge",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "in fridge",
+              "container": 0
+            },
+            "final_status": {
+              "status": "out of fridge",
+              "container": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "cover pot with lid",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "pot",
+            "init_status": {
+              "status": "open",
+              "container": null
+            },
+            "final_status": {
+              "status": "closed",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "lid",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "regulate cooking gas heat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knob"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "cooking gas stove",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "regulate heat",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Place chicken in container.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "in air",
+              "container": null
+            },
+            "final_status": {
+              "status": "inside container",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "container",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7_substep_0",
+      "description": "remove broccoli from fridge",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "broccoli",
+            "init_status": {
+              "status": "in fridge",
+              "container": 0
+            },
+            "final_status": {
+              "status": "out of fridge",
+              "container": 0
+            }
+          },
+          {
+            "object_id": 20,
+            "object_name": " fridge ",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "removed broccoli",
+              "container": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7_substep_1",
+      "description": "put broccoli in microwave oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "broccoli",
+            "init_status": {
+              "status": "on counter",
+              "container": null
+            },
+            "final_status": {
+              "status": "in microwave oven",
+              "container": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7_substep_2",
+      "description": "turn on microwave oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "microwave oven",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8",
+      "description": "Add oil to frying pan.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "oil",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 15
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_0",
+      "description": "add diced chicken in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "chicken"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "diced chicken",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to pan",
+              "container": 15
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_1",
+      "description": "stir chicken in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "stable",
+              "container": null
+            },
+            "final_status": {
+              "status": "stired",
+              "container": 15
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_2",
+      "description": "add seasoning in chicken",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "seasoned",
+              "container": null
+            }
+          },
+          {
+            "object_id": 21,
+            "object_name": "seasoning ",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "in the chicken",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_3",
+      "description": "add garlic powder in chicken",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 17,
+            "object_name": "garlic powder",
+            "init_status": {
+              "status": "none",
+              "container": 0
+            },
+            "final_status": {
+              "status": "added to chicken",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "raw",
+              "container": 0
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_4",
+      "description": "stir fry chicken in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "stable",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 15
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_5",
+      "description": "cover frying pan with lid",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 18,
+            "object_name": "frying pan",
+            "init_status": {
+              "status": "open",
+              "container": null
+            },
+            "final_status": {
+              "status": "closed",
+              "container": null
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "lid",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "cover pan",
+              "container": 18
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

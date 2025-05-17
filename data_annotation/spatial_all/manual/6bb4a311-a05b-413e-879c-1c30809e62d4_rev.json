@@ -1,0 +1,84 @@
+{
+    "video_id": "6bb4a311-a05b-413e-879c-1c30809e62d4",
+    "goal_category": "HOUSEKEEPING:CLEAN_KITCHEN_GENERAL",
+    "goal_description": "Clean kitchen area",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "kitchen sink",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "dish",
+            "init_status": {
+                "status": "unwashed",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Wash bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "dish"
+                },
+                "change": [
+                    {
+                        "object_id": 2,
+                        "object_name": "dish",
+                        "init_status": {
+                            "status": "unwashed",
+                            "container": 1
+                        },
+                        "final_status": {
+                            "status": "washed",
+                            "container": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "Arrange counter-top",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "countertop"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "countertop",
+                        "init_status": {
+                            "status": "disarranged",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "arranged",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

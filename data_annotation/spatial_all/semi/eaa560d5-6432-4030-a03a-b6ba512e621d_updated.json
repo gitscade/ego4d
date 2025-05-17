@@ -1,0 +1,277 @@
+{
+  "video_id": "eaa560d5-6432-4030-a03a-b6ba512e621d",
+  "goal_category": "COOKING:PREPARE_PEA",
+  "goal_description": "Cooking food",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "peas",
+      "init_status": {
+        "status": "in shell",
+        "container": 2
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "shells",
+      "init_status": {
+        "status": "full of peas",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "player",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "remote controller",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "peas",
+      "init_status": {
+        "status": "in shell",
+        "container": 2
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "tray",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "off table",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "remove green peas from shells into a tray",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "peas",
+            "init_status": {
+              "status": "in shell",
+              "container": 2
+            },
+            "final_status": {
+              "status": "in tray",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "shells",
+            "init_status": {
+              "status": "full of peas",
+              "container": null
+            },
+            "final_status": {
+              "status": "half full",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "tray",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full of peas",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "peas",
+            "init_status": {
+              "status": "in shell",
+              "container": null
+            },
+            "final_status": {
+              "status": "in shell",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "operate remote controller",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "remote controller"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "remote controller",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "held by player",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "remove green peas from shells into the tray",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "peas",
+            "init_status": {
+              "status": "in shell",
+              "container": null
+            },
+            "final_status": {
+              "status": "in tray",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "tray",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with peas",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "peas",
+            "init_status": {
+              "status": "in tray",
+              "container": null
+            },
+            "final_status": {
+              "status": "in tray",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "shells",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "move the green peas from the tray into a bowl.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "success",
+          "final_hand": "bowl"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "peas",
+            "init_status": {
+              "status": "on tray",
+              "container": null
+            },
+            "final_status": {
+              "status": "in bowl",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "tray",
+            "init_status": {
+              "status": "filled with peas",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "peas",
+            "init_status": {
+              "status": "in tray",
+              "container": null
+            },
+            "final_status": {
+              "status": "in bowl",
+              "container": 2
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

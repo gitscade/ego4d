@@ -1,0 +1,83 @@
+{
+  "video_id": "2270f91a-6ef7-47ff-a743-cead1744fa74",
+  "goal_category": "COOKING:MAKE_HOTPOT",
+  "goal_description": "Cutting veggies\nAdding ingredients to the veggies\nAdding spices\nPlaying cards while making the recipe\nServing food in the bowl",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "food",
+      "init_status": {
+        "status": "on table",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "chopsticks",
+      "init_status": {
+        "status": "on table",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Eat food with chopstick ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "eating",
+          "final_hand": "chopsticks"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "food",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "chopsticks",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,617 @@
+{
+  "video_id": "grp-9239bf0f-db8c-4378-866d-15f302da08b5",
+  "goal_category": "COOKING:MAKE_STIR_FRIED_RICE",
+  "goal_description": "cooking scrambled eggs",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "chicken",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "shredded chicken pack",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "stove",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "water",
+      "init_status": {
+        "status": "clear",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "oil",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "oil bottle",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "oil can",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "eggs",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "skillet",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "dirt",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "shredded chicken",
+      "init_status": {
+        "status": "wet",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "stovetop",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "shelf",
+      "init_status": {
+        "status": "empty",
+        "container": 0
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "sauce bottle",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "scrambled eggs",
+      "init_status": {
+        "status": "uncooked",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "sauce jar",
+      "init_status": {
+        "status": "on shelf",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "plate",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "chopsticks",
+      "init_status": {
+        "status": "held",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "dishcloth",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Add dry shredded chicken into bowl ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "dry shredded",
+              "container": null
+            },
+            "final_status": {
+              "status": "in bowl",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "Soak dry shredded chicken in water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "soaked",
+          "final_hand": "chicken"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "dry",
+              "container": null
+            },
+            "final_status": {
+              "status": "soaked",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Preheat a stove",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "preheating",
+          "final_hand": "stove"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "stove",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Separate shredded chicken in water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "shredded",
+              "container": null
+            },
+            "final_status": {
+              "status": "Separated",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "water",
+            "init_status": {
+              "status": "clear",
+              "container": null
+            },
+            "final_status": {
+              "status": "clear",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Add oil to a skillet",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "oil",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Cook eggs in skillet",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "skillet"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "eggs",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": null
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "pan",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9",
+      "description": "Drain water from shredded chicken",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "draining water",
+          "final_hand": "shredded chicken"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "water",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "drained",
+              "container": 13
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "shredded chicken",
+            "init_status": {
+              "status": "wet",
+              "container": null
+            },
+            "final_status": {
+              "status": "dry",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10",
+      "description": "Add shredded chicken to eggs in skillet",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "skillet"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "shredded",
+              "container": null
+            },
+            "final_status": {
+              "status": "add to skillet",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "eggs",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": null
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "skillet",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12",
+      "description": "Stir scrambled eggs",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "eggs",
+            "init_status": {
+              "status": "scrambled",
+              "container": null
+            },
+            "final_status": {
+              "status": "Stirred",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_16",
+      "description": "Add sauce to scrambled eggs",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 17,
+            "object_name": "sauce bottle",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": 18
+            }
+          },
+          {
+            "object_id": 18,
+            "object_name": "scrambled eggs",
+            "init_status": {
+              "status": "cooked",
+              "container": null
+            },
+            "final_status": {
+              "status": "Added sauce",
+              "container": 17
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_17",
+      "description": "Stir scrambled eggs",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "eggs",
+            "init_status": {
+              "status": "scrambled",
+              "container": null
+            },
+            "final_status": {
+              "status": "Stirred",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_21",
+      "description": "Turn off stove",
+      "context": {
+        "player": {
+          "init_status": "off",
+          "init_hand": "stove",
+          "final_status": "off",
+          "final_hand": "stove"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "stove",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "off",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

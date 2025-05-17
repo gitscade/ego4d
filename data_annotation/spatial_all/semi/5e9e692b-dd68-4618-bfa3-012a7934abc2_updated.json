@@ -1,0 +1,399 @@
+{
+  "video_id": "5e9e692b-dd68-4618-bfa3-012a7934abc2",
+  "goal_category": "COOKING:MAKE_SALAD",
+  "goal_description": "Cutting the vegetables",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "lettuce",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "cucumber",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "tomato",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "potato",
+      "init_status": {
+        "status": "unpeeled",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "knife",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "sink",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": " cleaver",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_1_substep_0",
+      "description": "Dice cucumber",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "cucumber",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": null
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "dice",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "Dice lettuce",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "lettuce",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": null
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "dice",
+              "container": null
+            },
+            "final_status": {
+              "status": "dice",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "knife",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_0",
+      "description": "Remove the outer end of tomato",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "tomato",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "whole",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "dice",
+              "container": null
+            },
+            "final_status": {
+              "status": "remove an outer end",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": "Dice tomato",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dice"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "tomato",
+            "init_status": {
+              "status": "outer end removed",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": null
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "remove an outer end",
+              "container": null
+            },
+            "final_status": {
+              "status": "dice",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "knife",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_0",
+      "description": "Peel potato",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "potato",
+            "init_status": {
+              "status": "unpeeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "dice",
+              "container": null
+            },
+            "final_status": {
+              "status": "peel",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_1",
+      "description": "Clean potato in water",
+      "context": {
+        "player": {
+          "init_status": "clean potato in water",
+          "init_hand": "potato",
+          "final_status": "dirty potato in water",
+          "final_hand": "potato"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "potato",
+            "init_status": {
+              "status": "peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "cleaned",
+              "container": 13
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "peel",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "sink",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_2",
+      "description": "Grate potato",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grating potato",
+          "final_hand": "potato grater"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": " cleaver",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "grate",
+              "container": null
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "potato",
+            "init_status": {
+              "status": "cleaned",
+              "container": null
+            },
+            "final_status": {
+              "status": "grated",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1130 @@
+{
+  "video_id": "628f181f-de40-4db8-b56c-f1b62ab6ba8a",
+  "goal_category": "COOKING:MAKING_MULTIPLE_RECIPES",
+  "goal_description": "Cooking in the kitchen",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "player",
+      "init_status": {
+        "status": "clean hands",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "towel",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "rice bag",
+      "init_status": {
+        "status": "tied",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "rice",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "temperature gauge",
+      "init_status": {
+        "status": "normal",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "rice cooker bowl",
+      "init_status": {
+        "status": "on counter",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "rice cooker",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "okro vegetable",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "salt shaker",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "pot of water",
+      "init_status": {
+        "status": "boiling",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "okra",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "salt",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "okro",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "dirt",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "minced meat",
+      "init_status": {
+        "status": "packaged",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "oil bottle",
+      "init_status": {
+        "status": "on counter",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "mixing bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "water",
+      "init_status": "clear"
+    },
+    {
+      "object_id": 20,
+      "object_name": "wash bowl",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "sink",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "dish",
+      "init_status": {
+        "status": "clean dish",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "clean spoon",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "cup",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "cheese",
+      "init_status": {
+        "status": "packaged",
+        "container": 0
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "kitchen towel",
+      "init_status": {
+        "status": "dry",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "egg",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "eggshell",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "pan",
+      "init_status": {
+        "status": "off-screen",
+        "container": null
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "counter top",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "timer",
+      "init_status": {
+        "status": "off",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "plate",
+      "init_status": {
+        "status": "empty",
+        "container": 25
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_1_substep_1",
+      "description": "Untie rice bag",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "rice bag",
+            "init_status": {
+              "status": "tied",
+              "container": null
+            },
+            "final_status": {
+              "status": "untied",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_2",
+      "description": "Clean counter top with towel",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "towel",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": null
+            }
+          },
+          {
+            "object_id": 30,
+            "object_name": "counter top",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_3",
+      "description": "Measure rice into a bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "bowl"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "rice",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "in bowl",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with rice",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Regulate the heat temperature of the gas",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "gas",
+            "init_status": {
+              "status": "normal",
+              "container": null
+            },
+            "final_status": {
+              "status": "high",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_0",
+      "description": "Wash  rice",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "rice",
+            "init_status": {
+              "status": "dry",
+              "container": null
+            },
+            "final_status": {
+              "status": "wet",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 19,
+            "object_name": "water",
+            "init_status": {
+              "status": "clear",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": "Put the rice cooker bowl in the rice cooker",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "holding rice cooker bowl",
+          "final_hand": "rice cooker bowl"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "rice cooker bowl",
+            "init_status": {
+              "status": "on counter",
+              "container": null
+            },
+            "final_status": {
+              "status": "in rice cooker",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "rice cooker",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_2",
+      "description": "Set timer for rice cooker",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "rice cooker",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 31,
+            "object_name": "timer",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Rinse the okro vegetable",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "okro vegetable",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          },
+          {
+            "object_id": 19,
+            "object_name": "water",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": 9
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Reguate the heat temperature of the gas",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "gas",
+            "init_status": {
+              "status": "normal",
+              "container": null
+            },
+            "final_status": {
+              "status": "Reguated",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7",
+      "description": "Add salt to the boiled water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "salt",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "static",
+              "container": null
+            }
+          },
+          {
+            "object_id": 19,
+            "object_name": "water",
+            "init_status": {
+              "status": "boiled",
+              "container": null
+            },
+            "final_status": {
+              "status": "added salt",
+              "container": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8",
+      "description": "Add salt to okro",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "salt shaker",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "okra",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9",
+      "description": "Mix salt with okro",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "okro"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "salt",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "okro",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_0",
+      "description": "Unpack minced meat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "minced meat",
+            "init_status": {
+              "status": "packaged",
+              "container": null
+            },
+            "final_status": {
+              "status": "unpacked",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_1",
+      "description": "Add seasoning oil to unpack minced meat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "holding oil bottle",
+          "final_hand": "right hand"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "minced meat",
+            "init_status": {
+              "status": "unpacking",
+              "container": null
+            },
+            "final_status": {
+              "status": "ready for seasoning",
+              "container": 17
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "oil bottle",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "add to minced meat",
+              "container": 16
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13",
+      "description": "Mix seasoning with the minced meat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "mixing",
+          "final_hand": "minced meat"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "minced meat",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 18
+            }
+          },
+          {
+            "object_id": 18,
+            "object_name": "mixing bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with minced meat",
+              "container": 16
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_14",
+      "description": "Add okro into the boiled water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "okro"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "okro",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "in water",
+              "container": 19
+            }
+          },
+          {
+            "object_id": 19,
+            "object_name": "water",
+            "init_status": {
+              "status": "clear",
+              "container": null
+            },
+            "final_status": {
+              "status": "boiling",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_15_substep_0",
+      "description": "Wash bowl in the sink",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 20,
+            "object_name": "wash bowl",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": 21
+            }
+          },
+          {
+            "object_id": 21,
+            "object_name": "sink",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_17",
+      "description": "Seive water from the cooked okro",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "okra",
+            "init_status": {
+              "status": "with water",
+              "container": null
+            },
+            "final_status": {
+              "status": "Seived water",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_19_substep_0",
+      "description": "Remove cheese from pack",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 25,
+            "object_name": "cheese",
+            "init_status": {
+              "status": "packaged",
+              "container": 0
+            },
+            "final_status": {
+              "status": "unpackaged",
+              "container": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_19_substep_1",
+      "description": "Rinse cheese",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 25,
+            "object_name": "cheese",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "wet",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_19_substep_2",
+      "description": "Divide cheese into halve",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 25,
+            "object_name": "cheese",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "halved",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_19_substep_3",
+      "description": "Put cheese in plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 25,
+            "object_name": "cheese",
+            "init_status": {
+              "status": "off-plate",
+              "container": null
+            },
+            "final_status": {
+              "status": "on-plate",
+              "container": null
+            }
+          },
+          {
+            "object_id": 32,
+            "object_name": "plate",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": 25
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_24",
+      "description": "Whisk egg",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 27,
+            "object_name": "egg",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "Whisked",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_25",
+      "description": "Prepare pan on the gas",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "preparing",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "preparing",
+              "container": 29
+            }
+          },
+          {
+            "object_id": 29,
+            "object_name": "pan",
+            "init_status": {
+              "status": "off the gas",
+              "container": null
+            },
+            "final_status": {
+              "status": "on the gas",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_26",
+      "description": "Pour minced meat in a bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "bowl"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "minced meat",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "in bowl",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "filled with rice",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with rice, minced meat",
+              "container": 16
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_27",
+      "description": "Stir water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 19,
+            "object_name": "water",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

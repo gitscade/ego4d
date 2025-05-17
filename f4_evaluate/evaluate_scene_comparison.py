@@ -12,17 +12,7 @@ from sentence_transformers import SentenceTransformer, util
 from difflib import SequenceMatcher
 
 #===================================
-# sequence evaluation
-#===================================
-def perform_sbert(sequence1:str, sequence2:str):
-    model = SentenceTransformer('all-MiniLM-L6-v2')
-    embedding1 = model.encode(sequence1, convert_to_tensor=True)
-    embedding2 = model.encode(sequence2, convert_to_tensor=True)
-    cos_sim = util.cos_sim(embedding1, embedding2)
-    return cos_sim
-
-#===================================
-# Compute graph similarity
+# Compute graph similarity: HARD / MEDIUM
 #===================================
 def graph_to_triplets(scene_graph, id_to_name=None):
     id_to_name = {obj['object_id']: obj['object_name'] for obj in scene_graph}
@@ -43,31 +33,7 @@ def jaccard_similarity(triplets1, triplets2):
 
 #TODO sentence-bert level similarity for two taxnomy
 
-#===================================
-# scene similarity
-#===================================
-# jaccard for HARD STRING MATCH
-def jaccard_dict_similarity(dict1, dict2):
-    set1 = set(dict1.items())
-    set2 = set(dict2.items())
-    intersection = set1 & set2
-    union = set1 | set2
-    return len(intersection) / len(union) if union else 1.0
 
-# soft_similarity for somewhat different but contextually similar strings
-def soft_dict_similarity(dict1, dict2):
-    total_sim = 0
-    count = 0
-    for key in dict1.keys() | dict2.keys():
-        val1 = dict1.get(key, "")
-        val2 = dict2.get(key, "")
-        if val1 == val2:
-            sim = 1.0
-        else:
-            sim = SequenceMatcher(None, val1, val2).ratio()
-        total_sim += sim
-        count += 1
-    return total_sim / count if count else 1.0
 
 
 #====================================

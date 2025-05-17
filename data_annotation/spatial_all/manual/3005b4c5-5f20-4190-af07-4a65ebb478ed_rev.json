@@ -1,0 +1,204 @@
+{
+    "video_id": "3005b4c5-5f20-4190-af07-4a65ebb478ed",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "Prepare dish",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "cabinet",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "plate",
+            "init_status": {
+                "status": "default",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "refrigerator",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "ingredients",
+            "init_status": {
+                "status": "default",
+                "container": 3
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "sink",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "pan",
+            "init_status": {
+                "status": "unwashed",
+                "container": 5
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "countertop",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "stovetop",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "utensils",
+            "init_status": {
+                "status": "unwashed",
+                "container": 5
+            }
+        },
+        {
+            "object_id": 10,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Get ingredients from refrigerator to countertop",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "ingredients"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "Wash utensils",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pan"
+                },
+                "change": [
+                    {
+                        "object_id": 5,
+                        "object_name": "sink",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "supply water",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 6,
+                        "object_name": "pan",
+                        "init_status": {
+                            "status": "unwashed",
+                            "container": 5
+                        },
+                        "final_status": {
+                            "status": "washed",
+                            "container": 5
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2",
+            "description": "Place pan on stovetop",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pan"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_3",
+            "description": "Wash utensils",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "utensils"
+                },
+                "change": [
+                    {
+                        "object_id": 9,
+                        "object_name": "utensils",
+                        "init_status": {
+                            "status": "unwashed",
+                            "container": 5
+                        },
+                        "final_status": {
+                            "status": "washed",
+                            "container": 5
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_4",
+            "description": "Fry ingredients in pan",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "stirrer"
+                },
+                "change": [
+                    {
+                        "object_id": 6,
+                        "object_name": "pan",
+                        "init_status": {
+                            "status": "heating",
+                            "container": 5
+                        },
+                        "final_status": {
+                            "status": "heating",
+                            "container": 5
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

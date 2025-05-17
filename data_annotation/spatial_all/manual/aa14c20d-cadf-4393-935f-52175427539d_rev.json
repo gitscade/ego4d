@@ -1,0 +1,153 @@
+{
+    "video_id": "aa14c20d-cadf-4393-935f-52175427539d",
+    "goal_category": "COOKING:MAKE_FLATBREAD",
+    "goal_description": "Making a flatbread recipe",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "gas stove",
+            "init_status": {
+                "status": "supply heat",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+                "status": "oiled",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "dough",
+            "init_status": {
+                "status": "default",
+                "container": 3
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "player",
+            "init_status": {
+                "status": null,
+                "container": 3
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "heat oil in pan",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pan"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_1_substep_0",
+            "description": "place dough in the pan",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "dough"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_1_substep_1",
+            "description": "flip the dough to the other side to cook",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "dough"
+                },
+                "change": [
+                    {
+                        "object_id": 4,
+                        "object_name": "dough",
+                        "init_status": {
+                            "status": "default",
+                            "container": 3
+                        },
+                        "final_status": {
+                            "status": "flipped",
+                            "container": 3
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1_substep_2",
+            "description": "drain excess oil from the pan",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pan"
+                },
+                "change": [
+                    {
+                        "object_id": 2,
+                        "object_name": "pan",
+                        "init_status": {
+                            "status": "oiled",
+                            "container": 1
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1_substep_3",
+            "description": "remove flatbread from the pan",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "dough"
+                },
+                "change": [
+                    {
+                        "object_id": 4,
+                        "object_name": "dough",
+                        "init_status": {
+                            "status": "default",
+                            "container": 3
+                        },
+                        "final_status": {
+                            "status": "cooked",
+                            "container": 3
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

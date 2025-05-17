@@ -1,0 +1,409 @@
+{
+  "video_id": "a9c13069-d229-4e09-92e8-bd6cf3c3448a",
+  "goal_category": "COOKING:MAKE_PASTRY",
+  "goal_description": "Making pastries",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "oven",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "wax paper",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "dough",
+      "init_status": {
+        "status": "solid",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "grater",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "dough stick",
+      "init_status": {
+        "status": "present",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "pastry",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "food product",
+      "init_status": {
+        "status": "in fridge",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "box",
+      "init_status": {
+        "status": "on floor",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "sink",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "napkin",
+      "init_status": {
+        "status": "dry",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "dough piece",
+      "init_status": {
+        "status": "separated",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "tray",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "water",
+      "init_status": {
+        "status": "still",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_1_substep_0",
+      "description": "Lay down the wax paper",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "wax paper",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_1",
+      "description": "grate dough with grater",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grating dough",
+          "final_hand": "grater"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "dough",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "grater",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 20
+            }
+          },
+          {
+            "object_id": 20,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "grate",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_2",
+      "description": "Separate dough pieces on the wax paper",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "dough",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "seperated",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "wax paper",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10_substep_0",
+      "description": "Put wax paper on the oven tray",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "wax paper"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "wax paper",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 17
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "dough",
+            "init_status": {
+              "status": "seperated",
+              "container": null
+            },
+            "final_status": {
+              "status": "seperated",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "tray",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10_substep_1",
+      "description": "Put the tray in the oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 17,
+            "object_name": "tray",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "oven",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "wax paper",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 17
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "dough",
+            "init_status": {
+              "status": "seperated",
+              "container": null
+            },
+            "final_status": {
+              "status": "seperated",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_0",
+      "description": "Operate the oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "operating oven",
+          "final_hand": "oven handle"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "oven",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "wax paper",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 17
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "dough",
+            "init_status": {
+              "status": "seperated",
+              "container": null
+            },
+            "final_status": {
+              "status": "seperated",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "tray",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 1
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "video_id": "ab9c4cd4-632f-43d0-8bdd-1d41ac037f50",
+  "goal_category": "COOKING:MAKE_PASTRY",
+  "goal_description": "decorating dough with icing",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "icing paste",
+      "init_status": "none"
+    },
+    {
+      "object_id": 2,
+      "object_name": "dough",
+      "init_status": "none"
+    },
+    {
+      "object_id": 5,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "add icing paste to dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "icing paste",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "applied",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "dough",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "iced",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

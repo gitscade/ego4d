@@ -1,0 +1,211 @@
+{
+  "video_id": "82c57c2c-45e8-4a1e-b4b6-46b5c3fc1bf3",
+  "goal_category": "COOKING:MAKE_FLATBREAD",
+  "goal_description": "Cleaning cabinet",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "cabinet",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "flour particle",
+      "init_status": {
+        "status": "default",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "flour sack",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "flour particle",
+      "init_status": {
+        "status": "default",
+        "container": 1
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Wipe off flour particles from cabinet",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cleaning",
+          "final_hand": "flour bag"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "cabinet",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "flour particle",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "flour particle",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Wipe off flour particles from cabinet",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "flour particles"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "cabinet",
+            "init_status": {
+              "status": "dusty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "flour particles",
+            "init_status": {
+              "status": "dusty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "flour particle",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Dispose flour in sack",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "flour sack",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "flour particles",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "flour particle",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 3
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

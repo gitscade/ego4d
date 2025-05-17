@@ -1,0 +1,377 @@
+{
+  "video_id": "a7a31f23-8348-405e-a01a-cad63010bcc7",
+  "goal_category": "COOKING:MAKE_DONUT",
+  "goal_description": "Make doughnuts.",
+  "spatial_data": [
+    {
+      "object_id": 2,
+      "object_name": "countertop",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "sponge",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "dough",
+      "init_status": {
+        "status": "in hand",
+        "container": 2
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "flour",
+      "init_status": {
+        "status": "none",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "table",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "cloth",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "kitchen sink",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Clean hands.",
+      "context": {
+        "player": {
+          "init_status": "clean hands",
+          "init_hand": "hand",
+          "final_status": "dirty hands",
+          "final_hand": "hand"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "washed hands",
+              "container": null
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "kitchen sink",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Clean the kitchen countertop.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cleaning",
+          "final_hand": "sponge"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "countertop",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "sponge",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "wet",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+              "status": "washed hands",
+              "container": null
+            },
+            "final_status": {
+              "status": "washed hands",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "Transfer dough to the table",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "dough",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "on table",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "table",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "Clean the table",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cleaning",
+          "final_hand": "table"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "table",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_2",
+      "description": "Sprinkle flour on the dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "flour",
+            "init_status": {
+              "status": "none",
+              "container": 4
+            },
+            "final_status": {
+              "status": "sprinkled",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "dough",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "floured",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "table",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_3",
+      "description": "Arrange mold doughs on the table",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "mold doughs"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "table",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "dough",
+            "init_status": {
+              "status": "floured",
+              "container": null
+            },
+            "final_status": {
+              "status": "molded",
+              "container": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Cleans hands.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cleaning hands",
+          "final_hand": "soap"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "cleaning hands",
+              "container": null
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "kitchen sink",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "wipe hands with a piece of cloth",
+      "context": {
+        "player": {
+          "init_status": "clean",
+          "init_hand": "cloth",
+          "final_status": "dirty",
+          "final_hand": "cloth"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "cloth",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 9
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

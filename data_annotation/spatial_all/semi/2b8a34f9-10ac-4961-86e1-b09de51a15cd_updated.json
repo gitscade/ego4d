@@ -1,0 +1,373 @@
+{
+  "video_id": "2b8a34f9-10ac-4961-86e1-b09de51a15cd",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Cutting vegetables",
+  "spatial_data": [
+    {
+      "object_id": 2,
+      "object_name": "habanero pepper",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "seed",
+      "init_status": {
+        "status": "inside habanero pepper",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "tomato",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "green chilli pepper",
+      "init_status": {
+        "status": "normal",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "knife",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "seed",
+      "init_status": {
+        "status": "inside tomato",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "seed",
+      "init_status": {
+        "status": "inside green chilli pepper",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_1_substep_1",
+      "description": "dice habanero pepper",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "habanero pepper",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": null
+            }
+          },
+          {
+            "object_id": 22,
+            "object_name": "knife",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "dice",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "seed",
+            "init_status": {
+              "status": "inside habanero pepper",
+              "container": null
+            },
+            "final_status": {
+              "status": "inside habanero pepper",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_2",
+      "description": "remove seed from habanero pepper",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "habanero pepper",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "seed removed",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "dice",
+              "container": null
+            },
+            "final_status": {
+              "status": "remove seed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "dice tomato",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "tomato",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": null
+            }
+          },
+          {
+            "object_id": 23,
+            "object_name": "seed",
+            "init_status": {
+              "status": "inside tomato",
+              "container": null
+            },
+            "final_status": {
+              "status": "inside tomato",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 22,
+            "object_name": "knife",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "dice",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_4",
+      "description": "remove seed from tomato",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "tomato",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "seed removed",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "dice",
+              "container": null
+            },
+            "final_status": {
+              "status": "remove seed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_1",
+      "description": "dice green chilli pepper",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "green chilli pepper",
+            "init_status": {
+              "status": "normal",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": null
+            }
+          },
+          {
+            "object_id": 24,
+            "object_name": "seed",
+            "init_status": {
+              "status": "inside green chilli pepper",
+              "container": null
+            },
+            "final_status": {
+              "status": "inside green chilli pepper",
+              "container": 13
+            }
+          },
+          {
+            "object_id": 22,
+            "object_name": "knife",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "dice",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_2",
+      "description": "remove seed from green chilli pepper",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "green chilli pepper",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "seed removed",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "dice",
+              "container": null
+            },
+            "final_status": {
+              "status": "remove seed",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

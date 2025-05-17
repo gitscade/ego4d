@@ -1,0 +1,178 @@
+{
+    "video_id": "bbe7b4ee-0e62-4fb5-877e-d4c76a0c8247",
+    "goal_category": "COOKING:MAKE_STEW_OR_SOUP",
+    "goal_description": "make sauce",
+    "spatial_data": [
+        {
+            "object_id": 2,
+            "object_name": "chair",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "sauce",
+            "init_status": {
+                "status": "boiled",
+                "container": null
+            }
+        },
+        {
+            "object_id": 1,
+            "object_name": "pot",
+            "init_status": {
+                "status": "heating",
+                "container": null
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "stirrer",
+            "init_status": {
+                "status": "default",
+                "container": 1
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0_substep_0",
+            "description": "Stir sauce in pot",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "stirrer"
+                },
+                "change": [
+                    {
+                        "object_id": 4,
+                        "object_name": "stovetop",
+                        "init_status": {
+                            "status": "heating",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "adjusted",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_1",
+            "description": "Adjust the heat on the stovetop",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "stovetop"
+                },
+                "change": [
+                    {
+                        "object_id": 4,
+                        "object_name": "stovetop",
+                        "init_status": {
+                            "status": "heating",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "adjusted",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_2",
+            "description": "Stir sauce in the pot ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "stirrer"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "sauce",
+                        "init_status": {
+                            "status": "boiled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "stir up",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_3",
+            "description": "Stir sauce in the pot ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "stirrer"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "sauce",
+                        "init_status": {
+                            "status": "boiled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "stir up",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_4",
+            "description": "Stir sauce in the pot ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "stirrer"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "sauce",
+                        "init_status": {
+                            "status": "boiled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "stir up",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

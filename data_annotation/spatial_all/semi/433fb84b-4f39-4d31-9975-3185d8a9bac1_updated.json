@@ -1,0 +1,179 @@
+{
+  "video_id": "433fb84b-4f39-4d31-9975-3185d8a9bac1",
+  "goal_category": "COOKING:MAKE_BREAD",
+  "goal_description": "grinding the wheat",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "wheat",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "millstone",
+      "init_status": {
+        "status": "still",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "cup",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Grinds the wheat in the millstone",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grinding",
+          "final_hand": "millstone"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "wheat",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "ground",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "millstone",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "moving",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "drink water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "drinking",
+          "final_hand": "cup"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "cup",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "Grinds the wheat in the millstone",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grinding",
+          "final_hand": "millstone"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "wheat",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "ground",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "millstone",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "moving",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

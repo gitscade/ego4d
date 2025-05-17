@@ -1,0 +1,504 @@
+{
+    "video_id": "952b1fa3-05cc-4c2b-8897-47d02cd598b8",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "Cut vegetables",
+    "spatial_data": [
+        {
+            "object_id": 0,
+            "object_name": "bowl",
+            "init_status": {
+                "status": "cotain water",
+                "container": null
+            }
+        },
+        {
+            "object_id": 1,
+            "object_name": "pointed gourd1",
+            "init_status": {
+                "status": "default",
+                "container": 0
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "pointed gourd2",
+            "init_status": {
+                "status": "default",
+                "container": 0
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "pointed gourd3",
+            "init_status": {
+                "status": "default",
+                "container": 0
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "pointed gourd4",
+            "init_status": {
+                "status": "default",
+                "container": 0
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "pointed gourd5",
+            "init_status": {
+                "status": "default",
+                "container": 0
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "bowl2",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "plant",
+            "init_status": {
+                "status": "deafault",
+                "container": null
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "plant2",
+            "init_status": {
+                "status": "deafault",
+                "container": null
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0_substep_0",
+            "description": "wash pointed gourd",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pointed gourd1"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "pointed gourd1",
+                        "init_status": {
+                            "status": "default",
+                            "container": 0
+                        },
+                        "final_status": {
+                            "status": "washed",
+                            "container": 0
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_1",
+            "description": "cut pointed gourd",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pointed gourd1"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "pointed gourd1",
+                        "init_status": {
+                            "status": "washed",
+                            "container": 0
+                        },
+                        "final_status": {
+                            "status": "cut",
+                            "container": 0
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_2",
+            "description": "pour sliced pointed gourd into bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pointed gourd1"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_3",
+            "description": "wash pointed gourd",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pointed gourd2"
+                },
+                "change": [
+                    {
+                        "object_id": 2,
+                        "object_name": "pointed gourd2",
+                        "init_status": {
+                            "status": "default",
+                            "container": 0
+                        },
+                        "final_status": {
+                            "status": "washed",
+                            "container": 0
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_4",
+            "description": "cut pointed gourd",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pointed gourd2"
+                },
+                "change": [
+                    {
+                        "object_id": 2,
+                        "object_name": "pointed gourd2",
+                        "init_status": {
+                            "status": "washed",
+                            "container": 0
+                        },
+                        "final_status": {
+                            "status": "cut",
+                            "container": 0
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_5",
+            "description": "pour sliced pointed gourd into a bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pointed gourd2"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_6",
+            "description": "wash pointed gourd",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pointed gourd3"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "pointed gourd3",
+                        "init_status": {
+                            "status": "default",
+                            "container": 0
+                        },
+                        "final_status": {
+                            "status": "washed",
+                            "container": 0
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_7",
+            "description": "cut pointed gourd",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pointed gourd3"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "pointed gourd3",
+                        "init_status": {
+                            "status": "washed",
+                            "container": 0
+                        },
+                        "final_status": {
+                            "status": "cut",
+                            "container": 0
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_8",
+            "description": "pour sliced pointed gourd into bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pointed gourd3"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_9",
+            "description": "wash pointed gourd",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pointed gourd4"
+                },
+                "change": [
+                    {
+                        "object_id": 4,
+                        "object_name": "pointed gourd4",
+                        "init_status": {
+                            "status": "default",
+                            "container": 0
+                        },
+                        "final_status": {
+                            "status": "washed",
+                            "container": 0
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_10",
+            "description": "cut pointed gourd",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pointed gourd4"
+                },
+                "change": [
+                    {
+                        "object_id": 4,
+                        "object_name": "pointed gourd4",
+                        "init_status": {
+                            "status": "washed",
+                            "container": 0
+                        },
+                        "final_status": {
+                            "status": "cut",
+                            "container": 0
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_11",
+            "description": "pour sliced pointed gourd into bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pointed gourd4"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "clean the hands",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "bowl"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_2",
+            "description": "pluck the leaves from the branch",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "leave 1"
+                },
+                "change": [
+                    {
+                        "object_id": 7,
+                        "object_name": "plant",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "plucked",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_3",
+            "description": "pluck the leaves from the branch",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "leave 2"
+                },
+                "change": [
+                    {
+                        "object_id": 8,
+                        "object_name": "plant2",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "plucked",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_4_substep_0",
+            "description": "wash vegetable",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "leave 1"
+                },
+                "change": [
+                    {
+                        "object_id": 99,
+                        "object_name": "leave 1",
+                        "init_status": {
+                            "status": "plucked",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "washed",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_4_substep_1",
+            "description": "pluck vegetable leaves",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "leave 1"
+                },
+                "change": [
+                    {
+                        "object_id": 99,
+                        "object_name": "leave 1",
+                        "init_status": {
+                            "status": "washed",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "plucked",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_4_substep_2",
+            "description": "cut vegetable",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "leave 1"
+                },
+                "change": [
+                    {
+                        "object_id": 99,
+                        "object_name": "leave 1",
+                        "init_status": {
+                            "status": "washed",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "cut",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_4_substep_3",
+            "description": "pour sliced vegetable into bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "leave 1"
+                },
+                "change": []
+            }
+        }
+    ]
+}

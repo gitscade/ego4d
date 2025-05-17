@@ -1,0 +1,86 @@
+{
+    "video_id": "8253ab0b-51ab-4168-8c63-3bb179be485a",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "Cutting melon",
+    "spatial_data": [
+        {
+            "object_id": 5,
+            "object_name": "chair",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 1,
+            "object_name": "knife",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "melon",
+            "init_status": {
+                "status": "default",
+                "container": 2
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Slice the melon into thin even pieces",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "melon"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "melon",
+                        "init_status": {
+                            "status": "default",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "cut",
+                            "container": 2
+                        }
+                    },
+                    {
+                        "object_id": 4,
+                        "object_name": "bowl",
+                        "init_status": {
+                            "status": "full-filled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "full-filled",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

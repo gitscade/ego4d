@@ -1,0 +1,70 @@
+{
+    "video_id": "02953bf3-4b5b-45ea-8339-465ed47a9337",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "Dicing red bell pepper",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "red bell pepper",
+            "init_status": {
+                "status": "default",
+                "container": 3
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Dicing the red bell pepper",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "knife"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "red bell pepper",
+                        "init_status": {
+                            "status": "default",
+                            "container": 3
+                        },
+                        "final_status": {
+                            "status": "cut",
+                            "container": 3
+                        }
+                    },
+                    {
+                        "object_id": 1,
+                        "object_name": "red bell pepper",
+                        "init_status": {
+                            "status": "default",
+                            "container": 3
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": 3
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

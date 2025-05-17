@@ -1,0 +1,646 @@
+{
+  "video_id": "grp-e3c805ff-3afc-4275-9e4d-b91937aeb642",
+  "goal_category": "COOKING:MAKE_STEW_OR_SOUP",
+  "goal_description": "Making the tofu stew",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "refrigerator door",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "ingredient a",
+      "init_status": {
+        "status": "inside refrigerator",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "ingredient b",
+      "init_status": {
+        "status": "inside refrigerator",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "ingredient c",
+      "init_status": {
+        "status": "inside refrigerator",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "apple",
+      "init_status": {
+        "status": "on table",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "banana",
+      "init_status": {
+        "status": "on table",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "orange",
+      "init_status": {
+        "status": "on table",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "dice",
+      "init_status": {
+        "status": "normal",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "scallion",
+      "init_status": {
+        "status": "normal",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "duck",
+      "init_status": {
+        "status": "on table",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "oil",
+      "init_status": {
+        "status": "cool",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "meat",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "spice jar",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "recipe book",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "ingredient",
+      "init_status": {
+        "status": "in hand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "fridge door",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "fork",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "tofu",
+      "init_status": "none"
+    },
+    {
+      "object_id": 22,
+      "object_name": "salt shaker",
+      "init_status": {
+        "status": "on table",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "pepper shaker",
+      "init_status": {
+        "status": "on table",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "food",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "plate",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "water",
+      "init_status": {
+        "status": "normal",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "Seasoning",
+      "init_status": {
+        "status": "Unseasoned",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_2_substep_0",
+      "description": "Dices Scallion",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "dice",
+            "init_status": {
+              "status": "normal",
+              "container": null
+            },
+            "final_status": {
+              "status": "normal",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "scallion",
+            "init_status": {
+              "status": "normal",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "Dices Duck",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "dice",
+            "init_status": {
+              "status": "normal",
+              "container": null
+            },
+            "final_status": {
+              "status": "normal",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "duck",
+            "init_status": {
+              "status": "normal",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_0",
+      "description": "Heat Oil",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "oil",
+            "init_status": {
+              "status": "cool",
+              "container": null
+            },
+            "final_status": {
+              "status": "hot",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with oil",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": "Adds diced Scallion and Duck into hot Oil",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "scallion"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "duck",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "scallion",
+            "init_status": {
+              "status": "fresh",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "oil",
+            "init_status": {
+              "status": "hot",
+              "container": null
+            },
+            "final_status": {
+              "status": "hot",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "pan",
+            "init_status": {
+              "status": "filled with oil",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with oil",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_2",
+      "description": "Adds meat to the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "meat",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_3",
+      "description": "Adds Spice into Pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "spice",
+            "init_status": {
+              "status": "normal",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to pan",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_0",
+      "description": "Adds water to the recipe",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "bowl"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "pan",
+            "init_status": {
+              "status": "without water",
+              "container": null
+            },
+            "final_status": {
+              "status": "with water",
+              "container": null
+            }
+          },
+          {
+            "object_id": 27,
+            "object_name": "water",
+            "init_status": {
+              "status": "normal",
+              "container": null
+            },
+            "final_status": {
+              "status": "normal",
+              "container": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_1",
+      "description": "Adds Duck seasoning",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "duck",
+            "init_status": {
+              "status": "Unseasoned",
+              "container": null
+            },
+            "final_status": {
+              "status": "Seasoned",
+              "container": null
+            }
+          },
+          {
+            "object_id": 28,
+            "object_name": "Seasoning",
+            "init_status": {
+              "status": "Unseasoned",
+              "container": null
+            },
+            "final_status": {
+              "status": "Seasoned",
+              "container": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_2",
+      "description": "Adds Tofu to the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 21,
+            "object_name": "tofu",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to pan",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "pan",
+            "init_status": {
+              "status": "without tofu",
+              "container": null
+            },
+            "final_status": {
+              "status": "with tofu",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_4",
+      "description": "Adds seasoning to pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 22,
+            "object_name": "salt shaker",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 23,
+            "object_name": "pepper shaker",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

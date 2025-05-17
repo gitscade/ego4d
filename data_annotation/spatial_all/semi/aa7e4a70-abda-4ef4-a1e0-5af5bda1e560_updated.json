@@ -1,0 +1,97 @@
+{
+  "video_id": "aa7e4a70-abda-4ef4-a1e0-5af5bda1e560",
+  "goal_category": "COOKING:PREPARE_COCONUT",
+  "goal_description": "Scraped the coconut",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "coconut",
+      "init_status": {
+        "status": "whole",
+        "container": 2
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "coconut shell",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Reduce coconut into small shreds",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "coconut",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "shredded",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "Arrange coconut shell",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "coconut shell",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "in player's hand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "coconut",
+            "init_status": {
+              "status": "shredded",
+              "container": null
+            },
+            "final_status": {
+              "status": "shredded",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "video_id": "dcd30089-0bff-430d-a8ae-c41516301d88",
+  "goal_category": "COOKING:MAKE_BREAD",
+  "goal_description": "Kneading the dough",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "phone",
+      "init_status": {
+        "status": "not in use",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "dough",
+      "init_status": {
+        "status": "smooth",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "rolling pin",
+      "init_status": {
+        "status": "ready",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Use phone.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "using phone",
+          "final_hand": "phone"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "phone",
+            "init_status": {
+              "status": "not in use",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Smoothen the dough.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "dough",
+            "init_status": {
+              "status": "smooth",
+              "container": null
+            },
+            "final_status": {
+              "status": "rough",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "rolling pin",
+            "init_status": {
+              "status": "ready",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "phone",
+            "init_status": {
+              "status": "in use",
+              "container": null
+            },
+            "final_status": {
+              "status": "not in use",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Leave dough to rise.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "dough",
+          "final_status": "idle",
+          "final_hand": "dough"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "dough",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "risen",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Use phone.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "using phone",
+          "final_hand": "phone"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "phone",
+            "init_status": {
+              "status": "not in used",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": 4
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

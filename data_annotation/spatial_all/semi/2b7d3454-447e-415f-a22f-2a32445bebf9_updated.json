@@ -1,0 +1,123 @@
+{
+  "video_id": "2b7d3454-447e-415f-a22f-2a32445bebf9",
+  "goal_category": "COOKING:PREPARE_INGREDIENTS_GENERAL",
+  "goal_description": "Cutting vegetables",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "ivy gourd",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "ivy gourd piece",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "ivy gourd piece",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "knife",
+      "init_status": {
+        "status": "unused",
+        "container": 4
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Chop the ivy gourd into smaller sizes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "ivy gourd",
+          "final_status": "chopped",
+          "final_hand": "ivy gourd pieces"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ivy gourd",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "chopped",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "ivy gourd piece",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "chopped",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "ivy gourd piece",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "chopped",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 4
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

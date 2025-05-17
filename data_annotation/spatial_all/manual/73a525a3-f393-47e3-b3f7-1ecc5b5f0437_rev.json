@@ -1,0 +1,214 @@
+{
+    "video_id": "73a525a3-f393-47e3-b3f7-1ecc5b5f0437",
+    "goal_category": "COOKING:MAKE_WESTERN_BREAKFAST",
+    "goal_description": "make western breakfast",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "foil",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "oven tray",
+            "init_status": {
+                "status": "default",
+                "container": 2
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "chicken tender",
+            "init_status": {
+                "status": "default",
+                "container": 2
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "refrigerator",
+            "init_status": {
+                "status": "closed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "tomato ketchup",
+            "init_status": {
+                "status": "default",
+                "container": 6
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "phone",
+            "init_status": {
+                "status": "off",
+                "container": 2
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Lines baking tray with aluminium foil",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "foil"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "oven tray",
+                        "init_status": {
+                            "status": "default",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "foiled",
+                            "container": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "Puts chicken tender on the baking tray",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "chicken tender"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_2",
+            "description": "Adds tomato ketchup to chicken tender",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "tomato ketchup"
+                },
+                "change": [
+                    {
+                        "object_id": 4,
+                        "object_name": "chicken tender",
+                        "init_status": {
+                            "status": "default",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "seasoned 1",
+                            "container": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_3",
+            "description": "Bakes chicken tender",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "oven"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "oven tray",
+                        "init_status": {
+                            "status": "foiled",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "foiled",
+                            "container": 2
+                        }
+                    },
+                    {
+                        "object_id": 3,
+                        "object_name": "oven tray",
+                        "init_status": {
+                            "status": "foiled",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "foiled",
+                            "container": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_4",
+            "description": "Uses phone",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "phone"
+                },
+                "change": [
+                    {
+                        "object_id": 9,
+                        "object_name": "phone",
+                        "init_status": {
+                            "status": "off",
+                            "container": 2
+                        },
+                        "final_status": {
+                            "status": "on",
+                            "container": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_5",
+            "description": "Plays with dog",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "play",
+                    "final_hand": "none"
+                },
+                "change": []
+            }
+        }
+    ]
+}

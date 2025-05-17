@@ -1,0 +1,868 @@
+{
+  "video_id": "c799c3ab-9e07-427c-94f9-0d9d295153b8",
+  "goal_category": "COOKING:MAKE_WESTERN_BREAKFAST",
+  "goal_description": "Prepare meal.",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "egg",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "plate",
+      "init_status": {
+        "status": "open",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "cooker",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "frying pan",
+      "init_status": {
+        "status": "off cooker",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "potato",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "dice",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "potatoes",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "diced potato",
+      "init_status": {
+        "status": "invisible",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "knife",
+      "init_status": {
+        "status": "invisible",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "soap dispenser",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "sink faucet",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "dish towel",
+      "init_status": {
+        "status": "dry",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "butter",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "oven knob",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "heat source",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "temperature gauge",
+      "init_status": {
+        "status": "normal",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "melted butter",
+      "init_status": {
+        "status": "liquid",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "egg mixture",
+      "init_status": {
+        "status": "liquid",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "sausage",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "dish",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "black pepper",
+      "init_status": "none"
+    },
+    {
+      "object_id": 24,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "oil",
+      "init_status": {
+        "status": "default",
+        "container": 6
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "whisk egg in bowl.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "egg",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "whisked",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Place frying pan on cooker.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "frying pan"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "frying pan",
+            "init_status": {
+              "status": "off cooker",
+              "container": null
+            },
+            "final_status": {
+              "status": "on cooker",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_0",
+      "description": "Clean potato",
+      "context": {
+        "player": {
+          "init_status": "clean",
+          "init_hand": null,
+          "final_status": "dirty",
+          "final_hand": "potato"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "potato",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": "Dice potato",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "potato",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": null
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "knife",
+            "init_status": {
+              "status": "stable",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_3",
+      "description": "Remove bad potatoes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "potato",
+            "init_status": {
+              "status": "bad",
+              "container": null
+            },
+            "final_status": {
+              "status": "removed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_8",
+      "description": "Add diced potatoes to the bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "diced potatoes"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "potatoes",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to bowl",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_14",
+      "description": "Add oi to the diced potato",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "diced potato"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "potato",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": null
+            }
+          },
+          {
+            "object_id": 25,
+            "object_name": "oil",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to potato",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_0",
+      "description": "Add butter to the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "butter"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": 15
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "butter",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 14
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_1",
+      "description": "Adjust heat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "adjusting heat",
+          "final_hand": "oven knob"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "oven knob",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_2",
+      "description": "whisk egg",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "whisk"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "egg",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_3",
+      "description": "Melt butter in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "butter",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "melted",
+              "container": null
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "pan",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "melted butter",
+              "container": 15
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_8",
+      "description": "Add egg mixture to the melted butter",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "egg mixture"
+        },
+        "change": [
+          {
+            "object_id": 19,
+            "object_name": "butter",
+            "init_status": {
+              "status": "liquid",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed with egg mixture",
+              "container": 20
+            }
+          },
+          {
+            "object_id": 20,
+            "object_name": "egg mixture",
+            "init_status": {
+              "status": "liquid",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed with melted butter",
+              "container": 19
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_9",
+      "description": "Stir the egg",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stirring",
+          "final_hand": "egg"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "egg",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7",
+      "description": "Cut sausage.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 21,
+            "object_name": "sausage",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": null
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "knife",
+            "init_status": {
+              "status": "stable",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": 21
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8",
+      "description": "Stir egg in frying pan.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "frying pan"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "egg",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10_substep_2",
+      "description": "Dish the egg",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "egg",
+            "init_status": {
+              "status": "on the pan",
+              "container": null
+            },
+            "final_status": {
+              "status": "on the dish",
+              "container": 22
+            }
+          },
+          {
+            "object_id": 22,
+            "object_name": "dish",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11",
+      "description": "Cover sausage in frying pan.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 21,
+            "object_name": "sausage",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "frying pan",
+            "init_status": {
+              "status": "on cooker",
+              "container": null
+            },
+            "final_status": {
+              "status": "coverd with sausage",
+              "container": 21
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12_substep_0",
+      "description": "Add black pepper to the egg",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pepper shaker"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "egg",
+            "init_status": {
+              "status": "none",
+              "container": 0
+            },
+            "final_status": {
+              "status": "present",
+              "container": 0
+            }
+          },
+          {
+            "object_id": 23,
+            "object_name": "black pepper",
+            "init_status": {
+              "status": "none",
+              "container": 1
+            },
+            "final_status": {
+              "status": "added",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12_substep_1",
+      "description": "Add ketchup to the egg",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "holding ketchup bottle",
+          "final_hand": "ketchup bottle"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "egg",
+            "init_status": {
+              "status": "uncooked",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked with ketchup",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "ketchup bottle",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 1
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

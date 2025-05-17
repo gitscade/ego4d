@@ -1,0 +1,255 @@
+{
+  "video_id": "9961615a-7e54-4b22-84ee-8e05f52c22df",
+  "goal_category": "COOKING:MAKE_STIR_FRIED_DISH_GENERAL",
+  "goal_description": "Washing the utensils",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "spatula",
+      "init_status": {
+        "status": "dirty",
+        "container": 5
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "pan",
+      "init_status": {
+        "status": "dirty",
+        "container": 5
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "sink",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "kitchen knife",
+      "init_status": {
+        "status": "clean",
+        "container": 5
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "kitchen surface",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "cutlery rack",
+      "init_status": {
+        "status": "default",
+        "container": 5
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "wash spatula",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "washing",
+          "final_hand": "spatula"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "spatula",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "sink",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "clean the pan in the sink",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cleaning",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "sink",
+            "init_status": {
+              "status": "in use",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "wash the kitchen knife in the sink",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "kitchen knife",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "sink",
+            "init_status": {
+              "status": "in use",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_3",
+      "description": "arrange spatula in the cutlery rack",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "spatula",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in rack",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "cutlery rack",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_4",
+      "description": "arrange the kitchen surface",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "kitchen surface",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

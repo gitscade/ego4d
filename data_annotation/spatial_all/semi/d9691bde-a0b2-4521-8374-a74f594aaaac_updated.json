@@ -1,0 +1,155 @@
+{
+  "video_id": "d9691bde-a0b2-4521-8374-a74f594aaaac",
+  "goal_category": "COOKING:GRIND_SPICE",
+  "goal_description": "crushing spices in mortar and pestle",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "mortar",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "spices",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "plate",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Add spices in the  mortar",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "mortar",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with spices",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "spices",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to mortar",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "Grind spices in the mortar",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grinding spices",
+          "final_hand": "mortar and pestle"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "spices",
+            "init_status": {
+              "status": "added to mortar",
+              "container": null
+            },
+            "final_status": {
+              "status": "grinded",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+              "status": "inactive",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "Transfer ground spices to a plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "spices",
+            "init_status": {
+              "status": "grinded",
+              "container": null
+            },
+            "final_status": {
+              "status": "plated",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "plate",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "spiced plated",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

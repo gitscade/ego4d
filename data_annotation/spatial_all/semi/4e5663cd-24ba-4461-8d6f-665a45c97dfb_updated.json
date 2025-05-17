@@ -1,0 +1,159 @@
+{
+  "video_id": "4e5663cd-24ba-4461-8d6f-665a45c97dfb",
+  "goal_category": "COOKING:MAKE_PANCAKE",
+  "goal_description": "Making  pancakes",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "pancake",
+      "init_status": {
+        "status": "batter",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Pour pancake batter into cooking pan\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pancake batter"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "pancake",
+            "init_status": {
+              "status": "batter",
+              "container": null
+            },
+            "final_status": {
+              "status": "batter",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "Flip pancake in the cooking pan\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "flip",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "pancake",
+            "init_status": {
+              "status": "batter",
+              "container": null
+            },
+            "final_status": {
+              "status": "baked",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "Remove pancake from the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "pancake",
+            "init_status": {
+              "status": "baked",
+              "container": null
+            },
+            "final_status": {
+              "status": "baked",
+              "container": null
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+              "status": "flip",
+              "container": null
+            },
+            "final_status": {
+              "status": "remove",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

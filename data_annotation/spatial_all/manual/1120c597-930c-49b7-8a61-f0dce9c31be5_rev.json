@@ -1,0 +1,369 @@
+{
+    "video_id": "1120c597-930c-49b7-8a61-f0dce9c31be5",
+    "goal_category": "COOKING:MAKE_PASTA",
+    "goal_description": "Preparing tomato paste sauce",
+    "spatial_data": [
+        {
+            "object_id": 3,
+            "object_name": "beef",
+            "init_status": {
+                "status": "minced",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "stirrer",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "tomato puree bottle",
+            "init_status": {
+                "status": "default",
+                "container": 5
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "tomato puree bottle2",
+            "init_status": {
+                "status": "default",
+                "container": 5
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "player",
+            "init_status": {
+                "status": null,
+                "container": 5
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "salt",
+            "init_status": {
+                "status": "default",
+                "container": 5
+            }
+        },
+        {
+            "object_id": 10,
+            "object_name": "lid",
+            "init_status": {
+                "status": "default",
+                "container": 5
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Stir fries minced beef in a pot",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "beef"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "beef",
+                        "init_status": {
+                            "status": "minced",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "stir up",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1_substep_0",
+            "description": "add tomato puree to minced beef in pot ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "tomato puree bottle"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "beef",
+                        "init_status": {
+                            "status": "stir up",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "seasoning 1",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 7,
+                        "object_name": "tomato puree bottle2",
+                        "init_status": {
+                            "status": "default",
+                            "container": 5
+                        },
+                        "final_status": {
+                            "status": "empty",
+                            "container": 5
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1_substep_1",
+            "description": "stir tomato puree in pot ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "beef"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "beef",
+                        "init_status": {
+                            "status": "seasoning 1",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "stir up",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2_substep_0",
+            "description": "add tomato puree to sauce in pot ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "tomato puree bottle2"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "beef",
+                        "init_status": {
+                            "status": "stir up",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "seasoning 2",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 7,
+                        "object_name": "tomato puree bottle2",
+                        "init_status": {
+                            "status": "default",
+                            "container": 5
+                        },
+                        "final_status": {
+                            "status": "empty",
+                            "container": 5
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2_substep_1",
+            "description": "stir sauce in pot ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "beef"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "beef",
+                        "init_status": {
+                            "status": "seasoning 2",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "stir up",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2_substep_2",
+            "description": "add seasoning to sauce in pot ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "sauce"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "beef",
+                        "init_status": {
+                            "status": "stir up",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "seasoning 3",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2_substep_3",
+            "description": "stir sauce in pot ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "beef"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "beef",
+                        "init_status": {
+                            "status": "seasoning 3",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "stir up",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2_substep_4",
+            "description": "add salt to sauce in pot ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "salt"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "beef",
+                        "init_status": {
+                            "status": "stir up",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "seasoning 4",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2_substep_5",
+            "description": "stir sauce in pot ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "beef"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "beef",
+                        "init_status": {
+                            "status": "seasoning 4",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "stir up",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2_substep_6",
+            "description": "cover pot with lid ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pot"
+                },
+                "change": [
+                    {
+                        "object_id": 2,
+                        "object_name": "pot",
+                        "init_status": {
+                            "status": "heating",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "covered",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 10,
+                        "object_name": "lid",
+                        "init_status": {
+                            "status": "default",
+                            "container": 5
+                        },
+                        "final_status": {
+                            "status": "covered",
+                            "container": 5
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

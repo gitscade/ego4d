@@ -1,0 +1,651 @@
+{
+  "video_id": "e339898f-5e79-4723-89d7-44ba33b163de",
+  "goal_category": "COOKING:MAKE_DONUT",
+  "goal_description": "Kneading the dough",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "flour",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "egg",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "salt",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "water",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "flour mixture",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "dough",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "container",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "kitchen counter top",
+      "init_status": {
+        "status": "cluttered",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "oil",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "add egg to the flour",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "flour",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "egg added",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "egg",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "add oil to  the flour ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "flour"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "flour",
+            "init_status": {
+              "status": "egg added",
+              "container": null
+            },
+            "final_status": {
+              "status": "oil added",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "oil",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to flour",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_0",
+      "description": "mix the flour mixture into a dough ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "mixing",
+          "final_hand": "flour mixture"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "flour mixture",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to dough",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "dough",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixture added",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": "add water to the dough ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "water"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "dough",
+            "init_status": {
+              "status": "mixture added",
+              "container": null
+            },
+            "final_status": {
+              "status": "water added",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "water",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to dough",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_2",
+      "description": "knead the dough ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "kneading dough",
+          "final_hand": "dough"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "dough",
+            "init_status": {
+              "status": "water added",
+              "container": null
+            },
+            "final_status": {
+              "status": "kneaded",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_3",
+      "description": "add water to the dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "water"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "dough",
+            "init_status": {
+              "status": "kneaded",
+              "container": null
+            },
+            "final_status": {
+              "status": "water added",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "water",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to dough",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_4",
+      "description": "knead the dough ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "dough",
+            "init_status": {
+              "status": "water added",
+              "container": null
+            },
+            "final_status": {
+              "status": "kneaded",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_5",
+      "description": "sprinkle flour on the container ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "container",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "flour sprinkled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "flour",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "sprinkled",
+              "container": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_6",
+      "description": "knead the dough ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "dough",
+            "init_status": {
+              "status": "kneaded",
+              "container": null
+            },
+            "final_status": {
+              "status": "kneaded",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_7",
+      "description": "remove the stuck dough on the hand with flour",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "flour",
+          "final_status": "success",
+          "final_hand": "clean"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "flour",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "still",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "dirty hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "clear hand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "dough",
+            "init_status": {
+              "status": "stuck",
+              "container": null
+            },
+            "final_status": {
+              "status": "removed",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Sprinkling flour on the dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "flour bag"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "flour",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "sprinkled",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "dough",
+            "init_status": {
+              "status": "kneaded",
+              "container": null
+            },
+            "final_status": {
+              "status": "flour sprinkled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "Kneading the dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "dough",
+            "init_status": {
+              "status": "flour sprinkled",
+              "container": null
+            },
+            "final_status": {
+              "status": "kneaded",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Sprinkling flour on the dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "flour bag"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "dough",
+            "init_status": {
+              "status": "kneaded",
+              "container": null
+            },
+            "final_status": {
+              "status": "flour sprinkled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "flour",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "sprinkled",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7_substep_0",
+      "description": "knead the dough ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "dough",
+            "init_status": {
+              "status": "flour sprinkled",
+              "container": null
+            },
+            "final_status": {
+              "status": "kneaded",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7_substep_1",
+      "description": "flip the dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "dough",
+            "init_status": {
+              "status": "kneaded",
+              "container": null
+            },
+            "final_status": {
+              "status": "fliped",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7_substep_2",
+      "description": "knead the dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "dough",
+            "init_status": {
+              "status": "fliped",
+              "container": null
+            },
+            "final_status": {
+              "status": "kneaded",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8",
+      "description": "Clearing the kithen counter top",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "kitchen counter top",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

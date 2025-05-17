@@ -1,0 +1,923 @@
+{
+  "video_id": "1ab9d5f7-0181-458e-a5e7-72ce87501f3e",
+  "goal_category": "COOKING:MAKE_SALAD",
+  "goal_description": "Make salad",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "ingredient",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "lettuce",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "seed",
+      "init_status": {
+        "status": "present",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "avocado",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "knife",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "phone",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "soap",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "water",
+      "init_status": {
+        "status": "clear",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "sink",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "lemon",
+      "init_status": "none"
+    },
+    {
+      "object_id": 11,
+      "object_name": "salt shaker",
+      "init_status": "none"
+    },
+    {
+      "object_id": 12,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "towel",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "cling film",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "recipe book",
+      "init_status": {
+        "status": "inactive",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "spice jar",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "pepper shaker",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "ingredients",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "garlic",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "oil",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "chopping board",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "salad dressing bottle",
+      "init_status": {
+        "status": "on counter",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "lemon paste",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Gather ingredients",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredient",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Wash lettuce",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "lettuce",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "water",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "wash lettuce",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "Remove seed ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "seed",
+            "init_status": {
+              "status": "present",
+              "container": null
+            },
+            "final_status": {
+              "status": "removed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "Peel avocado",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "avocado",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "knife",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_2",
+      "description": "Slice avocado",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "slicing avocado",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "avocado",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "knife",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Clean hands",
+      "context": {
+        "player": {
+          "init_status": "clean",
+          "final_status": "dirty",
+          "init_hand": "right",
+          "final_hand": "left"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "soap",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "water",
+            "init_status": {
+              "status": "clear",
+              "container": null
+            },
+            "final_status": {
+              "status": "murky",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_0",
+      "description": "Add diced avocado to bowl\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "avocado",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to bowl",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_2",
+      "description": "Add lemon paste\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "lemon paste"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "no lemon paste",
+              "container": null
+            },
+            "final_status": {
+              "status": "added  lemon paste",
+              "container": 26
+            }
+          },
+          {
+            "object_id": 26,
+            "object_name": "lemon paste",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_5",
+      "description": "Cover bowl with cling film",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "visible",
+              "container": null
+            },
+            "final_status": {
+              "status": "covered",
+              "container": 15
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "cling film",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "on bowl",
+              "container": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Cut lettuce",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "lettuce",
+            "init_status": {
+              "status": "cut",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "knife",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_2",
+      "description": "Add spice",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 18,
+            "object_name": "spice jar",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "no spice",
+              "container": null
+            },
+            "final_status": {
+              "status": "added spice",
+              "container": 18
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_3",
+      "description": "Add pepper",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pepper shaker"
+        },
+        "change": [
+          {
+            "object_id": 19,
+            "object_name": "pepper shaker",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "no pepper",
+              "container": null
+            },
+            "final_status": {
+              "status": "added pepper",
+              "container": 19
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_5",
+      "description": "Stir ingredients",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 20,
+            "object_name": "ingredients",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_6",
+      "description": "Add garlic paste",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 21,
+            "object_name": "garlic",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "mashed",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "no garlic",
+              "container": null
+            },
+            "final_status": {
+              "status": "added garlic",
+              "container": 21
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_7",
+      "description": "Stir ingredients",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredient",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_9",
+      "description": "Stir ingredients",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredient",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_10",
+      "description": "Add oil",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "oil"
+        },
+        "change": [
+          {
+            "object_id": 22,
+            "object_name": "oil",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "no oil",
+              "container": null
+            },
+            "final_status": {
+              "status": "added oil",
+              "container": 22
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_11",
+      "description": "Stir ingredients",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredient",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_1",
+      "description": "Wash chopping board",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "chopping board",
+          "final_status": "washing",
+          "final_hand": "chopping board"
+        },
+        "change": [
+          {
+            "object_id": 23,
+            "object_name": "chopping board",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "water",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_2",
+      "description": "Wash knife",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "washing knife",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "knife",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "water",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

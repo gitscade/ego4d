@@ -1,0 +1,262 @@
+{
+    "video_id": "672c902a-7871-4e8f-bae5-6e12e2a4e342",
+    "goal_category": "COOKING:MAKE_PASTA",
+    "goal_description": "Making batter",
+    "spatial_data": [
+        {
+            "object_id": 3,
+            "object_name": "sauce",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "sink",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "egg",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "flour",
+            "init_status": {
+                "status": "default",
+                "container": 4
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+                "status": null,
+                "container": 4
+            }
+        },
+        {
+            "object_id": 10,
+            "object_name": "milk",
+            "init_status": {
+                "status": "default",
+                "container": 4
+            }
+        },
+        {
+            "object_id": 11,
+            "object_name": "spoon",
+            "init_status": {
+                "status": "default",
+                "container": 4
+            }
+        },
+        {
+            "object_id": 12,
+            "object_name": "salt",
+            "init_status": {
+                "status": "default",
+                "container": 4
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Stirs sauce in a pot",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "stirrer"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "sauce",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "stir up",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "Drains water in a pot with eggs",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pot2"
+                },
+                "change": [
+                    {
+                        "object_id": 5,
+                        "object_name": "pot2",
+                        "init_status": {
+                            "status": "cotain water",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 7,
+                        "object_name": "sink",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "wet",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2_substep_0",
+            "description": "Add flour to a bowl.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "flour"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_2_substep_1",
+            "description": "Add milk to the flour.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "milk"
+                },
+                "change": [
+                    {
+                        "object_id": 8,
+                        "object_name": "flour",
+                        "init_status": {
+                            "status": "default",
+                            "container": 4
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": 9
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2_substep_2",
+            "description": "Mix the flour and milk.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "milk"
+                },
+                "change": [
+                    {
+                        "object_id": 8,
+                        "object_name": "mlik",
+                        "init_status": {
+                            "status": "seasoning 1",
+                            "container": 9
+                        },
+                        "final_status": {
+                            "status": "mixed",
+                            "container": 9
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2_substep_3",
+            "description": "Add salt to the mixture.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "salt"
+                },
+                "change": [
+                    {
+                        "object_id": 8,
+                        "object_name": "milk",
+                        "init_status": {
+                            "status": "mixed",
+                            "container": 9
+                        },
+                        "final_status": {
+                            "status": "seasoning 2",
+                            "container": 9
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2_substep_4",
+            "description": "Mix the batter.",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "milk"
+                },
+                "change": [
+                    {
+                        "object_id": 8,
+                        "object_name": "milk",
+                        "init_status": {
+                            "status": "seasoning 2",
+                            "container": 9
+                        },
+                        "final_status": {
+                            "status": "mixed",
+                            "container": 9
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

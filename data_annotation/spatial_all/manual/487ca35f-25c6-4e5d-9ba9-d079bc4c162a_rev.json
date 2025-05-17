@@ -1,0 +1,90 @@
+{
+    "video_id": "487ca35f-25c6-4e5d-9ba9-d079bc4c162a",
+    "goal_category": "COOKING:MAKE_FLATBREAD",
+    "goal_description": "Making chapati",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "table",
+            "init_status": {
+                "status": "dirty",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "player",
+            "init_status": {
+                "status": null,
+                "container": 1
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "cleaning the cooking area",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "table"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "table",
+                        "init_status": {
+                            "status": "dirty",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "clean",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "removing the chapati",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "chapati"
+                },
+                "change": [
+                    {
+                        "object_id": 2,
+                        "object_name": "chapati",
+                        "init_status": {
+                            "status": "disarranged",
+                            "container": 1
+                        },
+                        "final_status": {
+                            "status": "arranged",
+                            "container": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2",
+            "description": "cleaning the cooking area",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "table"
+                },
+                "change": []
+            }
+        }
+    ]
+}

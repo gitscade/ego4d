@@ -1,0 +1,199 @@
+{
+  "video_id": "ac0c1dbc-2552-49c8-9bc9-f18074a53156",
+  "goal_category": "COOKING:PREPARE_NUT",
+  "goal_description": "Breaking walnuts",
+  "spatial_data": [
+    {
+      "object_id": 2,
+      "object_name": "basket",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "nut",
+      "init_status": {
+        "status": "unordered",
+        "container": 4
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "shell",
+      "init_status": {
+        "status": "unordered",
+        "container": 2
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "nut cracker",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Get some walnuts",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "basket",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "none",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "shell",
+            "init_status": {
+              "status": "unordered",
+              "container": null
+            },
+            "final_status": {
+              "status": "unordered",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "nut",
+            "init_status": {
+              "status": "unordered",
+              "container": null
+            },
+            "final_status": {
+              "status": "unordered",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Sort the walnuts",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "sorting walnuts",
+          "final_hand": "walnut"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "shell",
+            "init_status": {
+              "status": "unordered",
+              "container": null
+            },
+            "final_status": {
+              "status": "sorted",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "nut",
+            "init_status": {
+              "status": "unordered",
+              "container": null
+            },
+            "final_status": {
+              "status": "sorted",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Remove the nut from the shell with the nut cracker",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "success",
+          "final_hand": "nut cracker"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "nut",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "cracked",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "shell",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "broken",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "nut cracker",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
