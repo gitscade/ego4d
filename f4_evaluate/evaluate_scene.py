@@ -91,6 +91,9 @@ def compute_soft_matches(names1, names2, threshold=0.8):
     return matches, matched_1, matched_2
 
 def compute_f1(len1, len2, matched_1, matched_2):
+    """
+    return precision, recall, f1 values for item or relationship level similarity score
+    """
     precision = len(matched_1) / len1 if len1 else 0
     recall = len(matched_2) / len2 if len2 else 0
     f1 = 2 * precision * recall / (precision + recall) if (precision + recall) else 0
