@@ -6,6 +6,7 @@ import json
 import ast
 import argparse
 from dotenv import load_dotenv
+import pickle
 #llm
 import ollama
 from langchain_ollama import OllamaLLM
@@ -27,6 +28,7 @@ import f1_init.agent_init as agent_init
 import f1_init.database_init as database_init
 import f2_agent.agent_prompt as agent_prompt
 import util.util_funcs as util_funcs
+import f1_init.constants_init as constants_init
 
 #------------------------
 #prompt messages
@@ -989,81 +991,141 @@ if __name__ == "__main__":
     #TODO 2: put it in message_tool
 
     # 3. LLM MODEL BASELINE
-    agent_api_name = "ollama"
-    agent_model_name = "eramax/tesslate_tessa-t1-32b:q4_K_M"
-    tool_api_name = "ollama"
-    tool_model_name = "eramax/tesslate_tessa-t1-32b:q4_K_M"    
+    agent_api_name = "openai"
+    agent_model_name = "gpt-4o-mini"
+    tool_api_name = "openai"
+    tool_model_name = "gpt-4o-mini"    
     AGENT_LLM_API, AGENT_LLM_STR, AGENT_LLM_CHAT = agent_init.SET_LLMS(agent_api_name, agent_model_name, temperature=0.2)
     TOOL_LLM_API, TOOL_LLM_STR, TOOL_LLM_CHAT = agent_init.SET_LLMS(tool_api_name, tool_model_name, temperature=0.2)
 
-    # 4. Select Test Pairs
-    source_video_idx = 0
-    target_video_idx = 1
-    source_action_sequence, source_scene_graph = agent_init.get_video_info(source_video_idx)
-    target_action_sequence, target_scene_graph = agent_init.get_video_info(target_video_idx)
 
-    # 5. Iterate for Test Pairs
-    # -----------------------
-    # AGENT1a: PREDICT CORE ACTIVITY
-    # -----------------------
-    tools_1a = get_agent1a_tools()
-    input_1a_message = [tools_1a, source_action_sequence, source_scene_graph]
-    AGENT1a_PROMPT, MESSAGE_ACTIVITY_PREDICTION = get_agent1a_message(input_1a_message)
-    input_1a_agent = [tools_1a, AGENT1a_PROMPT, source_action_sequence, source_scene_graph]
-    response_1a = run_agent_1a(input_1a_agent, AGENT_LLM_CHAT)
+    PATH_SOURCE_TARGET_INPUT = constants_init.PATH_SOURCE_TARGET + "/input/source_target_video_list.pkl"
+    with open(PATH_SOURCE_TARGET_INPUT, "rb") as f:
+        source_target_list = pickle.load(f)
+    PATH_SOURCE_TARGET_OUTPUT = constants_init.PATH_SOURCE_TARGET + "/output/"
+    
+    source_list = []
+    target_list = []
+    for l in source_target_list:
+        source_idx = l[0]
+        target_augno_idx = l[1]
+        target_aug33_idx = l[2]
+        target_aug67_idx = l[3]
+        target_aug100_idx = l[4]
+        source_list.append(source_idx)
+        source_list.append(source_idx)
+        source_list.append(source_idx)
+        source_list.append(source_idx)
+        target_list.append(target_augno_idx)
+        target_list.append(target_aug33_idx)
+        target_list.append(target_aug67_idx)
+        target_list.append(target_aug100_idx)
+    print(f"len sourceidx targetidx {len(source_list)}, {len(target_list)}")
 
-    # -----------------------
-    # AGENT1b: PREDICT FULL ACTIVITY TAXONOMY
-    # -----------------------
-    source_core_activity = response_1a['output']
-    tools_1b = get_agent1b_tools()
-    input1b_message = [tools_1b, source_action_sequence, source_scene_graph, source_core_activity]
-    # AGENT1b_PROMPT, MESSAGE_TAXONOMY_CREATION, MESSAGE_REORDER_TAXONOMY = get_agent1b_message(input1b_message)
-    AGENT1b_PROMPT, MESSAGE_TAXONOMY_CREATION = get_agent1b_message(input1b_message)
-    input_1b_agent = [tools_1b, AGENT1b_PROMPT, source_action_sequence, source_scene_graph, source_core_activity]
-    response_1b = run_agent_1b(input_1b_agent, AGENT_LLM_CHAT)
-
-    # -----------------------
-    # AGENT2a: PREDICT COMMON ACTIVITY TAXONOMY
-    # -----------------------    
-    source_activity_taxonomy = response_1b['output']
-    print(source_activity_taxonomy)
-    source_activity_taxonomy = util_funcs.jsondump_agent_response(source_activity_taxonomy)
-    tools_2a = get_agent2a_tools()
-    input2a_message = [tools_2a, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy]
-    AGENT2a_PROMPT, MESSAGE_COMMON_TAXONOMY_PREDICTION=get_agent2a_message(input2a_message)
-    input2a_agent = [tools_2a, AGENT2a_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy]
-    response_2a = run_agent_2a(input2a_agent, AGENT_LLM_CHAT)
-
-    # -----------------------
-    # AGENT2b: PREDICT TARGET ACTIVITY TAXONOMY
-    # -----------------------    
-    common_activity_taxonomy = response_2a['output']
-    common_activity_taxonomy = util_funcs.jsondump_agent_response(common_activity_taxonomy)
-    tools_2b = get_agent2b_tools()
-    input2a_message = [tools_2b, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy, source_core_activity]    
-    AGENT2b_PROMPT, MESSAGE_TARGET_TAXONOMY_PREDICTION=get_agent2b_message(input2a_message)
-    input2b_agent = [tools_2b, AGENT2b_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy]    
-    response_2b = run_agent_2b(input2b_agent, AGENT_LLM_CHAT)
-
-    # -----------------------
-    # PREDICT TARGET ACTION SEQUENCE
-    # -----------------------
-    target_activity_taxonomy = response_2b['output']
-    target_activity_taxonomy = util_funcs.jsondump_agent_response(target_activity_taxonomy)
-    tools_3 = get_agent3_tools()
-    input3_message = [tools_3, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, target_activity_taxonomy, source_core_activity]
-    AGENT3_PROMPT, MESSAGE_TARGET_SEQUENCE_PREDICTION=get_agent3_message(input3_message)       
-    input3_agent = [tools_3, AGENT3_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, target_activity_taxonomy, source_core_activity]   
-    response_3 = run_agent3(input3_agent, AGENT_LLM_CHAT)
-
-    # -----------------------
-    # # FINAL ANSWER
-    # # -----------------------
-    # target_action_sequence = response_3['output']
-    # print(target_action_sequence)
+    # for i in range(len(source_list)):
+    for i in range(1):
+        source_video_idx = source_list[i]
+        target_video_idx = target_list[i]
+        PATH_AGENT1a = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent1a.pkl"
+        PATH_AGENT1b = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent1b.pkl"
+        PATH_AGENT2a = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent2a.pkl"
+        PATH_AGENT2b = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent2b.pkl"
+        PATH_AGENT3 = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent3.pkl"
 
 
+        # 4. Select Test Pairs
+        source_action_sequence, source_scene_graph = agent_init.get_video_info(source_video_idx)
+        target_action_sequence, target_scene_graph = agent_init.get_video_info(target_video_idx)
 
+        # 5. Iterate for Test Pairs
+        # -----------------------
+        # AGENT1a: PREDICT CORE ACTIVITY
+        # -----------------------
+        try:
+            tools_1a = get_agent1a_tools()
+            input_1a_message = [tools_1a, source_action_sequence, source_scene_graph]
+            AGENT1a_PROMPT, MESSAGE_ACTIVITY_PREDICTION = get_agent1a_message(input_1a_message)
+            input_1a_agent = [tools_1a, AGENT1a_PROMPT, source_action_sequence, source_scene_graph]
+            response_1a = run_agent_1a(input_1a_agent, AGENT_LLM_CHAT)
+            source_core_activity = response_1a['output']
+            with open(PATH_AGENT1a, 'wb') as f:
+                pickle.dump(source_core_activity, f)        
+                print(f"source_core_activity")   
 
+        except Exception as e:
+            print(f"Agent1a failed at index {i}: {e}")
+            continue
+        # -----------------------
+        # AGENT1b: PREDICT FULL ACTIVITY TAXONOMY
+        # -----------------------
+        try:        
+            tools_1b = get_agent1b_tools()
+            input1b_message = [tools_1b, source_action_sequence, source_scene_graph, source_core_activity]
+            # AGENT1b_PROMPT, MESSAGE_TAXONOMY_CREATION, MESSAGE_REORDER_TAXONOMY = get_agent1b_message(input1b_message)
+            AGENT1b_PROMPT, MESSAGE_TAXONOMY_CREATION = get_agent1b_message(input1b_message)
+            input_1b_agent = [tools_1b, AGENT1b_PROMPT, source_action_sequence, source_scene_graph, source_core_activity]
+            response_1b = run_agent_1b(input_1b_agent, AGENT_LLM_CHAT)
+            source_activity_taxonomy = response_1b['output']
+            with open(PATH_AGENT1b, 'wb') as f:
+                pickle.dump(source_activity_taxonomy, f)        
+                print(f"source_activity_taxonomy")   
 
+        except Exception as e:
+            print(f"Agent1b failed at index {i}: {e}")
+            continue
+        # -----------------------
+        # AGENT2a: PREDICT COMMON ACTIVITY TAXONOMY
+        # -----------------------            
+        # print(source_activity_taxonomy)
+        try:  
+            source_activity_taxonomy = util_funcs.jsondump_agent_response(source_activity_taxonomy)
+            tools_2a = get_agent2a_tools()
+            input2a_message = [tools_2a, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy]
+            AGENT2a_PROMPT, MESSAGE_COMMON_TAXONOMY_PREDICTION=get_agent2a_message(input2a_message)
+            input2a_agent = [tools_2a, AGENT2a_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy]
+            response_2a = run_agent_2a(input2a_agent, AGENT_LLM_CHAT)
+            common_activity_taxonomy = response_2a['output']
+            with open(PATH_AGENT2a, 'wb') as f:
+                pickle.dump(common_activity_taxonomy, f)        
+                print(f"common_activity_taxonomy")   
+
+        except Exception as e:
+            print(f"Agent2a failed at index {i}: {e}")
+            continue
+        # -----------------------
+        # AGENT2b: PREDICT TARGET ACTIVITY TAXONOMY
+        # -----------------------    
+        try:  
+            common_activity_taxonomy = util_funcs.jsondump_agent_response(common_activity_taxonomy)
+            tools_2b = get_agent2b_tools()
+            input2a_message = [tools_2b, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy, source_core_activity]    
+            AGENT2b_PROMPT, MESSAGE_TARGET_TAXONOMY_PREDICTION=get_agent2b_message(input2a_message)
+            input2b_agent = [tools_2b, AGENT2b_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy]    
+            response_2b = run_agent_2b(input2b_agent, AGENT_LLM_CHAT)
+            target_activity_taxonomy = response_2b['output']
+            with open(PATH_AGENT2b, 'wb') as f:
+                pickle.dump(target_activity_taxonomy, f)        
+                print(f"target_activity_taxonomy")   
+
+        except Exception as e:
+            print(f"Agent2b failed at index {i}: {e}")
+            continue
+        
+        # -----------------------
+        # PREDICT TARGET ACTION SEQUENCE
+        # -----------------------
+        try:          
+            target_activity_taxonomy = util_funcs.jsondump_agent_response(target_activity_taxonomy)
+            tools_3 = get_agent3_tools()
+            input3_message = [tools_3, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, target_activity_taxonomy, source_core_activity]
+            AGENT3_PROMPT, MESSAGE_TARGET_SEQUENCE_PREDICTION=get_agent3_message(input3_message)       
+            input3_agent = [tools_3, AGENT3_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, target_activity_taxonomy, source_core_activity]   
+            response_3 = run_agent3(input3_agent, AGENT_LLM_CHAT)
+            target_action_sequence = response_3['output']
+            with open(PATH_AGENT3, 'wb') as f:
+                pickle.dump(target_action_sequence, f)        
+                print(f"target_action_sequence")
+
+        except Exception as e:
+            print(f"Agent3 failed at index {i}: {e}")
+            continue        

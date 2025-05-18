@@ -42,14 +42,14 @@ def SET_LLMS(api_name:str, llm_str:str, temperature:int):
     load_dotenv()
     parser_stroutput = StrOutputParser()
 
-    if api_name is "openai":
+    if api_name == "openai":
         # connect to openai api key        
         openai.api_key = os.getenv("OPENAI_API_KEY")
 
         # "gpt-4.1" "gpt-4.1-mini", "gpt-4o", "gpt-4o-mini"
         return api_name, llm_str, ChatOpenAI(openai_api_key=openai.api_key, model=llm_str, temperature=temperature)
     
-    elif api_name is "ollama":
+    elif api_name == "ollama":
         # kill all existing ollama pid
         os.system("pkill -f 'ollama serve'")
         print("[INFO] Ollama 서버가 중지되었습니다.")
