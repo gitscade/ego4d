@@ -1,0 +1,522 @@
+{
+  "video_id": "24ba7993-7fc8-4447-afd5-7ff6d548b11a",
+  "goal_category": "COOKING:MAKE_SANDWICH",
+  "goal_description": "preparing sandwich bread",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "bread",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "cutting board",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "knife",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "ketchup",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "grapes",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "grapes2",
+      "init_status": {
+        "status": "unwashed",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "cupboard",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "frypan",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "shelf",
+      "init_status": {
+        "status": "clean",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "ziplock bag",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "napkin",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "coffee maker",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "toaster",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "risotto",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "veggies",
+      "init_status": {
+        "status": "fresh",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "curry leaves",
+      "init_status": {
+        "status": "fresh",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "citrus",
+      "init_status": {
+        "status": "fresh",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "spaghetti",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "soy meat",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 43,
+      "object_name": "carrots",
+      "init_status": {
+        "status": "fresh",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 44,
+      "object_name": "yogurt",
+      "init_status": {
+        "status": "fresh",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "pickles",
+      "init_status": {
+        "status": "fresh",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 47,
+      "object_name": "taco",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "broccoli",
+      "init_status": {
+        "status": "fresh",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "couscous",
+      "init_status": {
+        "status": "fresh",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 50,
+      "object_name": "lime",
+      "init_status": {
+        "status": "fresh",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 53,
+      "object_name": "tiramisu",
+      "init_status": {
+        "status": "fresh",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "mayonnaise",
+      "init_status": {
+        "status": "fresh",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "mushroom",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 61,
+      "object_name": "lettuce",
+      "init_status": {
+        "status": "fresh",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 63,
+      "object_name": "melon",
+      "init_status": {
+        "status": "fresh",
+        "container": 14
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "slice bread into two",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "bread",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "spread mayonnaese on bread",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "mayonnaese"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "bread",
+            "init_status": {
+              "status": "cut",
+              "container": null
+            },
+            "final_status": {
+              "status": "seasoning 1",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "place cheese on sliced bread",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cheese"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "bread",
+            "init_status": {
+              "status": "seasoning 1",
+              "container": null
+            },
+            "final_status": {
+              "status": "seasoning 2",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_3",
+      "description": "spread ketchup on bread",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "ketchup"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "bread",
+            "init_status": {
+              "status": "seasoning 2",
+              "container": null
+            },
+            "final_status": {
+              "status": "seasoning 3",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_4",
+      "description": "store ketchup and mayo in refrigerator",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "ketchup"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_5",
+      "description": "slice grapes on bread",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "grapes"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "grapes",
+            "init_status": {
+              "status": "default",
+              "container": 2
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "bread",
+            "init_status": {
+              "status": "seasoning 3",
+              "container": null
+            },
+            "final_status": {
+              "status": "seasoning 4",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_6",
+      "description": "rinse grapes in kitchen sink",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "sink",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "supply water",
+              "container": null
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "grapes2",
+            "init_status": {
+              "status": "unwashed",
+              "container": 8
+            },
+            "final_status": {
+              "status": "washed",
+              "container": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_7",
+      "description": "slice grapes on bread",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "grapes2"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "grapes2",
+            "init_status": {
+              "status": "unwashed",
+              "container": 8
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "bread",
+            "init_status": {
+              "status": "seasoning 4",
+              "container": null
+            },
+            "final_status": {
+              "status": "seasoning 5",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_8",
+      "description": "rinse hands in sink",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "wash hand",
+          "final_hand": "none"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_9",
+      "description": "clean hands with cloth",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cloth"
+        },
+        "change": []
+      }
+    }
+  ]
+}

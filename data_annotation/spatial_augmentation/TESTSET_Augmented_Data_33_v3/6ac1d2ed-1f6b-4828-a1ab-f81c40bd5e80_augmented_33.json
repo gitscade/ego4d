@@ -1,0 +1,973 @@
+{
+  "video_id": "6ac1d2ed-1f6b-4828-a1ab-f81c40bd5e80",
+  "goal_category": "COOKING:MAKE_STEW_OR_SOUP",
+  "goal_description": "making soup",
+  "spatial_data": [
+    {
+      "object_id": 2,
+      "object_name": "seeds",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "hot plate",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "salt",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 33,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 35,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 37,
+      "object_name": "chopsticks",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "mortar and pestle",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "napkin",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "chopstick",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 44,
+      "object_name": "measuring container",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "Japanese mustard green",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "onion",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 50,
+      "object_name": "hazelnut",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 51,
+      "object_name": "sage",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 52,
+      "object_name": "cake",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "chocolate",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 58,
+      "object_name": "flour",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 59,
+      "object_name": "egg",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 60,
+      "object_name": "jalapeno",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 64,
+      "object_name": "rice puffs",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 66,
+      "object_name": "mayonnaise",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 69,
+      "object_name": "baking powder",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 70,
+      "object_name": "beans",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 71,
+      "object_name": "corn dogs",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 73,
+      "object_name": "risotto",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 77,
+      "object_name": "mushroom",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 78,
+      "object_name": "cereals",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 81,
+      "object_name": "brussel sprouts",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 84,
+      "object_name": "cinnamon",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 86,
+      "object_name": "carrot",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "drains water from seeds",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "draining water from seeds",
+          "final_hand": "seeds"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "seeds",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "drained water",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_2",
+      "description": "Pour seeds in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "pouring seeds",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "seeds",
+            "init_status": {
+              "status": "drained water",
+              "container": null
+            },
+            "final_status": {
+              "status": "drained water",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_3",
+      "description": "Pour water into the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "pouring water",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "seeds",
+            "init_status": {
+              "status": "drained water",
+              "container": null
+            },
+            "final_status": {
+              "status": "wet",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "water",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "boils seeds on hot plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "boiling",
+          "final_hand": "pot"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "seeds",
+            "init_status": {
+              "status": "wet",
+              "container": null
+            },
+            "final_status": {
+              "status": "wet",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "water",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "hot plate",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "add spice in nut seed",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spice"
+        },
+        "change": [
+          {
+            "object_id": 31,
+            "object_name": "spice",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "seeds",
+            "init_status": {
+              "status": "wet",
+              "container": null
+            },
+            "final_status": {
+              "status": "wet",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "water",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "hot plate",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "stirs seeds mixture in pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pot"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "seeds",
+            "init_status": {
+              "status": "wet",
+              "container": null
+            },
+            "final_status": {
+              "status": "wet",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "water",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "hot plate",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 31,
+            "object_name": "spice",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 27,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_19_substep_0",
+      "description": "Put salt in ingredients",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "salt shaker",
+          "final_status": "idle",
+          "final_hand": "salt shaker"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "seeds",
+            "init_status": {
+              "status": "wet",
+              "container": null
+            },
+            "final_status": {
+              "status": "wet",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "water",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "hot plate",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 31,
+            "object_name": "spice",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 32,
+            "object_name": "salt",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_19_substep_1",
+      "description": "Mix ingredients",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "player",
+            "init_status": {
+              "status": "stir",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "seeds",
+            "init_status": {
+              "status": "wet",
+              "container": null
+            },
+            "final_status": {
+              "status": "wet",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "water",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "hot plate",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 31,
+            "object_name": "spice",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 32,
+            "object_name": "salt",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 27,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_20",
+      "description": "regulates hot plate heat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "seeds",
+            "init_status": {
+              "status": "wet",
+              "container": null
+            },
+            "final_status": {
+              "status": "wet",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "water",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "hot plate",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "regulated",
+              "container": null
+            }
+          },
+          {
+            "object_id": 31,
+            "object_name": "spice",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 32,
+            "object_name": "salt",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_30",
+      "description": "turns off hot plate",
+      "context": {
+        "player": {
+          "init_status": "active",
+          "init_hand": "none",
+          "final_status": "inactive",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 32,
+            "object_name": "salt",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 31,
+            "object_name": "spice",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "hot plate",
+            "init_status": {
+              "status": "regulated",
+              "container": null
+            },
+            "final_status": {
+              "status": "off",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "water",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "seeds",
+            "init_status": {
+              "status": "wet",
+              "container": null
+            },
+            "final_status": {
+              "status": "wet",
+              "container": 6
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

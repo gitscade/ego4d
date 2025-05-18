@@ -1,0 +1,309 @@
+{
+  "video_id": "e4ad6fd7-2e3e-4991-b392-a0056f702286",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "cooking general",
+  "spatial_data": [
+    {
+      "object_id": 8,
+      "object_name": "countertop",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "kitchen cabinet",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "cup",
+      "init_status": {
+        "status": "clean",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "dough molder",
+      "init_status": {
+        "status": "clean",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "plastic bag",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "mobile phone",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "pot",
+      "init_status": {
+        "status": "clean",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "salad",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "pawpaw",
+      "init_status": {
+        "status": "fresh",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "caramel",
+      "init_status": {
+        "status": "fresh",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "lemon",
+      "init_status": {
+        "status": "fresh",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 35,
+      "object_name": "macaroni",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 36,
+      "object_name": "pomegranate",
+      "init_status": {
+        "status": "fresh",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 37,
+      "object_name": "green bean",
+      "init_status": {
+        "status": "fresh",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "ginger",
+      "init_status": {
+        "status": "fresh",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "cabbage",
+      "init_status": {
+        "status": "fresh",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "stuffed green pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 43,
+      "object_name": "burritos",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 44,
+      "object_name": "beef stock",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "yeast",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 46,
+      "object_name": "cinnamon",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "spinach puff pastry",
+      "init_status": {
+        "status": "fresh",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "pancake",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 52,
+      "object_name": "carrots",
+      "init_status": {
+        "status": "fresh",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "jujubes",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "cookie",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 59,
+      "object_name": "soy bean paste",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Fold omelet ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "omelet",
+            "init_status": {
+              "status": "unfolded",
+              "container": null
+            },
+            "final_status": {
+              "status": "folded",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "pan",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "serve the omelet ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "serving omelet",
+          "final_hand": "omelet"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "omelet",
+            "init_status": {
+              "status": "cooked",
+              "container": null
+            },
+            "final_status": {
+              "status": "served",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "plate",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,527 @@
+{
+  "video_id": "e6231d1a-1f7f-4198-a499-7635509adfaf",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Grinding maize",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "maize",
+      "init_status": {
+        "status": "unground",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "grinder",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "stick",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "can opener",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "dishwasher",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "deep fryer",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "mixer",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "kitchen sink",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "griddle",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "hazelnut",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "nut",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "jalebi",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "noodles",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "Japanese mustard green",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "zucchini",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "rice puffs",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "bacon",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "beans",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 33,
+      "object_name": "chilli pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 34,
+      "object_name": "sausage",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 35,
+      "object_name": "jujubes",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 36,
+      "object_name": "leek",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "stew",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "samosas",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 40,
+      "object_name": "amaro",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 41,
+      "object_name": "wheat",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "corn dogs",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 44,
+      "object_name": "milo",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 47,
+      "object_name": "syrup",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "macaroni",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "puree",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 52,
+      "object_name": "pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "pizza",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "minced pork",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 57,
+      "object_name": "risotto",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Grind maize",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grinding",
+          "final_hand": "maize"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "maize",
+            "init_status": {
+              "status": "unground",
+              "container": null
+            },
+            "final_status": {
+              "status": "ground",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "grinder",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Turn the maize in the grinder with a spoon",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "maize",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "turning",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "grinder",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "off",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "Pour maize into the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pot"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "maize",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "in pot",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "pot",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "Add chili pepper and seasonings into the maize",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "chili pepper"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "maize",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "seasoned",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "chili pepper",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "pot",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Cover the grinder with the lid",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "grinder",
+            "init_status": {
+              "status": "open",
+              "container": null
+            },
+            "final_status": {
+              "status": "closed",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

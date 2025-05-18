@@ -1,0 +1,421 @@
+{
+  "video_id": "58b2a4a4-b721-4753-bfc3-478cdb5bd1a8",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "cooking general",
+  "spatial_data": [
+    {
+      "object_id": 5,
+      "object_name": "tea bag",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "mug",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "player",
+      "init_status": {
+        "status": null,
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "knife",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "wash basin",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "drawer",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "cupboard",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "electric kettle",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "rolling pin",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "ladle",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "tortilla press",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "shelf",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "jar",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "basket",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "minced meat",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "pizza",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "dandelion",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 33,
+      "object_name": "lentils",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 35,
+      "object_name": "corn dogs",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 36,
+      "object_name": "cupcakes",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 41,
+      "object_name": "garlic",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "croissant",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 43,
+      "object_name": "ball peppers",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "sausage",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 47,
+      "object_name": "limewater",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "liver",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 53,
+      "object_name": "melon",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "corn",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "french toast",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 60,
+      "object_name": "nuts",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 63,
+      "object_name": "mascarpone cheese",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 65,
+      "object_name": "leek",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "add teabag in mug",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "tea bag"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "mug",
+            "init_status": {
+              "status": "default",
+              "container": 3
+            },
+            "final_status": {
+              "status": "default",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "add hot water to the mug",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "kettle"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": " steep teabag in hot water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "tea bag"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "water",
+            "init_status": {
+              "status": "boiled",
+              "container": null
+            },
+            "final_status": {
+              "status": "boiled",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "discards teabag",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "teabag"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "cuts baked pie with knife",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "pie",
+            "init_status": {
+              "status": "default",
+              "container": 1
+            },
+            "final_status": {
+              "status": "cut",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "serves baked pie in plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "plate"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "pie",
+            "init_status": {
+              "status": "default",
+              "container": 1
+            },
+            "final_status": {
+              "status": "default",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "covers baked pie with lid",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pie"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "pie",
+            "init_status": {
+              "status": "cut",
+              "container": 1
+            },
+            "final_status": {
+              "status": "cut",
+              "container": 11
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

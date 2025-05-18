@@ -1,0 +1,551 @@
+{
+  "video_id": "1dc85adb-fbdd-4275-b9cf-42976acb4d14",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Chopping the vegetables",
+  "spatial_data": [
+    {
+      "object_id": 3,
+      "object_name": "onion",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "drawer",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "cabinet",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "freezer",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "mobile phone",
+      "init_status": {
+        "status": "clean",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "stick",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "towel",
+      "init_status": {
+        "status": "clean",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "packet",
+      "init_status": {
+        "status": "clean",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "pawpaw",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "goyna bori",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "green pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "leek",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "bacon",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "sugar",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "nut",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "minced meat",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 37,
+      "object_name": "tofu",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "cream",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 40,
+      "object_name": "soy sauce",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 41,
+      "object_name": "chicken",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 43,
+      "object_name": "red bell pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "orange",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "mustard",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 50,
+      "object_name": "macaroni",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 52,
+      "object_name": "pickles",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "potato",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 55,
+      "object_name": "ginger",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "puree",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Slice green peppers",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "slicing",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "pepper",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Slice onions",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "onion",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Slice green pepper",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "pepper",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Slice onion",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "onion",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Pound the green peppers",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "pepper",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "pounded",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

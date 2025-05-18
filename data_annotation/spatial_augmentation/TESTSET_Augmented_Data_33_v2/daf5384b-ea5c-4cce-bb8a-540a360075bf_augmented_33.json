@@ -1,0 +1,603 @@
+{
+  "video_id": "daf5384b-ea5c-4cce-bb8a-540a360075bf",
+  "goal_category": "COOKING:MAKE_GRILLED_DISH",
+  "goal_description": "Making grilled meat",
+  "spatial_data": [
+    {
+      "object_id": 4,
+      "object_name": "grill lid",
+      "init_status": {
+        "status": "open",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "drink can",
+      "init_status": {
+        "status": "on table",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "wrapped meat",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "drink can beer",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "freezer",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "kitchen floor",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "lotion",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "cutter",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "utensils",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "baking sheet",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 33,
+      "object_name": "coconut milk",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 35,
+      "object_name": "vinegar",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 36,
+      "object_name": "ginger",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "puree",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "okra",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 40,
+      "object_name": "chocolate chips",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 43,
+      "object_name": "murukku",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "seeds",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "goyna bori",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 50,
+      "object_name": "cucumber",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 51,
+      "object_name": "risotto",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 52,
+      "object_name": "lasagna",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 53,
+      "object_name": "smoothie",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "melon",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "donut",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 57,
+      "object_name": "fish",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 58,
+      "object_name": "french toast",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 59,
+      "object_name": "coriander",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 60,
+      "object_name": "coffee",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 62,
+      "object_name": "curry leaves",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 63,
+      "object_name": "maggie",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 65,
+      "object_name": "taco",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Wrap meat with leaves",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "wrapping",
+          "final_hand": "meat"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "leaves",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "wrapped",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "meat",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "wrapped",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Reposition the grill rack on the charcoal grill",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "grill rack",
+            "init_status": {
+              "status": "upright",
+              "container": null
+            },
+            "final_status": {
+              "status": "repositioned",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "charcoal grill",
+            "init_status": {
+              "status": "defualt",
+              "container": null
+            },
+            "final_status": {
+              "status": "Reposition the grill rack",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": "Flip  meat on grill",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "meat",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "Fliped",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "grill",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_1",
+      "description": "Remove meat from grill",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "right",
+          "final_status": "idle",
+          "final_hand": "right"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "meat",
+            "init_status": {
+              "status": "grilled",
+              "container": null
+            },
+            "final_status": {
+              "status": "removed",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "grill",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "Regulate the heat temperature of the charcoal grill",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "empty",
+          "final_status": "idle",
+          "final_hand": "empty"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "charcoal grill",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "Regulate the heat temperature ",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10_substep_1",
+      "description": "Flip meat on grill",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "meat"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "meat",
+            "init_status": {
+              "status": "cooked",
+              "container": null
+            },
+            "final_status": {
+              "status": "Fliped",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "grill",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10_substep_2",
+      "description": "Place leaf on grilled meat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grilling",
+          "final_hand": "meat"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "leaf",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "on the grilled meat",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "meat",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "grilling",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10_substep_3",
+      "description": "Flip meat on grill",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "meat",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "Fliped",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "grill",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12_substep_1",
+      "description": "Remove grilled meat from grill",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grilling",
+          "final_hand": "meat"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "meat",
+            "init_status": {
+              "status": "grilled",
+              "container": null
+            },
+            "final_status": {
+              "status": "grilled",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "grill",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

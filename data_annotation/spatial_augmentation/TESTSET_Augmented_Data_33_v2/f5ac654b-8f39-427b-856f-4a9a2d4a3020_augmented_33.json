@@ -1,0 +1,759 @@
+{
+  "video_id": "f5ac654b-8f39-427b-856f-4a9a2d4a3020",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Making stir fry",
+  "spatial_data": [
+    {
+      "object_id": 9,
+      "object_name": "towel",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "countertop",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "wine glass",
+      "init_status": {
+        "status": "empty",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "stove",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "kitchen floor",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "dustbin",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "fork",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "masher",
+      "init_status": {
+        "status": "clean",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "pot",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 33,
+      "object_name": "cooker",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 34,
+      "object_name": "salad",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "toppings",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "cereal",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "sausage",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 44,
+      "object_name": "milo",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "sugar",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 47,
+      "object_name": "potato",
+      "init_status": {
+        "status": "fresh",
+        "container": 30
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "potatoes",
+      "init_status": {
+        "status": "fresh",
+        "container": 30
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "yellow bell pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 51,
+      "object_name": "granola",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "herbs",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "shisho leaves",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 57,
+      "object_name": "yeast",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 58,
+      "object_name": "chocolate",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 61,
+      "object_name": "pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 62,
+      "object_name": "goyna bori",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 64,
+      "object_name": "cream",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 66,
+      "object_name": "daikon",
+      "init_status": {
+        "status": "fresh",
+        "container": 30
+      }
+    },
+    {
+      "object_id": 67,
+      "object_name": "cheese",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 68,
+      "object_name": "lentils",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 70,
+      "object_name": "butter",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 71,
+      "object_name": "nut",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 72,
+      "object_name": "minced beef",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Mix minced meat to the stir fry",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "stir fry pan"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "minced meat",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "stir fry pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": 19
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "stir fry",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "none",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Add onions to the stir fry",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "onions"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "onions",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "minced meat",
+            "init_status": {
+              "status": "mixed",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "turn off stove",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "thermostat"
+        },
+        "change": [
+          {
+            "object_id": 19,
+            "object_name": "stove",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "off",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Add ground red pepper in the stir fry",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "red pepper",
+            "init_status": {
+              "status": "off-screen",
+              "container": null
+            },
+            "final_status": {
+              "status": "in stir fry",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "minced meat",
+            "init_status": {
+              "status": "mixed",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "onions",
+            "init_status": {
+              "status": "added",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_0",
+      "description": "wash cutting board in sink",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "sink",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_1",
+      "description": "dry cutting board with a towel",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "wet",
+              "container": null
+            },
+            "final_status": {
+              "status": "dry",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "towel",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "on cutting board",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "Serve the stir fry",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "serving",
+          "final_hand": "stir fry"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "stir fry",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "served",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "plate",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": 13
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "minced meat",
+            "init_status": {
+              "status": "mixed",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "red pepper",
+            "init_status": {
+              "status": "in stir fry",
+              "container": null
+            },
+            "final_status": {
+              "status": "in stir fry",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "onions",
+            "init_status": {
+              "status": "added",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "stir fry pan",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": 13
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "countertop",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Wash the wooden spoon",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "washing",
+          "final_hand": "wooden spoon"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "wooden spoon",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7",
+      "description": "Clean the kitchen countertop",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cleaning",
+          "final_hand": "sponge"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "countertop",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "dishcloth",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "wet",
+              "container": 18
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8",
+      "description": "Serve the wine",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "serving wine",
+          "final_hand": "wine glass"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "wine glass",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with wine",
+              "container": 13
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "bottle of wine",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 18
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9",
+      "description": "Refrigerate the wine",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 17,
+            "object_name": "wine bottle",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "in refrigerator",
+              "container": 20
+            }
+          },
+          {
+            "object_id": 20,
+            "object_name": "refrigerator",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

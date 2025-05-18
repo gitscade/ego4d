@@ -1,0 +1,743 @@
+{
+  "video_id": "3ec3eab7-842d-409d-8866-42ddcbd24cd9",
+  "goal_category": "COOKING:MAKE_PASTRY",
+  "goal_description": "Frying the chakli rings",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "chakli snack",
+      "init_status": {
+        "status": "freshly fried",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "tray",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "oil",
+      "init_status": {
+        "status": "liquid",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "chakli doughs",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "dustbin",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "kneading table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "microwave",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "kitchen countertop",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "can opener",
+      "init_status": {
+        "status": "clean",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "paper bag",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "baking sheet",
+      "init_status": {
+        "status": "clean",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "rack",
+      "init_status": {
+        "status": "clean",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "mat",
+      "init_status": {
+        "status": "clean",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "kitchen sink",
+      "init_status": {
+        "status": "clean",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "measuring cup",
+      "init_status": {
+        "status": "clean",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "icing",
+      "init_status": {
+        "status": "clean",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "trash bin",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "turmeric",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "lentils",
+      "init_status": {
+        "status": "fresh",
+        "container": 24
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "drinks",
+      "init_status": {
+        "status": "fresh",
+        "container": 18
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "radish",
+      "init_status": {
+        "status": "fresh",
+        "container": 23
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "french toast",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "Japanese mustard green",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 33,
+      "object_name": "syrup",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 34,
+      "object_name": "cookie",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 35,
+      "object_name": "myoga",
+      "init_status": {
+        "status": "fresh",
+        "container": 23
+      }
+    },
+    {
+      "object_id": 36,
+      "object_name": "potatoes",
+      "init_status": {
+        "status": "fresh",
+        "container": 24
+      }
+    },
+    {
+      "object_id": 37,
+      "object_name": "stuffed green pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "soup",
+      "init_status": {
+        "status": "fresh",
+        "container": 26
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "cupcakes",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 40,
+      "object_name": "coffee",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 41,
+      "object_name": "mashed potatoes",
+      "init_status": {
+        "status": "fresh",
+        "container": 24
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "cardamon",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 43,
+      "object_name": "butter",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 44,
+      "object_name": "flatbread pizza",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "steak",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 46,
+      "object_name": "brussel sprouts",
+      "init_status": {
+        "status": "fresh",
+        "container": 24
+      }
+    },
+    {
+      "object_id": 47,
+      "object_name": "raisins",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "risotto",
+      "init_status": {
+        "status": "fresh",
+        "container": 24
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "taco",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 50,
+      "object_name": "leek",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 51,
+      "object_name": "puffed rice",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 52,
+      "object_name": "pancakes",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 53,
+      "object_name": "cream",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "chilli pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": 23
+      }
+    },
+    {
+      "object_id": 55,
+      "object_name": "squash",
+      "init_status": {
+        "status": "fresh",
+        "container": 24
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "corn",
+      "init_status": {
+        "status": "fresh",
+        "container": 24
+      }
+    },
+    {
+      "object_id": 57,
+      "object_name": "orange",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 58,
+      "object_name": "flour",
+      "init_status": {
+        "status": "fresh",
+        "container": 24
+      }
+    },
+    {
+      "object_id": 59,
+      "object_name": "breadsticks",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 60,
+      "object_name": "ketchup",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 61,
+      "object_name": "chili",
+      "init_status": {
+        "status": "fresh",
+        "container": 26
+      }
+    },
+    {
+      "object_id": 62,
+      "object_name": "sweetener",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 63,
+      "object_name": "crepe",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 64,
+      "object_name": "seafood",
+      "init_status": {
+        "status": "fresh",
+        "container": 24
+      }
+    },
+    {
+      "object_id": 65,
+      "object_name": "mango",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 66,
+      "object_name": "soy meat",
+      "init_status": {
+        "status": "fresh",
+        "container": 24
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Flip some chakli snack to fry the other side",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "chakli snack",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "freshly fried",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Flip the chakli snack to fry the other side",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "chakli"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full of chakli snacks",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "chakli snack",
+            "init_status": {
+              "status": "freshly fried",
+              "container": null
+            },
+            "final_status": {
+              "status": "freshly fried",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Set trays of chakli dough on the floor",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": null,
+          "final_status": "idle",
+          "final_hand": null
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "tray",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": null
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "chakli doughs",
+            "init_status": {
+              "status": "fried",
+              "container": null
+            },
+            "final_status": {
+              "status": "fried",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Serve chakli snack in a tray to cool",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "chakli snack",
+            "init_status": {
+              "status": "fried",
+              "container": null
+            },
+            "final_status": {
+              "status": "fried",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "tray",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with chakli snack",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_1",
+      "description": "strain oil from chakli snack ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "strained",
+          "final_hand": "oil"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "chakli snack",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "strained",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "oil",
+            "init_status": {
+              "status": "liquid",
+              "container": null
+            },
+            "final_status": {
+              "status": "strained",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Deep fry the chakli doughs in oil",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "chakli doughs"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "chakli doughs",
+            "init_status": {
+              "status": "fried",
+              "container": null
+            },
+            "final_status": {
+              "status": "deeply fried",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "oil",
+            "init_status": {
+              "status": "room temperature",
+              "container": null
+            },
+            "final_status": {
+              "status": "heated",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7",
+      "description": "Arrange the chakli dough on the trays",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "chakli dough",
+            "init_status": {
+              "status": "unarranged",
+              "container": null
+            },
+            "final_status": {
+              "status": "arranged",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "tray",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

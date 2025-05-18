@@ -1,0 +1,669 @@
+{
+  "video_id": "543e4c99-5d9f-407d-be75-c397d633fe56",
+  "goal_category": "COOKING:MAKE_SANDWICH",
+  "goal_description": "Making a bread sandwich",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "shelter",
+      "init_status": {
+        "status": "opened",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "plate",
+      "init_status": {
+        "status": "default",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "table",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "bread",
+      "init_status": {
+        "status": "default",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "cheese",
+      "init_status": {
+        "status": "default",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "kitchen sink",
+      "init_status": {
+        "status": "disarranged",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "dish",
+      "init_status": {
+        "status": "unwashed",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "towel",
+      "init_status": {
+        "status": "hanging",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "container",
+      "init_status": {
+        "status": "default",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "shopping bag",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "olive oil",
+      "init_status": {
+        "status": "default",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "lettuce",
+      "init_status": {
+        "status": "default",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "player",
+      "init_status": {
+        "status": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "rice cooker",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "kitchen",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "wash basin",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "weight scale",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "stick",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "dishwasher",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "baking sheet",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "cooker",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "omelet",
+      "init_status": {
+        "status": "fresh",
+        "container": 27
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "pasta",
+      "init_status": {
+        "status": "fresh",
+        "container": 30
+      }
+    },
+    {
+      "object_id": 33,
+      "object_name": "pawpaw",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 34,
+      "object_name": "corned beef",
+      "init_status": {
+        "status": "fresh",
+        "container": 24
+      }
+    },
+    {
+      "object_id": 36,
+      "object_name": "salt",
+      "init_status": {
+        "status": "fresh",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 40,
+      "object_name": "squash",
+      "init_status": {
+        "status": "fresh",
+        "container": 24
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "corn",
+      "init_status": {
+        "status": "fresh",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 46,
+      "object_name": "cereals",
+      "init_status": {
+        "status": "fresh",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 47,
+      "object_name": "ground beef",
+      "init_status": {
+        "status": "fresh",
+        "container": 24
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "jam",
+      "init_status": {
+        "status": "fresh",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 50,
+      "object_name": "meat",
+      "init_status": {
+        "status": "fresh",
+        "container": 24
+      }
+    },
+    {
+      "object_id": 52,
+      "object_name": "wheat",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "herbs",
+      "init_status": {
+        "status": "fresh",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 55,
+      "object_name": "carrots",
+      "init_status": {
+        "status": "fresh",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 57,
+      "object_name": "ketchup",
+      "init_status": {
+        "status": "fresh",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 58,
+      "object_name": "couscous",
+      "init_status": {
+        "status": "fresh",
+        "container": 30
+      }
+    },
+    {
+      "object_id": 60,
+      "object_name": "red bell pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 61,
+      "object_name": "asparagus",
+      "init_status": {
+        "status": "fresh",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 63,
+      "object_name": "french toast",
+      "init_status": {
+        "status": "fresh",
+        "container": 27
+      }
+    },
+    {
+      "object_id": 64,
+      "object_name": "shisho leaves",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 68,
+      "object_name": "mango",
+      "init_status": {
+        "status": "fresh",
+        "container": 10
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Place two slices on bread on the plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nylon"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "bread",
+            "init_status": {
+              "status": "packed",
+              "container": 3
+            },
+            "final_status": {
+              "status": "default",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "bread",
+            "init_status": {
+              "status": "packed",
+              "container": 3
+            },
+            "final_status": {
+              "status": "unpacked",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Trash the nylon",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "nylon"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "nylon",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Spread some butter on both slices of bread",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "butter"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "bread",
+            "init_status": {
+              "status": "unpacked",
+              "container": 3
+            },
+            "final_status": {
+              "status": "seasoning 1",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Get the pack of cheese",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cheese"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Put the butter container in the fridge",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "butter"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "Clean the container",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "towel"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "kitchen sink",
+            "init_status": {
+              "status": "disarranged",
+              "container": null
+            },
+            "final_status": {
+              "status": "supply water",
+              "container": null
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "dish",
+            "init_status": {
+              "status": "unwashed",
+              "container": 10
+            },
+            "final_status": {
+              "status": "washed",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "towel",
+            "init_status": {
+              "status": "default",
+              "container": 3
+            },
+            "final_status": {
+              "status": "wet",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Put the container in the fridge",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "container"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_7",
+      "description": "Place cheese on the bread slice",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cheese"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "bread",
+            "init_status": {
+              "status": "seasoning 1",
+              "container": 3
+            },
+            "final_status": {
+              "status": "seasoning 2",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8",
+      "description": "Arrange the kitchen area",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "lettuce"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_9",
+      "description": "Put shredded iceberg lettuce on the slice of bread",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "lettuce"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "bread",
+            "init_status": {
+              "status": "seasoning 2",
+              "container": 3
+            },
+            "final_status": {
+              "status": "seasoning 3",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10",
+      "description": "Press the two slices of bread together",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "bread"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "bread",
+            "init_status": {
+              "status": "seasoning 3",
+              "container": 3
+            },
+            "final_status": {
+              "status": "default",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11",
+      "description": "Put the cheese pack in the fridge",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cheese"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_12",
+      "description": "Arrange the utensils in the kitchen area",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cup"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "kitchen sink",
+            "init_status": {
+              "status": "disarranged",
+              "container": null
+            },
+            "final_status": {
+              "status": "arranged",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

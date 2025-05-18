@@ -1,0 +1,645 @@
+{
+  "video_id": "ec3556de-be79-4ad4-aa0f-eaca48abb5d5",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Making of a recipe",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "ingredient",
+      "init_status": {
+        "status": "not picked up",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "player",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "window blind",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "knife",
+      "init_status": {
+        "status": "sharp",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "skillet",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "vegetable",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "oven",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "baking rack",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "dry mixture",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "pot",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "baking sheet",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "rag",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "coffee maker",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "dough mixer",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "scale",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "strainer",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "chopstick",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "myoga",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "onion",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "pie",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "ball peppers",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "Japanese mustard green",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "shisho leaves",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "tahini",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "hamburger",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "sand ginger",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "peas",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "goyna bori",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "coconut milk",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 33,
+      "object_name": "coriander",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 34,
+      "object_name": "bouillon",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 35,
+      "object_name": "bread",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 36,
+      "object_name": "donut",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 37,
+      "object_name": "butter",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "japanese ginger",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "flatbread pizza",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 40,
+      "object_name": "hotdog",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 41,
+      "object_name": "yeast",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "cupcakes",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 43,
+      "object_name": "spring onion",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 44,
+      "object_name": "dumplings",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "mustard",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 46,
+      "object_name": "food",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 47,
+      "object_name": "tofu",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "mascarpone cheese",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "drinks",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 50,
+      "object_name": "salt",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 51,
+      "object_name": "taco",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 52,
+      "object_name": "red bell pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 53,
+      "object_name": "ginger",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "walnut",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 55,
+      "object_name": "pancake",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "dandelion",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 57,
+      "object_name": "green bean",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 58,
+      "object_name": "minced meat",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 59,
+      "object_name": "olives",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 60,
+      "object_name": "crumb",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Gather Ingredients",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredient",
+            "init_status": {
+              "status": "not picked up",
+              "container": null
+            },
+            "final_status": {
+              "status": "picked up",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "vegetable",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "raw",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Open the window blind",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "walking",
+          "final_hand": "window blind"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "walking",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "window blind",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Dice vegetables into smaller sizes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "knife",
+            "init_status": {
+              "status": "sharp",
+              "container": null
+            },
+            "final_status": {
+              "status": "sharp",
+              "container": null
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "vegetable",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Stir fry vegetable in a skillet",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "skillet",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "vegetable",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 6
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

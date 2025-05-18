@@ -1,0 +1,597 @@
+{
+  "video_id": "5461912b-69cd-40d7-8f79-50832f92f049",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Cutting vegetables",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "carrot",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "green bean",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "onion",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "garlic clove",
+      "init_status": {
+        "status": "attached to bulb",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "kitchen",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "kitchen area",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "cupboard",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "mixer",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "skillet",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "pot",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "vegetable",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "potato",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "mushroom",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "pie",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 34,
+      "object_name": "bacon",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 37,
+      "object_name": "pawpaw",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "nut",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 41,
+      "object_name": "crumb",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "dog food",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "okra",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 46,
+      "object_name": "daikon",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 47,
+      "object_name": "mayo",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "peas",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 52,
+      "object_name": "chilli pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 53,
+      "object_name": "rice puffs",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 55,
+      "object_name": "apple",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "jam",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 58,
+      "object_name": "minced pork",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 60,
+      "object_name": "drinks",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 61,
+      "object_name": "pizza",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 63,
+      "object_name": "celery",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": " grate carrot \n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "grating",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "carrot",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "grated",
+              "container": 9
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "cut green bean",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "knife",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "green bean",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "cut",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "peel outer skin of onion",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "onion",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_3",
+      "description": "chop onion",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "chopping",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "onion",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "chopped",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "knife",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_4",
+      "description": "peel outer skin of onion",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "onion",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_5",
+      "description": "chop onion",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "chopping",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "onion",
+            "init_status": {
+              "status": "peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "chopped",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "knife",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_6",
+      "description": "separate garlic clove from bulb",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "success",
+          "final_hand": "garlic clove"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "garlic bulb",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "split",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "garlic clove",
+            "init_status": {
+              "status": "attached to bulb",
+              "container": null
+            },
+            "final_status": {
+              "status": "detached from bulb",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_7",
+      "description": "peel outer skin of garlic clove",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "garlic clove",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

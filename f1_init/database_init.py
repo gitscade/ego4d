@@ -66,12 +66,11 @@ def exclude_test_video_list(video_list, exclude_uid_list, key_name: str):
             new_video_list.append(video)
 
     # sort test video list so that it follows sort order of uid_list
-    test_video_list = sorted(test_video_list, key=lambda d: exclude_uid_list.index(d[key_name]))
+    test_video_list = sorted(test_video_list, key=lambda x: x[key_name])
     # for video in test_video_list:
-    #     print(video["video_uid"])
+    #     print(video[key_name])
     
     return new_video_list, test_video_list
-
 
 # -----------------------
 # DATABASE FUNCS
@@ -133,9 +132,9 @@ def make_spatial_json_video_list(path1, path2):
 
 def make_spatial_json_video_list_singlepath(path1):
     """
-    *spatial videos are all individual dict and there is no "videos" key.
-    func: read all json in dir recursively & merge all individual dicts to one list
-    input: path to manual annotation, path to semiauto annotation
+    *spatial videos are all individual dict and there is no "videos" key.\n
+    func: read all json in dir recursively & merge all individual dicts to one list\n
+    input: path to manual annotation, path to semiauto annotation\n
     output: merged_videos = []
     """
     spatial_video_list = []
@@ -186,29 +185,7 @@ def merge_json_video_list_exclude_files_in_path2(path, path2):
                     print(f"Error reading {filename}: {e}")
     return merged_videos
 
-def exclude_test_video_list(video_list, exclude_uid_list, key_name: str):
-    """
-    func: exclude video element that contains uid element of the exclude_uid_list
-    func: reorder test_video_list, so that it is sorted like the exclude_uid_list
-    input: video_list, exclude_uid_list(uid_list)
-    output: new_video_list, test_video_list
-    """
-    new_video_list = []
-    test_video_list = []    
-    for video in video_list:
-        uid = video[key_name]
-        if uid in exclude_uid_list:
-            test_video_list.append(video)
-            # print(uid)
-        else:
-            new_video_list.append(video)
 
-    # sort test video list so that it follows sort order of uid_list
-    test_video_list = sorted(test_video_list, key=lambda d: exclude_uid_list.index(d[key_name]))
-    # for video in test_video_list:
-    #     print(video["video_uid"])
-    
-    return new_video_list, test_video_list
 
 def make_goalstep_document_list(video_list):
     """
@@ -410,14 +387,22 @@ if __name__ == "__main__":
         "fea524d4-a1b6-466c-ac48-8777c3fd173d",
         "grp-690f58f1-f18c-4415-bab0-787c2f83d051",
         "grp-b59f7f5d-2991-49a6-8e88-0e2f2db92585",
-        "grp-ffd863cb-f06b-404e-a013-54acb61f1ed9",
+        "grp-ffd863cb-f06b-404e-a013-54acb61f1ed9"
     ]
+
+    # make sorted test video_list
     goalstep_videos_list, goalstep_test_video_list = exclude_test_video_list(goalstep_videos_list, test_uid, 'video_uid')
     spatial_videos_list, spatial_test_video_list = exclude_test_video_list(spatial_videos_list, test_uid, 'video_id')
     print(f"testuid excluded: goalstep vids: {len(goalstep_videos_list)}")
     print(f"testuid excluded: spatial vids: {len(spatial_videos_list)}")
     print(f"testuid list: test goalstep vids: {len(goalstep_test_video_list)}")
     print(f"testuid list: test spatial vids: {len(spatial_test_video_list)}")
+
+    # for i in range(len(goalstep_test_video_list)):
+    #     goalstep_uid = goalstep_test_video_list[i]["video_uid"]
+    #     spatial_uid = spatial_test_video_list[i]["video_id"]
+    #     print(f"goalstep/spatial sorted uid {goalstep_uid} {spatial_uid}")
+
 
     # MAKE docu list
     goalstep_document_list = make_goalstep_document_list(goalstep_videos_list)
@@ -428,6 +413,7 @@ if __name__ == "__main__":
     print(f"MAKE_DOCU: goalstep_document_list: {len(goalstep_test_document_list)}")
     print(f"MAKE_DOCU: spatial_document_list: {len(spatial_document)}")
     print(f"MAKE_DOCUAKE: spatial_document_list: {len(spatial_test_document_list)}")
+
 
 
     # -----------------------

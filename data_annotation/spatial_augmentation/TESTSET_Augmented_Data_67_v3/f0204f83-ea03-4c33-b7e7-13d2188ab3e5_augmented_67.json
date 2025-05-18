@@ -1,0 +1,490 @@
+{
+  "video_id": "f0204f83-ea03-4c33-b7e7-13d2188ab3e5",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Cutting chicken",
+  "spatial_data": [
+    {
+      "object_id": 2,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "opened",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "turkey",
+      "init_status": {
+        "status": "packed",
+        "container": 2
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "knife",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "sink",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "oven",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "player",
+      "init_status": {
+        "status": null,
+        "container": 8
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "freezer",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "drawer",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "cup",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "tortilla press",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "kitchen roll",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "baking sheet",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "pan",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "skillet",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "cucumber",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "Japanese mustard green",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "kimchi",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "goyna bori",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "pastry",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "seafood",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "minced meat",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 34,
+      "object_name": "spring onion",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "apple",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 44,
+      "object_name": "tuna",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 47,
+      "object_name": "honey",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "donut",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "chocolate",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 50,
+      "object_name": "pickles",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 51,
+      "object_name": "chili",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 52,
+      "object_name": "cottage cheese",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 53,
+      "object_name": "edamame",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "carrots",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 55,
+      "object_name": "smoothie",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "veggies",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 57,
+      "object_name": "grains",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 58,
+      "object_name": "shisho leaves",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 59,
+      "object_name": "burritos",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 60,
+      "object_name": "coriander seeds",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 61,
+      "object_name": "salt",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 62,
+      "object_name": "bell pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Return bottle to refrigerator.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "turkey"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_1_substep_0",
+      "description": "slice turkey",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "turkey",
+            "init_status": {
+              "status": "packed",
+              "container": 2
+            },
+            "final_status": {
+              "status": "unpacked",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "turkey",
+            "init_status": {
+              "status": "packed",
+              "container": 2
+            },
+            "final_status": {
+              "status": "unpacked",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "turkey",
+            "init_status": {
+              "status": "packed",
+              "container": 2
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_1",
+      "description": "serve turkey in a bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "turkey"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "clean hands",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "towel"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "sink",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "supply water",
+              "container": null
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "sink",
+            "init_status": {
+              "status": "supply water",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Return bowl to the refrigerator.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "turkey"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "default",
+              "container": 4
+            },
+            "final_status": {
+              "status": "default",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "use tap.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "sink"
+        },
+        "change": []
+      }
+    }
+  ]
+}

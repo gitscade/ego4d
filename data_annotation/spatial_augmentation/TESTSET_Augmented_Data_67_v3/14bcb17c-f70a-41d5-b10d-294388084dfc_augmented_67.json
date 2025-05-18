@@ -1,0 +1,597 @@
+{
+  "video_id": "14bcb17c-f70a-41d5-b10d-294388084dfc",
+  "goal_category": "COOKING:MAKE_STEW_OR_SOUP",
+  "goal_description": "Prepare garlic",
+  "spatial_data": [
+    {
+      "object_id": 2,
+      "object_name": "phone",
+      "init_status": {
+        "status": "on",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "knife",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "gas stove",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "pan",
+      "init_status": {
+        "status": "default",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "table1",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "butter",
+      "init_status": {
+        "status": "twice",
+        "container": 9
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "table2",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "cooking gas",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "cupboard",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "dustbin",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "dough cutter",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "baking rack",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "cutter",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "plate",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "napkin",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "baking pan",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "weight scale",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "okra",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "lemon",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "wheat",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 34,
+      "object_name": "goyna bori",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 35,
+      "object_name": "hotdog",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 36,
+      "object_name": "hamburger",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 41,
+      "object_name": "breadsticks",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "pancake",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 44,
+      "object_name": "corned beef",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 47,
+      "object_name": "roux",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "meat",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "beans",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 50,
+      "object_name": "grains",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 51,
+      "object_name": "chocolate",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 52,
+      "object_name": "minced meat",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 55,
+      "object_name": "yeast",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "cucumber",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 58,
+      "object_name": "cashew nut",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 59,
+      "object_name": "yellow bell pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 60,
+      "object_name": "leaves",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 61,
+      "object_name": "coconut",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 62,
+      "object_name": "sage",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 63,
+      "object_name": "beef stock",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 64,
+      "object_name": "pomegranate",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 65,
+      "object_name": "shrimp",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Operate a phone",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "garlic"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_1_substep_0",
+      "description": "Peel off outer skin of garlic",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "garlic"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "garlic",
+            "init_status": {
+              "status": "unpeeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "garlic",
+            "init_status": {
+              "status": "unpeeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "scraps",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_1",
+      "description": "Trash garlic peel in a bin",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "garlic"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Add butter to a pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "wooden spoon"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "pan",
+            "init_status": {
+              "status": "default",
+              "container": 6
+            },
+            "final_status": {
+              "status": "default",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "Kitchen drawer",
+            "init_status": {
+              "status": "opened",
+              "container": null
+            },
+            "final_status": {
+              "status": "closed",
+              "container": null
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "butter",
+            "init_status": {
+              "status": "wrapped",
+              "container": 9
+            },
+            "final_status": {
+              "status": "unwrapped",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "butter",
+            "init_status": {
+              "status": "unwrapped",
+              "container": 9
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "pan",
+            "init_status": {
+              "status": "heating",
+              "container": 6
+            },
+            "final_status": {
+              "status": "heating",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "butter",
+            "init_status": {
+              "status": "unwrapped",
+              "container": 9
+            },
+            "final_status": {
+              "status": "wrapped",
+              "container": 9
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Reposition butters on a countertop",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "butter"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "butter",
+            "init_status": {
+              "status": "wrapped",
+              "container": 9
+            },
+            "final_status": {
+              "status": "wrapped",
+              "container": 9
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Stir the butter",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "wooden spoon"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "pan",
+            "init_status": {
+              "status": "buttered",
+              "container": 6
+            },
+            "final_status": {
+              "status": "buttered",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "Remove garlic peel",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "garlic"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "garlic",
+            "init_status": {
+              "status": "peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "scraps",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

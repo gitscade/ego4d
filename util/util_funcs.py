@@ -3,6 +3,7 @@ common utility functions
 """
 import argparse
 import json
+import os
 # Argparse
 def GetArgParser():
     return argparse.ArgumentParser(description="Argument or Popup")
@@ -34,7 +35,18 @@ def jsondump_agent_response(input):
     parsed_output = json.dumps(parsed_output)
     return parsed_output
 
-
+def remove_files(folder_path):
+    count = 0
+    for root, dirs, files in os.walk(folder_path):
+        for file in files:
+            file_path = os.path.join(root, file)
+            try:
+                os.remove(file_path)
+                print(f"Removed: {file_path}")
+                count += 1
+            except Exception as e:
+                print(f"Error removing {file_path}: {e}")
+    return count
 
 # Save / Read
 

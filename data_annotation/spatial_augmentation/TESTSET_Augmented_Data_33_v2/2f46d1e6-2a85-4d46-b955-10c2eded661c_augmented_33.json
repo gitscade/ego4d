@@ -1,0 +1,1134 @@
+{
+  "video_id": "2f46d1e6-2a85-4d46-b955-10c2eded661c",
+  "goal_category": "COOKING:MAKE_STEAK_DISH",
+  "goal_description": "preparing steak dish",
+  "spatial_data": [
+    {
+      "object_id": 5,
+      "object_name": "juice",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "steak",
+      "init_status": {
+        "status": "heating",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "green beans",
+      "init_status": {
+        "status": "heating",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "fork",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "butter",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "garlic",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "cooking gas",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "cabinet",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "wash basin",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "frypan",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "mat",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "tissue",
+      "init_status": {
+        "status": "clean",
+        "container": 26
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "skillet",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 34,
+      "object_name": "cloth",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 36,
+      "object_name": "grater",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 37,
+      "object_name": "dishwasher",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "mashed potatoes",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 40,
+      "object_name": "myoga",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 41,
+      "object_name": "leek",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 44,
+      "object_name": "vegetable",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "curry",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 46,
+      "object_name": "french toast",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 47,
+      "object_name": "mayo",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 50,
+      "object_name": "chocolate chips",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 51,
+      "object_name": "cardamon",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "granola",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "curry leaves",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 63,
+      "object_name": "cinnamon",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 64,
+      "object_name": "spaghetti",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 65,
+      "object_name": "leaves",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 66,
+      "object_name": "cake",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 67,
+      "object_name": "puree",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 68,
+      "object_name": "samosas",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 70,
+      "object_name": "pawpaw",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 71,
+      "object_name": "black olives",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 76,
+      "object_name": "sauce",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "pours juice in jar",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "juice"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "juice",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "juice",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "drink juice in jar",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "juice"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "juice",
+            "init_status": {
+              "status": "default",
+              "container": 4
+            },
+            "final_status": {
+              "status": "default",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "adjusts window",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "window"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "window",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "opened",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "drinks juice in jar",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "juice"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "juice",
+            "init_status": {
+              "status": "default",
+              "container": 2
+            },
+            "final_status": {
+              "status": "default",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "inspecting steaks in oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "oven"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "operates phone",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "phone"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "put green beans pan on hot plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "green beans"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "pan",
+            "init_status": {
+              "status": "heating",
+              "container": null
+            },
+            "final_status": {
+              "status": "heating",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7",
+      "description": "remove steak from the oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "steak"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "steak",
+            "init_status": {
+              "status": "heating",
+              "container": 7
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_0",
+      "description": "flip steaks in the pan\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "fork"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "steak",
+            "init_status": {
+              "status": "cooked",
+              "container": 7
+            },
+            "final_status": {
+              "status": "flipped",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_1",
+      "description": "stir steaks in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "steak",
+            "init_status": {
+              "status": "flipped",
+              "container": 7
+            },
+            "final_status": {
+              "status": "stir up",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9",
+      "description": "heats steaks in oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "steak"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "steak",
+            "init_status": {
+              "status": "stir up",
+              "container": 7
+            },
+            "final_status": {
+              "status": "heating",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10",
+      "description": "operates phone",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "phone"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_11",
+      "description": "drinks juice in jar",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "juice"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "juice",
+            "init_status": {
+              "status": "default",
+              "container": 2
+            },
+            "final_status": {
+              "status": "default",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12",
+      "description": "operates phone",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "phone"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_13",
+      "description": "inspecting steaks in oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "oven"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_14",
+      "description": "drinks juice in jar",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "juice"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "juice",
+            "init_status": {
+              "status": "default",
+              "container": 2
+            },
+            "final_status": {
+              "status": "default",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_15",
+      "description": "operates phone",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "phone"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_16",
+      "description": "remove steak from oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "steak"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "steak",
+            "init_status": {
+              "status": "heating",
+              "container": 7
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_17_substep_0",
+      "description": "flip steaks in the pan\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "fork"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "steak",
+            "init_status": {
+              "status": "cooked",
+              "container": 7
+            },
+            "final_status": {
+              "status": "flipped",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_17_substep_1",
+      "description": "stir steaks in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "steak",
+            "init_status": {
+              "status": "flipped",
+              "container": 7
+            },
+            "final_status": {
+              "status": "stir up",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "steak",
+            "init_status": {
+              "status": "stir up",
+              "container": 7
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_18",
+      "description": "pours boiled potatoes in pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "potato"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "potato",
+            "init_status": {
+              "status": "boiled",
+              "container": 13
+            },
+            "final_status": {
+              "status": "default",
+              "container": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_19",
+      "description": "heats butter in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "butter"
+        },
+        "change": [
+          {
+            "object_id": 17,
+            "object_name": "pan2",
+            "init_status": {
+              "status": "default",
+              "container": 13
+            },
+            "final_status": {
+              "status": "default",
+              "container": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_20",
+      "description": "pours boiled potatoes in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "potato"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "butter",
+            "init_status": {
+              "status": "default",
+              "container": 3
+            },
+            "final_status": {
+              "status": "default",
+              "container": 17
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_21_substep_0",
+      "description": "add salt to the potato\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "salt"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "potato",
+            "init_status": {
+              "status": "seasoned 1",
+              "container": 13
+            },
+            "final_status": {
+              "status": "seasoned 2",
+              "container": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_21_substep_1",
+      "description": "add black pepper",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "pepper slice"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "potato",
+            "init_status": {
+              "status": "seasoned 2",
+              "container": 13
+            },
+            "final_status": {
+              "status": "seasoned 3",
+              "container": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_21_substep_2",
+      "description": "add garlic to the potato\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "garlic"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "potato",
+            "init_status": {
+              "status": "seasoned 3",
+              "container": 13
+            },
+            "final_status": {
+              "status": "seasoned 4",
+              "container": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_21_substep_3",
+      "description": "mash the potatoes with fork",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "fork"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "potato",
+            "init_status": {
+              "status": "seasoned 4",
+              "container": 13
+            },
+            "final_status": {
+              "status": "stir up",
+              "container": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_21_substep_4",
+      "description": "Add seasoning to the potato",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "seasoning"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "potato",
+            "init_status": {
+              "status": "stir up",
+              "container": 13
+            },
+            "final_status": {
+              "status": "seasoned 5",
+              "container": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_21_substep_5",
+      "description": "mash the potatoes with fork",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "fork"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "potato",
+            "init_status": {
+              "status": "seasoned 5",
+              "container": 13
+            },
+            "final_status": {
+              "status": "stir up",
+              "container": 13
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "potato",
+            "init_status": {
+              "status": "stir up",
+              "container": 13
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_22",
+      "description": "taste mashed potatoes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "potato"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_23",
+      "description": "serves steak in plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "steak"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_24",
+      "description": "serves green beans in plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "green beans"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "green beans",
+            "init_status": {
+              "status": "cooked",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_25",
+      "description": "serves mashed potatoes in plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "potato"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_26",
+      "description": "serves steak in plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "steak"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_27",
+      "description": "serves green beans in plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_28",
+      "description": "serves mashed potatoes in plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "potato"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_29",
+      "description": "stores spice in fridge",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "seasoning"
+        },
+        "change": []
+      }
+    }
+  ]
+}

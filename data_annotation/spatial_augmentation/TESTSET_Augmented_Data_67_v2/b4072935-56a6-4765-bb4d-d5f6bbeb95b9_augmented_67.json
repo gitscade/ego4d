@@ -1,0 +1,453 @@
+{
+  "video_id": "b4072935-56a6-4765-bb4d-d5f6bbeb95b9",
+  "goal_category": "COOKING:PREPARE_INGREDIENTS_GENERAL",
+  "goal_description": "Chopping the banana blossom",
+  "spatial_data": [
+    {
+      "object_id": 4,
+      "object_name": "banana blossom",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "floret",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "kitchen cabinet",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "dining table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "kitchen floor",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "shelf",
+      "init_status": {
+        "status": "clean",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "packet",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "plastic bag",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "wok",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "cooking tools",
+      "init_status": {
+        "status": "clean",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "celery",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 33,
+      "object_name": "honey",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 34,
+      "object_name": "cream",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 35,
+      "object_name": "zucchini",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 37,
+      "object_name": "red bell pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "jam",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "spaghetti",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 40,
+      "object_name": "mushroom",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 41,
+      "object_name": "hazelnut",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "milk",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 43,
+      "object_name": "minced pork",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 44,
+      "object_name": "mango",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 46,
+      "object_name": "yellow bell pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "tuna",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 52,
+      "object_name": "syrup",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 53,
+      "object_name": "butter",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "pawpaw",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 55,
+      "object_name": "macaroni",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "caramel",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 59,
+      "object_name": "mashed potatoes",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 60,
+      "object_name": "beef stock",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 63,
+      "object_name": "tahini",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 64,
+      "object_name": "jujubes",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 65,
+      "object_name": "squash",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 66,
+      "object_name": "pizza",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 67,
+      "object_name": "shisho leaves",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 68,
+      "object_name": "bread",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_1_substep_0",
+      "description": "Peel the banana blossom",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "banana blossom",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "knife",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": "Slice the florets ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "slicing florets",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "floret",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "removed",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "banana blossom",
+            "init_status": {
+              "status": "peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "floret removed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_0",
+      "description": "Remove the head of the banana blossom",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "banana blossom",
+            "init_status": {
+              "status": "floret removed",
+              "container": null
+            },
+            "final_status": {
+              "status": "head removed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_1",
+      "description": "Chop the banana blossom",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "chopping banana blossom",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "banana blossom",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "chopped",
+              "container": 15
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

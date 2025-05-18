@@ -1,0 +1,397 @@
+{
+  "video_id": "b83285c5-0b88-4ced-a52e-5c34ea371507",
+  "goal_category": "COOKING:PREPARE_MANGO",
+  "goal_description": "Cutting the raw mango",
+  "spatial_data": [
+    {
+      "object_id": 4,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "stovetop",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "oven",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "trash bin",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "plastic bag",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "plastic wrap",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "flatbread",
+      "init_status": {
+        "status": "clean",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "radish",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "flour",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "lime",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "kimchi",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "pasta",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "murukku",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "onion",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "sauce",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 33,
+      "object_name": "granola",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 34,
+      "object_name": "citrus",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 35,
+      "object_name": "hazelnut",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "orange",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 40,
+      "object_name": "cottage cheese",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 41,
+      "object_name": "ketchup",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 43,
+      "object_name": "lime juice",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 44,
+      "object_name": "breadsticks",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 46,
+      "object_name": "chili",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "asparagus",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "potato starch",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 51,
+      "object_name": "vinegar",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 55,
+      "object_name": "olives",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Chop mangoes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "chopping",
+          "final_hand": "mango"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "mango",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "chopped",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Clean chopping knife",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "chopping knife",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Sort chopped mangoes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "mango",
+            "init_status": {
+              "status": "chopped",
+              "container": null
+            },
+            "final_status": {
+              "status": "sorted",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Move chopped mangoes into bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "chopped mango",
+            "init_status": {
+              "status": "sorted",
+              "container": null
+            },
+            "final_status": {
+              "status": "sorted",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with chopped mango",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

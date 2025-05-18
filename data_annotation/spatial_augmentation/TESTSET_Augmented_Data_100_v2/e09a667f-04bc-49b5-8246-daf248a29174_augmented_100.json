@@ -1,0 +1,652 @@
+{
+  "video_id": "e09a667f-04bc-49b5-8246-daf248a29174",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "preparing coffee",
+  "spatial_data": [
+    {
+      "object_id": 3,
+      "object_name": "table",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 1,
+      "object_name": "coffee maker",
+      "init_status": {
+        "status": "default",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "cabinet",
+      "init_status": {
+        "status": "opened",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "pack",
+      "init_status": {
+        "status": "default",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "cabinet2",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "jar",
+      "init_status": {
+        "status": "default",
+        "container": 5
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "table2",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "phone",
+      "init_status": {
+        "status": "off",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "player",
+      "init_status": {
+        "status": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "rice cooker",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "kitchen floor",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "kitchen sink",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "griddle",
+      "init_status": {
+        "status": "clean",
+        "container": 11
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "colander",
+      "init_status": {
+        "status": "clean",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "tong",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "weight scale",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "baking rack",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "strainer",
+      "init_status": {
+        "status": "clean",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "spice grinder",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "utensils",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "packet",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "sage",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "french toast",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "burritos",
+      "init_status": {
+        "status": "fresh",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "lime",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "celery",
+      "init_status": {
+        "status": "fresh",
+        "container": 18
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "citrus",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "omelet",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "asparagus",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "toast",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "minced meat",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "herbs",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 33,
+      "object_name": "tofu",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 34,
+      "object_name": "baking powder",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 35,
+      "object_name": "pie",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 36,
+      "object_name": "lasagna",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 37,
+      "object_name": "caramel",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "vegetables",
+      "init_status": {
+        "status": "fresh",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "liver",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 40,
+      "object_name": "milk",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 41,
+      "object_name": "fish",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "breadsticks",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 43,
+      "object_name": "curry",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 44,
+      "object_name": "corned beef",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "bell pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": 18
+      }
+    },
+    {
+      "object_id": 46,
+      "object_name": "egg",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 47,
+      "object_name": "croissant",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "jam",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "smoothie",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 50,
+      "object_name": "seafood",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 51,
+      "object_name": "paprika",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 52,
+      "object_name": "beef stock",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 53,
+      "object_name": "pastry",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "ice",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 55,
+      "object_name": "bread",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "potatoes",
+      "init_status": {
+        "status": "fresh",
+        "container": 18
+      }
+    },
+    {
+      "object_id": 57,
+      "object_name": "chili",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 58,
+      "object_name": "rice",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 59,
+      "object_name": "plant",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 60,
+      "object_name": "crumb",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 61,
+      "object_name": "ketchup",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "prepare coffee in a coffee maker",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "coffee maker"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "coffee maker",
+            "init_status": {
+              "status": "default",
+              "container": 3
+            },
+            "final_status": {
+              "status": "on",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "drop pack into the cabinet",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pack"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "close cabinet",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cabinet"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "cabinet",
+            "init_status": {
+              "status": "opened",
+              "container": null
+            },
+            "final_status": {
+              "status": "closed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "adjust jar in cabinet",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "jar"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "jar",
+            "init_status": {
+              "status": "default",
+              "container": 5
+            },
+            "final_status": {
+              "status": "default",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "operate phone",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "phone"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "phone",
+            "init_status": {
+              "status": "off",
+              "container": 7
+            },
+            "final_status": {
+              "status": "on",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "arrange groceries in the fridge",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "fridge"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "fridge",
+            "init_status": {
+              "status": "disarranged",
+              "container": null
+            },
+            "final_status": {
+              "status": "arranged",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "play with dog",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "play",
+          "final_hand": "none"
+        },
+        "change": []
+      }
+    }
+  ]
+}

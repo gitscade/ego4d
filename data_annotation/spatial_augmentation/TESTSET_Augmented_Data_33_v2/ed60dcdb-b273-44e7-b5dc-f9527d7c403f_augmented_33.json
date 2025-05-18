@@ -1,0 +1,475 @@
+{
+  "video_id": "ed60dcdb-b273-44e7-b5dc-f9527d7c403f",
+  "goal_category": "COOKING:MAKE_GRILLED_DISH",
+  "goal_description": "Makes grilled sausage",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "sausage",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "grill",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "charcoal bag",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "plate",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "cabinet",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "chopping board",
+      "init_status": {
+        "status": "clean",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "rack",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "sieve",
+      "init_status": {
+        "status": "clean",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "can opener",
+      "init_status": {
+        "status": "clean",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "bell pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "yellow bell pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "risotto",
+      "init_status": {
+        "status": "fresh",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 33,
+      "object_name": "bouillon",
+      "init_status": {
+        "status": "fresh",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 36,
+      "object_name": "eggplant",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 37,
+      "object_name": "salt",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "cereal",
+      "init_status": {
+        "status": "fresh",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "radish",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 40,
+      "object_name": "pomegranate",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 41,
+      "object_name": "sand ginger",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "leek",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "tuna",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "crumb",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 50,
+      "object_name": "olives",
+      "init_status": {
+        "status": "fresh",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 52,
+      "object_name": "sugar",
+      "init_status": {
+        "status": "fresh",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 53,
+      "object_name": "japanese ginger",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "toppings",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "cucumber",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 57,
+      "object_name": "sweet corn",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 59,
+      "object_name": "orange",
+      "init_status": {
+        "status": "fresh",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 60,
+      "object_name": "mascarpone cheese",
+      "init_status": {
+        "status": "fresh",
+        "container": 12
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Grills sausage",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "sausage"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "sausage",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "on grill",
+              "container": null
+            },
+            "final_status": {
+              "status": "on grill",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "grill",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Serves grilled chicken",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grilling chicken",
+          "final_hand": "chicken"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "grilled",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "plate",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "Add charcoal to grill",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "charcoal bag"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "grill",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with charcoal",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "charcoal bag",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "charcoal",
+            "init_status": {
+              "status": "unlit",
+              "container": null
+            },
+            "final_status": {
+              "status": "in grill",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "Preheat charcoal grill",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "preheating grill",
+          "final_hand": "charcoal"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "charcoal",
+            "init_status": {
+              "status": "unlit",
+              "container": null
+            },
+            "final_status": {
+              "status": "lit",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "grill",
+            "init_status": {
+              "status": "filled with charcoal",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with charcoal",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Grills sausage",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grilling sausage",
+          "final_hand": "sausage"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "grill",
+            "init_status": {
+              "status": "filled with charcoal",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with charcoal",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "charcoal",
+            "init_status": {
+              "status": "lit",
+              "container": null
+            },
+            "final_status": {
+              "status": "lit",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "sausage",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 3
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

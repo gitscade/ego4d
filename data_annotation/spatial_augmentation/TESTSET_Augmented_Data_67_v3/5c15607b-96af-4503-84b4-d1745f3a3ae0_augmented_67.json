@@ -1,0 +1,1287 @@
+{
+  "video_id": "5c15607b-96af-4503-84b4-d1745f3a3ae0",
+  "goal_category": "COOKING:MAKE_STEW_OR_SOUP",
+  "goal_description": "Cooking chicken soup",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "ingredients",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "chicken",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "onion",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "pot",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "zucchini",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "potato",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "gas cylinder",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "seasoning",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "thickner",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "freezer",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "chopstick",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "baking rack",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "baking tray",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "dough divider",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 34,
+      "object_name": "corn",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 35,
+      "object_name": "nuts",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 37,
+      "object_name": "murukku",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "herbs",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 40,
+      "object_name": "spaghetti",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "coriander seeds",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 43,
+      "object_name": "cottage cheese",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 44,
+      "object_name": "macaroni",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "drinks",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 46,
+      "object_name": "minced beef",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "seaweed",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 50,
+      "object_name": "cookie",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 51,
+      "object_name": "taco",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 52,
+      "object_name": "samosas",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 53,
+      "object_name": "beef stock",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "sage",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 55,
+      "object_name": "oil",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 57,
+      "object_name": "milk",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 59,
+      "object_name": "lime juice",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 61,
+      "object_name": "plant",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 64,
+      "object_name": "cardamon",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 65,
+      "object_name": "puree",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 67,
+      "object_name": "dandelion",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 68,
+      "object_name": "pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 69,
+      "object_name": "celery",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 70,
+      "object_name": "brussel sprouts",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 71,
+      "object_name": "lentils",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 72,
+      "object_name": "food",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Stir the ingredients in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredients",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "player",
+            "init_status": {
+              "status": "inactive",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Add seasoning to the ingredients",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredients",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "seasoned",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 18,
+            "object_name": "seasoning",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Stir the ingredients  in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredients",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "Add thickener to the ingredients",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "thickener"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredients",
+            "init_status": {
+              "status": "mixed",
+              "container": null
+            },
+            "final_status": {
+              "status": "thickner added",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 19,
+            "object_name": "thickner",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Stir the ingredients  in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredients",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7",
+      "description": "Add seasoned chicken to the ingredients",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "seasoned",
+              "container": null
+            },
+            "final_status": {
+              "status": "seasoned",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8",
+      "description": "Stir the ingredients in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredients",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9",
+      "description": "Add salt to the ingredients",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "salt shaker",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10",
+      "description": "Stir the ingredients in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredients",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11",
+      "description": "Add sliced onion to the ingredients",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "onion"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "onion",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12",
+      "description": "Stir the ingredients in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredients",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_17_substep_0",
+      "description": "add zucchini to recipe ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "zucchini"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "zucchini",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to recipe",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_18_substep_0",
+      "description": "stir recipe ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "stirring spoon"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredients",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_19",
+      "description": "Add seasoning to the ingredients",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredients",
+            "init_status": {
+              "status": "seasoned",
+              "container": null
+            },
+            "final_status": {
+              "status": "extra seasoned",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 18,
+            "object_name": "seasoning",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_20",
+      "description": "Stir the ingredients in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredients",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_21",
+      "description": "Place spoon on a pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "off-pan",
+              "container": null
+            },
+            "final_status": {
+              "status": "on-pan",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "no spoon",
+              "container": null
+            },
+            "final_status": {
+              "status": "with spoon",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_22",
+      "description": "Add Irish potato to the recipe",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "potato"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "potato",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "in pot",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_23",
+      "description": "Stir the ingredients in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredients",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_26",
+      "description": "Add seasoning to the ingredients",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredients",
+            "init_status": {
+              "status": "seasoned",
+              "container": null
+            },
+            "final_status": {
+              "status": "extra seasoned",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 18,
+            "object_name": "seasoning",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "extra used",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_27",
+      "description": "Stir the ingredients in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredients",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_28_substep_0",
+      "description": "turn off gas cylinder ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "gas cylinder",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "off",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_28_substep_1",
+      "description": "turn off gas cooker ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 17,
+            "object_name": "gas cooker",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "off",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_31",
+      "description": "Close pot with pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "pot",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "closed",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "open",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

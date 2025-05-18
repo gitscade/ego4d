@@ -1,0 +1,259 @@
+{
+  "video_id": "3728f856-0d47-4614-824f-37b6dda8e357",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Prepares potatoes",
+  "spatial_data": [
+    {
+      "object_id": 8,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "kneading table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "oven",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "wood stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "tray",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "tong",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "chopping board",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "chopsticks",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "pot",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "cup",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "beef",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "herbs",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 33,
+      "object_name": "ketchup",
+      "init_status": {
+        "status": "fresh",
+        "container": 28
+      }
+    },
+    {
+      "object_id": 37,
+      "object_name": "taco",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "pawpaw",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "toppings",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "bread",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "donut",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 46,
+      "object_name": "flour",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "cereal",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "toast",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 58,
+      "object_name": "citrus",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 59,
+      "object_name": "garlic",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 60,
+      "object_name": "mashed potatoes",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 62,
+      "object_name": "corned beef",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 63,
+      "object_name": "red bell pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 66,
+      "object_name": "steak",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 68,
+      "object_name": "onion",
+      "init_status": {
+        "status": "fresh",
+        "container": 19
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_8",
+      "description": "Prepares potatoes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "preparing potatoes",
+          "final_hand": "potatoes"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "potatoes",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "prepared",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

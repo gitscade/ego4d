@@ -1,0 +1,923 @@
+{
+  "video_id": "2da5c1ee-bd40-406d-83a7-2f3d93293949",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "making a recipe",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "custard",
+      "init_status": {
+        "status": "still",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "flour bag",
+      "init_status": {
+        "status": "still",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "sifter",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "flour",
+      "init_status": {
+        "status": "solid",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "custard mixture in bowl",
+      "init_status": {
+        "status": "liquid",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "water",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "soap",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "countertop",
+      "init_status": {
+        "status": "clear",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "custard mixture",
+      "init_status": {
+        "status": "still",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "sugar",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "kitchen",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "rice cooker",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "oven",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "plastic bag",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "electric kettle",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "spice grinder",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "cup",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "masher",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "rolling pin",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "dough divider",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "parchment paper",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "baking sheet",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "mobile phone",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "mushroom",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "donut",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "jujubes",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "pizza",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "batter",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "corn dogs",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "lime",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 33,
+      "object_name": "brussel sprouts",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 34,
+      "object_name": "dough",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 35,
+      "object_name": "ice",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 36,
+      "object_name": "peas",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 37,
+      "object_name": "crumb",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "corned beef",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "apple",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 40,
+      "object_name": "green bean",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 41,
+      "object_name": "asparagus",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "omelet",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 43,
+      "object_name": "ball peppers",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 44,
+      "object_name": "spring onion",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "jalapeno",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 46,
+      "object_name": "puree",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 47,
+      "object_name": "chilli pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "ginger",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "sage",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 50,
+      "object_name": "vinegar",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 51,
+      "object_name": "herbs",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 52,
+      "object_name": "pea",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 53,
+      "object_name": "japanese ginger",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "paprika",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 55,
+      "object_name": "lasagna",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "shrimp",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 57,
+      "object_name": "mashed potatoes",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 58,
+      "object_name": "avocado",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 59,
+      "object_name": "jalebi",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 60,
+      "object_name": "seafood",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 61,
+      "object_name": "coconut",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 62,
+      "object_name": "zucchini",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 63,
+      "object_name": "meat",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 64,
+      "object_name": "minced meat",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 65,
+      "object_name": "red bell pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "stir custard",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "custard",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "sift flour",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "flour bag"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "flour bag",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "sifter",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "flour",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "solid",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "add flour to custard in a bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "stirred custard",
+              "container": null
+            },
+            "final_status": {
+              "status": "full of custard and flour",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "flour",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "solid",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "custard",
+            "init_status": {
+              "status": "stirred",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "stir flour with custard to evenly mix",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "flour",
+          "final_status": "idle",
+          "final_hand": "custard"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "flour",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "custard",
+            "init_status": {
+              "status": "liquid",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_2",
+      "description": "add flour to custard mixture in bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "flour bag"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "custard mixture in bowl",
+            "init_status": {
+              "status": "mixed",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "flour",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "solid",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_3",
+      "description": "stir flour with custard to evenly mix",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "flour",
+          "final_status": "mixing",
+          "final_hand": "custard"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "flour",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "custard",
+            "init_status": {
+              "status": "liquid",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_4",
+      "description": "rinse hands with water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "right",
+          "final_status": "washing hands",
+          "final_hand": "both"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "water",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "flowing",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "player",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "washed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "clear countertop",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "countertop",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clear",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_0",
+      "description": "stir custard mixture in bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "bowl"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "custard mixture in bowl",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_1",
+      "description": "add sugar to custard mixture in bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "sugar"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "custard mixture in bowl",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added sugar",
+              "container": null
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "sugar",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to custard mixture in bowl",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_2",
+      "description": "stir custard mixture in bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "custard mixture",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 6
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

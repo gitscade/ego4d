@@ -1,0 +1,501 @@
+{
+  "video_id": "58b2a4a4-b721-4753-bfc3-478cdb5bd1a8",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "cooking general",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "table",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "cup",
+      "init_status": {
+        "status": "default",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "shelter",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "tea bag",
+      "init_status": {
+        "status": "default",
+        "container": 4
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "water",
+      "init_status": {
+        "status": "boiled",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "player",
+      "init_status": {
+        "status": null,
+        "container": 4
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "pie",
+      "init_status": {
+        "status": "default",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "knife",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "wood stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "cooking gas",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "toaster",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "kitchen sink",
+      "init_status": {
+        "status": "clean",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "griddle",
+      "init_status": {
+        "status": "clean",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "kitchen",
+      "init_status": {
+        "status": "clean",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "spices",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "cereal",
+      "init_status": {
+        "status": "fresh",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "shisho leaves",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "beef stock",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "maggie",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 33,
+      "object_name": "crepe",
+      "init_status": {
+        "status": "fresh",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 36,
+      "object_name": "smoothie",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 37,
+      "object_name": "cabbage",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "cinnamon",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "japanese ginger",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 40,
+      "object_name": "ketchup",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "honey",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 44,
+      "object_name": "egg",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "yeast",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 46,
+      "object_name": "minced beef",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 47,
+      "object_name": "cupcakes",
+      "init_status": {
+        "status": "fresh",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "corned beef",
+      "init_status": {
+        "status": "fresh",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "cake",
+      "init_status": {
+        "status": "fresh",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 50,
+      "object_name": "mayo",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 52,
+      "object_name": "plant",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 53,
+      "object_name": "steak",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "ground beef",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 55,
+      "object_name": "potato",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "stir fry",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 59,
+      "object_name": "yellow bell pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 61,
+      "object_name": "stuffed green pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 62,
+      "object_name": "stew",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 65,
+      "object_name": "sugar",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "add teabag in mug",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "tea bag"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "mug",
+            "init_status": {
+              "status": "default",
+              "container": 3
+            },
+            "final_status": {
+              "status": "default",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "add hot water to the mug",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "kettle"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": " steep teabag in hot water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "tea bag"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "water",
+            "init_status": {
+              "status": "boiled",
+              "container": null
+            },
+            "final_status": {
+              "status": "boiled",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "discards teabag",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "teabag"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "cuts baked pie with knife",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "pie",
+            "init_status": {
+              "status": "default",
+              "container": 1
+            },
+            "final_status": {
+              "status": "cut",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "serves baked pie in plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "plate"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "pie",
+            "init_status": {
+              "status": "default",
+              "container": 1
+            },
+            "final_status": {
+              "status": "default",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "covers baked pie with lid",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pie"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "pie",
+            "init_status": {
+              "status": "cut",
+              "container": 1
+            },
+            "final_status": {
+              "status": "cut",
+              "container": 11
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

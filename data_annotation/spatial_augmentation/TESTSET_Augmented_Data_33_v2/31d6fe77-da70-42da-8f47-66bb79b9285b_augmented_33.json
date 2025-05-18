@@ -1,0 +1,379 @@
+{
+  "video_id": "31d6fe77-da70-42da-8f47-66bb79b9285b",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "cooking general",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "garlic",
+      "init_status": {
+        "status": "unpeeled",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "fenugreek leaves",
+      "init_status": {
+        "status": "uncollected",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "dining table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "kitchen area",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "air fryer",
+      "init_status": {
+        "status": "clean",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "towel",
+      "init_status": {
+        "status": "clean",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "cards",
+      "init_status": {
+        "status": "clean",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "chopping board",
+      "init_status": {
+        "status": "clean",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "peeler",
+      "init_status": {
+        "status": "clean",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "myoga",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "pickles",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "turmeric",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "spring onion",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "cereal",
+      "init_status": {
+        "status": "fresh",
+        "container": 9
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "drinks",
+      "init_status": {
+        "status": "fresh",
+        "container": 9
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "pie",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "ball peppers",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 34,
+      "object_name": "risotto",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "lettuce",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "pastry",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 40,
+      "object_name": "ground beef",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 41,
+      "object_name": "samosas",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "pawpaw",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "fish",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 50,
+      "object_name": "roux",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 54,
+      "object_name": "tomato",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 59,
+      "object_name": "corn",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "peel garlic skin.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "garlic",
+            "init_status": {
+              "status": "unpeeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "garlic skin",
+            "init_status": {
+              "status": "unpeeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "remove garlic skin from cutting board",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "garlic",
+            "init_status": {
+              "status": "peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "garlic skin",
+            "init_status": {
+              "status": "peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "gather fenugreek leaves.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "fenugreek leaves",
+            "init_status": {
+              "status": "uncollected",
+              "container": null
+            },
+            "final_status": {
+              "status": "collected",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "basket",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

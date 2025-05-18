@@ -1,0 +1,835 @@
+{
+  "video_id": "46e07357-6946-4ff0-ba36-ae11840bdc39",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Making tortilla soup",
+  "spatial_data": [
+    {
+      "object_id": 14,
+      "object_name": "counter top",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "oil",
+      "init_status": {
+        "status": "default",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "stirrer",
+      "init_status": {
+        "status": "default",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "fridge",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "stovetop",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "herbs",
+      "init_status": {
+        "status": "default",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "chilli flakes",
+      "init_status": {
+        "status": "default",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "sink",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "peeler",
+      "init_status": {
+        "status": "unwashed",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "player",
+      "init_status": {
+        "status": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "drawer",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "kitchen cabinet",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "weight scale",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "baking rack",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 34,
+      "object_name": "mat",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "black olives",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "shisho leaves",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 43,
+      "object_name": "pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "potato",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 46,
+      "object_name": "pickles",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "tofu",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "okra",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 51,
+      "object_name": "walnut",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 52,
+      "object_name": "apple",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 55,
+      "object_name": "drinks",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 56,
+      "object_name": "curry leaves",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 57,
+      "object_name": "breadsticks",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 58,
+      "object_name": "taco",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 59,
+      "object_name": "coconut milk",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 60,
+      "object_name": "ice",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 61,
+      "object_name": "amaro",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 66,
+      "object_name": "red bell pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 67,
+      "object_name": "baking powder",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 68,
+      "object_name": "dough",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 69,
+      "object_name": "murukku",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 73,
+      "object_name": "salt",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Adds Oil to the Soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "oil"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "Stirs Soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "stirrer"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Transfer tortilla wrap on the fridge",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "tortilla"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Drink soft drink",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "drink",
+          "final_hand": "a bottle of water"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "a bottle of water",
+            "init_status": {
+              "status": "contain water",
+              "container": null
+            },
+            "final_status": {
+              "status": "tilted",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_0",
+      "description": "Adds White pepper to Soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "pepper spice"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "pepper spice",
+            "init_status": {
+              "status": "default",
+              "container": 19
+            },
+            "final_status": {
+              "status": "tilted",
+              "container": 19
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": "Adds Parsley",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "herbs"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "herbs",
+            "init_status": {
+              "status": "default",
+              "container": 19
+            },
+            "final_status": {
+              "status": "tilted",
+              "container": 19
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_2",
+      "description": "Adds Chili Flakes to Soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "chilli flakes"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "chilli flakes",
+            "init_status": {
+              "status": "default",
+              "container": 19
+            },
+            "final_status": {
+              "status": "tilted",
+              "container": 19
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_3",
+      "description": "Adds Spice to the soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "spice"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "spice",
+            "init_status": {
+              "status": "default",
+              "container": 19
+            },
+            "final_status": {
+              "status": "tilted",
+              "container": 19
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Arrange items on the counter",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "tortilla"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_5_substep_0",
+      "description": "Pours Sweetcorn into sieve",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "sweet corn"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_5_substep_1",
+      "description": "Washes Sweetcorn in water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "sweet corn"
+        },
+        "change": [
+          {
+            "object_id": 17,
+            "object_name": "sink",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "supply water",
+              "container": null
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "sweet corn",
+            "init_status": {
+              "status": "default",
+              "container": 19
+            },
+            "final_status": {
+              "status": "default",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "sweet corn",
+            "init_status": {
+              "status": "in water",
+              "container": 19
+            },
+            "final_status": {
+              "status": "in water",
+              "container": 16
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_2",
+      "description": "Adds Sweetcorn into the Soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "sieve"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "soup",
+            "init_status": {
+              "status": "seasoned 5",
+              "container": null
+            },
+            "final_status": {
+              "status": "seasoned 5",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_3",
+      "description": "Stirs Soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "stirrer"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Drink the soft drink",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "a bottle of water"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "a bottle of water",
+            "init_status": {
+              "status": "contain water",
+              "container": null
+            },
+            "final_status": {
+              "status": "tilted",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7",
+      "description": "Rinse a peeler",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "peeler"
+        },
+        "change": [
+          {
+            "object_id": 17,
+            "object_name": "sink",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "supply water",
+              "container": null
+            }
+          },
+          {
+            "object_id": 18,
+            "object_name": "peeler",
+            "init_status": {
+              "status": "unwashed",
+              "container": 17
+            },
+            "final_status": {
+              "status": "washed",
+              "container": 17
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8",
+      "description": "Heat a skillet",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "stovetop"
+        },
+        "change": [
+          {
+            "object_id": 20,
+            "object_name": "skillet",
+            "init_status": {
+              "status": "default",
+              "container": 19
+            },
+            "final_status": {
+              "status": "default",
+              "container": 19
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9",
+      "description": "Arrange items in the cabinet",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cooking tools"
+        },
+        "change": [
+          {
+            "object_id": 21,
+            "object_name": "cooking tools",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "arranged",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10_substep_0",
+      "description": "Unpacks Minced meat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "minced meat"
+        },
+        "change": [
+          {
+            "object_id": 22,
+            "object_name": "minced meat",
+            "init_status": {
+              "status": "packed",
+              "container": null
+            },
+            "final_status": {
+              "status": "unpacked",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10_substep_1",
+      "description": "Stirs minced meat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 20,
+            "object_name": "skillet",
+            "init_status": {
+              "status": "heating",
+              "container": 19
+            },
+            "final_status": {
+              "status": "heating",
+              "container": 19
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
