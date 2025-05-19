@@ -1089,7 +1089,8 @@ if __name__ == "__main__":
     PATH_SOURCE_TARGET_INPUT = constants_init.PATH_SOURCE_TARGET + "/input/source_target_video_list.pkl"
     with open(PATH_SOURCE_TARGET_INPUT, "rb") as f:
         source_target_list = pickle.load(f)
-    PATH_SOURCE_TARGET_OUTPUT = constants_init.PATH_SOURCE_TARGET + "/output/"
+    BASELINE_FOLDER = "/output-nocommtax/"
+    PATH_SOURCE_TARGET_OUTPUT = constants_init.PATH_SOURCE_TARGET + BASELINE_FOLDER
     
     source_list = []
     target_list = []

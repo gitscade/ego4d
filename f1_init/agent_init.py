@@ -112,20 +112,30 @@ def extract_lower_goalstep_segments(video: dict):
     output: lv2segments: ['Kneads the dough with the mixer.', 'Pours the flour into the mixer', 'Organize the table', ...] -> STR: Kneads the... , Pours the flour, ...
     output: lv3segments: ['weigh the dough', 'weigh the dough', 'weigh the dough', 'move scale to tabletop', ...]
     """
-    lv2segments = []
-    lv3segments = []
 
-    #print(video)
+    steps = []
+    substeps = []
+
+    print(video["video_uid"])
+
     for i, level2_segment in enumerate(video.get("segments", [])):    
-        lv2segments.append(level2_segment["step_description"])
+        steps.append(level2_segment["step_description"])
 
         for j, level3_segment in enumerate(level2_segment.get("segments", [])):
-            lv3segments.append(level3_segment["step_description"])
+            substeps.append(level3_segment["step_description"])
 
     # return lv2segments, lv3segments
-
-    lv3segments = ", ".join(lv3segments)
-    return lv3segments
+    steps = ", ".join(steps)
+    substeps = ", ".join(substeps)
+    
+    # print(f"steps: {steps}")
+    # print(f"susteps: {substeps}")
+    if steps and substeps:
+        return substeps
+    elif steps:
+        return steps
+    else:
+        return None  # or [] if you prefer an empty list as default
 
 def extract_spatial_context(video: dict):
     """
