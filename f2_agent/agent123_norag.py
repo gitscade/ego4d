@@ -1155,7 +1155,7 @@ if __name__ == "__main__":
 
 
 
-    for i in range(len(source_list)):
+    for i in range(38, len(source_list)):
         source_video_idx = source_list[i]
         target_video_idx = target_list[i]
         PATH_AGENT1a = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent1a.pkl"

@@ -1,5 +1,5 @@
 """
-common paths
+common paths (save only absolute paths)
 """
 #root path
 PATH_ROOT = "/root/project/"
