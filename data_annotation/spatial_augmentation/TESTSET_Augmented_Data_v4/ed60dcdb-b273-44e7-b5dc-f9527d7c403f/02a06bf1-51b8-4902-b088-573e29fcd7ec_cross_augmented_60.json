@@ -1,0 +1,132 @@
+{
+  "video_id": "02a06bf1-51b8-4902-b088-573e29fcd7ec",
+  "goal_category": "COOKING:PREPARE_CORN",
+  "goal_description": "threshing the corn",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "corn",
+      "init_status": {
+        "status": "unpicked",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "hand",
+      "init_status": {
+        "status": "free",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "plate",
+      "init_status": {
+        "status": "clean",
+        "container": 5
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "sausage",
+      "init_status": {
+        "status": "fresh",
+        "container": 4
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "chicken",
+      "init_status": {
+        "status": "fresh",
+        "container": 4
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "threshes the corn with hands",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "corn"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "corn",
+            "init_status": {
+              "status": "unpicked",
+              "container": null
+            },
+            "final_status": {
+              "status": "picked",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "hand",
+            "init_status": {
+              "status": "free",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.5714285714285714
+}

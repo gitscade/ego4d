@@ -1,0 +1,393 @@
+{
+  "video_id": "edc1869c-8a97-44fd-ab47-63fda4a54df9",
+  "goal_category": "COOKING:MAKE_PASTA",
+  "goal_description": "Makes stir-fried dish",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "onion",
+      "init_status": {
+        "status": "unpeeled",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "knife",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "stove",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "water",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "chopping board",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "oil",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "pot",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "sink",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Peel onion",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "onion",
+            "init_status": {
+              "status": "unpeeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "peel",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "Rinse onion",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "onion",
+            "init_status": {
+              "status": "peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 17
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "water",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "player",
+            "init_status": {
+              "status": "peel",
+              "container": null
+            },
+            "final_status": {
+              "status": "rinse",
+              "container": null
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "sink",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "Dice onion",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "onion",
+            "init_status": {
+              "status": "peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "chopping board",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "player",
+            "init_status": {
+              "status": "rinse",
+              "container": null
+            },
+            "final_status": {
+              "status": "dice",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_3",
+      "description": "Add onion to pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "onion",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "pot",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_4",
+      "description": "Adjust heat on the stovetop",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "stove"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "stove",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "onion",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "pot",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_1",
+      "description": "Add oil to the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "onion",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "pot",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "stove",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "oil",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "video_id": "907fd0e7-6821-4e2d-9c62-6d7afad5a9d1",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Cutting vegetables",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "turmeric",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "turmeric root",
+      "init_status": {
+        "status": "peeled",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "water",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "soap",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "chilli",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "bucket",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "camera",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "turmeric skin",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "phone",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "hand",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "chop board",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "knife",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "knife",
+      "init_status": {
+        "status": "clean",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "nut",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Peel turmeric skin",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "turmeric"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "turmeric",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "knife",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Wash Peeled Turmeric",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "turmeric root",
+            "init_status": {
+              "status": "peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "washed",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "water",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "present",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Move green chilli into bucket",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "chilli",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "in bucket",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "bucket",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with chilli",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12_substep_0",
+      "description": "clean chop board ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "chop board",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "water",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12_substep_1",
+      "description": "clean knife ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "knife",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "water",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": 12
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.5
+}

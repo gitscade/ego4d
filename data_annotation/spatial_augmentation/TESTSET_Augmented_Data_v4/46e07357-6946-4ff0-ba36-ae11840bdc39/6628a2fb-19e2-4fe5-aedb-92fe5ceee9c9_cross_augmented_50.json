@@ -1,0 +1,560 @@
+{
+  "video_id": "6628a2fb-19e2-4fe5-aedb-92fe5ceee9c9",
+  "goal_category": "COOKING:MAKE_STIR_FRIED_DISH_GENERAL",
+  "goal_description": "Prepare a stir fry dish",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "hair cream",
+      "init_status": "none"
+    },
+    {
+      "object_id": 2,
+      "object_name": "right hand",
+      "init_status": "empty"
+    },
+    {
+      "object_id": 3,
+      "object_name": "cream",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "hand",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "sink",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "soap",
+      "init_status": {
+        "status": "on sink",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "water",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "towel",
+      "init_status": {
+        "status": "dry",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "gas knob",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "ingredient",
+      "init_status": {
+        "status": "inside refrigerator",
+        "container": 11
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "shelf",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "oil bottle",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "oil",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "vegetable",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "bag",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "chicken",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "seed",
+      "init_status": {
+        "status": "on floor",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "trash seeds",
+      "init_status": {
+        "status": "in bin",
+        "container": 0
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "cutting board",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "chicken in pan",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "salt shaker",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "spice bottle",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "soap dispenser",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "towel rack",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "hands",
+      "init_status": {
+        "status": "dry",
+        "container": null
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "tortilla",
+      "init_status": {
+        "status": "clean",
+        "container": 11
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "herbs",
+      "init_status": {
+        "status": "fresh",
+        "container": 11
+      }
+    },
+    {
+      "object_id": 33,
+      "object_name": "sweet corn",
+      "init_status": {
+        "status": "fresh",
+        "container": 11
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_2",
+      "description": "Adjust gas knob",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "gas knob",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_2",
+      "description": "Spread oil in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "oil",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "spread",
+              "container": null
+            }
+          },
+          {
+            "object_id": 19,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "spread with oil",
+              "container": 15
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7",
+      "description": "Add sliced chicken to pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 18,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 19
+            }
+          },
+          {
+            "object_id": 19,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12_substep_0",
+      "description": "Add salt to chicken in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "salt shaker"
+        },
+        "change": [
+          {
+            "object_id": 23,
+            "object_name": "pan",
+            "init_status": {
+              "status": "filled witch chicken",
+              "container": null
+            },
+            "final_status": {
+              "status": "added salt",
+              "container": 24
+            }
+          },
+          {
+            "object_id": 24,
+            "object_name": "salt shaker",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 23
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12_substep_1",
+      "description": "Add spice to chicken in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spice bottle"
+        },
+        "change": [
+          {
+            "object_id": 18,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 25
+            }
+          },
+          {
+            "object_id": 25,
+            "object_name": "spice bottle",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": 18
+            }
+          },
+          {
+            "object_id": 19,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 18
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13",
+      "description": "Adjust gas knob",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "gas knob",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_15",
+      "description": "Add vegetable",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "vegetable",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": null
+            }
+          },
+          {
+            "object_id": 19,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 16
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_16_substep_1",
+      "description": "Spread oil in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "oil",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "spread",
+              "container": null
+            }
+          },
+          {
+            "object_id": 19,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "spreaded oil",
+              "container": 15
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.3333333333333333
+}

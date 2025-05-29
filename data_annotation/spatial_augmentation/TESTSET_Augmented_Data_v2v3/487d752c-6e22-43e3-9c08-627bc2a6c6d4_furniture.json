@@ -1,0 +1,140 @@
+{
+  "video_id": "487d752c-6e22-43e3-9c08-627bc2a6c6d4",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "peel garlic",
+  "spatial_data": [
+    {
+      "object_id": 2,
+      "object_name": "garlic",
+      "init_status": {
+        "status": "unpeeled",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "player",
+      "init_status": {
+        "status": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "knife",
+      "init_status": {
+        "status": "default",
+        "container": 5
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "table2",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "phone",
+      "init_status": {
+        "status": "playing music",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "table",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "refrigerator",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "stove",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "tidy chopping board",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cutting board"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "disarranged",
+              "container": null
+            },
+            "final_status": {
+              "status": "arranged",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "peel garlic",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "garlic"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "garlic",
+            "init_status": {
+              "status": "unpeeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "operate phone",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "phone"
+        },
+        "change": []
+      }
+    }
+  ]
+}

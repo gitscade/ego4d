@@ -1,0 +1,198 @@
+{
+  "video_id": "d7a2e92e-dc74-4e79-be04-a86f829fc3ec",
+  "goal_category": "COOKING:MAKE_COOKIE",
+  "goal_description": "Makes the cookie",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "batter",
+      "init_status": {
+        "status": "still",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "mat",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "piping bag",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "gas stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "cabinet",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "kitchen cabinet",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "skillet",
+      "init_status": {
+        "status": "clean",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "onion",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "mushroom",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "tofu",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "pipe batter on mat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "batter",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "piped",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "mat",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "batter plated",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "add batter to piping bag",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "batter"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "piping bag",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "batter",
+            "init_status": {
+              "status": "piped",
+              "container": null
+            },
+            "final_status": {
+              "status": "added in bag",
+              "container": 3
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.8333333333333334
+}

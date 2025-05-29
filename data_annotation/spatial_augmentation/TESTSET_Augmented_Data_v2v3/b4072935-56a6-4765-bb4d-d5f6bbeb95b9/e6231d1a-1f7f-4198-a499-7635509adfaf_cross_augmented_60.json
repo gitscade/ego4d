@@ -1,0 +1,296 @@
+{
+  "video_id": "e6231d1a-1f7f-4198-a499-7635509adfaf",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Grinding maize",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "maize",
+      "init_status": {
+        "status": "unground",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "grinder",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "chili pepper",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "pot",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Grind maize",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grinding",
+          "final_hand": "maize"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "maize",
+            "init_status": {
+              "status": "unground",
+              "container": null
+            },
+            "final_status": {
+              "status": "ground",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "grinder",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Turn the maize in the grinder with a spoon",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "maize",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "turning",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "grinder",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "off",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "Pour maize into the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pot"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "maize",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "in pot",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "pot",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "Add chili pepper and seasonings into the maize",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "chili pepper"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "maize",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "seasoned",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "chili pepper",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "pot",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Cover the grinder with the lid",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "grinder",
+            "init_status": {
+              "status": "open",
+              "container": null
+            },
+            "final_status": {
+              "status": "closed",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.25
+}

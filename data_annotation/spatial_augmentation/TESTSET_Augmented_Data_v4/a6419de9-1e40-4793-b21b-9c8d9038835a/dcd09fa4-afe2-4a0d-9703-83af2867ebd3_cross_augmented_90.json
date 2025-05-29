@@ -1,0 +1,791 @@
+{
+  "video_id": "dcd09fa4-afe2-4a0d-9703-83af2867ebd3",
+  "goal_category": "COOKING:MAKE_STEW_OR_SOUP",
+  "goal_description": "Making potato soup",
+  "spatial_data": [
+    {
+      "object_id": 3,
+      "object_name": "soup",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "table",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "default",
+        "container": 4
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "container",
+      "init_status": {
+        "status": "default",
+        "container": 4
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "sink",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "sink cabinet",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "peeler",
+      "init_status": {
+        "status": "default",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "potato",
+      "init_status": {
+        "status": "unpeeled",
+        "container": 4
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "knife",
+      "init_status": {
+        "status": "default",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "salt",
+      "init_status": {
+        "status": "default",
+        "container": 4
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "spice container",
+      "init_status": {
+        "status": "default",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "cabinet",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "trash can",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "potato",
+      "init_status": {
+        "status": "unpeeled",
+        "container": 4
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "counter top",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "player",
+      "init_status": {
+        "status": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "stovetop",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "oven",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "chopstick",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "pot",
+      "init_status": {
+        "status": "clean",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "trash bin",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "tomato",
+      "init_status": {
+        "status": "fresh",
+        "container": 18
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "lemon",
+      "init_status": {
+        "status": "fresh",
+        "container": 18
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "asparagus",
+      "init_status": {
+        "status": "fresh",
+        "container": 18
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "celery",
+      "init_status": {
+        "status": "fresh",
+        "container": 18
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Stir the soup with the spatula",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "soup"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "soup",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir up",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_0",
+      "description": "Fetch water in a container",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "sink"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "sink",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "supply water",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "container",
+            "init_status": {
+              "status": "default",
+              "container": 4
+            },
+            "final_status": {
+              "status": "contain water",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_1",
+      "description": "add water to soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "container"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Stir the soup with the spatula",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "soup",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir up",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_0",
+      "description": "peel outer skin of potato",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "peeler"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "potato",
+            "init_status": {
+              "status": "unpeeled",
+              "container": 4
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "potato",
+            "init_status": {
+              "status": "unpeeled",
+              "container": 4
+            },
+            "final_status": {
+              "status": "default",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": "stir soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "soup",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir up",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_2",
+      "description": "cut potato into soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "potato"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "soup",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "seasoning 1",
+              "container": null
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "potato",
+            "init_status": {
+              "status": "peeled",
+              "container": 4
+            },
+            "final_status": {
+              "status": "half",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_3",
+      "description": "stir soup ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "soup",
+            "init_status": {
+              "status": "seasoning 1",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir up",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_4",
+      "description": "cut potato into soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "soup",
+            "init_status": {
+              "status": "stir up",
+              "container": null
+            },
+            "final_status": {
+              "status": "seasoning 2",
+              "container": null
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "potato",
+            "init_status": {
+              "status": "half",
+              "container": 4
+            },
+            "final_status": {
+              "status": "removed",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_5",
+      "description": "stir soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "soup",
+            "init_status": {
+              "status": "seasoning 2",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir up",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_6",
+      "description": "add salt to soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "salt"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "soup",
+            "init_status": {
+              "status": "stir up",
+              "container": null
+            },
+            "final_status": {
+              "status": "seasoning 3",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_7",
+      "description": "stir soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "soup",
+            "init_status": {
+              "status": "seasoning 3",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir up",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_8",
+      "description": "cover pot with lid ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pot"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "pot",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "covered",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Put the spice container on the shelf",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spice container"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "Trash the potato peel",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "potato peel"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Wash the utensils",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "container"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "sink",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "supply water",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "default",
+              "container": 4
+            },
+            "final_status": {
+              "status": "washed",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "container",
+            "init_status": {
+              "status": "default",
+              "container": 4
+            },
+            "final_status": {
+              "status": "washed",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7",
+      "description": "Stir the soup with the spatula",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "soup"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "soup",
+            "init_status": {
+              "status": "default",
+              "container": 4
+            },
+            "final_status": {
+              "status": "stir up",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8",
+      "description": "Put the potatoes in the fridge",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "potato"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_9",
+      "description": "Stir the soup with the spatula",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "soup"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "soup",
+            "init_status": {
+              "status": "default",
+              "container": 4
+            },
+            "final_status": {
+              "status": "stir up",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10",
+      "description": "Clean the counter top",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "couter top"
+        },
+        "change": [
+          {
+            "object_id": 19,
+            "object_name": "couter top",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "washed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11",
+      "description": "Stir the soup with the spatula",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "soup"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "soup",
+            "init_status": {
+              "status": "default",
+              "container": 4
+            },
+            "final_status": {
+              "status": "stir up",
+              "container": 4
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.631578947368421
+}

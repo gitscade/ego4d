@@ -1,0 +1,816 @@
+{
+  "video_id": "a6419de9-1e40-4793-b21b-9c8d9038835a",
+  "goal_category": "COOKING:MAKE_PAN_SEARED_MEAT_OR_FISH",
+  "goal_description": "making a recipe",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "phone",
+      "init_status": {
+        "status": "inactive",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "ingredient",
+      "init_status": {
+        "status": "inactive",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "asparagus",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "tray",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "oven",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "tomato",
+      "init_status": {
+        "status": "off-tray",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "lemon",
+      "init_status": {
+        "status": "on table",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "pot",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "salt shaker",
+      "init_status": {
+        "status": "in hand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "potato",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "celery",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "stovetop",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "water",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "soap",
+      "init_status": {
+        "status": "static",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "trash bin",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "chopstick",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "knife",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "countertop",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "butter",
+      "init_status": {
+        "status": "fresh",
+        "container": 26
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "operate phone",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "phone"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "phone",
+            "init_status": {
+              "status": "inactive",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": 22
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "gather ingredients",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "ingredient",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "gathered",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "remove the ends of the asparagus",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 23,
+            "object_name": "knife",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "none",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "asparagus",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "trimmed",
+              "container": 23
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_0",
+      "description": "Drop tray on table",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "tray",
+            "init_status": {
+              "status": "off table",
+              "container": null
+            },
+            "final_status": {
+              "status": "on table",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_2",
+      "description": "Put tomato on tray",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "tomato",
+            "init_status": {
+              "status": "off-tray",
+              "container": null
+            },
+            "final_status": {
+              "status": "on-tray",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_3",
+      "description": "Place tray into oven ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "tray",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "in oven",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "slice lemon",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "lemon",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 23
+            }
+          },
+          {
+            "object_id": 23,
+            "object_name": "knife",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_0",
+      "description": "Get water into pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "pot",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with water",
+              "container": null
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "water",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "static",
+              "container": 9
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_1",
+      "description": "Put pot on stovetop",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "pot",
+            "init_status": {
+              "status": "off-stovetop",
+              "container": null
+            },
+            "final_status": {
+              "status": "on-stovetop",
+              "container": 15
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_2",
+      "description": "Put salt in pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "salt shaker",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "pot",
+            "init_status": {
+              "status": "only water",
+              "container": null
+            },
+            "final_status": {
+              "status": "with salt",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_0",
+      "description": "Dice potato",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "potato",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": 23
+            }
+          },
+          {
+            "object_id": 23,
+            "object_name": "knife",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_1",
+      "description": "Break out root from celery",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "celery",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "broken",
+              "container": 23
+            }
+          },
+          {
+            "object_id": 23,
+            "object_name": "knife",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10",
+      "description": "adjust the stovetop temperature",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "adjusting temperature",
+          "final_hand": "stove knob"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "stovetop",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11",
+      "description": "adjust pot on stovetop",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "stovetop",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "pot",
+            "init_status": {
+              "status": "off-stovetop",
+              "container": null
+            },
+            "final_status": {
+              "status": "on-stovetop",
+              "container": 15
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12",
+      "description": "deseed the lemon slices",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "lemon slice",
+            "init_status": {
+              "status": "on table",
+              "container": null
+            },
+            "final_status": {
+              "status": "deseeded",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13_substep_2",
+      "description": "Look at tomato in oven through glass",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "tomato",
+            "init_status": {
+              "status": "cooked",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "oven",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13_substep_3",
+      "description": "Dispose an item in the trash bin",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 20,
+            "object_name": "trash bin",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13_substep_4",
+      "description": "Clean and return chopstick",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cleaning",
+          "final_hand": "chopstick"
+        },
+        "change": [
+          {
+            "object_id": 21,
+            "object_name": "chopstick",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 17
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "water",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "flowing",
+              "container": null
+            }
+          },
+          {
+            "object_id": 18,
+            "object_name": "soap",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 17
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_14",
+      "description": "boil potatoes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "potato",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "boiled",
+              "container": 9
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.6666666666666666
+}

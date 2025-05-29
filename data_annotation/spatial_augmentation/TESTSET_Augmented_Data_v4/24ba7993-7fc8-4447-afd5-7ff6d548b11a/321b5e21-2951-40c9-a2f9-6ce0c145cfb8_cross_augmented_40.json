@@ -1,0 +1,290 @@
+{
+  "video_id": "321b5e21-2951-40c9-a2f9-6ce0c145cfb8",
+  "goal_category": "COOKING:MAKE_DONUT",
+  "goal_description": "Preparing the dough balls",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "doughnut",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "frying pan",
+      "init_status": {
+        "status": "oiled",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "doughnut",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "knife",
+      "init_status": {
+        "status": "clean",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "cheese",
+      "init_status": {
+        "status": "fresh",
+        "container": 5
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "ketchup",
+      "init_status": {
+        "status": "fresh",
+        "container": 5
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "rolling the doughnuts to shape",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "rolling doughnuts",
+          "final_hand": "doughnut"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "doughnut",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "rolled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "doughnut",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "rolled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_0",
+      "description": "Add the doughnuts in the oil to fry",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "doughnut",
+            "init_status": {
+              "status": "rolled",
+              "container": null
+            },
+            "final_status": {
+              "status": "rolled",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "oiled",
+              "container": null
+            },
+            "final_status": {
+              "status": "oiled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "doughnut",
+            "init_status": {
+              "status": "rolled",
+              "container": null
+            },
+            "final_status": {
+              "status": "rolled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_1",
+      "description": "Add the doughnuts in the oil to fry",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "doughnut",
+            "init_status": {
+              "status": "rolled",
+              "container": null
+            },
+            "final_status": {
+              "status": "rolled",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "oiled",
+              "container": null
+            },
+            "final_status": {
+              "status": "oiled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "doughnut",
+            "init_status": {
+              "status": "rolled",
+              "container": null
+            },
+            "final_status": {
+              "status": "rolled",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "frying the doughnuts",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "frying pan"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "doughnut",
+            "init_status": {
+              "status": "rolled",
+              "container": null
+            },
+            "final_status": {
+              "status": "fried",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "frying pan",
+            "init_status": {
+              "status": "oiled",
+              "container": null
+            },
+            "final_status": {
+              "status": "heated",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "doughnut",
+            "init_status": {
+              "status": "rolled",
+              "container": null
+            },
+            "final_status": {
+              "status": "fried",
+              "container": 2
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.6
+}

@@ -1,0 +1,380 @@
+{
+  "video_id": "4fa75795-ddc4-4582-9715-bb7887439263",
+  "goal_category": "COOKING:MAKE_FLATBREAD",
+  "goal_description": "Making chapati",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "oil",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "plate",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "chapati",
+      "init_status": {
+        "status": "off-pan",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "cooker",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "flour bag",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "basket",
+      "init_status": {
+        "status": "clean",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "cutting board",
+      "init_status": {
+        "status": "clean",
+        "container": 15
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "garlic",
+      "init_status": {
+        "status": "fresh",
+        "container": 14
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_3",
+      "description": "place the chapati on the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "chapati",
+            "init_status": {
+              "status": "off-pan",
+              "container": null
+            },
+            "final_status": {
+              "status": "on-pan",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_4",
+      "description": "add oil to fry",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "oil",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "chapati",
+            "init_status": {
+              "status": "on-pan",
+              "container": null
+            },
+            "final_status": {
+              "status": "on-pan",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_5",
+      "description": "flip to fry other side",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "chapati",
+            "init_status": {
+              "status": "on-pan",
+              "container": null
+            },
+            "final_status": {
+              "status": "flipped",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "oil",
+            "init_status": {
+              "status": "added",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_6",
+      "description": "drain excess oil",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "oil",
+            "init_status": {
+              "status": "excess",
+              "container": null
+            },
+            "final_status": {
+              "status": "proper",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "chapati",
+            "init_status": {
+              "status": "flipped",
+              "container": null
+            },
+            "final_status": {
+              "status": "flipped",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_7",
+      "description": "transfer cooked flatbread to a plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "chapati",
+            "init_status": {
+              "status": "on pan",
+              "container": null
+            },
+            "final_status": {
+              "status": "on plate",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "plate",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "regulating the cooker",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "coating the chapati with flour",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "flour bag",
+          "final_status": "coating chapati with flour",
+          "final_hand": "chapati"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "flour bag",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "chapati",
+            "init_status": {
+              "status": "uncoated",
+              "container": null
+            },
+            "final_status": {
+              "status": "coated with flour",
+              "container": 12
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.6666666666666666
+}

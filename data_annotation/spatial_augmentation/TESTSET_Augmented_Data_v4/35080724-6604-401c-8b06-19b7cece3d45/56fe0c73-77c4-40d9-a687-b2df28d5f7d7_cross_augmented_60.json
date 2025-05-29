@@ -1,0 +1,326 @@
+{
+  "video_id": "56fe0c73-77c4-40d9-a687-b2df28d5f7d7",
+  "goal_category": "COOKING:PREPARE_MANGO",
+  "goal_description": "Cutting the mangoes",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "mango",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "knife",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "sink",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "water",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "chopping board",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "cup",
+      "init_status": {
+        "status": "clean",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "dough",
+      "init_status": {
+        "status": "fresh",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "baking powder",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_1_substep_0",
+      "description": "Clean the mango",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "mango",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "cleaned",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "sink",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "water",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_1",
+      "description": "Pare off the mango skin",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "pare off",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "mango",
+            "init_status": {
+              "status": "cleaned",
+              "container": null
+            },
+            "final_status": {
+              "status": "pared off",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "sink",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_1",
+      "description": "Slice the mango",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "mango"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "mango",
+            "init_status": {
+              "status": "pared off",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "knife",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+              "status": "pare off",
+              "container": null
+            },
+            "final_status": {
+              "status": "slice",
+              "container": null
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "chopping board",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13_substep_1",
+      "description": "Transfer the mango slices into the bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "mango",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.625
+}

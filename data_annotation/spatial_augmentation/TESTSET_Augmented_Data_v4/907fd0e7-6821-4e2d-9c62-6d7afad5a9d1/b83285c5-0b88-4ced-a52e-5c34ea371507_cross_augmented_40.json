@@ -1,0 +1,238 @@
+{
+  "video_id": "b83285c5-0b88-4ced-a52e-5c34ea371507",
+  "goal_category": "COOKING:PREPARE_MANGO",
+  "goal_description": "Cutting the raw mango",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "mango",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "knife",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "turmeric",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Chop mangoes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "chopping",
+          "final_hand": "mango"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "mango",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "chopped",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Clean chopping knife",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "chopping knife",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Sort chopped mangoes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "mango",
+            "init_status": {
+              "status": "chopped",
+              "container": null
+            },
+            "final_status": {
+              "status": "sorted",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Move chopped mangoes into bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "chopped mango",
+            "init_status": {
+              "status": "sorted",
+              "container": null
+            },
+            "final_status": {
+              "status": "sorted",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with chopped mango",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.23076923076923078
+}

@@ -1,0 +1,540 @@
+{
+  "video_id": "e250017c-16ff-4825-9c30-160f391e1549",
+  "goal_category": "SHOPPING:SHOPPING_GENERAL",
+  "goal_description": "Continue cooking food",
+  "spatial_data": [
+    {
+      "object_id": 3,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "stove",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "potato",
+      "init_status": {
+        "status": "intact",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "water",
+      "init_status": {
+        "status": "still",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "sink",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "pot",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "food",
+      "init_status": {
+        "status": "cooked",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "knife",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "cutting board",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "container",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "clean",
+        "container": 29
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "paper towel",
+      "init_status": {
+        "status": "clean",
+        "container": 29
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_1_substep_0",
+      "description": " regulate the heat temperature on the stovetop",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "stove"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "stove",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "regulated",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "regulate",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_1",
+      "description": "open the pot lid to check for doneness",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "stove",
+            "init_status": {
+              "status": "regulated",
+              "container": null
+            },
+            "final_status": {
+              "status": "regulated",
+              "container": null
+            }
+          },
+          {
+            "object_id": 23,
+            "object_name": "pot",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "regulate",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "Stir food",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 23,
+            "object_name": "pot",
+            "init_status": {
+              "status": "open",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "stove",
+            "init_status": {
+              "status": "regulated",
+              "container": null
+            },
+            "final_status": {
+              "status": "regulated",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "open",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir",
+              "container": null
+            }
+          },
+          {
+            "object_id": 24,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 25,
+            "object_name": "food",
+            "init_status": {
+              "status": "cooked",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 23
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_0",
+      "description": "Rinse the potatoes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 22,
+            "object_name": "sink",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "water",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "stir",
+              "container": null
+            },
+            "final_status": {
+              "status": "rinse",
+              "container": null
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "potato",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "rinsed",
+              "container": 22
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_1",
+      "description": "Peel the potato",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "potato",
+            "init_status": {
+              "status": "rinsed",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "rinse",
+              "container": null
+            },
+            "final_status": {
+              "status": "peel",
+              "container": null
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "water",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 16
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_3",
+      "description": "Slice the potato",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "potato"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "potato",
+            "init_status": {
+              "status": "peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 27
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "player",
+            "init_status": {
+              "status": "peel",
+              "container": null
+            },
+            "final_status": {
+              "status": "slice",
+              "container": null
+            }
+          },
+          {
+            "object_id": 26,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 27,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_4",
+      "description": "Add potato to the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "potato"
+        },
+        "change": [
+          {
+            "object_id": 23,
+            "object_name": "pot",
+            "init_status": {
+              "status": "open",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "stove",
+            "init_status": {
+              "status": "regulated",
+              "container": null
+            },
+            "final_status": {
+              "status": "regulated",
+              "container": null
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "potato",
+            "init_status": {
+              "status": "peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 23
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "water",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 25,
+            "object_name": "food",
+            "init_status": {
+              "status": "cooked",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 23
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.4
+}

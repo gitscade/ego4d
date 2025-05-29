@@ -1,0 +1,222 @@
+{
+  "video_id": "892629b0-61eb-425d-97f4-7d213074c435",
+  "goal_category": "COOKING:MAKE_FLATBREAD",
+  "goal_description": "making flatbread",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "flatbread",
+      "init_status": {
+        "status": "inactive",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "frypan",
+      "init_status": {
+        "status": "inactive",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "spatula",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "cup",
+      "init_status": {
+        "status": "clean",
+        "container": 9
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "knife",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "pie",
+      "init_status": {
+        "status": "fresh",
+        "container": 8
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Stir flatbread in the frypan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "frypan"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "flatbread",
+            "init_status": {
+              "status": "inactive",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "frypan",
+            "init_status": {
+              "status": "inactive",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir",
+              "container": null
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "spatula",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "Move the flatbread from the frypan into a bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "bowl"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "flatbread",
+            "init_status": {
+              "status": "active",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "spatula",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stir",
+              "container": null
+            },
+            "final_status": {
+              "status": "move",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.45454545454545453
+}

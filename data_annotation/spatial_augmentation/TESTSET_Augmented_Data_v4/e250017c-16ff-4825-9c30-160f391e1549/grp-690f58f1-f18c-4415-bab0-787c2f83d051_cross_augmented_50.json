@@ -1,0 +1,1581 @@
+{
+  "video_id": "grp-690f58f1-f18c-4415-bab0-787c2f83d051",
+  "goal_category": "COOKING:MAKE_STIR_FRIED_DISH_GENERAL",
+  "goal_description": "Making chicken stir fried dish",
+  "spatial_data": [
+    {
+      "object_id": 5,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "peas",
+      "init_status": "none"
+    },
+    {
+      "object_id": 11,
+      "object_name": "water",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "black spice",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "cabbage",
+      "init_status": {
+        "status": "unpacked",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "chicken",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "stove",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 40,
+      "object_name": "range hood",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 41,
+      "object_name": "chopstick",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 42,
+      "object_name": "soy sauce",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 43,
+      "object_name": "chopping board",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 44,
+      "object_name": "knife",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 45,
+      "object_name": "sink",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 46,
+      "object_name": "water",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 47,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 48,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 49,
+      "object_name": "pot",
+      "init_status": {
+        "status": "clean",
+        "container": 29
+      }
+    },
+    {
+      "object_id": 50,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 51,
+      "object_name": "potato",
+      "init_status": {
+        "status": "fresh",
+        "container": 47
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_2",
+      "description": "Boil water in a skillet",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 30,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 29
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "water",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 29,
+            "object_name": "stove",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Activate range hood",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 40,
+            "object_name": "range hood",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_0",
+      "description": "puts chicken pieces into bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 28,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_1",
+      "description": "adds green peas into bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "preparing",
+          "final_hand": "bowl"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "peas",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 28,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_0",
+      "description": "add hot water to recipe",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "kettle"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "water",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "peas",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 28,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_1",
+      "description": "stirs recipe with chopstick",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "chopstick",
+          "final_status": "active",
+          "final_hand": "chopstick"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "peas",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "water",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 28,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 39,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir",
+              "container": null
+            }
+          },
+          {
+            "object_id": 41,
+            "object_name": "chopstick",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 39
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_2",
+      "description": "drains water from recipe",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "peas",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 28,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 39,
+            "object_name": "player",
+            "init_status": {
+              "status": "stir",
+              "container": null
+            },
+            "final_status": {
+              "status": "drain",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_0",
+      "description": "adds soy sauce to recipe",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "soy sauce bottle"
+        },
+        "change": [
+          {
+            "object_id": 42,
+            "object_name": "soy sauce",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "peas",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 28,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_2",
+      "description": "stir recipe",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 28,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "peas",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 42,
+            "object_name": "soy sauce",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 41,
+            "object_name": "chopstick",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 39
+            }
+          },
+          {
+            "object_id": 39,
+            "object_name": "player",
+            "init_status": {
+              "status": "drain",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7_substep_0",
+      "description": "adds black spice to recipe",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 23,
+            "object_name": "black spice",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "peas",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 28,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 42,
+            "object_name": "soy sauce",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7_substep_1",
+      "description": "stirs recipe",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spoon"
+        },
+        "change": [
+          {
+            "object_id": 41,
+            "object_name": "chopstick",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 39
+            }
+          },
+          {
+            "object_id": 39,
+            "object_name": "player",
+            "init_status": {
+              "status": "drain",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "peas",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 23,
+            "object_name": "black spice",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 28,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 42,
+            "object_name": "soy sauce",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_1",
+      "description": "dice cabbage ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 26,
+            "object_name": "cabbage",
+            "init_status": {
+              "status": "unpacked",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": 43
+            }
+          },
+          {
+            "object_id": 39,
+            "object_name": "player",
+            "init_status": {
+              "status": "stir",
+              "container": null
+            },
+            "final_status": {
+              "status": "dice",
+              "container": null
+            }
+          },
+          {
+            "object_id": 43,
+            "object_name": "chopping board",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          },
+          {
+            "object_id": 44,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 39
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_2",
+      "description": "rinses cabbage",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 46,
+            "object_name": "water",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 26
+            }
+          },
+          {
+            "object_id": 45,
+            "object_name": "sink",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          },
+          {
+            "object_id": 26,
+            "object_name": "cabbage",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "rinsed",
+              "container": 45
+            }
+          },
+          {
+            "object_id": 39,
+            "object_name": "player",
+            "init_status": {
+              "status": "dice",
+              "container": null
+            },
+            "final_status": {
+              "status": "rinse",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_1",
+      "description": "pours chicken to pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 42,
+            "object_name": "soy sauce",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "peas",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 23,
+            "object_name": "black spice",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 28,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 30,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_2",
+      "description": "turn on stovetop",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "stove"
+        },
+        "change": [
+          {
+            "object_id": 29,
+            "object_name": "stove",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "peas",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 23,
+            "object_name": "black spice",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 28,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 42,
+            "object_name": "soy sauce",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 30,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 29
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_3",
+      "description": "stir chicken in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "peas",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 23,
+            "object_name": "black spice",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 28,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 29,
+            "object_name": "stove",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 30,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 29
+            }
+          },
+          {
+            "object_id": 39,
+            "object_name": "player",
+            "init_status": {
+              "status": "rinse",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir",
+              "container": null
+            }
+          },
+          {
+            "object_id": 41,
+            "object_name": "chopstick",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 39
+            }
+          },
+          {
+            "object_id": 42,
+            "object_name": "soy sauce",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10_substep_0",
+      "description": "add cabbage to pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "holding cabbage",
+          "final_hand": "cabbage"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "peas",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 23,
+            "object_name": "black spice",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 26,
+            "object_name": "cabbage",
+            "init_status": {
+              "status": "rinsed",
+              "container": null
+            },
+            "final_status": {
+              "status": "rinsed",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 28,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 29,
+            "object_name": "stove",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 30,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 29
+            }
+          },
+          {
+            "object_id": 42,
+            "object_name": "soy sauce",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10_substep_1",
+      "description": "stirs cabbage and chicken in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "cabbage",
+          "final_status": "cooking",
+          "final_hand": "chicken"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "peas",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 23,
+            "object_name": "black spice",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 26,
+            "object_name": "cabbage",
+            "init_status": {
+              "status": "rinsed",
+              "container": null
+            },
+            "final_status": {
+              "status": "rinsed",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 28,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 29,
+            "object_name": "stove",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 30,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 29
+            }
+          },
+          {
+            "object_id": 39,
+            "object_name": "player",
+            "init_status": {
+              "status": "stir",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir",
+              "container": null
+            }
+          },
+          {
+            "object_id": 41,
+            "object_name": "chopstick",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 39
+            }
+          },
+          {
+            "object_id": 42,
+            "object_name": "soy sauce",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10_substep_2",
+      "description": "adjust temperature of stovetop",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "peas",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 23,
+            "object_name": "black spice",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 26,
+            "object_name": "cabbage",
+            "init_status": {
+              "status": "rinsed",
+              "container": null
+            },
+            "final_status": {
+              "status": "rinsed",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 28,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 29,
+            "object_name": "stove",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "adjust temperature",
+              "container": null
+            }
+          },
+          {
+            "object_id": 30,
+            "object_name": "pan",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 29
+            }
+          },
+          {
+            "object_id": 42,
+            "object_name": "soy sauce",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 30
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.8
+}

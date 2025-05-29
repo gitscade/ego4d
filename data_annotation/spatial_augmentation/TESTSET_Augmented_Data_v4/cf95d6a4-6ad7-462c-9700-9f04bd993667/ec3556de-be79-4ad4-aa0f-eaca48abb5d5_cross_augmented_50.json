@@ -1,0 +1,294 @@
+{
+  "video_id": "ec3556de-be79-4ad4-aa0f-eaca48abb5d5",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Making of a recipe",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "ingredient",
+      "init_status": {
+        "status": "not picked up",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "player",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "window blind",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "knife",
+      "init_status": {
+        "status": "sharp",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "skillet",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "vegetable",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "pan",
+      "init_status": {
+        "status": "clean",
+        "container": 11
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "meat",
+      "init_status": {
+        "status": "fresh",
+        "container": 9
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "fish",
+      "init_status": {
+        "status": "fresh",
+        "container": 9
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "lettuce",
+      "init_status": {
+        "status": "fresh",
+        "container": 9
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "avocado",
+      "init_status": {
+        "status": "fresh",
+        "container": 9
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Gather Ingredients",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "ingredient",
+            "init_status": {
+              "status": "not picked up",
+              "container": null
+            },
+            "final_status": {
+              "status": "picked up",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "vegetable",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "raw",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Open the window blind",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "walking",
+          "final_hand": "window blind"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "walking",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "window blind",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Dice vegetables into smaller sizes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "knife",
+            "init_status": {
+              "status": "sharp",
+              "container": null
+            },
+            "final_status": {
+              "status": "sharp",
+              "container": null
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "vegetable",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Stir fry vegetable in a skillet",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "skillet",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "vegetable",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 6
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.35714285714285715
+}

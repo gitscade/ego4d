@@ -1,0 +1,392 @@
+{
+  "video_id": "1dc85adb-fbdd-4275-b9cf-42976acb4d14",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Chopping the vegetables",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "pepper",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "knife",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "onion",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "cutting board",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "towel",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Slice green peppers",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "slicing",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "pepper",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Slice onions",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "onion",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Slice green pepper",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "pepper",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Slice onion",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "onion",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Pound the green peppers",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "pepper",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "pounded",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in hand",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.3125
+}

@@ -1,0 +1,348 @@
+{
+  "video_id": "ed60dcdb-b273-44e7-b5dc-f9527d7c403f",
+  "goal_category": "COOKING:MAKE_GRILLED_DISH",
+  "goal_description": "Makes grilled sausage",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "sausage",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "chicken",
+      "init_status": {
+        "status": "cooked",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "grill",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "charcoal bag",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "charcoal",
+      "init_status": {
+        "status": "unlit",
+        "container": 4
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "plate",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "sausage",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "mat",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "piping bag",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "batter",
+      "init_status": {
+        "status": "fresh",
+        "container": 9
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Grills sausage",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "sausage"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "sausage",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "on grill",
+              "container": null
+            },
+            "final_status": {
+              "status": "on grill",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "grill",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Serves grilled chicken",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grilling chicken",
+          "final_hand": "chicken"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "grilled",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "plate",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "Add charcoal to grill",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "charcoal bag"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "grill",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with charcoal",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "charcoal bag",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "charcoal",
+            "init_status": {
+              "status": "unlit",
+              "container": null
+            },
+            "final_status": {
+              "status": "in grill",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "Preheat charcoal grill",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "preheating grill",
+          "final_hand": "charcoal"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "charcoal",
+            "init_status": {
+              "status": "unlit",
+              "container": null
+            },
+            "final_status": {
+              "status": "lit",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "grill",
+            "init_status": {
+              "status": "filled with charcoal",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with charcoal",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Grills sausage",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grilling sausage",
+          "final_hand": "sausage"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "grill",
+            "init_status": {
+              "status": "filled with charcoal",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with charcoal",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "charcoal",
+            "init_status": {
+              "status": "lit",
+              "container": null
+            },
+            "final_status": {
+              "status": "lit",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "sausage",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 3
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 1.0
+}

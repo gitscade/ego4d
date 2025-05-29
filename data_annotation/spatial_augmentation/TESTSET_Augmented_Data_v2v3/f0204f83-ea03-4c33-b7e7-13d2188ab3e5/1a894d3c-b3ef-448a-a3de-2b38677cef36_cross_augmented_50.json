@@ -1,0 +1,666 @@
+{
+  "video_id": "1a894d3c-b3ef-448a-a3de-2b38677cef36",
+  "goal_category": "COOKING:MAKE_BREAD",
+  "goal_description": "Making bread",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "dough",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "water",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "dough mixer",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "sugar",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "tap",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "cup",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "flour bag",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "scale",
+      "init_status": {
+        "status": "zero",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "tray",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "basket",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "dough tray",
+      "init_status": {
+        "status": "covered",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "dust pan",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "sheet",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "razor",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "oven",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "clean",
+        "container": 20
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Add water to the dough in the mixer.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "mixer"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "water",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "Add sugar to the dough mixer.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "sugar"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "dough mixer",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "sugar",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "Fetch water from the kitchen tap.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grabbing water",
+          "final_hand": "cup"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "tap",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "cup",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with water",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "water",
+            "init_status": {
+              "status": "added",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_3",
+      "description": "Measure flour on a scale.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "flour bag",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "scale",
+            "init_status": {
+              "status": "zero",
+              "container": null
+            },
+            "final_status": {
+              "status": "non-zero",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_4",
+      "description": "Add flour to the dough.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "flour bag",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "flour added",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_5",
+      "description": "Adjust the speed of the dough mixer.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough mixer"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "dough mixer",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": " Adjust the speed",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "present",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_6",
+      "description": "Add water to the dough.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "water"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "dry",
+              "container": null
+            },
+            "final_status": {
+              "status": "wet",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "water",
+            "init_status": {
+              "status": "in the cup",
+              "container": null
+            },
+            "final_status": {
+              "status": "add on the dough",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Clean tray.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "tray",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "dirty",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Arrange baskets.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 20,
+            "object_name": "basket",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "arranged",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_0",
+      "description": "Remove a sheet from the dough tray.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "dough tray",
+            "init_status": {
+              "status": "covered",
+              "container": null
+            },
+            "final_status": {
+              "status": "uncovered",
+              "container": 16
+            }
+          },
+          {
+            "object_id": 16,
+            "object_name": "sheet",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": "Score the dough with a razor.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "razor"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "untouched",
+              "container": null
+            },
+            "final_status": {
+              "status": "scored",
+              "container": 17
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "razor",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_2",
+      "description": "Place dough in the oven.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in oven",
+              "container": null
+            }
+          },
+          {
+            "object_id": 18,
+            "object_name": "oven",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Remove tray from oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "tray",
+            "init_status": {
+              "status": "in oven",
+              "container": null
+            },
+            "final_status": {
+              "status": "out of oven",
+              "container": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "Move Dust pan.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "dust pan",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "move",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.5555555555555556
+}

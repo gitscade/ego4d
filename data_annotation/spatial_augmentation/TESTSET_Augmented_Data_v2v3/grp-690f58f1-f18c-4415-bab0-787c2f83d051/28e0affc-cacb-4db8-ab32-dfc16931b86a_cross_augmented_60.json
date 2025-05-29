@@ -1,0 +1,151 @@
+{
+  "video_id": "28e0affc-cacb-4db8-ab32-dfc16931b86a",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Heating oil",
+  "spatial_data": [
+    {
+      "object_id": 3,
+      "object_name": "player",
+      "init_status": {
+        "status": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "gas stove",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "pan",
+      "init_status": {
+        "status": "default",
+        "container": 5
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "clean",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "chopping board",
+      "init_status": {
+        "status": "clean",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "peas",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "soy sauce",
+      "init_status": {
+        "status": "fresh",
+        "container": 6
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Heat oil in a pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "oil"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "shelf",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "opened",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "a bottle of oil",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "opened",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "oil",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "pan",
+            "init_status": {
+              "status": "default",
+              "container": 5
+            },
+            "final_status": {
+              "status": "default",
+              "container": 5
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.4666666666666667
+}

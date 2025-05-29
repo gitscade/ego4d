@@ -1,0 +1,328 @@
+{
+  "video_id": "fea524d4-a1b6-466c-ac48-8777c3fd173d",
+  "goal_category": "COOKING:MAKE_PASTRY",
+  "goal_description": "Making a design",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "piping bag",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "goyna bori",
+      "init_status": {
+        "status": "in piping bag",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "goyna bori",
+      "init_status": {
+        "status": "in piping bag",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "gonya bori",
+      "init_status": {
+        "status": "in piping bag",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "baking tray",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "coffee maker",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "patterns goyna bori with piping bag",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "piping bag",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "goyna bori",
+            "init_status": {
+              "status": "in piping bag",
+              "container": null
+            },
+            "final_status": {
+              "status": "on tray",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "baking tray",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "pours goyna bori in piping bag",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "piping bag"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "goyna bori",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in piping bag",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "piping bag",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "patterns goyna bori with piping bag",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "piping bag"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "goyna bori",
+            "init_status": {
+              "status": "in piping bag",
+              "container": null
+            },
+            "final_status": {
+              "status": "on tray",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "baking tray",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "goyna bori",
+            "init_status": {
+              "status": "on tray",
+              "container": null
+            },
+            "final_status": {
+              "status": "on tray",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "pours goyna bori in piping bag",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "goyna bori",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in piping bag",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "piping bag",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "patterns goyna bori with piping bag",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "baking tray",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "goyna bori",
+            "init_status": {
+              "status": "on tray",
+              "container": null
+            },
+            "final_status": {
+              "status": "on tray",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "goyna bori",
+            "init_status": {
+              "status": "on tray",
+              "container": null
+            },
+            "final_status": {
+              "status": "on tray",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "gonya bori",
+            "init_status": {
+              "status": "in piping bag",
+              "container": null
+            },
+            "final_status": {
+              "status": "in piping bag",
+              "container": 6
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.42857142857142855
+}

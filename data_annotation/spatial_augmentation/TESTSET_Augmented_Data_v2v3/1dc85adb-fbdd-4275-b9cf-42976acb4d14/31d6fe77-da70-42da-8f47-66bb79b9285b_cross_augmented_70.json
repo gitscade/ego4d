@@ -1,0 +1,236 @@
+{
+  "video_id": "31d6fe77-da70-42da-8f47-66bb79b9285b",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "cooking general",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "garlic",
+      "init_status": {
+        "status": "unpeeled",
+        "container": 2
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "cutting board",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "fenugreek leaves",
+      "init_status": {
+        "status": "uncollected",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "basket",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "garlic skin",
+      "init_status": {
+        "status": "unpeeled",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "onion",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "pepper",
+      "init_status": {
+        "status": "fresh",
+        "container": 7
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "peel garlic skin.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "garlic",
+            "init_status": {
+              "status": "unpeeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "garlic skin",
+            "init_status": {
+              "status": "unpeeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "remove garlic skin from cutting board",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "garlic",
+            "init_status": {
+              "status": "peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "garlic skin",
+            "init_status": {
+              "status": "peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "gather fenugreek leaves.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "fenugreek leaves",
+            "init_status": {
+              "status": "uncollected",
+              "container": null
+            },
+            "final_status": {
+              "status": "collected",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "basket",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.8
+}

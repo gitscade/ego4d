@@ -1,0 +1,338 @@
+{
+  "video_id": "3ec3eab7-842d-409d-8866-42ddcbd24cd9",
+  "goal_category": "COOKING:MAKE_PASTRY",
+  "goal_description": "Frying the chakli rings",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "chakli snack",
+      "init_status": {
+        "status": "freshly fried",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "tray",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "oil",
+      "init_status": {
+        "status": "liquid",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "chakli doughs",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "table",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "refrigerator",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "stove",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Flip some chakli snack to fry the other side",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "chakli snack",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "freshly fried",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Flip the chakli snack to fry the other side",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "chakli"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full of chakli snacks",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "chakli snack",
+            "init_status": {
+              "status": "freshly fried",
+              "container": null
+            },
+            "final_status": {
+              "status": "freshly fried",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Set trays of chakli dough on the floor",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": null,
+          "final_status": "idle",
+          "final_hand": null
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "tray",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": null
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "chakli doughs",
+            "init_status": {
+              "status": "fried",
+              "container": null
+            },
+            "final_status": {
+              "status": "fried",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Serve chakli snack in a tray to cool",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "chakli snack",
+            "init_status": {
+              "status": "fried",
+              "container": null
+            },
+            "final_status": {
+              "status": "fried",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "tray",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with chakli snack",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_1",
+      "description": "strain oil from chakli snack ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "strained",
+          "final_hand": "oil"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "chakli snack",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "strained",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "oil",
+            "init_status": {
+              "status": "liquid",
+              "container": null
+            },
+            "final_status": {
+              "status": "strained",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Deep fry the chakli doughs in oil",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "chakli doughs"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "chakli doughs",
+            "init_status": {
+              "status": "fried",
+              "container": null
+            },
+            "final_status": {
+              "status": "deeply fried",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "oil",
+            "init_status": {
+              "status": "room temperature",
+              "container": null
+            },
+            "final_status": {
+              "status": "heated",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7",
+      "description": "Arrange the chakli dough on the trays",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "chakli dough",
+            "init_status": {
+              "status": "unarranged",
+              "container": null
+            },
+            "final_status": {
+              "status": "arranged",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "tray",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
