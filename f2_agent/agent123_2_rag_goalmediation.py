@@ -414,10 +414,10 @@ if __name__ == "__main__":
     AGENT_LLM_API, AGENT_LLM_STR, AGENT_LLM_CHAT = agent_init.SET_LLMS(agent_api_name, agent_model_name, temperature=0.2)
     TOOL_LLM_API, TOOL_LLM_STR, TOOL_LLM_CHAT = agent_init.SET_LLMS(tool_api_name, tool_model_name, temperature=0.2)
 
-    # SETUP FIRST INPUTS
-    PATH_SOURCE_TARGET_INPUT = constants_init.PATH_SOURCE_TARGET + "/input/source_target_video_list.pkl"
-    with open(PATH_SOURCE_TARGET_INPUT, "rb") as f:
-        source_target_list = pickle.load(f)
+    # # SETUP FIRST INPUTS
+    # PATH_SOURCE_TARGET_INPUT = constants_init.PATH_SOURCE_TARGET + "/input/source_target_video_list.pkl"
+    # with open(PATH_SOURCE_TARGET_INPUT, "rb") as f:
+    #     source_target_list = pickle.load(f)
     BASELINE_FOLDER = "/output-1-rag-goalmediation/"
     PATH_SOURCE_TARGET_OUTPUT = constants_init.PATH_SOURCE_TARGET + BASELINE_FOLDER
 

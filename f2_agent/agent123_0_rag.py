@@ -1026,7 +1026,7 @@ def test_idx(source_idx_list):
 
         test_list.append([source_video_idx, target_video_idx, source_id1, source_scene_graph['video_id'], target_scene_graph1['video_id'], target_scene_graph['video_id'], target_scene_graph['spatial_similarity']])
 
-    
+
     with open("spatial_similarity_data.csv", "w", newline="") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(["source_idx", "target_idx", "source_scene_id1", "source_scene_id1", "target_scene_id1", "target_scene_id", "spatial_similarity"])
@@ -1044,10 +1044,10 @@ if __name__ == "__main__":
     AGENT_LLM_API, AGENT_LLM_STR, AGENT_LLM_CHAT = agent_init.SET_LLMS(agent_api_name, agent_model_name, temperature=0.2)
     TOOL_LLM_API, TOOL_LLM_STR, TOOL_LLM_CHAT = agent_init.SET_LLMS(tool_api_name, tool_model_name, temperature=0.2)
 
-    # SETUP FIRST INPUTS
-    PATH_SOURCE_TARGET_INPUT = constants_init.PATH_SOURCE_TARGET + "/input/source_target_video_list.pkl"
-    with open(PATH_SOURCE_TARGET_INPUT, "rb") as f:
-        source_target_list = pickle.load(f)
+    # # SETUP FIRST INPUTS
+    # PATH_SOURCE_TARGET_INPUT = constants_init.PATH_SOURCE_TARGET + "/input/source_target_video_list.pkl"
+    # with open(PATH_SOURCE_TARGET_INPUT, "rb") as f:
+    #     source_target_list = pickle.load(f)
     BASELINE_FOLDER = "/output-norag/"
     PATH_SOURCE_TARGET_OUTPUT = constants_init.PATH_SOURCE_TARGET + BASELINE_FOLDER
 
