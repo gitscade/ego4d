@@ -143,16 +143,6 @@ def get_agent3_tools():
     return tools
     """
     tools = [
-        # Tool(
-        #     name = "goalstep_retriever_tool",
-        #     func = goalstep_information_retriever,
-        #     description = "Retrieves relevant goalstep information in other environments, where similar activities are performed in steps. "
-        # ),
-        # Tool(
-        #     name = "spatial_retriever_tool",
-        #     func = spatial_information_retriver,
-        #     description = "Retrieves relevant spatial information for similar environments, where state changes of entities takes place in spatiotemporal fashion."
-        # ),
         Tool(
             name = "predict target action sequence",
             func = lambda _: predict_target_action_sequence(MESSAGE_TARGET_SEQUENCE_PREDICTION, TOOL_LLM_API, TOOL_LLM_STR),
@@ -272,58 +262,61 @@ if __name__ == "__main__":
     AGENT_LLM_API, AGENT_LLM_STR, AGENT_LLM_CHAT = agent_init.SET_LLMS(agent_api_name, agent_model_name, temperature=0.2)
     TOOL_LLM_API, TOOL_LLM_STR, TOOL_LLM_CHAT = agent_init.SET_LLMS(tool_api_name, tool_model_name, temperature=0.2)
 
+    # SETUP FIRST INPUTS
     PATH_SOURCE_TARGET_INPUT = constants_init.PATH_SOURCE_TARGET + "/input/source_target_video_list.pkl"
     with open(PATH_SOURCE_TARGET_INPUT, "rb") as f:
         source_target_list = pickle.load(f)
     BASELINE_FOLDER = "/output-1-rag-direct/"
     PATH_SOURCE_TARGET_OUTPUT = constants_init.PATH_SOURCE_TARGET + BASELINE_FOLDER
-    
-    source_list = []
-    target_list = []
-    for l in source_target_list:
-        source_idx = l[0]
-        target_augno_idx = l[1]
-        target_aug33_idx = l[2]
-        target_aug67_idx = l[3]
-        target_aug100_idx = l[4]
-        source_list.append(source_idx)
-        source_list.append(source_idx)
-        source_list.append(source_idx)
-        source_list.append(source_idx)
-        target_list.append(target_augno_idx)
-        target_list.append(target_aug33_idx)
-        target_list.append(target_aug67_idx)
-        target_list.append(target_aug100_idx)
-    print(f"len sourceidx targetidx {len(source_list)}, {len(target_list)}")
 
-    for i in range(len(source_list)):
-        source_video_idx = source_list[i]
-        target_video_idx = target_list[i]
+    # Get scenegraph for source and target
+    PATH_AUGv2 = constants_init.PATH_AUGMENTATION + "TESTSET_Augmented_Data_v2/"
+    source_spatial_json_list, target_spatial_json_list, aug_levels = agent_init.get_source_target_spatial_json_list_augv2(PATH_AUGv2)
+    # Make source_idx_list that matches length of the above json list
+    source_idx_list = [i for i in range(len(source_spatial_json_list)//len(aug_levels)) for _ in range(len(aug_levels))]
+
+    # # for i in range(0, len(source_list)):
+    for i in range(len(source_idx_list)):
+
+        PATH_SOURCEINFO = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_sourceinfo.pkl"
+        PATH_TARGETINFO = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_targetinfo.pkl"
         PATH_AGENT1a = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent1a.pkl"
         PATH_AGENT1b = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent1b.pkl"
         PATH_AGENT2a = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent2a.pkl"
         PATH_AGENT2b = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent2b.pkl"
         PATH_AGENT3 = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent3.pkl"
-        PATH_AGENT4 = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent4.pkl"        
+        PATH_AGENT4 = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent4.pkl"  
 
-        source_action_sequence, source_scene_graph = agent_init.get_video_info(source_video_idx)
-        target_action_sequence, target_scene_graph = agent_init.get_video_info(target_video_idx)
-        print(f"SOURCE_SEQ: {source_action_sequence}\n\n")
-        # print(f"TARGET_SEQ: {target_action_sequence}\n\n")
-        # print(f"SOURCE_SCENE: {source_scene_graph}\n\n")
-        # print(f"TARGET_SCENE: {target_scene_graph}\n\n")        
+        source_video_idx = source_idx_list[i]
+        source_action_sequence, scenegraphnotused = agent_init.get_video_info(source_video_idx)
+        source_scene_graph = agent_init.extract_spatial_context(source_spatial_json_list[i])
+        target_scene_graph = agent_init.extract_spatial_context(target_spatial_json_list[i])
+        source_uid  = source_spatial_json_list[i]['video_id']
+        target_uid = target_spatial_json_list[i]['video_id']
+        spatial_similarity  = target_spatial_json_list[i]['spatial_similarity']
+
+        # -----------------------
+        # AGENT3: PREDICT ACTION SEQUENCE: ONLY SPATIAL EXAMPLE
+        # -----------------------
+        with open(PATH_SOURCEINFO, 'wb') as f:
+            dict = {"source_idx": source_video_idx, "source_uid": source_uid, "source_action_sequence": source_action_sequence, "source_scene_graph": source_scene_graph, "spatial_similarity": spatial_similarity}
+            pickle.dump(dict, f)        
+            # print(f"SOURCE INFO: {i} {source_video_idx} {source_uid} {source_action_sequence} {spatial_similarity}")   
+        with open(PATH_TARGETINFO, 'wb') as f:
+            dict = {"target_idx": (source_video_idx+10)%71, "target_uid": target_uid, "target_scene_graph": target_scene_graph}
+            pickle.dump(dict, f)
+            # print(f"TARGET INFO: {i} {(source_video_idx+10)%71} {target_uid} {target_action_sequence} {target_scene_graph}")
         
         
-        # -----------------------
-        # AGENT3: PREDICT TARGET ACTION SEQUENCE
-        # -----------------------
-        print(f"AGENT3")        
+        
+        # TARGET_SCENE_EXAMPLE->RAG: SPATIAL EXAMPLE FOR ONLY TARGET_SCENE             
+        
         try:         
-            # TARGET_SCENE_EXAMPLE->RAG: SPATIAL EXAMPLE FOR ONLY TARGET_SCENE             
             tools_3 = get_agent3_tools()
-            spatial_example = spatial_information_retriver(target_scene_graph)
+            spatial_example = spatial_information_retriver(json.dumps(source_scene_graph))
 
             input3_message = [tools_3, source_action_sequence, source_scene_graph, target_scene_graph, spatial_example]
+
             AGENT3_PROMPT, MESSAGE_TARGET_SEQUENCE_PREDICTION=get_agent3_message(input3_message)       
             input3_agent = [tools_3, AGENT3_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph]   
             response_3 = run_agent3(input3_agent, AGENT_LLM_CHAT)
@@ -342,7 +335,7 @@ if __name__ == "__main__":
             print(f"Agent3 failed at index {i}: {e}")
             continue
 
-
+        #TODO: NEED CORE ACTIVITY TO DO FILTER CHECK
         # -----------------------
         # FINAL: TEST FAITHFULNESS TO CORE ACTIVITY
         # -----------------------        

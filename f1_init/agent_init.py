@@ -152,6 +152,26 @@ def extract_spatial_context(video: dict):
     #print(scenegraph)
     return scenegraph
 
+
+# -----------------------
+# READ Augmented Dataset to return scene graph list
+# -----------------------
+def get_video_info_idxtest(source_video_idx):
+    '''
+    func: return all raw video info for source idx (0-70)
+    return: seq, scenegraph, sea_id, scenegraph_id
+    '''
+
+
+def get_source_target_spatial_json_list(path:str):
+    '''
+    func: get augmentation data path and return scene graph list
+    input: path for augmentation
+    return [source_scenegraph_json_list, target_scenegrpah_json_list]
+    '''
+
+
+
 # -----------------------
 # VIDEO LIST, VECSTORE, RETRIEVER
 # -----------------------

@@ -3,7 +3,6 @@ common paths (save only absolute paths)
 """
 #root path
 PATH_ROOT = "/root/project/"
-PATH_ROOT = ""
 #folder paths
 # PATH_DATA = PATH_ROOT + "data/ego4d_annotation/"
 PATH_DATA = PATH_ROOT + "data_annotation/"

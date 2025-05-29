@@ -27,10 +27,11 @@ from langchain_community.vectorstores import FAISS
 # from langchain_openai.chat_models import ChatOpenAI # good for agents
 from langchain_openai.embeddings import OpenAIEmbeddings
 # from langchain_core.output_parsers import StrOutputParser
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 #custom packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))
-from util import util_constants
+import f1_init.constants_init as constants_init
 
 # -----------------------
 # Pick out annotation
@@ -186,7 +187,6 @@ def merge_json_video_list_exclude_files_in_path2(path, path2):
     return merged_videos
 
 
-
 def make_goalstep_document_list(video_list):
     """
     func: return document list for making vectorstore
@@ -198,7 +198,7 @@ def make_goalstep_document_list(video_list):
     for video in video_list:
         # Create a document for the video
         video_doc = Document(
-            page_content=f"Video UID: {video['video_uid']}\nGoal: {video['goal_description']}",
+            page_content=f"Video UID: {video['video_uid']}\nCategory: {video['goal_category']}\nGoal: {video['goal_description']}",
             metadata={
                 "type": "video",
                 "video_uid": video["video_uid"],
@@ -215,12 +215,13 @@ def make_goalstep_document_list(video_list):
             level2_doc = Document(
                 page_content=f"Level 2 Segment {i + 1} for Video {video['video_uid']}\nStep: {level2_segment['step_description']}",
                 metadata={
-                    "type": "level2",
+                    "type": "step",
                     "video_uid": video["video_uid"],
                     "start_time": level2_segment["start_time"],
                     "end_time": level2_segment["end_time"],
                     "step_category": level2_segment["step_category"],
                     "step_description": level2_segment["step_description"],
+                    "segment_id":i,
                 },
             )
             document_list.append(level2_doc)
@@ -230,13 +231,14 @@ def make_goalstep_document_list(video_list):
                 level3_doc = Document(
                     page_content=f"Level 3 Segment {j + 1} for Level 2 Segment {i + 1} in Video {video['video_uid']}\nStep: {level3_segment['step_description']}",
                     metadata={
-                        "type": "level3",
+                        "type": "substep",
                         "video_uid": video["video_uid"],
                         "parent_level1_start_time": level2_segment["start_time"],
                         "start_time": level3_segment["start_time"],
                         "end_time": level3_segment["end_time"],
                         "step_category": level3_segment["step_category"],
                         "step_description": level3_segment["step_description"],
+                        "segment_id":j,
                     },
                 )
                 document_list.append(level3_doc)
@@ -259,7 +261,7 @@ def make_spatial_document_list(video_list):
     for video in video_list:
         # Create a document for the video(level1)
         video_doc = Document(
-            page_content=f"Video UID: {video['video_id']}\nGoal: {video['goal_description']}\ninitial_state: {video['spatial_data']}",
+            page_content=f"Video UID: {video['video_id']}\nCategory: {video['goal_category']}\nGoal: {video['goal_description']}\ninitial_state: {video['spatial_data']}",
 
             # metadata is used if filter is applied in retriever
             metadata={
@@ -269,27 +271,54 @@ def make_spatial_document_list(video_list):
         )
         document_list.append(video_doc)
         
-        # CREATE DOCUMENT for each lev2 step in segment and append
+        #
         for i, segment in enumerate(video.get("segments", [])):
             step = Document(
-                page_content=f"Video UID: {video['video_id']}\nGoal: {video['goal_description']}\step: {segment['context']}",
+                page_content=f"Video UID: {video['video_id']}\n Category: {video['goal_category']}\n Goal: {video['goal_description']}\n Step_Description: {segment['description']}\n Step: {segment['context']}",
 
                 # metadata is used if filter is applied in retriever
                 metadata={
                     "type": "step",
                     "video_uid": video["video_id"],
-                    "step_description": segment["description"]                        
+                    "segment_id": i,
                 },
             )
             document_list.append(step)
     return document_list
 
+def chunk_document_list(document_list):
+    chunked_docs = []
+
+    for doc in document_list:
+        # Chunk each document, preserving and copying its metadata
+        chunks = splitter.create_documents(
+            [doc.page_content],
+            metadatas=[doc.metadata]
+        )
+        chunked_docs.extend(chunks)   
+    return chunked_docs
+
+
+def chunk_document_list_with_cid(document_list):
+    '''
+    func: chunk each unique document list with chunkid so they can be reassembled later with uid, type, chunkid metadata
+    '''
+    chunked_docs = []
+    for doc in document_list:
+        chunks = splitter.split_text(doc.page_content)
+        for i, chunk in enumerate(chunks):
+            new_doc = Document(
+                page_content=chunk,
+                metadata={**doc.metadata, "chunk_id": i}
+            )
+            chunked_docs.append(new_doc)   
+    return chunked_docs 
 
 # if __name__ == "__main__":
 # -----------------------
 # Path & API & Model
 # -----------------------
-data_path = util_constants.PATH_DATA
+data_path = constants_init.PATH_DATA
 GOALSTEP_ANNOTATION_PATH = data_path + 'goalstep/'
 SPATIAL_ANNOTATION_PATH_MANUAL = data_path + 'spatial_all/manual'
 SPATIAL_ANNOTATION_PATH_SEMI = data_path + 'spatial_all/semi'
@@ -307,6 +336,7 @@ load_dotenv()
 # PREPARE VIDEOLIST, DOCUMENTLIST
 # -----------------------
 # merge individual json data into a list
+print(GOALSTEP_ANNOTATION_PATH)
 goalstep_videos_list = make_goalstep_json_video_list(GOALSTEP_ANNOTATION_PATH)
 spatial_videos_list = make_spatial_json_video_list(SPATIAL_ANNOTATION_PATH_MANUAL, SPATIAL_ANNOTATION_PATH_SEMI)
 print(f"all: goalstep vids: {len(goalstep_videos_list)}")
@@ -393,33 +423,36 @@ test_uid = [
 # make sorted test video_list
 goalstep_videos_list, goalstep_test_video_list = exclude_test_video_list(goalstep_videos_list, test_uid, 'video_uid')
 spatial_videos_list, spatial_test_video_list = exclude_test_video_list(spatial_videos_list, test_uid, 'video_id')
-print(f"testuid excluded: goalstep vids: {len(goalstep_videos_list)}")
-print(f"testuid excluded: spatial vids: {len(spatial_videos_list)}")
-print(f"testuid list: test goalstep vids: {len(goalstep_test_video_list)}")
-print(f"testuid list: test spatial vids: {len(spatial_test_video_list)}")
+print(f"dbinit: testuid excluded: goalstep vids: {len(goalstep_videos_list)}")
+print(f"dbinit: testuid excluded: spatial vids: {len(spatial_videos_list)}")
+print(f"dbinit: testuid list: test goalstep vids: {len(goalstep_test_video_list)}")
+print(f"dbinit: testuid list: test spatial vids: {len(spatial_test_video_list)}")
 
-# for i in range(len(goalstep_test_video_list)):
-#     goalstep_uid = goalstep_test_video_list[i]["video_uid"]
-#     spatial_uid = spatial_test_video_list[i]["video_id"]
-#     print(f"goalstep/spatial sorted uid {goalstep_uid} {spatial_uid}")
+for i in range(len(goalstep_test_video_list)):
+    goalstep_uid = goalstep_test_video_list[i]["video_uid"]
+    spatial_uid = spatial_test_video_list[i]["video_id"]
+    # print(f"dbinit: goalstep/spatial sorted uid {goalstep_uid} {spatial_uid}")
 
 
 # MAKE docu list
 goalstep_document_list = make_goalstep_document_list(goalstep_videos_list)
 goalstep_test_document_list = make_goalstep_document_list(goalstep_test_video_list)
-spatial_document = make_spatial_document_list(spatial_videos_list)
+spatial_document_list = make_spatial_document_list(spatial_videos_list)
 spatial_test_document_list = make_spatial_document_list(spatial_test_video_list)
-print(f"MAKE_DOCU: goalstep_document_list: {len(goalstep_document_list)}")
-print(f"MAKE_DOCU: goalstep_document_list: {len(goalstep_test_document_list)}")
-print(f"MAKE_DOCU: spatial_document_list: {len(spatial_document)}")
-print(f"MAKE_DOCUAKE: spatial_document_list: {len(spatial_test_document_list)}")
+print(f"dbinit: MAKE_DOCU: goalstep_document_list: {len(goalstep_document_list)}")
+print(f"dbinit: MAKE_DOCU: goalstep_document_list: {len(goalstep_test_document_list)}")
+print(f"dbinit: MAKE_DOCU: spatial_document_list: {len(spatial_document_list)}")
+print(f"dbinit: MAKE_DOCUAKE: spatial_document_list: {len(spatial_test_document_list)}")
 
-
+# UPDATED = ONE document = probably multiple chunks
+splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
+goalstep_document_list = chunk_document_list(goalstep_document_list)
+spatial_document_list = chunk_document_list(spatial_document_list)
 
 # -----------------------
 # VIDEO LIST, VECSTORE, RETRIEVER
 # -----------------------
-# ONE document = one chunk for now\
+
 embeddings = OpenAIEmbeddings()
 if not os.path.exists(GOALSTEP_VECSTORE_PATH + '/index.faiss'):
     print(f"MAKE FAISS GOALSTEP: {GOALSTEP_VECSTORE_PATH}")
@@ -430,7 +463,7 @@ else:
 
 if not os.path.exists(SPATIAL_VECSTORE_PATH + '/index.faiss'):
     print(f"MAKE FAISS SPATIAL: {SPATIAL_VECSTORE_PATH}")
-    spatial_vector_store = FAISS.from_documents(spatial_document, embeddings)
+    spatial_vector_store = FAISS.from_documents(spatial_document_list, embeddings)
     spatial_vector_store.save_local(SPATIAL_VECSTORE_PATH)
 else:
     print(f"LOAD FAISS SPATIAL: {SPATIAL_VECSTORE_PATH}")

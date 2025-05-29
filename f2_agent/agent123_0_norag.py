@@ -613,6 +613,7 @@ def predict_target_action_sequence(MESSAGE_TARGET_SEQUENCE_PREDICTION, TOOL_LLM_
         return f"Error: action_sequence_prediction: {str(e)}"
 
 
+
 # -----------------------
 # Tool GET Funcs
 # -----------------------
@@ -1107,20 +1108,32 @@ def run_core_action_test(source_core_activity, target_activity_taxonomy, target_
     except Exception as e:
         return f"Error: action_sequence_prediction: {str(e)}"
 
+def test_idx(source_idx_list):
+    import csv
+    test_list = []
+    for i in range(len(source_idx_list)):
+        source_video_idx = source_idx_list[i]        
+        target_video_idx = (source_video_idx + 10) % 71
+
+        source_action_sequence1, source_scene_graph1, source_id1, source_id2 = agent_init.get_video_info_idxtest(source_video_idx)
+        source_scene_graph = source_spatial_json_list[i]
+
+        target_scene_graph1 = database_init.spatial_test_video_list[target_video_idx]
+        target_scene_graph = target_spatial_json_list[i]
+                
+        print(f"{source_video_idx} {target_video_idx} {source_id1} {source_scene_graph['video_id']} {target_scene_graph1['video_id']} {target_scene_graph['video_id']} {target_scene_graph['spatial_similarity']} ")
+
+        test_list.append([source_video_idx, target_video_idx, source_id1, source_scene_graph['video_id'], target_scene_graph1['video_id'], target_scene_graph['video_id'], target_scene_graph['spatial_similarity']])
+
+    with open("spatial_similarity_data.csv", "w", newline="") as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(["source_idx", "target_idx", "source_scene_id1", "source_scene_id1", "target_scene_id1", "target_scene_id", "spatial_similarity"])
+        writer.writerows(test_list)
 
 if __name__ == "__main__":
     # -----------------------
     # TEST SETTINGS
     # -----------------------
-
-    # 1. STRUCTURE ABLATION
-    #NEED TO DO THIS OTHER TIME
-
-    # 2. RAG ABLATION
-    #TODO 1: put it in agent_prompt
-    #TODO 2: put it in message_tool
-
-    # 3. LLM MODEL BASELINE
     agent_api_name = "openai"
     agent_model_name = "gpt-4o"
     tool_api_name = "openai"
@@ -1128,54 +1141,55 @@ if __name__ == "__main__":
     AGENT_LLM_API, AGENT_LLM_STR, AGENT_LLM_CHAT = agent_init.SET_LLMS(agent_api_name, agent_model_name, temperature=0.2)
     TOOL_LLM_API, TOOL_LLM_STR, TOOL_LLM_CHAT = agent_init.SET_LLMS(tool_api_name, tool_model_name, temperature=0.2)
 
-
+    # SETUP FIRST INPUTS
     PATH_SOURCE_TARGET_INPUT = constants_init.PATH_SOURCE_TARGET + "/input/source_target_video_list.pkl"
     with open(PATH_SOURCE_TARGET_INPUT, "rb") as f:
         source_target_list = pickle.load(f)
     BASELINE_FOLDER = "/output-norag/"
     PATH_SOURCE_TARGET_OUTPUT = constants_init.PATH_SOURCE_TARGET + BASELINE_FOLDER
-    
-    source_list = []
-    target_list = []
-    for l in source_target_list:
-        source_idx = l[0]
-        target_augno_idx = l[1]
-        target_aug33_idx = l[2]
-        target_aug67_idx = l[3]
-        target_aug100_idx = l[4]
-        source_list.append(source_idx)
-        source_list.append(source_idx)
-        source_list.append(source_idx)
-        source_list.append(source_idx)
-        target_list.append(target_augno_idx)
-        target_list.append(target_aug33_idx)
-        target_list.append(target_aug67_idx)
-        target_list.append(target_aug100_idx)
-    print(f"len sourceidx targetidx {len(source_list)}, {len(target_list)}")
 
+    # Get scenegraph for source and target
+    PATH_AUGv2 = constants_init.PATH_AUGMENTATION + "TESTSET_Augmented_Data_v2/"
+    source_spatial_json_list, target_spatial_json_list, aug_levels = agent_init.get_source_target_spatial_json_list_augv2(PATH_AUGv2)
+    # Make source_idx_list that matches length of the above json list
+    source_idx_list = [i for i in range(len(source_spatial_json_list)//len(aug_levels)) for _ in range(len(aug_levels))]
 
+    # test idx for input so that source-target pair is matched perfectly
+    # test_idx(source_idx_list)
 
-    for i in range(38, len(source_list)):
-        source_video_idx = source_list[i]
-        target_video_idx = target_list[i]
+    # # for i in range(0, len(source_list)):
+    # for i in range(len(source_idx_list)):
+    for i in range(295, 296):
+
+        PATH_SOURCEINFO = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_sourceinfo.pkl"
+        PATH_TARGETINFO = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_targetinfo.pkl"
         PATH_AGENT1a = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent1a.pkl"
         PATH_AGENT1b = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent1b.pkl"
         PATH_AGENT2a = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent2a.pkl"
         PATH_AGENT2b = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent2b.pkl"
         PATH_AGENT3 = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent3.pkl"
-        PATH_AGENT4 = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent4.pkl"           
+        PATH_AGENT4 = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent4.pkl"  
 
+        source_video_idx = source_idx_list[i]
+        source_action_sequence, scenegraphnotused = agent_init.get_video_info(source_video_idx)
+        source_scene_graph = agent_init.extract_spatial_context(source_spatial_json_list[i])
+        target_scene_graph = agent_init.extract_spatial_context(target_spatial_json_list[i])
+        source_uid  = source_spatial_json_list[i]['video_id']
+        target_uid = target_spatial_json_list[i]['video_id']
+        spatial_similarity  = target_spatial_json_list[i]['spatial_similarity']
 
-        # 4. Select Test Pairs
-        source_action_sequence, source_scene_graph = agent_init.get_video_info(source_video_idx)
-        target_action_sequence, target_scene_graph = agent_init.get_video_info(target_video_idx)
-
-        # 5. Iterate for Test Pairs
-        # -----------------------
-        # AGENT1a: PREDICT CORE ACTIVITY
-        # -----------------------
-        print(f"SOURCE: {source_video_idx}, TARGET {target_video_idx}")
-
+        # # -----------------------
+        # # AGENT1a: PREDICT CORE ACTIVITY
+        # # -----------------------
+        with open(PATH_SOURCEINFO, 'wb') as f:
+            dict = {"source_idx": source_video_idx, "source_uid": source_uid, "source_action_sequence": source_action_sequence, "source_scene_graph": source_scene_graph, "spatial_similarity": spatial_similarity}
+            pickle.dump(dict, f)        
+            print(f"SOURCE INFO: {i} {source_video_idx} {source_uid} {source_action_sequence} {spatial_similarity}")   
+        with open(PATH_TARGETINFO, 'wb') as f:
+            dict = {"target_idx": (source_video_idx+10)%71, "target_uid": target_uid, "target_scene_graph": target_scene_graph}
+            pickle.dump(dict, f)
+            # print(f"TARGET INFO: {i} {(source_video_idx+10)%71} {target_uid} {target_action_sequence} {target_scene_graph}")
+            
         try:
             tools_1a = get_agent1a_tools()
             input_1a_message = [tools_1a, source_action_sequence, source_scene_graph]
