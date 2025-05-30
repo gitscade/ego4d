@@ -266,12 +266,12 @@ if __name__ == "__main__":
     # PATH_SOURCE_TARGET_INPUT = constants_init.PATH_SOURCE_TARGET + "/input/source_target_video_list.pkl"
     # with open(PATH_SOURCE_TARGET_INPUT, "rb") as f:
     #     source_target_list = pickle.load(f)
-    BASELINE_FOLDER = "/output-1-rag-direct/"
+    BASELINE_FOLDER = "/output-1direct/"
     PATH_SOURCE_TARGET_OUTPUT = constants_init.PATH_SOURCE_TARGET + BASELINE_FOLDER
 
     # Get scenegraph for source and target
-    PATH_AUGv2 = constants_init.PATH_AUGMENTATION + "TESTSET_Augmented_Data_v2/"
-    source_spatial_json_list, target_spatial_json_list, aug_levels = agent_init.get_source_target_spatial_json_list_augv2(PATH_AUGv2)
+    source_spatial_json_list, target_spatial_json_list, aug_levels = agent_init.get_paired_spatial_json_list(constants_init.PATH_AUGMENTATION_v4)
+
     # Make source_idx_list that matches length of the above json list
     source_idx_list = [i for i in range(len(source_spatial_json_list)//len(aug_levels)) for _ in range(len(aug_levels))]
 
@@ -280,10 +280,10 @@ if __name__ == "__main__":
 
         PATH_SOURCEINFO = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_sourceinfo.pkl"
         PATH_TARGETINFO = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_targetinfo.pkl"
-        PATH_AGENT1a = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent1a.pkl"
-        PATH_AGENT1b = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent1b.pkl"
-        PATH_AGENT2a = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent2a.pkl"
-        PATH_AGENT2b = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent2b.pkl"
+        # PATH_AGENT1a = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent1a.pkl"
+        # PATH_AGENT1b = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent1b.pkl"
+        # PATH_AGENT2a = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent2a.pkl"
+        # PATH_AGENT2b = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent2b.pkl"
         PATH_AGENT3 = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent3.pkl"
         PATH_AGENT4 = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent4.pkl"  
 
@@ -339,20 +339,20 @@ if __name__ == "__main__":
         # -----------------------
         # FINAL: TEST FAITHFULNESS TO CORE ACTIVITY
         # -----------------------        
-        # try:
-        #     final_response = run_core_action_test(
-        #         source_core_activity,
-        #         target_activity_taxonomy,
-        #         target_action_sequence,
-        #         agent_api_name,
-        #         agent_model_name
-        #     )
+        try:
+            final_response = run_core_action_test(
+                source_core_activity,
+                target_activity_taxonomy,
+                target_action_sequence,
+                agent_api_name,
+                agent_model_name
+            )
 
-        #     print(final_response)
-        #     with open(PATH_AGENT4, 'wb') as f:
-        #         pickle.dump(final_response, f)        
-        #         print(f"agent4 saved: final answer {final_response}")       
+            print(final_response)
+            with open(PATH_AGENT4, 'wb') as f:
+                pickle.dump(final_response, f)        
+                print(f"agent4 saved: final answer {final_response}")       
 
-        # except Exception as e:
-        #     print(f"Agent4 failed at index {i}: {e}")
-        #     continue                
+        except Exception as e:
+            print(f"Agent4 failed at index {i}: {e}")
+            continue                

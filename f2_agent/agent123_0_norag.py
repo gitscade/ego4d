@@ -1108,27 +1108,27 @@ def run_core_action_test(source_core_activity, target_activity_taxonomy, target_
     except Exception as e:
         return f"Error: action_sequence_prediction: {str(e)}"
 
-def test_idx(source_idx_list):
-    import csv
-    test_list = []
-    for i in range(len(source_idx_list)):
-        source_video_idx = source_idx_list[i]        
-        target_video_idx = (source_video_idx + 10) % 71
+# def test_idx(source_idx_list):
+#     import csv
+#     test_list = []
+#     for i in range(len(source_idx_list)):
+#         source_video_idx = source_idx_list[i]        
+#         target_video_idx = (source_video_idx + 10) % 71
 
-        source_action_sequence1, source_scene_graph1, source_id1, source_id2 = agent_init.get_video_info_idxtest(source_video_idx)
-        source_scene_graph = source_spatial_json_list[i]
+#         source_action_sequence1, source_scene_graph1, source_id1, source_id2 = agent_init.get_video_info_idxtest(source_video_idx)
+#         source_scene_graph = source_spatial_json_list[i]
 
-        target_scene_graph1 = database_init.spatial_test_video_list[target_video_idx]
-        target_scene_graph = target_spatial_json_list[i]
+#         target_scene_graph1 = database_init.spatial_test_video_list[target_video_idx]
+#         target_scene_graph = target_spatial_json_list[i]
                 
-        print(f"{source_video_idx} {target_video_idx} {source_id1} {source_scene_graph['video_id']} {target_scene_graph1['video_id']} {target_scene_graph['video_id']} {target_scene_graph['spatial_similarity']} ")
+#         print(f"{source_video_idx} {target_video_idx} {source_id1} {source_scene_graph['video_id']} {target_scene_graph1['video_id']} {target_scene_graph['video_id']} {target_scene_graph['spatial_similarity']} ")
 
-        test_list.append([source_video_idx, target_video_idx, source_id1, source_scene_graph['video_id'], target_scene_graph1['video_id'], target_scene_graph['video_id'], target_scene_graph['spatial_similarity']])
+#         test_list.append([source_video_idx, target_video_idx, source_id1, source_scene_graph['video_id'], target_scene_graph1['video_id'], target_scene_graph['video_id'], target_scene_graph['spatial_similarity']])
 
-    with open("spatial_similarity_data.csv", "w", newline="") as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerow(["source_idx", "target_idx", "source_scene_id1", "source_scene_id1", "target_scene_id1", "target_scene_id", "spatial_similarity"])
-        writer.writerows(test_list)
+#     with open("spatial_similarity_data.csv", "w", newline="") as csvfile:
+#         writer = csv.writer(csvfile)
+#         writer.writerow(["source_idx", "target_idx", "source_scene_id1", "source_scene_id1", "target_scene_id1", "target_scene_id", "spatial_similarity"])
+#         writer.writerows(test_list)
 
 if __name__ == "__main__":
     # -----------------------
@@ -1149,17 +1149,18 @@ if __name__ == "__main__":
     PATH_SOURCE_TARGET_OUTPUT = constants_init.PATH_SOURCE_TARGET + BASELINE_FOLDER
 
     # Get scenegraph for source and target
-    PATH_AUGv2 = constants_init.PATH_AUGMENTATION + "TESTSET_Augmented_Data_v2/"
-    source_spatial_json_list, target_spatial_json_list, aug_levels = agent_init.get_source_target_spatial_json_list_augv2(PATH_AUGv2)
+    source_spatial_json_list, target_spatial_json_list, aug_levels = agent_init.get_paired_spatial_json_list(constants_init.PATH_AUGMENTATION_v4)
+    
     # Make source_idx_list that matches length of the above json list
     source_idx_list = [i for i in range(len(source_spatial_json_list)//len(aug_levels)) for _ in range(len(aug_levels))]
+
+    # print(source_idx_list)s
 
     # test idx for input so that source-target pair is matched perfectly
     # test_idx(source_idx_list)
 
-    # # for i in range(0, len(source_list)):
-    # for i in range(len(source_idx_list)):
-    for i in range(295, 296):
+    # for i in range(0, len(source_list)):
+    for i in range(7, len(source_idx_list)):
 
         PATH_SOURCEINFO = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_sourceinfo.pkl"
         PATH_TARGETINFO = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_targetinfo.pkl"

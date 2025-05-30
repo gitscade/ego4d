@@ -1048,11 +1048,12 @@ if __name__ == "__main__":
     # PATH_SOURCE_TARGET_INPUT = constants_init.PATH_SOURCE_TARGET + "/input/source_target_video_list.pkl"
     # with open(PATH_SOURCE_TARGET_INPUT, "rb") as f:
     #     source_target_list = pickle.load(f)
-    BASELINE_FOLDER = "/output-norag/"
+    BASELINE_FOLDER = "/output-rag/"
     PATH_SOURCE_TARGET_OUTPUT = constants_init.PATH_SOURCE_TARGET + BASELINE_FOLDER
 
     # Get scenegraph for source and target
-    source_spatial_json_list, target_spatial_json_list, aug_levels = agent_init.get_source_target_spatial_json_list_augv2(constants_init.PATH_AUGMENTATION_v4)
+    source_spatial_json_list, target_spatial_json_list, aug_levels = agent_init.get_paired_spatial_json_list(constants_init.PATH_AUGMENTATION_v4)
+    
     # Make source_idx_list that matches length of the above json list
     source_idx_list = [i for i in range(len(source_spatial_json_list)//len(aug_levels)) for _ in range(len(aug_levels))]
 
@@ -1095,7 +1096,8 @@ if __name__ == "__main__":
         try:
             tools_1a = get_agent1a_tools()
             goalstep_example = goalstep_information_retriever(source_action_sequence)
-            spatial_example = spatial_information_retriver(source_scene_graph)
+            
+            spatial_example = spatial_information_retriver(json.dumps(source_scene_graph))
 
 
             input_1a_message = [tools_1a, source_action_sequence, source_scene_graph, goalstep_example, spatial_example]
@@ -1119,7 +1121,7 @@ if __name__ == "__main__":
         try:        
             tools_1b = get_agent1b_tools()
             goalstep_example = goalstep_information_retriever(source_action_sequence)
-            spatial_example = spatial_information_retriver(source_scene_graph)
+            spatial_example = spatial_information_retriver(json.dumps(source_scene_graph))
             input1b_message = [tools_1b, source_action_sequence, source_scene_graph, source_core_activity, goalstep_example, spatial_example]
             AGENT1b_PROMPT, MESSAGE_TAXONOMY_CREATION = get_agent1b_message(input1b_message)
             input_1b_agent = [tools_1b, AGENT1b_PROMPT, source_action_sequence, source_scene_graph, source_core_activity]
@@ -1171,7 +1173,7 @@ if __name__ == "__main__":
         try:  
             # TARGET_SCENE_EXAMPLE->RAG: SPATIAL EXAMPLE FOR ONLY TARGET_SCENE
             tools_2b = get_agent2b_tools()
-            spatial_example = spatial_information_retriver(target_scene_graph)
+            spatial_example = spatial_information_retriver(json.dumps(target_scene_graph))
 
             input2a_message = [tools_2b, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy, source_core_activity, spatial_example]    
             AGENT2b_PROMPT, MESSAGE_TARGET_TAXONOMY_PREDICTION =get_agent2b_message(input2a_message)
@@ -1199,7 +1201,7 @@ if __name__ == "__main__":
         try:         
             # TARGET_SCENE_EXAMPLE->RAG: SPATIAL EXAMPLE FOR ONLY TARGET_SCENE             
             tools_3 = get_agent3_tools()
-            spatial_example = spatial_information_retriver(target_scene_graph)
+            spatial_example = spatial_information_retriver(json.dumps(target_scene_graph))
 
             input3_message = [tools_3, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, target_activity_taxonomy, source_core_activity, spatial_example]
             AGENT3_PROMPT, MESSAGE_TARGET_SEQUENCE_PREDICTION=get_agent3_message(input3_message)       
