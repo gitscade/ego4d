@@ -15,6 +15,8 @@ import logging
 from dotenv import load_dotenv
 import ast
 import json
+import re
+
 #llm
 from langchain_ollama import OllamaLLM
 import openai
@@ -162,13 +164,58 @@ def get_video_info_idxtest(source_video_idx):
     return: seq, scenegraph, sea_id, scenegraph_id
     '''
 
-
-def get_source_target_spatial_json_list(path:str):
+def get_paired_spatial_json_list(path:str):
     '''
     func: get augmentation data path and return scene graph list
     input: path for augmentation
-    return [source_scenegraph_json_list, target_scenegrpah_json_list]
+    return: [source_scenegraph_json_list] [target_scenegrpah_json_list] [auglevel]
     '''
+    paired_source_json_list=[]
+    paired_target_json_list=[]
+    auglevel=[]
+    # read json files at 1st level only
+
+    # Read source JSON files at the first nested level
+    source_json_dict = {}
+    for filename in os.listdir(path):
+        file_path = os.path.join(path, filename)
+        if filename.endswith(".json") and os.path.isfile(file_path):
+            with open(file_path, "r") as f:                
+                source_data = json.load(f)
+                source_uid = source_data['video_id']
+                # uid=key, loaded json=data
+                source_json_dict[source_uid] = source_data
+    
+    # numerically sort the source data
+    source_json_dict = {key: source_json_dict[key] for key in sorted(source_json_dict, reverse=False)}
+
+    # sorted keys comply with the 10 index offset for target uid in folder
+    #print(list(source_json_dict.keys()))
+      
+    # Read folder for the target files
+    for source_uid in list(source_json_dict.keys()):
+        folder_path = os.path.join(path, source_uid)
+        target_filenames = []
+        for filename in os.listdir(folder_path):
+            target_filenames.append(filename)
+
+        #sort the filename numerically
+        sorted_target_filenames = sorted(target_filenames, key=lambda f: int(re.search(r'_(\d+)\.json$', f).group(1)))
+
+        #get auglevel(overwirtten many times but no big deal)
+        auglevel = numbers = [int(re.search(r'_(\d+)\.json$', filename).group(1)) for filename in sorted_target_filenames]
+
+        #read files & append both source and target list
+        for filename in sorted_target_filenames:
+            file_path = os.path.join(folder_path, filename)
+            with open(file_path, "r") as f:
+                target_data = json.load(f)
+                paired_target_json_list.append(target_data)
+                paired_source_json_list.append(source_json_dict[source_uid])
+
+                # print(f"{source_uid} {source_json_dict[source_uid]['video_id']} {target_data['video_id']} {filename}")
+    # print(auglevel)
+    return paired_source_json_list, paired_target_json_list, auglevel
 
 
 

@@ -15,4 +15,4 @@ PATH_SCRIPT_WORK = PATH_ROOT + "script_work/"
 PATH_UTIL = PATH_ROOT + "util/"
 
 
-PATH_AUGMENTATION_v4 = PATH_ROOT + "data_annotation/spatial_augmentation/TESTSET_Augmented_Data_v4"
+PATH_AUGMENTATION_v4 = PATH_ROOT + "data_annotation/spatial_augmentation/TESTSET_Augmented_Data_v4/"
