@@ -16,6 +16,7 @@ from dotenv import load_dotenv
 import ast
 import json
 import re
+import pickle
 
 #llm
 from langchain_ollama import OllamaLLM
@@ -34,6 +35,14 @@ import f1_init.database_init as database_init
 # -----------------------
 # Agent Init API, LLM
 # -----------------------
+def check_file(path):
+    try:
+        with open(path, "rb") as f:
+            pickle.load(f)  # try loading to ensure file is not empty or corrupted
+        return True
+    except (EOFError, FileNotFoundError, PermissionError, IsADirectoryError, pickle.UnpicklingError):
+        return False
+
 def SET_LLMS(api_name:str, llm_str:str, temperature:int):
     """
     input: api_name: "openai / ollama"\n
@@ -78,7 +87,6 @@ def SET_LLMS(api_name:str, llm_str:str, temperature:int):
     
     return "none", "none", "none" 
 
-
 def extract_all_goalstep_segments(data):
     """
     func: 
@@ -118,7 +126,7 @@ def extract_lower_goalstep_segments(video: dict):
     steps = []
     substeps = []
 
-    print(video["video_uid"])
+    # print(video["video_uid"])
 
     for i, level2_segment in enumerate(video.get("segments", [])):    
         steps.append(level2_segment["step_description"])
