@@ -1,0 +1,230 @@
+{
+  "video_id": "b4072935-56a6-4765-bb4d-d5f6bbeb95b9",
+  "goal_category": "COOKING:PREPARE_INGREDIENTS_GENERAL",
+  "goal_description": "Chopping the banana blossom",
+  "spatial_data": [
+    {
+      "object_id": 4,
+      "object_name": "banana blossom",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "floret",
+      "init_status": {
+        "status": "whole",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "knife",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "kitchen cabinet",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "cutting board",
+      "init_status": {
+        "status": "clean",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "dough",
+      "init_status": {
+        "status": "fresh",
+        "container": 17
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_1_substep_0",
+      "description": "Peel the banana blossom",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "banana blossom",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "peeled",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "knife",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": "Slice the florets ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "slicing florets",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "floret",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "removed",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "banana blossom",
+            "init_status": {
+              "status": "peeled",
+              "container": null
+            },
+            "final_status": {
+              "status": "floret removed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_0",
+      "description": "Remove the head of the banana blossom",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "banana blossom",
+            "init_status": {
+              "status": "floret removed",
+              "container": null
+            },
+            "final_status": {
+              "status": "head removed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4_substep_1",
+      "description": "Chop the banana blossom",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "chopping banana blossom",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "banana blossom",
+            "init_status": {
+              "status": "intact",
+              "container": null
+            },
+            "final_status": {
+              "status": "chopped",
+              "container": 15
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 1.0
+}

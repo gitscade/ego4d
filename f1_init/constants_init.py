@@ -16,3 +16,5 @@ PATH_UTIL = PATH_ROOT + "util/"
 
 
 PATH_AUGMENTATION_v4 = PATH_ROOT + "data_annotation/spatial_augmentation/TESTSET_Augmented_Data_v4/"
+PATH_AUGMENTATION_v5 = PATH_ROOT + "data_annotation/spatial_augmentation/TESTSET_Augmented_Data_v5/"
+PATH_AUGMENTATION_v6 = PATH_ROOT + "data_annotation/spatial_augmentation/TESTSET_Augmented_Data_v6/"

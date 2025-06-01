@@ -1,0 +1,254 @@
+{
+  "video_id": "a267b011-b1db-4e3c-aa49-438e2afdd6dc",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "preparing veggies",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "pan",
+      "init_status": {
+        "status": "cold",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "vegetable",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "stove",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "laptop",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "New Object",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "salt",
+      "init_status": {
+        "status": "fresh",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "seeds",
+      "init_status": {
+        "status": "fresh",
+        "container": 8
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Check the temperature of the pan",
+      "context": {
+        "player": {
+          "init_status": "not_cooking",
+          "init_hand": "pan",
+          "final_status": "cooking",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "pan",
+            "init_status": {
+              "status": "cold",
+              "container": null
+            },
+            "final_status": {
+              "status": "hot",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "put vegetable in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "vegetable",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "Set the pan on the stove",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "stove",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "pan",
+            "init_status": {
+              "status": "off stove",
+              "container": null
+            },
+            "final_status": {
+              "status": "on stove",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "operate laptop",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "operating laptop",
+          "final_hand": "laptop"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "laptop",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.5208333333333334
+}

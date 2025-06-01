@@ -1,0 +1,749 @@
+{
+  "video_id": "2c27b5f1-4af6-49ad-a43c-3efb0c150868",
+  "goal_category": "COOKING:MAKE_STEW_OR_SOUP",
+  "goal_description": "cooking vegetable curry",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "curry soup",
+      "init_status": {
+        "status": "still",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "bell pepper",
+      "init_status": {
+        "status": "still",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "blender jug",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "towel",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "water bottle",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "instrument",
+      "init_status": {
+        "status": "unplayed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "storage",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "jams",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "blender",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "soup",
+      "init_status": {
+        "status": "boiling",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "pepper",
+      "init_status": {
+        "status": "solid",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "jar of pepper paste",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "soup pot",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "blender cup",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "jar",
+      "init_status": {
+        "status": "open",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "pot",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "in hand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "cooking spoon",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "countertop",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "zip lock bag",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "ziplock bag",
+      "init_status": {
+        "status": "empty",
+        "container": 0
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "sink",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "potatoes",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "ziplock bags",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "seal tool",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "dish",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "table",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "refrigerator",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "stove",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Mix the curry soup on the stove.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "curry soup",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pot",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_0",
+      "description": "Add sliced bell pepper into the blender jug.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "holding bell pepper",
+          "final_hand": "right"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "bell pepper",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "blender jug",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with sliced bell pepper",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_2",
+      "description": "add water into the  blender jug.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "blender jug"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "blender jug",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "water bottle",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_4",
+      "description": "Activate blender to blend bell pepper till paste ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "blender"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "bell pepper",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "paste",
+              "container": null
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "blender",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "activate",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "fill the storage jams with blended bell pepper ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "bell pepper",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "blended",
+              "container": null
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "storage",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled bell pepper",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_2",
+      "description": "add blended pepper into boiling soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "blender"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "soup",
+            "init_status": {
+              "status": "boiling",
+              "container": null
+            },
+            "final_status": {
+              "status": "boiling",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "pepper",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "liquid",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_3",
+      "description": "Add the diluted pepper paste to the soup. ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "moving",
+          "final_hand": "jar of pepper paste"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "jar of pepper paste",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "soup pot",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with soup",
+              "container": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Seal the storage jars.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "jar",
+            "init_status": {
+              "status": "open",
+              "container": null
+            },
+            "final_status": {
+              "status": "closed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Mix the curry soup on the stove.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "mixing",
+          "final_hand": "soup pot"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "soup pot",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 18,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "in pot",
+              "container": 14
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7",
+      "description": "Stop the heat under the pots.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 17,
+            "object_name": "pot",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "off",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11",
+      "description": "Store the curry soup into the ziplock bags.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "curry soup",
+            "init_status": {
+              "status": "in container",
+              "container": 0
+            },
+            "final_status": {
+              "status": "in ziplock bag",
+              "container": 22
+            }
+          },
+          {
+            "object_id": 22,
+            "object_name": "ziplock bag",
+            "init_status": {
+              "status": "empty",
+              "container": 0
+            },
+            "final_status": {
+              "status": "filled with curry soup",
+              "container": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13",
+      "description": "Store the boiled potatoes in the ziplock bags.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 24,
+            "object_name": "potatoes",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "boiled",
+              "container": 25
+            }
+          },
+          {
+            "object_id": 25,
+            "object_name": "ziplock bags",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with potatoes",
+              "container": 24
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_15_substep_0",
+      "description": "Seal the ziplock bags.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 22,
+            "object_name": "ziplock bag",
+            "init_status": {
+              "status": "open",
+              "container": null
+            },
+            "final_status": {
+              "status": "closed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_16",
+      "description": "Preserve the curry soup in the refrigerator.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "curry soup",
+            "init_status": {
+              "status": "in refrigerator",
+              "container": null
+            },
+            "final_status": {
+              "status": "in refrigerator",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "refrigerator",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 1
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.3333333333333333
+}

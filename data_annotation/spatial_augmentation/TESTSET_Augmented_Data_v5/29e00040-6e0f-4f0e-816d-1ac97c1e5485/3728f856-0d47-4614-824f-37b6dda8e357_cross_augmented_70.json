@@ -1,0 +1,148 @@
+{
+  "video_id": "3728f856-0d47-4614-824f-37b6dda8e357",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Prepares potatoes",
+  "spatial_data": [
+    {
+      "object_id": 8,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "potatoes",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "cooking gas",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "spatula",
+      "init_status": {
+        "status": "clean",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "plate",
+      "init_status": {
+        "status": "clean",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "cup",
+      "init_status": {
+        "status": "clean",
+        "container": 17
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "pot",
+      "init_status": {
+        "status": "clean",
+        "container": 19
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "noodles",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "salt",
+      "init_status": {
+        "status": "fresh",
+        "container": 22
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "cookie",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "sauce",
+      "init_status": {
+        "status": "fresh",
+        "container": 16
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_8",
+      "description": "Prepares potatoes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "preparing potatoes",
+          "final_hand": "potatoes"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "potatoes",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "prepared",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.7
+}

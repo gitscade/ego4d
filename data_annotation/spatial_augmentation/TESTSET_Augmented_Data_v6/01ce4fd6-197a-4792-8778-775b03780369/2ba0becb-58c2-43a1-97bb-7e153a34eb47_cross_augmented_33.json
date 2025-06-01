@@ -1,0 +1,618 @@
+{
+  "video_id": "2ba0becb-58c2-43a1-97bb-7e153a34eb47",
+  "goal_category": "COOKING:MAKE_SANDWICH",
+  "goal_description": "Making an avocado sandwich",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "avocado",
+      "init_status": {
+        "status": "stone",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "knife",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "chopping board",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "sink",
+      "init_status": "empty"
+    },
+    {
+      "object_id": 9,
+      "object_name": "garlic spice",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "olive oil",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "onion spice",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "pepper spice",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "sandwich bread",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "toast machine",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "player",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "table",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "refrigerator",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "stove",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "De-stones Avocado",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 20,
+            "object_name": "player",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "de-stone",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "avocado",
+            "init_status": {
+              "status": "stone",
+              "container": null
+            },
+            "final_status": {
+              "status": "de-stone",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 20
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "Dices Avocado on the chopping board ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 20
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "chopping board",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 20,
+            "object_name": "player",
+            "init_status": {
+              "status": "de-stone",
+              "container": null
+            },
+            "final_status": {
+              "status": "dice",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "avocado",
+            "init_status": {
+              "status": "de-stone",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_3",
+      "description": "Mashes Avocado on the chopping board ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "avocado",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "mashed",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "chopping board",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 20,
+            "object_name": "player",
+            "init_status": {
+              "status": "dice",
+              "container": null
+            },
+            "final_status": {
+              "status": "mash",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "Adds garlic spice to the mashed avocado",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "garlic spice",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "avocado",
+            "init_status": {
+              "status": "mashed",
+              "container": null
+            },
+            "final_status": {
+              "status": "mashed",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "chopping board",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "Adds olive oil to the mashed avocado",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "olive oil bottle"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "avocado",
+            "init_status": {
+              "status": "mashed",
+              "container": null
+            },
+            "final_status": {
+              "status": "mashed",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "chopping board",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "garlic spice",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "olive oil",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_3",
+      "description": "Adds onion spice to the mashed avocado",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "onion"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "onion spice",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "olive oil",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "garlic spice",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "avocado",
+            "init_status": {
+              "status": "mashed",
+              "container": null
+            },
+            "final_status": {
+              "status": "mashed",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "chopping board",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_4",
+      "description": "Adds pepper spice to the mashed avocado ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "avocado",
+            "init_status": {
+              "status": "mashed",
+              "container": null
+            },
+            "final_status": {
+              "status": "mashed",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "chopping board",
+            "init_status": {
+              "status": "occupied",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": null
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "garlic spice",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "olive oil",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "onion spice",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 12,
+            "object_name": "pepper spice",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_0",
+      "description": "Toast some slices of sandwich bread",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "toasting bread",
+          "final_hand": "toaster"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "sandwich bread",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced and toasted",
+              "container": 15
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "knife",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 20
+            }
+          },
+          {
+            "object_id": 20,
+            "object_name": "player",
+            "init_status": {
+              "status": "mash",
+              "container": null
+            },
+            "final_status": {
+              "status": "slice and toast",
+              "container": null
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "toast machine",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.0
+}

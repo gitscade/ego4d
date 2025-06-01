@@ -1,0 +1,478 @@
+{
+  "video_id": "35080724-6604-401c-8b06-19b7cece3d45",
+  "goal_category": "COOKING:MAKE_DONUT",
+  "goal_description": "make donut",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "baking powder",
+      "init_status": {
+        "status": "default",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "dough",
+      "init_status": {
+        "status": "default",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "oil bottle",
+      "init_status": {
+        "status": "default",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "water bottle",
+      "init_status": {
+        "status": "empty",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "cup",
+      "init_status": {
+        "status": "empty",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "table",
+      "init_status": {
+        "status": "cluttered",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "sugar",
+      "init_status": {
+        "status": "default",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "refrigerator",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "stove",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "knife",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "knife",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "meat",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "broccoli",
+      "init_status": {
+        "status": "fresh",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "meat",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "meat",
+      "init_status": {
+        "status": "fresh",
+        "container": 10
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Add baking powder to the dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "baking powder",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "dough",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "Add oil to the dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "oil bottle"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "dough",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "oiled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "oil bottle",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "baking powder",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "fetching water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "walking",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "water bottle",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "cup",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "covering the oil",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "oil bottle",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "covered",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "clearing the table",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "table",
+            "init_status": {
+              "status": "cluttered",
+              "container": null
+            },
+            "final_status": {
+              "status": "clear",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "baking powder",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "dough",
+            "init_status": {
+              "status": "oiled",
+              "container": null
+            },
+            "final_status": {
+              "status": "oiled",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "oil bottle",
+            "init_status": {
+              "status": "covered",
+              "container": null
+            },
+            "final_status": {
+              "status": "covered",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "water bottle",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "cup",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "sugar",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "adding sugar to the dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "sugar"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "dough",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "sweetened",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "sugar",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "adding sugar to the dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "sugar"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "dough",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "ready",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "sugar",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 2
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.8
+}

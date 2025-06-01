@@ -1,0 +1,800 @@
+{
+  "video_id": "737e9619-7768-407c-8a4f-6fe1e8d61f04",
+  "goal_category": "COOKING:MAKE_PUFFED_RICE",
+  "goal_description": "Prepares rice",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "stirrer",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "rice",
+      "init_status": {
+        "status": "heating",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "soup",
+      "init_status": {
+        "status": "heating",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "cooker light",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "kitchen sink",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "dish",
+      "init_status": {
+        "status": "unwashed",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "table",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "cutting board",
+      "init_status": {
+        "status": "default",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "jute leaves",
+      "init_status": {
+        "status": "in water",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "sink",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "paper towel",
+      "init_status": {
+        "status": "default",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "knife",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "player",
+      "init_status": {
+        "status": null,
+        "container": 10
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "vegetables",
+      "init_status": {
+        "status": "default",
+        "container": 18
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "window",
+      "init_status": {
+        "status": "unopened",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "door",
+      "init_status": {
+        "status": "unopened",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "container",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "cup",
+      "init_status": {
+        "status": "clean",
+        "container": 18
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "cheese",
+      "init_status": {
+        "status": "fresh",
+        "container": 18
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "butter",
+      "init_status": {
+        "status": "fresh",
+        "container": 18
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "bread",
+      "init_status": {
+        "status": "fresh",
+        "container": 23
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Stirs rice in a pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "stirrer"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "pot 2",
+            "init_status": {
+              "status": "heating",
+              "container": null
+            },
+            "final_status": {
+              "status": "heating",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Checks boiling rice",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "rice"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Stirs soup in a pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "stirrer"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "pot",
+            "init_status": {
+              "status": "heating",
+              "container": null
+            },
+            "final_status": {
+              "status": "heating",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Turns on cooker light",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cooker light"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "cooker light",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Stirs rice in the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "stirrer"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "pot 2",
+            "init_status": {
+              "status": "heating",
+              "container": null
+            },
+            "final_status": {
+              "status": "heating",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "Washes dishes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dish"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "dish",
+            "init_status": {
+              "status": "unwashed",
+              "container": 8
+            },
+            "final_status": {
+              "status": "washed",
+              "container": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_0",
+      "description": "wash the jute leaves",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "jute leaves"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "sink",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "supply water",
+              "container": null
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "jute leaves",
+            "init_status": {
+              "status": "unwashed",
+              "container": null
+            },
+            "final_status": {
+              "status": "washed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_1",
+      "description": "Dry jute leaves with a paper towel\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "jute leaves"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "jute leaves",
+            "init_status": {
+              "status": "washed",
+              "container": null
+            },
+            "final_status": {
+              "status": "dry",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_2",
+      "description": "Dices jute leaves into smaller pieces",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "jute leaves",
+            "init_status": {
+              "status": "dry",
+              "container": null
+            },
+            "final_status": {
+              "status": "dry",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7",
+      "description": "Tastes soup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "soup"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_8",
+      "description": "Puts diced leaves in a bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "jute leaves"
+        },
+        "change": [
+          {
+            "object_id": 17,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "half-filled",
+              "container": 10
+            },
+            "final_status": {
+              "status": "half-filled",
+              "container": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9",
+      "description": "Stirs rice in the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "stirrer"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "pot 2",
+            "init_status": {
+              "status": "heating",
+              "container": null
+            },
+            "final_status": {
+              "status": "heating",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10_substep_0",
+      "description": "arrange the just leaves on the cutting board",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "jute leaves"
+        },
+        "change": [
+          {
+            "object_id": 17,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "half-filled",
+              "container": 10
+            },
+            "final_status": {
+              "status": "half-filled",
+              "container": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10_substep_1",
+      "description": "Cut other vegetables",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 19,
+            "object_name": "vegetables",
+            "init_status": {
+              "status": "default",
+              "container": 18
+            },
+            "final_status": {
+              "status": "default",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11",
+      "description": "Stirs rice in the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "stirrer"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "pot 2",
+            "init_status": {
+              "status": "heating",
+              "container": null
+            },
+            "final_status": {
+              "status": "heating",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12_substep_0",
+      "description": "pours rice into the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "stirrer"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "pot 2",
+            "init_status": {
+              "status": "heating",
+              "container": null
+            },
+            "final_status": {
+              "status": "heating",
+              "container": null
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "sink",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "supply water",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "rice",
+            "init_status": {
+              "status": "heating",
+              "container": null
+            },
+            "final_status": {
+              "status": "contain water",
+              "container": null
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "pot 2",
+            "init_status": {
+              "status": "heating",
+              "container": null
+            },
+            "final_status": {
+              "status": "heating",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12_substep_1",
+      "description": "add water to the pot of rice",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "rice"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "sink",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "supply water",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "rice",
+            "init_status": {
+              "status": "heating",
+              "container": null
+            },
+            "final_status": {
+              "status": "contain water",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12_substep_2",
+      "description": "stir pot of rice",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "stirrer"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "pot 2",
+            "init_status": {
+              "status": "heating",
+              "container": null
+            },
+            "final_status": {
+              "status": "heating",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13",
+      "description": "Opens window",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "window"
+        },
+        "change": [
+          {
+            "object_id": 20,
+            "object_name": "window",
+            "init_status": {
+              "status": "unopened",
+              "container": null
+            },
+            "final_status": {
+              "status": "opened",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_14",
+      "description": "Stirs rice in the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "stirrer"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "pot 2",
+            "init_status": {
+              "status": "heating",
+              "container": null
+            },
+            "final_status": {
+              "status": "heating",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_15",
+      "description": "Opens window",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "door"
+        },
+        "change": [
+          {
+            "object_id": 20,
+            "object_name": "window",
+            "init_status": {
+              "status": "unopened",
+              "container": null
+            },
+            "final_status": {
+              "status": "opened",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_16",
+      "description": "Stirs rice in the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "stirrer"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "pot 2",
+            "init_status": {
+              "status": "heating",
+              "container": null
+            },
+            "final_status": {
+              "status": "heating",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.8888888888888888
+}

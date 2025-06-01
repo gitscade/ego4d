@@ -1,0 +1,699 @@
+{
+  "video_id": "ae2d99c2-1720-4354-bc4d-f7bc3e4ee28d",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Using phone\nTaking ingredients from the fridge\nPutting the packet contents in the bowl\nCutting the vegetables\nTaking a cup from the shelf",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "player",
+      "init_status": {
+        "status": "inactive",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "phone",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "apple",
+      "init_status": {
+        "status": "in fridge",
+        "container": 0
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "cheddar cheese",
+      "init_status": {
+        "status": "in fridge",
+        "container": 0
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "vegetable salad",
+      "init_status": {
+        "status": "not in bowl",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "sweet onion vinaigrette",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "bell pepper",
+      "init_status": {
+        "status": "in fridge",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "paper towel",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "fridge",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "container",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "mayonnaise jar",
+      "init_status": {
+        "status": "in fridge",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "cup",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "water",
+      "init_status": {
+        "status": "still",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "knife",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "table",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "refrigerator",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "stove",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "towel",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Operate phone",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "operating phone",
+          "final_hand": "phone"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "player",
+            "init_status": {
+              "status": "inactive",
+              "container": null
+            },
+            "final_status": {
+              "status": "active",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "phone",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "remove apple cheddar from fridge",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "apple",
+            "init_status": {
+              "status": "in fridge",
+              "container": null
+            },
+            "final_status": {
+              "status": "out of fridge",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "cheddar cheese",
+            "init_status": {
+              "status": "in fridge",
+              "container": null
+            },
+            "final_status": {
+              "status": "out of fridge",
+              "container": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_0",
+      "description": "add vegetable salad to bowl ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "vegetable salad",
+            "init_status": {
+              "status": "not in bowl",
+              "container": null
+            },
+            "final_status": {
+              "status": "in bowl",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with vegetable salad",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": " add sweet onion vinaigrette to vegetable salad",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "vegetable salad",
+            "init_status": {
+              "status": "in bowl",
+              "container": null
+            },
+            "final_status": {
+              "status": "in bowl",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "sweet onion vinaigrette",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to salad",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_2",
+      "description": "mix vegetable with sweet onion vinaigrette",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "vinaigrette bottle"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "sweet onion vinaigrette",
+            "init_status": {
+              "status": "added to salad",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "vegetable salad",
+            "init_status": {
+              "status": "in bowl",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_4",
+      "description": "add cheddar cheese to vegetable salad ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cheese"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "vegetable salad",
+            "init_status": {
+              "status": "mixed",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": null
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "cheddar cheese",
+            "init_status": {
+              "status": "out of fridge",
+              "container": null
+            },
+            "final_status": {
+              "status": "added tp vegetable salad",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "get bell pepper from fridge",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "grabbing bell pepper",
+          "final_hand": "bell pepper"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "bell pepper",
+            "init_status": {
+              "status": "in fridge",
+              "container": null
+            },
+            "final_status": {
+              "status": "out of fridge",
+              "container": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_0",
+      "description": "rinse bell pepper ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "bell pepper",
+            "init_status": {
+              "status": "unwashed",
+              "container": null
+            },
+            "final_status": {
+              "status": "washed",
+              "container": 17
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "water",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "flowing",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5_substep_1",
+      "description": "dry bell pepper with paper towel ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "bell pepper",
+            "init_status": {
+              "status": "wet",
+              "container": null
+            },
+            "final_status": {
+              "status": "dry",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "paper towel",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7",
+      "description": "get container",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "walking",
+          "final_hand": "container"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "container",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "held by player",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_0",
+      "description": "slice bell pepper",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "bell pepper",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 18
+            }
+          },
+          {
+            "object_id": 18,
+            "object_name": "knife",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_1",
+      "description": "add bell pepper to container ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "container",
+            "init_status": {
+              "status": "held by player",
+              "container": null
+            },
+            "final_status": {
+              "status": "bell pepper added",
+              "container": null
+            }
+          },
+          {
+            "object_id": 10,
+            "object_name": "bell pepper",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to container",
+              "container": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_10",
+      "description": "rinse hand",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "hand",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 17
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11",
+      "description": "get mayonnaise from fridge",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "fridge",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "items removed",
+              "container": 15
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "mayonnaise jar",
+            "init_status": {
+              "status": "in fridge",
+              "container": null
+            },
+            "final_status": {
+              "status": "out of fridge",
+              "container": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12",
+      "description": "fetch water into a cup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cup"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "cup",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "water",
+            "init_status": {
+              "status": "flowing",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to cup",
+              "container": 16
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.14285714285714285
+}

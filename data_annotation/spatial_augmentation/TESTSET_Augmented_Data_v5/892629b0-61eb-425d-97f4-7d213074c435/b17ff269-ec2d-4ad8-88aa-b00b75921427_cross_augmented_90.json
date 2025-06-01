@@ -1,0 +1,411 @@
+{
+  "video_id": "b17ff269-ec2d-4ad8-88aa-b00b75921427",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "cooking general",
+  "spatial_data": [
+    {
+      "object_id": 8,
+      "object_name": "table",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 1,
+      "object_name": "coffee maker",
+      "init_status": {
+        "status": "opened",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "coffee jar",
+      "init_status": {
+        "status": "half-filled",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "ground coffee",
+      "init_status": {
+        "status": "default",
+        "container": 2
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "a bottle of water",
+      "init_status": {
+        "status": "contain water",
+        "container": 4
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "sink",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "pan",
+      "init_status": {
+        "status": "unwashed",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "washing tool",
+      "init_status": {
+        "status": "default",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "table2",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "tissue",
+      "init_status": {
+        "status": "default",
+        "container": 11
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "trash can",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "player",
+      "init_status": {
+        "status": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "bread",
+      "init_status": {
+        "status": "packed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "frypan",
+      "init_status": {
+        "status": "clean",
+        "container": 16
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "spatula",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "flatbread",
+      "init_status": {
+        "status": "clean",
+        "container": 8
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Add coffee to coffee maker",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "coffee jar"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "Rinse coffee jar",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "coffee jar"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "coffee jar",
+            "init_status": {
+              "status": "unwashed",
+              "container": null
+            },
+            "final_status": {
+              "status": "washed",
+              "container": null
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "sink",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "supply water",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": " Add water to coffee",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "coffee jar"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "ground coffee",
+            "init_status": {
+              "status": "default",
+              "container": 2
+            },
+            "final_status": {
+              "status": "default",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_3",
+      "description": "Dispose water in sink ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "coffee jar"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "coffee jar",
+            "init_status": {
+              "status": "tilted",
+              "container": null
+            },
+            "final_status": {
+              "status": "shake off water",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Drink water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "a bottle of water"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "a bottle of water",
+            "init_status": {
+              "status": "contain water",
+              "container": 4
+            },
+            "final_status": {
+              "status": "tilted",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "Wash pan ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "pan",
+            "init_status": {
+              "status": "unwashed",
+              "container": 7
+            },
+            "final_status": {
+              "status": "washed",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "Wash hand ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "hand wash",
+          "final_hand": "none"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_2_substep_2",
+      "description": "Wash pan ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "sink",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "supply water",
+              "container": null
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "pan",
+            "init_status": {
+              "status": "washed",
+              "container": 7
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Clean hands.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "tissue"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "tissue",
+            "init_status": {
+              "status": "default",
+              "container": 11
+            },
+            "final_status": {
+              "status": "wet",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Add flat bread to plate.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "bread"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "bread",
+            "init_status": {
+              "status": "packed",
+              "container": null
+            },
+            "final_status": {
+              "status": "unpacked",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.875
+}

@@ -1,0 +1,270 @@
+{
+  "video_id": "58b2a4a4-b721-4753-bfc3-478cdb5bd1a8",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "cooking general",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "table",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "cup",
+      "init_status": {
+        "status": "default",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "table2",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "shelter",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "tea bag",
+      "init_status": {
+        "status": "default",
+        "container": 4
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "mug",
+      "init_status": {
+        "status": "default",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "water",
+      "init_status": {
+        "status": "boiled",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "trash can",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "player",
+      "init_status": {
+        "status": null,
+        "container": 4
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "pie",
+      "init_status": {
+        "status": "default",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "knife",
+      "init_status": {
+        "status": "default",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "add teabag in mug",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "tea bag"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "mug",
+            "init_status": {
+              "status": "default",
+              "container": 3
+            },
+            "final_status": {
+              "status": "default",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "add hot water to the mug",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "kettle"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": " steep teabag in hot water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "tea bag"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "water",
+            "init_status": {
+              "status": "boiled",
+              "container": null
+            },
+            "final_status": {
+              "status": "boiled",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "discards teabag",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "teabag"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "cuts baked pie with knife",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "pie",
+            "init_status": {
+              "status": "default",
+              "container": 1
+            },
+            "final_status": {
+              "status": "cut",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "serves baked pie in plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stand",
+          "final_hand": "plate"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "pie",
+            "init_status": {
+              "status": "default",
+              "container": 1
+            },
+            "final_status": {
+              "status": "default",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "covers baked pie with lid",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pie"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "pie",
+            "init_status": {
+              "status": "cut",
+              "container": 1
+            },
+            "final_status": {
+              "status": "cut",
+              "container": 11
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.0
+}

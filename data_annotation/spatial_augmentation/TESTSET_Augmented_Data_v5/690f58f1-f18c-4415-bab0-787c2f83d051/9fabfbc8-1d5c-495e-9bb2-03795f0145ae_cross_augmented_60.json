@@ -1,0 +1,354 @@
+{
+  "video_id": "9fabfbc8-1d5c-495e-9bb2-03795f0145ae",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "cooking general",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "sofa",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "phone",
+      "init_status": {
+        "status": "off",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "tofu",
+      "init_status": {
+        "status": "default",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "table",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "mushroom",
+      "init_status": {
+        "status": "packed",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "onion",
+      "init_status": {
+        "status": "default",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "kitchen cabinet",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "skillet",
+      "init_status": {
+        "status": "default",
+        "container": 9
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "gas stove",
+      "init_status": {
+        "status": "default",
+        "container": 9
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "cabinet",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "player",
+      "init_status": {
+        "status": null,
+        "container": 11
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "rice cooker",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "pot",
+      "init_status": {
+        "status": "clean",
+        "container": 14
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "foil",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "plate",
+      "init_status": {
+        "status": "clean",
+        "container": 5
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "meat",
+      "init_status": {
+        "status": "fresh",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "egg",
+      "init_status": {
+        "status": "fresh",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "carrot",
+      "init_status": {
+        "status": "fresh",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "sugar",
+      "init_status": {
+        "status": "fresh",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "cabbage",
+      "init_status": {
+        "status": "fresh",
+        "container": 3
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Gather ingredient",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "onion"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Heat a skillet",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "gas stove"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "skillet",
+            "init_status": {
+              "status": "default",
+              "container": 9
+            },
+            "final_status": {
+              "status": "default",
+              "container": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "get cooking utensils to use",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knife"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "dice onion into tiny cubes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "knife"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "onion",
+            "init_status": {
+              "status": "default",
+              "container": 3
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "onion",
+            "init_status": {
+              "status": "default",
+              "container": 3
+            },
+            "final_status": {
+              "status": "default",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_2",
+      "description": "pack remaining onions into a container",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "onion2"
+        },
+        "change": [
+          {
+            "object_id": 99,
+            "object_name": "onion2",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "packed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_3",
+      "description": "get mushroom from plastic container",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "mushroom"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "mushroom",
+            "init_status": {
+              "status": "packed",
+              "container": 3
+            },
+            "final_status": {
+              "status": "unpacked",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Operate phone",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "phone"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "phone",
+            "init_status": {
+              "status": "off",
+              "container": 1
+            },
+            "final_status": {
+              "status": "on",
+              "container": 1
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.4358974358974359
+}

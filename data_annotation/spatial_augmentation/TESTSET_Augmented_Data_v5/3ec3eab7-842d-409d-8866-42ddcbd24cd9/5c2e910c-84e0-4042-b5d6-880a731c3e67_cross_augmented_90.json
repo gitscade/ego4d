@@ -1,0 +1,466 @@
+{
+  "video_id": "5c2e910c-84e0-4042-b5d6-880a731c3e67",
+  "goal_category": "COOKING:PREPARE_NUT",
+  "goal_description": "Prepare nut",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "nut cracker",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "nut",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "bowl 2",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "player",
+      "init_status": {
+        "status": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "pan",
+      "init_status": {
+        "status": "clean",
+        "container": 8
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "tray",
+      "init_status": {
+        "status": "clean",
+        "container": 7
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "oil",
+      "init_status": {
+        "status": "fresh",
+        "container": 9
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "Crush nut in a nutcracker.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut cracker"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "nut",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "crushed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "Place crushed nut in a bowl.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "Crush nut in the nutcracker.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut cracker"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "nut",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "crushed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_3",
+      "description": "Place crushed nut in the bowl.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_4",
+      "description": "Crush the nut in the nutcracker.\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut cracker"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "nut",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "crushed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_5",
+      "description": "Place crushed nut in the bowl.\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_6",
+      "description": "Crush the nut in the nutcracker.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut cracker"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "nut",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "crushed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_7",
+      "description": "Place crushed nut in the bowl.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_8",
+      "description": "Crush the nut in the nutcracker.\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut cracker"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "nut",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "crushed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_9",
+      "description": "Place crushed nut in the bowl.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_10",
+      "description": "Crush the nut in the nutcracker.\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut cracker"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "nut",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "crushed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_11",
+      "description": "Place crushed nut in the bowl.\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_12",
+      "description": "Crush the nut in the nutcracker.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut cracker"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "nut",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "crushed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_13",
+      "description": "Place crushed nut in the bowl.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_14",
+      "description": "Crush the nut in the nutcracker.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut cracker"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "nut",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "crushed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_15",
+      "description": "Place crushed nut in the bowl.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_16",
+      "description": "Crush the nut in the nutcracker.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut cracker"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "nut",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "crushed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_17",
+      "description": "Place crushed nut in the bowl.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_18",
+      "description": "Crush the nut in the nutcracker.",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nut cracker"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "nut",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "crushed",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.5
+}

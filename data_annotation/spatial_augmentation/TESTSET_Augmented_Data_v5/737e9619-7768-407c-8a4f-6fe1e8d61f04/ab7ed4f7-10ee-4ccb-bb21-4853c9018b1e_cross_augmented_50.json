@@ -1,0 +1,504 @@
+{
+  "video_id": "ab7ed4f7-10ee-4ccb-bb21-4853c9018b1e",
+  "goal_category": "COOKING:MAKE_SAUSAGE_DISH",
+  "goal_description": "Make potatoes",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "water",
+      "init_status": {
+        "status": "cool",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "potato",
+      "init_status": {
+        "status": "packed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "pot",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "knife",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "player",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "stove",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "cutting board",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "pot",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "salt",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "pan",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 33,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 34,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 35,
+      "object_name": "kitchen sink",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 36,
+      "object_name": "paper towel",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 37,
+      "object_name": "kitchen sink",
+      "init_status": {
+        "status": "clean",
+        "container": 37
+      }
+    },
+    {
+      "object_id": 38,
+      "object_name": "soup",
+      "init_status": {
+        "status": "fresh",
+        "container": 33
+      }
+    },
+    {
+      "object_id": 39,
+      "object_name": "vegetables",
+      "init_status": {
+        "status": "fresh",
+        "container": 33
+      }
+    },
+    {
+      "object_id": 40,
+      "object_name": "rice",
+      "init_status": {
+        "status": "fresh",
+        "container": 33
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Heat up water with a heater",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "heater"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "stove",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "water",
+            "init_status": {
+              "status": "cool",
+              "container": null
+            },
+            "final_status": {
+              "status": "hot",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "pot",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "occupied",
+              "container": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_0",
+      "description": "Unpack potato ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "potato",
+            "init_status": {
+              "status": "packed",
+              "container": null
+            },
+            "final_status": {
+              "status": "unpacked",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "unpack",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_1",
+      "description": "Slice potato into pieces",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "knife",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 9
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "potato",
+            "init_status": {
+              "status": "unpacked",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 29
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "player",
+            "init_status": {
+              "status": "unpack",
+              "container": null
+            },
+            "final_status": {
+              "status": "unpack",
+              "container": null
+            }
+          },
+          {
+            "object_id": 29,
+            "object_name": "cutting board",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Pour boiled water in the pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 30,
+            "object_name": "pot",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "water",
+            "init_status": {
+              "status": "hot",
+              "container": null
+            },
+            "final_status": {
+              "status": "hot",
+              "container": 30
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Add salt to boiling water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 30,
+            "object_name": "pot",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "water",
+            "init_status": {
+              "status": "hot",
+              "container": null
+            },
+            "final_status": {
+              "status": "hot",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 31,
+            "object_name": "salt",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_1",
+      "description": "Add sliced potatoes into pan on stove",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "potato",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 32
+            }
+          },
+          {
+            "object_id": 13,
+            "object_name": "stove",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 32,
+            "object_name": "pan",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_0",
+      "description": "Transfer potatoes into bigger pot",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "potato",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "water",
+            "init_status": {
+              "status": "hot",
+              "container": null
+            },
+            "final_status": {
+              "status": "hot",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 31,
+            "object_name": "salt",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 30,
+            "object_name": "pot",
+            "init_status": {
+              "status": "used",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.23076923076923078
+}

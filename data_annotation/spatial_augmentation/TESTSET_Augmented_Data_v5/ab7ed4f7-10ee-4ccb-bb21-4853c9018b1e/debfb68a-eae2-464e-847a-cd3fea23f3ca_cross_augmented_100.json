@@ -1,0 +1,464 @@
+{
+  "video_id": "debfb68a-eae2-464e-847a-cd3fea23f3ca",
+  "goal_category": "COOKING:ROAST_FLOUR",
+  "goal_description": "Roasting flour",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "cooker",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "pan",
+      "init_status": {
+        "status": "full",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "flour",
+      "init_status": {
+        "status": "moist",
+        "container": 2
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "spatula",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "pot",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "cutting board",
+      "init_status": {
+        "status": "clean",
+        "container": 10
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "knife",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "pot",
+      "init_status": {
+        "status": "clean",
+        "container": 11
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "potato",
+      "init_status": {
+        "status": "fresh",
+        "container": 9
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "salt",
+      "init_status": {
+        "status": "fresh",
+        "container": 9
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "activate the cooker",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cooker"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "stir flour in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "flour"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "flour",
+            "init_status": {
+              "status": "moist",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "spatula",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "adjust the cooker heat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cooker"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "adjusted",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_3",
+      "description": "stir flour in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "flour",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_5",
+      "description": "adjust the cooker heat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cooker"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "adjusted",
+              "container": null
+            },
+            "final_status": {
+              "status": "readjusted",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_6",
+      "description": "stir flour in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "flour"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "flour",
+            "init_status": {
+              "status": "stirred",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "pan",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "spatula",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_7",
+      "description": "adjust the cooker heat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "cooker"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "readjusted",
+              "container": null
+            },
+            "final_status": {
+              "status": "readjusted once more",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_8",
+      "description": "stir flour in the pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "flour",
+            "init_status": {
+              "status": "stirred",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "player",
+            "init_status": {
+              "status": "stand",
+              "container": null
+            },
+            "final_status": {
+              "status": "stand",
+              "container": null
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "spatula",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Turn off cooker and pick up pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "flour",
+            "init_status": {
+              "status": "stirred",
+              "container": null
+            },
+            "final_status": {
+              "status": "roasted",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "cooker",
+            "init_status": {
+              "status": "readjusted once more",
+              "container": null
+            },
+            "final_status": {
+              "status": "off",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.8095238095238095
+}

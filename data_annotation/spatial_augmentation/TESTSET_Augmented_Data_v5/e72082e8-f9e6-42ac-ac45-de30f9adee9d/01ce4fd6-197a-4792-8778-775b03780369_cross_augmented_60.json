@@ -1,0 +1,329 @@
+{
+  "video_id": "01ce4fd6-197a-4792-8778-775b03780369",
+  "goal_category": "COOKING:MAKE_CAKE",
+  "goal_description": "Folding clothes",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "clothes horse",
+      "init_status": {
+        "status": "unpacked",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "towel",
+      "init_status": {
+        "status": "hanging",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "handkerchief",
+      "init_status": {
+        "status": "hanging",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "cloth1",
+      "init_status": {
+        "status": "hanging",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "cloth2",
+      "init_status": {
+        "status": "hanging",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "cloth3",
+      "init_status": {
+        "status": "hanging",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "cloth4",
+      "init_status": {
+        "status": "hanging",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "cloth5",
+      "init_status": {
+        "status": "hanging",
+        "container": 1
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "table",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "player",
+      "init_status": {
+        "status": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "cheese",
+      "init_status": {
+        "status": "fresh",
+        "container": 11
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "dough",
+      "init_status": {
+        "status": "fresh",
+        "container": 9
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "Arrange cloth",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cloth1"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "cloth1",
+            "init_status": {
+              "status": "hanging",
+              "container": 1
+            },
+            "final_status": {
+              "status": "folded",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "Arrange cloth",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cloth2"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "cloth2",
+            "init_status": {
+              "status": "hanging",
+              "container": 1
+            },
+            "final_status": {
+              "status": "folded",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2",
+      "description": "Arrange cloth",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cloth3"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "cloth3",
+            "init_status": {
+              "status": "hanging",
+              "container": 1
+            },
+            "final_status": {
+              "status": "folded",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Arrange cloth",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cloth4"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "cloth4",
+            "init_status": {
+              "status": "hanging",
+              "container": 1
+            },
+            "final_status": {
+              "status": "folded",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Fold towel",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "towel"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "towel",
+            "init_status": {
+              "status": "hanging",
+              "container": 1
+            },
+            "final_status": {
+              "status": "folded",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "Arrange cloth",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "cloth5"
+        },
+        "change": [
+          {
+            "object_id": 8,
+            "object_name": "cloth5",
+            "init_status": {
+              "status": "hanging",
+              "container": 1
+            },
+            "final_status": {
+              "status": "folded",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Fold handkerchief",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "handkerchief"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "handkerchief",
+            "init_status": {
+              "status": "hanging",
+              "container": 1
+            },
+            "final_status": {
+              "status": "folded",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7",
+      "description": "Pack hanger",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "clothes horse"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "clothes horse",
+            "init_status": {
+              "status": "unpacked",
+              "container": null
+            },
+            "final_status": {
+              "status": "packed",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.3333333333333333
+}

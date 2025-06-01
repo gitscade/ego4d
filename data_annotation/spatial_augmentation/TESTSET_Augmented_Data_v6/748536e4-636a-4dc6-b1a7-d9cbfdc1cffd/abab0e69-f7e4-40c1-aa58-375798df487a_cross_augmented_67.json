@@ -1,0 +1,843 @@
+{
+  "video_id": "abab0e69-f7e4-40c1-aa58-375798df487a",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Flatten dough.",
+  "spatial_data": [
+    {
+      "object_id": 0,
+      "object_name": "player",
+      "init_status": {
+        "status": null
+      }
+    },
+    {
+      "object_id": 1,
+      "object_name": "table",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "refrigerator",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "stove",
+      "category": "furniture",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "pot",
+      "init_status": {
+        "status": "clean",
+        "container": 3
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "knife",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "mango",
+      "init_status": {
+        "status": "fresh",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "mango",
+      "init_status": {
+        "status": "fresh",
+        "container": 2
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0_substep_0",
+      "description": "put the dough in the tortilla press ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_1",
+      "description": "put nylon on the dough ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nylon"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "nylon",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_2",
+      "description": "flatten the dough with a tortilla press ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "tortilla press"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "flatten",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_3",
+      "description": "flip the dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "flatten",
+              "container": null
+            },
+            "final_status": {
+              "status": "flatten",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_4",
+      "description": "flatten the dough with a tortilla press ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "tortilla press"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "dough",
+            "init_status": {
+              "status": "flipped",
+              "container": 3
+            },
+            "final_status": {
+              "status": "flatten",
+              "container": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_5",
+      "description": "place the flattened dough on the mat \n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough"
+        },
+        "change": [
+          {
+            "object_id": 3,
+            "object_name": "nylon",
+            "init_status": {
+              "status": "flipped",
+              "container": null
+            },
+            "final_status": {
+              "status": "flipped",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_6",
+      "description": "put nylon on the tortilla press ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nylon2"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_7",
+      "description": "lubricate the nylon with oil ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "oil"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "nylon2",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "oiled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_8",
+      "description": "knead the dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough2"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_9",
+      "description": "put the dough in the tortilla press ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough2"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "nylon2",
+            "init_status": {
+              "status": "oiled",
+              "container": null
+            },
+            "final_status": {
+              "status": "oiled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_10",
+      "description": "spread a nylon the dough ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nylon2"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "nylon2",
+            "init_status": {
+              "status": "oiled",
+              "container": null
+            },
+            "final_status": {
+              "status": "spread",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_11",
+      "description": "\nflatten the dough with a tortilla press ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "tortilla press"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "dough2",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_12",
+      "description": "flip the dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough2"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "dough2",
+            "init_status": {
+              "status": "flatten",
+              "container": 6
+            },
+            "final_status": {
+              "status": "flatten",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_13",
+      "description": "flatten the dough with a tortilla press ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "tortilla press"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "dough2",
+            "init_status": {
+              "status": "flipped",
+              "container": 6
+            },
+            "final_status": {
+              "status": "flatten",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_14",
+      "description": "place the flattened dough on the mat ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough2"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "nylon2",
+            "init_status": {
+              "status": "flipped",
+              "container": null
+            },
+            "final_status": {
+              "status": "flipped",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_15",
+      "description": "put nylon on the tortilla press ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nylon3"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_16",
+      "description": "put the dough in the tortilla press ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough2"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "nylon3",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_17",
+      "description": "put nylon on the dough \n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nylon4"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_18",
+      "description": "flatten the dough with a tortilla press \n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "tortilla press"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "dough3",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "flatten",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_19",
+      "description": "flip the dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough3"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "dough3",
+            "init_status": {
+              "status": "flatten",
+              "container": null
+            },
+            "final_status": {
+              "status": "flipped",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_20",
+      "description": "place the flattened dough on the mat \n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nylon4"
+        },
+        "change": [
+          {
+            "object_id": 9,
+            "object_name": "nylon3",
+            "init_status": {
+              "status": "flipped",
+              "container": null
+            },
+            "final_status": {
+              "status": "flipped",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_21",
+      "description": "adjust the nylon on the tortilla press ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nylon4"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_22",
+      "description": "knead the dough ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough4"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_23",
+      "description": "put the dough in the tortilla press ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough4"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "nylon4",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_24",
+      "description": "put nylon on the dough ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nylon5"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_25",
+      "description": "flatten the dough with a tortilla press ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "tortilla press"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "dough4",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "flatten",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_26",
+      "description": "flip the dough\n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough4"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "dough4",
+            "init_status": {
+              "status": "flatten",
+              "container": null
+            },
+            "final_status": {
+              "status": "flipped",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_27",
+      "description": "flatten the dough with a tortilla press ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "tortilla press"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "dough4",
+            "init_status": {
+              "status": "flipped",
+              "container": null
+            },
+            "final_status": {
+              "status": "flatten",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_28",
+      "description": "place the flattened dough on the mat \n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nylon5"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "nylon4",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_29",
+      "description": "put nylon on the tortilla press \n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nylon5"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_30",
+      "description": "knead the dough",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough5"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_31",
+      "description": "put the dough in the tortilla press ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough5"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "nylon5",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_32",
+      "description": "put nylon on the dough ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "nylon6"
+        },
+        "change": []
+      }
+    },
+    {
+      "step_info": "step_0_substep_33",
+      "description": "flatten the dough with a tortilla press \n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "tortilla press"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "dough5",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "flatten",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_0_substep_34",
+      "description": "flatten the dough with a tortilla press \n",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "dough5"
+        },
+        "change": [
+          {
+            "object_id": 14,
+            "object_name": "dough5",
+            "init_status": {
+              "status": "flatten",
+              "container": null
+            },
+            "final_status": {
+              "status": "flipped",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.8333333333333334
+}

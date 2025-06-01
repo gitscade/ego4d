@@ -1,0 +1,784 @@
+{
+  "video_id": "grp-ffd863cb-f06b-404e-a013-54acb61f1ed9",
+  "goal_category": "COOKING:MAKE_STIR_FRIED_DISH_GENERAL",
+  "goal_description": "Making stir fried meat",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "phone",
+      "init_status": {
+        "status": "inactive",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "chicken",
+      "init_status": {
+        "status": "inactive",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "microwave",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "dice",
+      "init_status": {
+        "status": "off-board",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "eggplant",
+      "init_status": {
+        "status": "off-board",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "chopping board",
+      "init_status": {
+        "status": "off-board",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "paper towel",
+      "init_status": {
+        "status": "dry",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "refrigerator",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "knife",
+      "init_status": {
+        "status": "on counter",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "cutting board",
+      "init_status": {
+        "status": "on counter",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "vegetable",
+      "init_status": {
+        "status": "in hand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "cooker",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "oil",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "meat",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "wraps",
+      "init_status": {
+        "status": "dirty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "cucumber",
+      "init_status": {
+        "status": "diced",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "heat source",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "temperature gauge",
+      "init_status": {
+        "status": "normal",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "on counter",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "fries",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "ingredients",
+      "init_status": {
+        "status": "uncooked",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "onion",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "garlic",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "bell pepper",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "chili pepper",
+      "init_status": {
+        "status": "raw",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "soy sauce",
+      "init_status": {
+        "status": "bottled",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "light",
+      "init_status": {
+        "status": "on",
+        "container": null
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "player",
+      "init_status": {
+        "status": "stand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "water",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "table",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "stove",
+      "init_status": {
+        "status": "placed",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_1",
+      "description": "Removes frozen chicken from a microwave",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "chicken",
+            "init_status": {
+              "status": "frozen",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 3
+            }
+          },
+          {
+            "object_id": 3,
+            "object_name": "microwave",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_0",
+      "description": "dice eggplant on chopping board",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "eggplant",
+            "init_status": {
+              "status": "off-board",
+              "container": null
+            },
+            "final_status": {
+              "status": "on-board",
+              "container": 6
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "chopping board",
+            "init_status": {
+              "status": "off-board",
+              "container": null
+            },
+            "final_status": {
+              "status": "on-board",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "thaw diced eggplants in water",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "eggplant",
+            "init_status": {
+              "status": "dice",
+              "container": null
+            },
+            "final_status": {
+              "status": "thawed",
+              "container": 30
+            }
+          },
+          {
+            "object_id": 30,
+            "object_name": "water",
+            "init_status": {
+              "status": "in",
+              "container": null
+            },
+            "final_status": {
+              "status": "in",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_1",
+      "description": "extract moisture from diced eggplants with paper towels",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "eggplant",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "moisture extracted",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "paper towel",
+            "init_status": {
+              "status": "dry",
+              "container": null
+            },
+            "final_status": {
+              "status": "wet",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3_substep_2",
+      "description": "refrigerate wrapped eggplants",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "eggplant",
+            "init_status": {
+              "status": "unwrapped",
+              "container": null
+            },
+            "final_status": {
+              "status": "wrapped",
+              "container": 8
+            }
+          },
+          {
+            "object_id": 8,
+            "object_name": "refrigerator",
+            "init_status": {
+              "status": "closed",
+              "container": null
+            },
+            "final_status": {
+              "status": "open",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_0",
+      "description": "heat oil in a pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "oil",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "heated",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6_substep_1",
+      "description": "add meat to pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "meat",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "pan",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_0",
+      "description": "regulate heat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 18,
+            "object_name": "heat source",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 19
+            }
+          },
+          {
+            "object_id": 19,
+            "object_name": "temperature gauge",
+            "init_status": {
+              "status": "high",
+              "container": null
+            },
+            "final_status": {
+              "status": "normal",
+              "container": 18
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_1",
+      "description": "stir meat in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "meat",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "moving",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "pan",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_2",
+      "description": "flip meat in pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 15,
+            "object_name": "meat",
+            "init_status": {
+              "status": "in pan",
+              "container": null
+            },
+            "final_status": {
+              "status": "flipped",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "pan",
+            "init_status": {
+              "status": "stir",
+              "container": null
+            },
+            "final_status": {
+              "status": "static",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_1",
+      "description": "add diced eggplant to pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "eggplant"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "eggplant",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "pan",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "static",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_9_substep_2",
+      "description": "stir eggplants with meat",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "eggplant"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "eggplant",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 15,
+            "object_name": "meat",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "pan",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11",
+      "description": "Stirs fries ingredients",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "cooking",
+          "final_hand": "frying pan"
+        },
+        "change": [
+          {
+            "object_id": 21,
+            "object_name": "fries",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 22,
+            "object_name": "ingredients",
+            "init_status": {
+              "status": "uncooked",
+              "container": null
+            },
+            "final_status": {
+              "status": "cooked",
+              "container": 14
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "pan",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "stir",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "spatial_similarity": 0.16666666666666666
+}
