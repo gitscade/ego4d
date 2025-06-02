@@ -119,7 +119,7 @@ def get_agent1b_message(inputs:list):
 
 
     MESSAGE_TAXONOMY_CREATION = [
-            {"role": "system", "content": """You are a taxonomy constructer, that makes 5-Leval classification taxonomy for a given noun in the input.
+            {"role": "system", "content": """You are a taxonomy constructer, that makes 5-Leval classification taxonomy for a given noun in the input. Here is a step by step example of how you do it.
              
              First, you receive a pair of words: a verb and a noun. This is called core activity. For example, you can receive words like as core activity
 
