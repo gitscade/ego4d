@@ -1142,7 +1142,7 @@ if __name__ == "__main__":
 
 
     # for i in range(0, len(source_list)):
-    for i in range(476, len(source_idx_list)):
+    for i in range(len(source_idx_list)):
 
         # -----------------------
         # CHECK PATHS
