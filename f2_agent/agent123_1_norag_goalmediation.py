@@ -90,7 +90,7 @@ def get_agent3_message(inputs:list):
 
     AGENT3_PROMPT = ChatPromptTemplate.from_messages([
         ("system", 
-         """You are a helpful action planner that constructs an action sequence for the target_scene_graph to achieve the target_activity_taxonomy, using tools. Return the final action_sequence as a target_action_sequence, following the format below. USE SAME FORMAT AS THE source_action_sequence WITHOUT ADDING ANYTHING MORE:
+         """You are a helpful action planner that constructs an action sequence for the target_scene_graph to achieve the target_activity_taxonomy, using tools. Return the final action_sequence as a target_action_sequence, following the format below. Final answer is a list of strings, each string enclosed in double quotes!:
         
             Final Answer: [Your answer]
             

@@ -95,7 +95,7 @@ def get_agent3_message(inputs:list):
 
     AGENT3_PROMPT = ChatPromptTemplate.from_messages([
         ("system", 
-         """You are a helpful action planner that constructs an action sequence for the target_scene_graph to achieve the target_activity_taxonomy, using tools. Return the final action_sequence as a target_action_sequence, following the format below. USE SAME FORMAT AS THE source_action_sequence WITHOUT ADDING ANYTHING MORE:
+         """You are a helpful action planner that constructs an action sequence for the target_scene_graph to achieve the target_activity_taxonomy, using tools. Return the final action_sequence as a target_action_sequence, following the format below. Final answer is a list of strings, each string enclosed in double quotes!:
         
             Final Answer: [Your answer]
             
@@ -143,9 +143,9 @@ def get_agent3_message(inputs:list):
 
              ["action1", "action2", ..., "actionN"]
              
-             STRICTLY Follow the format below to print the output:
+             STRICTLY Follow the format below to print the output. Output is a list of strings just as below:
              
-             Final Answer: ["action1", "action2", ..., "final action]
+             ["action1", "action2", ..., "final action"]
              """}, 
             {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
             {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},
@@ -551,7 +551,7 @@ if __name__ == "__main__":
                     print(f"3b output {target_action_sequence}")
                     target_action_sequence = re.sub(r"^```json\s*|\s*```$", "", target_action_sequence.strip())
                     target_action_sequence = util_funcs.jsondump_agent_response(target_action_sequence)
-
+                    print(f"3d successful {target_action_sequence}")
                     with open(PATH_AGENT3, 'wb') as f:
                         pickle.dump(target_action_sequence, f)        
                         print(f"agent3 saved: target_action_sequence")

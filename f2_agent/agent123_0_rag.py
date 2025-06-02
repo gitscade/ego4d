@@ -52,7 +52,7 @@ def get_agent1a_message(inputs:list):
 
     AGENT1a_PROMPT = ChatPromptTemplate.from_messages([
         ("system", 
-         """You are a helpful taxonomy summarizer that summarizes an action_sequence in input scene_graph, using tools. State your final answer as a string in a section labeled 'Final Answer:'.:
+         """You are a helpful taxonomy summarizer that summarizes an action_sequence in input scene_graph, using tools. State your final answer as a string in a section labeled 'Final Answer:'. The final answer is a single verb and a single noun:
         
             "Final Answer: [Your answer]"
             
@@ -72,7 +72,14 @@ def get_agent1a_message(inputs:list):
         )
 
     MESSAGE_ACTIVITY_PREDICTION = [
-            {"role": "system", "content": "You are a linguist that summarizes current user activity to a single verb and a single noun. You can refer to examples in similar environments to get help in summarizing the user activity in the source scene"}, 
+            {"role": "system", "content": """You are a linguist that summarizes current user activity to a single verb and a single noun. You can refer to examples in similar environments to get help in summarizing the user activity in the source scene. Here is an example for summary of cooking a steak. A single  verb and a noun will look like the example below:
+             
+             ### Example Summarization:
+
+             "cook steak"
+             
+             Use the format in the example exactly to give your answer:
+             """}, 
             {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
             {"role": "user", "content": f"Here is the scene graph:\n{source_scene_graph}\n"},
             {"role": "user", "content": f"Here is thhe action sequence examples from similar environment:\n{goalstep_example}\n" },
@@ -104,7 +111,7 @@ def get_agent1b_message(inputs:list):
             Action: [Tool name]
             Action Input: [The input to the action]
 
-         When you have enough information, conclude with: Final Answer. AGENT MUST NOT MODIFY TAXONOMY IN ANY WAY. Just Print out the final answer in this format without adding anything:
+         When you have enough information, conclude with: Final Answer. Final answer is a dictionary with 5 elements, where a value for a key has only a single word, where every word is enclosed in double quotes:
             
             Final Answer: [Your answer]
         """),
@@ -119,15 +126,15 @@ def get_agent1b_message(inputs:list):
 
 
     MESSAGE_TAXONOMY_CREATION = [
-            {"role": "system", "content": """You are a taxonomy constructer, that makes a 5-Leval classification taxonomy for a given noun in the input. Here is a step by step example of how you do it.
+            {"role": "system", "content": """You are a taxonomy constructer, that makes a 5-Leval classification taxonomy for a given noun in the input.  Here is a step by step example of how you do it.
              
-             First, you receive a pair of words: a verb and a noun. This is called core activity. For example, you can receive words like as core activity
+             First, you receive a pair of words: a verb and a noun. This is called core activity.  For example, you can receive words like as core activity
 
-             "cook steak"     
+             "cook steak"      
+             
+             From information from source_action_sequence, source_scene_graph, you will construct a more detailed taxonomy of the input noun in the core activity.
 
-             From information from source_action_sequence, source_scene_graph, and retrieved goalstep and spatial examples, you will construct a more detailed taxonomy of the input noun in the core activity.
-
-             For example, if input is called "cook steak", you are to create a taxonomy for the classification of the steak. In this case, taxonomy should answer question of "What is the cooked steak?" I can give you an example of taxonomy for steak below, where values of each key is available from the source scene itself. Only use entities and process that is achievable in the source_scene_graph.:
+             For example, if input is called "cook steak", you are to create a taxonomy for the classification of the steak. Taxonomy should answer question of "What is the cooked steak?" I can give you an example of taxonomy for steak below, where values of each key is available from the source scene itself. Only use entities and process that is achievable in the source_scene_graph.:
 
              {
              "sauce": "mustard",
@@ -135,15 +142,16 @@ def get_agent1b_message(inputs:list):
              "main ingredient": "pork",             
              "garnish": "salary",
              "spice":"salted",
-             }             
-
-             I am using only entities available from our own source scene. When you make your taxnomy choose your own key that reflect process in source sequence and fill the corresponding values with available entities existing in the source_scene_graph:
+             }
              
-             As you see, there are 5 levels of key-value pairs. ONE WORD for EACH KEY. You will have to decide the name of the key, and the corresponding value for the key to make your taxonomy. The key and the value pair for the input noun must be accomplished by the result of the source_action_sequence. For example, if steak is said to use only meat, main ingredient should be entity that is closest to meat or a kind of meat if 'meat' is not available. You will consider appropriate key names from your though process, and fill the values by using entities in your own source scene. Only assign ONE OBJECT for EACH KEY.
+             I am using only entities available from our own source scene. When you make your taxnomy choose your own key that reflect process in source sequence and fill the corresponding values with available entities existing in the source_scene_graph:
+
+             As you see, there are 5 levels of key-value pairs. ONE WORD for EACH KEY. You will have to decide the name of the key, and the corresponding value for the key to make your taxonomy. The key and the value pair for the input noun must be accomplished by the result of the source_action_sequence. For example, if steak is said to use only meat, main ingredient should be entity that is closest to meat or a kind of meat if 'meat' is not available. You will consider appropriate key names, and fill the values by using entities in your own source scene. Only assign ONE OBJECT for EACH KEY.
 
              Let's say you are explaining this steak to a person in a sentence. You are explaining what this steak is: "This is a pork steak, that is roasted, with salary garnish. We applied mustard sauce and salted it." This explanation gives information about the identity of the steak, stating key-value pair that is more essential in the definition of this steak. This leads to re-arranged dictionary taxonomy like. Make no mistake. This explanation is about the identity of the steak, not the sequence of how it is made.
+             
+             ### Example Taxonomy:
 
-             ```json
              {
              "main ingredient": "pork",   
              "preparation method": "roasted", 
@@ -151,9 +159,17 @@ def get_agent1b_message(inputs:list):
              "sauce": "mustard",
              "spice":"salted",
              }
-             ```
+             
 
-             Use this reasoning to re-order the elements in the dictionary and return it as output. ONLY CHANGE THE ORDER OF THE INPUT TAXONOMY IN THIS STEP and finalize the answer. STRICTLY FOLLOW THE FORMAT ABOVE for the final answer.       
+             Use this reasoning to re-order the elements in the dictionary and return it as output. ONLY CHANGE THE ORDER OF THE INPUT TAXONOMY IN THIS STEP and finalize the answer. STRICTLY FOLLOW THIS FORMAT for the final answer. ONLY ONE WORD for EACH KEY.:
+        
+            {
+            "key1": "value1",
+            "key2": "value2",
+            "key3": "value3",
+            "key4": "value4",
+            "key5": "value5"
+            }
 
              """},
             {"role": "user", "content": f"Here is the query:\n{query}\n"},
@@ -396,7 +412,7 @@ def get_agent3_message(inputs:list):
 
     AGENT3_PROMPT = ChatPromptTemplate.from_messages([
         ("system", 
-         """You are a helpful action planner that constructs an action sequence for the target_scene_graph to achieve the target_activity_taxonomy, using tools. Return the final action_sequence retrieved from the tool. USE SAME FORMAT AS THE source_action_sequence WITHOUT ADDING ANYTHING MORE:
+         """You are a helpful action planner that constructs an action sequence for the target_scene_graph to achieve the target_activity_taxonomy, using tools. Return the final action_sequence retrieved from the tool. Final answer is a list of strings, each string enclosed in double quotes!:
         
             Final Answer: [Your answer]
             
@@ -773,7 +789,7 @@ def run_agent_1a(input, agent_llm_chat):
     )
     return response
 
-def run_agent_1b(input, agent_llm_chat):
+def run_agent_1b(input, agent_llm_chat, MEMORY=None):
     """"
     func: run agent 1a with source video idx info\n
     input: [tools_1b, AGENT1b_PROMPT, source_action_sequence, source_scene_graph, source_core_activity]\n
@@ -787,8 +803,10 @@ def run_agent_1b(input, agent_llm_chat):
     source_core_activity= input[4]
     TOOLNAMES =", ".join([t.name for t in TOOLS])
 
-    QUERY = "Categorically describe source activity in a very specific way."    
-    MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
+    QUERY = "Categorically describe source activity in a very specific way." 
+
+    if MEMORY is None:
+        MEMORY = ConversationBufferWindowMemory(k=3, input_key="query")# only one input key is required fo this!
 
     AGENT = create_react_agent(
         tools=TOOLS,
@@ -806,17 +824,18 @@ def run_agent_1b(input, agent_llm_chat):
 
     response = AGENT_EXECUTOR.invoke(
         {
-            "query": QUERY, 
+            "query": QUERY,
             "source_scene_graph": source_scene_graph,
             "source_action_sequence": source_action_sequence,
             "source_core_activity": source_core_activity,
             "tools": TOOLS,
             "tool_names": TOOLNAMES,
-            "agent_scratchpad": "" 
-         },
+            "agent_scratchpad": ""
+        },
         config={"max_iterations": 5}
     )
-    return response
+    return response, MEMORY
+
 
 def run_agent_2a(input, agent_llm_chat):
     """"
@@ -1165,6 +1184,7 @@ if __name__ == "__main__":
         # -----------------------
         # AGENT1b: PREDICT FULL ACTIVITY TAXONOMY
         # -----------------------
+        print(f"source fore activity: {source_core_activity}")
         if bool_agent1b:
             with open(PATH_AGENT1b, 'rb') as f:
                 source_activity_taxonomy = pickle.load(f)
@@ -1177,10 +1197,15 @@ if __name__ == "__main__":
                     input1b_message = [tools_1b, source_action_sequence, source_scene_graph, source_core_activity, goalstep_example, spatial_example]
                     AGENT1b_PROMPT, MESSAGE_TAXONOMY_CREATION = get_agent1b_message(input1b_message)
                     input_1b_agent = [tools_1b, AGENT1b_PROMPT, source_action_sequence, source_scene_graph, source_core_activity]
-                    response_1b = run_agent_1b(input_1b_agent, AGENT_LLM_CHAT)
+
+
+                    # Initialize memory outside
+                    MEMORY = ConversationBufferWindowMemory(k=3, input_key="query")
+                    response_1b, MEMORY = run_agent_1b(input_1b_agent, AGENT_LLM_CHAT, MEMORY)
                     source_activity_taxonomy = response_1b['output']
                     print(f"1b output {source_activity_taxonomy}")
-                    
+                    MEMORY.clear()
+
                     source_activity_taxonomy = re.sub(r"^```json\s*|\s*```$", "", source_activity_taxonomy.strip())
                     source_activity_taxonomy = util_funcs.jsondump_agent_response(source_activity_taxonomy)
 

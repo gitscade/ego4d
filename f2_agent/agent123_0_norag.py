@@ -96,7 +96,7 @@ def get_agent1b_message(inputs:list):
             Action: [Tool name]
             Action Input: [The input to the action]
 
-         When you have enough information, conclude with: Final Answer. AGENT MUST NOT MODIFY TAXONOMY IN ANY WAY. Just Print out the final answer in this format without adding anything:
+         When you have enough information, conclude with: Final Answer. Final answer is a dictionary with 5 elements, where a value for a key has only a single word, where every word is enclosed in double quotes:
             
             Final Answer: [Your answer]
         """),
@@ -135,7 +135,8 @@ def get_agent1b_message(inputs:list):
 
              Let's say you are explaining this steak to a person in a sentence. You are explaining what this steak is: "This is a pork steak, that is roasted, with salary garnish. We applied mustard sauce and salted it." This explanation gives information about the identity of the steak, stating key-value pair that is more essential in the definition of this steak. This leads to re-arranged dictionary taxonomy like. Make no mistake. This explanation is about the identity of the steak, not the sequence of how it is made.
              
-             
+             ### Example Taxonomy:
+
              ```json
              {
              "main ingredient": "pork",   
@@ -144,9 +145,17 @@ def get_agent1b_message(inputs:list):
              "sauce": "mustard",
              "spice":"salted",
              }
-             ```
+             
 
-             Use this reasoning to re-order the elements in the dictionary and return it as output. ONLY CHANGE THE ORDER OF THE INPUT TAXONOMY IN THIS STEP and finalize the answer. STRICTLY FOLLOW THE FORMAT ABOVE for the final answer.
+             Use this reasoning to re-order the elements in the dictionary and return it as output. ONLY CHANGE THE ORDER OF THE INPUT TAXONOMY IN THIS STEP and finalize the answer. STRICTLY FOLLOW THIS FORMAT for the final answer. ONLY ONE WORD for EACH KEY.
+
+            {
+            "key1": "value1",
+            "key2": "value2",
+            "key3": "value3",
+            "key4": "value4",
+            "key5": "value5"
+            }
 
              """},
             {"role": "user", "content": f"Here is the query:\n{query}\n"},
@@ -420,7 +429,7 @@ def get_agent3_message(inputs:list):
 
     AGENT3_PROMPT = ChatPromptTemplate.from_messages([
         ("system", 
-         """You are a helpful action planner that constructs an action sequence for the target_scene_graph to achieve the target_activity_taxonomy, using tools. Return the final action_sequence as a target_action_sequence, following the format below. USE SAME FORMAT AS THE source_action_sequence WITHOUT ADDING ANYTHING MORE:
+         """You are a helpful action planner that constructs an action sequence for the target_scene_graph to achieve the target_activity_taxonomy, using tools. Return the final action_sequence as a target_action_sequence, following the format below. Final answer is a list of strings, each string enclosed in double quotes!:
         
             Final Answer: [Your answer]
             
@@ -837,7 +846,7 @@ def run_agent_1b(input, agent_llm_chat):
             "tools": TOOLS,
             "tool_names": TOOLNAMES,
             "agent_scratchpad": "" 
-         },
+        },
         config={"max_iterations": 5}
     )
     return response
