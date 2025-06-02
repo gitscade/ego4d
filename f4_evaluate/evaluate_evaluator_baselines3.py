@@ -88,6 +88,7 @@ def get_evaluations_taxseq(BASELINE_FOLDER):
         print(f"{i}: entity check for scene graph")
         entity_check_tax = entity_check(current_dict, "openai", "gpt-4.1", "tax")
         entity_check_seq = entity_check(current_dict, "openai", "gpt-4.1", "seq")
+        print(f"{entity_check_tax} {entity_check_seq}")
 
         # #bert, openai_embedding-small, embedding-large
         print(f"{i}: tax_sim check")
@@ -98,11 +99,13 @@ def get_evaluations_taxseq(BASELINE_FOLDER):
         similarity_seq1 = compute_dtw_seq_similarity(current_dict, "sbert")
         similarity_seq2 = compute_dtw_seq_similarity(current_dict, "text-embedding-3-small")
         similarity_seq3 = compute_dtw_seq_similarity(current_dict, "text-embedding-3-large")
+        print(f"{similarity_tax1} {similarity_tax2} {similarity_tax3} {similarity_seq1} {similarity_seq2} {similarity_seq3}")
 
         # #TODO: core check for tax sequence
         print(f"{i}: core activity check")
         core_check_tax = core_check(current_dict, "openai", "gpt-4.1", "tax")
         core_check_seq = core_check(current_dict, "openai", "gpt-4.1", "seq")
+        print(f"{core_check_tax} {core_check_seq}")
 
         # # metadata
         result_dict["idx"]=i
@@ -160,7 +163,10 @@ def get_evaluations_seq(BASELINE_FOLDER):
         target_uid = target_spatial_json_list[i]['video_id']   
         spatial_similarity  = target_spatial_json_list[i]['spatial_similarity']     
 
-        source_sequence = agent_init.get_video_info(source_video_idx)
+        source_sequence, trash = agent_init.get_video_info(source_video_idx)
+        source_sequence = source_sequence.strip('"')
+        source_sequence = [item.strip() for item in source_sequence.split(",")]
+        source_sequence=json.dumps(source_sequence)
         core_activity = load_file(PATH_AGENT1a)
 
         target_sequence = load_file(PATH_AGENT3)
@@ -170,14 +176,17 @@ def get_evaluations_seq(BASELINE_FOLDER):
 
         #TODO: entity check with llm
         entity_check_seq = entity_check(current_dict, "openai", "gpt-4.1", "seq")
+        print(f"{entity_check_seq}")
 
         #sbert, openai_embedding-small, embedding-large
         similarity_seq1 = compute_dtw_seq_similarity(current_dict, "sbert")
         similarity_seq2 = compute_dtw_seq_similarity(current_dict, "text-embedding-3-small")
         similarity_seq3 = compute_dtw_seq_similarity(current_dict, "text-embedding-3-large")
+        print(f"{similarity_seq1} {similarity_seq2} {similarity_seq3}")
 
         #TODO: core check for sequence
         core_check_seq = core_check(current_dict, "openai", "gpt-4.1", "seq")
+        print(f"{core_check_seq}")
 
         # metadata
         result_dict["idx"]=i
@@ -449,19 +458,12 @@ def get_embedding(text, model_name, sbert_model=None):
     else:
         raise ValueError("Unknown embedding model name.")
     
-def get_embeddings_batch(text_list, model_name, sbert_model=None):
-    if model_name.startswith("text-embedding"):
-        response = openai.embeddings.create(
-            input=text_list,
-            model=model_name
-        )
-        return [r.embedding for r in response.data]
-    elif model_name == "sbert":
-        if sbert_model is None:
-            sbert_model = SentenceTransformer("all-MiniLM-L6-v2")
-        return sbert_model.encode(text_list)
-    else:
-        raise ValueError("Unknown embedding model name.")
+def get_embeddings_batch(text_list, model_name): 
+    response = openai.embeddings.create(
+        input=text_list,
+        model=model_name
+    )
+    return [item.embedding for item in response.data]
 
 
 def compute_weighted_tax_similarity(entry, embed_model: str, sbert_model=None):
@@ -525,26 +527,15 @@ def compute_weighted_tax_similarity(entry, embed_model: str, sbert_model=None):
 
 def compute_dtw_seq_similarity(entry, embed_model: str):
     '''
-    compute dynamic time warping similarity between two sequences
+    Compute dynamic time warping similarity between two sequences.
     '''
-    seq_similarity =[]
     source_seq = safe_parse_sequence(entry.get('source_sequence'))
     target_seq = safe_parse_sequence(entry.get('target_sequence'))
 
-    # if not source_seq or not target_seq:
-    #     seq_similarity = 0.0
-    # else:
-    #     source_seq_str = ' '.join(source_seq)
-    #     target_seq_str = ' '.join(target_seq)
-    #     source_seq_emb = embed_model.encode(source_seq_str)
-    #     target_seq_emb = embed_model.encode(target_seq_str)
-    #     seq_similarity = cosine_similarity(source_seq_emb, target_seq_emb)    
-
     if not source_seq or not target_seq:
         return 0.0
-    
-    
-    # Get embeddings
+
+    # Get embeddings for each step in sequence
     if "text-embedding" in embed_model:
         emb1 = get_embeddings_batch(source_seq, model_name=embed_model)
         emb2 = get_embeddings_batch(target_seq, model_name=embed_model)
@@ -552,12 +543,13 @@ def compute_dtw_seq_similarity(entry, embed_model: str):
         sbert_model = SentenceTransformer("all-MiniLM-L6-v2")
         emb1 = sbert_model.encode(source_seq)
         emb2 = sbert_model.encode(target_seq)
+    else:
+        raise ValueError(f"Unsupported embedding model: {embed_model}")
 
-        distance, path = fastdtw(emb1, emb2, dist=cosine)
-        # Normalize distance to similarity (lower distance = higher similarity)
-        # Optional: convert to similarity score in [0, 1] range
-        max_possible_distance = len(path)  # worst case = all pairs unrelated
-        seq_similarity = 1 - (distance / max_possible_distance)
+    # Now compute DTW similarity regardless of model type
+    distance, path = fastdtw(emb1, emb2, dist=cosine)
+    max_possible_distance = len(path)
+    seq_similarity = 1 - (distance / max_possible_distance)
 
     return seq_similarity
 
