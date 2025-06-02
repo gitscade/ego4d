@@ -111,13 +111,15 @@ def get_agent1b_message(inputs:list):
 
 
     MESSAGE_TAXONOMY_CREATION = [
-            {"role": "system", "content": """You are a taxonomy constructer, that makes 5-Leval classification taxonomy for a given noun in the input.
+            {"role": "system", "content": """You are a taxonomy constructer, that makes a 5-Leval classification taxonomy for a given noun in the input.  Here is a step by step example of how you do it.
              
-             First, you receive a pair of words: a verb and a noun. This is called core activity. 
-             
-             From information from source_action_sequence, source_scene_graph, and retrieved relevant information, you will construct a more detailed taxonomy of the input noun in the core activity.
+             First, you receive a pair of words: a verb and a noun. This is called core activity.  For example, you can receive words like as core activity
 
-             For example, if input is called "cook steak", you are to create a taxonomy for the classification of the steak. Taxonomy should answer question of "What is the cooked steak?" I can give you an example of taxonomy for steak below. The keys-values here are just example, and you will choose yours so that your taxonomy best represent activity in source_action_sequence and source_scene_graph:
+             "cook steak"      
+             
+             From information from source_action_sequence, source_scene_graph, you will construct a more detailed taxonomy of the input noun in the core activity.
+
+             For example, if input is called "cook steak", you are to create a taxonomy for the classification of the steak. Taxonomy should answer question of "What is the cooked steak?" I can give you an example of taxonomy for steak below, where values of each key is available from the source scene itself. Only use entities and process that is achievable in the source_scene_graph.:
 
              {
              "sauce": "mustard",
@@ -127,9 +129,9 @@ def get_agent1b_message(inputs:list):
              "spice":"salted",
              }
              
-             As you see, there are 5 levels of key-value pairs. ONE WORD for EACH KEY. You will decide the name of the key in the taxonomy dictionary, and the corresponding value for the key. The key and the value pair for the input noun must be accomplished by the result of the source_action_sequence. For example, if steak is said to use only meat, main ingredient should be meat. If you are making dough, you will consider appropriate key names, not blindly following the key for the steak example. Only assign ONE OBJECT for EACH KEY.
+             I am using only entities available from our own source scene. When you make your taxnomy choose your own key that reflect process in source sequence and fill the corresponding values with available entities existing in the source_scene_graph:
 
-             You also see the input of source_core_activity which is "Cook Steak", and you can reason that the taxonomy is about the classification of Steak cooked by source_action_sequence, in a scene of source_scene_graph.
+             As you see, there are 5 levels of key-value pairs. ONE WORD for EACH KEY. You will have to decide the name of the key, and the corresponding value for the key to make your taxonomy. The key and the value pair for the input noun must be accomplished by the result of the source_action_sequence. For example, if steak is said to use only meat, main ingredient should be entity that is closest to meat or a kind of meat if 'meat' is not available. You will consider appropriate key names, and fill the values by using entities in your own source scene. Only assign ONE OBJECT for EACH KEY.
 
              Let's say you are explaining this steak to a person in a sentence. You are explaining what this steak is: "This is a pork steak, that is roasted, with salary garnish. We applied mustard sauce and salted it." This explanation gives information about the identity of the steak, stating key-value pair that is more essential in the definition of this steak. This leads to re-arranged dictionary taxonomy like. Make no mistake. This explanation is about the identity of the steak, not the sequence of how it is made.
              
@@ -144,7 +146,7 @@ def get_agent1b_message(inputs:list):
              }
              ```
 
-             Use this reasoning to re-order the elements in the dictionary and return it as output. ONLY CHANGE THE ORDER OF THE INPUT TAXONOMY IN THIS STEP and finalize the answer. STRICTLY FOLLOW THE FORMAT ABOVE for final answer.
+             Use this reasoning to re-order the elements in the dictionary and return it as output. ONLY CHANGE THE ORDER OF THE INPUT TAXONOMY IN THIS STEP and finalize the answer. STRICTLY FOLLOW THE FORMAT ABOVE for the final answer.
 
              """},
             {"role": "user", "content": f"Here is the query:\n{query}\n"},
@@ -350,9 +352,11 @@ def get_agent2b_message(inputs:list):
              "spice":["salted","empty"],
              }
 
-             You also receive source_core_activity and source_activity_taxonomy. For this example suppose you have:
+             Second, You also receive source_core_activity and source_activity_taxonomy. For this example suppose you have:
 
              "cook steak"
+
+            In this example, both source_activity_taxonomy and target_activity_taxonomy is about a properties of the "steak" that is to be "cooked":         
 
              {
              "main ingredient": "pork",
@@ -362,9 +366,9 @@ def get_agent2b_message(inputs:list):
              "spice":["salted","peppered"]
              }
 
-             For each key-value pair that holds value "empty" (in this case, values for "garnish" and "sauce"), you must find suitable alternative entity in the target_scene that can fill these values, in the context of source_core_activity.
+             Third, for each key-value pair that holds value "empty" (in this case, values for "garnish" and "sauce"), you must find suitable alternative entity in the target_scene that can fill these values, in the context of source_core_activity.
 
-             First print out the entities in the target_scene_graph. ONLY USE THESE entities in filling out the "empty" values in common_activity_taxonomy:
+             Let's do this by printing out the entities existing in the target_scene_graph. ONLY USE THESE entities in filling out the "empty" values in common_activity_taxonomy:
 
              target_scene_graph_entities: [items in target_scene_graph]
 
@@ -374,7 +378,7 @@ def get_agent2b_message(inputs:list):
 
              If target_scene_graph has "chill bottle" as entity, this can act as similar substitute to add "chilli" to the spice. Therefore, "empty" for spice becomes "chillied". 
              
-             In the same manner, if substitute vegetables for "garnish" is found in target_scene as "potato" "onion", you can pick the most vegetable that performs similar function as salary. Since salarly is there as garnish for steak, this is mostly for its texture. In this reagard, "onion" can be a substitue for "salary" in the source_acitivty_taxonomy's "garnish". If there is no onion in target, then, anything that serves as garnish like potato can be used to replace the "empty" value. When no sauce whatsoever is found in the scene, the "sauce" value should remain "empty". Overall, this will result in a new taxonomy below:
+             In the same manner, if substitute vegetables for "garnish" is found in target_scene as "potato" "onion", you can pick the most vegetable that performs similar function as salary. Since salarly is there as garnish for steak, this is mostly for its texture. In this reagard, "onion" can be a substitue for "salary" in the source_acitivty_taxonomy's "garnish". If there is no onion in target, then, anything that serves as garnish like potato can be used to replace the "empty" value. When no sauce whatsoever is found in the scene, the "sauce" value should remain "empty". Overall, this will result in a new taxonomy below.:
 
              ```json
              {
@@ -388,7 +392,7 @@ def get_agent2b_message(inputs:list):
 
              While for this example, we found candidates for filling in the empty fields, we could encounter target_scene_graph where fulfilling source_core_activity is impossible. In this case, fill the "empty" field with "impossible" to make sure target_activity_taxonomy is impossible. 
 
-             Following the logic above, you will come up with a new taxonomy for the target_scene_graph. Return this final dictionary of key-values as output. You must use the same format enclosed in the ``` to represent the final answer. DO NOT DELETE OR REFORMAT ANY KEY in the common_activity_taxnomy dictionary in the target_activity_taxonomy"""}, 
+             Following the logic above, you will come up with a new taxonomy for the target_scene_graph. Return this final dictionary of key-values as output. You must use the same format enclosed in the ``` to represent the final answer. DO NOT DELETE OR REFORMAT ANY KEY in the common_activity_taxnomy dictionary in the target_activity_taxonomy and STRICTLY FOLLOW THE FORMAT OF THE TAXONOMY ABOVE."""}, 
    
             {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
             {"role": "user", "content": f"Here is the source_core_activity:\n{source_core_activity}\n" },            
@@ -440,7 +444,7 @@ def get_agent3_message(inputs:list):
         )
 
     MESSAGE_TARGET_SEQUENCE_PREDICTION = [
-            {"role": "system", "content": """You are a action planner expert that makes action sequence in a target_scene_graph to achieve the taxonomy values of the target_activity_taxonomy. Let me give you a step-by-step example of how you function.
+            {"role": "system", "content": """You are an action planner expert that makes action sequence in a target_scene_graph to achieve the taxonomy values of the target_activity_taxonomy. Let me give you a step-by-step example of how you function.
              
              First, you receive a target_activity_taxonomy in dictionary form:
 
@@ -452,15 +456,14 @@ def get_agent3_message(inputs:list):
              "spice":["salted","chillied"]
              }
 
-             Let's also suppose that you receive a source_core_activity and source_activity_taxonomy as follows:
+             Second, Let's also suppose that you receive a source_core_activity and source_activity_taxonomy as follows:
 
              "Cook Steak"
 
-             Therefore, you can see that the target_activity_taxonomy is describing the noun ("steak") after it is "cooked" in the target_scene. 
+            You can see that the target_activity_taxonomy is describing the noun ("steak") after it is "cooked" in the target_scene. The source_core_activity is the goal of the target_action_sequence you are making.
 
-             When looking at all information from source_scene_graph, source_action_sequence, and source_activity_taxonomy you find that value for each key is started and completed at certain steps at source_action_sequence. For example, in a source_activity_taxonomy like below, you will know that salt or salt bottle is present at the scene, but the spice "salted" value only can be completed when player or user in the scene performs a state of salting the ingredient or steak in the source_action_sequence. In the same logic, trying to achieve the "salted" value in "spice" key can start when player tries to grab salt/salt bottle or performs salting action. "pork" key is already started and completed in a step where it is chosen as main ingredient.
+             Third, let's plan about the logic of realizing each key-value in the target_activity_taxonomy. When looking at all information from source_scene_graph, source_action_sequence, and source_activity_taxonomy you find that value for each key is started and completed at certain steps at source_action_sequence. For example, in a source_activity_taxonomy like below, you will know that salt or salt bottle is present at the scene, but the spice "salted" value only can be completed when player or user in the scene performs a state of salting the ingredient or steak in the source_action_sequence. In the same logic, trying to achieve the "salted" value in "spice" key can start when player tries to grab salt/salt bottle or performs salting action. "pork" key is already started and completed in a step where it is chosen as main ingredient.
 
-            
              {
              "main ingredient": "pork",   
              "preparation method": "roasted", 
@@ -470,12 +473,19 @@ def get_agent3_message(inputs:list):
              }
 
 
-             Following the logic above, you can make action sequence for the target_scene and target_activity_taxonomy. First, you should make a logical action_sequence so that each value for the key in the target_activity_taxonomy is achieved, and the core_activity is realized with the resources and entities available in the target_scene_graph. Print your logic in format below:
+             Fourth, following the logic above, you can make action sequence for the target_scene and target_activity_taxonomy. At the start of this phase, you should make a logical action_sequence for each key-value pair in the target_activity_taxonomy so that the core_activity is realized. You can ONLY use resources and entities in the target_scene_graph. Here's the format of expressing your thought process
+             
+             Action sequence for each key value: your action sequences to realize each of the the key-value in the target_activity_taxonomy
+             Logic: your logic for each key value sequence
 
-             unordered target taxonomy: your action sequence for target taxonomy
+             Fifth, you will need to combine all the sequences of the key value in to a single sequence so that it is natural. Edit your combined action sequence so that it is sequentially logical. Here's the format of expressing your thought process.
+
+             Target Action Sequence: your action sequence to realize target taxonomy that only uses entities in target scene graph
              Logic: your logic for each key in the target taxonomy
              
-             Then, a re-ordering tool should be called, so that each value for the key is started and completed at similar absolute step, or relative step with respect to steps for the corresponding keys in the source_action_sequence. This will return the final re-ordered target_action_sequence.
+             Sixth, a re-ordering should be done, so that order of action for your logical target action sequence is similar to the order of actions taken in the source_action_sequence provided as content. This will return the final re-ordered target_action_sequence in this format:
+
+             ["action1", "action2", ..., "actionN"]
              
              Finally, you will return the target_action_sequence as output. The format of the target_scene_graph should follow the format of the source_scene_graph. STRICTLY Follow the format below to print the output:
              
@@ -1108,42 +1118,20 @@ def run_core_action_test(source_core_activity, target_activity_taxonomy, target_
     except Exception as e:
         return f"Error: action_sequence_prediction: {str(e)}"
 
-# def test_idx(source_idx_list):
-#     import csv
-#     test_list = []
-#     for i in range(len(source_idx_list)):
-#         source_video_idx = source_idx_list[i]        
-#         target_video_idx = (source_video_idx + 10) % 71
-
-#         source_action_sequence1, source_scene_graph1, source_id1, source_id2 = agent_init.get_video_info_idxtest(source_video_idx)
-#         source_scene_graph = source_spatial_json_list[i]
-
-#         target_scene_graph1 = database_init.spatial_test_video_list[target_video_idx]
-#         target_scene_graph = target_spatial_json_list[i]
-                
-#         print(f"{source_video_idx} {target_video_idx} {source_id1} {source_scene_graph['video_id']} {target_scene_graph1['video_id']} {target_scene_graph['video_id']} {target_scene_graph['spatial_similarity']} ")
-
-#         test_list.append([source_video_idx, target_video_idx, source_id1, source_scene_graph['video_id'], target_scene_graph1['video_id'], target_scene_graph['video_id'], target_scene_graph['spatial_similarity']])
-
-#     with open("spatial_similarity_data.csv", "w", newline="") as csvfile:
-#         writer = csv.writer(csvfile)
-#         writer.writerow(["source_idx", "target_idx", "source_scene_id1", "source_scene_id1", "target_scene_id1", "target_scene_id", "spatial_similarity"])
-#         writer.writerows(test_list)
-
 if __name__ == "__main__":
     # -----------------------
     # TEST SETTINGS
     # -----------------------
     agent_api_name = "openai"
-    agent_model_name = "gpt-4o"
+    agent_model_name = "gpt-4.1"
     tool_api_name = "openai"
-    tool_model_name = "gpt-4o"    
+    tool_model_name = "gpt-4.1"    
     AGENT_LLM_API, AGENT_LLM_STR, AGENT_LLM_CHAT = agent_init.SET_LLMS(agent_api_name, agent_model_name, temperature=0.2)
     TOOL_LLM_API, TOOL_LLM_STR, TOOL_LLM_CHAT = agent_init.SET_LLMS(tool_api_name, tool_model_name, temperature=0.2)
 
     # # SETUP FIRST INPUTS
     BASELINE_FOLDER = "/output-norag/"
-    BASELINE_FOLDER = "/output-norag-0601/"
+    BASELINE_FOLDER = "/output-norag-0602/"
     PATH_SOURCE_TARGET_OUTPUT = constants_init.PATH_SOURCE_TARGET + BASELINE_FOLDER
 
     # Get scenegraph for source and target
@@ -1168,35 +1156,35 @@ if __name__ == "__main__":
         PATH_AGENT3 = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent3.pkl"
         PATH_AGENT4 = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent4.pkl"  
 
-        # # init path bools
-        # bool_sourceinfo = False
-        # bool_targetinfo = False
-        # bool_agent1a = False
-        # bool_agent1b = False
-        # bool_agent2a = False
-        # bool_agent2b = False
-        # bool_agent3 = False
-        # bool_agent4 = False
+        # init path bools
+        bool_sourceinfo = False
+        bool_targetinfo = False
+        bool_agent1a = False
+        bool_agent1b = False
+        bool_agent2a = False
+        bool_agent2b = False
+        bool_agent3 = False
+        bool_agent4 = False
 
-        # # check file with paths
-        # bool_sourceinfo = agent_init.check_file(PATH_SOURCEINFO)
-        # bool_targetinfo = agent_init.check_file(PATH_TARGETINFO)
-        # bool_agent1a = agent_init.check_file(PATH_AGENT1a)
-        # bool_agent1b = agent_init.check_file(PATH_AGENT1b)
-        # bool_agent2a = agent_init.check_file(PATH_AGENT2a)
-        # bool_agent2b = agent_init.check_file(PATH_AGENT2b)
-        # bool_agent3 = agent_init.check_file(PATH_AGENT3)
-        # bool_agent4 = agent_init.check_file(PATH_AGENT4)
+        # check file with paths
+        bool_sourceinfo = agent_init.check_file(PATH_SOURCEINFO)
+        bool_targetinfo = agent_init.check_file(PATH_TARGETINFO)
+        bool_agent1a = agent_init.check_file(PATH_AGENT1a)
+        bool_agent1b = agent_init.check_file(PATH_AGENT1b)
+        bool_agent2a = agent_init.check_file(PATH_AGENT2a)
+        bool_agent2b = agent_init.check_file(PATH_AGENT2b)
+        bool_agent3 = agent_init.check_file(PATH_AGENT3)
+        bool_agent4 = agent_init.check_file(PATH_AGENT4)
 
-        # # if every file exist, break from this whole loop
-        # if bool_sourceinfo and bool_targetinfo and bool_agent1a and bool_agent1b and bool_agent2a and bool_agent2b and bool_agent3 and bool_agent4:
-        #     continue   
-        # else:
-        #     print(f"{i} missing")
+        # if every file exist, break from this whole loop
+        if bool_sourceinfo and bool_targetinfo and bool_agent1a and bool_agent1b and bool_agent2a and bool_agent2b and bool_agent3 and bool_agent4:
+            continue   
+        else:
+            print(f"{i} missing")
 
-        # # if no file whatsoever, bool_runall is True to run everything without loading
-        # if not bool_sourceinfo and not bool_targetinfo and not bool_agent1a and not  bool_agent1b and not bool_agent2a and not bool_agent2b and not bool_agent3 and not bool_agent4:
-        #     bool_runall = True
+        # if no file whatsoever, bool_runall is True to run everything without loading
+        if not bool_sourceinfo and not bool_targetinfo and not bool_agent1a and not  bool_agent1b and not bool_agent2a and not bool_agent2b and not bool_agent3 and not bool_agent4:
+            bool_runall = True
             
         # prepare necessary files
         source_video_idx = source_idx_list[i]
@@ -1208,205 +1196,205 @@ if __name__ == "__main__":
         spatial_similarity  = target_spatial_json_list[i]['spatial_similarity']
 
 
-        if os.path.exists(PATH_SOURCEINFO):
-            os.remove(PATH_SOURCEINFO)
-        with open(PATH_SOURCEINFO, 'wb') as f:
-            print(f"{i} ")
-            dict = {"source_idx": source_video_idx, "source_uid": source_uid, "source_action_sequence": source_action_sequence, "source_scene_graph": source_scene_graph, "spatial_similarity": spatial_similarity}
-            pickle.dump(dict, f)
+        # if os.path.exists(PATH_SOURCEINFO):
+        #     os.remove(PATH_SOURCEINFO)
+        # with open(PATH_SOURCEINFO, 'wb') as f:
+        #     print(f"{i} ")
+        #     dict = {"source_idx": source_video_idx, "source_uid": source_uid, "source_action_sequence": source_action_sequence, "source_scene_graph": source_scene_graph, "spatial_similarity": spatial_similarity}
+        #     pickle.dump(dict, f)
 
-        if os.path.exists(PATH_TARGETINFO):
-            os.remove(PATH_TARGETINFO)            
-        with open(PATH_TARGETINFO, 'wb') as f:
-            print(f"{i} ")
-            dict = {"target_idx": (source_video_idx+10)%71, "target_uid": target_uid, "target_scene_graph": target_scene_graph}
-            pickle.dump(dict, f)
+        # if os.path.exists(PATH_TARGETINFO):
+        #     os.remove(PATH_TARGETINFO)            
+        # with open(PATH_TARGETINFO, 'wb') as f:
+        #     print(f"{i} ")
+        #     dict = {"target_idx": (source_video_idx+10)%71, "target_uid": target_uid, "target_scene_graph": target_scene_graph}
+        #     pickle.dump(dict, f)
 
-        # # sourceinfo and targetinfo
-        # while not bool_sourceinfo and not bool_targetinfo:
-        #     with open(PATH_SOURCEINFO, 'wb') as f:
-        #         dict = {"source_idx": source_video_idx, "source_uid": source_uid, "source_action_sequence": source_action_sequence, "source_scene_graph": source_scene_graph, "spatial_similarity": spatial_similarity}
-        #         pickle.dump(dict, f)     
-        #         bool_sourceinfo = True   
-        #         # print(f"SOURCE INFO: {i} {source_video_idx} {source_uid} {source_action_sequence} {spatial_similarity}")   
-        #     with open(PATH_TARGETINFO, 'wb') as f:
-        #         dict = {"target_idx": (source_video_idx+10)%71, "target_uid": target_uid, "target_scene_graph": target_scene_graph}
-        #         pickle.dump(dict, f)
-        #         bool_targetinfo = True
-        #         # print(f"TARGET INFO: {i} {(source_video_idx+10)%71} {target_uid} {target_action_sequence} {target_scene_graph}")
-
-
-        # # # -----------------------
-        # # # AGENT1a: PREDICT CORE ACTIVITY
-        # # # -----------------------
-        # if bool_agent1a:
-        #     with open(PATH_AGENT1a, 'rb') as f:
-        #         source_core_activity = pickle.load(f)
-        # else:
-        #     while not bool_agent1a:       
-        #         try:
-        #             tools_1a = get_agent1a_tools()
-        #             input_1a_message = [tools_1a, source_action_sequence, source_scene_graph]
-        #             AGENT1a_PROMPT, MESSAGE_ACTIVITY_PREDICTION = get_agent1a_message(input_1a_message)
-        #             input_1a_agent = [tools_1a, AGENT1a_PROMPT, source_action_sequence, source_scene_graph]
-        #             response_1a = run_agent_1a(input_1a_agent, AGENT_LLM_CHAT)
-        #             source_core_activity = response_1a['output']
-
-        #             with open(PATH_AGENT1a, 'wb') as f:
-        #                 pickle.dump(source_core_activity, f)        
-        #                 print(f"agent1a saved: source_core_activity")  
-        #                 bool_agent1a = True 
-
-        #         except Exception as e:
-        #             print(f"Agent1a failed at index {i}: {e}")
-        #             continue
+        # sourceinfo and targetinfo
+        while not bool_sourceinfo and not bool_targetinfo:
+            with open(PATH_SOURCEINFO, 'wb') as f:
+                dict = {"source_idx": source_video_idx, "source_uid": source_uid, "source_action_sequence": source_action_sequence, "source_scene_graph": source_scene_graph, "spatial_similarity": spatial_similarity}
+                pickle.dump(dict, f)     
+                bool_sourceinfo = True   
+                # print(f"SOURCE INFO: {i} {source_video_idx} {source_uid} {source_action_sequence} {spatial_similarity}")   
+            with open(PATH_TARGETINFO, 'wb') as f:
+                dict = {"target_idx": (source_video_idx+10)%71, "target_uid": target_uid, "target_scene_graph": target_scene_graph}
+                pickle.dump(dict, f)
+                bool_targetinfo = True
+                # print(f"TARGET INFO: {i} {(source_video_idx+10)%71} {target_uid} {target_action_sequence} {target_scene_graph}")
 
 
         # # -----------------------
-        # # AGENT1b: PREDICT FULL ACTIVITY TAXONOMY
+        # # AGENT1a: PREDICT CORE ACTIVITY
         # # -----------------------
-        # if bool_agent1b:
-        #     with open(PATH_AGENT1b, 'rb') as f:
-        #         source_activity_taxonomy = pickle.load(f)
-        # else:
-        #     while not bool_agent1b:        
-        #         try:        
-        #             tools_1b = get_agent1b_tools()
-        #             input1b_message = [tools_1b, source_action_sequence, source_scene_graph, source_core_activity]
-        #             # AGENT1b_PROMPT, MESSAGE_TAXONOMY_CREATION, MESSAGE_REORDER_TAXONOMY = get_agent1b_message(input1b_message)
-        #             AGENT1b_PROMPT, MESSAGE_TAXONOMY_CREATION = get_agent1b_message(input1b_message)
-        #             input_1b_agent = [tools_1b, AGENT1b_PROMPT, source_action_sequence, source_scene_graph, source_core_activity]
-        #             response_1b = run_agent_1b(input_1b_agent, AGENT_LLM_CHAT)
-        #             source_activity_taxonomy = response_1b['output']
-        #             print(f"1b output {source_activity_taxonomy}")
+        if bool_agent1a:
+            with open(PATH_AGENT1a, 'rb') as f:
+                source_core_activity = pickle.load(f)
+        else:
+            while not bool_agent1a:       
+                try:
+                    tools_1a = get_agent1a_tools()
+                    input_1a_message = [tools_1a, source_action_sequence, source_scene_graph]
+                    AGENT1a_PROMPT, MESSAGE_ACTIVITY_PREDICTION = get_agent1a_message(input_1a_message)
+                    input_1a_agent = [tools_1a, AGENT1a_PROMPT, source_action_sequence, source_scene_graph]
+                    response_1a = run_agent_1a(input_1a_agent, AGENT_LLM_CHAT)
+                    source_core_activity = response_1a['output']
+
+                    with open(PATH_AGENT1a, 'wb') as f:
+                        pickle.dump(source_core_activity, f)        
+                        print(f"agent1a saved: source_core_activity")  
+                        bool_agent1a = True 
+
+                except Exception as e:
+                    print(f"Agent1a failed at index {i}: {e}")
+                    continue
+
+
+        # -----------------------
+        # AGENT1b: PREDICT FULL ACTIVITY TAXONOMY
+        # -----------------------
+        if bool_agent1b:
+            with open(PATH_AGENT1b, 'rb') as f:
+                source_activity_taxonomy = pickle.load(f)
+        else:
+            while not bool_agent1b:        
+                try:        
+                    tools_1b = get_agent1b_tools()
+                    input1b_message = [tools_1b, source_action_sequence, source_scene_graph, source_core_activity]
+                    # AGENT1b_PROMPT, MESSAGE_TAXONOMY_CREATION, MESSAGE_REORDER_TAXONOMY = get_agent1b_message(input1b_message)
+                    AGENT1b_PROMPT, MESSAGE_TAXONOMY_CREATION = get_agent1b_message(input1b_message)
+                    input_1b_agent = [tools_1b, AGENT1b_PROMPT, source_action_sequence, source_scene_graph, source_core_activity]
+                    response_1b = run_agent_1b(input_1b_agent, AGENT_LLM_CHAT)
+                    source_activity_taxonomy = response_1b['output']
+                    print(f"1b output {source_activity_taxonomy}")
                     
-        #             source_activity_taxonomy = re.sub(r"^```json\s*|\s*```$", "", source_activity_taxonomy.strip())
-        #             source_activity_taxonomy = util_funcs.jsondump_agent_response(source_activity_taxonomy)
+                    source_activity_taxonomy = re.sub(r"^```json\s*|\s*```$", "", source_activity_taxonomy.strip())
+                    source_activity_taxonomy = util_funcs.jsondump_agent_response(source_activity_taxonomy)
 
-        #             with open(PATH_AGENT1b, 'wb') as f:
-        #                 pickle.dump(source_activity_taxonomy, f)        
-        #                 print(f"agent1b saved: source_activity_taxonomy")
-        #                 bool_agent1b = True
+                    with open(PATH_AGENT1b, 'wb') as f:
+                        pickle.dump(source_activity_taxonomy, f)        
+                        print(f"agent1b saved: source_activity_taxonomy")
+                        bool_agent1b = True
 
-        #         except Exception as e:
-        #             print(f"Agent1b failed at indiex {i}: {e}")
-        #             continue
-
-
-        # # -----------------------
-        # # AGENT2a: PREDICT COMMON ACTIVITY TAXONOMY
-        # # -----------------------            
-        # # print(source_activity_taxonomy)
-        # if bool_agent2a:
-        #     with open(PATH_AGENT2a, 'rb') as f:
-        #         common_activity_taxonomy = pickle.load(f)
-        # else: 
-        #     while not bool_agent2a:       
-        #         try:                      
-        #             tools_2a = get_agent2a_tools()
-        #             input2a_message = [tools_2a, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy]
-        #             AGENT2a_PROMPT, MESSAGE_COMMON_TAXONOMY_PREDICTION=get_agent2a_message(input2a_message)
-        #             input2a_agent = [tools_2a, AGENT2a_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy]
-        #             response_2a = run_agent_2a(input2a_agent, AGENT_LLM_CHAT)
-        #             common_activity_taxonomy = response_2a['output']
-        #             print(f"2a output {common_activity_taxonomy}")
-
-        #             common_activity_taxonomy = re.sub(r"^```json\s*|\s*```$", "", common_activity_taxonomy.strip())
-        #             common_activity_taxonomy = util_funcs.jsondump_agent_response(common_activity_taxonomy)
-
-        #             with open(PATH_AGENT2a, 'wb') as f:
-        #                 pickle.dump(common_activity_taxonomy, f)        
-        #                 print(f"agent2a saved: common_activity_taxonomy")   
-        #                 bool_agent2a = True
-
-        #         except Exception as e:
-        #             print(f"Agent2a failed at index {i}: {e}")
-        #             continue
+                except Exception as e:
+                    print(f"Agent1b failed at indiex {i}: {e}")
+                    continue
 
 
-        # # -----------------------
-        # # AGENT2b: PREDICT TARGET ACTIVITY TAXONOMY
-        # # -----------------------    
-        # if bool_agent2b:
-        #     with open(PATH_AGENT2b, 'rb') as f:
-        #         target_activity_taxonomy = pickle.load(f)
-        # else:       
-        #     while not bool_agent2b:  
-        #         try:                      
-        #             tools_2b = get_agent2b_tools()
-        #             input2a_message = [tools_2b, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy, source_core_activity]    
-        #             AGENT2b_PROMPT, MESSAGE_TARGET_TAXONOMY_PREDICTION, MESSAGE_TARGET_TAXONOMY_EXAMINER=get_agent2b_message(input2a_message)
-        #             input2b_agent = [tools_2b, AGENT2b_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy, source_core_activity]    
-        #             response_2b = run_agent_2b(input2b_agent, AGENT_LLM_CHAT)
-        #             target_activity_taxonomy = response_2b['output']
-        #             print(f"2b output {target_activity_taxonomy}")
+        # -----------------------
+        # AGENT2a: PREDICT COMMON ACTIVITY TAXONOMY
+        # -----------------------            
+        # print(source_activity_taxonomy)
+        if bool_agent2a:
+            with open(PATH_AGENT2a, 'rb') as f:
+                common_activity_taxonomy = pickle.load(f)
+        else: 
+            while not bool_agent2a:       
+                try:                      
+                    tools_2a = get_agent2a_tools()
+                    input2a_message = [tools_2a, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy]
+                    AGENT2a_PROMPT, MESSAGE_COMMON_TAXONOMY_PREDICTION=get_agent2a_message(input2a_message)
+                    input2a_agent = [tools_2a, AGENT2a_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy]
+                    response_2a = run_agent_2a(input2a_agent, AGENT_LLM_CHAT)
+                    common_activity_taxonomy = response_2a['output']
+                    print(f"2a output {common_activity_taxonomy}")
 
-        #             target_activity_taxonomy = re.sub(r"^```json\s*|\s*```$", "", target_activity_taxonomy.strip())
-        #             target_activity_taxonomy = util_funcs.jsondump_agent_response(target_activity_taxonomy)
+                    common_activity_taxonomy = re.sub(r"^```json\s*|\s*```$", "", common_activity_taxonomy.strip())
+                    common_activity_taxonomy = util_funcs.jsondump_agent_response(common_activity_taxonomy)
+
+                    with open(PATH_AGENT2a, 'wb') as f:
+                        pickle.dump(common_activity_taxonomy, f)        
+                        print(f"agent2a saved: common_activity_taxonomy")   
+                        bool_agent2a = True
+
+                except Exception as e:
+                    print(f"Agent2a failed at index {i}: {e}")
+                    continue
+
+
+        # -----------------------
+        # AGENT2b: PREDICT TARGET ACTIVITY TAXONOMY
+        # -----------------------    
+        if bool_agent2b:
+            with open(PATH_AGENT2b, 'rb') as f:
+                target_activity_taxonomy = pickle.load(f)
+        else:       
+            while not bool_agent2b:  
+                try:                      
+                    tools_2b = get_agent2b_tools()
+                    input2a_message = [tools_2b, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy, source_core_activity]    
+                    AGENT2b_PROMPT, MESSAGE_TARGET_TAXONOMY_PREDICTION, MESSAGE_TARGET_TAXONOMY_EXAMINER=get_agent2b_message(input2a_message)
+                    input2b_agent = [tools_2b, AGENT2b_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy, source_core_activity]    
+                    response_2b = run_agent_2b(input2b_agent, AGENT_LLM_CHAT)
+                    target_activity_taxonomy = response_2b['output']
+                    print(f"2b output {target_activity_taxonomy}")
+
+                    target_activity_taxonomy = re.sub(r"^```json\s*|\s*```$", "", target_activity_taxonomy.strip())
+                    target_activity_taxonomy = util_funcs.jsondump_agent_response(target_activity_taxonomy)
                     
-        #             with open(PATH_AGENT2b, 'wb') as f:
-        #                 pickle.dump(target_activity_taxonomy, f)        
-        #                 print(f"agent2b saved: target_activity_taxonomy saved")
-        #                 bool_agent2b = True
+                    with open(PATH_AGENT2b, 'wb') as f:
+                        pickle.dump(target_activity_taxonomy, f)        
+                        print(f"agent2b saved: target_activity_taxonomy saved")
+                        bool_agent2b = True
 
-        #         except Exception as e:
-        #             print(f"Agent2b failed at index {i}: {e}")
-        #             continue
+                except Exception as e:
+                    print(f"Agent2b failed at index {i}: {e}")
+                    continue
         
-        # # -----------------------
-        # # PREDICT TARGET ACTION SEQUENCE
-        # # -----------------------
-        # if bool_agent3:
-        #     with open(PATH_AGENT3, 'rb') as f:
-        #         target_action_sequence = pickle.load(f)
-        # else:            
-        #     while not bool_agent3: 
-        #         try:                      
-        #             tools_3 = get_agent3_tools()
-        #             input3_message = [tools_3, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, target_activity_taxonomy, source_core_activity]
-        #             AGENT3_PROMPT, MESSAGE_TARGET_SEQUENCE_PREDICTION=get_agent3_message(input3_message)       
-        #             input3_agent = [tools_3, AGENT3_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, target_activity_taxonomy, source_core_activity]   
-        #             response_3 = run_agent3(input3_agent, AGENT_LLM_CHAT)
-        #             target_action_sequence = response_3['output']
+        # -----------------------
+        # PREDICT TARGET ACTION SEQUENCE
+        # -----------------------
+        if bool_agent3:
+            with open(PATH_AGENT3, 'rb') as f:
+                target_action_sequence = pickle.load(f)
+        else:            
+            while not bool_agent3: 
+                try:                      
+                    tools_3 = get_agent3_tools()
+                    input3_message = [tools_3, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, target_activity_taxonomy, source_core_activity]
+                    AGENT3_PROMPT, MESSAGE_TARGET_SEQUENCE_PREDICTION=get_agent3_message(input3_message)       
+                    input3_agent = [tools_3, AGENT3_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, target_activity_taxonomy, source_core_activity]   
+                    response_3 = run_agent3(input3_agent, AGENT_LLM_CHAT)
+                    target_action_sequence = response_3['output']
 
-        #             # SERIALIZE TO FORMAT
-        #             target_action_sequence = re.sub(r"^```json\s*|\s*```$", "", target_action_sequence.strip())
-        #             target_action_sequence = util_funcs.jsondump_agent_response(target_action_sequence)
+                    # SERIALIZE TO FORMAT
+                    target_action_sequence = re.sub(r"^```json\s*|\s*```$", "", target_action_sequence.strip())
+                    target_action_sequence = util_funcs.jsondump_agent_response(target_action_sequence)
 
-        #             with open(PATH_AGENT3, 'wb') as f:
-        #                 pickle.dump(target_action_sequence, f)        
-        #                 print(f"agent3 saved: target_action_sequence")
-        #                 bool_agent3 = True
+                    with open(PATH_AGENT3, 'wb') as f:
+                        pickle.dump(target_action_sequence, f)        
+                        print(f"agent3 saved: target_action_sequence")
+                        bool_agent3 = True
 
-        #         except Exception as e:
-        #             print(f"Agent3 failed at index {i}: {e}")
-        #             continue        
+                except Exception as e:
+                    print(f"Agent3 failed at index {i}: {e}")
+                    continue        
 
 
 
-        # # -----------------------
-        # # FINAL: TEST FAITHFULNESS TO CORE ACTIVITY
-        # # -----------------------     
-        # if bool_agent4:
-        #     with open(PATH_AGENT4, 'wb') as f:
-        #         final_response = pickle.load(f)#    
-        # else:
-        #     while not bool_agent4:
-        #         try:
-        #             final_response = run_core_action_test(
-        #                 source_core_activity,
-        #                 target_activity_taxonomy,
-        #                 target_action_sequence,
-        #                 agent_api_name,
-        #                 agent_model_name
-        #             )
+        # -----------------------
+        # FINAL: TEST FAITHFULNESS TO CORE ACTIVITY
+        # -----------------------     
+        if bool_agent4:
+            with open(PATH_AGENT4, 'wb') as f:
+                final_response = pickle.load(f)#    
+        else:
+            while not bool_agent4:
+                try:
+                    final_response = run_core_action_test(
+                        source_core_activity,
+                        target_activity_taxonomy,
+                        target_action_sequence,
+                        agent_api_name,
+                        agent_model_name
+                    )
 
-        #             print(final_response)
-        #             with open(PATH_AGENT4, 'wb') as f:
-        #                 pickle.dump(final_response, f)        
-        #                 print(f"agent3 saved: output: final answer {final_response}")
-        #                 bool_agent4 = True
+                    print(final_response)
+                    with open(PATH_AGENT4, 'wb') as f:
+                        pickle.dump(final_response, f)        
+                        print(f"agent3 saved: output: final answer {final_response}")
+                        bool_agent4 = True
 
-        #         except Exception as e:
-        #             print(f"Agent4 failed at index {i}: {e}")
-        #             continue                        
+                except Exception as e:
+                    print(f"Agent4 failed at index {i}: {e}")
+                    continue                        
