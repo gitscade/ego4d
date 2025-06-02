@@ -132,6 +132,7 @@ def get_evaluations_taxseq(BASELINE_FOLDER):
         save_path = constants_init.PATH_ROOT + "f4_evaluate/result_v6"+BASELINE_FOLDER + f"evaluator_{i}.pkl"
         save_file(save_path, result_dict)
         print(f"saved to {save_path}")
+        # result_list.append(result_dict)
 
     return result_list
 
@@ -228,6 +229,7 @@ def entity_check(current_dict, TOOL_LLM_API, TOOL_LLM_STR, mode:str):
     func return bool on entity_check\n
     input: current_dict, mode: "tax" or "seq"\n
     '''
+
     source_core_activity = current_dict['core_activity']
     target_scene_graph = current_dict['target_scene_graph']
     
@@ -389,8 +391,6 @@ def core_check(current_dict, TOOL_LLM_API, TOOL_LLM_STR, mode:str):
             return response['message']['content']    
     except Exception as e:
         return f"Error: action_sequence_prediction: {str(e)}"
-#-----------------------------------------------------------
-
 #-----------------------------------------------------------
 # Similarity for Tax(Weight) and Sequence(DTW)
 #-----------------------------------------------------------
@@ -593,8 +593,8 @@ if __name__ == "__main__":
     source_idx_list = [i for i in range(len(source_spatial_json_list)//len(aug_levels)) for _ in range(len(aug_levels))]    
 
     # get evaluation results
-    evaluations_rag = get_evaluations_taxseq(BASELINE_RAG_FOLDER)
-    # evaluations_norag = get_evaluations_taxseq(BASELINE_NORAG_FOLDER)
+    # evaluations_rag = get_evaluations_taxseq(BASELINE_RAG_FOLDER)
+    evaluations_norag = get_evaluations_taxseq(BASELINE_NORAG_FOLDER)
     # evaluations_raggoal = get_evaluations_seq(BASELINE_RAGGOAL_FOLDER)
     # evaluations_noraggoal = get_evaluations_seq(BASELINE_NORAGGOAL_FOLDER)
 
