@@ -74,26 +74,55 @@ def get_agent3_message(inputs:list):
         )
 
     MESSAGE_TARGET_SEQUENCE_PREDICTION = [
-            {"role": "system", "content": """You are a action planner expert that makes action sequence in a target_scene_graph that preserves the context of the source_action_sequence. Let me give you a step-by-step example of how you function.
-             
-             First, you receive a source_action_sequence in a list form:
+            {"role": "system", "content": 
+             """
+            You are an expert action planner. Your task is to transform a given source_action_sequence so that it fits a target_scene_graph while preserving the original context as closely as possible.
 
-             [
-             "put pan on stove",
-             "add oil on pan",
-             "turn on the stove",
-             "put meat on stove",
-             "salt the meat"
-             ]
+            Follow this 3-step process:
 
-             You have to make an action sequence in the above format, only using entities in the target_scene_graph. Use spatial and goalstep example to gather information on how simlar scenes to target achieves this using their own available entities. You will generate the final target_action_sequence similar to this format:
+            1. You will receive a list of actions (source_action_sequence), each as a string. Example:
+            [
+                "put pan on stove",
+                "add oil on pan",
+                "turn on the stove",
+                "put meat on stove",
+                "salt the meat"
+            ]
 
-             ["action1", "action2", ..., "actionN"]
-             
-             STRICTLY Follow the format below to print the output:
-             
-             Final Answer: ["action1", "action2", ..., "final action]
-             """}, 
+            2. For each action:
+            - Check if all objects/entities in the phrase exist in the target_scene_graph.
+            - If an entity is missing, replace it with a similar or closest alternative from the target_scene_graph. Consult the source_action_sequence in order to undestand what the missing entity's role was.
+            - If no suitable replacement is available, mark the action as "impossible".
+
+            3. Ensure consistency:
+            - If you replace an object (e.g., "pan" → "pot"), use that same substitution consistently in all subsequent actions.
+
+            Example transformation:
+            Input:
+            [
+                "put pan on stove",
+                "add oil on pan",
+                "turn on the stove",
+                "put meat on stove",
+                "salt the meat"
+            ]
+            Target Scene Graph contains: pot, stove, oil
+            Output:
+            [
+                "put pot on stove",
+                "add oil on pot",
+                "turn on the stove",
+                "impossible",
+                "impossible"
+            ]
+
+            Output Format:
+            Return only the final modified list enclosed in double quotes, like this:
+
+            Final Answer: ["action1", "action2", ..., "final action"]
+
+            Do not include any other text or explanation. Follow the format exactly.
+            """}, 
             {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
             {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},
             {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},
