@@ -445,8 +445,7 @@ if __name__ == "__main__":
     TOOL_LLM_API, TOOL_LLM_STR, TOOL_LLM_CHAT = agent_init.SET_LLMS(tool_api_name, tool_model_name, temperature=0.2)
 
     # PATHS
-    BASELINE_FOLDER = "/output-1direct/"
-    BASELINE_FOLDER = "/output-1direct-0609/"
+    BASELINE_FOLDER = "/output-0-s2s-0609/"
     PATH_SOURCE_TARGET_OUTPUT = constants_init.PATH_SOURCE_TARGET + BASELINE_FOLDER
 
     # DATASET V8, Scene Graphs (source, target)

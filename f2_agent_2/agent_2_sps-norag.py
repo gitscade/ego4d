@@ -15,7 +15,6 @@ from langchain_openai.chat_models import ChatOpenAI # good for agents
 from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
-
 #agents
 from langchain.tools import tool
 from langchain.tools import Tool
@@ -25,7 +24,6 @@ from langchain.memory import ConversationBufferWindowMemory
 #packages
 sys.path.append(os.path.abspath('/root/project')) # add root path to sys.path
 sys.path.append(os.path.abspath('/usr/local/lib/python3.10/dist-packages'))
-from langchain.prompts import ChatPromptTemplate
 import f1_init.agent_init as agent_init
 import f1_init.database_init as database_init
 import f2_agent.agent_prompt as agent_prompt
@@ -45,14 +43,12 @@ def get_agent1a_message(inputs:list):
     tools = inputs[0]
     source_action_sequence = inputs[1]
     source_scene_graph = inputs[2]
-    goalstep_example = inputs[3]
-    spatial_example = inputs[4]
     query = "summarize the input action sequence with a single verb and a single noun"
     tool_names =", ".join([t.name for t in tools])    
 
     AGENT1a_PROMPT = ChatPromptTemplate.from_messages([
         ("system", 
-         """You are a helpful taxonomy summarizer that summarizes an action_sequence in input scene_graph, using tools. State your final answer as a string in a section labeled 'Final Answer:'. The final answer is a single verb and a single noun:
+         """You are a helpful taxonomy summarizer that summarizes an action_sequence in input scene_graph, using tools. State your final answer as a string in a section labeled 'Final Answer:'.:
         
             "Final Answer: [Your answer]"
             
@@ -60,7 +56,7 @@ def get_agent1a_message(inputs:list):
         
             Thought: [Your reasoning]
             Action: [Tool name]
-            Action Input: [The input to the action]
+            Action Input: ["query": {query}, "source_action_sequence": {source_action_sequence}, "source_scene_graph": {source_scene_graph}]
 
         """),
 
@@ -84,9 +80,7 @@ def get_agent1a_message(inputs:list):
              
              """}, 
             {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
-            {"role": "user", "content": f"Here is the scene graph:\n{source_scene_graph}\n"},
-            {"role": "user", "content": f"Here is thhe action sequence examples from similar environment:\n{goalstep_example}\n" },
-            {"role": "user", "content": f"Here is the scene graph from similar environment:\n{spatial_example}\n"}            
+            {"role": "user", "content": f"Here is the scene graph:\n{source_scene_graph}\n"}        
         ]
     return AGENT1a_PROMPT, MESSAGE_ACTIVITY_PREDICTION
 
@@ -100,8 +94,6 @@ def get_agent1b_message(inputs:list):
     source_action_sequence = inputs[1]
     source_scene_graph = inputs[2]
     source_core_activity = inputs[3]
-    goalstep_example = inputs[4]
-    spatial_example = inputs[5]
     query = "make dict of core properties for the given core_activity"
     tool_names =", ".join([t.name for t in tools])    
 
@@ -187,7 +179,7 @@ def get_agent1b_message(inputs:list):
             "key2-for-noun": "value2"
             }
             ]
-            """                    
+            """             
              },
             {"role": "user", "content": f"Here is the query:\n{query}\n"},
             {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
@@ -225,7 +217,7 @@ def get_agent2a_message(inputs:list):
 
         ("system", "This is the user action sequence in source scene: {source_action_sequence}."),
         ("system", "This is the target scene graph: {target_scene_graph}."),
-        ("system", "This is the source activity taxonomy: {source_activity_taxonomy}"),        
+        ("system", "This is the source activity taxonomy: {source_activity_taxonomy}"),
         ("system", "Available tools: {tools}. Actively use retrieval tools to get a plausible answer."),
         ("system", "Tool names: {tool_names}"),
         ("user", "This is the user query: {query}"),
@@ -235,69 +227,69 @@ def get_agent2a_message(inputs:list):
         # ("system", "This is the source scene graph: {source_scene_graph}."),
 
     MESSAGE_COMMON_TAXONOMY_PREDICTION = [
-            {"role": "system", "content": 
-            """
-            You are a taxonomy examiner. Your task is to validate a given activity taxonomy against a target_scene_graph and return a filtered version called the common_activity_taxonomy.
+        {"role": "system", "content":      
+        """
+        You are a taxonomy examiner. Your task is to validate a given activity taxonomy against a target_scene_graph and return a filtered version called the common_activity_taxonomy.
 
-            ### Input:
-            - **source_activity_taxonomy**: A list of two dictionaries.
-            - The first dictionary describes the verb.
-            - The second dictionary describes the noun.
-            Example:
-            [
-                {
-                "manner": "roasting",
-                "vessel": "pan"
-                },
-                {
-                "ingredient": "pork",
-                "garnish": "celery"
-                }
-            ]
-
-            - **source_core_activity**: A string with the verb and noun.
-            Example:
-            "cook steak"
-
-            ### Task:
-            1. For each key-value pair in the source_activity_taxonomy:
-            - Check if the value exists in the target_scene_graph or can be generated by any action in the target_scene_graph.
-            - If the value **exists**, leave it unchanged.
-            - If the value does **not exist**, replace it with **"empty"**.
-
-            2. Do **not** delete or rename any keys.
-            - Maintain the exact same structure as the input.
-            - Only modify the values.
-            - Each dictionary must retain **exactly two key-value pairs**.
-
-            ### Example Output:
-            [
+        ### Input:
+        - **source_activity_taxonomy**: A list of two dictionaries.
+        - The first dictionary describes the verb.
+        - The second dictionary describes the noun.
+        Example:
+        [
             {
-                "manner": "roasting",
-                "vessel": "empty"
+            "manner": "roasting",
+            "vessel": "pan"
             },
             {
-                "ingredient": "empty",
-                "garnish": "empty"
+            "ingredient": "pork",
+            "garnish": "celery"
             }
-            ]
-
-            In this example, "pan", "pork", and "celery" were not found in the target_scene_graph or derivable from it, so they were replaced with "empty".
-
-            ### Final Output Format:
-            You must only return a list of **exactly two dictionaries**, each containing **exactly two key-value pairs**. Output format:
-
-            - Return a list of exactly two dictionaries.
-            - Each dictionary must contain exactly two key-value pairs.
-            - Do not change the order or structure.
-            - Do not add explanation or any other text.
-            """   
-             }, 
-            {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
-            {"role": "user", "content": f"Here is the source activity taxonomy:\n{source_activity_taxonomy}\n"},
-            {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"}
         ]
 
+        - **source_core_activity**: A string with the verb and noun.
+        Example:
+        "cook steak"
+
+        ### Task:
+        1. For each key-value pair in the source_activity_taxonomy:
+        - Check if the value exists in the target_scene_graph or can be generated by any action in the target_scene_graph.
+        - If the value **exists**, leave it unchanged.
+        - If the value does **not exist**, replace it with **"empty"**.
+
+        2. Do **not** delete or rename any keys.
+        - Maintain the exact same structure as the input.
+        - Only modify the values.
+        - Each dictionary must retain **exactly two key-value pairs**.
+
+        ### Example Output:
+        [
+        {
+            "manner": "roasting",
+            "vessel": "empty"
+        },
+        {
+            "ingredient": "empty",
+            "garnish": "empty"
+        }
+        ]
+
+        In this example, "pan", "pork", and "celery" were not found in the target_scene_graph or derivable from it, so they were replaced with "empty".
+
+        ### Final Output Format:
+        You must only return a list of **exactly two dictionaries**, each containing **exactly two key-value pairs**. Output format:
+
+        - Return a list of exactly two dictionaries.
+        - Each dictionary must contain exactly two key-value pairs.
+        - Do not change the order or structure.
+        - Do not add explanation or any other text.
+        """             
+            }, 
+        {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
+        {"role": "user", "content": f"Here is the source activity taxonomy:\n{source_activity_taxonomy}\n"},
+        {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"}
+        ]
+ 
     return AGENT2a_PROMPT, MESSAGE_COMMON_TAXONOMY_PREDICTION
 
 def get_agent2b_message(inputs:list):
@@ -313,7 +305,6 @@ def get_agent2b_message(inputs:list):
     source_activity_taxonomy = inputs[4]
     common_activity_taxonomy = inputs[5]
     source_core_activity = inputs[6]
-    spatial_example = inputs[7]    
     query = "construct a target_acvity_taxonomy that is applicable to target_scene_graph"
     tool_names =", ".join([t.name for t in tools])    
 
@@ -345,8 +336,38 @@ def get_agent2b_message(inputs:list):
         ]
         )
     
+    MESSAGE_TARGET_TAXONOMY_EXAMINER = [
+            {"role": "system", "content": """You are a taxonomy examiner for a generated target_activity_taxonomy. You're main task is to examine if target_activity_taxonomy follows the context of source_core_acivitiy. Let me give you a step-by-step example of how you function.
+             
+             First, you receive a target_activity_taxonomy in dictionary form:
+
+            {
+             "main ingredient": "pork",
+             "preparation method": "roasted", 
+             "garnish": "salary",
+             "sauce": "mustard",
+             "spice":["salted","peppered"]
+             }
+
+             You also receive source_core_activity. For this example suppose you have:
+
+             "cook steak"
+
+             For this example, the target_activity_taxnomy can be used for core activity of "cook steak". You will simple return the target_activity_taxonomy.
+            
+             While for this example, we found candidates for filling in the empty fields, we could encounter target_scene_graph where fulfilling source_core_activity is impossible. In this case, fill EVERY VALUE of the target_activity_taxonomy with "impossible" to make sure target_activity_taxonomy is impossible. 
+
+             DO NOT DELETE OR REFORMAT ANY KEY in the common_activity_taxnomy dictionary in the target_activity_taxonomy"""}, 
+   
+            {"role": "user", "content": f"Here is the source_core_activity:\n{source_core_activity}\n" },            
+        ]    
+    
+            # {"role": "user", "content": f"Here is the source activity taxonomy:\n{source_activity_taxonomy}\n"},            
+
+            # {"role": "user", "content": f"Here is the source scene graph. This is NOT target scene graph:\n{source_scene_graph}\n"},
+
     MESSAGE_TARGET_TAXONOMY_PREDICTION = [            
-        {"role": "system", "content":         
+        {"role": "system", "content": 
         """
         You are a taxonomy generator for target_scene_graph that checks common_activity_taxonomy and converts it to target_activity_taxonomy. Let me give you a step-by-step example of how you function.
 
@@ -424,11 +445,10 @@ def get_agent2b_message(inputs:list):
         {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
         {"role": "user", "content": f"Here is the source_core_activity:\n{source_core_activity}\n" },            
         {"role": "user", "content": f"Here is the common activity taxonomy:\n{common_activity_taxonomy}\n"},     
-        {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},         
+        {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},
         ]
-        # {"role": "user", "content": f"Here is the similar environment with the target scene:\n{spatial_example}\n"}            
 
-    return AGENT2b_PROMPT, MESSAGE_TARGET_TAXONOMY_PREDICTION
+    return AGENT2b_PROMPT, MESSAGE_TARGET_TAXONOMY_PREDICTION, MESSAGE_TARGET_TAXONOMY_EXAMINER
 
 def get_agent3_message(inputs:list):
     """
@@ -441,13 +461,12 @@ def get_agent3_message(inputs:list):
     source_activity_taxonomy = inputs[4]
     target_activity_taxonomy = inputs[5]
     source_core_activity = inputs[6]
-    spatial_example = inputs[7]        
     query = "predict target_action_sequence that can realize the target_activity_taxonomy in the target_scene_graph"
     tool_names =", ".join([t.name for t in tools])    
 
     AGENT3_PROMPT = ChatPromptTemplate.from_messages([
         ("system", 
-         """You are a helpful action planner that constructs an action sequence for the target_scene_graph to achieve the target_activity_taxonomy, using tools. Return the final action_sequence retrieved from the tool. Final answer is a list of strings, each string enclosed in double quotes!:
+         """You are a helpful action planner that constructs an action sequence for the target_scene_graph to achieve the target_activity_taxonomy, using tools. Return the final action_sequence as a target_action_sequence, following the format below. Final answer is a list of strings, each string enclosed in double quotes!:
         
             Final Answer: [Your answer]
             
@@ -583,27 +602,25 @@ def get_agent3_message(inputs:list):
         """
         }, 
         {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
-        {"role": "user", "content": f"Here is the source core activity:\n{source_core_activity}\n"},  
-        {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},        
+        {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},
         {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},
         {"role": "user", "content": f"Here is the source activity taxonomy:\n{source_activity_taxonomy}\n"},
         {"role": "user", "content": f"Here is the source activity taxonomy:\n{target_activity_taxonomy}\n"},
+        {"role": "user", "content": f"Here is the source core activity:\n{source_core_activity}\n"},            
         ]   
-        # RAG NOT USED HERE
-        # {"role": "user", "content": f"Here is the similar environment with the target scene:\n{spatial_example}\n"}      
     return AGENT3_PROMPT, MESSAGE_TARGET_SEQUENCE_PREDICTION
 #------------------------
 #Tool Funcs
 #------------------------
-def goalstep_information_retriever(source_action_sequence:str):
-    """Retrieve the most relevant goalstep dataset documents based on input of source_action_sequence."""
-    context = agent_init.goalstep_retriever.invoke(source_action_sequence)
-    return f"source_action_sequence: {source_action_sequence}. similar goalstep examples: {context}" 
+def goalstep_information_retriever(query:str):
+    """Retrieve the most relevant goalstep dataset documents based on a user's query."""
+    context = agent_init.goalstep_retriever.invoke(query)
+    return f"User Query: {query}. similar goalstep examples: {context}" 
 
-def spatial_information_retriver(source_scene_graph:dict):
-    """Retrieve the most relevant spatial context documents based on input of source_scene_graph"""
-    context = agent_init.spatial_retriever.invoke(source_scene_graph)
-    return f"source_scene_graph: {source_scene_graph}. similar spatial examples: {context}"
+def spatial_information_retriver(query:dict):
+    """Retrieve the most relevant spatial context documents based on a user's query"""
+    context = agent_init.spatial_retriever.invoke(query)
+    return f"User Query: {query}. similar spatial examples: {context}"
 
 def activity_prediction(MESSAGE_ACTIVITY_PREDICTION, TOOL_LLM_API, TOOL_LLM_STR):
     """Predict an core summary of the user activity based on input"""
@@ -693,7 +710,7 @@ def make_target_activity_taxonomy(MESSAGE_TARGET_TAXONOMY_PREDICTION, TOOL_LLM_A
             return response['message']['content']    
     except Exception as e:
         return f"Error: target_taxonomy_prediction: {str(e)}"
-
+  
 def predict_target_action_sequence(MESSAGE_TARGET_SEQUENCE_PREDICTION, TOOL_LLM_API, TOOL_LLM_STR):
     my_temperature = 0.5
     try:        
@@ -714,6 +731,7 @@ def predict_target_action_sequence(MESSAGE_TARGET_SEQUENCE_PREDICTION, TOOL_LLM_
             return response['message']['content']    
     except Exception as e:
         return f"Error: action_sequence_prediction: {str(e)}"
+
 
 
 # -----------------------
@@ -889,7 +907,7 @@ def run_agent_1a(input, agent_llm_chat):
     )
     return response
 
-def run_agent_1b(input, agent_llm_chat, MEMORY=None):
+def run_agent_1b(input, agent_llm_chat):
     """"
     func: run agent 1a with source video idx info\n
     input: [tools_1b, AGENT1b_PROMPT, source_action_sequence, source_scene_graph, source_core_activity]\n
@@ -903,10 +921,8 @@ def run_agent_1b(input, agent_llm_chat, MEMORY=None):
     source_core_activity= input[4]
     TOOLNAMES =", ".join([t.name for t in TOOLS])
 
-    QUERY = "Categorically describe source activity in a very specific way." 
-
-    if MEMORY is None:
-        MEMORY = ConversationBufferWindowMemory(k=3, input_key="query")# only one input key is required fo this!
+    QUERY = "Categorically describe source activity in a very specific way."    
+    MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
 
     AGENT = create_react_agent(
         tools=TOOLS,
@@ -924,17 +940,17 @@ def run_agent_1b(input, agent_llm_chat, MEMORY=None):
 
     response = AGENT_EXECUTOR.invoke(
         {
-            "query": QUERY,
+            "query": QUERY, 
             "source_scene_graph": source_scene_graph,
             "source_action_sequence": source_action_sequence,
             "source_core_activity": source_core_activity,
             "tools": TOOLS,
             "tool_names": TOOLNAMES,
-            "agent_scratchpad": ""
+            "agent_scratchpad": "" 
         },
         config={"max_iterations": 5}
     )
-    return response, MEMORY
+    return response
 
 def run_agent_2a(input, agent_llm_chat):
     """"
@@ -1046,9 +1062,6 @@ def run_agent3(input, agent_llm_chat):
     target_activity_taxonomy= input[6] 
     source_core_activity = input[7]
 
-
-
-
     TOOLNAMES =", ".join([t.name for t in TOOLS])
     QUERY = "Predict Action Sequence for the target scene graph"    
     MEMORY = ConversationBufferWindowMemory(k=3, input_key="query") # only one input key is required fo this!
@@ -1135,31 +1148,6 @@ def run_core_action_test(source_core_activity, target_activity_taxonomy, target_
     except Exception as e:
         return f"Error: action_sequence_prediction: {str(e)}"
 
-
-def test_idx(source_idx_list):
-    import csv
-    test_list = []
-    for i in range(len(source_idx_list)):
-        source_video_idx = source_idx_list[i]        
-        target_video_idx = (source_video_idx + 10) % 71
-
-        source_action_sequence1, source_scene_graph1, source_id1, source_id2 = agent_init.get_video_info_idxtest(source_video_idx)
-        source_scene_graph = source_spatial_json_list[i]
-
-        target_scene_graph1 = database_init.spatial_test_video_list[target_video_idx]
-        target_scene_graph = target_spatial_json_list[i]
-                
-        print(f"{source_video_idx} {target_video_idx} {source_id1} {source_scene_graph['video_id']} {target_scene_graph1['video_id']} {target_scene_graph['video_id']} {target_scene_graph['spatial_similarity']} ")
-
-        test_list.append([source_video_idx, target_video_idx, source_id1, source_scene_graph['video_id'], target_scene_graph1['video_id'], target_scene_graph['video_id'], target_scene_graph['spatial_similarity']])
-
-
-    with open("spatial_similarity_data.csv", "w", newline="") as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerow(["source_idx", "target_idx", "source_scene_id1", "source_scene_id1", "target_scene_id1", "target_scene_id", "spatial_similarity"])
-        writer.writerows(test_list)
-
-
 if __name__ == "__main__":
     # -----------------------
     # TEST SETTINGS
@@ -1172,9 +1160,7 @@ if __name__ == "__main__":
     TOOL_LLM_API, TOOL_LLM_STR, TOOL_LLM_CHAT = agent_init.SET_LLMS(tool_api_name, tool_model_name, temperature=0.2)
 
     # # SETUP FIRST INPUTS
-
-    BASELINE_FOLDER = "/output-rag/"
-    BASELINE_FOLDER = "/output-rag-0602/"
+    BASELINE_FOLDER = "/output-2-sps-norag-0609/"
     PATH_SOURCE_TARGET_OUTPUT = constants_init.PATH_SOURCE_TARGET + BASELINE_FOLDER
 
     # Get scenegraph for source and target
@@ -1182,8 +1168,9 @@ if __name__ == "__main__":
     
     # Make source_idx_list that matches length of the above json list
     source_idx_list = [i for i in range(len(source_spatial_json_list)//len(aug_levels)) for _ in range(len(aug_levels))]
-        
-    # # for i in range(0, len(source_list)):
+
+
+    # for i in range(0, len(source_list)):
     for i in range(len(source_idx_list)):
 
         # -----------------------
@@ -1199,7 +1186,6 @@ if __name__ == "__main__":
         PATH_AGENT4 = PATH_SOURCE_TARGET_OUTPUT + f"pair{i}_agent4.pkl"  
 
         # init path bools
-        bool_runall = False
         bool_sourceinfo = False
         bool_targetinfo = False
         bool_agent1a = False
@@ -1228,7 +1214,7 @@ if __name__ == "__main__":
         # if no file whatsoever, bool_runall is True to run everything without loading
         if not bool_sourceinfo and not bool_targetinfo and not bool_agent1a and not  bool_agent1b and not bool_agent2a and not bool_agent2b and not bool_agent3 and not bool_agent4:
             bool_runall = True
-
+            
         # prepare necessary files
         source_video_idx = source_idx_list[i]
         source_action_sequence, scenegraphnotused = agent_init.get_video_info(source_video_idx)
@@ -1239,33 +1225,45 @@ if __name__ == "__main__":
         spatial_similarity  = target_spatial_json_list[i]['spatial_similarity']
 
 
+        # if os.path.exists(PATH_SOURCEINFO):
+        #     os.remove(PATH_SOURCEINFO)
+        # with open(PATH_SOURCEINFO, 'wb') as f:
+        #     print(f"{i} ")
+        #     dict = {"source_idx": source_video_idx, "source_uid": source_uid, "source_action_sequence": source_action_sequence, "source_scene_graph": source_scene_graph, "spatial_similarity": spatial_similarity}
+        #     pickle.dump(dict, f)
+
+        # if os.path.exists(PATH_TARGETINFO):
+        #     os.remove(PATH_TARGETINFO)            
+        # with open(PATH_TARGETINFO, 'wb') as f:
+        #     print(f"{i} ")
+        #     dict = {"target_idx": (source_video_idx+10)%71, "target_uid": target_uid, "target_scene_graph": target_scene_graph}
+        #     pickle.dump(dict, f)
+
         # sourceinfo and targetinfo
         while not bool_sourceinfo and not bool_targetinfo:
             with open(PATH_SOURCEINFO, 'wb') as f:
                 dict = {"source_idx": source_video_idx, "source_uid": source_uid, "source_action_sequence": source_action_sequence, "source_scene_graph": source_scene_graph, "spatial_similarity": spatial_similarity}
-                pickle.dump(dict, f)
-                bool_sourceinfo = True      
+                pickle.dump(dict, f)     
+                bool_sourceinfo = True   
                 # print(f"SOURCE INFO: {i} {source_video_idx} {source_uid} {source_action_sequence} {spatial_similarity}")   
             with open(PATH_TARGETINFO, 'wb') as f:
-                dict = {"target_idx": (source_video_idx+10)%71, "target_uid": target_uid,"target_scene_graph": target_scene_graph}
+                dict = {"target_idx": (source_video_idx+10)%71, "target_uid": target_uid, "target_scene_graph": target_scene_graph}
                 pickle.dump(dict, f)
                 bool_targetinfo = True
                 # print(f"TARGET INFO: {i} {(source_video_idx+10)%71} {target_uid} {target_action_sequence} {target_scene_graph}")
 
-        # -----------------------
-        # AGENT1a: PREDICT CORE ACTIVITY
-        # -----------------------    
+
+        # # -----------------------
+        # # AGENT1a: PREDICT CORE ACTIVITY
+        # # -----------------------
         if bool_agent1a:
             with open(PATH_AGENT1a, 'rb') as f:
                 source_core_activity = pickle.load(f)
         else:
-            while not bool_agent1a:
+            while not bool_agent1a:       
                 try:
                     tools_1a = get_agent1a_tools()
-                    goalstep_example = goalstep_information_retriever(source_action_sequence)
-                    spatial_example = spatial_information_retriver(json.dumps(source_scene_graph))
-
-                    input_1a_message = [tools_1a, source_action_sequence, source_scene_graph, goalstep_example, spatial_example]
+                    input_1a_message = [tools_1a, source_action_sequence, source_scene_graph]
                     AGENT1a_PROMPT, MESSAGE_ACTIVITY_PREDICTION = get_agent1a_message(input_1a_message)
                     input_1a_agent = [tools_1a, AGENT1a_PROMPT, source_action_sequence, source_scene_graph]
                     response_1a = run_agent_1a(input_1a_agent, AGENT_LLM_CHAT)
@@ -1273,62 +1271,55 @@ if __name__ == "__main__":
 
                     with open(PATH_AGENT1a, 'wb') as f:
                         pickle.dump(source_core_activity, f)        
-                        print(f"sgent1a saved: source_core_activity")   
+                        print(f"agent1a saved: source_core_activity")  
                         bool_agent1a = True 
 
                 except Exception as e:
                     print(f"Agent1a failed at index {i}: {e}")
                     continue
 
+
         # -----------------------
         # AGENT1b: PREDICT FULL ACTIVITY TAXONOMY
         # -----------------------
-        print(f"source fore activity: {source_core_activity}")
         if bool_agent1b:
             with open(PATH_AGENT1b, 'rb') as f:
                 source_activity_taxonomy = pickle.load(f)
         else:
-            while not bool_agent1b:   
+            while not bool_agent1b:        
                 try:        
                     tools_1b = get_agent1b_tools()
-                    goalstep_example = goalstep_information_retriever(source_action_sequence)
-                    spatial_example = spatial_information_retriver(json.dumps(source_scene_graph))
-                    input1b_message = [tools_1b, source_action_sequence, source_scene_graph, source_core_activity, goalstep_example, spatial_example]
+                    input1b_message = [tools_1b, source_action_sequence, source_scene_graph, source_core_activity]
+                    # AGENT1b_PROMPT, MESSAGE_TAXONOMY_CREATION, MESSAGE_REORDER_TAXONOMY = get_agent1b_message(input1b_message)
                     AGENT1b_PROMPT, MESSAGE_TAXONOMY_CREATION = get_agent1b_message(input1b_message)
                     input_1b_agent = [tools_1b, AGENT1b_PROMPT, source_action_sequence, source_scene_graph, source_core_activity]
-
-
-                    # Initialize memory outside
-                    MEMORY = ConversationBufferWindowMemory(k=3, input_key="query")
-                    response_1b, MEMORY = run_agent_1b(input_1b_agent, AGENT_LLM_CHAT, MEMORY)
+                    response_1b = run_agent_1b(input_1b_agent, AGENT_LLM_CHAT)
                     source_activity_taxonomy = response_1b['output']
                     print(f"1b output {source_activity_taxonomy}")
-                    MEMORY.clear()
-
+                    
                     source_activity_taxonomy = re.sub(r"^```json\s*|\s*```$", "", source_activity_taxonomy.strip())
                     source_activity_taxonomy = util_funcs.jsondump_agent_response(source_activity_taxonomy)
 
                     with open(PATH_AGENT1b, 'wb') as f:
                         pickle.dump(source_activity_taxonomy, f)        
-                        print(f"agent1b saved: source_activity_taxonomy")  
-                        bool_agent1b = True 
+                        print(f"agent1b saved: source_activity_taxonomy")
+                        bool_agent1b = True
 
                 except Exception as e:
                     print(f"Agent1b failed at indiex {i}: {e}")
                     continue
 
+
         # -----------------------
         # AGENT2a: PREDICT COMMON ACTIVITY TAXONOMY
         # -----------------------            
         # print(source_activity_taxonomy)
-        print(f"AGENT2a")
         if bool_agent2a:
             with open(PATH_AGENT2a, 'rb') as f:
                 common_activity_taxonomy = pickle.load(f)
         else: 
-            while not bool_agent2a:           
-                try:  
-                    
+            while not bool_agent2a:       
+                try:                      
                     tools_2a = get_agent2a_tools()
                     input2a_message = [tools_2a, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy]
                     AGENT2a_PROMPT, MESSAGE_COMMON_TAXONOMY_PREDICTION=get_agent2a_message(input2a_message)
@@ -1342,12 +1333,13 @@ if __name__ == "__main__":
 
                     with open(PATH_AGENT2a, 'wb') as f:
                         pickle.dump(common_activity_taxonomy, f)        
-                        print(f"agent2a saved:common_activity_taxonomy")  
-                        bool_agent2a = True 
+                        print(f"agent2a saved: common_activity_taxonomy")   
+                        bool_agent2a = True
 
                 except Exception as e:
                     print(f"Agent2a failed at index {i}: {e}")
                     continue
+
 
         # -----------------------
         # AGENT2b: PREDICT TARGET ACTIVITY TAXONOMY
@@ -1356,14 +1348,11 @@ if __name__ == "__main__":
             with open(PATH_AGENT2b, 'rb') as f:
                 target_activity_taxonomy = pickle.load(f)
         else:       
-            while not bool_agent2b:              
-                try:  
-                    # TARGET_SCENE_EXAMPLE->RAG: SPATIAL EXAMPLE FOR ONLY TARGET_SCENE
+            while not bool_agent2b:  
+                try:                      
                     tools_2b = get_agent2b_tools()
-                    spatial_example = spatial_information_retriver(json.dumps(target_scene_graph))
-
-                    input2a_message = [tools_2b, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy, source_core_activity, spatial_example]    
-                    AGENT2b_PROMPT, MESSAGE_TARGET_TAXONOMY_PREDICTION =get_agent2b_message(input2a_message)
+                    input2a_message = [tools_2b, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy, source_core_activity]    
+                    AGENT2b_PROMPT, MESSAGE_TARGET_TAXONOMY_PREDICTION, MESSAGE_TARGET_TAXONOMY_EXAMINER=get_agent2b_message(input2a_message)
                     input2b_agent = [tools_2b, AGENT2b_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy, source_core_activity]    
                     response_2b = run_agent_2b(input2b_agent, AGENT_LLM_CHAT)
                     target_activity_taxonomy = response_2b['output']
@@ -1374,36 +1363,30 @@ if __name__ == "__main__":
                     
                     with open(PATH_AGENT2b, 'wb') as f:
                         pickle.dump(target_activity_taxonomy, f)        
-                        print(f"agent2b saved: target_activity_taxonomy saved")   
+                        print(f"agent2b saved: target_activity_taxonomy saved")
                         bool_agent2b = True
 
                 except Exception as e:
                     print(f"Agent2b failed at index {i}: {e}")
                     continue
         
-        
         # -----------------------
-        # AGENT3: PREDICT TARGET ACTION SEQUENCE
-        # -----------------------    
+        # PREDICT TARGET ACTION SEQUENCE
+        # -----------------------
         if bool_agent3:
             with open(PATH_AGENT3, 'rb') as f:
                 target_action_sequence = pickle.load(f)
         else:            
-            while not bool_agent3:          
-                try:         
-                    print(f"{i} missing")
-                    # TARGET_SCENE_EXAMPLE->RAG: SPATIAL EXAMPLE FOR ONLY TARGET_SCENE             
+            while not bool_agent3: 
+                try:                      
                     tools_3 = get_agent3_tools()
-                    spatial_example = spatial_information_retriver(json.dumps(target_scene_graph))
-
-                    input3_message = [tools_3, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, target_activity_taxonomy, source_core_activity, spatial_example]
+                    input3_message = [tools_3, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, target_activity_taxonomy, source_core_activity]
                     AGENT3_PROMPT, MESSAGE_TARGET_SEQUENCE_PREDICTION=get_agent3_message(input3_message)       
                     input3_agent = [tools_3, AGENT3_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_activity_taxonomy, target_activity_taxonomy, source_core_activity]   
                     response_3 = run_agent3(input3_agent, AGENT_LLM_CHAT)
                     target_action_sequence = response_3['output']
 
                     # SERIALIZE TO FORMAT
-                    print(f"3b output {target_action_sequence}")
                     target_action_sequence = re.sub(r"^```json\s*|\s*```$", "", target_action_sequence.strip())
                     target_action_sequence = util_funcs.jsondump_agent_response(target_action_sequence)
 
@@ -1414,7 +1397,8 @@ if __name__ == "__main__":
 
                 except Exception as e:
                     print(f"Agent3 failed at index {i}: {e}")
-                    continue
+                    continue        
+
 
 
         # -----------------------
@@ -1437,9 +1421,9 @@ if __name__ == "__main__":
                     print(final_response)
                     with open(PATH_AGENT4, 'wb') as f:
                         pickle.dump(final_response, f)        
-                        print(f"agent4 saved: final answer {final_response}")
-                        bool_agent4 = True       
+                        print(f"agent3 saved: output: final answer {final_response}")
+                        bool_agent4 = True
 
                 except Exception as e:
                     print(f"Agent4 failed at index {i}: {e}")
-                    continue                
+                    continue                        

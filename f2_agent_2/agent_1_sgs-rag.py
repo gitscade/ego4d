@@ -45,6 +45,8 @@ def get_agent1a_message(inputs:list):
     tools = inputs[0]
     source_action_sequence = inputs[1]
     source_scene_graph = inputs[2]
+    goalstep_example = inputs[3]
+    spatial_example = inputs[4]
     query = "summarize the input action sequence with a single verb and a single noun"
     tool_names =", ".join([t.name for t in tools])    
 
@@ -54,7 +56,7 @@ def get_agent1a_message(inputs:list):
         
             "Final Answer: [Your answer]"
             
-        Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain used tool in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below.:
+        Otherwise, use this format for step-by-step answering. First, explain your reasinging in 'Thought:'. Then, explain used tool in a section labeled 'Action:'. Finally, print out the input to pass on to the tool in a section labeled as 'Action Input:', following the format below. Retrieve relevant information with retriever tools first to gather similar examples.:
         
             Thought: [Your reasoning]
             Action: [Tool name]
@@ -82,7 +84,9 @@ def get_agent1a_message(inputs:list):
              
              """}, 
             {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
-            {"role": "user", "content": f"Here is the scene graph:\n{source_scene_graph}\n"}        
+            {"role": "user", "content": f"Here is the scene graph:\n{source_scene_graph}\n"},
+            {"role": "user", "content": f"Here is thhe action sequence examples from similar environment:\n{goalstep_example}\n" },
+            {"role": "user", "content": f"Here is the scene graph from similar environment:\n{spatial_example}\n"}            
         ]
     return AGENT1a_PROMPT, MESSAGE_ACTIVITY_PREDICTION
 
@@ -94,7 +98,8 @@ def get_agent3_message(inputs:list):
     source_action_sequence = inputs[1]
     source_scene_graph = inputs[2]
     target_scene_graph = inputs[3]
-    source_core_activity = inputs[4]  
+    source_core_activity = inputs[4]
+    spatial_example = inputs[5]        
     query = "predict target_action_sequence that can realize the target_activity_taxonomy in the target_scene_graph"
     tool_names =", ".join([t.name for t in tools])    
 
@@ -122,75 +127,76 @@ def get_agent3_message(inputs:list):
         )
 
     MESSAGE_TARGET_SEQUENCE_PREDICTION = [
-            {"role": "system", "content": 
-             """
-            You are an expert action planner. Your task is to transform a given source_action_sequence so that it fits a target_scene_graph while preserving the original context as closely as possible.
+        {"role": "system", "content": 
+        """
+        You are an expert action planner. Your task is to transform a given source_action_sequence so that it fits a target_scene_graph while preserving the original context as closely as possible.
 
-            Follow this 3-step process:
+        Follow this 3-step process:
 
-            1. You will receive a list of actions (source_action_sequence), each as a string instruction. Example:
-            [
-                "put pan on stove",
-                "add oil on pan",
-                "turn on the stove",
-                "put meat on stove",
-                "salt the meat"
-            ]
+        1. You will receive a list of actions (source_action_sequence), each as a string instruction. Example:
+        [
+            "put pan on stove",
+            "add oil on pan",
+            "turn on the stove",
+            "put meat on stove",
+            "salt the meat"
+        ]
 
-            2. You will also receive a goal for the actions (source_core_activity), which comprises of a verb and a noun phrase. Example:
+        2. You will also receive a goal for the actions (source_core_activity), which comprises of a verb and a noun phrase. Example:
 
-            "cook meat dish"
+        "cook meat dish"
 
-            3. For each action instruction:
-            - Check if all objects/entities in the instruction phrase exist in the target_scene_graph.
-            - If an entity is missing, replace it with a similar or closest alternative from the target_scene_graph. Consult the source_action_sequence in order to undestand what the missing entity's original role was and look at the source_core_activity to check if the changed action instruction does contribute to making this goal (source_core_activity) possible.
-            - If no suitable replacement is available, mark the action as "impossible".
+        3. For each action instruction:
+        - Check if all objects/entities in the instruction phrase exist in the target_scene_graph.
+        - If an entity is missing, replace it with a similar or closest alternative from the target_scene_graph. Consult the source_action_sequence in order to undestand what the missing entity's original role was and look at the source_core_activity to check if the changed action instruction does contribute to making this goal (source_core_activity) possible.
+        - If no suitable replacement is available, mark the action as "impossible".
 
-            4. Ensure consistency:
-            - If you replace an object (e.g., "pan" → "pot"), use that same substitution consistently in all subsequent actions.
+        4. Ensure consistency:
+        - If you replace an object (e.g., "pan" → "pot"), use that same substitution consistently in all subsequent actions.
 
-            Example transformation:
-            Input:
-            [
-                "put pan on stove",
-                "add oil on pan",
-                "turn on the stove",
-                "put meat on stove",
-                "salt the meat"
-            ]
-            Target Scene Graph does not have pan and meat, but contains: pot, stove, oil
-            Output:
-            [
-                "put pot on stove",
-                "add oil on pot",
-                "turn on the stove",
-                "impossible",
-                "impossible"
-            ]
+        Example transformation:
+        Input:
+        [
+            "put pan on stove",
+            "add oil on pan",
+            "turn on the stove",
+            "put meat on stove",
+            "salt the meat"
+        ]
+        Target Scene Graph does not have pan and meat, but contains: pot, stove, oil
+        Output:
+        [
+            "put pot on stove",
+            "add oil on pot",
+            "turn on the stove",
+            "impossible",
+            "impossible"
+        ]
 
-            5. Delete the action instruction of "impossible". Example:
-            [
-                "put pot on stove",
-                "add oil on pot",
-                "turn on the stove",
-            ]
+        5. Delete the action instruction of "impossible". Example:
+        [
+            "put pot on stove",
+            "add oil on pot",
+            "turn on the stove",
+        ]
 
-            6. Rearrange the sequence if necesary, so that the remaining sequence of instructions achieves source_core_action. Add in new instructions that only uses source_target_scene entities if needed. If all efforts fail to achieve the goal of source_core_action, make your output as a single "False" enclosed in double quotes, inside a list. Example:
-            [
-                "False"
-            ]
+        6. Rearrange the sequence if necesary, so that the remaining sequence of instructions achieves source_core_action. Add in new instructions that only uses source_target_scene entities if needed. If all efforts fail to achieve the goal of source_core_action, make your output as a single "False" enclosed in double quotes, inside a list. Example:
+        [
+            "False"
+        ]
 
-            Output Format:
-            Return only the final modified list enclosed in double quotes, like this:
+        Output Format:
+        Return only the final modified list enclosed in double quotes, like this:
 
-            Final Answer: ["action1", "action2", ..., "final action"]
+        Final Answer: ["action1", "action2", ..., "final action"]
 
-            Do not include any other text or explanation. Follow the format exactly.
-            """}, 
-            {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
-            {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},
-            {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},
-            {"role": "user", "content": f"Here is the source core activity:\n{source_core_activity}\n"}          
+        Do not include any other text or explanation. Follow the format exactly.
+        """
+        }, 
+        {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
+        {"role": "user", "content": f"Here is the source core activity:\n{source_core_activity}\n"},
+        {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},
+        {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},
         ]   
     return AGENT3_PROMPT, MESSAGE_TARGET_SEQUENCE_PREDICTION
 #------------------------
@@ -361,7 +367,7 @@ def run_agent3(input, agent_llm_chat):
     AGENT_PROMPT = input[1]
     source_action_sequence = input[2]
     source_scene_graph = input[3]
-    target_scene_graph = input[4]
+    target_scene_graph = input[4]  
     source_core_activity = input[5]
 
     TOOLNAMES =", ".join([t.name for t in TOOLS])
@@ -385,7 +391,7 @@ def run_agent3(input, agent_llm_chat):
             "query": QUERY, 
             "source_action_sequence": source_action_sequence,
             "source_scene_graph": source_scene_graph,   
-            "target_scene_graph": target_scene_graph,            
+            "target_scene_graph": target_scene_graph,                  
             "source_core_activity": source_core_activity,           
             "tools": TOOLS,
             "tool_names": TOOLNAMES,
@@ -454,8 +460,7 @@ if __name__ == "__main__":
     TOOL_LLM_API, TOOL_LLM_STR, TOOL_LLM_CHAT = agent_init.SET_LLMS(tool_api_name, tool_model_name, temperature=0.2)
 
     # # SETUP FIRST INPUTS
-    BASELINE_FOLDER = "/output-1goalmediation/"
-    BASELINE_FOLDER = "/output-1goalmediation-norag-0602/"
+    BASELINE_FOLDER = "/output-1-sgs-rag-0609/"
     PATH_SOURCE_TARGET_OUTPUT = constants_init.PATH_SOURCE_TARGET + BASELINE_FOLDER
 
     # Get scenegraph for source and target
@@ -510,6 +515,20 @@ if __name__ == "__main__":
         target_uid = target_spatial_json_list[i]['video_id']
         spatial_similarity  = target_spatial_json_list[i]['spatial_similarity']
 
+        # if os.path.exists(PATH_SOURCEINFO):
+        #     os.remove(PATH_SOURCEINFO)
+        # with open(PATH_SOURCEINFO, 'wb') as f:
+        #     print(f"{i} ")
+        #     dict = {"source_idx": source_video_idx, "source_uid": source_uid, "source_action_sequence": source_action_sequence, "source_scene_graph": source_scene_graph, "spatial_similarity": spatial_similarity}
+        #     pickle.dump(dict, f)
+
+        # if os.path.exists(PATH_TARGETINFO):
+        #     os.remove(PATH_TARGETINFO)            
+        # with open(PATH_TARGETINFO, 'wb') as f:
+        #     print(f"{i} ")
+        #     dict = {"target_idx": (source_video_idx+10)%71, "target_uid": target_uid, "target_scene_graph": target_scene_graph}
+        #     pickle.dump(dict, f)
+
 
         # sourceinfo and targetinfo
         while not bool_sourceinfo and not bool_targetinfo:
@@ -534,8 +553,10 @@ if __name__ == "__main__":
             while not bool_agent1a:
                 try:
                     tools_1a = get_agent1a_tools()
+                    goalstep_example = goalstep_information_retriever(source_action_sequence)
+                    spatial_example = spatial_information_retriver(json.dumps(source_scene_graph))
 
-                    input_1a_message = [tools_1a, source_action_sequence, source_scene_graph]
+                    input_1a_message = [tools_1a, source_action_sequence, source_scene_graph, goalstep_example, spatial_example]
                     AGENT1a_PROMPT, MESSAGE_ACTIVITY_PREDICTION = get_agent1a_message(input_1a_message)
                     input_1a_agent = [tools_1a, AGENT1a_PROMPT, source_action_sequence, source_scene_graph]
                     response_1a = run_agent_1a(input_1a_agent, AGENT_LLM_CHAT)
@@ -553,6 +574,7 @@ if __name__ == "__main__":
         # -----------------------
         # AGENT3: PREDICT TARGET ACTION SEQUENCE
         # -----------------------
+        print(f"AGENT3")        
         if bool_agent3:
             with open(PATH_AGENT3, 'wb') as f:
                 target_action_sequence = pickle.load(f)
@@ -561,7 +583,9 @@ if __name__ == "__main__":
                 try:         
                     # TARGET_SCENE_EXAMPLE->RAG: SPATIAL EXAMPLE FOR ONLY TARGET_SCENE             
                     tools_3 = get_agent3_tools()
-                    input3_message = [tools_3, source_action_sequence, source_scene_graph, target_scene_graph, source_core_activity]
+                    spatial_example = spatial_information_retriver(json.dumps(source_scene_graph))
+
+                    input3_message = [tools_3, source_action_sequence, source_scene_graph, target_scene_graph, source_core_activity, spatial_example]
                     AGENT3_PROMPT, MESSAGE_TARGET_SEQUENCE_PREDICTION=get_agent3_message(input3_message)       
                     input3_agent = [tools_3, AGENT3_PROMPT, source_action_sequence, source_scene_graph, target_scene_graph, source_core_activity]   
                     response_3 = run_agent3(input3_agent, AGENT_LLM_CHAT)
@@ -571,7 +595,7 @@ if __name__ == "__main__":
                     print(f"3b output {target_action_sequence}")
                     target_action_sequence = re.sub(r"^```json\s*|\s*```$", "", target_action_sequence.strip())
                     target_action_sequence = util_funcs.jsondump_agent_response(target_action_sequence)
-
+                    print(f"3d successful {target_action_sequence}")
                     with open(PATH_AGENT3, 'wb') as f:
                         pickle.dump(target_action_sequence, f)        
                         print(f"agent3 saved: target_action_sequence")
