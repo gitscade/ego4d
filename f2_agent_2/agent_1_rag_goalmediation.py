@@ -127,75 +127,76 @@ def get_agent3_message(inputs:list):
         )
 
     MESSAGE_TARGET_SEQUENCE_PREDICTION = [
-            {"role": "system", "content": 
-             """
-            You are an expert action planner. Your task is to transform a given source_action_sequence so that it fits a target_scene_graph while preserving the original context as closely as possible.
+        {"role": "system", "content": 
+        """
+        You are an expert action planner. Your task is to transform a given source_action_sequence so that it fits a target_scene_graph while preserving the original context as closely as possible.
 
-            Follow this 3-step process:
+        Follow this 3-step process:
 
-            1. You will receive a list of actions (source_action_sequence), each as a string instruction. Example:
-            [
-                "put pan on stove",
-                "add oil on pan",
-                "turn on the stove",
-                "put meat on stove",
-                "salt the meat"
-            ]
+        1. You will receive a list of actions (source_action_sequence), each as a string instruction. Example:
+        [
+            "put pan on stove",
+            "add oil on pan",
+            "turn on the stove",
+            "put meat on stove",
+            "salt the meat"
+        ]
 
-            2. You will also receive a goal for the actions (source_core_activity), which comprises of a verb and a noun phrase. Example:
+        2. You will also receive a goal for the actions (source_core_activity), which comprises of a verb and a noun phrase. Example:
 
-            "cook meat dish"
+        "cook meat dish"
 
-            3. For each action instruction:
-            - Check if all objects/entities in the instruction phrase exist in the target_scene_graph.
-            - If an entity is missing, replace it with a similar or closest alternative from the target_scene_graph. Consult the source_action_sequence in order to undestand what the missing entity's original role was and look at the source_core_activity to check if the changed action instruction does contribute to making this goal (source_core_activity) possible.
-            - If no suitable replacement is available, mark the action as "impossible".
+        3. For each action instruction:
+        - Check if all objects/entities in the instruction phrase exist in the target_scene_graph.
+        - If an entity is missing, replace it with a similar or closest alternative from the target_scene_graph. Consult the source_action_sequence in order to undestand what the missing entity's original role was and look at the source_core_activity to check if the changed action instruction does contribute to making this goal (source_core_activity) possible.
+        - If no suitable replacement is available, mark the action as "impossible".
 
-            4. Ensure consistency:
-            - If you replace an object (e.g., "pan" → "pot"), use that same substitution consistently in all subsequent actions.
+        4. Ensure consistency:
+        - If you replace an object (e.g., "pan" → "pot"), use that same substitution consistently in all subsequent actions.
 
-            Example transformation:
-            Input:
-            [
-                "put pan on stove",
-                "add oil on pan",
-                "turn on the stove",
-                "put meat on stove",
-                "salt the meat"
-            ]
-            Target Scene Graph does not have pan and meat, but contains: pot, stove, oil
-            Output:
-            [
-                "put pot on stove",
-                "add oil on pot",
-                "turn on the stove",
-                "impossible",
-                "impossible"
-            ]
+        Example transformation:
+        Input:
+        [
+            "put pan on stove",
+            "add oil on pan",
+            "turn on the stove",
+            "put meat on stove",
+            "salt the meat"
+        ]
+        Target Scene Graph does not have pan and meat, but contains: pot, stove, oil
+        Output:
+        [
+            "put pot on stove",
+            "add oil on pot",
+            "turn on the stove",
+            "impossible",
+            "impossible"
+        ]
 
-            5. Delete the action instruction of "impossible". Example:
-            [
-                "put pot on stove",
-                "add oil on pot",
-                "turn on the stove",
-            ]
+        5. Delete the action instruction of "impossible". Example:
+        [
+            "put pot on stove",
+            "add oil on pot",
+            "turn on the stove",
+        ]
 
-            6. Rearrange the sequence if necesary, so that the remaining sequence of instructions achieves source_core_action. Add in new instructions that only uses source_target_scene entities if needed. If all efforts fail to achieve the goal of source_core_action, make your output as a single "False" enclosed in double quotes, inside a list. Example:
-            [
-                "False"
-            ]
+        6. Rearrange the sequence if necesary, so that the remaining sequence of instructions achieves source_core_action. Add in new instructions that only uses source_target_scene entities if needed. If all efforts fail to achieve the goal of source_core_action, make your output as a single "False" enclosed in double quotes, inside a list. Example:
+        [
+            "False"
+        ]
 
-            Output Format:
-            Return only the final modified list enclosed in double quotes, like this:
+        Output Format:
+        Return only the final modified list enclosed in double quotes, like this:
 
-            Final Answer: ["action1", "action2", ..., "final action"]
+        Final Answer: ["action1", "action2", ..., "final action"]
 
-            Do not include any other text or explanation. Follow the format exactly.
-            """}, 
-            {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
-            {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},
-            {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},
-            {"role": "user", "content": f"Here is the source core activity:\n{source_core_activity}\n"},      
+        Do not include any other text or explanation. Follow the format exactly.
+        """
+        }, 
+        {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
+        {"role": "user", "content": f"Here is the source core activity:\n{source_core_activity}\n"},
+        {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},
+        {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},
         ]   
     return AGENT3_PROMPT, MESSAGE_TARGET_SEQUENCE_PREDICTION
 #------------------------
@@ -366,7 +367,7 @@ def run_agent3(input, agent_llm_chat):
     AGENT_PROMPT = input[1]
     source_action_sequence = input[2]
     source_scene_graph = input[3]
-    target_scene_graph = input[4]
+    target_scene_graph = input[4]  
     source_core_activity = input[5]
 
     TOOLNAMES =", ".join([t.name for t in TOOLS])
@@ -390,7 +391,7 @@ def run_agent3(input, agent_llm_chat):
             "query": QUERY, 
             "source_action_sequence": source_action_sequence,
             "source_scene_graph": source_scene_graph,   
-            "target_scene_graph": target_scene_graph,            
+            "target_scene_graph": target_scene_graph,                  
             "source_core_activity": source_core_activity,           
             "tools": TOOLS,
             "tool_names": TOOLNAMES,

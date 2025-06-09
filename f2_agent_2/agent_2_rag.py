@@ -346,95 +346,89 @@ def get_agent2b_message(inputs:list):
         )
     
     MESSAGE_TARGET_TAXONOMY_PREDICTION = [            
-        {"role": "system", "content": """You are a taxonomy generator for target_scene_graph that checks common_activity_taxonomy and converts it to target_activity_taxonomy. Let me give you a step-by-step example of how you function.
-             
-             First, you receive a source_activity_taxonomy in dictionary form:
+        {"role": "system", "content":         
+        """
+        You are a taxonomy generator for target_scene_graph that checks common_activity_taxonomy and converts it to target_activity_taxonomy. Let me give you a step-by-step example of how you function.
 
-             {
-             "main ingredient": "empty",   
-             "preparation method": "roasted", 
-             "garnish": "empty",
-             "sauce": "empty",
-             "spice":["salted","empty"],
-             }
-
-             Second, You also receive source_core_activity and source_activity_taxonomy. For this example suppose you have:
-
-             "cook steak"
-
-            In this example, both source_activity_taxonomy and target_activity_taxonomy is about a properties of the "steak" that is to be "cooked":              
-
-             {
-             "main ingredient": "pork",
-             "preparation method": "roasted", 
-             "garnish": "salary",
-             "sauce": "mustard",
-             "spice":["salted","peppered"]
-             }
-
-             Third, for each key-value pair that holds value "empty" (in this case, values for "garnish" and "sauce"), you must find suitable alternative entity in the target_scene that can fill these values, in the context of source_core_activity.
-
-             Let's do this by printing out the entities existing in the target_scene_graph. ONLY USE THESE entities in filling out the "empty" values in common_activity_taxonomy:
-
-             target_scene_graph_entities: [items in target_scene_graph]
-
-             Let's say for the main ingredient, there is "chicken" in the target_scene. "chicken" is not the same "main ingredient" as "pork". But under the context of "cook steak" "chicken" can be a main ingredient. Therefore "chicken" in the target_scene_graph can fill in as the "main ingredient". If "tofu" is there instead of "chicken", if tofu steak is a possible dish, you can put in "tofu" as main ingredient. If there is only "lettunce", maybe making a steak is just impossible and "main ingredient" has to remain "empty".
-
-             Let's say source_activity_taxonomy values for "garnish", "sauce", "spaice" are "salary", "mustard", and ["salted", "peppered"], respectively. You are to find the most similar substitute for these in the target_scene_graph.
-
-             If target_scene_graph has "chill bottle" as entity, this can act as similar substitute to add "chilli" to the spice. Therefore, "empty" for spice becomes "chillied". 
-             
-             In the same manner, if substitute vegetables for "garnish" is found in target_scene as "potato" "onion", you can pick the most vegetable that performs similar function as salary. Since salarly is there as garnish for steak, this is mostly for its texture. In this reagard, "onion" can be a substitue for "salary" in the source_acitivty_taxonomy's "garnish". If there is no onion in target, then, anything that serves as garnish like potato can be used to replace the "empty" value. When no sauce whatsoever is found in the scene, the "sauce" value should remain "empty". Overall, this will result in a new taxonomy below:
-
-             ```json
-             {
-             "main ingredient": "pork",   
-             "preparation method": "roasted", 
-             "garnish": "onion",
-             "sauce": "empty",
-             "spice":["salted","chillied"]
-             }
-             ```
-
-             While for this example, we found candidates for filling in the empty fields, we could encounter target_scene_graph where fulfilling source_core_activity is impossible. In this case, fill the "empty" field with "impossible" to make sure target_activity_taxonomy is impossible. 
-
-             Following the logic above, you will come up with a new taxonomy for the target_scene_graph. Return this final dictionary of key-values as output. You must use the same format enclosed in the ``` to represent the final answer. DO NOT DELETE OR REFORMAT ANY KEY in the common_activity_taxnomy dictionary in the target_activity_taxonomy and STRICTLY FOLLOW THE FORMAT OF THE TAXONOMY ABOVE."""}, 
-   
-            {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
-            {"role": "user", "content": f"Here is the source_core_activity:\n{source_core_activity}\n" },            
-            {"role": "user", "content": f"Here is the common activity taxonomy:\n{common_activity_taxonomy}\n"},     
-            {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},
-            {"role": "user", "content": f"Here is the similar environment with the target scene:\n{spatial_example}\n"}                     
+        ### Input:
+        - **source_activity_taxonomy**: A list of two dictionaries.
+        - The first dictionary describes the verb.
+        - The second dictionary describes the noun.
+        Example:
+        [
+            {
+            "manner": "roasting",
+            "vessel": "pan"
+            },
+            {
+            "ingredient": "pork",
+            "garnish": "celery"
+            }
         ]
-    
-    # MESSAGE_TARGET_TAXONOMY_EXAMINER = [
-    #         {"role": "system", "content": """You are a taxonomy examiner for a generated target_activity_taxonomy. You're main task is to examine if target_activity_taxonomy follows the context of source_core_acivitiy. Let me give you a step-by-step example of how you function.
-             
-    #          First, you receive a target_activity_taxonomy in dictionary form:
 
-    #         {
-    #          "main ingredient": "pork",
-    #          "preparation method": "roasted", 
-    #          "garnish": "salary",
-    #          "sauce": "mustard",
-    #          "spice":["salted","peppered"]
-    #          }
+        - **source_core_activity**: A string with the verb and noun.
+        Example:
+        "cook steak"         
 
-    #          You also receive source_core_activity. For this example suppose you have:
+        - **common_activity_taxonomy: A list of two dictionaries.
+        - The first dictionary describes the verb.
+        - The second dictionary describes the noun.        
+        Example:
+        [
+        {
+            "manner": "roasting",
+            "vessel": "empty"
+        },
+        {
+            "ingredient": "meat",
+            "garnish": "empty"
+        }
+        ]    
 
-    #          "cook steak"
+        ### Task:
+        1. For each key-value pair in the common_activity_taxonomy:
+        - If the value is "empty", check whether a suitable replacement exists in the target_scene_graph that still supports achieving the goal described in source_core_activity.
+        - If a suitable replacement exists, replace "empty" with that value.
+        - If no suitable value exists, replace "empty" with "False".
+        - If the value is not "empty", leave it unchanged.
 
-    #          For this example, the target_activity_taxnomy can be used for core activity of "cook steak". You will simple return the target_activity_taxonomy.
-            
-    #          While for this example, we found candidates for filling in the empty fields, we could encounter target_scene_graph where fulfilling source_core_activity is impossible. In this case, fill EVERY VALUE of the target_activity_taxonomy with "impossible" to make sure target_activity_taxonomy is impossible. 
+        2. Do **not** delete or rename any keys.
+        - Maintain the exact same structure as the input.
+        - Only modify the values.
+        - Each dictionary must retain **exactly two key-value pairs**.
 
-    #          DO NOT DELETE OR REFORMAT ANY KEY in the common_activity_taxnomy dictionary in the target_activity_taxonomy"""}, 
-   
-    #         {"role": "user", "content": f"Here is the source_core_activity:\n{source_core_activity}\n" },            
-    #     ]    
+        ### Example Output:
+        [
+        {
+            "manner": "roasting",
+            "vessel": "pot"
+        },
+        {
+            "ingredient": "chicken",
+            "garnish": "False"
+        }
+        ]                
 
+        Explanation (not to be included in the final output): In this example, "pot" was substituted for "pan" and "chicken" for "meat" based on available entities in the target_scene_graph that can serve the function described in source_core_activity. "garnish" was set to "False" because no suitable alternative was found in the target_scene_graph.
 
-    return AGENT2b_PROMPT, MESSAGE_TARGET_TAXONOMY_PREDICTION # MESSAGE_TARGET_TAXONOMY_EXAMINER
+        ### Final Output Format:
+        You must only return a list of **exactly two dictionaries**, each containing **exactly two key-value pairs**. Output format:
+
+        - Return a list of exactly two dictionaries.
+        - Each dictionary must contain exactly two key-value pairs.
+        - Do not change the order or structure.
+        - Do not add explanation or any other text.        
+        """
+        }, 
+
+        {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
+        {"role": "user", "content": f"Here is the source_core_activity:\n{source_core_activity}\n" },            
+        {"role": "user", "content": f"Here is the common activity taxonomy:\n{common_activity_taxonomy}\n"},     
+        {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},         
+        ]
+        # {"role": "user", "content": f"Here is the similar environment with the target scene:\n{spatial_example}\n"}            
+
+    return AGENT2b_PROMPT, MESSAGE_TARGET_TAXONOMY_PREDICTION
 
 def get_agent3_message(inputs:list):
     """
@@ -477,61 +471,126 @@ def get_agent3_message(inputs:list):
         )
 
     MESSAGE_TARGET_SEQUENCE_PREDICTION = [
-            {"role": "system", "content": """You are an action planner expert that makes action sequence in a target_scene_graph to achieve the taxonomy values of the target_activity_taxonomy. Let me give you a step-by-step example of how you function.
-             
-             First, you receive a target_activity_taxonomy in dictionary form:
+        {"role": "system", "content": 
+         """
+        You are an expert action planner. Your task is to transform a given source_action_sequence so that it fits a target_scene_graph while preserving the original context as closely as possible.
 
+        ### Input:
+        - **source_action_sequence**: A list of strings in double quotes.
+        - List represents a sequence of actions executed in chronological fashion, as element index increases.
+        - Each element is a string instruction.
+        Example:
+        [
+            "put pan on stove",
+            "add oil on pan",
+            "turn on the stove",
+            "put pan with pork on stove",
+            "salt the pork",
+            "cut celery",
+            "put processed celery on meat",
+            "serve the pork"
+        ]        
+
+        - **source_core_activity**: A string with the verb and noun.
+        Example:
+        "cook steak"               
+
+        - **source_activity_taxonomy**: A list of two dictionaries.
+        - The first dictionary describes the verb.
+        - The second dictionary describes the noun.
+        Example:
+        [
             {
-             "main ingredient": "pork",   
-             "preparation method": "roasted", 
-             "garnish": "onion",
-             "sauce": "empty",
-             "spice":["salted","chillied"]
-             }
+            "manner": "roasting",
+            "vessel": "pan"
+            },
+            {
+            "ingredient": "pork",
+            "garnish": "celery"
+            }
+        ]
 
-             Second, Let's also suppose that you receive a source_core_activity and source_activity_taxonomy as follows:
-
-             "Cook Steak"
-
-            You can see that the target_activity_taxonomy is describing the noun ("steak") after it is "cooked" in the target_scene. The source_core_activity is the goal of the target_action_sequence you are making.
-
-             Third, let's plan about the logic of realizing each key-value in the target_activity_taxonomy. When looking at all information from source_scene_graph, source_action_sequence, and source_activity_taxonomy you find that value for each key is started and completed at certain steps at source_action_sequence. For example, in a source_activity_taxonomy like below, you will know that salt or salt bottle is present at the scene, but the spice "salted" value only can be completed when player or user in the scene performs a state of salting the ingredient or steak in the source_action_sequence. In the same logic, trying to achieve the "salted" value in "spice" key can start when player tries to grab salt/salt bottle or performs salting action. "pork" key is already started and completed in a step where it is chosen as main ingredient.
-
-             {
-             "main ingredient": "pork",   
-             "preparation method": "roasted", 
-             "garnish": "salary",
-             "sauce": "mustard",
-             "spice":["salted","peppered"]
-             }
-
-
-             Fourth, following the logic above, you can make action sequence for the target_scene and target_activity_taxonomy. At the start of this phase, you should make a logical action_sequence for each key-value pair in the target_activity_taxonomy so that the core_activity is realized. You can ONLY use resources and entities in the target_scene_graph. Here's the format of expressing your thought process
-             
-             Action sequence for each key value: your action sequences to realize each of the the key-value in the target_activity_taxonomy
-             Logic: your logic for each key value sequence
-
-             Fifth, you will need to combine all the sequences of the key value in to a single sequence so that it is natural. Edit your combined action sequence so that it is sequentially logical. Here's the format of expressing your thought process.
-
-             Target Action Sequence: your action sequence to realize target taxonomy that only uses entities in target scene graph
-             Logic: your logic for each key in the target taxonomy
-             
-             Sixth, a re-ordering should be done, so that order of action for your logical target action sequence is similar to the order of actions taken in the source_action_sequence provided as content. This will return the final re-ordered target_action_sequence in this format:
-
-             ["action1", "action2", ..., "actionN"]
-             
-             Finally, you will return the target_action_sequence as output. The format of the target_scene_graph should follow the format of the source_scene_graph. STRICTLY Follow the format below to print the output:
-             
-             Final Answer: ["action1", "action2", ..., "final action]
-             """}, 
-            {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
-            {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},
-            {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},
-            {"role": "user", "content": f"Here is the source activity taxonomy:\n{source_activity_taxonomy}\n"},
-            {"role": "user", "content": f"Here is the source activity taxonomy:\n{target_activity_taxonomy}\n"},
-            {"role": "user", "content": f"Here is the source core activity:\n{source_core_activity}\n"},
-            {"role": "user", "content": f"Here is the similar environment with the target scene:\n{spatial_example}\n"}            
+        - **target_activity_taxonomy: A list of two dictionaries.
+        - The first dictionary describes the verb.
+        - The second dictionary describes the noun.        
+        Example:
+        [
+        {
+            "manner": "roasting",
+            "vessel": "pot"
+        },
+        {
+            "ingredient": "chicken",
+            "garnish": "False"
+        }
         ]   
+
+        ### Task:
+        1. For each element in the source_action_sequence:
+        - Check if all objects/entities in the instruction phrase exist in the target_scene_graph.
+        - If an entity is missing, replace it with a similar or closest alternative from the target_scene_graph. Consult the source_action_sequence in order to undestand what the missing entity's original role was and look at the source_core_activity to check if the changed action instruction does contribute to making this goal (source_core_activity) possible. The target_activity_taxonomy is the more detailed version of how source_core_activity's noun and verb can be described in the target_scene_graph. Therefore, you are advised to follow the context as described in the target_activity_taxonomy.
+        - If no suitable replacement is available, mark the action as "impossible".
+
+        2. Ensure consistency:
+        - If you replace an object (e.g., "pan" → "pot"), use that same substitution consistently in all subsequent actions.
+
+        Example transformation:
+        Input:
+        [
+            "put pan on stove",
+            "add oil on pan",
+            "turn on the stove",
+            "put pan with pork on stove",
+            "salt the pork",
+            "cut celery",
+            "put processed celery on meat",
+            "serve the pork"
+        ]
+        Target Scene Graph does not have pan and pork, but contains: pot, and chicken. Celery or its alternative is nowhere to be found in target_activity_taxonomy and target_scene_graph, so instructions regarding celery is completely wiped out.
+        Output:
+        [
+            "put pot on stove",
+            "add oil on pot",
+            "turn on the stove",
+            "put pot with pork on stove",
+            "salt the chicken",
+            "impossible",
+            "impossible",
+            "serve the chicken"
+        ]
+
+        3. Delete the action instruction of "impossible". Example:
+        [
+            "put pot on stove",
+            "add oil on pot",
+            "turn on the stove",
+            "put pot with pork on stove",
+            "salt the chicken",
+            "serve the chicken"
+        ]
+
+        4. Rearrange the sequence if necesary, so that the remaining sequence of instructions achieves source_core_action. Add in new instructions that only uses source_target_scene entities if needed. If all efforts fail to achieve the goal of source_core_action, make your output as a single "False" enclosed in double quotes, inside a list. Example:
+        [
+            "False"
+        ]
+
+        Output Format:
+        Return only the final modified list enclosed in double quotes, like this:
+
+        Final Answer: ["action1", "action2", ..., "final action"]
+
+        Do not include any other text or explanation. Follow the format exactly.
+        """
+        }, 
+        {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
+        {"role": "user", "content": f"Here is the source core activity:\n{source_core_activity}\n"},  
+        {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},        
+        {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},
+        {"role": "user", "content": f"Here is the source activity taxonomy:\n{source_activity_taxonomy}\n"},
+        {"role": "user", "content": f"Here is the source activity taxonomy:\n{target_activity_taxonomy}\n"},
+        ]   
+        # RAG NOT USED HERE
+        # {"role": "user", "content": f"Here is the similar environment with the target scene:\n{spatial_example}\n"}      
     return AGENT3_PROMPT, MESSAGE_TARGET_SEQUENCE_PREDICTION
 #------------------------
 #Tool Funcs
@@ -876,7 +935,6 @@ def run_agent_1b(input, agent_llm_chat, MEMORY=None):
         config={"max_iterations": 5}
     )
     return response, MEMORY
-
 
 def run_agent_2a(input, agent_llm_chat):
     """"
