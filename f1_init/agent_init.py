@@ -172,7 +172,7 @@ def get_video_info_idxtest(source_video_idx):
     return: seq, scenegraph, sea_id, scenegraph_id
     '''
 
-def get_paired_spatial_json_list(path:str):
+def get_paired_spatial_json_list(path:str, boolauglev:bool):
     '''
     func: get augmentation data path and return scene graph list
     input: path for augmentation
@@ -211,7 +211,10 @@ def get_paired_spatial_json_list(path:str):
         sorted_target_filenames = sorted(target_filenames, key=lambda f: int(re.search(r'_(\d+)\.json$', f).group(1)))
 
         #get auglevel(overwirtten many times but no big deal)
-        auglevel = numbers = [int(re.search(r'_(\d+)\.json$', filename).group(1)) for filename in sorted_target_filenames]
+        if boolauglev:
+            auglevel = numbers = [int(re.search(r'_(\d+)\.json$', filename).group(1)) for filename in sorted_target_filenames]
+        else:
+            auglevel = 1
 
         #read files & append both source and target list
         for filename in sorted_target_filenames:
