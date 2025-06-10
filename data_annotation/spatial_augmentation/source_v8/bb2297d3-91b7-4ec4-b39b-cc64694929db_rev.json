@@ -1,0 +1,550 @@
+{
+    "video_id": "bb2297d3-91b7-4ec4-b39b-cc64694929db",
+    "goal_category": "COOKING:COOKING_GENERAL",
+    "goal_description": "Make pasta",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "carton",
+            "init_status": {
+                "status": "unfolded",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "cup",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "trash can",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 10,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 11,
+            "object_name": "bottle",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 12,
+            "object_name": "cloth",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 16,
+            "object_name": "pasta",
+            "init_status": {
+                "status": "heating",
+                "container": null
+            }
+        },
+        {
+            "object_id": 17,
+            "object_name": "stirrer",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 18,
+            "object_name": "lid",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 19,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        },
+        {
+            "object_id": 20,
+            "object_name": "table2",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 21,
+            "object_name": "tomato paste",
+            "init_status": {
+                "status": "default",
+                "container": 20
+            }
+        },
+        {
+            "object_id": 22,
+            "object_name": "refrigerator",
+            "init_status": {
+                "status": "closed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 23,
+            "object_name": "cheese",
+            "init_status": {
+                "status": "default",
+                "container": 22
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "trash bucket",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "trash bag",
+            "init_status": {
+                "status": "default",
+                "container": 7
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "trash bag2",
+            "init_status": {
+                "status": "new",
+                "container": null
+            }
+        },
+        {
+            "object_id": 13,
+            "object_name": "hanger",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Fold a carton",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "carton"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "carton",
+                        "init_status": {
+                            "status": "unfolded",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "folded",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1_substep_0",
+            "description": "Place plates on counter top",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "utensils"
+                },
+                "change": [
+                    {
+                        "object_id": 3,
+                        "object_name": "utensils",
+                        "init_status": {
+                            "status": "arranged",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "arranged",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1_substep_1",
+            "description": "Place cup on counter top",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "cup"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_2_substep_0",
+            "description": "Remove trash bag from trash bucket",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "trash bag"
+                },
+                "change": [
+                    {
+                        "object_id": 8,
+                        "object_name": "trash bag",
+                        "init_status": {
+                            "status": "default",
+                            "container": 7
+                        },
+                        "final_status": {
+                            "status": "wrapped",
+                            "container": 7
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2_substep_1",
+            "description": "Place new trash bag in trash bucket",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "trash bag2"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_3",
+            "description": "Fix a waste bag in a bin",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "none"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_4",
+            "description": "Arrange a bottle on a table",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "none"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_5",
+            "description": "Hangs a piece of clothing",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "none"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_6",
+            "description": "Stir pasta in a pot",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "stirrer"
+                },
+                "change": [
+                    {
+                        "object_id": 15,
+                        "object_name": "pot",
+                        "init_status": {
+                            "status": "contain water",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "contain water",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_7_substep_0",
+            "description": "Place lid on counter top",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "lid"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_7_substep_1",
+            "description": "Place cup on the counter top",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "cup"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_8",
+            "description": "Drain water from the pasta",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pasta"
+                },
+                "change": [
+                    {
+                        "object_id": 16,
+                        "object_name": "pasta",
+                        "init_status": {
+                            "status": "heating",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "heating",
+                            "container": 15
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_9",
+            "description": "Play with a dog",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "pasta"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_10_substep_0",
+            "description": "Add tomato paste to pasta in pot",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "tomato paste"
+                },
+                "change": [
+                    {
+                        "object_id": 15,
+                        "object_name": "pot",
+                        "init_status": {
+                            "status": "half-filled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "half-filled",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_10_substep_1",
+            "description": "Stir pasta in pot",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "stirrer"
+                },
+                "change": [
+                    {
+                        "object_id": 15,
+                        "object_name": "pot",
+                        "init_status": {
+                            "status": "half-filled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "half-filled",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_10_substep_2",
+            "description": "Add tomato paste to pasta in pot ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "tomato paste"
+                },
+                "change": [
+                    {
+                        "object_id": 15,
+                        "object_name": "pot",
+                        "init_status": {
+                            "status": "half-filled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "half-filled",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_11",
+            "description": "Add grated cheese to the pasta in the pot",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "cheese"
+                },
+                "change": [
+                    {
+                        "object_id": 15,
+                        "object_name": "pot",
+                        "init_status": {
+                            "status": "half-filled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "half-filled",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_12",
+            "description": "Add tomato sauce to the pasta in the pot",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "tomato paste"
+                },
+                "change": [
+                    {
+                        "object_id": 15,
+                        "object_name": "pot",
+                        "init_status": {
+                            "status": "half-filled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "half-filled",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_13",
+            "description": "Stir the pasta in the pot",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "stirrer"
+                },
+                "change": [
+                    {
+                        "object_id": 15,
+                        "object_name": "pot",
+                        "init_status": {
+                            "status": "half-filled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "half-filled",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

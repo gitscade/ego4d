@@ -1,0 +1,503 @@
+{
+  "video_id": "b2bd978d-1c84-4f58-897e-02667fdc156a",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "cooking general",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "hotdog",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "microwave",
+      "init_status": {
+        "status": "off",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "onion",
+      "init_status": {
+        "status": "whole",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "bread",
+      "init_status": {
+        "status": "sliced",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "spice bottle",
+      "init_status": {
+        "status": "default",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "plate",
+      "init_status": {
+        "status": "empty",
+        "container": 12
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "table",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "counter",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "knife",
+      "init_status": {
+        "status": "default",
+        "container": 13
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "New Object",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "New Object",
+      "init_status": {
+        "status": "default",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_2",
+      "description": "Microwave the hotdog",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "counter",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "microwave",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": 13
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "hotdog",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "none",
+              "container": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "Dice onion into smaller sizes",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "onion",
+          "final_status": "idle",
+          "final_hand": "diced onion"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "onion",
+            "init_status": {
+              "status": "whole",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": null
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "idle",
+              "container": null
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "knife",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Remove hotdog from the microwave",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 2,
+            "object_name": "hotdog",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "none",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "plate",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "Add sliced bread to the plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "plate",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "hotdog",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "none",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "bread",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "sliced",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_6",
+      "description": "Add spices to the food",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spices"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "player",
+            "init_status": {
+              "status": "idle",
+              "container": null
+            },
+            "final_status": {
+              "status": "idle",
+              "container": null
+            }
+          },
+          {
+            "object_id": 9,
+            "object_name": "spice bottle",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "plate",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "hotdog",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "spiced",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "bread",
+            "init_status": {
+              "status": "sliced",
+              "container": null
+            },
+            "final_status": {
+              "status": "spiced",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_7",
+      "description": "Add diced ingredients to the bread in the plate",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 11,
+            "object_name": "plate",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "bread",
+            "init_status": {
+              "status": "spiced",
+              "container": null
+            },
+            "final_status": {
+              "status": "spiced",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "onion",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "hotdog",
+            "init_status": {
+              "status": "spiced",
+              "container": null
+            },
+            "final_status": {
+              "status": "spiced",
+              "container": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8",
+      "description": "Serve the food",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "serving food",
+          "final_hand": "plate"
+        },
+        "change": [
+          {
+            "object_id": 12,
+            "object_name": "table",
+            "init_status": {
+              "status": "default",
+              "container": null
+            },
+            "final_status": {
+              "status": "default",
+              "container": null
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "plate",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": 12
+            }
+          },
+          {
+            "object_id": 7,
+            "object_name": "bread",
+            "init_status": {
+              "status": "spiced",
+              "container": null
+            },
+            "final_status": {
+              "status": "spiced",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 6,
+            "object_name": "onion",
+            "init_status": {
+              "status": "diced",
+              "container": null
+            },
+            "final_status": {
+              "status": "diced",
+              "container": 7
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "hotdog",
+            "init_status": {
+              "status": "spiced",
+              "container": null
+            },
+            "final_status": {
+              "status": "spiced",
+              "container": 11
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

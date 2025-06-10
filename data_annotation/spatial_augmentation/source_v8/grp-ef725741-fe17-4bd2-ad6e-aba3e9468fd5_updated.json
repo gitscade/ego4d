@@ -1,0 +1,817 @@
+{
+  "video_id": "grp-ef725741-fe17-4bd2-ad6e-aba3e9468fd5",
+  "goal_category": "COOKING:MAKE_BREAD",
+  "goal_description": "making the dough",
+  "spatial_data": [
+    {
+      "object_id": 1,
+      "object_name": "bowl",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 2,
+      "object_name": "flour bag",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 3,
+      "object_name": "bag",
+      "init_status": {
+        "status": "open",
+        "container": null
+      }
+    },
+    {
+      "object_id": 4,
+      "object_name": "peg",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "weighing scale",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "weigh measurement cup",
+      "init_status": {
+        "status": "off-scale",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "measuring cup",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 8,
+      "object_name": "water bottle",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 9,
+      "object_name": "cup",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "powdered milk",
+      "init_status": {
+        "status": "in bag",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "jug",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 12,
+      "object_name": "wrapper",
+      "init_status": {
+        "status": "on ground",
+        "container": null
+      }
+    },
+    {
+      "object_id": 13,
+      "object_name": "sugar",
+      "init_status": {
+        "status": "full",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "tap",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 15,
+      "object_name": "soap",
+      "init_status": {
+        "status": "in hand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "tissue",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 18,
+      "object_name": "flour and sugar in a bowl",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 19,
+      "object_name": "flour mixture",
+      "init_status": {
+        "status": "unmixed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 20,
+      "object_name": "salt shaker",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 21,
+      "object_name": "tablet",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 22,
+      "object_name": "soap dispenser",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 23,
+      "object_name": "sink",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 24,
+      "object_name": "napkin",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 25,
+      "object_name": "dough",
+      "init_status": {
+        "status": "untouched",
+        "container": null
+      }
+    },
+    {
+      "object_id": 26,
+      "object_name": "oven",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 27,
+      "object_name": "nylon",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 28,
+      "object_name": "cabinet",
+      "init_status": {
+        "status": "closed",
+        "container": null
+      }
+    },
+    {
+      "object_id": 29,
+      "object_name": "spatula",
+      "init_status": {
+        "status": "clean",
+        "container": null
+      }
+    },
+    {
+      "object_id": 30,
+      "object_name": "trash can",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 0,
+      "object_name": "ingredient1",
+      "init_status": {
+        "status": "off-counter",
+        "container": null
+      }
+    },
+    {
+      "object_id": 31,
+      "object_name": "ingredient2",
+      "init_status": {
+        "status": "off-counter",
+        "container": null
+      }
+    },
+    {
+      "object_id": 32,
+      "object_name": "ingredient3",
+      "init_status": {
+        "status": "off-counter",
+        "container": null
+      }
+    },
+    {
+      "object_id": 33,
+      "object_name": "water",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_0",
+      "description": "pours flour in bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "flour bag"
+        },
+        "change": [
+          {
+            "object_id": 1,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with flour",
+              "container": null
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "flour bag",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1",
+      "description": "seals flour bag with peg",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "sealing bag with peg",
+          "final_hand": "peg"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "peg",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "in use",
+              "container": 2
+            }
+          },
+          {
+            "object_id": 2,
+            "object_name": "flour bag",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_1",
+      "description": "Turn on weighing scale",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "weighing scale"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "weighing scale",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_2_substep_2",
+      "description": "Add water to the measuring cup on the weighing scale",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "measuring cup",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled with water",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "weighing scale",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          },
+          {
+            "object_id": 33,
+            "object_name": "water",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "none",
+              "container": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_3",
+      "description": "pours powdered milk in jug",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "powdered milk",
+            "init_status": {
+              "status": "in bag",
+              "container": null
+            },
+            "final_status": {
+              "status": "in jug",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 11,
+            "object_name": "jug",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "full",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_5",
+      "description": "pours brown sugar in bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 13,
+            "object_name": "sugar",
+            "init_status": {
+              "status": "full",
+              "container": null
+            },
+            "final_status": {
+              "status": "poured",
+              "container": 1
+            }
+          },
+          {
+            "object_id": 1,
+            "object_name": "bowl",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_0",
+      "description": "Stir flour and sugar in a bowl",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "flour and sugar in a bowl"
+        },
+        "change": [
+          {
+            "object_id": 18,
+            "object_name": "flour and sugar in a bowl",
+            "init_status": {
+              "status": "filled",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_1",
+      "description": "Add salt to flour mixture",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "salt shaker"
+        },
+        "change": [
+          {
+            "object_id": 19,
+            "object_name": "flour mixture",
+            "init_status": {
+              "status": "without salt",
+              "container": null
+            },
+            "final_status": {
+              "status": "with salt",
+              "container": null
+            }
+          },
+          {
+            "object_id": 20,
+            "object_name": "salt",
+            "init_status": {
+              "status": "in bag",
+              "container": null
+            },
+            "final_status": {
+              "status": "in flour mixture",
+              "container": 19
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_2",
+      "description": "Stir the flour mixture together",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "flour mixture",
+          "final_status": "active",
+          "final_hand": "flour mixture"
+        },
+        "change": [
+          {
+            "object_id": 19,
+            "object_name": "flour mixture",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_3",
+      "description": "Add milk to the flour mixture",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "milk"
+        },
+        "change": [
+          {
+            "object_id": 19,
+            "object_name": "flour mixture",
+            "init_status": {
+              "status": "solid",
+              "container": null
+            },
+            "final_status": {
+              "status": "liquid",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8_substep_4",
+      "description": "Mix flour mixture together",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "flour mixture",
+          "final_status": "mixing",
+          "final_hand": "flour mixture"
+        },
+        "change": [
+          {
+            "object_id": 19,
+            "object_name": "flour mixture",
+            "init_status": {
+              "status": "static",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_12",
+      "description": "adjusts dough with spatula",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "spatula"
+        },
+        "change": [
+          {
+            "object_id": 25,
+            "object_name": "dough",
+            "init_status": {
+              "status": "untouched",
+              "container": null
+            },
+            "final_status": {
+              "status": "adjusted",
+              "container": null
+            }
+          },
+          {
+            "object_id": 29,
+            "object_name": "spatula",
+            "init_status": {
+              "status": "clean",
+              "container": null
+            },
+            "final_status": {
+              "status": "unclean",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13",
+      "description": "turns on oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "oven"
+        },
+        "change": [
+          {
+            "object_id": 26,
+            "object_name": "oven",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_14",
+      "description": "covers dough with nylon",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 25,
+            "object_name": "dough",
+            "init_status": {
+              "status": "uncovered",
+              "container": null
+            },
+            "final_status": {
+              "status": "covered",
+              "container": 27
+            }
+          },
+          {
+            "object_id": 27,
+            "object_name": "nylon",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "covering dough",
+              "container": 25
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_16_substep_0",
+      "description": "Put dough in oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 25,
+            "object_name": "dough",
+            "init_status": {
+              "status": "raw",
+              "container": null
+            },
+            "final_status": {
+              "status": "baked",
+              "container": 26
+            }
+          },
+          {
+            "object_id": 26,
+            "object_name": "oven",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "off",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_16_substep_1",
+      "description": "Set oven",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": null,
+          "final_status": "idle",
+          "final_hand": null
+        },
+        "change": [
+          {
+            "object_id": 26,
+            "object_name": "oven",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

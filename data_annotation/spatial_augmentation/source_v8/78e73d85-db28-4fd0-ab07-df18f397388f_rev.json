@@ -1,0 +1,422 @@
+{
+    "video_id": "78e73d85-db28-4fd0-ab07-df18f397388f",
+    "goal_category": "COOKING:MAKE_NOODLE_DISH_GENERAL",
+    "goal_description": "Preparing ingredients",
+    "spatial_data": [
+        {
+            "object_id": 3,
+            "object_name": "sauce",
+            "init_status": {
+                "status": "packed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "refrigerator",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "towel",
+            "init_status": {
+                "status": "hanging",
+                "container": 5
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "paper",
+            "init_status": {
+                "status": "default",
+                "container": 6
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "utesils",
+            "init_status": {
+                "status": "disarranged",
+                "container": 6
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "tomato",
+            "init_status": {
+                "status": "default",
+                "container": 5
+            }
+        },
+        {
+            "object_id": 10,
+            "object_name": "cucumber",
+            "init_status": {
+                "status": "wrapped",
+                "container": 5
+            }
+        },
+        {
+            "object_id": 11,
+            "object_name": "enoki mushroom",
+            "init_status": {
+                "status": "wrapped",
+                "container": 5
+            }
+        },
+        {
+            "object_id": 12,
+            "object_name": "green onion",
+            "init_status": {
+                "status": "wrapped",
+                "container": 5
+            }
+        },
+        {
+            "object_id": 13,
+            "object_name": "chopping board",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 14,
+            "object_name": "knife",
+            "init_status": {
+                "status": "default",
+                "container": 13
+            }
+        },
+        {
+            "object_id": 15,
+            "object_name": "counter top",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 16,
+            "object_name": "jug",
+            "init_status": {
+                "status": "disarranged",
+                "container": 15
+            }
+        },
+        {
+            "object_id": 17,
+            "object_name": "trash can",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 18,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        },
+        {
+            "object_id": 19,
+            "object_name": "bag",
+            "init_status": {
+                "status": "default",
+                "container": 18
+            }
+        },
+        {
+            "object_id": 20,
+            "object_name": "cutting board",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "Rinse packs of sauce in water",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "sink"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "sink",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "supply water",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "Dry hands with a towel",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "towel"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_2",
+            "description": "Fold papers",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "paper"
+                },
+                "change": [
+                    {
+                        "object_id": 7,
+                        "object_name": "paper",
+                        "init_status": {
+                            "status": "default",
+                            "container": 6
+                        },
+                        "final_status": {
+                            "status": "fold",
+                            "container": 6
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_3",
+            "description": "Arrange kitchen utensils on a countertop",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "utesils"
+                },
+                "change": [
+                    {
+                        "object_id": 8,
+                        "object_name": "utesils",
+                        "init_status": {
+                            "status": "disarranged",
+                            "container": 6
+                        },
+                        "final_status": {
+                            "status": "arranged",
+                            "container": 6
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_4",
+            "description": "Arrange ingredients on the countertop",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "green onion"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_5",
+            "description": "Rinse a cucumber with water",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "cucumber"
+                },
+                "change": [
+                    {
+                        "object_id": 1,
+                        "object_name": "sink",
+                        "init_status": {
+                            "status": "default",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "supply water",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 10,
+                        "object_name": "cucumber",
+                        "init_status": {
+                            "status": "wrapped",
+                            "container": 5
+                        },
+                        "final_status": {
+                            "status": "unwrapped",
+                            "container": 5
+                        }
+                    },
+                    {
+                        "object_id": 10,
+                        "object_name": "cucumber",
+                        "init_status": {
+                            "status": "unwrapped",
+                            "container": 5
+                        },
+                        "final_status": {
+                            "status": "washed",
+                            "container": 5
+                        }
+                    },
+                    {
+                        "object_id": 10,
+                        "object_name": "cucumber",
+                        "init_status": {
+                            "status": "unwrapped",
+                            "container": 5
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": 5
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_6",
+            "description": "Set a knife on a chopping board",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "knife"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_7",
+            "description": "Reposition a jug on the countertop",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "jug"
+                },
+                "change": [
+                    {
+                        "object_id": 16,
+                        "object_name": "jug",
+                        "init_status": {
+                            "status": "disarranged",
+                            "container": 15
+                        },
+                        "final_status": {
+                            "status": "arranged",
+                            "container": 15
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_8",
+            "description": "Dispose the cucumber wrap in a bag",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "wrap"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_9",
+            "description": "Slice the cucumber",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "knife"
+                },
+                "change": [
+                    {
+                        "object_id": 10,
+                        "object_name": "cucumber",
+                        "init_status": {
+                            "status": "washed",
+                            "container": 5
+                        },
+                        "final_status": {
+                            "status": "sliced",
+                            "container": 5
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_10",
+            "description": "Eat the cucumber slice",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "cucumber"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_11",
+            "description": "Slice the cucumber",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "knife"
+                },
+                "change": []
+            }
+        }
+    ]
+}

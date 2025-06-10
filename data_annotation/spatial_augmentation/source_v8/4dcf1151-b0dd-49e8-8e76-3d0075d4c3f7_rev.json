@@ -1,0 +1,360 @@
+{
+    "video_id": "4dcf1151-b0dd-49e8-8e76-3d0075d4c3f7",
+    "goal_category": "COOKING:MAKE_PASTRY",
+    "goal_description": "preparing corn dogs",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "chair",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "phone",
+            "init_status": {
+                "status": "on",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "corn dogs",
+            "init_status": {
+                "status": "heating",
+                "container": null
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "refrigerator",
+            "init_status": {
+                "status": "closed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "ketchup",
+            "init_status": {
+                "status": "default",
+                "container": 7
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "ketchup2",
+            "init_status": {
+                "status": "default",
+                "container": 7
+            }
+        },
+        {
+            "object_id": 10,
+            "object_name": "player",
+            "init_status": {
+                "status": null
+            }
+        },
+        {
+            "object_id": 11,
+            "object_name": "tissue",
+            "init_status": {
+                "status": "default",
+                "container": 10
+            }
+        },
+        {
+            "object_id": 12,
+            "object_name": "trash can",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0",
+            "description": "operate phone",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "none"
+                },
+                "change": [
+                    {
+                        "object_id": 2,
+                        "object_name": "phone",
+                        "init_status": {
+                            "status": "on",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "off",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_1",
+            "description": "remove a tray of corn dogs from oven",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "corn dogs"
+                },
+                "change": [
+                    {
+                        "object_id": 6,
+                        "object_name": "corn dogs",
+                        "init_status": {
+                            "status": "heating",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "heating",
+                            "container": 5
+                        }
+                    },
+                    {
+                        "object_id": 5,
+                        "object_name": "tray",
+                        "init_status": {
+                            "status": "full-filled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "full-filled",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_2",
+            "description": "add ketchup on the corn dog",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "ketchup"
+                },
+                "change": [
+                    {
+                        "object_id": 6,
+                        "object_name": "corn dogs",
+                        "init_status": {
+                            "status": "default",
+                            "container": 5
+                        },
+                        "final_status": {
+                            "status": "seasoning 1",
+                            "container": 5
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_3",
+            "description": "remove crumb from the corn dog",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "crumb"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_4",
+            "description": "add ketchup on the corn dogs",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "ketchup2"
+                },
+                "change": [
+                    {
+                        "object_id": 6,
+                        "object_name": "corn dogs",
+                        "init_status": {
+                            "status": "seasoning 1",
+                            "container": 5
+                        },
+                        "final_status": {
+                            "status": "seasoning 2",
+                            "container": 5
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_5",
+            "description": "adjust corn dogs foil",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "corn dogs"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_6_substep_0",
+            "description": "Scrub the tray with tissue paper ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "tissue"
+                },
+                "change": [
+                    {
+                        "object_id": 5,
+                        "object_name": "tray",
+                        "init_status": {
+                            "status": "dirty",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "cleaned",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_6_substep_1",
+            "description": "Trash the tissue paper ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "none"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_7_substep_0",
+            "description": "Scrub the tray with tissue paper ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "tissue"
+                },
+                "change": [
+                    {
+                        "object_id": 5,
+                        "object_name": "tray",
+                        "init_status": {
+                            "status": "dirty",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "cleaned",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_7_substep_1",
+            "description": "Trash the tissue paper ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "stand",
+                    "final_hand": "none"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_8",
+            "description": "put the tray of corn dogs into the oven",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "corn dogs"
+                },
+                "change": [
+                    {
+                        "object_id": 5,
+                        "object_name": "tray",
+                        "init_status": {
+                            "status": "full-filled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "full-filled",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_9",
+            "description": "operate phone",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "phone"
+                },
+                "change": [
+                    {
+                        "object_id": 2,
+                        "object_name": "phone",
+                        "init_status": {
+                            "status": "off",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "on",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

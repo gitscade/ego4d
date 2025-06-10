@@ -1,0 +1,435 @@
+{
+  "video_id": "049cfb89-3bcc-4fa3-8d0e-4e7e218b05ae",
+  "goal_category": "COOKING:COOKING_GENERAL",
+  "goal_description": "Preparing a coffee",
+  "spatial_data": [
+    {
+      "object_id": 4,
+      "object_name": "milk",
+      "init_status": {
+        "status": "inactive",
+        "container": null
+      }
+    },
+    {
+      "object_id": 5,
+      "object_name": "cup",
+      "init_status": {
+        "status": "inactive",
+        "container": null
+      }
+    },
+    {
+      "object_id": 6,
+      "object_name": "pan",
+      "init_status": {
+        "status": "empty",
+        "container": null
+      }
+    },
+    {
+      "object_id": 7,
+      "object_name": "heat source",
+      "init_status": {
+        "status": "off",
+        "container": null
+      }
+    },
+    {
+      "object_id": 10,
+      "object_name": "coffee scoop",
+      "init_status": {
+        "status": "in hand",
+        "container": null
+      }
+    },
+    {
+      "object_id": 11,
+      "object_name": "player",
+      "init_status": {
+        "status": "idle",
+        "container": null
+      }
+    },
+    {
+      "object_id": 14,
+      "object_name": "spoon",
+      "init_status": {
+        "status": "none",
+        "container": null
+      }
+    },
+    {
+      "object_id": 16,
+      "object_name": "dirt",
+      "init_status": {
+        "status": "unplaced",
+        "container": null
+      }
+    },
+    {
+      "object_id": 17,
+      "object_name": "coffee",
+      "init_status": {
+        "status": "unused",
+        "container": null
+      }
+    }
+  ],
+  "segments": [
+    {
+      "step_info": "step_1_substep_1",
+      "description": "Add milk to pan",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "milk"
+        },
+        "change": [
+          {
+            "object_id": 6,
+            "object_name": "pan",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": 11
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "milk",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "added",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_1_substep_2",
+      "description": "Turn on heat ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "heat source",
+            "init_status": {
+              "status": "off",
+              "container": null
+            },
+            "final_status": {
+              "status": "on",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_4",
+      "description": "Scoop coffee into a cup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "idle",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 10,
+            "object_name": "coffee scoop",
+            "init_status": {
+              "status": "in hand",
+              "container": null
+            },
+            "final_status": {
+              "status": "empty",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "coffee",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "unused",
+              "container": 10
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "cup",
+            "init_status": {
+              "status": "empty",
+              "container": null
+            },
+            "final_status": {
+              "status": "filled",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_8",
+      "description": "Stir the milk",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "milk"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "milk",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": null
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_0",
+      "description": "Remove dirt from milk ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "milk"
+        },
+        "change": [
+          {
+            "object_id": 16,
+            "object_name": "dirt",
+            "init_status": {
+              "status": "present",
+              "container": null
+            },
+            "final_status": {
+              "status": "removed",
+              "container": 4
+            }
+          },
+          {
+            "object_id": 4,
+            "object_name": "milk",
+            "init_status": {
+              "status": "dirty",
+              "container": null
+            },
+            "final_status": {
+              "status": "clean",
+              "container": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_1",
+      "description": "Stir milk in pan ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "pan"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "milk",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": null
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_2",
+      "description": "Turn off heat ",
+      "context": {
+        "player": {
+          "init_status": "active",
+          "init_hand": "none",
+          "final_status": "inactive",
+          "final_hand": "none"
+        },
+        "change": [
+          {
+            "object_id": 7,
+            "object_name": "heat source",
+            "init_status": {
+              "status": "on",
+              "container": null
+            },
+            "final_status": {
+              "status": "off",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_11_substep_3",
+      "description": "Add milk to coffee ",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "active",
+          "final_hand": "milk"
+        },
+        "change": [
+          {
+            "object_id": 4,
+            "object_name": "milk",
+            "init_status": {
+              "status": "stirred",
+              "container": null
+            },
+            "final_status": {
+              "status": "added to coffe",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "coffee",
+            "init_status": {
+              "status": "none",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 5,
+            "object_name": "cup",
+            "init_status": {
+              "status": "coffee only",
+              "container": null
+            },
+            "final_status": {
+              "status": "coffee and milk",
+              "container": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step_info": "step_13",
+      "description": "Stir the coffee in the cup",
+      "context": {
+        "player": {
+          "init_status": "idle",
+          "init_hand": "none",
+          "final_status": "stirring",
+          "final_hand": "cup"
+        },
+        "change": [
+          {
+            "object_id": 5,
+            "object_name": "cup",
+            "init_status": {
+              "status": "still",
+              "container": null
+            },
+            "final_status": {
+              "status": "stirred",
+              "container": null
+            }
+          },
+          {
+            "object_id": 17,
+            "object_name": "coffee",
+            "init_status": {
+              "status": "unmixed",
+              "container": null
+            },
+            "final_status": {
+              "status": "mixed",
+              "container": 5
+            }
+          },
+          {
+            "object_id": 14,
+            "object_name": "spoon",
+            "init_status": {
+              "status": "unused",
+              "container": null
+            },
+            "final_status": {
+              "status": "used",
+              "container": 17
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

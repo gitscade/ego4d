@@ -1,0 +1,687 @@
+{
+    "video_id": "4d980c7b-3e02-47ff-8a11-af55d04a8c4d",
+    "goal_category": "COOKING:PREPARE_NUT",
+    "goal_description": "Peeling walnuts",
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "walnut shells",
+            "init_status": {
+                "status": "intact",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "walnut kernels",
+            "init_status": {
+                "status": "intact",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "bowl",
+            "init_status": {
+                "status": "empty",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "walnut shells",
+            "init_status": {
+                "status": "off-screen",
+                "container": null
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "shell",
+            "init_status": {
+                "status": "closed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "nut",
+            "init_status": {
+                "status": "inside shell",
+                "container": 5
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "piece",
+            "init_status": {
+                "status": "on table",
+                "container": null
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "player",
+            "init_status": {
+                "status": "on table",
+                "container": null
+            }
+        },
+        {
+            "object_id": 99,
+            "object_name": "walnut 1",
+            "init_status": {
+                "status": "unpeeled",
+                "container": null
+            }
+        },
+        {
+            "object_id": 98,
+            "object_name": "walnut 2",
+            "init_status": {
+                "status": "unpeeled",
+                "container": null
+            }
+        },
+        {
+            "object_id": 97,
+            "object_name": "walnut 3",
+            "init_status": {
+                "status": "unpeeled",
+                "container": null
+            }
+        },
+        {
+            "object_id": 96,
+            "object_name": "walnut 4",
+            "init_status": {
+                "status": "unpeeled",
+                "container": null
+            }
+        },
+        {
+            "object_id": 95,
+            "object_name": "walnut 5",
+            "init_status": {
+                "status": "unpeeled",
+                "container": null
+            }
+        },
+        {
+            "object_id": 94,
+            "object_name": "walnut 6",
+            "init_status": {
+                "status": "unpeeled",
+                "container": null
+            }
+        },
+        {
+            "object_id": 93,
+            "object_name": "walnut 7",
+            "init_status": {
+                "status": "unpeeled",
+                "container": null
+            }
+        },
+        {
+            "object_id": 92,
+            "object_name": "walnut 8",
+            "init_status": {
+                "status": "unpeeled",
+                "container": null
+            }
+        },
+        {
+            "object_id": 91,
+            "object_name": "walnut 9",
+            "init_status": {
+                "status": "unpeeled",
+                "container": null
+            }
+        },
+        {
+            "object_id": 90,
+            "object_name": "walnut 10",
+            "init_status": {
+                "status": "unpeeled",
+                "container": null
+            }
+        }
+    ],
+    "segments": [
+        {
+            "step_info": "step_0_substep_0",
+            "description": "Peel the walnut shells",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut 1"
+                },
+                "change": [
+                    {
+                        "object_id": 99,
+                        "object_name": "walnut 1",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "unpeeled",
+                            "container": 3
+                        }
+                    },
+                    {
+                        "object_id": 99,
+                        "object_name": "walnut 1",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "unpeeled",
+                            "container": 3
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_1",
+            "description": "Place the walnut shells in a bowl ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut shell 1"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_2",
+            "description": "Place the walnut shells in a bowl ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut shell 2"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_3",
+            "description": "Place the walnut kernels in a bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut 2"
+                },
+                "change": [
+                    {
+                        "object_id": 98,
+                        "object_name": "walnut 2",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "unpeeled",
+                            "container": 3
+                        }
+                    },
+                    {
+                        "object_id": 98,
+                        "object_name": "walnut 2",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "unpeeled",
+                            "container": 3
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_4",
+            "description": "Place the walnut shells in a bowl ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut shell 3"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_5",
+            "description": "separate the nut from its shell",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut 4"
+                },
+                "change": [
+                    {
+                        "object_id": 96,
+                        "object_name": "walnut 4",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "peeled",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 96,
+                        "object_name": "walnut 4",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_6",
+            "description": "Place the walnut kernels in a bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut 4"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_7",
+            "description": "Place the walnut shells in a bowl ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut shell 4"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_8",
+            "description": "separate the nut from its shell",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut 5"
+                },
+                "change": [
+                    {
+                        "object_id": 95,
+                        "object_name": "walnut 5",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "peeled",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 95,
+                        "object_name": "walnut 5",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_9",
+            "description": "Place the walnut kernels in a bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut 5"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_10",
+            "description": "Place the walnut shells in a bowl ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut shell 5"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_11",
+            "description": "separate the nut from its shell",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut 8"
+                },
+                "change": [
+                    {
+                        "object_id": 94,
+                        "object_name": "walnut 6",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "peeled",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 94,
+                        "object_name": "walnut 6",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 93,
+                        "object_name": "walnut 7",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "peeled",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 93,
+                        "object_name": "walnut 7",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 92,
+                        "object_name": "walnut 8",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "peeled",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 92,
+                        "object_name": "walnut 8",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_12",
+            "description": "Place the walnut kernels in a bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut 6"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_13",
+            "description": "Place the walnut shells in a bowl ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut shell 6"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_14",
+            "description": "Place the walnut kernels in a bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut 7"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_15",
+            "description": "Place the walnut shells in a bowl ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut shell 7"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_16",
+            "description": "Place the walnut kernels in a bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut 8"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_17",
+            "description": "Place the walnut shells in a bowl ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut shell 8"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_18",
+            "description": "Put the pieces into a bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut 10"
+                },
+                "change": [
+                    {
+                        "object_id": 91,
+                        "object_name": "walnut 9",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "peeled",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 91,
+                        "object_name": "walnut 9",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 90,
+                        "object_name": "walnut 10",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "peeled",
+                            "container": null
+                        }
+                    },
+                    {
+                        "object_id": 90,
+                        "object_name": "walnut 10",
+                        "init_status": {
+                            "status": "unpeeled",
+                            "container": null
+                        },
+                        "final_status": {
+                            "status": "default",
+                            "container": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "step_info": "step_0_substep_19",
+            "description": "Place the walnut shells in a bowl ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut 9"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_20",
+            "description": "Place the walnut kernels in a bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut shell 9"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_21",
+            "description": "Place the walnut shells in a bowl ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut 10"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_22",
+            "description": "Place the walnut kernels in a bowl",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut shell 10"
+                },
+                "change": []
+            }
+        },
+        {
+            "step_info": "step_0_substep_23",
+            "description": "Place the walnut shells in a bowl ",
+            "context": {
+                "player": {
+                    "init_status": "idle",
+                    "init_hand": "none",
+                    "final_status": "active",
+                    "final_hand": "walnut shell 11"
+                },
+                "change": []
+            }
+        }
+    ]
+}
