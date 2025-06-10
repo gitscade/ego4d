@@ -494,23 +494,23 @@ if __name__ == "__main__":
         bool_targetinfo = False
         bool_agent1a = False
         bool_agent3 = False
-        bool_agent4 = False
+        # bool_agent4 = False
 
         # check file with paths
         bool_sourceinfo = agent_init.check_file(PATH_SOURCEINFO)
         bool_targetinfo = agent_init.check_file(PATH_TARGETINFO)
         bool_agent1a = agent_init.check_file(PATH_AGENT1a)
         bool_agent3 = agent_init.check_file(PATH_AGENT3)
-        bool_agent4 = agent_init.check_file(PATH_AGENT4)
+        # bool_agent4 = agent_init.check_file(PATH_AGENT4)
 
         # if every file exist, break from this whole loop
-        if bool_sourceinfo and bool_targetinfo and bool_agent1a and  bool_agent3 and bool_agent4:
+        if bool_sourceinfo and bool_targetinfo and bool_agent1a and  bool_agent3:
             continue   
         else:
             print(f"{i} missing")
 
         # if no file whatsoever, bool_runall is True to run everything without loading
-        if not bool_sourceinfo and not bool_targetinfo and not bool_agent1a and not bool_agent3 and not bool_agent4:
+        if not bool_sourceinfo and not bool_targetinfo and not bool_agent1a and not bool_agent3:
             print(f"{i} running every agent")
             bool_runall = True
 
@@ -588,10 +588,10 @@ if __name__ == "__main__":
                     target_action_sequence = response_3['output']
 
                     # SERIALIZE TO FORMAT
-                    print(f"3b output {target_action_sequence}")
                     target_action_sequence = re.sub(r"^```json\s*|\s*```$", "", target_action_sequence.strip())
                     target_action_sequence = util_funcs.jsondump_agent_response(target_action_sequence)
-                    print(f"3d successful {target_action_sequence}")
+                    print(f"3b successful source {source_action_sequence}")
+                    print(f"3b successful target {target_action_sequence}")
                     with open(PATH_AGENT3, 'wb') as f:
                         pickle.dump(target_action_sequence, f)        
                         print(f"agent3 saved: target_action_sequence")
@@ -602,28 +602,28 @@ if __name__ == "__main__":
                     continue
 
 
-        # -----------------------
-        # FINAL: TEST FAITHFULNESS TO CORE ACTIVITY
-        # -----------------------
-        if bool_agent4:
-            with open(PATH_AGENT4, 'wb') as f:
-                final_response = pickle.load(f)
-        else:
-            while not bool_agent4:
-                try:
-                    final_response = run_agent4(
-                        source_core_activity,
-                        target_action_sequence,
-                        agent_api_name,
-                        agent_model_name
-                    )
+        # # -----------------------
+        # # FINAL: TEST FAITHFULNESS TO CORE ACTIVITY
+        # # -----------------------
+        # if bool_agent4:
+        #     with open(PATH_AGENT4, 'wb') as f:
+        #         final_response = pickle.load(f)
+        # else:
+        #     while not bool_agent4:
+        #         try:
+        #             final_response = run_agent4(
+        #                 source_core_activity,
+        #                 target_action_sequence,
+        #                 agent_api_name,
+        #                 agent_model_name
+        #             )
 
-                    print(final_response)
-                    with open(PATH_AGENT4, 'wb') as f:
-                        pickle.dump(final_response, f)        
-                        print(f"agent4 saved: final answer {final_response}")
-                        bool_agent4 = True       
+        #             print(final_response)
+        #             with open(PATH_AGENT4, 'wb') as f:
+        #                 pickle.dump(final_response, f)        
+        #                 print(f"agent4 saved: final answer {final_response}")
+        #                 bool_agent4 = True       
 
-                except Exception as e:
-                    print(f"Agent4 failed at index {i}: {e}")
-                    continue                    
+        #         except Exception as e:
+        #             print(f"Agent4 failed at index {i}: {e}")
+        #             continue                    

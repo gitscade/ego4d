@@ -1212,7 +1212,7 @@ if __name__ == "__main__":
         bool_agent2a = False
         bool_agent2b = False
         bool_agent3 = False
-        bool_agent4 = False
+        # bool_agent4 = False
 
         # check file with paths
         bool_sourceinfo = agent_init.check_file(PATH_SOURCEINFO)
@@ -1222,16 +1222,16 @@ if __name__ == "__main__":
         bool_agent2a = agent_init.check_file(PATH_AGENT2a)
         bool_agent2b = agent_init.check_file(PATH_AGENT2b)
         bool_agent3 = agent_init.check_file(PATH_AGENT3)
-        bool_agent4 = agent_init.check_file(PATH_AGENT4)
+        # bool_agent4 = agent_init.check_file(PATH_AGENT4)
 
         # if every file exist, break from this whole loop
-        if bool_sourceinfo and bool_targetinfo and bool_agent1a and bool_agent1b and bool_agent2a and bool_agent2b and bool_agent3 and bool_agent4:
+        if bool_sourceinfo and bool_targetinfo and bool_agent1a and bool_agent1b and bool_agent2a and bool_agent2b and bool_agent3:
             continue   
         else:
             print(f"{i} missing")
 
         # if no file whatsoever, bool_runall is True to run everything without loading
-        if not bool_sourceinfo and not bool_targetinfo and not bool_agent1a and not  bool_agent1b and not bool_agent2a and not bool_agent2b and not bool_agent3 and not bool_agent4:
+        if not bool_sourceinfo and not bool_targetinfo and not bool_agent1a and not  bool_agent1b and not bool_agent2a and not bool_agent2b and not bool_agent3:
             bool_runall = True
 
         # prepare necessary files
@@ -1423,29 +1423,29 @@ if __name__ == "__main__":
                     continue
 
 
-        # -----------------------
-        # FINAL: TEST FAITHFULNESS TO CORE ACTIVITY
-        # -----------------------     
-        if bool_agent4:
-            with open(PATH_AGENT4, 'wb') as f:
-                final_response = pickle.load(f)#    
-        else:
-            while not bool_agent4:
-                try:
-                    final_response = run_core_action_test(
-                        source_core_activity,
-                        target_activity_taxonomy,
-                        target_action_sequence,
-                        agent_api_name,
-                        agent_model_name
-                    )
+        # # -----------------------
+        # # FINAL: TEST FAITHFULNESS TO CORE ACTIVITY
+        # # -----------------------     
+        # if bool_agent4:
+        #     with open(PATH_AGENT4, 'wb') as f:
+        #         final_response = pickle.load(f)#    
+        # else:
+        #     while not bool_agent4:
+        #         try:
+        #             final_response = run_core_action_test(
+        #                 source_core_activity,
+        #                 target_activity_taxonomy,
+        #                 target_action_sequence,
+        #                 agent_api_name,
+        #                 agent_model_name
+        #             )
 
-                    print(final_response)
-                    with open(PATH_AGENT4, 'wb') as f:
-                        pickle.dump(final_response, f)        
-                        print(f"agent4 saved: final answer {final_response}")
-                        bool_agent4 = True       
+        #             print(final_response)
+        #             with open(PATH_AGENT4, 'wb') as f:
+        #                 pickle.dump(final_response, f)        
+        #                 print(f"agent4 saved: final answer {final_response}")
+        #                 bool_agent4 = True       
 
-                except Exception as e:
-                    print(f"Agent4 failed at index {i}: {e}")
-                    continue                
+        #         except Exception as e:
+        #             print(f"Agent4 failed at index {i}: {e}")
+        #             continue                
