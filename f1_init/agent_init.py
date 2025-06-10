@@ -281,9 +281,7 @@ def get_paired_spatial_json_list_v8(source_folder:str, target_folder:str):
             
         # sort all source-target pairs
         sorted_target_pairnames = sort_3part_filenames(target_pairnames)
-        print(f"{idx} {len(sorted_target_pairnames)}")
-        if idx == 44:
-            print(sorted_target_pairnames)
+        # print(f"{idx} {len(sorted_target_pairnames)}")
 
 
         # read all source-target pairs and append to list
