@@ -172,6 +172,181 @@ def get_video_info_idxtest(source_video_idx):
     return: seq, scenegraph, sea_id, scenegraph_id
     '''
 
+def sort_3part_filenames(filenames):
+    """
+    Sorts a list of filenames based on 'id', 'secondorder', and 'lastorder' numerically.
+    """
+    def parse_filename(filename):
+        # Remove the .json extension
+        base_name = filename.rsplit('.', 1)[0]
+        parts = base_name.split('_')
+        
+        # Ensure there are always three parts
+        if len(parts) != 3:
+            # Handle cases where the format might be slightly off, or just skip/log them
+            return filename, -1, -1 # Return original filename and dummy sort keys
+
+        id_part = parts[0]
+        second_order_part = parts[1]
+        last_order_part = parts[2]
+
+        # Convert second_order to float for numerical sorting
+        try:
+            second_order_num = float(second_order_part)
+        except ValueError:
+            second_order_num = -1  # Assign a low value for non-numeric second_order
+
+        # Extract number from last_order_part (e.g., '0th' -> 0, '1th' -> 1)
+        last_order_match = re.match(r'(\d+)(th|st|nd|rd)', last_order_part)
+        if last_order_match:
+            last_order_num = int(last_order_match.group(1))
+        else:
+            last_order_num = -1  # Assign a low value for non-numeric last_order
+
+        return id_part, second_order_num, last_order_num
+
+    # Sort the filenames using the custom key
+    # First by id (lexicographically), then by second_order (numerically), then by last_order (numerically)
+    return sorted(filenames, key=parse_filename)
+
+
+def get_paired_spatial_json_list_v8(source_folder:str, target_folder:str):
+    '''
+    func: for v8 dataset, get source-json lists respectively.
+    '''
+    source_json_list = []
+    target_json_list = []
+
+    # read all filenames in target path, sort, and read spatial data
+    target_json_dict = {}
+    for filename in os.listdir(target_folder):
+        file_path = os.path.join(target_folder, filename)
+        if filename.endswith(".json") and os.path.isfile(file_path):
+            with open(file_path, "r") as f:                
+                target_data = json.load(f)
+                # target_uid = target_data['video_id']
+                source_uid = target_data['source_video_uid']
+                # uid=key, loaded json=data
+                # target_json_dict[target_uid] = target_data
+                target_json_dict[source_uid] = target_data
+
+
+    # numerically sort the target data w.r.t to sorted source uid
+    target_json_dict = {key: target_json_dict[key] for key in sorted(target_json_dict, reverse=False)}
+
+    for source_uid in list(target_json_dict.keys()):
+        # print(f"tuid: {target_uid}")
+        target_json = target_json_dict[source_uid]
+        source_filename = target_json['source_file_name']
+        source_path = os.path.join(source_folder, source_filename)
+        with open(source_path, "r") as f:
+            source_data = json.load(f)
+            source_json_list.append(source_data)
+            target_json_list.append(target_json)
+            # print(f"source suid: {source_data['video_id']}")
+            # print(f"target suid: {target_json['source_video_uid']}")
+            # print(f"target tuid: {target_json['target_video_uid']}")
+    return source_json_list, target_json_list
+
+    
+def get_paired_spatial_json_list_v8_2(source_folder:str, target_folder:str):
+    '''
+    func: read from source folder and find target
+    '''
+    source_json_list = []
+    target_json_list = []
+    target_filenames = os.listdir(target_folder)
+
+    # read all filenames in target path, sort, and read spatial data
+    source_json_dict = {}
+    for filename in os.listdir(source_folder):
+        file_path = os.path.join(source_folder, filename)
+        if filename.endswith(".json") and os.path.isfile(file_path):
+            with open(file_path, "r") as f:                
+                source_data = json.load(f)
+                source_uid = source_data['video_id']
+                source_json_dict[source_uid] = source_data
+    
+    # sort source dic by uid
+    source_json_dict = {key: source_json_dict[key] for key in sorted(source_json_dict, reverse=False)}
+
+    # Now find target by finding matching filename
+    for idx, source_uid in enumerate(list(source_json_dict.keys())):
+        # separate all source-target pairs
+        target_pairnames = []
+        for target_filename in target_filenames:
+            if source_uid in target_filename:
+                if source_uid.split('-')[0] == target_filename.split('-')[0]:
+                    target_pairnames.append(target_filename)
+            
+        # sort all source-target pairs
+        sorted_target_pairnames = sort_3part_filenames(target_pairnames)
+        print(f"{idx} {len(sorted_target_pairnames)}")
+        if idx == 44:
+            print(sorted_target_pairnames)
+
+
+        # read all source-target pairs and append to list
+        for target_filename in sorted_target_pairnames:
+            target_filepath = os.path.join(target_folder, target_filename)
+            if target_filename.endswith(".json") and os.path.isfile(target_filepath):
+                with open(target_filepath, "r") as f:
+                    target_data = json.load(f)
+                    source_data = source_json_dict[source_uid]
+
+                    target_json_list.append(target_data)
+                    source_json_list.append(source_data)
+
+                    # print(f"source data uid {source_uid} {source_json_dict[source_uid]['video_id']}")
+                    # print(f"target data uid {target_data['source_video_uid']} {target_data['video_id']}")
+                    # print(f"source data uid {target_data['target_video_uid']}")
+    
+    return source_json_list, target_json_list
+
+
+
+
+
+#     def find_files_with_string(directory, search_string):
+#     matching_files = []
+#     for filename in os.listdir(directory):
+#         if search_string in filename:
+#             matching_files.append(filename)
+#     return matching_files
+
+
+
+#     target_json_dict = {}
+#     for filename in os.listdir(target_folder):
+#         file_path = os.path.join(target_folder, filename)
+#         if filename.endswith(".json") and os.path.isfile(file_path):
+#             with open(file_path, "r") as f:                
+#                 target_data = json.load(f)
+#                 # target_uid = target_data['video_id']
+#                 source_uid = target_data['source_video_uid']
+#                 # uid=key, loaded json=data
+#                 # target_json_dict[target_uid] = target_data
+#                 target_json_dict[source_uid] = target_data
+
+
+#     # numerically sort the target data w.r.t to sorted source uid
+#     target_json_dict = {key: target_json_dict[key] for key in sorted(target_json_dict, reverse=False)}
+
+#     for source_uid in list(target_json_dict.keys()):
+#         # print(f"tuid: {target_uid}")
+#         target_json = target_json_dict[source_uid]
+#         source_filename = target_json['source_file_name']
+#         source_path = os.path.join(source_folder, source_filename)
+#         with open(source_path, "r") as f:
+#             source_data = json.load(f)
+#             source_json_list.append(source_data)
+#             target_json_list.append(target_json)
+#             # print(f"source suid: {source_data['video_id']}")
+#             # print(f"target suid: {target_json['source_video_uid']}")
+#             # print(f"target tuid: {target_json['target_video_uid']}")
+#     return source_json_list, target_json_list
+
+
 def get_paired_spatial_json_list(path:str, boolauglev:bool):
     '''
     func: get augmentation data path and return scene graph list
@@ -212,7 +387,7 @@ def get_paired_spatial_json_list(path:str, boolauglev:bool):
 
         #get auglevel(overwirtten many times but no big deal)
         if boolauglev:
-            auglevel = numbers = [int(re.search(r'_(\d+)\.json$', filename).group(1)) for filename in sorted_target_filenames]
+            auglevel = [int(re.search(r'_(\d+)\.json$', filename).group(1)) for filename in sorted_target_filenames]
         else:
             auglevel = 1
 

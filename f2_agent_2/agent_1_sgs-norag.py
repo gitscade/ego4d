@@ -508,13 +508,13 @@ if __name__ == "__main__":
         target_scene_graph = agent_init.extract_spatial_context(target_spatial_json_list[i])
         source_uid  = source_spatial_json_list[i]['video_id']
         target_uid = target_spatial_json_list[i]['video_id']
-        spatial_similarity  = target_spatial_json_list[i]['spatial_similarity']
+        target_equal_ratio  = target_spatial_json_list[i]['target_equal_ratio']
 
 
         # sourceinfo and targetinfo
         while not bool_sourceinfo and not bool_targetinfo:
             with open(PATH_SOURCEINFO, 'wb') as f:
-                dict = {"source_idx": source_video_idx, "source_uid": source_uid, "source_action_sequence": source_action_sequence, "source_scene_graph": source_scene_graph, "spatial_similarity": spatial_similarity}
+                dict = {"source_idx": source_video_idx, "source_uid": source_uid, "source_action_sequence": source_action_sequence, "source_scene_graph": source_scene_graph, "target_equal_ratio": target_equal_ratio}
                 pickle.dump(dict, f)       
                 bool_sourceinfo = True
 

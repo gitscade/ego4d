@@ -449,16 +449,24 @@ if __name__ == "__main__":
     PATH_SOURCE_TARGET_OUTPUT = constants_init.PATH_SOURCE_TARGET + BASELINE_FOLDER
 
     # DATASET V8, Scene Graphs (source, target)
-    source_spatial_json_list, target_spatial_json_list, aug_levels = agent_init.get_paired_spatial_json_list(constants_init.PATH_AUGMENTATION_v8_600, boolauglev=False)
-    aug_levels = ['0','0.2','0.4','0.6','0.8','1.0']
+    # source_spatial_json_list, target_spatial_json_list, aug_levels = agent_init.get_paired_spatial_json_list(constants_init.PATH_AUGMENTATION_v8_600, boolauglev=False)
 
-    # Make source_idx_list that matches length of the above json list
-    source_idx_list = [i for i in range(len(source_spatial_json_list)//len(aug_levels)) for _ in range(len(aug_levels))]
-    print(len(source_idx_list))
+    source_folder = constants_init.PATH_AUGMENTATION_v8_source
+    target_folder = constants_init.PATH_AUGMENTATION_v8_600
+    source_spatial_json_list, target_spatial_json_list = agent_init.get_paired_spatial_json_list_v8(source_folder, target_folder)
+    aug_levels = ['0','0.2','0.4','0.6','0.8','1.0']
+    trial_index_levels = ['0th']
+
+    # # Make source_idx_list that matches length of the above json list
+    # source_idx_list = [i for i in range(len(source_spatial_json_list)//len(aug_levels)) for _ in range(len(aug_levels))]
+    # print(f"source_idx list {}")
+    
+    # print(len(source_idx_list))
     print(len(source_spatial_json_list))
 
+
     # # for i in range(0, len(source_list)):
-    for i in range(len(source_idx_list)):
+    for i in range(len(source_spatial_json_list)):
 
         # -----------------------
         # CHECK PATHS
@@ -502,14 +510,14 @@ if __name__ == "__main__":
         target_scene_graph = agent_init.extract_spatial_context(target_spatial_json_list[i])
         source_uid  = source_spatial_json_list[i]['video_id']
         target_uid = target_spatial_json_list[i]['video_id']
-        spatial_similarity  = target_spatial_json_list[i]['spatial_similarity']
+        target_equal_ratio  = target_spatial_json_list[i]['target_equal_ratio']
 
 
         # sourceinfo and targetinfo
         while not bool_sourceinfo and not bool_targetinfo:
             with open(PATH_SOURCEINFO, 'wb') as f:
                 print(f"{i} ")
-                dict = {"source_idx": source_video_idx, "source_uid": source_uid, "source_action_sequence": source_action_sequence, "source_scene_graph": source_scene_graph, "spatial_similarity": spatial_similarity}
+                dict = {"source_idx": source_video_idx, "source_uid": source_uid, "source_action_sequence": source_action_sequence, "source_scene_graph": source_scene_graph, "target_equal_ratio": target_equal_ratio}
                 pickle.dump(dict, f)
                 bool_sourceinfo = True
 
