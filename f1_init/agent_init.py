@@ -210,7 +210,7 @@ def sort_3part_filenames(filenames):
     return sorted(filenames, key=parse_filename)
 
 
-def get_paired_spatial_json_list_v8(source_folder:str, target_folder:str):
+def get_paired_spatial_json_list_v8_old(source_folder:str, target_folder:str):
     '''
     func: for v8 dataset, get source-json lists respectively.
     '''
@@ -249,7 +249,7 @@ def get_paired_spatial_json_list_v8(source_folder:str, target_folder:str):
     return source_json_list, target_json_list
 
     
-def get_paired_spatial_json_list_v8_2(source_folder:str, target_folder:str):
+def get_paired_spatial_json_list_v8(source_folder:str, target_folder:str):
     '''
     func: read from source folder and find target
     '''

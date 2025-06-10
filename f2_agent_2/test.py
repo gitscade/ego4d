@@ -10,7 +10,7 @@ import f1_init.constants_init as constants_init
 
 source_folder = constants_init.PATH_AUGMENTATION_v8_source
 target_folder = constants_init.PATH_AUGMENTATION_v8_1200
-source_spatial_json_list, target_spatial_json_list = agent_init.get_paired_spatial_json_list_v8_2(source_folder, target_folder)
+source_spatial_json_list, target_spatial_json_list = agent_init.get_paired_spatial_json_list_v8(source_folder, target_folder)
 
 print(len(source_spatial_json_list))
 print(len(target_spatial_json_list))
