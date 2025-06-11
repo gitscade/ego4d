@@ -49,6 +49,23 @@ import agents_llmfuncs as llmfuncs
 #         for obj in scene_graph
 #     )
 
+def format_taxonomy_old(taxonomy):
+    '''
+    LLM does not like {}, so make it into {{}}
+    '''
+    return taxonomy.replace("{", "{{").replace("}", "}}")
+
+def format_taxonomy(text):
+    '''
+    LLM does not like {}, so make it into {{}} No over escaping
+    '''    
+    # Only escape `{` that is not already escaped (i.e., not `{{`)
+    text = re.sub(r'(?<!{){(?!{)', '{{', text)
+    # Only escape `}` that is not already escaped (i.e., not `}}`)
+    text = re.sub(r'(?<!})}(?!})', '}}', text)
+    return text
+
+
 def format_scene_graph(scene_graph):
     '''
     This function turns raw scene_graph to usable format for LLM
@@ -86,27 +103,18 @@ def format_goalstep_examples(examples):
         )
     return "\n".join(formatted)
 
-# def format_spatial_examples(examples):
-#     '''
-#     Format spatial example Documents (initial state) into readable string input for LLM
-#     '''
-#     formatted = []
-#     for doc in examples:
-#         meta = doc.metadata
-#         formatted.append(
-#             f"Video UID: {meta.get('video_uid')}\n"
-#             f"Initial State Object Graph:\n{doc.page_content.strip()}\n"
-#             "---"
-#         )
-#     return "\n".join(formatted)
-
 def format_spatial_examples(docs):
     formatted = []
     for doc in docs:
         video_uid = doc.metadata.get("video_uid", "unknown")
         content = doc.page_content
-        # Escape curly braces
-        content = content.replace("{", "{{").replace("}", "}}")
+        # Escape curly braces (prevent overescape though)
+        # content = content.replace("{", "{{").replace("}", "}}")
+        # Only escape `{` that is not already escaped (i.e., not `{{`)
+        content = re.sub(r'(?<!{){(?!{)', '{{', content)
+        # Only escape `}` that is not already escaped (i.e., not `}}`)
+        content = re.sub(r'(?<!})}(?!})', '}}', content)
+
         formatted_doc = f"Video UID: {video_uid}\nInitial State Object Graph:\n{content}"
         formatted.append(formatted_doc)
     return "\n---\n".join(formatted)
@@ -303,8 +311,6 @@ def run_agent3_llm_s2s(source_action_sequence, source_scene_graph, target_scene_
     except Exception as e:
         return f"Error: action_sequence_prediction: {str(e)}"    
 
-
-
 def run_agent3_llm_norag(source_action_sequence, source_scene_graph, source_core_activity, target_scene_graph, TOOL_LLM_API, TOOL_LLM_STR, temperature):
 
     prompt = ChatPromptTemplate.from_messages([
@@ -367,7 +373,7 @@ def run_agent3_llm_norag(source_action_sequence, source_scene_graph, source_core
         ]
 
         Output Format:
-        The final answer is a single list of instructions, each enclosed in double quotes, and must stick to the format below:
+        The final answer is a single list of instructions, each enclosed in double quotes, and must stick to the format below.  No explanation. Just simple list format as below:
 
         ["action1", "action2", ..., "final action"]
         """
@@ -401,10 +407,9 @@ def run_agent3_llm_norag(source_action_sequence, source_scene_graph, source_core
     except Exception as e:
         return f"Error: action_sequence_prediction: {str(e)}"    
 
-
 def run_agent3_llm_sps_norag(source_action_sequence, source_scene_graph, source_core_activity, target_scene_graph, source_activity_taxonomy, target_activity_taxonomy, TOOL_LLM_API, TOOL_LLM_STR, temperature):
 
-    prompt = [
+    prompt = ChatPromptTemplate.from_messages([
         {"role": "system", "content": 
         """
         You are an expert action planner. Your task is to transform a given source_action_sequence to a target_action_sequence, so that it fits a target_scene_graph while preserving the original context as closely as possible.
@@ -415,14 +420,14 @@ def run_agent3_llm_sps_norag(source_action_sequence, source_scene_graph, source_
         - The second dictionary describes the noun.
         Example:
         [
-            {
+            {{
             "cooking method": "roasting",
             "cooking vessel": "pan"
-            },
-            {
+            }},
+            {{
             "steak main ingredient": "pork",
             "steak garnish": "celery"
-            }
+            }}
         ]
 
 
@@ -431,14 +436,14 @@ def run_agent3_llm_sps_norag(source_action_sequence, source_scene_graph, source_
         - The second dictionary describes the noun.
         Example:
         [
-            {
+            {{
                 "cooking method": "roasting",
                 "cooking vessel": "pot"
-            },
-            {
+            }},
+            {{
                 "steak main ingredient": "chicken",
                 "steak garnish": "empty"
-            }
+            }}
         ]   
 
         - **source_core_activity**: A list of two string elements, each for the verb and the noun description in the source_activity_taxonomy.
@@ -513,7 +518,7 @@ def run_agent3_llm_sps_norag(source_action_sequence, source_scene_graph, source_
         ]
 
         Output Format:
-        The final list of instructions, each enclosed in double quotes, must stick to the format below:
+        The final list of instructions, each enclosed in double quotes, must stick to the format below. No explanation. Just simple list format as below:
 
         ["action1", "action2", ..., "final action"]
         """
@@ -522,16 +527,12 @@ def run_agent3_llm_sps_norag(source_action_sequence, source_scene_graph, source_
         {"role": "user", "content": f"Here is the source core activity:\n{source_core_activity}\n"},
         {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},
         {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},
-        ]   
+        ] 
+    )  
 
     # Format the prompt
     #("AGENT3: FORMATTING MESSAGES")
-    formatted_messages = prompt.format_messages(
-        source_action_sequence=source_action_sequence,
-        source_scene_graph=source_scene_graph,
-        source_core_activity = source_core_activity,
-        target_scene_graph = target_scene_graph
-    )
+    formatted_messages = prompt.format_messages()
 
     # Invoke (OpenAI / Ollama)
     my_temperature = temperature
@@ -558,7 +559,7 @@ def run_agent3_llm_sps_norag(source_action_sequence, source_scene_graph, source_
 #=========================================
 def run_agent1b_llm_norag(source_action_sequence, source_scene_graph, source_core_activity, target_scene_graph, TOOL_LLM_API, TOOL_LLM_STR, temperature):
 
-    prompt = [
+    prompt = ChatPromptTemplate.from_messages([
         {"role": "system", "content": 
         """
         You are a taxonomy constructor. Your task is to build two 2-level classification taxonomies for a given verb and a noun (the core activity), using the source_action_sequence and source_scene_graph.
@@ -588,14 +589,14 @@ def run_agent1b_llm_norag(source_action_sequence, source_scene_graph, source_cor
         ### Example Output:
 
         [
-        {
-        "cooking method": "roasting",
-        "cooking vessel": "pan"
-        },
-        {
-        "steak main ingredient": "pork",
-        "steak garnish": "celery"
-        }
+            {{
+            "cooking method": "roasting",
+            "cooking vessel": "pan"
+            }},
+            {{
+            "steak main ingredient": "pork",
+            "steak garnish": "celery"
+            }}
         ]
 
         ### Final Instructions:
@@ -608,29 +609,26 @@ def run_agent1b_llm_norag(source_action_sequence, source_scene_graph, source_cor
         Strictly follow this format for final answer:
 
         [
-            {
+            {{
             "key1-for-verb": "value1",
             "key2-for-verb": "value2"
-            },
-            {
+            }},
+            {{
             "key1-for-noun": "value1",
             "key2-for-noun": "value2"
-            }
+            }}
         ]
         """                    
         }, 
         {"role": "user", "content": f"Here is the source_action_sequence:\n{source_action_sequence}\n" },
         {"role": "user", "content": f"Here is the scene graph:\n{source_scene_graph}\n"},
         {"role": "user", "content": f"Here is the core activity:\n{source_core_activity}\n"}
-        ]   
+        ] 
+    )  
 
     # Format the prompt
     #("AGENT1b: FORMATTING MESSAGES")
-    formatted_messages = prompt.format_messages(
-        source_action_sequence=source_action_sequence,
-        source_scene_graph=source_scene_graph,
-        source_core_activity = source_core_activity,
-    )
+    formatted_messages = prompt.format_messages()
 
     # Invoke (OpenAI / Ollama)
     my_temperature = temperature
@@ -657,7 +655,7 @@ def run_agent1b_llm_norag(source_action_sequence, source_scene_graph, source_cor
 #=========================================
 def run_agent2a_llm_norag(source_action_sequence, source_scene_graph, source_core_activity, source_activity_taxonomy, target_scene_graph, TOOL_LLM_API, TOOL_LLM_STR, temperature):
 
-    prompt = [
+    prompt = ChatPromptTemplate.from_messages([
         {"role": "system", "content": 
         """
         You are a taxonomy examiner. Your task is to validate a given activity taxonomy against a target_scene_graph and return a filtered version called the common_activity_taxonomy.
@@ -668,14 +666,14 @@ def run_agent2a_llm_norag(source_action_sequence, source_scene_graph, source_cor
         - The second dictionary describes the noun.
         Example:
         [
-            {
+            {{
             "cooking method": "roasting",
             "cooking vessel": "pan"
-            },
-            {
+            }},
+            {{
             "steak main ingredient": "pork",
             "steak garnish": "celery"
-            }
+            }}
         ]
 
         - **source_core_activity**: A list of two string elements, each for the verb and the noun description in the source_activity_taxonomy.
@@ -695,14 +693,14 @@ def run_agent2a_llm_norag(source_action_sequence, source_scene_graph, source_cor
 
         ### Example Output:
         [
-        {
-            "cooking method": "roasting",
-            "cooking vessel": "empty"
-        },
-        {
-            "steak main ingredient": "empty",
-            "steak garnish": "empty"
-        }
+            {{
+                "cooking method": "roasting",
+                "cooking vessel": "empty"
+            }},
+            {{
+                "steak main ingredient": "empty",
+                "steak garnish": "empty"
+            }}
         ]
 
         In this example, "pan", "pork", and "celery" were not found in the target_scene_graph or derivable from it, so they were replaced with "empty".
@@ -718,14 +716,14 @@ def run_agent2a_llm_norag(source_action_sequence, source_scene_graph, source_cor
         Strictly follow this format for final answer:
 
         [
-            {
+            {{
             "key1-for-verb": "value1",
             "key2-for-verb": "value2"
-            },
-            {
+            }},
+            {{
             "key1-for-noun": "value1",
             "key2-for-noun": "value2"
-            }
+            }}
         ]      
 
         """   
@@ -734,12 +732,11 @@ def run_agent2a_llm_norag(source_action_sequence, source_scene_graph, source_cor
         {"role": "user", "content": f"Here is the source activity taxonomy:\n{source_activity_taxonomy}\n"},
         {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"}
         ]   
+    )
 
     # Format the prompt
     #("AGENT2a FORMATTING MESSAGES")
-    formatted_messages = prompt.format_messages(
-        source_activity_taxonomy=source_activity_taxonomy,
-    )
+    formatted_messages = prompt.format_messages()
 
     # Invoke (OpenAI / Ollama)
     my_temperature = temperature
@@ -762,7 +759,7 @@ def run_agent2a_llm_norag(source_action_sequence, source_scene_graph, source_cor
 
 def run_agent2b_llm_norag(source_action_sequence, source_scene_graph, source_core_activity, target_scene_graph, source_activity_taxonomy, common_activity_taxonomy, TOOL_LLM_API, TOOL_LLM_STR, temperature):
 
-    prompt = [
+    prompt = ChatPromptTemplate.from_messages([
         {"role": "system", "content": 
         """
         You are a taxonomy generator for target_scene_graph that checks common_activity_taxonomy and converts it to target_activity_taxonomy. Let me give you a step-by-step example of how you function.
@@ -773,14 +770,14 @@ def run_agent2b_llm_norag(source_action_sequence, source_scene_graph, source_cor
         - The second dictionary describes the noun.
         Example:
         [
-            {
+            {{
             "cooking method": "roasting",
             "cooking vessel": "pan"
-            },
-            {
+            }},
+            {{
             "steak main ingredient": "pork",
             "steak garnish": "celery"
-            }
+            }}
         ]
 
 
@@ -789,14 +786,14 @@ def run_agent2b_llm_norag(source_action_sequence, source_scene_graph, source_cor
         - The second dictionary describes the noun.
         Example:
         [
-            {
+            {{
                 "cooking method": "roasting",
                 "cooking vessel": "empty"
-            },
-            {
+            }},
+            {{
                 "steak main ingredient": "meat",
                 "steak garnish": "empty"
-            }
+            }}
         ]   
 
 
@@ -819,14 +816,14 @@ def run_agent2b_llm_norag(source_action_sequence, source_scene_graph, source_cor
 
         ### Example Output:
         [
-            {
+            {{
                 "cooking method": "roasting",
                 "cooking vessel": "pot"
-            },
-            {
+            }},
+            {{
                 "steak main ingredient": "chicken",
                 "steak garnish": "False"
-            }
+            }}
         ]   
 
         In this example, "pan", "pork", and "celery" were not found in the target_scene_graph or derivable from it, so they were replaced with "empty".
@@ -842,14 +839,14 @@ def run_agent2b_llm_norag(source_action_sequence, source_scene_graph, source_cor
         Strictly follow this format for final answer:
 
         [
-            {
+            {{
             "key1-for-verb": "value1",
             "key2-for-verb": "value2"
-            },
-            {
+            }},
+            {{
             "key1-for-noun": "value1",
             "key2-for-noun": "value2"
-            }
+            }}
         ]           
         """   
             }, 
@@ -859,12 +856,12 @@ def run_agent2b_llm_norag(source_action_sequence, source_scene_graph, source_cor
         {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},
         {"role": "user", "content": f"Here is the source activity taxonomy:\n{source_activity_taxonomy}\n"},
         {"role": "user", "content": f"Here is the common activity taxonomy:\n{common_activity_taxonomy}\n"},                
-        ]   
+        ] 
+    )  
 
     # Format the prompt
     ("AGENT3: FORMATTING MESSAGES")
-    formatted_messages = prompt.format_messages(
-    )
+    formatted_messages = prompt.format_messages()
 
     # Invoke (OpenAI / Ollama)
     my_temperature = temperature

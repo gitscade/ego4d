@@ -434,6 +434,17 @@ def get_video_info(source_video_idx:int):
     source_scene_graph = json.dumps(source_scene_graph, indent=2)
     return source_action_sequence, source_scene_graph
 
+def get_source_video_metadata(source_video_idx:int):
+    """
+    func: return source_action_sequence, source_scene_graph
+    input: source_video_idx: find in test_video_lists for goal&spatial
+    ourput: source_action_sequence, source_scene_graph
+    """
+    source_goalstep_video = goalstep_test_video_list[source_video_idx]
+    goal_category = source_goalstep_video['goal_category']
+    goal_description =source_goalstep_video['goal_description']
+    return goal_category, goal_description
+
 # def get_target_video_info(target_video_idx:int):
 #     """
 #     func: return target_action_sequence, target_scene_graph

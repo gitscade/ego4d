@@ -165,7 +165,7 @@ if __name__ == "__main__":
     TOOL_LLM_API, TOOL_LLM_STR, TOOL_LLM_CHAT = agent_init.SET_LLMS(tool_api_name, tool_model_name, temperature=0.2)
 
     # PATHS
-    BASELINE_FOLDER = "/output-1-sgs-rag-0609/"
+    BASELINE_FOLDER = "/output1-rag-0609/"
     PATH_SOURCE_TARGET_OUTPUT = constants_init.PATH_SOURCE_TARGET + BASELINE_FOLDER
 
     source_folder = constants_init.PATH_AUGMENTATION_v8_source
@@ -174,7 +174,7 @@ if __name__ == "__main__":
 
     # 
     aug_levels = ['0','0.2','0.4','0.6','0.8','1.0']
-    trial_index_levels = ['0th']
+    trial_index_levels = ['1th']
     
 
     # # Make source_idx_list that matches length of the above json list
@@ -202,17 +202,19 @@ if __name__ == "__main__":
         # bool_agent4 = False
 
         # check file with paths
-        bool_sourceinfo = agent_init.check_file(PATH_SOURCEINFO)
-        bool_targetinfo = agent_init.check_file(PATH_TARGETINFO)
+        # bool_sourceinfo = agent_init.check_file(PATH_SOURCEINFO)
+        # bool_targetinfo = agent_init.check_file(PATH_TARGETINFO)
         bool_agent1a = agent_init.check_file(PATH_AGENT1a)
         bool_agent3 = agent_init.check_file(PATH_AGENT3)
         # bool_agent4 = agent_init.check_file(PATH_AGENT4)
 
         # if every file exist, break from this whole loop
-        if bool_sourceinfo and bool_targetinfo and bool_agent1a and  bool_agent3:
-            continue   
+        if bool_sourceinfo and bool_targetinfo and bool_agent1a and bool_agent3:
+            print(f"{i} continue")
+            continue        
         else:
             print(f"{i} missing")
+            print(f"{bool_sourceinfo} {bool_targetinfo} {bool_agent1a} {bool_agent3}")
 
         # if no file whatsoever, bool_runall is True to run everything without loading
         if not bool_sourceinfo and not bool_targetinfo and not bool_agent1a and not bool_agent3:
@@ -222,28 +224,53 @@ if __name__ == "__main__":
         # prepare necessary files
         source_video_idx = source_idx_list[i]
         source_action_sequence, scenegraphnotused = agent_init.get_video_info(source_video_idx)
+        source_goal_category, source_goal_description = agent_init.get_source_video_metadata(source_video_idx)
         source_scene_graph = agent_init.extract_spatial_context(source_spatial_json_list[i])
         target_scene_graph = agent_init.extract_spatial_context(target_spatial_json_list[i])
+        
         source_uid  = source_spatial_json_list[i]['video_id']
         target_uid = target_spatial_json_list[i]['video_id']
+        source_file_name = target_spatial_json_list[i]['source_file_name']
+        target_file_name = target_spatial_json_list[i]['target_file_name']
         target_equal_ratio  = target_spatial_json_list[i]['target_equal_ratio']
+        trial_index  = target_spatial_json_list[i]['trial_index']
 
-        #Format raw dictionary scene graph into string
-        #action sequence is already a single string, so no worries
+        #Format raw dictionary scene graph into string. action sequence is already a single string, so no worries
         source_scene_graph = llmfuncs.format_scene_graph(source_scene_graph)
         target_scene_graph = llmfuncs.format_scene_graph(target_scene_graph)
 
         # sourceinfo and targetinfo
         while not bool_sourceinfo and not bool_targetinfo:
+            print("saving info")
+
             with open(PATH_SOURCEINFO, 'wb') as f:
                 print(f"{i} ")
-                dict = {"source_idx": source_video_idx, "source_uid": source_uid, "source_action_sequence": source_action_sequence, "source_scene_graph": source_scene_graph, "target_equal_ratio": target_equal_ratio}
+                dict = {
+                    "idx": i, 
+                    "source_idx": source_video_idx, 
+                    "source_uid": source_uid, 
+                    "source_file_name": source_file_name, 
+                    "target_equal_ratio": target_equal_ratio, 
+                    "trial_index": trial_index, 
+                    "source_goal_category": source_goal_category,
+                    "source_goal_description": source_goal_description,
+                    "source_action_sequence": source_action_sequence,
+                    "source_scene_graph": source_scene_graph,
+                    }
                 pickle.dump(dict, f)
                 bool_sourceinfo = True
 
             with open(PATH_TARGETINFO, 'wb') as f:
                 print(f"{i} ")
-                dict = {"target_idx": (source_video_idx+10)%100, "target_uid": target_uid, "target_scene_graph": target_scene_graph}
+                dict = {
+                    "idx": i,
+                    "target_idx": (source_video_idx+10)%100, 
+                    "target_uid": target_uid, 
+                    "target_file_name": target_file_name,
+                    "target_equal_ratio": target_equal_ratio, 
+                    "trial_index": trial_index,                     
+                    "target_scene_graph": target_scene_graph, 
+                    }
                 pickle.dump(dict, f)
                 bool_targetinfo = True
 
@@ -289,7 +316,7 @@ if __name__ == "__main__":
         # -----------------------
         print(f"AGENT3")        
         if bool_agent3:
-            with open(PATH_AGENT3, 'wb') as f:
+            with open(PATH_AGENT3, 'rb') as f:
                 target_action_sequence = pickle.load(f)
         else:
             while not bool_agent3:
