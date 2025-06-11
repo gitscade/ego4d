@@ -165,11 +165,27 @@ if __name__ == "__main__":
     TOOL_LLM_API, TOOL_LLM_STR, TOOL_LLM_CHAT = agent_init.SET_LLMS(tool_api_name, tool_model_name, temperature=0.2)
 
     # PATHS
-    BASELINE_FOLDER = "/output1-rag-0609/"
+    trial_idx_input = input("Trial Index(0 to 9)")  
+    BASELINE_FOLDER = "/output1-rag" + f"_{trial_idx_input}" +  "/"
     PATH_SOURCE_TARGET_OUTPUT = constants_init.PATH_SOURCE_TARGET + BASELINE_FOLDER
+    if not os.path.exists(PATH_SOURCE_TARGET_OUTPUT):
+        print(f"making {PATH_SOURCE_TARGET_OUTPUT}")
+        os.makedirs(PATH_SOURCE_TARGET_OUTPUT)  
 
+    target_folders = [
+        constants_init.PATH_AUGMENTATION_v8_0th,
+        constants_init.PATH_AUGMENTATION_v8_1th,
+        constants_init.PATH_AUGMENTATION_v8_2th,
+        constants_init.PATH_AUGMENTATION_v8_3th,
+        constants_init.PATH_AUGMENTATION_v8_4th,
+        constants_init.PATH_AUGMENTATION_v8_5th,
+        constants_init.PATH_AUGMENTATION_v8_6th,
+        constants_init.PATH_AUGMENTATION_v8_7th,
+        constants_init.PATH_AUGMENTATION_v8_8th,
+        constants_init.PATH_AUGMENTATION_v8_9th,
+    ]
     source_folder = constants_init.PATH_AUGMENTATION_v8_source
-    target_folder = constants_init.PATH_AUGMENTATION_v8_600
+    target_folder = target_folders[int(trial_idx_input)]
     source_spatial_json_list, target_spatial_json_list = agent_init.get_paired_spatial_json_list_v8(source_folder, target_folder)
 
     # 
