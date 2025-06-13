@@ -1,0 +1,379 @@
+{
+    "video_id": "b4072935-56a6-4765-bb4d-d5f6bbeb95b9",
+    "source_video_uid": "892629b0-61eb-425d-97f4-7d213074c435",
+    "target_video_uid": "b4072935-56a6-4765-bb4d-d5f6bbeb95b9",
+    "source_file_name": "892629b0-61eb-425d-97f4-7d213074c435_updated.json",
+    "target_file_name": "b4072935-56a6-4765-bb4d-d5f6bbeb95b9_updated.json",
+    "target_equal_ratio": 0.2,
+    "trial_index": 3,
+    "spatial_data": [
+        {
+            "object_id": 4,
+            "object_name": "banana blossom",
+            "init_status": {
+                "status": "closed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "floret",
+            "init_status": {
+                "status": "whole",
+                "container": null
+            }
+        },
+        {
+            "object_id": 14,
+            "object_name": "player",
+            "init_status": {
+                "status": "stand",
+                "container": null
+            }
+        },
+        {
+            "object_id": 15,
+            "object_name": "knife",
+            "init_status": {
+                "status": "none",
+                "container": null
+            }
+        },
+        {
+            "object_id": 16,
+            "object_name": "minced meat",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 17,
+            "object_name": "spinach puff pastry",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 18,
+            "object_name": "stew",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 19,
+            "object_name": "nuts",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 20,
+            "object_name": "crumb",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 21,
+            "object_name": "yeast",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 22,
+            "object_name": "toppings",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 23,
+            "object_name": "pancakes",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 24,
+            "object_name": "dough",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 25,
+            "object_name": "vinegar",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 26,
+            "object_name": "sauce",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 27,
+            "object_name": "coconut milk",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 28,
+            "object_name": "milo",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 29,
+            "object_name": "corn dogs",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 30,
+            "object_name": "lime",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 31,
+            "object_name": "murukku",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 32,
+            "object_name": "cereals",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 33,
+            "object_name": "asparagus",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 34,
+            "object_name": "pancake",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 35,
+            "object_name": "carrots",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 36,
+            "object_name": "chicken",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 37,
+            "object_name": "dandelion",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 38,
+            "object_name": "beef",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 39,
+            "object_name": "corned beef",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 40,
+            "object_name": "citrus",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 41,
+            "object_name": "sage",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 42,
+            "object_name": "potato starch",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 43,
+            "object_name": "mushroom",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 44,
+            "object_name": "pea",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 45,
+            "object_name": "taco",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 46,
+            "object_name": "measuring container",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 47,
+            "object_name": "baking pan",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 48,
+            "object_name": "dough divider",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 49,
+            "object_name": "baking tray",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 50,
+            "object_name": "sieve",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 51,
+            "object_name": "rolling pin",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 52,
+            "object_name": "chopstick",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 53,
+            "object_name": "cooker",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 54,
+            "object_name": "coffee maker",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 55,
+            "object_name": "cutting board",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 56,
+            "object_name": "cupboard",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 57,
+            "object_name": "kitchen floor",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        }
+    ]
+}

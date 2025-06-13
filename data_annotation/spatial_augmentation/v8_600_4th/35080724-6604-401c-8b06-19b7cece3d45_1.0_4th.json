@@ -1,0 +1,435 @@
+{
+    "video_id": "d7a2e92e-dc74-4e79-be04-a86f829fc3ec",
+    "source_video_uid": "35080724-6604-401c-8b06-19b7cece3d45",
+    "target_video_uid": "d7a2e92e-dc74-4e79-be04-a86f829fc3ec",
+    "source_file_name": "35080724-6604-401c-8b06-19b7cece3d45_updated.json",
+    "target_file_name": "d7a2e92e-dc74-4e79-be04-a86f829fc3ec_updated.json",
+    "target_equal_ratio": 1.0,
+    "trial_index": 4,
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "batter",
+            "init_status": {
+                "status": "still",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "mat",
+            "init_status": {
+                "status": "clean",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "piping bag",
+            "init_status": {
+                "status": "empty",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+                "status": "stand",
+                "container": null
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "baking powder",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "water bottle",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "dough",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "cup",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 10,
+            "object_name": "sugar",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 11,
+            "object_name": "oil bottle",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 12,
+            "object_name": "flatbread pizza",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 13,
+            "object_name": "apple",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 14,
+            "object_name": "spinach puff pastry",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 15,
+            "object_name": "maggie",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 16,
+            "object_name": "eggplant",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 17,
+            "object_name": "melon",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 18,
+            "object_name": "chocolate",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 19,
+            "object_name": "meat",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 20,
+            "object_name": "lemon",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 21,
+            "object_name": "sweetener",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 22,
+            "object_name": "jam",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 23,
+            "object_name": "curry",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 24,
+            "object_name": "japanese ginger",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 25,
+            "object_name": "jujubes",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 26,
+            "object_name": "beans",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 27,
+            "object_name": "pickles",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 28,
+            "object_name": "egg",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 29,
+            "object_name": "coconut",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 30,
+            "object_name": "vegetables",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 31,
+            "object_name": "roux",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 32,
+            "object_name": "cucumber",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 33,
+            "object_name": "shrimp",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 34,
+            "object_name": "tahini",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 35,
+            "object_name": "leek",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 36,
+            "object_name": "margarine",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 37,
+            "object_name": "sauce",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 38,
+            "object_name": "toast",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 39,
+            "object_name": "mayo",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 40,
+            "object_name": "pancake",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 41,
+            "object_name": "orange",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 42,
+            "object_name": "tortilla press",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 43,
+            "object_name": "cheese grater",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 44,
+            "object_name": "dough cutter",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 45,
+            "object_name": "ladle",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 46,
+            "object_name": "rag",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 47,
+            "object_name": "tissue",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 48,
+            "object_name": "machine",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 49,
+            "object_name": "sieve",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 50,
+            "object_name": "paper bag",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 51,
+            "object_name": "kitchen roll",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 52,
+            "object_name": "wood stove",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 53,
+            "object_name": "drawer",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        }
+    ]
+}

@@ -1,0 +1,477 @@
+{
+    "video_id": "e8a47631-b7e6-4c7d-bf0f-a37bf1ec913a",
+    "source_video_uid": "grp-690f58f1-f18c-4415-bab0-787c2f83d051",
+    "target_video_uid": "e8a47631-b7e6-4c7d-bf0f-a37bf1ec913a",
+    "source_file_name": "grp-690f58f1-f18c-4415-bab0-787c2f83d051_updated.json",
+    "target_file_name": "e8a47631-b7e6-4c7d-bf0f-a37bf1ec913a_updated.json",
+    "target_equal_ratio": 0.6,
+    "trial_index": 8,
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "cooker",
+            "init_status": {
+                "status": "off",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "meat",
+            "init_status": {
+                "status": "raw",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "pot",
+            "init_status": {
+                "status": "empty",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "chopstick",
+            "init_status": {
+                "status": "in hand",
+                "container": null
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "egg",
+            "init_status": {
+                "status": "off-countertop",
+                "container": null
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "pack of sauce",
+            "init_status": {
+                "status": "intact",
+                "container": null
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "knife",
+            "init_status": {
+                "status": "unused",
+                "container": null
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "cabinet",
+            "init_status": {
+                "status": "closed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 10,
+            "object_name": "player",
+            "init_status": {
+                "status": "idle",
+                "container": null
+            }
+        },
+        {
+            "object_id": 12,
+            "object_name": "water",
+            "init_status": "none"
+        },
+        {
+            "object_id": 15,
+            "object_name": "pan",
+            "init_status": {
+                "status": "empty",
+                "container": null
+            }
+        },
+        {
+            "object_id": 16,
+            "object_name": "plate",
+            "init_status": {
+                "status": "empty",
+                "container": null
+            }
+        },
+        {
+            "object_id": 20,
+            "object_name": "rice",
+            "init_status": "none"
+        },
+        {
+            "object_id": 21,
+            "object_name": "range hood",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 22,
+            "object_name": "black spice",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 23,
+            "object_name": "bowl",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 24,
+            "object_name": "stove",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 25,
+            "object_name": "curry leaves",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 26,
+            "object_name": "lime",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 27,
+            "object_name": "yeast",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 28,
+            "object_name": "milk",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 29,
+            "object_name": "couscous",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 30,
+            "object_name": "citrus",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 31,
+            "object_name": "tiramisu",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 32,
+            "object_name": "crumb",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 33,
+            "object_name": "puffed rice",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 34,
+            "object_name": "nuts",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 35,
+            "object_name": "kimchi",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 36,
+            "object_name": "raisins",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 37,
+            "object_name": "puree",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 38,
+            "object_name": "shisho leaves",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 39,
+            "object_name": "stew",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 40,
+            "object_name": "cupcakes",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 41,
+            "object_name": "lemon",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 42,
+            "object_name": "mustard",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 43,
+            "object_name": "pastry",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 44,
+            "object_name": "seaweed",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 45,
+            "object_name": "dough",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 46,
+            "object_name": "liver",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 47,
+            "object_name": "sausage",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 48,
+            "object_name": "food",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 49,
+            "object_name": "grains",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 50,
+            "object_name": "soy meat",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 51,
+            "object_name": "melon",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 52,
+            "object_name": "onion",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 53,
+            "object_name": "coconut",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 54,
+            "object_name": "hamburger",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 55,
+            "object_name": "apron",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 56,
+            "object_name": "napkin",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 57,
+            "object_name": "cup",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 58,
+            "object_name": "kitchen roll",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 59,
+            "object_name": "recipe",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 60,
+            "object_name": "wok",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 61,
+            "object_name": "weight scale",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 62,
+            "object_name": "fork",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 63,
+            "object_name": "electric kettle",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 64,
+            "object_name": "dough molder",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 65,
+            "object_name": "kitchen sink",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 66,
+            "object_name": "countertop",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        }
+    ]
+}

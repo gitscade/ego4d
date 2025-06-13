@@ -1,0 +1,499 @@
+{
+    "video_id": "737e9619-7768-407c-8a4f-6fe1e8d61f04",
+    "source_video_uid": "38a7b760-56f9-4565-8b70-f8dad5768ace",
+    "target_video_uid": "737e9619-7768-407c-8a4f-6fe1e8d61f04",
+    "source_file_name": "38a7b760-56f9-4565-8b70-f8dad5768ace_updated.json",
+    "target_file_name": "737e9619-7768-407c-8a4f-6fe1e8d61f04_rev.json",
+    "target_equal_ratio": 1.0,
+    "trial_index": 6,
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "stirrer",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "rice",
+            "init_status": {
+                "status": "heating",
+                "container": null
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "soup",
+            "init_status": {
+                "status": "heating",
+                "container": null
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "cooker light",
+            "init_status": {
+                "status": "off",
+                "container": null
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "kitchen sink",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "dish",
+            "init_status": {
+                "status": "unwashed",
+                "container": 8
+            }
+        },
+        {
+            "object_id": 10,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 11,
+            "object_name": "cutting board",
+            "init_status": {
+                "status": "default",
+                "container": 10
+            }
+        },
+        {
+            "object_id": 13,
+            "object_name": "jute leaves",
+            "init_status": {
+                "status": "in water",
+                "container": null
+            }
+        },
+        {
+            "object_id": 14,
+            "object_name": "sink",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 15,
+            "object_name": "paper towel",
+            "init_status": {
+                "status": "default",
+                "container": 10
+            }
+        },
+        {
+            "object_id": 16,
+            "object_name": "knife",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 17,
+            "object_name": "player",
+            "init_status": {
+                "status": null,
+                "container": 10
+            }
+        },
+        {
+            "object_id": 18,
+            "object_name": "refrigerator",
+            "init_status": {
+                "status": "closed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 19,
+            "object_name": "vegetables",
+            "init_status": {
+                "status": "default",
+                "container": 18
+            }
+        },
+        {
+            "object_id": 20,
+            "object_name": "window",
+            "init_status": {
+                "status": "unopened",
+                "container": null
+            }
+        },
+        {
+            "object_id": 21,
+            "object_name": "door",
+            "init_status": {
+                "status": "unopened",
+                "container": null
+            }
+        },
+        {
+            "object_id": 22,
+            "object_name": "oven",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 23,
+            "object_name": "potato",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 24,
+            "object_name": "coconut milk",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 25,
+            "object_name": "cookie",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 26,
+            "object_name": "spices",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 27,
+            "object_name": "soy meat",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 28,
+            "object_name": "tahini",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 29,
+            "object_name": "citrus",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 30,
+            "object_name": "stuffed green pepper",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 31,
+            "object_name": "meat",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 32,
+            "object_name": "sand ginger",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 33,
+            "object_name": "mustard",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 34,
+            "object_name": "olives",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 35,
+            "object_name": "seaweed",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 36,
+            "object_name": "cake",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 37,
+            "object_name": "chocolate chips",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 38,
+            "object_name": "spinach puff pastry",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 39,
+            "object_name": "mushroom",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 40,
+            "object_name": "hamburger",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 41,
+            "object_name": "french toast",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 42,
+            "object_name": "chicken",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 43,
+            "object_name": "cardamon",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 44,
+            "object_name": "leaves",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 45,
+            "object_name": "cucumber",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 46,
+            "object_name": "shrimp",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 47,
+            "object_name": "milk",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 48,
+            "object_name": "coriander seeds",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 49,
+            "object_name": "tomato",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 50,
+            "object_name": "yogurt",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 51,
+            "object_name": "bell pepper",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 52,
+            "object_name": "liver",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 53,
+            "object_name": "burritos",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 54,
+            "object_name": "machine",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 55,
+            "object_name": "timer",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 56,
+            "object_name": "spice grinder",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 57,
+            "object_name": "dough shaper",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 58,
+            "object_name": "parchment paper",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 59,
+            "object_name": "mobile phone",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 60,
+            "object_name": "rag",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 61,
+            "object_name": "griller",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 62,
+            "object_name": "teabag",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 63,
+            "object_name": "mortar and pestle",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 64,
+            "object_name": "kitchen cabinet",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 65,
+            "object_name": "cupboard",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        }
+    ]
+}

@@ -1,0 +1,475 @@
+{
+    "video_id": "ae2d99c2-1720-4354-bc4d-f7bc3e4ee28d",
+    "source_video_uid": "89857b33-fa50-469a-bbb3-91c8ab655931",
+    "target_video_uid": "ae2d99c2-1720-4354-bc4d-f7bc3e4ee28d",
+    "source_file_name": "89857b33-fa50-469a-bbb3-91c8ab655931_rev.json",
+    "target_file_name": "ae2d99c2-1720-4354-bc4d-f7bc3e4ee28d_updated.json",
+    "target_equal_ratio": 1.0,
+    "trial_index": 3,
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "player",
+            "init_status": {
+                "status": "inactive",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "phone",
+            "init_status": {
+                "status": "off",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "apple",
+            "init_status": {
+                "status": "in fridge",
+                "container": 0
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "cheddar cheese",
+            "init_status": {
+                "status": "in fridge",
+                "container": 0
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "vegetable salad",
+            "init_status": {
+                "status": "not in bowl",
+                "container": null
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "bowl",
+            "init_status": {
+                "status": "empty",
+                "container": null
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "sweet onion vinaigrette",
+            "init_status": {
+                "status": "none",
+                "container": null
+            }
+        },
+        {
+            "object_id": 10,
+            "object_name": "bell pepper",
+            "init_status": {
+                "status": "in fridge",
+                "container": null
+            }
+        },
+        {
+            "object_id": 11,
+            "object_name": "paper towel",
+            "init_status": {
+                "status": "none",
+                "container": null
+            }
+        },
+        {
+            "object_id": 12,
+            "object_name": "fridge",
+            "init_status": {
+                "status": "closed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 13,
+            "object_name": "container",
+            "init_status": {
+                "status": "none",
+                "container": null
+            }
+        },
+        {
+            "object_id": 15,
+            "object_name": "mayonnaise jar",
+            "init_status": {
+                "status": "in fridge",
+                "container": null
+            }
+        },
+        {
+            "object_id": 16,
+            "object_name": "cup",
+            "init_status": {
+                "status": "empty",
+                "container": null
+            }
+        },
+        {
+            "object_id": 17,
+            "object_name": "water",
+            "init_status": {
+                "status": "still",
+                "container": null
+            }
+        },
+        {
+            "object_id": 18,
+            "object_name": "knife",
+            "init_status": {
+                "status": "none",
+                "container": null
+            }
+        },
+        {
+            "object_id": 19,
+            "object_name": "dough",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 20,
+            "object_name": "puffed rice",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 21,
+            "object_name": "pomegranate",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 22,
+            "object_name": "ice",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 23,
+            "object_name": "potato",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 24,
+            "object_name": "veggies",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 25,
+            "object_name": "broccoli",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 26,
+            "object_name": "lime juice",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 27,
+            "object_name": "goyna bori",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 28,
+            "object_name": "brussel sprouts",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 29,
+            "object_name": "hotdog",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 30,
+            "object_name": "chilli pepper",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 31,
+            "object_name": "lettuce",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 32,
+            "object_name": "carrot",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 33,
+            "object_name": "yeast",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 34,
+            "object_name": "ball peppers",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 35,
+            "object_name": "sweet corn",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 36,
+            "object_name": "lentils",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 37,
+            "object_name": "shisho leaves",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 38,
+            "object_name": "salad",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 39,
+            "object_name": "maggie",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 40,
+            "object_name": "grapes",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 41,
+            "object_name": "onion",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 42,
+            "object_name": "sand ginger",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 43,
+            "object_name": "coriander",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 44,
+            "object_name": "seafood",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 45,
+            "object_name": "toppings",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 46,
+            "object_name": "cinnamon",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 47,
+            "object_name": "cream",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 48,
+            "object_name": "dog food",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 49,
+            "object_name": "corned beef",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 50,
+            "object_name": "griller",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 51,
+            "object_name": "sieve",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 52,
+            "object_name": "flatbread",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 53,
+            "object_name": "wok",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 54,
+            "object_name": "pot",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 55,
+            "object_name": "plastic wrap",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 56,
+            "object_name": "stick",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 57,
+            "object_name": "lotion",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 58,
+            "object_name": "peeler",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 59,
+            "object_name": "mat",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 60,
+            "object_name": "cabinet",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 61,
+            "object_name": "freezer",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        }
+    ]
+}

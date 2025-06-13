@@ -1,0 +1,611 @@
+{
+    "video_id": "2c27b5f1-4af6-49ad-a43c-3efb0c150868",
+    "source_video_uid": "fd0839c6-2472-4e23-a69f-31e2f62c2c95",
+    "target_video_uid": "2c27b5f1-4af6-49ad-a43c-3efb0c150868",
+    "source_file_name": "fd0839c6-2472-4e23-a69f-31e2f62c2c95_rev.json",
+    "target_file_name": "2c27b5f1-4af6-49ad-a43c-3efb0c150868_updated.json",
+    "target_equal_ratio": 0.8571428571428571,
+    "trial_index": 9,
+    "spatial_data": [
+        {
+            "object_id": 1,
+            "object_name": "curry soup",
+            "init_status": {
+                "status": "still",
+                "container": null
+            }
+        },
+        {
+            "object_id": 2,
+            "object_name": "bell pepper",
+            "init_status": {
+                "status": "still",
+                "container": null
+            }
+        },
+        {
+            "object_id": 3,
+            "object_name": "blender jug",
+            "init_status": {
+                "status": "empty",
+                "container": null
+            }
+        },
+        {
+            "object_id": 4,
+            "object_name": "player",
+            "init_status": {
+                "status": "idle",
+                "container": null
+            }
+        },
+        {
+            "object_id": 5,
+            "object_name": "towel",
+            "init_status": {
+                "status": "none",
+                "container": null
+            }
+        },
+        {
+            "object_id": 6,
+            "object_name": "water bottle",
+            "init_status": {
+                "status": "closed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 7,
+            "object_name": "instrument",
+            "init_status": {
+                "status": "unplayed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 8,
+            "object_name": "storage",
+            "init_status": {
+                "status": "closed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 9,
+            "object_name": "jams",
+            "init_status": {
+                "status": "none",
+                "container": null
+            }
+        },
+        {
+            "object_id": 10,
+            "object_name": "blender",
+            "init_status": {
+                "status": "off",
+                "container": null
+            }
+        },
+        {
+            "object_id": 11,
+            "object_name": "soup",
+            "init_status": {
+                "status": "boiling",
+                "container": null
+            }
+        },
+        {
+            "object_id": 12,
+            "object_name": "pepper",
+            "init_status": {
+                "status": "solid",
+                "container": null
+            }
+        },
+        {
+            "object_id": 13,
+            "object_name": "jar of pepper paste",
+            "init_status": {
+                "status": "full",
+                "container": null
+            }
+        },
+        {
+            "object_id": 14,
+            "object_name": "soup pot",
+            "init_status": {
+                "status": "empty",
+                "container": null
+            }
+        },
+        {
+            "object_id": 15,
+            "object_name": "blender cup",
+            "init_status": {
+                "status": "dirty",
+                "container": null
+            }
+        },
+        {
+            "object_id": 16,
+            "object_name": "jar",
+            "init_status": {
+                "status": "open",
+                "container": null
+            }
+        },
+        {
+            "object_id": 17,
+            "object_name": "pot",
+            "init_status": {
+                "status": "dirty",
+                "container": null
+            }
+        },
+        {
+            "object_id": 18,
+            "object_name": "spoon",
+            "init_status": {
+                "status": "in hand",
+                "container": null
+            }
+        },
+        {
+            "object_id": 19,
+            "object_name": "cooking spoon",
+            "init_status": {
+                "status": "dirty",
+                "container": null
+            }
+        },
+        {
+            "object_id": 20,
+            "object_name": "countertop",
+            "init_status": {
+                "status": "dirty",
+                "container": null
+            }
+        },
+        {
+            "object_id": 21,
+            "object_name": "zip lock bag",
+            "init_status": {
+                "status": "closed",
+                "container": null
+            }
+        },
+        {
+            "object_id": 22,
+            "object_name": "ziplock bag",
+            "init_status": {
+                "status": "empty",
+                "container": 0
+            }
+        },
+        {
+            "object_id": 23,
+            "object_name": "sink",
+            "init_status": {
+                "status": "empty",
+                "container": null
+            }
+        },
+        {
+            "object_id": 24,
+            "object_name": "potatoes",
+            "init_status": {
+                "status": "raw",
+                "container": null
+            }
+        },
+        {
+            "object_id": 25,
+            "object_name": "ziplock bags",
+            "init_status": {
+                "status": "empty",
+                "container": null
+            }
+        },
+        {
+            "object_id": 26,
+            "object_name": "seal tool",
+            "init_status": {
+                "status": "unused",
+                "container": null
+            }
+        },
+        {
+            "object_id": 27,
+            "object_name": "dish",
+            "init_status": {
+                "status": "dirty",
+                "container": null
+            }
+        },
+        {
+            "object_id": 28,
+            "object_name": "bread",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 29,
+            "object_name": "table",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 30,
+            "object_name": "cup",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 31,
+            "object_name": "coffee bean",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 32,
+            "object_name": "cucumber jar",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 33,
+            "object_name": "kitchen sink",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 34,
+            "object_name": "jujubes",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 35,
+            "object_name": "french toast",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 36,
+            "object_name": "jalapeno",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 37,
+            "object_name": "nuts",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 38,
+            "object_name": "ginger",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 39,
+            "object_name": "corn dogs",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 40,
+            "object_name": "melon",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 41,
+            "object_name": "ice",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 42,
+            "object_name": "burritos",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 43,
+            "object_name": "squash",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 44,
+            "object_name": "amaro",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 45,
+            "object_name": "pea",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 46,
+            "object_name": "ground beef",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 47,
+            "object_name": "apple",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 48,
+            "object_name": "baking soda",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 49,
+            "object_name": "chili",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 50,
+            "object_name": "tomato",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 51,
+            "object_name": "sweet corn",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 52,
+            "object_name": "taco",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 53,
+            "object_name": "sugar",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 54,
+            "object_name": "goyna bori",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 55,
+            "object_name": "ball peppers",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 56,
+            "object_name": "minced beef",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 57,
+            "object_name": "cookie",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 58,
+            "object_name": "lettuce",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 59,
+            "object_name": "seeds",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 60,
+            "object_name": "bacon",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 61,
+            "object_name": "rice",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 62,
+            "object_name": "beef",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 63,
+            "object_name": "batter",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 64,
+            "object_name": "tortilla press",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 65,
+            "object_name": "peeler",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 66,
+            "object_name": "container",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 67,
+            "object_name": "shelf",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 68,
+            "object_name": "colander",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 69,
+            "object_name": "cheese grater",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 70,
+            "object_name": "plastic wrap",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 71,
+            "object_name": "air fryer",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 72,
+            "object_name": "tong",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 73,
+            "object_name": "tissue",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 74,
+            "object_name": "drawer",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        },
+        {
+            "object_id": 75,
+            "object_name": "kitchen area",
+            "init_status": {
+                "status": "default",
+                "container": null
+            }
+        }
+    ]
+}

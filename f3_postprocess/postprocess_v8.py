@@ -116,7 +116,7 @@ def get_result_list(BASELINE_FOLDER, length, isSPS=False):
         # previous evaluator block
         result_dict["human_entitycheck_tax"]=False
         result_dict["human_entitycheck_seq"]=False   
-        result_dict["human_coreactivitycheck"]=False
+        result_dict["human_coreactivitycheck"]=False #x
         result_dict["human_passcheck_tax"]=False
         result_dict["human_passcheck_seq"]=False
 
@@ -330,20 +330,20 @@ if __name__ == "__main__":
     TOOL_LLM_API, TOOL_LLM_STR, TOOL_LLM_CHAT = agent_init.SET_LLMS(tool_api_name, tool_model_name, temperature=0.2)    
 
     BASELINE_FOLDERS = [
-        "output0-0609",
-        "output1-norag-0609",
-        "output1-rag-0609",
-        "output2-norag-0609",
-        "output2-rag-0609",
+        "output0_1",
+        "output1-norag_1",
+        "output1-rag_1",
+        "output2-norag_1",
+        "output2-rag_1",
     ]
 
     POSTPROCESS_PATH = os.getcwd() + "/f3_postprocess"
     EVAL_RESULT_FOLDERS = [
-        POSTPROCESS_PATH + "/result_v8/base0.pkl",
-        POSTPROCESS_PATH + "/result_v8/base1-norag.pkl",
-        POSTPROCESS_PATH + "/result_v8/base1-rag.pkl",
-        POSTPROCESS_PATH + "/result_v8/base2-norag.pkl",
-        POSTPROCESS_PATH + "/result_v8/base2-rag.pkl",
+        POSTPROCESS_PATH + "/result_v8/base0_1.pkl",
+        POSTPROCESS_PATH + "/result_v8/base1-norag_1.pkl",
+        POSTPROCESS_PATH + "/result_v8/base1-rag_1.pkl",
+        POSTPROCESS_PATH + "/result_v8/base2-norag_1.pkl",
+        POSTPROCESS_PATH + "/result_v8/base2-rag_1.pkl",
     ]
 
     # get evaluation results

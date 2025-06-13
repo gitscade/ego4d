@@ -517,6 +517,11 @@ def run_agent3_llm_sps_norag(source_action_sequence, source_scene_graph, source_
             "False"
         ]
 
+        7. Check if the sequence after step 6 still achieves the goal of the source_core_activity. If sequence does not meet the goal, add in new instruction, or generate a whole new sequence of instructions that:
+        - achieves the source_core_activity
+        - follows the instructions on target_activity_taxonomy,
+        - only uses objects or states achievable in target_scene_graph.
+
         Output Format:
         The final list of instructions, each enclosed in double quotes, must stick to the format below. No explanation. Just simple list format as below:
 
@@ -527,6 +532,8 @@ def run_agent3_llm_sps_norag(source_action_sequence, source_scene_graph, source_
         {"role": "user", "content": f"Here is the source core activity:\n{source_core_activity}\n"},
         {"role": "user", "content": f"Here is the source scene graph:\n{source_scene_graph}\n"},
         {"role": "user", "content": f"Here is the target scene graph:\n{target_scene_graph}\n"},
+        {"role": "user", "content": f"Here is the source activity taxonomy:\n{source_activity_taxonomy}\n"},
+        {"role": "user", "content": f"Here is the target activity taxonomy:\n{target_activity_taxonomy}\n"},                
         ] 
     )  
 
@@ -804,9 +811,9 @@ def run_agent2b_llm_norag(source_action_sequence, source_scene_graph, source_cor
         ### Task:
         1. For each key-value pair in the common_activity_taxonomy:
         - If the value is "empty", check whether a suitable replacement exists in the target_scene_graph that still supports achieving the goal described in source_core_activity, and preserves context of corresponding value in the source_activity_taxonomy.
-        - If a suitable replacement exists, replace "empty" with that value.
-        - If no suitable value exists, replace "empty" with "False".
-        - If the value is not "empty", leave it unchanged.
+        - If a suitable replacement exists inside target_scene_graph, replace "empty" with that value.
+        - If no suitable value exists inside target_scene_graph, replace "empty" with "False".
+        - If the value is not "empty", and the value can be acquired in target_scene_graph, leave it unchanged.
 
         2. Do **not** delete or rename any keys.
         - Maintain the exact same structure as the input.
@@ -826,7 +833,7 @@ def run_agent2b_llm_norag(source_action_sequence, source_scene_graph, source_cor
             }}
         ]   
 
-        In this example, "pan", "pork", and "celery" were not found in the target_scene_graph or derivable from it, so they were replaced with "empty".
+        In this example, "pan", "pork", and "celery" were not found in the target_scene_graph, and substutitues were searched. "pan" was not found, but "pot" was in the target_scene_graph, and since "pot" can be used for cooking steak, it is a good substitute. While "meat" was not in target_scene_graph, "chicken" can also be cooked as a steak, hence "empty" was replaced to "chicken". For "steak garnish" there was nothing to be found as replacement in target_scene_graph, and "empty" was retained.
 
         ### Final Output Format:
         You must only return a list of **exactly two dictionaries**, each containing **exactly two key-value pairs**. Output format:
