@@ -342,6 +342,9 @@ spatial_videos_list = make_spatial_json_video_list(SPATIAL_ANNOTATION_PATH_MANUA
 print(f"all: goalstep vids: {len(goalstep_videos_list)}")
 print(f"all: spatial vids: {len(spatial_videos_list)}")
 
+for idx, video in enumerate(spatial_videos_list):
+    print(f"{video['video_id']},")
+
 # Divide list to test list and vectorstore list
 test_uid = [
     #11 manual
